@@ -1,0 +1,17 @@
+on: [push]
+
+jobs:
+  job_update_docs:
+    runs-on: ubuntu-latest
+    name: update docs
+    env:
+      R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+        with:
+          name: rpolars-docss
+
+      - name: print files
+        run: |
+          ls -R -a
