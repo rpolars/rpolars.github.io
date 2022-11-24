@@ -559,6 +559,9 @@
     <loc>https://github.com/rpolars/rpolars/reference/LazyGroupBy_tail.html</loc>
   </url>
   <url>
+    <loc>https://github.com/rpolars/rpolars/reference/Series.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/rpolars/rpolars/reference/Series_abs.html</loc>
   </url>
   <url>
@@ -769,12 +772,6 @@
     <loc>https://github.com/rpolars/rpolars/reference/min.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/minipolars_options.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/rpolars/rpolars/reference/minipolars_runtime_flags.html</loc>
-  </url>
-  <url>
     <loc>https://github.com/rpolars/rpolars/reference/move_env_elements.html</loc>
   </url>
   <url>
@@ -817,6 +814,9 @@
     <loc>https://github.com/rpolars/rpolars/reference/print_env.html</loc>
   </url>
   <url>
+    <loc>https://github.com/rpolars/rpolars/reference/pstop.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/rpolars/rpolars/reference/read_csv_.html</loc>
   </url>
   <url>
@@ -824,6 +824,12 @@
   </url>
   <url>
     <loc>https://github.com/rpolars/rpolars/reference/restruct_list.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/rpolars/rpolars/reference/rpolars_options.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/rpolars/rpolars/reference/rpolars_runtime_flags.html</loc>
   </url>
   <url>
     <loc>https://github.com/rpolars/rpolars/reference/scan_parquet.html</loc>

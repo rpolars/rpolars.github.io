@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rpolars</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.0</span>
       </span>
     </div>
 
@@ -50,7 +50,7 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">unwrap</span><span class="op">(</span><span class="va">result</span>, class <span class="op">=</span> <span class="st">"rust result error"</span>, call <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sys.parent.html" class="external-link">sys.call</a></span><span class="op">(</span><span class="fl">1L</span><span class="op">)</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">unwrap</span><span class="op">(</span><span class="va">result</span>, call <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sys.parent.html" class="external-link">sys.call</a></span><span class="op">(</span><span class="fl">1L</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -59,16 +59,8 @@
 <dd><p>a list here either element ok or err is NULL, or both if ok is litteral NULL</p></dd>
 
 
-<dt>class</dt>
-<dd><p>class of thrown error</p></dd>
-
-
 <dt>call</dt>
-<dd><p>context of error</p></dd>
-
-
-<dt>...</dt>
-<dd><p>not used</p></dd>
+<dd><p>context of error or string</p></dd>
 
 </dl></div>
     <div id="value">
@@ -80,9 +72,7 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">unwrap</span><span class="op">(</span><span class="fu"><a href="Expr_list.html">list</a></span><span class="op">(</span>ok<span class="op">=</span><span class="st">"foo"</span>,err<span class="op">=</span><span class="cn">NULL</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "foo"</span>
-</code></pre></div>
+    
     </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
