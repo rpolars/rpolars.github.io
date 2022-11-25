@@ -212,7 +212,7 @@ to achieve the best performance.</p>
 <span class="r-in"><span> <span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    user  system elapsed </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   2.756   0.008   2.765 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   2.667   0.024   2.691 </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="st">"R lapply 1 million values take ~1sec on 2015 MacBook Pro"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "R lapply 1 million values take ~1sec on 2015 MacBook Pro"</span>
@@ -220,14 +220,14 @@ to achieve the best performance.</p>
 <span class="r-in"><span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="fu">get_column</span><span class="op">(</span><span class="st">"a"</span><span class="op">)</span><span class="op">$</span><span class="fu">to_r</span><span class="op">(</span><span class="op">)</span>,\<span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="va">x</span><span class="op">*</span><span class="fl">2L</span> <span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    user  system elapsed </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   1.129   0.040   1.170 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1.132   0.024   1.156 </span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="st">"using polars syntax takes ~1ms"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "using polars syntax takes ~1ms"</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/system.time.html" class="external-link">system.time</a></span><span class="op">(</span><span class="op">{</span></span></span>
 <span class="r-in"><span> <span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="fu">get_column</span><span class="op">(</span><span class="st">"a"</span><span class="op">)</span> <span class="op">*</span> <span class="fl">2L</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    user  system elapsed </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.001   0.000   0.001 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.001   0.000   0.002 </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="st">"using R vector syntax takes ~4ms"</span><span class="op">)</span></span></span>
@@ -237,7 +237,7 @@ to achieve the best performance.</p>
 <span class="r-in"><span> <span class="va">r_vec</span> <span class="op">*</span> <span class="fl">2L</span></span></span>
 <span class="r-in"><span><span class="op">}</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    user  system elapsed </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.004   0.000   0.004 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.005   0.000   0.005 </span>
 </code></pre></div>
     </div>
   </div>
