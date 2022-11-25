@@ -85,6 +85,27 @@
 <h1 id="documentation">Documentation:<a class="anchor" aria-label="anchor" href="#documentation"></a>
 </h1>
 <p><a href="https://sorhawell.github.io/reference/index.html" class="external-link">Latest docs found here</a></p>
+</div>
+<div class="section level1">
+<h1 id="contribute">Contribute<a class="anchor" aria-label="anchor" href="#contribute"></a>
+</h1>
+<p>I’d freaking love any contributions &lt;3 Just reach out if any questions. ### Simple contribution example to implement the cosine expression:</p>
+<ul>
+<li>Look up the <a href="https://pola-rs.github.io/polars/py-polars/html/reference/expressions/api/polars.Expr.cos.html" class="external-link">polars.Expr.cos method in py-polars documentation</a>.</li>
+<li>Press the <code>[source]</code> button to see the <a href="https://github.com/pola-rs/polars/blob/a1afbc4b78f5850314351f7e85ded95fd68b6453/py-polars/polars/internals/expr/expr.py#L5215-L5237" class="external-link">python impl</a>
+</li>
+<li>Find the cos <a href="https://github.com/pola-rs/polars/blob/a1afbc4b78f5850314351f7e85ded95fd68b6453/py-polars/src/lazy/dsl.rs#L395" class="external-link">py-polars rust implementation</a> (likely just a simple call to the rust-polars api)</li>
+<li>Adapt the rust part and place it <a href="https://github.com/rpolars/rpolars/blob/26799beeb42c7fc71a975afa0c47f6062c201625/src/rust/src/rdataframe/rexpr.rs#L738">here</a>.</li>
+<li>Adapt the python part into R and place it <a href="https://github.com/rpolars/rpolars/blob/26799beeb42c7fc71a975afa0c47f6062c201625/R/expr__expr.R#L3175">here</a>. Add roxygen docs + examples above.</li>
+<li>Notice `Expr_cos = “use_extendr_wrapper”, it means we’re this time just using unmodfied the <a href="https://github.com/rpolars/rpolars/blob/26799beeb42c7fc71a975afa0c47f6062c201625/R/extendr-wrappers.R#L251">extendr auto-generated wrapper</a>
+</li>
+<li>Write a test <a href="https://github.com/rpolars/rpolars/blob/main/tests/testthat/test-expr.R">here</a>.</li>
+<li>Run renv::restore() and resolve all R packages</li>
+<li>Run extendr::document() to recompile, see new method can be used e.g. like <code>pl$DataFrame(a=c(0,pi/2,pi,NA_real_))$select(pl$col("a")$cos())</code>
+</li>
+<li>Run devtools::test()</li>
+<li>If you fork rpolars and make a PR, your code will be built and tested on all platforms according to github-actions workflow.</li>
+</ul>
 <div class="section level2">
 <h2 id="news">news:<a class="anchor" aria-label="anchor" href="#news"></a>
 </h2>
