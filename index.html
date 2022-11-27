@@ -45,7 +45,7 @@
 
       <ul class="navbar-nav">
 <li class="nav-item">
-  <a class="nav-link" href="https://github.com/rpolars/rpolars/" aria-label="github">
+  <a class="external-link nav-link" href="https://github.com/rpolars/rpolars/" aria-label="github">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -62,7 +62,7 @@
 </h1></div>
 <p>Use awesome <a href="https://www.pola.rs/" class="external-link">polars</a> DataFrame library from R!</p>
 <p><em>rpolars is not completely translated yet - aim to finish March 2023</em></p>
-<p>See what is currently translated in <a href="https://rpolars.github.io/reference/index.html" class="external-link">latest documentation</a>:</p>
+<p>See what is currently translated in <a href="https://rpolars.github.io/reference/index.html">latest documentation</a>:</p>
 </div>
 <div class="section level1">
 <h1 id="install-latest-rpolars-release">install latest rpolars release<a class="anchor" aria-label="anchor" href="#install-latest-rpolars-release"></a>
@@ -73,6 +73,7 @@
 <li><p>Linux x86_64 <code>install.packages(repos=NULL, "https://github.com/rpolars/rpolars/releases/latest/download/rpolars__x86_64-pc-linux-gnu.gz")</code></p></li>
 <li><p>Windows <code>install.packages(repos=NULL, "https://github.com/rpolars/rpolars/releases/latest/download/rpolars_0.2.0.zip")</code></p></li>
 <li><p>Other targets? Start a new issue.</p></li>
+<li><p>Install a specific version? Find the version specific url, via releases section.</p></li>
 </ul>
 </div>
 <div class="section level1">
@@ -89,11 +90,11 @@
 <li>Press the <code>[source]</code> button to see the <a href="https://github.com/pola-rs/polars/blob/a1afbc4b78f5850314351f7e85ded95fd68b6453/py-polars/polars/internals/expr/expr.py#L5215-L5237" class="external-link">python impl</a>
 </li>
 <li>Find the cos <a href="https://github.com/pola-rs/polars/blob/a1afbc4b78f5850314351f7e85ded95fd68b6453/py-polars/src/lazy/dsl.rs#L395" class="external-link">py-polars rust implementation</a> (likely just a simple call to the rust-polars api)</li>
-<li>Adapt the rust part and place it <a href="https://github.com/rpolars/rpolars/blob/26799beeb42c7fc71a975afa0c47f6062c201625/src/rust/src/rdataframe/rexpr.rs#L738">here</a>.</li>
-<li>Adapt the python part into R and place it <a href="https://github.com/rpolars/rpolars/blob/26799beeb42c7fc71a975afa0c47f6062c201625/R/expr__expr.R#L3175">here</a>. Add roxygen docs + examples above.</li>
-<li>Notice `Expr_cos = “use_extendr_wrapper”, it means we’re this time just using unmodfied the <a href="https://github.com/rpolars/rpolars/blob/26799beeb42c7fc71a975afa0c47f6062c201625/R/extendr-wrappers.R#L251">extendr auto-generated wrapper</a>
+<li>Adapt the rust part and place it <a href="https://github.com/rpolars/rpolars/blob/26799beeb42c7fc71a975afa0c47f6062c201625/src/rust/src/rdataframe/rexpr.rs#L738" class="external-link">here</a>.</li>
+<li>Adapt the python part into R and place it <a href="https://github.com/rpolars/rpolars/blob/26799beeb42c7fc71a975afa0c47f6062c201625/R/expr__expr.R#L3175" class="external-link">here</a>. Add roxygen docs + examples above.</li>
+<li>Notice <code>Expr_cos = "use_extendr_wrapper"</code>, it means we’re this time just using unmodfied the <a href="https://github.com/rpolars/rpolars/blob/26799beeb42c7fc71a975afa0c47f6062c201625/R/extendr-wrappers.R#L251" class="external-link">extendr auto-generated wrapper</a>
 </li>
-<li>Write a test <a href="https://github.com/rpolars/rpolars/blob/main/tests/testthat/test-expr.R">here</a>.</li>
+<li>Write a test <a href="https://github.com/rpolars/rpolars/blob/main/tests/testthat/test-expr.R" class="external-link">here</a>.</li>
 <li>Run renv::restore() and resolve all R packages</li>
 <li>Run extendr::document() to recompile, see new method can be used e.g. like <code>pl$DataFrame(a=c(0,pi/2,pi,NA_real_))$select(pl$col("a")$cos())</code>
 </li>
@@ -104,7 +105,7 @@
 <h2 id="news">news:<a class="anchor" aria-label="anchor" href="#news"></a>
 </h2>
 <ul>
-<li><p>update 24th November: minipolars is getting bigger and is changing name to rpolars and is hosted on <a href="https://github.com/rpolars/rpolars/">github.com/rpolars/rpolars</a>. Translation, testing and documenting progress is unfortunately not fast enough to finish in 2022. Goal postponed to March 2023. rlang is dropped as install dependency. No dependencies should make it very easy to install and manage versions long term.</p></li>
+<li><p>update 24th November: minipolars is getting bigger and is changing name to rpolars and is hosted on <a href="https://github.com/rpolars/rpolars/" class="external-link">github.com/rpolars/rpolars</a>. Translation, testing and documenting progress is unfortunately not fast enough to finish in 2022. Goal postponed to March 2023. rlang is dropped as install dependency. No dependencies should make it very easy to install and manage versions long term.</p></li>
 <li><p>update 10th November 2022: Full support for Windows, see installation section. After digging through gnu ld linker documentation and R source code idiosyncrasies, rpolars, can now be build for windows (nighly-gnu). In the end adding this super simple <a href="https://github.com/sorhawell/rpolars/blob/main/src/rpolars-win.def" class="external-link">linker export definition file</a> prevented the linker from trying to export all +160_000 internal variables into a 16bit symbol table maxing out at 65000 variables. Many thanks for 24-hour support from extendr-team &lt;3.</p></li>
 <li><p>update 4th November 2022: <a href="https://sorhawell.github.io/reference/index.html#expr" class="external-link">Latest documentation shows half (125) of all expression functions are now ported</a>. Automatic binary release for Mac and Linux. Windows still pending. It is now very easy to install rpolars from binary. See install section.</p></li>
 <li><p>update: 5th October 2022 Currently ~20% of features have been translated. To make polars call R multi-threaded was a really hard nut to crack as R has no Global-interpreter-lock feature. My solution is to have a main thread in charge of R calls, and any abitrary polars child threads can request to have R user functions executed. Implemented with flume mpsc channels. No serious obstacles left known to me. Just a a lot of writing. Priliminary perfomance benchmarking promise rpolars is going to perform just as fast pypolars.</p></li>
@@ -144,7 +145,7 @@
 </h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#loading the package rpolars only exposes a few functions </span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rpolars/rpolars/">rpolars</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rpolars/rpolars/" class="external-link">rpolars</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">#all constructors are accessed via pl</span></span>
 <span></span>
@@ -330,7 +331,7 @@ polars DataType: Categorical(
 <span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="do">## │ 148.7       │</span></span>
 <span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a><span class="do">## └─────────────┘</span></span></code></pre></div>
 <div class="section level2">
-<h2 id="user-pass-user-defined-functions-to-polars">User pass user defined functions to polars<a class="anchor" aria-label="anchor" href="#user-pass-user-defined-functions-to-polars"></a>
+<h2 id="execute-r-functions-within-a-polars-query">Execute R functions within a polars query<a class="anchor" aria-label="anchor" href="#execute-r-functions-within-a-polars-query"></a>
 </h2>
 <p>It is possible to mix R code with polars by passing R functions to polars. R functions are slower. Use native polar functions/expressions where possible.</p>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
@@ -358,7 +359,7 @@ polars DataType: Categorical(
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/rpolars/rpolars/">Browse source code</a></li>
+<li><a href="https://github.com/rpolars/rpolars/" class="external-link">Browse source code</a></li>
 </ul>
 </div>
 

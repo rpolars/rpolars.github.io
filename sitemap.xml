@@ -1,858 +1,858 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/rpolars/rpolars/404.html</loc>
+    <loc>https://rpolars.github.io/404.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/LICENSE-text.html</loc>
+    <loc>https://rpolars.github.io/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/authors.html</loc>
+    <loc>https://rpolars.github.io/authors.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/index.html</loc>
+    <loc>https://rpolars.github.io/index.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/DataFrame.html</loc>
+    <loc>https://rpolars.github.io/reference/DataFrame.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/DataFrame_as_data_frame.html</loc>
+    <loc>https://rpolars.github.io/reference/DataFrame_as_data_frame.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/DataFrame_class.html</loc>
+    <loc>https://rpolars.github.io/reference/DataFrame_class.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/DataFrame_clone.html</loc>
+    <loc>https://rpolars.github.io/reference/DataFrame_clone.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/DataFrame_columns.html</loc>
+    <loc>https://rpolars.github.io/reference/DataFrame_columns.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/DataFrame_dtypes.html</loc>
+    <loc>https://rpolars.github.io/reference/DataFrame_dtypes.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/DataFrame_get_column.html</loc>
+    <loc>https://rpolars.github.io/reference/DataFrame_get_column.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/DataFrame_get_columns.html</loc>
+    <loc>https://rpolars.github.io/reference/DataFrame_get_columns.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/DataFrame_groupby.html</loc>
+    <loc>https://rpolars.github.io/reference/DataFrame_groupby.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/DataFrame_height.html</loc>
+    <loc>https://rpolars.github.io/reference/DataFrame_height.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/DataFrame_join.html</loc>
+    <loc>https://rpolars.github.io/reference/DataFrame_join.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/DataFrame_lazy.html</loc>
+    <loc>https://rpolars.github.io/reference/DataFrame_lazy.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/DataFrame_limit.html</loc>
+    <loc>https://rpolars.github.io/reference/DataFrame_limit.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/DataFrame_print.html</loc>
+    <loc>https://rpolars.github.io/reference/DataFrame_print.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/DataFrame_select.html</loc>
+    <loc>https://rpolars.github.io/reference/DataFrame_select.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/DataFrame_shape.html</loc>
+    <loc>https://rpolars.github.io/reference/DataFrame_shape.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/DataFrame_to_Struct_unnest.html</loc>
+    <loc>https://rpolars.github.io/reference/DataFrame_to_Struct_unnest.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/DataFrame_width.html</loc>
+    <loc>https://rpolars.github.io/reference/DataFrame_width.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/DataFrame_with_columns.html</loc>
+    <loc>https://rpolars.github.io/reference/DataFrame_with_columns.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/DataType.html</loc>
+    <loc>https://rpolars.github.io/reference/DataType.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr-cash-print-open-paren-close-paren.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr-cash-print-open-paren-close-paren.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_abs.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_abs.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_add.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_add.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_agg_groups.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_agg_groups.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_alias.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_alias.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_all.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_all.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_and.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_and.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_any.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_any.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_append.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_append.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_apply.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_apply.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_arccos.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_arccos.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_arccosh.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_arccosh.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_arcsin.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_arcsin.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_arcsinh.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_arcsinh.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_arctan.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_arctan.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_arctanh.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_arctanh.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_arg_max.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_arg_max.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_arg_min.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_arg_min.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_arg_sort.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_arg_sort.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_arg_unique.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_arg_unique.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_backward_fill.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_backward_fill.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_cast.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_cast.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_ceil.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_ceil.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_clip.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_clip.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_cos.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_cos.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_cosh.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_cosh.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_count.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_count.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_cumcount.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_cumcount.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_cummin.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_cummin.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_cumprod.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_cumprod.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_cumsum.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_cumsum.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_diff.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_diff.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_div.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_div.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_dot.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_dot.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_drop_nans.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_drop_nans.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_drop_nulls.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_drop_nulls.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_eq.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_eq.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_ewm_mean_std_var.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_ewm_mean_std_var.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_exclude.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_exclude.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_exp.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_exp.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_explode.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_explode.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_extend_constant.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_extend_constant.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_extend_expr.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_extend_expr.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_fill_nan.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_fill_nan.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_fill_null.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_fill_null.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_filter.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_filter.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_first.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_first.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_floor.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_floor.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_forward_fill.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_forward_fill.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_gt.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_gt.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_gt_eq.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_gt_eq.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_hash.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_hash.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_head.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_head.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_inspect.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_inspect.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_interpolate.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_interpolate.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_is_between.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_is_between.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_is_duplicated.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_is_duplicated.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_is_finite.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_is_finite.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_is_first.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_is_first.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_is_in.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_is_in.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_is_infinite.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_is_infinite.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_is_nan.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_is_nan.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_is_not.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_is_not.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_is_not_nan.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_is_not_nan.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_is_not_null.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_is_not_null.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_is_null.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_is_null.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_is_unique.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_is_unique.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_keep_name.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_keep_name.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_kurtosis.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_kurtosis.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_last.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_last.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_limit.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_limit.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_list.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_list.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_log.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_log.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_log10.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_log10.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_lt.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_lt.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_lt_eq.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_lt_eq.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_map.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_map.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_map_alias.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_map_alias.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_max.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_max.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_mean.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_mean.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_median.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_median.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_min.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_min.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_mode.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_mode.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_mul.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_mul.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_n_unique.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_n_unique.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_nan_max.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_nan_max.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_nan_min.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_nan_min.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_neq.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_neq.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_null_count.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_null_count.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_or.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_or.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_over.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_over.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_pct_change.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_pct_change.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_pow.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_pow.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_product.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_product.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_quantile.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_quantile.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_rank.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_rank.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_rechunk.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_rechunk.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_reinterpret.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_reinterpret.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_rep.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_rep.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_rep_extend.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_rep_extend.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_repeat_by.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_repeat_by.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_reshape.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_reshape.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_rolling_max.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_rolling_max.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_rolling_mean.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_rolling_mean.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_rolling_median.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_rolling_median.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_rolling_min.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_rolling_min.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_rolling_quantile.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_rolling_quantile.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_rolling_skew.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_rolling_skew.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_rolling_std.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_rolling_std.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_rolling_sum.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_rolling_sum.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_rolling_var.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_rolling_var.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_round.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_round.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_rpow.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_rpow.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_sample.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_sample.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_search_sorted.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_search_sorted.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_shift.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_shift.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_shift_and_fill.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_shift_and_fill.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_shuffle.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_shuffle.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_sign.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_sign.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_sin.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_sin.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_sinh.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_sinh.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_skew.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_skew.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_slice.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_slice.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_sort.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_sort.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_sort_by.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_sort_by.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_sqrt.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_sqrt.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_std.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_std.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_sub.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_sub.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_sum.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_sum.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_tail.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_tail.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_take.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_take.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_take_every.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_take_every.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_tan.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_tan.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_tanh.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_tanh.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_to_physical.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_to_physical.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_to_r.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_to_r.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_top_k.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_top_k.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_unique.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_unique.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_upper_lower_bound.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_upper_lower_bound.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_value_counts.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_value_counts.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_var.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_var.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Expr_xor.html</loc>
+    <loc>https://rpolars.github.io/reference/Expr_xor.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/GroupBy_agg.html</loc>
+    <loc>https://rpolars.github.io/reference/GroupBy_agg.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/GroupBy_as_data_frame.html</loc>
+    <loc>https://rpolars.github.io/reference/GroupBy_as_data_frame.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/LazyFrame_class.html</loc>
+    <loc>https://rpolars.github.io/reference/LazyFrame_class.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/LazyFrame_collect.html</loc>
+    <loc>https://rpolars.github.io/reference/LazyFrame_collect.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/LazyFrame_describe_optimized_plan.html</loc>
+    <loc>https://rpolars.github.io/reference/LazyFrame_describe_optimized_plan.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/LazyFrame_describe_plan.html</loc>
+    <loc>https://rpolars.github.io/reference/LazyFrame_describe_plan.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/LazyFrame_filter.html</loc>
+    <loc>https://rpolars.github.io/reference/LazyFrame_filter.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/LazyFrame_groupby.html</loc>
+    <loc>https://rpolars.github.io/reference/LazyFrame_groupby.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/LazyFrame_join.html</loc>
+    <loc>https://rpolars.github.io/reference/LazyFrame_join.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/LazyFrame_limit.html</loc>
+    <loc>https://rpolars.github.io/reference/LazyFrame_limit.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/LazyFrame_print.html</loc>
+    <loc>https://rpolars.github.io/reference/LazyFrame_print.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/LazyFrame_select.html</loc>
+    <loc>https://rpolars.github.io/reference/LazyFrame_select.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/LazyFrame_with_column.html</loc>
+    <loc>https://rpolars.github.io/reference/LazyFrame_with_column.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/LazyFrame_with_columns.html</loc>
+    <loc>https://rpolars.github.io/reference/LazyFrame_with_columns.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/LazyGroupBy_agg.html</loc>
+    <loc>https://rpolars.github.io/reference/LazyGroupBy_agg.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/LazyGroupBy_apply.html</loc>
+    <loc>https://rpolars.github.io/reference/LazyGroupBy_apply.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/LazyGroupBy_head.html</loc>
+    <loc>https://rpolars.github.io/reference/LazyGroupBy_head.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/LazyGroupBy_print.html</loc>
+    <loc>https://rpolars.github.io/reference/LazyGroupBy_print.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/LazyGroupBy_tail.html</loc>
+    <loc>https://rpolars.github.io/reference/LazyGroupBy_tail.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series.html</loc>
+    <loc>https://rpolars.github.io/reference/Series.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_abs.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_abs.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_add.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_add.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_alias.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_alias.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_all.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_all.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_any.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_any.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_append.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_append.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_apply.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_apply.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_arg_max.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_arg_max.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_arg_min.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_arg_min.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_ceil.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_ceil.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_chunk_lengths.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_chunk_lengths.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_class.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_class.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_clone.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_clone.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_compare.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_compare.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_cumsum.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_cumsum.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_div.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_div.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_dtype.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_dtype.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_floor.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_floor.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_is_numeric.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_is_numeric.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_is_unique.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_is_unique.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_len.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_len.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_max.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_max.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_min.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_min.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_mul.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_mul.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_name.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_name.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_pring.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_pring.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_print.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_print.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_rem.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_rem.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_rename.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_rename.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_rep.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_rep.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_series_equal.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_series_equal.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_shape.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_shape.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_sort.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_sort.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_std.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_std.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_sub.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_sub.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_sum.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_sum.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_to_frames.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_to_frames.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_to_r.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_to_r.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_value_count.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_value_count.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/Series_var.html</loc>
+    <loc>https://rpolars.github.io/reference/Series_var.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/all.html</loc>
+    <loc>https://rpolars.github.io/reference/all.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/c.Series.html</loc>
+    <loc>https://rpolars.github.io/reference/c.Series.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/cash-set-.DataFrame.html</loc>
+    <loc>https://rpolars.github.io/reference/cash-set-.DataFrame.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/coalesce.html</loc>
+    <loc>https://rpolars.github.io/reference/coalesce.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/col.html</loc>
+    <loc>https://rpolars.github.io/reference/col.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/concat.html</loc>
+    <loc>https://rpolars.github.io/reference/concat.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/construct_DataTypeVector.html</loc>
+    <loc>https://rpolars.github.io/reference/construct_DataTypeVector.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/construct_ProtoExprArray.html</loc>
+    <loc>https://rpolars.github.io/reference/construct_ProtoExprArray.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/construct_protoArrayExpr.html</loc>
+    <loc>https://rpolars.github.io/reference/construct_protoArrayExpr.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/docs_translations.html</loc>
+    <loc>https://rpolars.github.io/reference/docs_translations.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/dot-DollarNames.DataFrame.html</loc>
+    <loc>https://rpolars.github.io/reference/dot-DollarNames.DataFrame.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/dot-DollarNames.Expr.html</loc>
+    <loc>https://rpolars.github.io/reference/dot-DollarNames.Expr.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/dot-DollarNames.GroupBy.html</loc>
+    <loc>https://rpolars.github.io/reference/dot-DollarNames.GroupBy.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/dot-DollarNames.LazyFrame.html</loc>
+    <loc>https://rpolars.github.io/reference/dot-DollarNames.LazyFrame.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/dot-DollarNames.Series.html</loc>
+    <loc>https://rpolars.github.io/reference/dot-DollarNames.Series.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/dot-DollarNames.VecDataFrame.html</loc>
+    <loc>https://rpolars.github.io/reference/dot-DollarNames.VecDataFrame.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/dot-pr.html</loc>
+    <loc>https://rpolars.github.io/reference/dot-pr.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/expect_strictly_identical.html</loc>
+    <loc>https://rpolars.github.io/reference/expect_strictly_identical.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/extendr_method_to_pure_functions.html</loc>
+    <loc>https://rpolars.github.io/reference/extendr_method_to_pure_functions.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/filter-open-paren-close-paren.html</loc>
+    <loc>https://rpolars.github.io/reference/filter-open-paren-close-paren.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/get_method_usages.html</loc>
+    <loc>https://rpolars.github.io/reference/get_method_usages.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/index.html</loc>
+    <loc>https://rpolars.github.io/reference/index.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/is_DataFrame_data_input.html</loc>
+    <loc>https://rpolars.github.io/reference/is_DataFrame_data_input.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/lazy_csv_reader.html</loc>
+    <loc>https://rpolars.github.io/reference/lazy_csv_reader.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/length.Series.html</loc>
+    <loc>https://rpolars.github.io/reference/length.Series.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/macro_add_syntax_check_to_class.html</loc>
+    <loc>https://rpolars.github.io/reference/macro_add_syntax_check_to_class.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/max.html</loc>
+    <loc>https://rpolars.github.io/reference/max.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/mem_address.html</loc>
+    <loc>https://rpolars.github.io/reference/mem_address.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/method_as_property.html</loc>
+    <loc>https://rpolars.github.io/reference/method_as_property.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/min.html</loc>
+    <loc>https://rpolars.github.io/reference/min.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/move_env_elements.html</loc>
+    <loc>https://rpolars.github.io/reference/move_env_elements.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/object.html</loc>
+    <loc>https://rpolars.github.io/reference/object.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/pcase.html</loc>
+    <loc>https://rpolars.github.io/reference/pcase.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/pl.html</loc>
+    <loc>https://rpolars.github.io/reference/pl.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/pl_rep.html</loc>
+    <loc>https://rpolars.github.io/reference/pl_rep.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/pl_select.html</loc>
+    <loc>https://rpolars.github.io/reference/pl_select.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/prepare_alpha.html</loc>
+    <loc>https://rpolars.github.io/reference/prepare_alpha.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/print-open-paren-close-paren.html</loc>
+    <loc>https://rpolars.github.io/reference/print-open-paren-close-paren.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/print.DataType.html</loc>
+    <loc>https://rpolars.github.io/reference/print.DataType.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/print.Expr.html</loc>
+    <loc>https://rpolars.github.io/reference/print.Expr.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/print.GroupBy.html</loc>
+    <loc>https://rpolars.github.io/reference/print.GroupBy.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/print.LazyFrame.html</loc>
+    <loc>https://rpolars.github.io/reference/print.LazyFrame.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/print.LazyGroupBy.html</loc>
+    <loc>https://rpolars.github.io/reference/print.LazyGroupBy.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/print_env.html</loc>
+    <loc>https://rpolars.github.io/reference/print_env.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/pstop.html</loc>
+    <loc>https://rpolars.github.io/reference/pstop.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/read_csv_.html</loc>
+    <loc>https://rpolars.github.io/reference/read_csv_.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/replace_private_with_pub_methods.html</loc>
+    <loc>https://rpolars.github.io/reference/replace_private_with_pub_methods.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/restruct_list.html</loc>
+    <loc>https://rpolars.github.io/reference/restruct_list.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/rpolars_options.html</loc>
+    <loc>https://rpolars.github.io/reference/rpolars_options.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/rpolars_runtime_flags.html</loc>
+    <loc>https://rpolars.github.io/reference/rpolars_runtime_flags.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/scan_parquet.html</loc>
+    <loc>https://rpolars.github.io/reference/scan_parquet.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/sum.html</loc>
+    <loc>https://rpolars.github.io/reference/sum.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/to_list.html</loc>
+    <loc>https://rpolars.github.io/reference/to_list.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/unAsIs.html</loc>
+    <loc>https://rpolars.github.io/reference/unAsIs.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/unwrap.html</loc>
+    <loc>https://rpolars.github.io/reference/unwrap.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/verify_method_call.html</loc>
+    <loc>https://rpolars.github.io/reference/verify_method_call.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/wrap_e.html</loc>
+    <loc>https://rpolars.github.io/reference/wrap_e.html</loc>
   </url>
   <url>
-    <loc>https://github.com/rpolars/rpolars/reference/wrap_s.html</loc>
+    <loc>https://rpolars.github.io/reference/wrap_s.html</loc>
   </url>
 </urlset>

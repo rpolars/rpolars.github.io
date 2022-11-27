@@ -55,7 +55,7 @@ and other data sources such parquet files simultanously. (#TODO implement rpolar
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
       <ul class="navbar-nav"><li class="nav-item">
-  <a class="nav-link" href="https://github.com/rpolars/rpolars/" aria-label="github">
+  <a class="external-link nav-link" href="https://github.com/rpolars/rpolars/" aria-label="github">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -68,7 +68,7 @@ and other data sources such parquet files simultanously. (#TODO implement rpolar
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>Inner workings of the LazyFrame-class</h1>
-      <small class="dont-index">Source: <a href="https://github.com/rpolars/rpolars/blob/HEAD/R/lazyframe__lazy.R"><code>R/lazyframe__lazy.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/rpolars/rpolars/blob/HEAD/R/lazyframe__lazy.R" class="external-link"><code>R/lazyframe__lazy.R</code></a></small>
       <div class="d-none name"><code>LazyFrame_class.Rd</code></div>
     </div>
 
@@ -157,7 +157,7 @@ are removed and replaced by any function prefixed <code>LazyFrame_</code>.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span><span class="va">Ldf_best</span><span class="op">$</span><span class="fu">describe_plan</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   FILTER [(col("Species")) == (Utf8(setosa))] FROM</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     CSV SCAN /tmp/RtmpBqVtRp/file5314764e4884</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     CSV SCAN /tmp/RtmpEsBMsx/file53164777e235</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     PROJECT */5 COLUMNS</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     SELECTION: None</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -169,7 +169,7 @@ are removed and replaced by any function prefixed <code>LazyFrame_</code>.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   DF ["Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width"]; PROJECT */5 COLUMNS; SELECTION: "[(col(\"Species\")) == (Utf8(setosa))]"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span><span class="va">Ldf_best</span><span class="op">$</span><span class="fu">describe_optimized_plan</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   CSV SCAN /tmp/RtmpBqVtRp/file5314764e4884</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   CSV SCAN /tmp/RtmpEsBMsx/file53164777e235</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   PROJECT */5 COLUMNS</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   SELECTION: Some([(col("Species")) == (Utf8(setosa))])</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
