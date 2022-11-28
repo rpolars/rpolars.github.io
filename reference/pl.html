@@ -18,7 +18,7 @@ Having all functions in an namespace is similar to the rust- and python- polars 
     
     <a class="navbar-brand me-2" href="../index.html">rpolars</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,7 +65,7 @@ via the new class functions.</p>
 
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
-    <p>An object of class <code>environment</code> of length 34.</p>
+    <p>An object of class <code>environment</code> of length 35.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
@@ -112,6 +112,7 @@ bind the environment to another variable name as <code>simon_says = pl</code> or
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ UInt64 ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ Utf8 ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ element ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ expr_to_r ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ get_rpolars_opt_requirements ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ get_rpolars_options ; function ]</span>
@@ -212,11 +213,13 @@ bind the environment to another variable name as <code>simon_says = pl</code> or
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ cummin ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ cumprod ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ cumsum ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ cumulative_eval ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ diff ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ div ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ dot ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ drop_nans ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ drop_nulls ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ entropy ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ eq ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ ewm_mean ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ ewm_std ; function ]</span>
@@ -329,6 +332,7 @@ bind the environment to another variable name as <code>simon_says = pl</code> or
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ to_r ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ top_k ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ unique ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ unique_counts ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ upper_bound ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ value_counts ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ var ; function ]</span>

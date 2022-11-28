@@ -184,6 +184,9 @@
     <loc>https://rpolars.github.io/reference/Expr_drop_nulls.html</loc>
   </url>
   <url>
+    <loc>https://rpolars.github.io/reference/Expr_entropy.html</loc>
+  </url>
+  <url>
     <loc>https://rpolars.github.io/reference/Expr_eq.html</loc>
   </url>
   <url>
@@ -488,6 +491,9 @@
   </url>
   <url>
     <loc>https://rpolars.github.io/reference/Expr_unique.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/Expr_unique_counts.html</loc>
   </url>
   <url>
     <loc>https://rpolars.github.io/reference/Expr_upper_lower_bound.html</loc>
