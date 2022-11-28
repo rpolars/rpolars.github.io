@@ -2,7 +2,7 @@ pandoc: 2.19.2
 pkgdown: 2.0.6
 pkgdown_sha: ~
 articles: {}
-last_built: 2022-11-28T15:06Z
+last_built: 2022-11-28T21:34Z
 urls:
   reference: https://rpolars.github.io/reference
   article: https://rpolars.github.io/articles
