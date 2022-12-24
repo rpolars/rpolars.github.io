@@ -73,6 +73,9 @@
     <loc>https://rpolars.github.io/reference/DataType.html</loc>
   </url>
   <url>
+    <loc>https://rpolars.github.io/reference/DataType_constructors.html</loc>
+  </url>
+  <url>
     <loc>https://rpolars.github.io/reference/Expr-cash-print-open-paren-close-paren.html</loc>
   </url>
   <url>
@@ -424,10 +427,16 @@
     <loc>https://rpolars.github.io/reference/Expr_search_sorted.html</loc>
   </url>
   <url>
+    <loc>https://rpolars.github.io/reference/Expr_set_sorted.html</loc>
+  </url>
+  <url>
     <loc>https://rpolars.github.io/reference/Expr_shift.html</loc>
   </url>
   <url>
     <loc>https://rpolars.github.io/reference/Expr_shift_and_fill.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/Expr_shrink_dtype.html</loc>
   </url>
   <url>
     <loc>https://rpolars.github.io/reference/Expr_shuffle.html</loc>
@@ -659,6 +668,9 @@
   </url>
   <url>
     <loc>https://rpolars.github.io/reference/Series_series_equal.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/Series_set_sorted.html</loc>
   </url>
   <url>
     <loc>https://rpolars.github.io/reference/Series_shape.html</loc>

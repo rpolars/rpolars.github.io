@@ -65,7 +65,7 @@ via the new class functions.</p>
 
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
-    <p>An object of class <code>environment</code> of length 35.</p>
+    <p>An object of class <code>environment</code> of length 45.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
@@ -84,16 +84,25 @@ bind the environment to another variable name as <code>simon_says = pl</code> or
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     rpolars public functions ( environment ):</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Binary ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ Boolean ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ Categorical ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ DataFrame ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Date ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ Float32 ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ Float64 ; DataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Int16 ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ Int32 ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ Int64 ; DataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Int8 ; DataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Null ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ Series ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Time ; DataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ UInt16 ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ UInt32 ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ UInt64 ; DataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ UInt8 ; DataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Unknown ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ Utf8 ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ all ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ coalesce ; function ]</span>
@@ -102,21 +111,32 @@ bind the environment to another variable name as <code>simon_says = pl</code> or
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ csv_reader ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        dtypes ( list ):</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Binary ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ Boolean ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ Categorical ; DataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Date ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ Float32 ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ Float64 ; DataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Int16 ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ Int32 ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ Int64 ; DataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Int8 ; DataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Null ; DataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Time ; DataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ UInt16 ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ UInt32 ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ UInt64 ; DataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ UInt8 ; DataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Unknown ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ Utf8 ; DataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ list ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ element ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ expr_to_r ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ get_rpolars_opt_requirements ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ get_rpolars_options ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ lazy_csv_reader ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ list ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ lit ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ max ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ mem_address ; function ]</span>
@@ -125,8 +145,10 @@ bind the environment to another variable name as <code>simon_says = pl</code> or
 <span class="r-out co"><span class="r-pr">#&gt;</span>        numeric_dtypes ( list ):</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ Float32 ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ Float64 ; DataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Int16 ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ Int32 ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ Int64 ; DataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Int8 ; DataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ read_csv ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ rep ; function ]</span>
@@ -172,9 +194,14 @@ bind the environment to another variable name as <code>simon_says = pl</code> or
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        DataType ( environment ):</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ eq ; function ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ get_all_type_names ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ get_all_simple_type_names ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ ne ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ new ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ new_datetime ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ new_duration ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ new_list ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ new_object ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ new_struct ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ print ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -308,8 +335,10 @@ bind the environment to another variable name as <code>simon_says = pl</code> or
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ rpow ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ sample ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ search_sorted ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ set_sorted ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ shift ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ shift_and_fill ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ shrink_dtype ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ shuffle ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ sign ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ sin ; function ]</span>
@@ -393,6 +422,7 @@ bind the environment to another variable name as <code>simon_says = pl</code> or
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ rename ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ rep ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ series_equal ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ set_sorted ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ shape ; property function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ sort ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ std ; function ]</span>

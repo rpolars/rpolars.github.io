@@ -128,7 +128,6 @@ Original extendr bindings converted into pure functions</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ new ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ new_with_capacity ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ print ; function ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ print_raw_arrow_pts ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ schema ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ select ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ select_at_idx ; function ]</span>
@@ -144,9 +143,14 @@ Original extendr bindings converted into pure functions</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        DataType ( environment ):</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ eq ; function ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ get_all_type_names ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ get_all_simple_type_names ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ ne ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ new ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ new_datetime ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ new_duration ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ new_list ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ new_object ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ new_struct ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ print ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -288,6 +292,7 @@ Original extendr bindings converted into pure functions</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ search_sorted ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ shift ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ shift_and_fill ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ shrink_dtype ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ shuffle ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ sign ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ sin ; function ]</span>
@@ -384,6 +389,7 @@ Original extendr bindings converted into pure functions</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ rename_mut ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ rep ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ series_equal ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ set_sorted_mut ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ shape ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ sleep ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ sort_mut ; function ]</span>

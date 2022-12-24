@@ -140,16 +140,17 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> [121] "rolling_quantile" "rolling_skew"     "rolling_std"     </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [124] "rolling_sum"      "rolling_var"      "round"           </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [127] "rpow"             "sample"           "search_sorted"   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [130] "shift"            "shift_and_fill"   "shuffle"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [133] "sign"             "sin"              "sinh"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [136] "skew"             "slice"            "sort"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [139] "sort_by"          "sqrt"             "std"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [142] "sub"              "suffix"           "sum"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [145] "tail"             "take"             "take_every"      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [148] "tan"              "tanh"             "to_physical"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [151] "to_r"             "top_k"            "unique"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [154] "unique_counts"    "upper_bound"      "value_counts"    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [157] "var"              "where"            "xor"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [130] "set_sorted"       "shift"            "shift_and_fill"  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [133] "shrink_dtype"     "shuffle"          "sign"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [136] "sin"              "sinh"             "skew"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [139] "slice"            "sort"             "sort_by"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [142] "sqrt"             "std"              "sub"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [145] "suffix"           "sum"              "tail"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [148] "take"             "take_every"       "tan"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [151] "tanh"             "to_physical"      "to_r"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [154] "top_k"            "unique"           "unique_counts"   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [157] "upper_bound"      "value_counts"     "var"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [160] "where"            "xor"             </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">pl</span><span class="op">$</span><span class="fu">col</span><span class="op">(</span><span class="st">"this_column"</span><span class="op">)</span><span class="op">$</span><span class="fu">sum</span><span class="op">(</span><span class="op">)</span><span class="op">$</span><span class="fu">over</span><span class="op">(</span><span class="st">"that_column"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> polars Expr: col("this_column").sum().over([col("that_column")])</span>
