@@ -61,19 +61,19 @@
 <div class="page-header"><h1 id="rpolars">rpolars<a class="anchor" aria-label="anchor" href="#rpolars"></a>
 </h1></div>
 <p>Use awesome <a href="https://www.pola.rs/" class="external-link">polars</a> DataFrame library from R!</p>
-<p><em>rpolars is not completely translated yet - aim to finish March 2023</em></p>
+<p><em>r-polars is not completely translated yet - aim to finish March 2023</em></p>
 <p>See what is currently translated in <a href="https://rpolars.github.io/reference/index.html">latest documentation</a>:</p>
 </div>
 <div class="section level1">
-<h1 id="install-latest-rpolars-release">install latest rpolars release<a class="anchor" aria-label="anchor" href="#install-latest-rpolars-release"></a>
+<h1 id="install-latest-rpolars-release">Install latest rpolars release<a class="anchor" aria-label="anchor" href="#install-latest-rpolars-release"></a>
 </h1>
 <p>No dependencies other than R (≥ 4.1.0)</p>
 <ul>
-<li><p>Macbbook x86_64 <code>install.packages(repos=NULL, "https://github.com/rpolars/rpolars/releases/latest/download/rpolars__x86_64-apple-darwin17.0.tgz")</code></p></li>
-<li><p>Linux x86_64 <code>install.packages(repos=NULL, "https://github.com/rpolars/rpolars/releases/latest/download/rpolars__x86_64-pc-linux-gnu.gz")</code></p></li>
-<li><p>Windows <code>install.packages(repos=NULL, "https://github.com/rpolars/rpolars/releases/latest/download/rpolars.zip")</code></p></li>
+<li><p>Macbbook x86_64 <code>install.packages(repos=NULL, "https://github.com/pola-rs/r-polars/releases/latest/download/rpolars__x86_64-apple-darwin17.0.tgz")</code></p></li>
+<li><p>Linux x86_64 <code>install.packages(repos=NULL, "https://github.com/pola-rs/r-polars/releases/latest/download/rpolars__x86_64-pc-linux-gnu.gz")</code></p></li>
+<li><p>Windows <code>install.packages(repos=NULL, "https://github.com/pola-rs/r-polars/releases/latest/download/rpolars.zip")</code></p></li>
 <li><p>Other targets? Start a new issue.</p></li>
-<li><p>Install a specific version? Find the version specific url, via <a href="https://github.com/rpolars/rpolars/releases" class="external-link">releases section</a>.</p></li>
+<li><p>Install a specific version? Find the version specific url, via <a href="https://github.com/pola-rs/r-polars/releases" class="external-link">releases section</a>.</p></li>
 </ul>
 </div>
 <div class="section level1">
@@ -85,6 +85,9 @@
 <h1 id="contribute">Contribute<a class="anchor" aria-label="anchor" href="#contribute"></a>
 </h1>
 <p>I’d freaking love any contributions &lt;3 Just reach out if any questions. ### Simple contribution example to implement the cosine expression:</p>
+<div class="section level2">
+<h2 id="nb-these-examples-link-to-old-repo-rpolarsrpolars-source-code-but-the-idea-is-the-same">NB! these examples link to old repo rpolars/rpolars source code, but the idea is the same<a class="anchor" aria-label="anchor" href="#nb-these-examples-link-to-old-repo-rpolarsrpolars-source-code-but-the-idea-is-the-same"></a>
+</h2>
 <ul>
 <li>Look up the <a href="https://pola-rs.github.io/polars/py-polars/html/reference/expressions/api/polars.Expr.cos.html" class="external-link">polars.Expr.cos method in py-polars documentation</a>.</li>
 <li>Press the <code>[source]</code> button to see the <a href="https://github.com/pola-rs/polars/blob/a1afbc4b78f5850314351f7e85ded95fd68b6453/py-polars/polars/internals/expr/expr.py#L5215-L5237" class="external-link">python impl</a>
@@ -101,10 +104,12 @@
 <li>Run devtools::test()</li>
 <li>If you fork rpolars and make a PR, your code will be built and tested on all platforms according to github-actions workflow.</li>
 </ul>
+</div>
 <div class="section level2">
 <h2 id="news">news:<a class="anchor" aria-label="anchor" href="#news"></a>
 </h2>
 <ul>
+<li><p>update 28th December: r-polars is now hosted at <a href="https://github.com/pola-rs/r-polars" class="external-link uri">https://github.com/pola-rs/r-polars</a>. Happy to be here. You might encounter a bunch of links to the old repository the first weeks. I plan to work on r-polars full time the next 3 months, because why not :) Any contributions are much appreciated.</p></li>
 <li><p>update 24th November: minipolars is getting bigger and is changing name to rpolars and is hosted on <a href="https://github.com/rpolars/rpolars/" class="external-link">github.com/rpolars/rpolars</a>. Translation, testing and documenting progress is unfortunately not fast enough to finish in 2022. Goal postponed to March 2023. rlang is dropped as install dependency. No dependencies should make it very easy to install and manage versions long term.</p></li>
 <li><p>update 10th November 2022: Full support for Windows, see installation section. After digging through gnu ld linker documentation and R source code idiosyncrasies, rpolars, can now be build for windows (nighly-gnu). In the end adding this super simple <a href="https://github.com/sorhawell/rpolars/blob/main/src/rpolars-win.def" class="external-link">linker export definition file</a> prevented the linker from trying to export all +160_000 internal variables into a 16bit symbol table maxing out at 65000 variables. Many thanks for 24-hour support from extendr-team &lt;3.</p></li>
 <li><p>update 4th November 2022: <a href="https://sorhawell.github.io/reference/index.html#expr" class="external-link">Latest documentation shows half (125) of all expression functions are now ported</a>. Automatic binary release for Mac and Linux. Windows still pending. It is now very easy to install rpolars from binary. See install section.</p></li>
@@ -123,14 +128,22 @@
 </h1>
 <p>Install rust + set buildchain to nightly + 3rd party dependencies. See installation workflows/pkgdown.yaml for Windows, Linux and Mac.</p>
 <ul>
-<li>install rust with rustup</li>
-<li><code>rustup default nightly</code></li>
-<li>clone repo</li>
+<li>install rust with ‘rustup’, the cross-platform rust installer</li>
+<li>
+<code>rustup toolchain install nightly</code> #install nightly</li>
+<li>
+<code>rustup default nightly</code> #choose nightly</li>
+<li>clone this repo</li>
 <li>on Windows rtools42 must be in path</li>
+</ul>
+<p>With repo as root dir:</p>
+<ul>
 <li>
-<code>source("./renv/activate.R")</code> to install and set up R packages (likely automatically triggered by .Rprofile)</li>
+<code>source("./renv/activate.R")</code> # (likely automatically triggered by .Rprofile)</li>
 <li>
-<code><a href="https://extendr.github.io/rextendr/reference/document.html" class="external-link">rextendr::document()</a></code> to compile rust code and quick build package</li>
+<code><a href="https://rstudio.github.io/renv/reference/restore.html" class="external-link">renv::restore()</a></code> # to install and set up R packages</li>
+<li>
+<code><a href="https://extendr.github.io/rextendr/reference/document.html" class="external-link">rextendr::document()</a></code> # to compile rust code and quick build package</li>
 <li>or <code>R CMD INSTALL --no-multiarch --with-keep.source rpolars</code> to build final package</li>
 <li>
 <code><a href="https://devtools.r-lib.org/reference/test.html" class="external-link">devtools::test()</a></code> to run all unit tests.</li>
@@ -156,9 +169,9 @@
 <div class="section level2">
 <h2 id="typical-ussage">Typical ussage<a class="anchor" aria-label="anchor" href="#typical-ussage"></a>
 </h2>
-<p>Where <code>dplyr</code> has <code>%&gt;%</code>-piping and `<code>data.table</code> has <code>[,]</code>-indexing, method chaining <code>object$m1()$m2()</code> is the bread and butter syntax of polars. For now the best learning material to understand the syntax and the power of polars is the <a href="https://pola-rs.github.io/polars-book/user-guide/" class="external-link">official user guide for python</a>. As rpolars syntax is the same ( except <code>$</code> instead of <code>.</code>) the guide should be quite useful. The following example shows a typical ‘polar_frame’ method together with chained expressions.</p>
+<p>Where <code>dplyr</code> has <code>%&gt;%</code>-piping and `<code>data.table</code> has <code>[,]</code>-indexing, method chaining <code>object$m1()$m2()</code> is the bread and butter syntax of polars. For now the best learning material to understand the syntax and the power of polars is the <a href="https://pola-rs.github.io/polars-book/user-guide/" class="external-link">official user guide for python</a>. As rpolars syntax is the same ( except <code>$</code> instead of <code>.</code>) the guide should be quite useful. The following example shows a typical ‘DataFrame’ method together with chained expressions.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co">#create polar_frames from iris</span></span>
+<code class="sourceCode R"><span><span class="co">#create DataFrame from iris</span></span>
 <span><span class="va">df</span> <span class="op">=</span> <span class="va">pl</span><span class="op">$</span><span class="fu">DataFrame</span><span class="op">(</span><span class="va">iris</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">#make selection (similar to dplyr mutute() and data.table [,.()] ) and use expressions or strings.</span></span>
@@ -187,11 +200,11 @@
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="do">## 6               171.4               250.3         0.4</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="polar_frame-from-series-and-r-vectors">
-<code>polar_frame</code> from <code>series</code> and R vectors<a class="anchor" aria-label="anchor" href="#polar_frame-from-series-and-r-vectors"></a>
+<h2 id="dataframe-from-series-and-r-vectors">
+<code>DataFrame</code> from <code>series</code> and R vectors<a class="anchor" aria-label="anchor" href="#dataframe-from-series-and-r-vectors"></a>
 </h2>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co">#a single column outside a polars_frame is called a series</span></span>
+<code class="sourceCode R"><span><span class="co">#a single column outside a DataFrame is called a series</span></span>
 <span><span class="va">pl</span><span class="op">$</span><span class="fu">Series</span><span class="op">(</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span> <span class="op">*</span> <span class="fl">5</span>,<span class="st">"my_series"</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb6"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">## polars Series: shape: (5,)</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Series: 'my_series' [f64]</span></span>
@@ -203,7 +216,7 @@
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  25.0</span></span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="do">## ]</span></span></code></pre></div>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co">#Create polar_From from a mix of series and/or plain R vectors.</span></span>
+<code class="sourceCode R"><span><span class="co">#Create DataFrame from a mix of series and/or plain R vectors.</span></span>
 <span><span class="va">pl</span><span class="op">$</span><span class="fu">DataFrame</span><span class="op">(</span></span>
 <span>  newname <span class="op">=</span> <span class="va">pl</span><span class="op">$</span><span class="fu">Series</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">5</span><span class="op">)</span>,name <span class="op">=</span> <span class="st">"b"</span><span class="op">)</span>, <span class="co">#overwrite name b with 'newname'</span></span>
 <span>  <span class="va">pl</span><span class="op">$</span><span class="fu">Series</span><span class="op">(</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span> <span class="op">*</span> <span class="fl">5</span>,<span class="st">"a"</span><span class="op">)</span>,</span>
@@ -270,14 +283,14 @@ polars DataType: Categorical(
 )</code></pre>
 </div>
 <div class="section level1">
-<h1 id="read-csv-and-the-polars_lazy_frame">Read csv and the <code>polars_lazy_frame</code>
-<a class="anchor" aria-label="anchor" href="#read-csv-and-the-polars_lazy_frame"></a>
+<h1 id="read-csv-and-the-lazyframe">Read csv and the <code>LazyFrame</code>
+<a class="anchor" aria-label="anchor" href="#read-csv-and-the-lazyframe"></a>
 </h1>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span>  <span class="co">#using iris.csv as example</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/utils/write.table.html" class="external-link">write.csv</a></span><span class="op">(</span><span class="va">iris</span>, <span class="st">"iris.csv"</span>,row.names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
-<span>  <span class="co">#read csv into a lazy_polar_frame and compute sum of Sepal.Width over Species</span></span>
+<span>  <span class="co">#read csv into a LazyFrame and compute sum of Sepal.Width over Species</span></span>
 <span>  <span class="va">lpf</span> <span class="op">=</span> <span class="va">pl</span><span class="op">$</span><span class="fu">lazy_csv_reader</span><span class="op">(</span><span class="st">"iris.csv"</span><span class="op">)</span><span class="op">$</span><span class="fu">select</span><span class="op">(</span></span>
 <span>    <span class="va">pl</span><span class="op">$</span><span class="fu">col</span><span class="op">(</span><span class="st">"Sepal.Width"</span><span class="op">)</span><span class="op">$</span><span class="fu">sum</span><span class="op">(</span><span class="op">)</span><span class="op">$</span><span class="fu">over</span><span class="op">(</span><span class="st">"Species"</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span>
@@ -303,7 +316,7 @@ polars DataType: Categorical(
 <span>  <span class="co">#Only reading some columns or in other cases some row in to memory can save speed downstream operations. This is called peojection. </span></span>
 <span>  </span>
 <span>  </span>
-<span>  <span class="co">#to execute plan, simply call $collect() and get a polars_frame as result</span></span>
+<span>  <span class="co">#to execute plan, simply call $collect() and get a DataFrame as result</span></span>
 <span>  </span>
 <span>  <span class="va">lpf</span><span class="op">$</span><span class="fu">collect</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb18"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="do">## polars DataFrame: shape: (150, 1)</span></span>
