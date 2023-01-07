@@ -139,6 +139,9 @@
     <loc>https://rpolars.github.io/reference/Expr_arg_unique.html</loc>
   </url>
   <url>
+    <loc>https://rpolars.github.io/reference/Expr_arr.html</loc>
+  </url>
+  <url>
     <loc>https://rpolars.github.io/reference/Expr_backward_fill.html</loc>
   </url>
   <url>
@@ -170,6 +173,9 @@
   </url>
   <url>
     <loc>https://rpolars.github.io/reference/Expr_cumsum.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/Expr_cumulative_eval.html</loc>
   </url>
   <url>
     <loc>https://rpolars.github.io/reference/Expr_diff.html</loc>
@@ -703,6 +709,33 @@
     <loc>https://rpolars.github.io/reference/all.html</loc>
   </url>
   <url>
+    <loc>https://rpolars.github.io/reference/arr_get.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/arr_lengths.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/arr_max.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/arr_mean.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/arr_min.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/arr_reverse.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/arr_sort.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/arr_sum.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/arr_unique.html</loc>
+  </url>
+  <url>
     <loc>https://rpolars.github.io/reference/c.Series.html</loc>
   </url>
   <url>
@@ -751,6 +784,9 @@
     <loc>https://rpolars.github.io/reference/dot-pr.html</loc>
   </url>
   <url>
+    <loc>https://rpolars.github.io/reference/element.html</loc>
+  </url>
+  <url>
     <loc>https://rpolars.github.io/reference/expect_strictly_identical.html</loc>
   </url>
   <url>
@@ -776,6 +812,9 @@
   </url>
   <url>
     <loc>https://rpolars.github.io/reference/macro_add_syntax_check_to_class.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/make_expr_arr_namespace.html</loc>
   </url>
   <url>
     <loc>https://rpolars.github.io/reference/max.html</loc>

@@ -16,7 +16,7 @@ zzz.R"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathj
     
     <a class="navbar-brand me-2" href="../index.html">rpolars</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@ zzz.R"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathj
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
       <ul class="navbar-nav"><li class="nav-item">
-  <a class="external-link nav-link" href="https://github.com/rpolars/rpolars/" aria-label="github">
+  <a class="external-link nav-link" href="https://github.com/pola-rs/r-polars/" aria-label="github">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -44,7 +44,7 @@ zzz.R"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathj
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>remove private method</h1>
-      <small class="dont-index">Source: <a href="https://github.com/rpolars/rpolars/blob/HEAD/R/utils.R" class="external-link"><code>R/utils.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/pola-rs/r-polars/blob/HEAD/R/utils.R" class="external-link"><code>R/utils.R</code></a></small>
       <div class="d-none name"><code>replace_private_with_pub_methods.Rd</code></div>
     </div>
 
@@ -63,11 +63,15 @@ zzz.R</p>
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>env</dt>
-<dd><p>class envrionment to modify. Envs are mutable so return needed</p></dd>
+<dd><p>class envrionment to modify. Envs are mutable so no return needed</p></dd>
 
 
 <dt>class_pattern</dt>
 <dd><p>a regex string matching declared public functions of that class</p></dd>
+
+
+<dt>keep</dt>
+<dd><p>list of unmentioned methods to keep in public api</p></dd>
 
 </dl></div>
 

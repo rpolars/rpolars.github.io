@@ -12,7 +12,7 @@ Original extendr bindings converted into pure functions"><!-- mathjax --><script
     
     <a class="navbar-brand me-2" href="../index.html">rpolars</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +27,7 @@ Original extendr bindings converted into pure functions"><!-- mathjax --><script
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
       <ul class="navbar-nav"><li class="nav-item">
-  <a class="external-link nav-link" href="https://github.com/rpolars/rpolars/" aria-label="github">
+  <a class="external-link nav-link" href="https://github.com/pola-rs/r-polars/" aria-label="github">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -40,7 +40,7 @@ Original extendr bindings converted into pure functions"><!-- mathjax --><script
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>polars-API: private calls to rust-polars</h1>
-      <small class="dont-index">Source: <a href="https://github.com/rpolars/rpolars/blob/HEAD/R/after-wrappers.R" class="external-link"><code>R/after-wrappers.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/pola-rs/r-polars/blob/HEAD/R/after-wrappers.R" class="external-link"><code>R/after-wrappers.R</code></a></small>
       <div class="d-none name"><code>dot-pr.Rd</code></div>
     </div>
 
@@ -180,6 +180,7 @@ Original extendr bindings converted into pure functions</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ arg_min ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ arg_sort ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ arg_unique ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ arr_lengths ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ backward_fill ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ cast ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ ceil ; function ]</span>
@@ -247,6 +248,21 @@ Original extendr bindings converted into pure functions</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ log ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ log10 ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ lower_bound ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ lst_arg_max ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ lst_arg_min ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ lst_diff ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ lst_eval ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ lst_get ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ lst_join ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ lst_max ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ lst_mean ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ lst_min ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ lst_reverse ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ lst_shift ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ lst_slice ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ lst_sort ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ lst_sum ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ lst_unique ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ lt ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ lt_eq ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ map ; function ]</span>

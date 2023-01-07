@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">rpolars</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +25,7 @@
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
       <ul class="navbar-nav"><li class="nav-item">
-  <a class="external-link nav-link" href="https://github.com/rpolars/rpolars/" aria-label="github">
+  <a class="external-link nav-link" href="https://github.com/pola-rs/r-polars/" aria-label="github">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -38,7 +38,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>Mode</h1>
-      <small class="dont-index">Source: <a href="https://github.com/rpolars/rpolars/blob/HEAD/R/expr__expr.R" class="external-link"><code>R/expr__expr.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/pola-rs/r-polars/blob/HEAD/R/expr__expr.R" class="external-link"><code>R/expr__expr.R</code></a></small>
       <div class="d-none name"><code>Expr_mode.Rd</code></div>
     </div>
 
@@ -72,17 +72,17 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> │ --- │</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> │ i32 │</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ╞═════╡</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │ 2   │</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ├╌╌╌╌╌┤</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> │ 3   │</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ├╌╌╌╌╌┤</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ 1   │</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ├╌╌╌╌╌┤</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ 2   │</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ├╌╌╌╌╌┤</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> │ 4   │</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ├╌╌╌╌╌┤</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> │ 6   │</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ├╌╌╌╌╌┤</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> │ 5   │</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ├╌╌╌╌╌┤</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │ 1   │</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> └─────┘</span>
 <span class="r-in"><span><span class="va">df</span><span class="op">$</span><span class="fu">select</span><span class="op">(</span><span class="va">pl</span><span class="op">$</span><span class="fu">col</span><span class="op">(</span><span class="st">"b"</span><span class="op">)</span><span class="op">$</span><span class="fu">mode</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> polars DataFrame: shape: (2, 1)</span>
@@ -102,11 +102,11 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> │ --- │</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> │ i32 │</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ╞═════╡</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │ 3   │</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ 2   │</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ├╌╌╌╌╌┤</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> │ 1   │</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ├╌╌╌╌╌┤</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │ 2   │</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ 3   │</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> └─────┘</span>
 </code></pre></div>
     </div>
