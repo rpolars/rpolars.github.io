@@ -3,7 +3,7 @@
 Public functions are not exported as a normal package as it would be huge namespace
 collision with base:: and other functions. All object-methods are accessed with object$method()
 via the new class functions.
-Having all functions in an namespace is similar to the rust- and python- polars api."><title>The complete rpolars public API. — pl • rpolars</title><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.1.3/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.1.3/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous"><!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="The complete rpolars public API. — pl"><meta property="og:description" content="pl-object is a environment of all public functions and class constructors.
+Having all functions in an namespace is similar to the rust- and python- polars api."><title>The complete rpolars public API. — pl • rpolars</title><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous"><!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="The complete rpolars public API. — pl"><meta property="og:description" content="pl-object is a environment of all public functions and class constructors.
 Public functions are not exported as a normal package as it would be huge namespace
 collision with base:: and other functions. All object-methods are accessed with object$method()
 via the new class functions.
@@ -18,7 +18,7 @@ Having all functions in an namespace is similar to the rust- and python- polars 
     
     <a class="navbar-brand me-2" href="../index.html">rpolars</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,7 +65,7 @@ via the new class functions.</p>
 
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
-    <p>An object of class <code>environment</code> of length 45.</p>
+    <p>An object of class <code>environment</code> of length 46.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
@@ -84,51 +84,52 @@ bind the environment to another variable name as <code>simon_says = pl</code> or
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     rpolars public functions ( environment ):</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Binary ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Boolean ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Categorical ; DataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Binary ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Boolean ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Categorical ; RPolarsDataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ DataFrame ; function ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Date ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Float32 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Float64 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Int16 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Int32 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Int64 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Int8 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Null ; DataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Date ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Float32 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Float64 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Int16 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Int32 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Int64 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Int8 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Null ; RPolarsDataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ Series ; function ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Time ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        [ UInt16 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        [ UInt32 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        [ UInt64 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        [ UInt8 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Unknown ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Utf8 ; DataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Time ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ UInt16 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ UInt32 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ UInt64 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ UInt8 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Unknown ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ Utf8 ; RPolarsDataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ all ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ coalesce ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ col ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ concat ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        [ concat_list ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ csv_reader ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        dtypes ( list ):</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Binary ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Boolean ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Categorical ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Date ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Float32 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Float64 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Int16 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Int32 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Int64 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Int8 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Null ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Time ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ UInt16 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ UInt32 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ UInt64 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ UInt8 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Unknown ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Utf8 ; DataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Binary ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Boolean ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Categorical ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Date ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Float32 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Float64 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Int16 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Int32 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Int64 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Int8 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Null ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Time ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ UInt16 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ UInt32 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ UInt64 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ UInt8 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Unknown ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Utf8 ; RPolarsDataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ list ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ element ; function ]</span>
@@ -143,12 +144,12 @@ bind the environment to another variable name as <code>simon_says = pl</code> or
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ min ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        numeric_dtypes ( list ):</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Float32 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Float64 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Int16 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Int32 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Int64 ; DataType ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Int8 ; DataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Float32 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Float64 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Int16 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Int32 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Int64 ; RPolarsDataType ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ Int8 ; RPolarsDataType ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ read_csv ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        [ rep ; function ]</span>
@@ -289,6 +290,7 @@ bind the environment to another variable name as <code>simon_says = pl</code> or
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ limit ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ list ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ lit ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ lit_to_s ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ log ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ log10 ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ lower_bound ; function ]</span>
@@ -402,6 +404,7 @@ bind the environment to another variable name as <code>simon_says = pl</code> or
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ apply ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ arg_max ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ arg_min ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ arr ; property function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ ceil ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ chunk_lengths ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ clone ; function ]</span>
@@ -409,6 +412,7 @@ bind the environment to another variable name as <code>simon_says = pl</code> or
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ cumsum ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ div ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ dtype ; property function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ expr ; property function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ flags ; property function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ floor ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ is_numeric ; function ]</span>
@@ -430,6 +434,7 @@ bind the environment to another variable name as <code>simon_says = pl</code> or
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ sub ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ sum ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ to_frame ; function ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           [ to_lit ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ to_r ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ to_r_list ; function ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           [ to_r_vector ; function ]</span>
@@ -447,7 +452,7 @@ bind the environment to another variable name as <code>simon_says = pl</code> or
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
     </footer></div>

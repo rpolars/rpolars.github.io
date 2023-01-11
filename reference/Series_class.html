@@ -9,7 +9,7 @@ This class system in lack of a better name could be called "environment classes"
 system extendr provides, except here there is both a public and private set of methods. For implementation
 reasons, the private methods are external and must be called from rpolars:::.pr.$Series$methodname(), also
 all private methods must take any self as an argument, thus they are pure functions. Having the private methods
-as pure functions solved/simplified self-referential complications.'><title>Inner workings of the Series-class — Series_class • rpolars</title><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.1.3/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.1.3/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous"><!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Inner workings of the Series-class — Series_class"><meta property="og:description" content='The Series-class is simply two environments of respectively
+as pure functions solved/simplified self-referential complications.'><title>Inner workings of the Series-class — Series_class • rpolars</title><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous"><!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Inner workings of the Series-class — Series_class"><meta property="og:description" content='The Series-class is simply two environments of respectively
 the public and private methods/function calls to the rpolars rust side. The instanciated
 Series-object is an externalptr to a lowlevel rust polars Series  object. The pointer address
 is the only statefullness of the Series object on the R side. Any other state resides on the
@@ -30,7 +30,7 @@ as pure functions solved/simplified self-referential complications.'><!-- mathja
     
     <a class="navbar-brand me-2" href="../index.html">rpolars</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,15 +91,16 @@ are removed and replaced by any function prefixed <code>Series_</code>.</p>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/ls.html" class="external-link">ls</a></span><span class="op">(</span><span class="fu">rpolars</span><span class="fu">:::</span><span class="va">Series</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "abs"           "add"           "alias"         "all"          </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "any"           "append"        "apply"         "arg_max"      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "arg_min"       "ceil"          "chunk_lengths" "clone"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [13] "compare"       "cumsum"        "div"           "dtype"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [17] "flags"         "floor"         "is_numeric"    "is_unique"    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [21] "len"           "max"           "min"           "mul"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [25] "name"          "print"         "rem"           "rename"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [29] "rep"           "series_equal"  "set_sorted"    "shape"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [33] "sort"          "std"           "sub"           "sum"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [37] "to_frame"      "to_r"          "to_r_list"     "to_r_vector"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [41] "value_counts"  "var"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "arg_min"       "arr"           "ceil"          "chunk_lengths"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [13] "clone"         "compare"       "cumsum"        "div"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [17] "dtype"         "expr"          "flags"         "floor"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [21] "is_numeric"    "is_unique"     "len"           "max"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [25] "min"           "mul"           "name"          "print"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [29] "rem"           "rename"        "rep"           "series_equal" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [33] "set_sorted"    "shape"         "sort"          "std"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [37] "sub"           "sum"           "to_frame"      "to_lit"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [41] "to_r"          "to_r_list"     "to_r_vector"   "value_counts" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [45] "var"          </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">#see all private methods (not intended for regular use)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/ls.html" class="external-link">ls</a></span><span class="op">(</span><span class="fu">rpolars</span><span class="fu">:::</span><span class="va"><a href="dot-pr.html">.pr</a></span><span class="op">$</span><span class="va">Series</span><span class="op">)</span></span></span>
@@ -151,7 +152,7 @@ are removed and replaced by any function prefixed <code>Series_</code>.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
     </footer></div>

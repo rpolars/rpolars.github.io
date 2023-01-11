@@ -304,6 +304,9 @@
     <loc>https://rpolars.github.io/reference/Expr_list.html</loc>
   </url>
   <url>
+    <loc>https://rpolars.github.io/reference/Expr_lit_to_s.html</loc>
+  </url>
+  <url>
     <loc>https://rpolars.github.io/reference/Expr_log.html</loc>
   </url>
   <url>
@@ -610,6 +613,9 @@
     <loc>https://rpolars.github.io/reference/Series_arg_min.html</loc>
   </url>
   <url>
+    <loc>https://rpolars.github.io/reference/Series_arr.html</loc>
+  </url>
+  <url>
     <loc>https://rpolars.github.io/reference/Series_ceil.html</loc>
   </url>
   <url>
@@ -632,6 +638,9 @@
   </url>
   <url>
     <loc>https://rpolars.github.io/reference/Series_dtype.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/Series_expr.html</loc>
   </url>
   <url>
     <loc>https://rpolars.github.io/reference/Series_floor.html</loc>
@@ -697,6 +706,9 @@
     <loc>https://rpolars.github.io/reference/Series_to_frames.html</loc>
   </url>
   <url>
+    <loc>https://rpolars.github.io/reference/Series_to_lit.html</loc>
+  </url>
+  <url>
     <loc>https://rpolars.github.io/reference/Series_to_r.html</loc>
   </url>
   <url>
@@ -709,7 +721,34 @@
     <loc>https://rpolars.github.io/reference/all.html</loc>
   </url>
   <url>
+    <loc>https://rpolars.github.io/reference/arr_arg_max.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/arr_arg_min.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/arr_contains.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/arr_diff.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/arr_eval.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/arr_first.html</loc>
+  </url>
+  <url>
     <loc>https://rpolars.github.io/reference/arr_get.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/arr_head.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/arr_join.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/arr_last.html</loc>
   </url>
   <url>
     <loc>https://rpolars.github.io/reference/arr_lengths.html</loc>
@@ -727,10 +766,25 @@
     <loc>https://rpolars.github.io/reference/arr_reverse.html</loc>
   </url>
   <url>
+    <loc>https://rpolars.github.io/reference/arr_shift.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/arr_slice.html</loc>
+  </url>
+  <url>
     <loc>https://rpolars.github.io/reference/arr_sort.html</loc>
   </url>
   <url>
     <loc>https://rpolars.github.io/reference/arr_sum.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/arr_tail.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/arr_take.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/arr_to_struct.html</loc>
   </url>
   <url>
     <loc>https://rpolars.github.io/reference/arr_unique.html</loc>
@@ -814,7 +868,7 @@
     <loc>https://rpolars.github.io/reference/macro_add_syntax_check_to_class.html</loc>
   </url>
   <url>
-    <loc>https://rpolars.github.io/reference/make_expr_arr_namespace.html</loc>
+    <loc>https://rpolars.github.io/reference/macro_new_subnamespace.html</loc>
   </url>
   <url>
     <loc>https://rpolars.github.io/reference/max.html</loc>
@@ -853,9 +907,6 @@
     <loc>https://rpolars.github.io/reference/print-open-paren-close-paren.html</loc>
   </url>
   <url>
-    <loc>https://rpolars.github.io/reference/print.DataType.html</loc>
-  </url>
-  <url>
     <loc>https://rpolars.github.io/reference/print.Expr.html</loc>
   </url>
   <url>
@@ -866,6 +917,9 @@
   </url>
   <url>
     <loc>https://rpolars.github.io/reference/print.LazyGroupBy.html</loc>
+  </url>
+  <url>
+    <loc>https://rpolars.github.io/reference/print.RPolarsDataType.html</loc>
   </url>
   <url>
     <loc>https://rpolars.github.io/reference/print_env.html</loc>
