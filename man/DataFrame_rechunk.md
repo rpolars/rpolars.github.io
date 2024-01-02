@@ -122,10 +122,10 @@ lapply(x, tracemem) # trace chunks to verify no re-allocation
 ```
 
     #> [[1]]
-    #> [1] "<0x562227ab5f10>"
+    #> [1] "<0x55daac7e9a20>"
     #> 
     #> [[2]]
-    #> [1] "<0x5622249c76d8>"
+    #> [1] "<0x55daa96f96e8>"
 
 ``` r
 z = c(x, x)
@@ -139,16 +139,16 @@ lapply(z, tracemem) # mem allocation  in z are the same from x
 ```
 
     #> [[1]]
-    #> [1] "<0x562227ab5f10>"
+    #> [1] "<0x55daac7e9a20>"
     #> 
     #> [[2]]
-    #> [1] "<0x5622249c76d8>"
+    #> [1] "<0x55daa96f96e8>"
     #> 
     #> [[3]]
-    #> [1] "<0x562227ab5f10>"
+    #> [1] "<0x55daac7e9a20>"
     #> 
     #> [[4]]
-    #> [1] "<0x5622249c76d8>"
+    #> [1] "<0x55daa96f96e8>"
 
 ``` r
 str(z)

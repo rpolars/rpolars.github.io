@@ -236,7 +236,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   2.244   0.000   2.482
+    #>   2.416   0.012   2.608
 
 ``` r
 # Comparing this to the standard polars syntax:
@@ -248,7 +248,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.002   0.000   0.014
+    #>   0.000   0.003   0.007
 
 ``` r
 # Running in parallel --------------------------------
@@ -268,7 +268,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.020   0.004   1.220
+    #>   0.022   0.005   1.226
 
 ``` r
 # first run in parallel: there is some overhead to start up extra R processes
@@ -293,7 +293,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.011   0.000   0.958
+    #>   0.007   0.004   1.010
 
 ``` r
 # second run in parallel: this reuses R processes in "polars global_rpool".
@@ -314,4 +314,4 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.001   0.008   0.375
+    #>   0.008   0.000   0.330
