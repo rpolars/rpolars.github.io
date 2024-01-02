@@ -1,0 +1,53 @@
+
+# Hour
+
+[**Source code**](https://github.com/pola-rs/r-polars/tree/53c7d964901ed4a019998e89aff8c6d44691d793/R/expr__datetime.R#L423)
+
+## Description
+
+Extract hour from underlying Datetime representation. Applies to
+Datetime columns. Returns the hour number from 0 to 23.
+
+## Format
+
+function
+
+## Value
+
+Expr of hour as UInt32
+
+## Examples
+
+``` r
+library(polars)
+
+df = pl$DataFrame(
+  date = pl$date_range(
+    as.Date("2020-12-25"),
+    as.Date("2021-1-05"),
+    interval = "1d2h",
+    time_zone = "GMT",
+    eager = TRUE
+  )
+)
+df$with_columns(
+  pl$col("date")$dt$hour()$alias("hour")
+)
+```
+
+    #> shape: (11, 2)
+    #> ┌─────────────────────────┬──────┐
+    #> │ date                    ┆ hour │
+    #> │ ---                     ┆ ---  │
+    #> │ datetime[μs, GMT]       ┆ i8   │
+    #> ╞═════════════════════════╪══════╡
+    #> │ 2020-12-25 00:00:00 GMT ┆ 0    │
+    #> │ 2020-12-26 02:00:00 GMT ┆ 2    │
+    #> │ 2020-12-27 04:00:00 GMT ┆ 4    │
+    #> │ 2020-12-28 06:00:00 GMT ┆ 6    │
+    #> │ …                       ┆ …    │
+    #> │ 2021-01-01 14:00:00 GMT ┆ 14   │
+    #> │ 2021-01-02 16:00:00 GMT ┆ 16   │
+    #> │ 2021-01-03 18:00:00 GMT ┆ 18   │
+    #> │ 2021-01-04 20:00:00 GMT ┆ 20   │
+    #> └─────────────────────────┴──────┘

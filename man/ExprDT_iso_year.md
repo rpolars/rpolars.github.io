@@ -1,0 +1,55 @@
+
+# Iso-Year
+
+[**Source code**](https://github.com/pola-rs/r-polars/tree/53c7d964901ed4a019998e89aff8c6d44691d793/R/expr__datetime.R#L219)
+
+## Description
+
+Extract ISO year from underlying Date representation. Applies to Date
+and Datetime columns. Returns the year number in the ISO standard. This
+may not correspond with the calendar year.
+
+## Format
+
+function
+
+## Value
+
+Expr of iso_year as Int32
+
+## Examples
+
+``` r
+library(polars)
+
+df = pl$DataFrame(
+  date = pl$date_range(
+    as.Date("2020-12-25"),
+    as.Date("2021-1-05"),
+    interval = "1d",
+    time_zone = "GMT",
+    eager = TRUE
+  )
+)
+df$with_columns(
+  pl$col("date")$dt$year()$alias("year"),
+  pl$col("date")$dt$iso_year()$alias("iso_year")
+)
+```
+
+    #> shape: (12, 3)
+    #> ┌────────────┬──────┬──────────┐
+    #> │ date       ┆ year ┆ iso_year │
+    #> │ ---        ┆ ---  ┆ ---      │
+    #> │ date       ┆ i32  ┆ i32      │
+    #> ╞════════════╪══════╪══════════╡
+    #> │ 2020-12-25 ┆ 2020 ┆ 2020     │
+    #> │ 2020-12-26 ┆ 2020 ┆ 2020     │
+    #> │ 2020-12-27 ┆ 2020 ┆ 2020     │
+    #> │ 2020-12-28 ┆ 2020 ┆ 2020     │
+    #> │ …          ┆ …    ┆ …        │
+    #> │ 2021-01-02 ┆ 2021 ┆ 2020     │
+    #> │ 2021-01-03 ┆ 2021 ┆ 2020     │
+    #> │ 2021-01-04 ┆ 2021 ┆ 2021     │
+    #> │ 2021-01-05 ┆ 2021 ┆ 2021     │
+    #> └────────────┴──────┴──────────┘

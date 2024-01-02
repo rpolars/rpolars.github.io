@@ -1,0 +1,52 @@
+
+# Repeat values
+
+[**Source code**](https://github.com/pola-rs/r-polars/tree/53c7d964901ed4a019998e89aff8c6d44691d793/R/expr__expr.R#L2178)
+
+## Description
+
+Repeat the elements in this Series as specified in the given expression.
+The repeated elements are expanded into a <code>List</code>.
+
+## Usage
+
+<pre><code class='language-R'>Expr_repeat_by(by)
+</code></pre>
+
+## Arguments
+
+<table>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="Expr_repeat_by_:_by">by</code>
+</td>
+<td>
+Expr that determines how often the values will be repeated. The column
+will be coerced to UInt32.
+</td>
+</tr>
+</table>
+
+## Value
+
+Expr
+
+## Examples
+
+``` r
+library(polars)
+
+df = pl$DataFrame(a = c("x", "y", "z"), n = c(0:2))
+df$with_columns(repeated = pl$col("a")$repeat_by("n"))
+```
+
+    #> shape: (3, 3)
+    #> ┌─────┬─────┬────────────┐
+    #> │ a   ┆ n   ┆ repeated   │
+    #> │ --- ┆ --- ┆ ---        │
+    #> │ str ┆ i32 ┆ list[str]  │
+    #> ╞═════╪═════╪════════════╡
+    #> │ x   ┆ 0   ┆ []         │
+    #> │ y   ┆ 1   ┆ ["y"]      │
+    #> │ z   ┆ 2   ┆ ["z", "z"] │
+    #> └─────┴─────┴────────────┘

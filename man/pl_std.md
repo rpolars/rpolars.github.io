@@ -1,0 +1,39 @@
+
+# Standard deviation
+
+[**Source code**](https://github.com/pola-rs/r-polars/tree/53c7d964901ed4a019998e89aff8c6d44691d793/R/functions__lazy.R#L590)
+
+## Description
+
+syntactic sugar for starting a expression with std
+
+## Usage
+
+<pre><code class='language-R'>pl_std(column, ddof = 1)
+</code></pre>
+
+## Arguments
+
+<table>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_std_:_column">column</code>
+</td>
+<td>
+Column name.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_std_:_ddof">ddof</code>
+</td>
+<td>
+Delta Degrees of Freedom: the divisor used in the calculation is N -
+ddof, where N represents the number of elements. By default ddof is 1.
+</td>
+</tr>
+</table>
+
+## Value
+
+Expr or Series matching type of input column
