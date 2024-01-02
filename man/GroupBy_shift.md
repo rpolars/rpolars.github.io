@@ -1,7 +1,7 @@
 
 # Shift
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/53c7d964901ed4a019998e89aff8c6d44691d793/R/group_by.R#L260)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/4c60e4ba5981c539b9639261157303d78f545b69/R/group_by.R#L260)
 
 ## Description
 
@@ -43,12 +43,12 @@ pl$DataFrame(mtcars)$group_by("cyl")$shift(2)
     #> │ --- ┆ ---        ┆ ---        ┆ ---        ┆   ┆ ---        ┆ ---        ┆ ---       ┆ ---       │
     #> │ f64 ┆ list[f64]  ┆ list[f64]  ┆ list[f64]  ┆   ┆ list[f64]  ┆ list[f64]  ┆ list[f64] ┆ list[f64] │
     #> ╞═════╪════════════╪════════════╪════════════╪═══╪════════════╪════════════╪═══════════╪═══════════╡
-    #> │ 8.0 ┆ [null,     ┆ [null,     ┆ [null,     ┆ … ┆ [null,     ┆ [null,     ┆ [null,    ┆ [null,    │
-    #> │     ┆ null, …    ┆ null, …    ┆ null, …    ┆   ┆ null, …    ┆ null, …    ┆ null, …   ┆ null, …   │
-    #> │     ┆ 19.2]      ┆ 400.0]     ┆ 175.0]     ┆   ┆ 0.0]       ┆ 0.0]       ┆ 3.0]      ┆ 2.0]      │
     #> │ 6.0 ┆ [null,     ┆ [null,     ┆ [null,     ┆ … ┆ [null,     ┆ [null,     ┆ [null,    ┆ [null,    │
     #> │     ┆ null, …    ┆ null, …    ┆ null, …    ┆   ┆ null, …    ┆ null, …    ┆ null, …   ┆ null, …   │
     #> │     ┆ 19.2]      ┆ 167.6]     ┆ 123.0]     ┆   ┆ 1.0]       ┆ 0.0]       ┆ 4.0]      ┆ 4.0]      │
+    #> │ 8.0 ┆ [null,     ┆ [null,     ┆ [null,     ┆ … ┆ [null,     ┆ [null,     ┆ [null,    ┆ [null,    │
+    #> │     ┆ null, …    ┆ null, …    ┆ null, …    ┆   ┆ null, …    ┆ null, …    ┆ null, …   ┆ null, …   │
+    #> │     ┆ 19.2]      ┆ 400.0]     ┆ 175.0]     ┆   ┆ 0.0]       ┆ 0.0]       ┆ 3.0]      ┆ 2.0]      │
     #> │ 4.0 ┆ [null,     ┆ [null,     ┆ [null,     ┆ … ┆ [null,     ┆ [null,     ┆ [null,    ┆ [null,    │
     #> │     ┆ null, …    ┆ null, …    ┆ null, …    ┆   ┆ null, …    ┆ null, …    ┆ null, …   ┆ null, …   │
     #> │     ┆ 26.0]      ┆ 120.3]     ┆ 91.0]      ┆   ┆ 0.0]       ┆ 1.0]       ┆ 5.0]      ┆ 2.0]      │

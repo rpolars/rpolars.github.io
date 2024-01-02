@@ -1,7 +1,7 @@
 
 # Value counts
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/53c7d964901ed4a019998e89aff8c6d44691d793/R/expr__expr.R#L3223)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/4c60e4ba5981c539b9639261157303d78f545b69/R/expr__expr.R#L3223)
 
 ## Description
 
@@ -53,8 +53,8 @@ df
     #> │ ---               │
     #> │ struct[2]         │
     #> ╞═══════════════════╡
-    #> │ {"virginica",50}  │
     #> │ {"versicolor",50} │
+    #> │ {"virginica",50}  │
     #> │ {"setosa",50}     │
     #> └───────────────────┘
 
@@ -63,6 +63,6 @@ df$unnest()$to_data_frame() # recommended to unnest structs before converting to
 ```
 
     #>      Species count
-    #> 1  virginica    50
-    #> 2 versicolor    50
+    #> 1 versicolor    50
+    #> 2  virginica    50
     #> 3     setosa    50

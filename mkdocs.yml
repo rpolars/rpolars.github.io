@@ -1,6 +1,6 @@
 site_name: Polars R Package
-repo_url: https://github.com/pola-rs/r-polars
-repo_name: polars
+repo_url: $ALTDOC_PACKAGE_URL_GITHUB
+repo_name: $ALTDOC_PACKAGE_NAME
 plugins:
   - search
 theme:
