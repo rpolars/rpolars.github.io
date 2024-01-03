@@ -1398,6 +1398,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../pl_polars_info/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    polars_info
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../pl_PTime/" class="md-nav__link">
         
   
@@ -1655,6 +1676,27 @@
   
   <span class="md-ellipsis">
     tail
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pl_threadpool_size/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    threadpool_size
   </span>
   
 
@@ -13614,27 +13656,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../polars_info/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    polars_info
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../polars_options/" class="md-nav__link">
         
   
@@ -13682,27 +13703,6 @@
   
   <span class="md-ellipsis">
     show_all_public_methods
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../threadpool_size/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    threadpool_size
   </span>
   
 
@@ -14010,7 +14010,7 @@ replaced by any function prefixed <code>LazyFrame</em></code>.</p>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; FILTER [(col(&quot;Species&quot;)) == (Utf8(setosa))] FROM
 #&gt; 
-#&gt;   Csv SCAN /tmp/RtmpXtr2vI/file729772c3f0f4
+#&gt;   Csv SCAN /tmp/RtmpcQw5Mu/file6b93562b34ae
 #&gt;   PROJECT */5 COLUMNS
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># NOTE For Ldf_okay, the full time to load csv alrady paid when creating Rdf and Pdf</span>
@@ -14023,7 +14023,7 @@ replaced by any function prefixed <code>LazyFrame</em></code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Ldf_best</span><span class="o">$</span><span class="nf">describe_optimized_plan</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; 
-#&gt;   Csv SCAN /tmp/RtmpXtr2vI/file729772c3f0f4
+#&gt;   Csv SCAN /tmp/RtmpcQw5Mu/file6b93562b34ae
 #&gt;   PROJECT */5 COLUMNS
 #&gt;   SELECTION: [(col(&quot;Species&quot;)) == (Utf8(setosa))]
 </code></pre></div>

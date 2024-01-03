@@ -1,7 +1,7 @@
 
 # Get the number of threads in the Polars thread pool.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/extendr-wrappers.R#L114)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/info.R#L86)
 
 ## Description
 

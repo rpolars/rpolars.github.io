@@ -82,6 +82,7 @@ nav:
         - min: man/pl_min.md
         - n_unique: man/pl_n_unique.md
         - pl: man/pl_pl.md
+        - polars_info: man/pl_polars_info.md
         - PTime: man/pl_PTime.md
         - raw_list: man/pl_raw_list.md
         - rolling_corr: man/pl_rolling_corr.md
@@ -95,6 +96,7 @@ nav:
         - sum_horizontal: man/pl_sum_horizontal.md
         - sum: man/pl_sum.md
         - tail: man/pl_tail.md
+        - threadpool_size: man/pl_threadpool_size.md
         - using_string_cache: man/pl_using_string_cache.md
         - var: man/pl_var.md
         - with_string_cache: man/pl_with_string_cache.md
@@ -636,11 +638,9 @@ nav:
         - global_rpool_cap: man/global_rpool_cap.md
         - nanoarrow: man/nanoarrow.md
         - polars_class_object: man/polars_class_object.md
-        - polars_info: man/polars_info.md
         - polars_options: man/polars_options.md
         - show_all_public_functions: man/show_all_public_functions.md
         - show_all_public_methods: man/show_all_public_methods.md
-        - threadpool_size: man/threadpool_size.md
         - to_list: man/to_list.md
   - About: about.md
   - Changelog: NEWS.md

@@ -1398,6 +1398,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../pl_polars_info/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    polars_info
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../pl_PTime/" class="md-nav__link">
         
   
@@ -1655,6 +1676,27 @@
   
   <span class="md-ellipsis">
     tail
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pl_threadpool_size/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    threadpool_size
   </span>
   
 
@@ -13623,27 +13665,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../polars_info/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    polars_info
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../polars_options/" class="md-nav__link">
         
   
@@ -13691,27 +13712,6 @@
   
   <span class="md-ellipsis">
     show_all_public_methods
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../threadpool_size/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    threadpool_size
   </span>
   
 
@@ -13974,15 +13974,15 @@ changed with <code>pl$set_options(maintain_order = TRUE)</code>.
 #&gt; │ --- ┆ --- │
 #&gt; │ i32 ┆ i32 │
 #&gt; ╞═════╪═════╡
-#&gt; │ 10  ┆ 2   │
-#&gt; │ 1   ┆ 4   │
-#&gt; │ 5   ┆ 5   │
-#&gt; │ 4   ┆ 8   │
+#&gt; │ 4   ┆ 1   │
+#&gt; │ 8   ┆ 2   │
+#&gt; │ 2   ┆ 8   │
+#&gt; │ 9   ┆ 4   │
 #&gt; │ …   ┆ …   │
-#&gt; │ 9   ┆ 9   │
-#&gt; │ 5   ┆ 7   │
-#&gt; │ 8   ┆ 10  │
-#&gt; │ 6   ┆ 1   │
+#&gt; │ 6   ┆ 8   │
+#&gt; │ 8   ┆ 5   │
+#&gt; │ 4   ┆ 4   │
+#&gt; │ 4   ┆ 10  │
 #&gt; └─────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># only keep unique rows</span>
@@ -13994,15 +13994,15 @@ changed with <code>pl$set_options(maintain_order = TRUE)</code>.
 #&gt; │ --- ┆ --- │
 #&gt; │ i32 ┆ i32 │
 #&gt; ╞═════╪═════╡
-#&gt; │ 4   ┆ 4   │
-#&gt; │ 4   ┆ 10  │
-#&gt; │ 8   ┆ 1   │
-#&gt; │ 3   ┆ 7   │
+#&gt; │ 3   ┆ 8   │
+#&gt; │ 9   ┆ 5   │
+#&gt; │ 9   ┆ 1   │
+#&gt; │ 2   ┆ 8   │
 #&gt; │ …   ┆ …   │
-#&gt; │ 6   ┆ 1   │
-#&gt; │ 8   ┆ 8   │
-#&gt; │ 4   ┆ 7   │
-#&gt; │ 1   ┆ 2   │
+#&gt; │ 4   ┆ 10  │
+#&gt; │ 6   ┆ 4   │
+#&gt; │ 5   ┆ 3   │
+#&gt; │ 1   ┆ 8   │
 #&gt; └─────┴─────┘
 </code></pre></div>
 

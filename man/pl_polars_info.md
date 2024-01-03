@@ -1,9 +1,31 @@
 
 # Report information of the package
 
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/info.R#L10)
+
 ## Description
 
-Report information of the package
+This function reports the following information:
+
+<ul>
+<li>
+
+Package versions (the R package version and the dependent Rust Polars
+version)
+
+</li>
+<li>
+
+Number of threads used by Polars
+
+</li>
+<li>
+
+Rust feature flags (See <code>vignette(“install”, “polars”)</code> for
+details)
+
+</li>
+</ul>
 
 ## Usage
 
