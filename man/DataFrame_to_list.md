@@ -1,6 +1,8 @@
 
 # Return Polars DataFrame as a list of vectors
 
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L882)
+
 ## Description
 
 Return Polars DataFrame as a list of vectors
@@ -15,7 +17,7 @@ Return Polars DataFrame as a list of vectors
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="to_list_:_unnest_structs">unnest_structs</code>
+<code id="DataFrame_to_list_:_unnest_structs">unnest_structs</code>
 </td>
 <td>
 Boolean. If <code>TRUE</code> (default), then

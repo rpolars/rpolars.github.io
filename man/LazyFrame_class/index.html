@@ -3903,6 +3903,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../DataFrame_to_list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    to_list
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../DataFrame_to_series/" class="md-nav__link">
         
   
@@ -13614,27 +13635,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Field_print/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Field_print
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../global_rpool_cap/" class="md-nav__link">
         
   
@@ -13745,27 +13745,6 @@
   
   <span class="md-ellipsis">
     show_all_public_methods
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../to_list/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    to_list
   </span>
   
 
@@ -14052,7 +14031,7 @@ replaced by any function prefixed <code>LazyFrame</em></code>.</p>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; FILTER [(col(&quot;Species&quot;)) == (Utf8(setosa))] FROM
 #&gt; 
-#&gt;   Csv SCAN /tmp/Rtmp6ofaTB/file6eb62c317463
+#&gt;   Csv SCAN /tmp/RtmpP1ich1/file6d2b4517517b
 #&gt;   PROJECT */5 COLUMNS
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># NOTE For Ldf_okay, the full time to load csv alrady paid when creating Rdf and Pdf</span>
@@ -14065,7 +14044,7 @@ replaced by any function prefixed <code>LazyFrame</em></code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Ldf_best</span><span class="o">$</span><span class="nf">describe_optimized_plan</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; 
-#&gt;   Csv SCAN /tmp/Rtmp6ofaTB/file6eb62c317463
+#&gt;   Csv SCAN /tmp/RtmpP1ich1/file6d2b4517517b
 #&gt;   PROJECT */5 COLUMNS
 #&gt;   SELECTION: [(col(&quot;Species&quot;)) == (Utf8(setosa))]
 </code></pre></div>

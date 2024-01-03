@@ -199,6 +199,7 @@ nav:
         - sum: man/DataFrame_sum.md
         - tail: man/DataFrame_tail.md
         - to_data_frame: man/DataFrame_to_data_frame.md
+        - to_list: man/DataFrame_to_list.md
         - to_series: man/DataFrame_to_series.md
         - to_struct: man/DataFrame_to_struct.md
         - transpose: man/DataFrame_transpose.md
@@ -636,13 +637,11 @@ nav:
         - as_polars_df: man/as_polars_df.md
         - as_polars_lf: man/as_polars_lf.md
         - as_polars_series: man/as_polars_series.md
-        - Field_print: man/Field_print.md
         - global_rpool_cap: man/global_rpool_cap.md
         - nanoarrow: man/nanoarrow.md
         - polars_class_object: man/polars_class_object.md
         - polars_options: man/polars_options.md
         - show_all_public_functions: man/show_all_public_functions.md
         - show_all_public_methods: man/show_all_public_methods.md
-        - to_list: man/to_list.md
   - About: about.md
   - Changelog: NEWS.md

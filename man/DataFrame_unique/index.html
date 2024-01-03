@@ -3905,6 +3905,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../DataFrame_to_list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    to_list
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../DataFrame_to_series/" class="md-nav__link">
         
   
@@ -13623,27 +13644,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Field_print/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Field_print
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../global_rpool_cap/" class="md-nav__link">
         
   
@@ -13754,27 +13754,6 @@
   
   <span class="md-ellipsis">
     show_all_public_methods
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../to_list/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    to_list
   </span>
   
 
@@ -14002,7 +13981,7 @@ changed with <code>pl$set_options(maintain_order = TRUE)</code>.
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">()</span><span class="o">$</span><span class="n">height</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] 65
+<div class="highlight"><pre><span></span><code>#&gt; [1] 62
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">subset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">height</span>
 </code></pre></div>
@@ -14010,41 +13989,41 @@ changed with <code>pl$set_options(maintain_order = TRUE)</code>.
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">keep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;last&quot;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (65, 2)
+<div class="highlight"><pre><span></span><code>#&gt; shape: (62, 2)
 #&gt; ┌─────┬─────┐
 #&gt; │ x   ┆ y   │
 #&gt; │ --- ┆ --- │
 #&gt; │ i32 ┆ i32 │
 #&gt; ╞═════╪═════╡
-#&gt; │ 1   ┆ 6   │
-#&gt; │ 9   ┆ 3   │
-#&gt; │ 3   ┆ 4   │
-#&gt; │ 10  ┆ 10  │
+#&gt; │ 2   ┆ 1   │
+#&gt; │ 1   ┆ 4   │
+#&gt; │ 5   ┆ 4   │
+#&gt; │ 1   ┆ 7   │
 #&gt; │ …   ┆ …   │
-#&gt; │ 2   ┆ 7   │
-#&gt; │ 4   ┆ 6   │
-#&gt; │ 9   ┆ 5   │
-#&gt; │ 3   ┆ 8   │
+#&gt; │ 7   ┆ 8   │
+#&gt; │ 5   ┆ 1   │
+#&gt; │ 10  ┆ 2   │
+#&gt; │ 5   ┆ 10  │
 #&gt; └─────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># only keep unique rows</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">keep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;none&quot;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (40, 2)
+<div class="highlight"><pre><span></span><code>#&gt; shape: (35, 2)
 #&gt; ┌─────┬─────┐
 #&gt; │ x   ┆ y   │
 #&gt; │ --- ┆ --- │
 #&gt; │ i32 ┆ i32 │
 #&gt; ╞═════╪═════╡
-#&gt; │ 1   ┆ 6   │
-#&gt; │ 8   ┆ 5   │
-#&gt; │ 5   ┆ 7   │
-#&gt; │ 1   ┆ 1   │
+#&gt; │ 3   ┆ 6   │
+#&gt; │ 10  ┆ 3   │
+#&gt; │ 4   ┆ 9   │
+#&gt; │ 6   ┆ 1   │
 #&gt; │ …   ┆ …   │
-#&gt; │ 3   ┆ 1   │
-#&gt; │ 7   ┆ 1   │
-#&gt; │ 7   ┆ 3   │
-#&gt; │ 1   ┆ 7   │
+#&gt; │ 5   ┆ 8   │
+#&gt; │ 10  ┆ 2   │
+#&gt; │ 5   ┆ 10  │
+#&gt; │ 6   ┆ 3   │
 #&gt; └─────┴─────┘
 </code></pre></div>
 
