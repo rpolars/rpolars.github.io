@@ -13656,6 +13656,69 @@
   
   
     <li class="md-nav__item">
+      <a href="../is_polars_df/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    is_polars_df
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../is_polars_lf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    is_polars_lf
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../is_polars_series/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    is_polars_series
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nanoarrow/" class="md-nav__link">
         
   
@@ -14031,7 +14094,7 @@ replaced by any function prefixed <code>LazyFrame</em></code>.</p>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; FILTER [(col(&quot;Species&quot;)) == (Utf8(setosa))] FROM
 #&gt; 
-#&gt;   Csv SCAN /tmp/RtmpO1GSaP/file6a2f6c99226a
+#&gt;   Csv SCAN /tmp/RtmpQXWCr1/file6afe244b1713
 #&gt;   PROJECT */5 COLUMNS
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># NOTE For Ldf_okay, the full time to load csv alrady paid when creating Rdf and Pdf</span>
@@ -14044,7 +14107,7 @@ replaced by any function prefixed <code>LazyFrame</em></code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Ldf_best</span><span class="o">$</span><span class="nf">describe_optimized_plan</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; 
-#&gt;   Csv SCAN /tmp/RtmpO1GSaP/file6a2f6c99226a
+#&gt;   Csv SCAN /tmp/RtmpQXWCr1/file6afe244b1713
 #&gt;   PROJECT */5 COLUMNS
 #&gt;   SELECTION: [(col(&quot;Species&quot;)) == (Utf8(setosa))]
 </code></pre></div>
