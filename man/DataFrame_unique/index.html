@@ -13887,7 +13887,7 @@
 
 
 <h1 id="drop-duplicated-rows">Drop duplicated rows</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/4c60e4ba5981c539b9639261157303d78f545b69/R/dataframe__frame.R#L409"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L409"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Drop duplicated rows</p>
 <h2 id="usage">Usage</h2>
@@ -13960,7 +13960,7 @@ changed with <code>pl$set_options(maintain_order = TRUE)</code>.
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">()</span><span class="o">$</span><span class="n">height</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] 66
+<div class="highlight"><pre><span></span><code>#&gt; [1] 64
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">subset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">height</span>
 </code></pre></div>
@@ -13968,21 +13968,21 @@ changed with <code>pl$set_options(maintain_order = TRUE)</code>.
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">keep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;last&quot;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (66, 2)
+<div class="highlight"><pre><span></span><code>#&gt; shape: (64, 2)
 #&gt; ┌─────┬─────┐
 #&gt; │ x   ┆ y   │
 #&gt; │ --- ┆ --- │
 #&gt; │ i32 ┆ i32 │
 #&gt; ╞═════╪═════╡
-#&gt; │ 3   ┆ 1   │
-#&gt; │ 5   ┆ 9   │
-#&gt; │ 10  ┆ 4   │
-#&gt; │ 2   ┆ 6   │
-#&gt; │ …   ┆ …   │
-#&gt; │ 6   ┆ 8   │
+#&gt; │ 4   ┆ 5   │
+#&gt; │ 4   ┆ 7   │
 #&gt; │ 5   ┆ 2   │
-#&gt; │ 3   ┆ 3   │
-#&gt; │ 5   ┆ 6   │
+#&gt; │ 8   ┆ 8   │
+#&gt; │ …   ┆ …   │
+#&gt; │ 1   ┆ 5   │
+#&gt; │ 5   ┆ 10  │
+#&gt; │ 10  ┆ 9   │
+#&gt; │ 6   ┆ 8   │
 #&gt; └─────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># only keep unique rows</span>
@@ -13994,15 +13994,15 @@ changed with <code>pl$set_options(maintain_order = TRUE)</code>.
 #&gt; │ --- ┆ --- │
 #&gt; │ i32 ┆ i32 │
 #&gt; ╞═════╪═════╡
-#&gt; │ 2   ┆ 8   │
-#&gt; │ 6   ┆ 5   │
-#&gt; │ 9   ┆ 6   │
-#&gt; │ 3   ┆ 1   │
-#&gt; │ …   ┆ …   │
+#&gt; │ 4   ┆ 7   │
+#&gt; │ 6   ┆ 3   │
 #&gt; │ 1   ┆ 1   │
-#&gt; │ 6   ┆ 7   │
-#&gt; │ 5   ┆ 5   │
+#&gt; │ 5   ┆ 2   │
+#&gt; │ …   ┆ …   │
 #&gt; │ 6   ┆ 2   │
+#&gt; │ 6   ┆ 8   │
+#&gt; │ 2   ┆ 4   │
+#&gt; │ 8   ┆ 5   │
 #&gt; └─────┴─────┘
 </code></pre></div>
 

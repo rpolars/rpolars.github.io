@@ -1,7 +1,7 @@
 
 # Return Polars DataFrame as R data.frame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/4c60e4ba5981c539b9639261157303d78f545b69/R/dataframe__frame.R#L852)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L852)
 
 ## Description
 
