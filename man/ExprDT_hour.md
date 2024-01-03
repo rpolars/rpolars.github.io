@@ -1,16 +1,17 @@
 
 # Hour
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L423)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L397)
 
 ## Description
 
 Extract hour from underlying Datetime representation. Applies to
 Datetime columns. Returns the hour number from 0 to 23.
 
-## Format
+## Usage
 
-function
+<pre><code class='language-R'>ExprDT_hour()
+</code></pre>
 
 ## Value
 

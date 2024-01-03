@@ -1,7 +1,7 @@
 
 # Month
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L277)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L261)
 
 ## Description
 
@@ -9,9 +9,10 @@ Extract month from underlying Date representation. Applies to Date and
 Datetime columns. Returns the month number starting from 1. The return
 value ranges from 1 to 12.
 
-## Format
+## Usage
 
-function
+<pre><code class='language-R'>ExprDT_month()
+</code></pre>
 
 ## Value
 

@@ -1,7 +1,7 @@
 
 # Round datetime
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L88)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L84)
 
 ## Description
 
@@ -9,6 +9,11 @@ Divide the date/datetime range into buckets. Each date/datetime in the
 first half of the interval is mapped to the start of its bucket. Each
 date/datetime in the second half of the interval is mapped to the end of
 its bucket.
+
+## Usage
+
+<pre><code class='language-R'>ExprDT_round(every, offset = NULL)
+</code></pre>
 
 ## Arguments
 
@@ -23,17 +28,13 @@ string encoding duration see details.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprDT_round_:_ofset">ofset</code>
+<code id="ExprDT_round_:_offset">offset</code>
 </td>
 <td>
 optional string encoding duration see details.
 </td>
 </tr>
 </table>
-
-## Format
-
-function
 
 ## Details
 

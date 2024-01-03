@@ -1,7 +1,7 @@
 
 # Extract time from a Datetime Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L1010)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L962)
 
 ## Description
 

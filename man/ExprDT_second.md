@@ -1,7 +1,7 @@
 
 # Second
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L479)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L451)
 
 ## Description
 
@@ -10,9 +10,23 @@ Datetime columns. Returns the integer second number from 0 to 59, or a
 floating point number from 0 \< 60 if <code>fractional=True</code> that
 includes any milli/micro/nanosecond component.
 
-## Format
+## Usage
 
-function
+<pre><code class='language-R'>ExprDT_second(fractional = FALSE)
+</code></pre>
+
+## Arguments
+
+<table>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="ExprDT_second_:_fractional">fractional</code>
+</td>
+<td>
+Whether to include the fractional component of the second.
+</td>
+</tr>
+</table>
 
 ## Value
 

@@ -1,7 +1,7 @@
 
 # Ordinal Day
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L394)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L370)
 
 ## Description
 
@@ -10,9 +10,10 @@ and Datetime columns. Returns the day of year starting from 1. The
 return value ranges from 1 to 366. (The last day of year differs by
 years.)
 
-## Format
+## Usage
 
-function
+<pre><code class='language-R'>ExprDT_ordinal_day()
+</code></pre>
 
 ## Value
 

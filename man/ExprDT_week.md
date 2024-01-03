@@ -1,7 +1,7 @@
 
 # Week
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L307)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L289)
 
 ## Description
 
@@ -10,9 +10,10 @@ Date and Datetime columns. Returns the ISO week number starting from 1.
 The return value ranges from 1 to 53. (The last week of year differs by
 years.)
 
-## Format
+## Usage
 
-function
+<pre><code class='language-R'>ExprDT_week()
+</code></pre>
 
 ## Value
 

@@ -1,16 +1,17 @@
 
 # Quarter
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L248)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L234)
 
 ## Description
 
 Extract quarter from underlying Date representation. Applies to Date and
 Datetime columns. Returns the quarter ranging from 1 to 4.
 
-## Format
+## Usage
 
-function
+<pre><code class='language-R'>ExprDT_quarter()
+</code></pre>
 
 ## Value
 

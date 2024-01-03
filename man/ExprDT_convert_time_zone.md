@@ -1,12 +1,17 @@
 
 # With Time Zone
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L730)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L686)
 
 ## Description
 
 Set time zone for a Series of type Datetime. Use to change time zone
 annotation, but keep the corresponding global timepoint.
+
+## Usage
+
+<pre><code class='language-R'>ExprDT_convert_time_zone(tz)
+</code></pre>
 
 ## Arguments
 
@@ -20,10 +25,6 @@ String time zone from base::OlsonNames()
 </td>
 </tr>
 </table>
-
-## Format
-
-function
 
 ## Details
 

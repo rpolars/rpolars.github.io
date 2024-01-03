@@ -1,7 +1,7 @@
 
 # Minutes
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L844)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L798)
 
 ## Description
 

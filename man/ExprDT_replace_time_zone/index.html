@@ -11808,18 +11808,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#arguments" class="md-nav__link">
+  <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
-      Arguments
+      Usage
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
+  <a href="#arguments" class="md-nav__link">
     <span class="md-ellipsis">
-      Format
+      Arguments
     </span>
   </a>
   
@@ -13856,18 +13856,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#arguments" class="md-nav__link">
+  <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
-      Arguments
+      Usage
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
+  <a href="#arguments" class="md-nav__link">
     <span class="md-ellipsis">
-      Format
+      Arguments
     </span>
   </a>
   
@@ -13910,12 +13910,16 @@
 
 
 <h1 id="replace_time_zone">replace_time_zone</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L775"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L729"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Cast time zone for a Series of type Datetime. Different from
 <code>convert_time_zone</code>, this will also modify the underlying
 timestamp. Use to correct a wrong time zone annotation. This will change
 the corresponding global timepoint.</p>
+<h2 id="usage">Usage</h2>
+<pre><code class='language-R'>&lt;ExprDT&gt;$replace_time_zone(tz, ambiguous = "raise")
+</code></pre>
+
 <h2 id="arguments">Arguments</h2>
 <table>
 <tr>
@@ -13955,8 +13959,6 @@ Determine how to deal with ambiguous datetimes:
 </tr>
 </table>
 
-<h2 id="format">Format</h2>
-<p>function</p>
 <h2 id="value">Value</h2>
 <p>Expr of i64</p>
 <h2 id="examples">Examples</h2>

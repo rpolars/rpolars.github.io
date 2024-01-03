@@ -1,7 +1,7 @@
 
 # Combine Data and Time
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L132)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L126)
 
 ## Description
 
@@ -9,6 +9,11 @@ Create a naive Datetime from an existing Date/Datetime expression and a
 Time. Each date/datetime in the first half of the interval is mapped to
 the start of its bucket. Each date/datetime in the second half of the
 interval is mapped to the end of its bucket.
+
+## Usage
+
+<pre><code class='language-R'>ExprDT_combine(tm, tu = "us")
+</code></pre>
 
 ## Arguments
 
@@ -33,10 +38,6 @@ via PTime.
 </td>
 </tr>
 </table>
-
-## Format
-
-function
 
 ## Details
 

@@ -1,7 +1,7 @@
 
 # Nanosecond
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L566)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L532)
 
 ## Description
 
@@ -10,9 +10,10 @@ Datetime columns. Returns the integer second number from 0 to 59, or a
 floating point number from 0 \< 60 if <code>fractional=True</code> that
 includes any milli/micro/nanosecond component.
 
-## Format
+## Usage
 
-function
+<pre><code class='language-R'>ExprDT_nanosecond()
+</code></pre>
 
 ## Value
 

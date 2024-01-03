@@ -1,13 +1,18 @@
 
 # with_time_unit
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L664)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L624)
 
 ## Description
 
 Set time unit of a Series of dtype Datetime or Duration. This does not
 modify underlying data, and should be used to fix an incorrect time
 unit. The corresponding global timepoint will change.
+
+## Usage
+
+<pre><code class='language-R'>ExprDT_with_time_unit(tu = c("ns", "us", "ms"))
+</code></pre>
 
 ## Arguments
 
@@ -21,10 +26,6 @@ string option either ‘ns’, ‘us’, or ‘ms’
 </td>
 </tr>
 </table>
-
-## Format
-
-function
 
 ## Value
 

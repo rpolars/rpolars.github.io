@@ -1,7 +1,7 @@
 
 # Weekday
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L335)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L315)
 
 ## Description
 
@@ -9,9 +9,10 @@ Extract the week day from the underlying Date representation. Applies to
 Date and Datetime columns. Returns the ISO weekday number where monday =
 1 and sunday = 7
 
-## Format
+## Usage
 
-function
+<pre><code class='language-R'>ExprDT_weekday()
+</code></pre>
 
 ## Value
 

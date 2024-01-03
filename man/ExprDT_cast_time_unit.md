@@ -1,12 +1,17 @@
 
 # cast_time_unit
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L697)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L655)
 
 ## Description
 
 Cast the underlying data to another time unit. This may lose precision.
 The corresponding global timepoint will stay unchanged +/- precision.
+
+## Usage
+
+<pre><code class='language-R'>ExprDT_cast_time_unit(tu = c("ns", "us", "ms"))
+</code></pre>
 
 ## Arguments
 
@@ -20,10 +25,6 @@ string option either ‘ns’, ‘us’, or ‘ms’
 </td>
 </tr>
 </table>
-
-## Format
-
-function
 
 ## Value
 

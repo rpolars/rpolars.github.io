@@ -1,16 +1,17 @@
 
 # Millisecond
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L509)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L479)
 
 ## Description
 
 Extract milliseconds from underlying Datetime representation. Applies to
 Datetime columns.
 
-## Format
+## Usage
 
-function
+<pre><code class='language-R'>ExprDT_millisecond()
+</code></pre>
 
 ## Value
 

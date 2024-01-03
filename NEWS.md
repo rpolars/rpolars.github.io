@@ -8,6 +8,11 @@
     ([#641](https://github.com/pola-rs/r-polars/issues/641)).
 -   New methods `$rle()` and `$rle_id()` ([#648](https://github.com/pola-rs/r-polars/issues/648)).
 
+### Miscellaneous
+
+-   Remeve the `Makefile` in favor of `Taskfile.yml`.
+    Please use `task` instaed of `make` as a task runner ([#654](https://github.com/pola-rs/r-polars/issues/654)).
+
 ## polars 0.12.0
 
 ### BREAKING CHANGES DUE TO RUST-POLARS UPDATE

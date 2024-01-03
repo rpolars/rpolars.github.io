@@ -11514,18 +11514,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#arguments" class="md-nav__link">
+  <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
-      Arguments
+      Usage
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
+  <a href="#arguments" class="md-nav__link">
     <span class="md-ellipsis">
-      Format
+      Arguments
     </span>
   </a>
   
@@ -13865,18 +13865,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#arguments" class="md-nav__link">
+  <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
-      Arguments
+      Usage
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
+  <a href="#arguments" class="md-nav__link">
     <span class="md-ellipsis">
-      Format
+      Arguments
     </span>
   </a>
   
@@ -13928,12 +13928,16 @@
 
 
 <h1 id="combine-data-and-time">Combine Data and Time</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L132"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L126"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Create a naive Datetime from an existing Date/Datetime expression and a
 Time. Each date/datetime in the first half of the interval is mapped to
 the start of its bucket. Each date/datetime in the second half of the
 interval is mapped to the end of its bucket.</p>
+<h2 id="usage">Usage</h2>
+<pre><code class='language-R'>&lt;ExprDT&gt;$combine(tm, tu = "us")
+</code></pre>
+
 <h2 id="arguments">Arguments</h2>
 <table>
 <tr>
@@ -13957,8 +13961,6 @@ via PTime.
 </tr>
 </table>
 
-<h2 id="format">Format</h2>
-<p>function</p>
 <h2 id="details">Details</h2>
 <p>The <code>tu</code> allows the following time time units the following
 string language:</p>

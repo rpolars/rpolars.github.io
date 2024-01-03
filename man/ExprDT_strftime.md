@@ -1,13 +1,18 @@
 
 # strftime
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L156)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L148)
 
 ## Description
 
 Format Date/Datetime with a formatting rule. See
 <code style="white-space: pre;">chrono strftime/strptime
 \<https://docs.rs/chrono/latest/chrono/format/strftime/index.html\></code>\_.
+
+## Usage
+
+<pre><code class='language-R'>ExprDT_strftime(format)
+</code></pre>
 
 ## Arguments
 
@@ -21,10 +26,6 @@ string format very much like in R passed to chrono
 </td>
 </tr>
 </table>
-
-## Format
-
-function
 
 ## Value
 

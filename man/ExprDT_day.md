@@ -1,7 +1,7 @@
 
 # Day
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L365)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L343)
 
 ## Description
 
@@ -9,9 +9,10 @@ Extract day from underlying Date representation. Applies to Date and
 Datetime columns. Returns the day of month starting from 1. The return
 value ranges from 1 to 31. (The last day of month differs by months.)
 
-## Format
+## Usage
 
-function
+<pre><code class='language-R'>ExprDT_day()
+</code></pre>
 
 ## Value
 

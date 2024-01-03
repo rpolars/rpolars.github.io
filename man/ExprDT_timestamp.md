@@ -1,11 +1,16 @@
 
 # timestamp
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L632)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L594)
 
 ## Description
 
 Return a timestamp in the given time unit.
+
+## Usage
+
+<pre><code class='language-R'>ExprDT_timestamp(tu = c("ns", "us", "ms"))
+</code></pre>
 
 ## Arguments
 
@@ -19,10 +24,6 @@ string option either ‘ns’, ‘us’, or ‘ms’
 </td>
 </tr>
 </table>
-
-## Format
-
-function
 
 ## Value
 

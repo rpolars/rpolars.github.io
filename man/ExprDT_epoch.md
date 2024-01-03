@@ -1,11 +1,16 @@
 
 # Epoch
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L589)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L553)
 
 ## Description
 
 Get the time passed since the Unix EPOCH in the give time unit.
+
+## Usage
+
+<pre><code class='language-R'>ExprDT_epoch(tu = c("us", "ns", "ms", "s", "d"))
+</code></pre>
 
 ## Arguments
 
@@ -19,10 +24,6 @@ string option either ‘ns’, ‘us’, ‘ms’, ‘s’ or ‘d’
 </td>
 </tr>
 </table>
-
-## Format
-
-function
 
 ## Details
 

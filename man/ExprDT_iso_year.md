@@ -1,7 +1,7 @@
 
 # Iso-Year
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L219)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L207)
 
 ## Description
 
@@ -9,9 +9,10 @@ Extract ISO year from underlying Date representation. Applies to Date
 and Datetime columns. Returns the year number in the ISO standard. This
 may not correspond with the calendar year.
 
-## Format
+## Usage
 
-function
+<pre><code class='language-R'>ExprDT_iso_year()
+</code></pre>
 
 ## Value
 

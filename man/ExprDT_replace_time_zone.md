@@ -1,7 +1,7 @@
 
 # replace_time_zone
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L775)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L729)
 
 ## Description
 
@@ -9,6 +9,11 @@ Cast time zone for a Series of type Datetime. Different from
 <code>convert_time_zone</code>, this will also modify the underlying
 timestamp. Use to correct a wrong time zone annotation. This will change
 the corresponding global timepoint.
+
+## Usage
+
+<pre><code class='language-R'>ExprDT_replace_time_zone(tz, ambiguous = "raise")
+</code></pre>
 
 ## Arguments
 
@@ -49,10 +54,6 @@ Determine how to deal with ambiguous datetimes:
 </td>
 </tr>
 </table>
-
-## Format
-
-function
 
 ## Value
 

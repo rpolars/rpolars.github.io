@@ -11535,18 +11535,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#arguments" class="md-nav__link">
+  <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
-      Arguments
+      Usage
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
+  <a href="#arguments" class="md-nav__link">
     <span class="md-ellipsis">
-      Format
+      Arguments
     </span>
   </a>
   
@@ -13865,18 +13865,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#arguments" class="md-nav__link">
+  <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
-      Arguments
+      Usage
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
+  <a href="#arguments" class="md-nav__link">
     <span class="md-ellipsis">
-      Format
+      Arguments
     </span>
   </a>
   
@@ -13928,10 +13928,14 @@
 
 
 <h1 id="with-time-zone">With Time Zone</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L730"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L686"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Set time zone for a Series of type Datetime. Use to change time zone
 annotation, but keep the corresponding global timepoint.</p>
+<h2 id="usage">Usage</h2>
+<pre><code class='language-R'>&lt;ExprDT&gt;$convert_time_zone(tz)
+</code></pre>
+
 <h2 id="arguments">Arguments</h2>
 <table>
 <tr>
@@ -13944,8 +13948,6 @@ String time zone from base::OlsonNames()
 </tr>
 </table>
 
-<h2 id="format">Format</h2>
-<p>function</p>
 <h2 id="details">Details</h2>
 <p>corresponds to in R manually modifying the tzone attribute of POSIXt
 objects</p>

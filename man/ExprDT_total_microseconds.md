@@ -1,7 +1,7 @@
 
 # microseconds
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L904)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L858)
 
 ## Description
 

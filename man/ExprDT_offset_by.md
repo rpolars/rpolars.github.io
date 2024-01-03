@@ -1,7 +1,7 @@
 
 # Offset By
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L988)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L940)
 
 ## Description
 
@@ -9,6 +9,11 @@ Offset this date by a relative time offset. This differs from
 <code>pl$col(“foo_datetime_tu”) + value_tu</code> in that it can take
 months and leap years into account. Note that only a single minus sign
 is allowed in the <code>by</code> string, as the first character.
+
+## Usage
+
+<pre><code class='language-R'>ExprDT_offset_by(by)
+</code></pre>
 
 ## Arguments
 
@@ -22,10 +27,6 @@ optional string encoding duration see details.
 </td>
 </tr>
 </table>
-
-## Format
-
-function
 
 ## Details
 

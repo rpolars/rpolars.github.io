@@ -1,12 +1,17 @@
 
 # Truncate datetime
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L38)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L36)
 
 ## Description
 
 Divide the date/datetime range into buckets. Each date/datetime is
 mapped to the start of its bucket.
+
+## Usage
+
+<pre><code class='language-R'>ExprDT_truncate(every, offset = NULL)
+</code></pre>
 
 ## Arguments
 
@@ -28,10 +33,6 @@ optional string encoding duration see details.
 </td>
 </tr>
 </table>
-
-## Format
-
-function
 
 ## Details
 

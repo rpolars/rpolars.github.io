@@ -1,16 +1,17 @@
 
 # Minute
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L451)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L423)
 
 ## Description
 
 Extract minutes from underlying Datetime representation. Applies to
 Datetime columns. Returns the minute number from 0 to 59.
 
-## Format
+## Usage
 
-function
+<pre><code class='language-R'>ExprDT_minute()
+</code></pre>
 
 ## Value
 

@@ -11829,18 +11829,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#arguments" class="md-nav__link">
+  <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
-      Arguments
+      Usage
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
+  <a href="#arguments" class="md-nav__link">
     <span class="md-ellipsis">
-      Format
+      Arguments
     </span>
   </a>
   
@@ -13865,18 +13865,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#arguments" class="md-nav__link">
+  <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
-      Arguments
+      Usage
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
+  <a href="#arguments" class="md-nav__link">
     <span class="md-ellipsis">
-      Format
+      Arguments
     </span>
   </a>
   
@@ -13928,12 +13928,16 @@
 
 
 <h1 id="round-datetime">Round datetime</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L88"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L84"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Divide the date/datetime range into buckets. Each date/datetime in the
 first half of the interval is mapped to the start of its bucket. Each
 date/datetime in the second half of the interval is mapped to the end of
 its bucket.</p>
+<h2 id="usage">Usage</h2>
+<pre><code class='language-R'>&lt;ExprDT&gt;$round(every, offset = NULL)
+</code></pre>
+
 <h2 id="arguments">Arguments</h2>
 <table>
 <tr>
@@ -13946,7 +13950,7 @@ string encoding duration see details.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprDT_round_:_ofset">ofset</code>
+<code id="ExprDT_round_:_offset">offset</code>
 </td>
 <td>
 optional string encoding duration see details.
@@ -13954,8 +13958,6 @@ optional string encoding duration see details.
 </tr>
 </table>
 
-<h2 id="format">Format</h2>
-<p>function</p>
 <h2 id="details">Details</h2>
 <p>The <code>every</code> and <code>offset</code> argument are created with
 the the following string language:</p>
