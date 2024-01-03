@@ -9700,6 +9700,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../Expr_rle_id/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rle_id
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Expr_rle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Expr_rolling_max/" class="md-nav__link">
         
   
@@ -14127,8 +14169,8 @@ TRUE)</code>.
 #&gt; │ ---                 ┆ ---   ┆ --- │
 #&gt; │ str                 ┆ u64   ┆ u64 │
 #&gt; ╞═════════════════════╪═══════╪═════╡
-#&gt; │ optimization        ┆ 0     ┆ 25  │
-#&gt; │ projection(literal) ┆ 25    ┆ 91  │
+#&gt; │ optimization        ┆ 0     ┆ 29  │
+#&gt; │ projection(literal) ┆ 29    ┆ 118 │
 #&gt; └─────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Use $profile() to compare two queries</span>
@@ -14159,9 +14201,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ --- │
 #&gt; │ str                ┆ u64   ┆ u64 │
 #&gt; ╞════════════════════╪═══════╪═════╡
-#&gt; │ optimization       ┆ 0     ┆ 10  │
-#&gt; │ sort(Sepal.Length) ┆ 10    ┆ 444 │
-#&gt; │ group_by(Species)  ┆ 446   ┆ 849 │
+#&gt; │ optimization       ┆ 0     ┆ 9   │
+#&gt; │ sort(Sepal.Length) ┆ 9     ┆ 436 │
+#&gt; │ group_by(Species)  ┆ 438   ┆ 778 │
 #&gt; └────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)</span>
@@ -14199,9 +14241,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ ---   │
 #&gt; │ str                ┆ u64   ┆ u64   │
 #&gt; ╞════════════════════╪═══════╪═══════╡
-#&gt; │ optimization       ┆ 0     ┆ 7     │
-#&gt; │ sort(Sepal.Length) ┆ 7     ┆ 296   │
-#&gt; │ group_by(Species)  ┆ 298   ┆ 13557 │
+#&gt; │ optimization       ┆ 0     ┆ 8     │
+#&gt; │ sort(Sepal.Length) ┆ 8     ┆ 441   │
+#&gt; │ group_by(Species)  ┆ 443   ┆ 13836 │
 #&gt; └────────────────────┴───────┴───────┘
 </code></pre></div>
 

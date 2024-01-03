@@ -260,6 +260,8 @@ pl$show_all_public_methods()
     #>           [ replace ; function ]
     #>           [ reshape ; function ]
     #>           [ reverse ; function ]
+    #>           [ rle ; function ]
+    #>           [ rle_id ; function ]
     #>           [ rolling ; function ]
     #>           [ rolling_max ; function ]
     #>           [ rolling_mean ; function ]

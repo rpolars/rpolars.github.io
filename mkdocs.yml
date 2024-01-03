@@ -459,6 +459,8 @@ nav:
             - replace: man/Expr_replace.md
             - reshape: man/Expr_reshape.md
             - reverse: man/Expr_reverse.md
+            - rle_id: man/Expr_rle_id.md
+            - rle: man/Expr_rle.md
             - rolling_max: man/Expr_rolling_max.md
             - rolling_mean: man/Expr_rolling_mean.md
             - rolling_median: man/Expr_rolling_median.md
