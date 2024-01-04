@@ -1,7 +1,7 @@
 
 # Extract all matches for the given regex pattern
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L625)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L629)
 
 ## Description
 
@@ -29,8 +29,8 @@ A valid regex pattern
 
 ## Value
 
-<code>List\[Utf8\]</code> array. Contain null if original value is null
-or regex capture nothing.
+<code>List\[String\]</code> array. Contain null if original value is
+null or regex capture nothing.
 
 ## Examples
 

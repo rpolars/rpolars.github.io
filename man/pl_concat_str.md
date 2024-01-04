@@ -22,7 +22,7 @@ Horizontally concatenate columns into a single string column
 <td>
 Columns to concatenate into a single string column. Accepts expressions.
 Strings are parsed as column names, other non-expression inputs are
-parsed as literals. Non-Utf8 columns are cast to Utf8.
+parsed as literals. Non-String columns are cast to String
 </td>
 </tr>
 <tr>

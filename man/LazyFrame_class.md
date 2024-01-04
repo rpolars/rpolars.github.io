@@ -150,16 +150,16 @@ Ldf_best = Ldf_best$filter(filter_expr)
 Ldf_okay$describe_plan()
 ```
 
-    #> FILTER [(col("Species")) == (Utf8(setosa))] FROM
+    #> FILTER [(col("Species")) == (String(setosa))] FROM
     #> DF ["Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width"]; PROJECT */5 COLUMNS; SELECTION: "None"
 
 ``` r
 Ldf_best$describe_plan()
 ```
 
-    #> FILTER [(col("Species")) == (Utf8(setosa))] FROM
+    #> FILTER [(col("Species")) == (String(setosa))] FROM
     #> 
-    #>   Csv SCAN /tmp/RtmpkS1ajC/file6bbc4f6d0608
+    #>   Csv SCAN /tmp/RtmpFr5svw/file6e321f0795d4
     #>   PROJECT */5 COLUMNS
 
 ``` r
@@ -169,16 +169,16 @@ Ldf_best$describe_plan()
 Ldf_okay$describe_optimized_plan()
 ```
 
-    #> DF ["Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width"]; PROJECT */5 COLUMNS; SELECTION: "[(col(\"Species\")) == (Utf8(setosa))]"
+    #> DF ["Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width"]; PROJECT */5 COLUMNS; SELECTION: "[(col(\"Species\")) == (String(setosa))]"
 
 ``` r
 Ldf_best$describe_optimized_plan()
 ```
 
     #> 
-    #>   Csv SCAN /tmp/RtmpkS1ajC/file6bbc4f6d0608
+    #>   Csv SCAN /tmp/RtmpFr5svw/file6e321f0795d4
     #>   PROJECT */5 COLUMNS
-    #>   SELECTION: [(col("Species")) == (Utf8(setosa))]
+    #>   SELECTION: [(col("Species")) == (String(setosa))]
 
 ``` r
 # To acquire result in-mem use $colelct()

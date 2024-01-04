@@ -35,7 +35,7 @@ implicitly converted to <code>pl$col(“name”)</code>.
 
 ## Details
 
-Only columns of DataType <code>List</code> or <code>Utf8</code> can be
+Only columns of DataType <code>List</code> or <code>String</code> can be
 exploded.
 
 Named expressions like <code style="white-space: pre;">$explode(a =

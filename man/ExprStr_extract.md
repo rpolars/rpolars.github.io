@@ -1,7 +1,7 @@
 
 # Extract the target capture group from provided patterns
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L603)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L607)
 
 ## Description
 
@@ -36,7 +36,7 @@ first group begin at index 1 (default).
 
 ## Value
 
-Utf8 array. Contains null if original value is null or regex capture
+String array. Contains null if original value is null or regex capture
 nothing.
 
 ## Examples

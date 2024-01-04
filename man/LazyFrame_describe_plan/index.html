@@ -14001,7 +14001,7 @@ LazyFrame_describe_plan
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># This is the query as `polars` understands it</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">lazy_query</span><span class="o">$</span><span class="nf">describe_plan</span><span class="p">()</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; FILTER [(col(&quot;Species&quot;)) != (Utf8(setosa))] FROM
+<div class="highlight"><pre><span></span><code>#&gt; FILTER [(col(&quot;Species&quot;)) != (String(setosa))] FROM
 #&gt; SORT BY [col(&quot;Species&quot;)]
 #&gt;   DF [&quot;Sepal.Length&quot;, &quot;Sepal.Width&quot;, &quot;Petal.Length&quot;, &quot;Petal.Width&quot;]; PROJECT */5 COLUMNS; SELECTION: &quot;None&quot;
 </code></pre></div>
@@ -14010,7 +14010,7 @@ LazyFrame_describe_plan
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">lazy_query</span><span class="o">$</span><span class="nf">describe_optimized_plan</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; SORT BY [col(&quot;Species&quot;)]
-#&gt;   DF [&quot;Sepal.Length&quot;, &quot;Sepal.Width&quot;, &quot;Petal.Length&quot;, &quot;Petal.Width&quot;]; PROJECT */5 COLUMNS; SELECTION: &quot;[(col(\&quot;Species\&quot;)) != (Utf8(setosa))]&quot;
+#&gt;   DF [&quot;Sepal.Length&quot;, &quot;Sepal.Width&quot;, &quot;Petal.Length&quot;, &quot;Petal.Width&quot;]; PROJECT */5 COLUMNS; SELECTION: &quot;[(col(\&quot;Species\&quot;)) != (String(setosa))]&quot;
 </code></pre></div>
 
 

@@ -1,7 +1,7 @@
 
 # Replace all matching regex/literal substrings with a new string value
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L768)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L772)
 
 ## Description
 
@@ -43,7 +43,7 @@ Treat pattern as a literal string.
 
 ## Value
 
-Expr of Utf8 Series
+Expr of String Series
 
 ## See Also
 

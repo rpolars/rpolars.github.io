@@ -14037,8 +14037,8 @@ an inner DataType
 #&gt; $Float64
 #&gt; DataType: Float64
 #&gt; 
-#&gt; $Utf8
-#&gt; DataType: Utf8
+#&gt; $String
+#&gt; DataType: String
 #&gt; 
 #&gt; $Binary
 #&gt; DataType: Binary
@@ -14061,6 +14061,9 @@ an inner DataType
 #&gt; $Unknown
 #&gt; DataType: Unknown
 #&gt; 
+#&gt; $Utf8
+#&gt; DataType: String
+#&gt; 
 #&gt; $Datetime
 #&gt; function(tu = &quot;us&quot;, tz = NULL) {
 #&gt;     if (!is.null(tz) &amp;&amp; (!is_string(tz) || !tz %in% base::OlsonNames())) {
@@ -14068,7 +14071,7 @@ an inner DataType
 #&gt;     }
 #&gt;     unwrap(.pr$DataType$new_datetime(tu, tz))
 #&gt;   }
-#&gt; &lt;bytecode: 0x55cd0cb024b0&gt;
+#&gt; &lt;bytecode: 0x556224d42a08&gt;
 #&gt; &lt;environment: namespace:polars&gt;
 #&gt; 
 #&gt; $List
@@ -14084,7 +14087,7 @@ an inner DataType
 #&gt;     }
 #&gt;     .pr$DataType$new_list(datatype)
 #&gt;   }
-#&gt; &lt;bytecode: 0x55cd0caeb260&gt;
+#&gt; &lt;bytecode: 0x556224d2ca50&gt;
 #&gt; &lt;environment: namespace:polars&gt;
 #&gt; 
 #&gt; $Struct
@@ -14118,7 +14121,7 @@ an inner DataType
 #&gt;       and_then(DataType$new_struct) |&gt;
 #&gt;       unwrap(&quot;in pl$Struct:&quot;)
 #&gt;   }
-#&gt; &lt;bytecode: 0x55cd0cad5d90&gt;
+#&gt; &lt;bytecode: 0x556224c18e68&gt;
 #&gt; &lt;environment: namespace:polars&gt;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># check if an element is any kind of Struct()</span>

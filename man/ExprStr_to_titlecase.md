@@ -21,7 +21,7 @@ details.
 
 ## Value
 
-Expr of Utf8 titlecase chars
+Expr of String titlecase chars
 
 ## Examples
 

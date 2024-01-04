@@ -13833,6 +13833,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#rust-polars-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rust-polars update
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#whats-changed" class="md-nav__link">
     <span class="md-ellipsis">
       What's changed
@@ -14596,6 +14605,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#rust-polars-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rust-polars update
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#whats-changed" class="md-nav__link">
     <span class="md-ellipsis">
       What's changed
@@ -15334,17 +15352,25 @@
 
 <h1 id="news">NEWS</h1>
 <h2 id="polars-development-version">polars (development version)</h2>
+<h3 id="rust-polars-update">Rust-polars update</h3>
+<ul>
+<li>rust-polars is updated to 0.36.2 (<a href="https://github.com/pola-rs/r-polars/issues/659">#659</a>). Most of the changes were covered
+    in 0.12.0. The main change is that <code>pl$Utf8</code> is replaced by <code>pl$String</code>.
+    <code>pl$Utf8</code> is an alias and will keep working, but <code>pl$String</code> is now preferred
+    in the documentation and in new code.</li>
+</ul>
 <h3 id="whats-changed">What's changed</h3>
 <ul>
 <li>New methods <code>$str$reverse()</code>, <code>$str$contains_any()</code>, and <code>$str$replace_many()</code>
     (<a href="https://github.com/pola-rs/r-polars/issues/641">#641</a>).</li>
 <li>New methods <code>$rle()</code> and <code>$rle_id()</code> (<a href="https://github.com/pola-rs/r-polars/issues/648">#648</a>).</li>
 <li>New functions <code>is_polars_df()</code>, <code>is_polars_lf()</code>, <code>is_polars_series()</code> (<a href="https://github.com/pola-rs/r-polars/issues/658">#658</a>).</li>
+<li><code>$gather()</code> now accepts negative indexing (<a href="https://github.com/pola-rs/r-polars/issues/659">#659</a>).</li>
 </ul>
 <h3 id="miscellaneous">Miscellaneous</h3>
 <ul>
-<li>Remeve the <code>Makefile</code> in favor of <code>Taskfile.yml</code>.
-    Please use <code>task</code> instaed of <code>make</code> as a task runner (<a href="https://github.com/pola-rs/r-polars/issues/654">#654</a>).</li>
+<li>Remove the <code>Makefile</code> in favor of <code>Taskfile.yml</code>.
+    Please use <code>task</code> instead of <code>make</code> as a task runner (<a href="https://github.com/pola-rs/r-polars/issues/654">#654</a>).</li>
 </ul>
 <h2 id="polars-0120">polars 0.12.0</h2>
 <h3 id="breaking-changes-due-to-rust-polars-update">BREAKING CHANGES DUE TO RUST-POLARS UPDATE</h3>

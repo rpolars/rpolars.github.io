@@ -14,7 +14,7 @@ Transform to uppercase variant.
 
 ## Value
 
-Expr of Utf8 uppercase chars
+Expr of String uppercase chars
 
 ## Examples
 

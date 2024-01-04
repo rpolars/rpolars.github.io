@@ -19,9 +19,9 @@ print(ls(pl$dtypes))
 
     #>  [1] "Binary"      "Boolean"     "Categorical" "Date"        "Datetime"   
     #>  [6] "Float32"     "Float64"     "Int16"       "Int32"       "Int64"      
-    #> [11] "Int8"        "List"        "Null"        "Struct"      "Time"       
-    #> [16] "UInt16"      "UInt32"      "UInt64"      "UInt8"       "Unknown"    
-    #> [21] "Utf8"
+    #> [11] "Int8"        "List"        "Null"        "String"      "Struct"     
+    #> [16] "Time"        "UInt16"      "UInt32"      "UInt64"      "UInt8"      
+    #> [21] "Unknown"     "Utf8"
 
 ``` r
 pl$dtypes$Float64
@@ -30,10 +30,10 @@ pl$dtypes$Float64
     #> DataType: Float64
 
 ``` r
-pl$dtypes$Utf8
+pl$dtypes$String
 ```
 
-    #> DataType: Utf8
+    #> DataType: String
 
 ``` r
 pl$List(pl$List(pl$UInt64))
@@ -46,22 +46,22 @@ pl$List(pl$List(pl$UInt64))
     #> )
 
 ``` r
-pl$Struct(pl$Field("CityNames", pl$Utf8))
+pl$Struct(pl$Field("CityNames", pl$String))
 ```
 
     #> DataType: Struct(
     #>     [
     #>         Field {
     #>             name: "CityNames",
-    #>             dtype: Utf8,
+    #>             dtype: String,
     #>         },
     #>     ],
     #> )
 
 ``` r
-# The function changes type from Integer(Int32)[Integers] to char(Utf8)[Strings]
-# specifying the output DataType: Utf8 solves the problem
-pl$Series(1:4)$map_elements(\(x) letters[x], datatype = pl$dtypes$Utf8)
+# The function changes type from Int32 to String
+# Specifying the output DataType: String solves the problem
+pl$Series(1:4)$map_elements(\(x) letters[x], datatype = pl$dtypes$String)
 ```
 
     #> polars Series: shape: (4,)

@@ -37,7 +37,7 @@ propagated: if the column contains any null values, the output is null.
 
 ## Value
 
-Expr of Utf8 concatenated
+Expr of String concatenated
 
 ## Examples
 

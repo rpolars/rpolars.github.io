@@ -43,7 +43,7 @@ pl$date_range(as.Date("2022-1-1"), eager = FALSE)$dt$epoch("ns")$to_series()
 ```
 
     #> polars Series: shape: (1,)
-    #> Series: 'date' [i64]
+    #> Series: '' [i64]
     #> [
     #>  1640995200000000000
     #> ]
@@ -53,7 +53,7 @@ pl$date_range(as.Date("2022-1-1"), eager = FALSE)$dt$epoch("ms")$to_series()
 ```
 
     #> polars Series: shape: (1,)
-    #> Series: 'date' [i64]
+    #> Series: '' [i64]
     #> [
     #>  1640995200000
     #> ]
@@ -63,7 +63,7 @@ pl$date_range(as.Date("2022-1-1"), eager = FALSE)$dt$epoch("s")$to_series()
 ```
 
     #> polars Series: shape: (1,)
-    #> Series: 'date' [i64]
+    #> Series: '' [i64]
     #> [
     #>  1640995200
     #> ]
@@ -73,7 +73,7 @@ pl$date_range(as.Date("2022-1-1"), eager = FALSE)$dt$epoch("d")$to_series()
 ```
 
     #> polars Series: shape: (1,)
-    #> Series: 'date' [i32]
+    #> Series: '' [i32]
     #> [
     #>  18993
     #> ]

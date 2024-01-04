@@ -1,7 +1,7 @@
 
 # Get r vector/list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L279)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L278)
 
 ## Description
 
@@ -41,11 +41,10 @@ R list
 library(polars)
 
 
-# make polars Series_Utf8
 series_vec = pl$Series(letters[1:3])
 
 # Series_non_list
-series_vec$to_r() # as vector because Series DataType is not list (is Utf8)
+series_vec$to_r() # as vector because Series DataType is not list (is String)
 ```
 
     #> [1] "a" "b" "c"

@@ -29,14 +29,14 @@ A valid JSON path query string.
 ## Details
 
 Throw errors if encounter invalid JSON strings. All return value will be
-cast to Utf8 regardless of the original value.
+cast to String regardless of the original value.
 
 Documentation on JSONPath standard can be found here:
 <a href="https://goessner.net/articles/JsonPath/">https://goessner.net/articles/JsonPath/</a>.
 
 ## Value
 
-Utf8 array. Contain null if original value is null or the json_path
+String array. Contain null if original value is null or the json_path
 return nothing.
 
 ## Examples

@@ -14087,14 +14087,14 @@ replaced by any function prefixed <code>LazyFrame</em></code>.</p>
 <a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="c1"># the non optimized plans are similar, on entire in-mem csv, apply filter</span>
 <a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="n">Ldf_okay</span><span class="o">$</span><span class="nf">describe_plan</span><span class="p">()</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; FILTER [(col(&quot;Species&quot;)) == (Utf8(setosa))] FROM
+<div class="highlight"><pre><span></span><code>#&gt; FILTER [(col(&quot;Species&quot;)) == (String(setosa))] FROM
 #&gt; DF [&quot;Sepal.Length&quot;, &quot;Sepal.Width&quot;, &quot;Petal.Length&quot;, &quot;Petal.Width&quot;]; PROJECT */5 COLUMNS; SELECTION: &quot;None&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">Ldf_best</span><span class="o">$</span><span class="nf">describe_plan</span><span class="p">()</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; FILTER [(col(&quot;Species&quot;)) == (Utf8(setosa))] FROM
+<div class="highlight"><pre><span></span><code>#&gt; FILTER [(col(&quot;Species&quot;)) == (String(setosa))] FROM
 #&gt; 
-#&gt;   Csv SCAN /tmp/RtmpkS1ajC/file6bbc4f6d0608
+#&gt;   Csv SCAN /tmp/RtmpFr5svw/file6e321f0795d4
 #&gt;   PROJECT */5 COLUMNS
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># NOTE For Ldf_okay, the full time to load csv alrady paid when creating Rdf and Pdf</span>
@@ -14102,14 +14102,14 @@ replaced by any function prefixed <code>LazyFrame</em></code>.</p>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># The optimized plan are quite different, Ldf_best will read csv and perform filter simultaneously</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">Ldf_okay</span><span class="o">$</span><span class="nf">describe_optimized_plan</span><span class="p">()</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; DF [&quot;Sepal.Length&quot;, &quot;Sepal.Width&quot;, &quot;Petal.Length&quot;, &quot;Petal.Width&quot;]; PROJECT */5 COLUMNS; SELECTION: &quot;[(col(\&quot;Species\&quot;)) == (Utf8(setosa))]&quot;
+<div class="highlight"><pre><span></span><code>#&gt; DF [&quot;Sepal.Length&quot;, &quot;Sepal.Width&quot;, &quot;Petal.Length&quot;, &quot;Petal.Width&quot;]; PROJECT */5 COLUMNS; SELECTION: &quot;[(col(\&quot;Species\&quot;)) == (String(setosa))]&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Ldf_best</span><span class="o">$</span><span class="nf">describe_optimized_plan</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; 
-#&gt;   Csv SCAN /tmp/RtmpkS1ajC/file6bbc4f6d0608
+#&gt;   Csv SCAN /tmp/RtmpFr5svw/file6e321f0795d4
 #&gt;   PROJECT */5 COLUMNS
-#&gt;   SELECTION: [(col(&quot;Species&quot;)) == (Utf8(setosa))]
+#&gt;   SELECTION: [(col(&quot;Species&quot;)) == (String(setosa))]
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># To acquire result in-mem use $colelct()</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">Pdf_okay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Ldf_okay</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span>

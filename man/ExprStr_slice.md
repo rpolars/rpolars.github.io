@@ -1,11 +1,11 @@
 
-# Create subslices of the string values of a Utf8 Series
+# Create subslices of the string values of a String Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L788)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L792)
 
 ## Description
 
-Create subslices of the string values of a Utf8 Series
+Create subslices of the string values of a String Series
 
 ## Usage
 
@@ -36,7 +36,7 @@ to the end of the string.
 
 ## Value
 
-Expr: Series of dtype Utf8.
+Expr: Series of dtype String.
 
 ## Examples
 

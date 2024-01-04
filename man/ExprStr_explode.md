@@ -1,7 +1,7 @@
 
 # Returns a column with a separate row for every string character
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L800)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L804)
 
 ## Description
 
@@ -14,7 +14,7 @@ Returns a column with a separate row for every string character
 
 ## Value
 
-Expr: Series of dtype Utf8.
+Expr: Series of dtype String.
 
 ## Examples
 

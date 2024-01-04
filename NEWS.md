@@ -2,17 +2,25 @@
 
 ## polars (development version)
 
+### Rust-polars update
+
+-   rust-polars is updated to 0.36.2 ([#659](https://github.com/pola-rs/r-polars/issues/659)). Most of the changes were covered
+    in 0.12.0. The main change is that `pl$Utf8` is replaced by `pl$String`.
+    `pl$Utf8` is an alias and will keep working, but `pl$String` is now preferred
+    in the documentation and in new code.
+
 ### What's changed
 
 -   New methods `$str$reverse()`, `$str$contains_any()`, and `$str$replace_many()`
     ([#641](https://github.com/pola-rs/r-polars/issues/641)).
 -   New methods `$rle()` and `$rle_id()` ([#648](https://github.com/pola-rs/r-polars/issues/648)).
 -   New functions `is_polars_df()`, `is_polars_lf()`, `is_polars_series()` ([#658](https://github.com/pola-rs/r-polars/issues/658)).
+-   `$gather()` now accepts negative indexing ([#659](https://github.com/pola-rs/r-polars/issues/659)).
 
 ### Miscellaneous
 
--   Remeve the `Makefile` in favor of `Taskfile.yml`.
-    Please use `task` instaed of `make` as a task runner ([#654](https://github.com/pola-rs/r-polars/issues/654)).
+-   Remove the `Makefile` in favor of `Taskfile.yml`.
+    Please use `task` instead of `make` as a task runner ([#654](https://github.com/pola-rs/r-polars/issues/654)).
 
 ## polars 0.12.0
 

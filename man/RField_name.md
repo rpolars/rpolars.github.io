@@ -17,7 +17,7 @@ Get/set Field name
 ``` r
 library(polars)
 
-field = pl$Field("Cities", pl$Utf8)
+field = pl$Field("Cities", pl$String)
 field$name
 ```
 
@@ -30,5 +30,5 @@ field
 
     #> Field {
     #>     name: "CityPoPulations",
-    #>     dtype: Utf8,
+    #>     dtype: String,
     #> }

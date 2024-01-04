@@ -1,5 +1,5 @@
 
-# Explode a list or Utf8 Series
+# Explode a list or String Series
 
 [**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
 

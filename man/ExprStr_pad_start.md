@@ -42,7 +42,7 @@ string is returned if <code>width</code> is less than or equal to
 
 ## Value
 
-Expr of Utf8
+Expr of String
 
 ## Examples
 

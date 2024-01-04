@@ -37,7 +37,7 @@ right or only from the left respectively.
 
 ## Value
 
-Expr of Utf8 lowercase chars
+Expr of String lowercase chars
 
 ## Examples
 

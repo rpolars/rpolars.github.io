@@ -1,11 +1,11 @@
 
-# Convert a Utf8 column into a Datetime column
+# Convert a String column into a Datetime column
 
 [**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L171)
 
 ## Description
 
-Convert a Utf8 column into a Datetime column
+Convert a String column into a Datetime column
 
 ## Usage
 

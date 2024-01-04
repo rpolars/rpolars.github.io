@@ -42,7 +42,7 @@ lazy_query = lazy_frame$sort("Species")$filter(pl$col("Species") != "setosa")
 lazy_query$describe_plan()
 ```
 
-    #> FILTER [(col("Species")) != (Utf8(setosa))] FROM
+    #> FILTER [(col("Species")) != (String(setosa))] FROM
     #> SORT BY [col("Species")]
     #>   DF ["Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width"]; PROJECT */5 COLUMNS; SELECTION: "None"
 
@@ -53,4 +53,4 @@ lazy_query$describe_optimized_plan()
 ```
 
     #> SORT BY [col("Species")]
-    #>   DF ["Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width"]; PROJECT */5 COLUMNS; SELECTION: "[(col(\"Species\")) != (Utf8(setosa))]"
+    #>   DF ["Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width"]; PROJECT */5 COLUMNS; SELECTION: "[(col(\"Species\")) != (String(setosa))]"

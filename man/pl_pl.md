@@ -20,7 +20,7 @@ polars api.
 ## Format
 
 An object of class <code>pl_polars_env</code> (inherits from
-<code>environment</code>) of length 95.
+<code>environment</code>) of length 96.
 
 ## Details
 
@@ -88,6 +88,7 @@ pl$show_all_public_functions()
     #>           [ Int8 ; RPolarsDataType ]
     #>           [ List ; function ]
     #>           [ Null ; RPolarsDataType ]
+    #>           [ String ; RPolarsDataType ]
     #>           [ Struct ; function ]
     #>           [ Time ; RPolarsDataType ]
     #>           [ UInt16 ; RPolarsDataType ]
@@ -170,6 +171,7 @@ pl$show_all_public_functions()
     #>        [ show_all_public_methods ; function ]
     #>        [ SQLContext ; function ]
     #>        [ std ; function ]
+    #>        [ String ; RPolarsDataType ]
     #>        [ struct ; function ]
     #>        [ Struct ; function ]
     #>        [ sum ; function ]

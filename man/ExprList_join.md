@@ -7,7 +7,7 @@
 
 Join all string items in a sublist and place a separator between them.
 This errors if inner type of list <code style="white-space: pre;">!=
-Utf8</code>.
+String</code>.
 
 ## Usage
 
@@ -33,7 +33,7 @@ function
 
 ## Value
 
-Series of dtype Utf8
+Series of dtype String
 
 ## Examples
 

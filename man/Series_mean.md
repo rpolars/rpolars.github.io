@@ -1,7 +1,7 @@
 
 # Mean
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L615)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L614)
 
 ## Description
 

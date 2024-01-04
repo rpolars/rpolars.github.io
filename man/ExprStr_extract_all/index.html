@@ -13973,7 +13973,7 @@
 
 
 <h1 id="extract-all-matches-for-the-given-regex-pattern">Extract all matches for the given regex pattern</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L625"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L629"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Extracts all matches for the given regex pattern. Extracts each
 successive non-overlapping regex match in an individual string as an
@@ -13995,8 +13995,8 @@ A valid regex pattern
 </table>
 
 <h2 id="value">Value</h2>
-<p><code>List[Utf8]</code> array. Contain null if original value is null
-or regex capture nothing.</p>
+<p><code>List[String]</code> array. Contain null if original value is
+null or regex capture nothing.</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>

@@ -1,7 +1,7 @@
 
 # Encode a value using the provided encoding
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L572)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L574)
 
 ## Description
 
@@ -27,7 +27,7 @@ Either ‘hex’ or ‘base64’.
 
 ## Value
 
-Utf8 array with values encoded using provided encoding
+String array with values encoded using provided encoding
 
 ## Examples
 
@@ -54,8 +54,8 @@ df$with_columns(
   pl$col("strings")$str$encode("base64")$alias("base64"), # notice DataType is not encoded
   pl$col("strings")$str$encode("hex")$alias("hex") # ... and must restored with cast
 )$with_columns(
-  pl$col("base64")$str$decode("base64")$alias("base64_decoded")$cast(pl$Utf8),
-  pl$col("hex")$str$decode("hex")$alias("hex_decoded")$cast(pl$Utf8)
+  pl$col("base64")$str$decode("base64")$alias("base64_decoded")$cast(pl$String),
+  pl$col("hex")$str$decode("hex")$alias("hex_decoded")$cast(pl$String)
 )
 ```
 

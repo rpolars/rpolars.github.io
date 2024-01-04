@@ -137,7 +137,7 @@ is used while reading to overwrite dtypes. Supported types so far are:
 </li>
 <li>
 
-"Utf8" or "character" for DataType::Utf8,
+"String" or "character" for DataType::String,
 
 </li>
 </ul>
@@ -259,7 +259,7 @@ Offset to start the row_count column (only used if the name is set).
 <td>
 Try to automatically parse dates. Most ISO8601-like formats can be
 inferred, as well as a handful of others. If this does not succeed, the
-column remains of data type <code>pl$Utf8</code>.
+column remains of data type <code>pl$String</code>.
 </td>
 </tr>
 <tr>

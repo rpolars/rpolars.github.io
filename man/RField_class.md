@@ -43,10 +43,10 @@ its DataType.
 ``` r
 library(polars)
 
-pl$Field("city_names", pl$Utf8)
+pl$Field("city_names", pl$String)
 ```
 
     #> Field {
     #>     name: "city_names",
-    #>     dtype: Utf8,
+    #>     dtype: String,
     #> }

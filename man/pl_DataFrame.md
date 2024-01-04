@@ -141,7 +141,7 @@ pl$DataFrame(mtcars)
 
 ``` r
 # custom schema
-pl$DataFrame(iris, schema = list(Sepal.Length = pl$Float32, Species = pl$Utf8))
+pl$DataFrame(iris, schema = list(Sepal.Length = pl$Float32, Species = pl$String))
 ```
 
     #> shape: (150, 5)

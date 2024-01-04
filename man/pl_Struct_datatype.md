@@ -79,8 +79,8 @@ print(pl$dtypes)
     #> $Float64
     #> DataType: Float64
     #> 
-    #> $Utf8
-    #> DataType: Utf8
+    #> $String
+    #> DataType: String
     #> 
     #> $Binary
     #> DataType: Binary
@@ -103,6 +103,9 @@ print(pl$dtypes)
     #> $Unknown
     #> DataType: Unknown
     #> 
+    #> $Utf8
+    #> DataType: String
+    #> 
     #> $Datetime
     #> function(tu = "us", tz = NULL) {
     #>     if (!is.null(tz) && (!is_string(tz) || !tz %in% base::OlsonNames())) {
@@ -110,7 +113,7 @@ print(pl$dtypes)
     #>     }
     #>     unwrap(.pr$DataType$new_datetime(tu, tz))
     #>   }
-    #> <bytecode: 0x55cd0cb024b0>
+    #> <bytecode: 0x556224d42a08>
     #> <environment: namespace:polars>
     #> 
     #> $List
@@ -126,7 +129,7 @@ print(pl$dtypes)
     #>     }
     #>     .pr$DataType$new_list(datatype)
     #>   }
-    #> <bytecode: 0x55cd0caeb260>
+    #> <bytecode: 0x556224d2ca50>
     #> <environment: namespace:polars>
     #> 
     #> $Struct
@@ -160,7 +163,7 @@ print(pl$dtypes)
     #>       and_then(DataType$new_struct) |>
     #>       unwrap("in pl$Struct:")
     #>   }
-    #> <bytecode: 0x55cd0cad5d90>
+    #> <bytecode: 0x556224c18e68>
     #> <environment: namespace:polars>
 
 ``` r

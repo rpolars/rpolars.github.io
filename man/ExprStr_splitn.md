@@ -1,7 +1,7 @@
 
 # Split the string by a substring, restricted to returning at most <code>n</code> items
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L724)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L728)
 
 ## Description
 
@@ -38,7 +38,7 @@ Number of splits to make.
 
 ## Value
 
-Struct where each of <code>n</code> fields is of Utf8 type
+Struct where each of <code>n</code> fields is of String type
 
 ## Examples
 

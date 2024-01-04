@@ -1,7 +1,7 @@
 
 # Count all successive non-overlapping regex matches
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L650)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L654)
 
 ## Description
 

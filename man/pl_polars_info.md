@@ -45,7 +45,7 @@ pl$polars_info()
 ```
 
     #> r-polars package version : 0.12.0.9000
-    #> rust-polars crate version: 0.35.4
+    #> rust-polars crate version: 0.36.2
     #> 
     #> Thread pool size: 4 
     #> 

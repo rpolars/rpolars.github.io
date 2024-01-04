@@ -1,7 +1,7 @@
 
 # Gather values by index
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1582)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1584)
 
 ## Description
 
@@ -21,7 +21,7 @@ Gather values by index
 </td>
 <td>
 R scalar/vector or Series, or Expr that leads to a Series of dtype
-UInt32.
+Int64. (0-indexed)
 </td>
 </tr>
 </table>
@@ -35,16 +35,19 @@ Expr
 ``` r
 library(polars)
 
-pl$DataFrame(a = c(1, 2, 4, 5, 8))$select(pl$col("a")$gather(c(0, 2, 4)))
+df = pl$DataFrame(a = 1:10)
+
+df$select(pl$col("a")$gather(c(0, 2, 4, -1)))
 ```
 
-    #> shape: (3, 1)
+    #> shape: (4, 1)
     #> ┌─────┐
     #> │ a   │
     #> │ --- │
-    #> │ f64 │
+    #> │ i32 │
     #> ╞═════╡
-    #> │ 1.0 │
-    #> │ 4.0 │
-    #> │ 8.0 │
+    #> │ 1   │
+    #> │ 3   │
+    #> │ 5   │
+    #> │ 10  │
     #> └─────┘

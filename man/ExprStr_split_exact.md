@@ -1,7 +1,7 @@
 
 # Split the string by a substring using <code>n</code> splits
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L698)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L702)
 
 ## Description
 
@@ -44,7 +44,7 @@ If <code>TRUE</code>, include the split character/string in the results.
 
 ## Value
 
-Struct where each of n+1 fields is of Utf8 type
+Struct where each of n+1 fields is of String type
 
 ## Examples
 

@@ -177,7 +177,7 @@ df$select(pl$col(pl$dtypes$Float64))
 
 ``` r
 # ... or an R list of DataTypes, select any column of any such DataType
-df$select(pl$col(list(pl$dtypes$Float64, pl$dtypes$Utf8)))
+df$select(pl$col(list(pl$dtypes$Float64, pl$dtypes$String)))
 ```
 
     #> shape: (1, 2)

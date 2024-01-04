@@ -100,7 +100,7 @@ pl$DataFrame(iris)$
   select(
   pl$col("Sepal.Length")$map_batches(\(x) {
     paste("cheese", as.character(x$to_vector()))
-  }, pl$dtypes$Utf8)
+  }, pl$dtypes$String)
 )
 ```
 
@@ -135,7 +135,7 @@ pl$LazyFrame(a = 1, b = 2, c = 3, d = 4)$select(
 ```
 
     #>    user  system elapsed 
-    #>   0.015   0.001   0.432
+    #>   0.013   0.004   0.415
 
 ``` r
 # map in parallel 1: Overhead to start up extra R processes / sessions
@@ -156,7 +156,7 @@ pl$LazyFrame(a = 1, b = 2, c = 3, d = 4)$select(
 ```
 
     #>    user  system elapsed 
-    #>   0.006   0.000   0.730
+    #>   0.005   0.000   0.856
 
 ``` r
 # map in parallel 2: Reuse R processes in "polars global_rpool".
@@ -175,4 +175,4 @@ pl$LazyFrame(a = 1, b = 2, c = 3, d = 4)$select(
 ```
 
     #>    user  system elapsed 
-    #>   0.000   0.005   0.107
+    #>   0.005   0.000   0.109

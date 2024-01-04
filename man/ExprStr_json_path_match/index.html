@@ -14013,11 +14013,11 @@ A valid JSON path query string.
 
 <h2 id="details">Details</h2>
 <p>Throw errors if encounter invalid JSON strings. All return value will be
-cast to Utf8 regardless of the original value.</p>
+cast to String regardless of the original value.</p>
 <p>Documentation on JSONPath standard can be found here:
 <a href="https://goessner.net/articles/JsonPath/">https://goessner.net/articles/JsonPath/</a>.</p>
 <h2 id="value">Value</h2>
-<p>Utf8 array. Contain null if original value is null or the json_path
+<p>String array. Contain null if original value is null or the json_path
 return nothing.</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>

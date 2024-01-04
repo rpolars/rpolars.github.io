@@ -17,11 +17,11 @@ Get/set Field datatype
 ``` r
 library(polars)
 
-field = pl$Field("Cities", pl$Utf8)
+field = pl$Field("Cities", pl$String)
 field$datatype
 ```
 
-    #> DataType: Utf8
+    #> DataType: String
 
 ``` r
 field$datatype = pl$Categorical #<- is fine too

@@ -1,7 +1,7 @@
 
 # Split the string by a substring
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L676)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L680)
 
 ## Description
 
@@ -36,7 +36,7 @@ If <code>TRUE</code>, include the split character/string in the results.
 
 ## Value
 
-List of Utf8 type
+List of String type
 
 ## Examples
 

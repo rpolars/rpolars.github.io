@@ -1,7 +1,7 @@
 
 # Take absolute value of Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L319)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L318)
 
 ## Description
 
