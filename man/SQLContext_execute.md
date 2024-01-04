@@ -1,7 +1,7 @@
 
 # Execute SQL query against the registered data
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/0580dbe189881934960c63979bf59fc3448a21dc/R/sql.R#L78)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/sql.R#L78)
 
 ## Description
 

@@ -1,7 +1,7 @@
 
 # Keep the original root name of the expression.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/0580dbe189881934960c63979bf59fc3448a21dc/R/expr__name.R#L49)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__name.R#L49)
 
 ## Description
 

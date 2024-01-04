@@ -1,7 +1,7 @@
 
 # Enable the global string cache
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/0580dbe189881934960c63979bf59fc3448a21dc/R/options.R#L210)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/options.R#L210)
 
 ## Description
 

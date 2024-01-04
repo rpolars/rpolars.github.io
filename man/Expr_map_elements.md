@@ -1,7 +1,7 @@
 
 # Map a custom/user-defined function (UDF) to each element of a column
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/0580dbe189881934960c63979bf59fc3448a21dc/R/expr__expr.R#L874)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L874)
 
 ## Description
 
@@ -236,7 +236,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   2.281   0.005   2.446
+    #>   2.239   0.004   2.522
 
 ``` r
 # Comparing this to the standard polars syntax:
@@ -248,7 +248,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.002   0.000   0.002
+    #>   0.002   0.001   0.003
 
 ``` r
 # Running in parallel --------------------------------
@@ -268,7 +268,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.016   0.000   1.217
+    #>   0.014   0.012   1.229
 
 ``` r
 # first run in parallel: there is some overhead to start up extra R processes
@@ -293,7 +293,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.005   0.005   0.931
+    #>   0.003   0.007   1.021
 
 ``` r
 # second run in parallel: this reuses R processes in "polars global_rpool".
@@ -314,4 +314,4 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.008   0.000   0.334
+    #>   0.008   0.000   0.338
