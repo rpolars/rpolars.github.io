@@ -1,7 +1,7 @@
 
 # Report information of the package
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/info.R#L10)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/info.R#L11)
 
 ## Description
 
@@ -29,7 +29,7 @@ details)
 
 ## Usage
 
-<pre><code class='language-R'>pl_polars_info()
+<pre><code class='language-R'>polars_info()
 </code></pre>
 
 ## Value
@@ -41,7 +41,7 @@ A list with information of the package
 ``` r
 library(polars)
 
-pl$polars_info()
+polars_info()
 ```
 
     #> r-polars package version : 0.12.0.9000

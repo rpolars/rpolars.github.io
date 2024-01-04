@@ -106,6 +106,8 @@ The features enabled in the compiled Rust library are shown by the
 ``` r
 library(polars)
 pl$polars_info()
+#> Warning: pl$polars_info() is deprecated and will be removed in 0.13.0. Use
+#> polars_info() instead.
 #> r-polars package version : 0.12.0.9000
 #> rust-polars crate version: 0.36.2
 #> 

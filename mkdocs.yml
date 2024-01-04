@@ -82,7 +82,6 @@ nav:
         - min: man/pl_min.md
         - n_unique: man/pl_n_unique.md
         - pl: man/pl_pl.md
-        - polars_info: man/pl_polars_info.md
         - PTime: man/pl_PTime.md
         - raw_list: man/pl_raw_list.md
         - rolling_corr: man/pl_rolling_corr.md
@@ -643,6 +642,7 @@ nav:
         - is_polars_series: man/is_polars_series.md
         - nanoarrow: man/nanoarrow.md
         - polars_class_object: man/polars_class_object.md
+        - polars_info: man/polars_info.md
         - polars_options: man/polars_options.md
         - show_all_public_functions: man/show_all_public_functions.md
         - show_all_public_methods: man/show_all_public_methods.md

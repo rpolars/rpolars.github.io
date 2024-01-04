@@ -16,8 +16,7 @@ Transform to titlecase variant.
 
 This method is only available with the feature flag "simd" which can be
 set via envvar "RPOLARS_FULL_FEATURES" and it requires Rust nightly
-toolchain to compile. See <code>pl$polars_info()</code> for more
-details.
+toolchain to compile. See polars_info for more details.
 
 ## Value
 

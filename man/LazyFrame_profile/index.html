@@ -1398,27 +1398,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../pl_polars_info/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    polars_info
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../pl_PTime/" class="md-nav__link">
         
   
@@ -13788,6 +13767,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../polars_info/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    polars_info
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../polars_options/" class="md-nav__link">
         
   
@@ -14212,7 +14212,7 @@ TRUE)</code>.
 #&gt; │ str                 ┆ u64   ┆ u64 │
 #&gt; ╞═════════════════════╪═══════╪═════╡
 #&gt; │ optimization        ┆ 0     ┆ 24  │
-#&gt; │ projection(literal) ┆ 24    ┆ 94  │
+#&gt; │ projection(literal) ┆ 24    ┆ 99  │
 #&gt; └─────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Use $profile() to compare two queries</span>
@@ -14238,15 +14238,15 @@ TRUE)</code>.
 #&gt; 
 #&gt; $profile
 #&gt; shape: (3, 3)
-#&gt; ┌────────────────────┬───────┬─────┐
-#&gt; │ node               ┆ start ┆ end │
-#&gt; │ ---                ┆ ---   ┆ --- │
-#&gt; │ str                ┆ u64   ┆ u64 │
-#&gt; ╞════════════════════╪═══════╪═════╡
-#&gt; │ optimization       ┆ 0     ┆ 17  │
-#&gt; │ sort(Sepal.Length) ┆ 17    ┆ 405 │
-#&gt; │ group_by(Species)  ┆ 408   ┆ 723 │
-#&gt; └────────────────────┴───────┴─────┘
+#&gt; ┌────────────────────┬───────┬──────┐
+#&gt; │ node               ┆ start ┆ end  │
+#&gt; │ ---                ┆ ---   ┆ ---  │
+#&gt; │ str                ┆ u64   ┆ u64  │
+#&gt; ╞════════════════════╪═══════╪══════╡
+#&gt; │ optimization       ┆ 0     ┆ 17   │
+#&gt; │ sort(Sepal.Length) ┆ 17    ┆ 3152 │
+#&gt; │ group_by(Species)  ┆ 3155  ┆ 3671 │
+#&gt; └────────────────────┴───────┴──────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
@@ -14278,15 +14278,15 @@ TRUE)</code>.
 #&gt; 
 #&gt; $profile
 #&gt; shape: (3, 3)
-#&gt; ┌────────────────────┬───────┬──────┐
-#&gt; │ node               ┆ start ┆ end  │
-#&gt; │ ---                ┆ ---   ┆ ---  │
-#&gt; │ str                ┆ u64   ┆ u64  │
-#&gt; ╞════════════════════╪═══════╪══════╡
-#&gt; │ optimization       ┆ 0     ┆ 6    │
-#&gt; │ sort(Sepal.Length) ┆ 6     ┆ 211  │
-#&gt; │ group_by(Species)  ┆ 214   ┆ 9770 │
-#&gt; └────────────────────┴───────┴──────┘
+#&gt; ┌────────────────────┬───────┬───────┐
+#&gt; │ node               ┆ start ┆ end   │
+#&gt; │ ---                ┆ ---   ┆ ---   │
+#&gt; │ str                ┆ u64   ┆ u64   │
+#&gt; ╞════════════════════╪═══════╪═══════╡
+#&gt; │ optimization       ┆ 0     ┆ 7     │
+#&gt; │ sort(Sepal.Length) ┆ 7     ┆ 626   │
+#&gt; │ group_by(Species)  ┆ 628   ┆ 14810 │
+#&gt; └────────────────────┴───────┴───────┘
 </code></pre></div>
 
 

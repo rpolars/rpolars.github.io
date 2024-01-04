@@ -8,7 +8,7 @@ Run SQL queries against DataFrame/LazyFrame data.
 ## Details
 
 Currently, only available when built with the <code>full</code> feature.
-See <code>pl$polars_info()</code> for more information.
+See polars_info for more information.
 
 ## Examples
 

@@ -1394,27 +1394,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../man/pl_polars_info/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    polars_info
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../man/pl_PTime/" class="md-nav__link">
         
   
@@ -13679,6 +13658,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../man/polars_info/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    polars_info
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../man/polars_options/" class="md-nav__link">
         
   
@@ -13831,6 +13831,15 @@
   
     <nav class="md-nav" aria-label="polars (development version)">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deprecations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deprecations
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#rust-polars-update" class="md-nav__link">
@@ -14605,6 +14614,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#deprecations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deprecations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#rust-polars-update" class="md-nav__link">
     <span class="md-ellipsis">
       Rust-polars update
@@ -15352,6 +15370,11 @@
 
 <h1 id="news">NEWS</h1>
 <h2 id="polars-development-version">polars (development version)</h2>
+<h3 id="deprecations">Deprecations</h3>
+<ul>
+<li><code>pl$polars_info()</code> is moved to <code>polars_info()</code>. <code>pl$polars_info()</code> is deprecated
+    and will be removed in 0.13.0 (<a href="https://github.com/pola-rs/r-polars/issues/662">#662</a>).</li>
+</ul>
 <h3 id="rust-polars-update">Rust-polars update</h3>
 <ul>
 <li>rust-polars is updated to 0.36.2 (<a href="https://github.com/pola-rs/r-polars/issues/659">#659</a>). Most of the changes were covered
