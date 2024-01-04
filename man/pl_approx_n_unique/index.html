@@ -13989,7 +13989,7 @@
 
 
 <h1 id="approximate-count-of-unique-values">Approximate count of unique values.</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L424"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/0580dbe189881934960c63979bf59fc3448a21dc/R/functions__lazy.R#L424"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>This is done using the HyperLogLog++ algorithm for cardinality
 estimation.</p>
@@ -14079,7 +14079,7 @@ that the relative performance difference increases with column size.</p>
 #&gt; ]
 
 #&gt;    user  system elapsed 
-#&gt;   0.029   0.001   0.037
+#&gt;   0.029   0.001   0.029
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nf">system.time</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">n_unique</span><span class="p">(</span><span class="n">lit_series</span><span class="p">)</span><span class="o">$</span><span class="nf">to_series</span><span class="p">()</span><span class="o">$</span><span class="nf">print</span><span class="p">())</span>
 </code></pre></div>
@@ -14090,7 +14090,7 @@ that the relative performance difference increases with column size.</p>
 #&gt; ]
 
 #&gt;    user  system elapsed 
-#&gt;   0.115   0.003   0.069
+#&gt;   0.123   0.000   0.091
 </code></pre></div>
 
 

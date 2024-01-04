@@ -1,7 +1,7 @@
 
 # Clip elements below minimum value
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2767)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/0580dbe189881934960c63979bf59fc3448a21dc/R/expr__expr.R#L2767)
 
 ## Description
 

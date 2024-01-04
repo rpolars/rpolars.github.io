@@ -1,7 +1,7 @@
 
 # Test if the object is a polars DataFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/is_polars.R#L11)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/0580dbe189881934960c63979bf59fc3448a21dc/R/is_polars.R#L11)
 
 ## Description
 

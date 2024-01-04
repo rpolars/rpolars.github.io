@@ -1,7 +1,7 @@
 
 # Drop duplicated rows
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L409)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/0580dbe189881934960c63979bf59fc3448a21dc/R/dataframe__frame.R#L409)
 
 ## Description
 
@@ -86,7 +86,7 @@ df$height
 df$unique()$height
 ```
 
-    #> [1] 70
+    #> [1] 64
 
 ``` r
 df$unique(subset = "x")$height
@@ -98,21 +98,21 @@ df$unique(subset = "x")$height
 df$unique(keep = "last")
 ```
 
-    #> shape: (70, 2)
+    #> shape: (64, 2)
     #> ┌─────┬─────┐
     #> │ x   ┆ y   │
     #> │ --- ┆ --- │
     #> │ i32 ┆ i32 │
     #> ╞═════╪═════╡
-    #> │ 3   ┆ 8   │
+    #> │ 4   ┆ 1   │
+    #> │ 1   ┆ 6   │
+    #> │ 5   ┆ 2   │
     #> │ 6   ┆ 10  │
-    #> │ 10  ┆ 1   │
-    #> │ 10  ┆ 5   │
     #> │ …   ┆ …   │
-    #> │ 5   ┆ 5   │
-    #> │ 10  ┆ 2   │
-    #> │ 1   ┆ 2   │
-    #> │ 5   ┆ 6   │
+    #> │ 2   ┆ 2   │
+    #> │ 1   ┆ 9   │
+    #> │ 10  ┆ 10  │
+    #> │ 1   ┆ 7   │
     #> └─────┴─────┘
 
 ``` r
@@ -120,19 +120,19 @@ df$unique(keep = "last")
 df$unique(keep = "none")
 ```
 
-    #> shape: (44, 2)
+    #> shape: (35, 2)
     #> ┌─────┬─────┐
     #> │ x   ┆ y   │
     #> │ --- ┆ --- │
     #> │ i32 ┆ i32 │
     #> ╞═════╪═════╡
-    #> │ 4   ┆ 8   │
-    #> │ 2   ┆ 7   │
-    #> │ 3   ┆ 8   │
-    #> │ 7   ┆ 1   │
-    #> │ …   ┆ …   │
     #> │ 7   ┆ 3   │
-    #> │ 4   ┆ 4   │
-    #> │ 10  ┆ 7   │
-    #> │ 1   ┆ 3   │
+    #> │ 4   ┆ 1   │
+    #> │ 1   ┆ 6   │
+    #> │ 8   ┆ 3   │
+    #> │ …   ┆ …   │
+    #> │ 10  ┆ 10  │
+    #> │ 2   ┆ 9   │
+    #> │ 3   ┆ 1   │
+    #> │ 1   ┆ 7   │
     #> └─────┴─────┘
