@@ -97,7 +97,7 @@ df$sort("fruits")$select(
 #> └────────┴────────┴──────────────┴─────┴──────────────┴──────────────┴──────────────┴──────────────┘
 ```
 
-The [Get Started vignette](https://rpolars.github.io/articles/polars/)
+The [Get Started vignette](https://rpolars.github.io/vignettes/polars/)
 (`vignette("polars")`) provides a more detailed introduction to
 **polars**.
 

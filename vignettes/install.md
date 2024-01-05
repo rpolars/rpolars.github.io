@@ -1,4 +1,4 @@
-# installing polars details
+# Installation details
 
 The `polars` package can be installed from R-universe or GitHub.
 
@@ -74,6 +74,8 @@ If one of the following environment variables is set, a pre-built Rust
 library binary will be tried to be used before building the Rust source.
 
 -   `NOT_CRAN="true"`
+-   `MY_UNIVERSE` is not empty (This environment variable is set by
+    R-universe)
 -   `LIBR_POLARS_BUILD="false"` (This is prioritized, so if you want to
     force a source build, set `LIBR_POLARS_BUILD="true"`)
 
@@ -85,7 +87,7 @@ building from source.
 
 If you want to use a pre-built Rust library binary that exists locally,
 set the `LIBR_POLARS_PATH` environment variable to the path to the
-binary. For example:
+binary. For example (on Bash):
 
 ``` sh
 export LIBR_POLARS_BUILD="false"
@@ -101,13 +103,11 @@ affect the R package features. These flags are set at compile time, and
 cannot be changed at runtime.
 
 The features enabled in the compiled Rust library are shown by the
-`pl$polars_info()` function.
+`polars_info()` function.
 
 ``` r
 library(polars)
-pl$polars_info()
-#> Warning: pl$polars_info() is deprecated and will be removed in 0.13.0. Use
-#> polars_info() instead.
+polars_info()
 #> r-polars package version : 0.12.1.9000
 #> rust-polars crate version: 0.36.2
 #> 
