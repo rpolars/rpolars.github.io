@@ -13997,10 +13997,10 @@ as column.
 <h2 id="details">Details</h2>
 <p>when-then-otherwise is similar to R <code>ifelse()</code>.
 <code>pl$when(condition)</code> takes a condition as input this will an
-polars <code style="white-space: pre;">\&lt;Expr&gt;</code> which renderes to
+polars <code style="white-space: pre;">&lt;Expr&gt;</code> which renderes to
 a Boolean column. Then it is chained with a
 <code style="white-space: pre;">$then(statement)</code> when arg
-statement is an <code style="white-space: pre;">\&lt;Expr&gt;</code> which
+statement is an <code style="white-space: pre;">&lt;Expr&gt;</code> which
 produces a column with values if idealy all Boolean are true. Then
 finally an <code style="white-space: pre;">$otherwise(statement)</code>
 with values if false.
@@ -14010,30 +14010,30 @@ with values if false.
 <code style="white-space: pre;">$otherwise()</code> as given by the
 when-condition.</p>
 <p>State-machine details below. The state machine consists of 4 classes
-<code style="white-space: pre;">\&lt;When&gt;</code>,
-<code style="white-space: pre;">\&lt;Then&gt;</code>,
-<code style="white-space: pre;">\&lt;ChainedWhen&gt;</code> &amp;
-<code style="white-space: pre;">\&lt;ChainedThen&gt;</code> and a starter
+<code style="white-space: pre;">&lt;When&gt;</code>,
+<code style="white-space: pre;">&lt;Then&gt;</code>,
+<code style="white-space: pre;">&lt;ChainedWhen&gt;</code> &amp;
+<code style="white-space: pre;">&lt;ChainedThen&gt;</code> and a starter
 function <code>pl$when()</code> and the final expression class a polars
-<code style="white-space: pre;">\&lt;Expr&gt;</code>.</p>
+<code style="white-space: pre;">&lt;Expr&gt;</code>.</p>
 <p><code>pl$when</code>return a
-<code style="white-space: pre;">\&lt;When&gt;</code> object.
-<code style="white-space: pre;">pl$when(condition) -&gt; \&lt;When&gt;</code></p>
-<p><code style="white-space: pre;">\&lt;When&gt;</code> has a single public
+<code style="white-space: pre;">&lt;When&gt;</code> object.
+<code style="white-space: pre;">pl$when(condition) -&gt; &lt;When&gt;</code></p>
+<p><code style="white-space: pre;">&lt;When&gt;</code> has a single public
 method <code style="white-space: pre;">$then(statement)</code>
-<code style="white-space: pre;">\&lt;When&gt;$then(statement) -&gt;
-\&lt;Then&gt;</code></p>
+<code style="white-space: pre;">&lt;When&gt;$then(statement) -&gt;
+&lt;Then&gt;</code></p>
 <h1 id="the-follow-objects-and-methods-are">the follow objects and methods are</h1>
-<p><code style="white-space: pre;">\&lt;Then&gt;$when(condition) -&gt;
-\&lt;ChainedWhen&gt;</code>
-<code style="white-space: pre;">\&lt;Then&gt;$otherwise(statement) -&gt;
-\&lt;Expr&gt;</code>
-<code style="white-space: pre;">\&lt;ChainedWhen&gt;$then(statement) -&gt;
-\&lt;ChainedThen&gt;</code>
-<code style="white-space: pre;">\&lt;ChainedThen&gt;$when(condition) -&gt;
-\&lt;Expr&gt;</code>
-<code style="white-space: pre;">\&lt;ChainedThen&gt;$otherwise(statement) -&gt;
-\&lt;Expr&gt;</code></p>
+<p><code style="white-space: pre;">&lt;Then&gt;$when(condition) -&gt;
+&lt;ChainedWhen&gt;</code>
+<code style="white-space: pre;">&lt;Then&gt;$otherwise(statement) -&gt;
+&lt;Expr&gt;</code>
+<code style="white-space: pre;">&lt;ChainedWhen&gt;$then(statement) -&gt;
+&lt;ChainedThen&gt;</code>
+<code style="white-space: pre;">&lt;ChainedThen&gt;$when(condition) -&gt;
+&lt;Expr&gt;</code>
+<code style="white-space: pre;">&lt;ChainedThen&gt;$otherwise(statement) -&gt;
+&lt;Expr&gt;</code></p>
 <p>This statemachine ensures only syntacticly allowed methods are availble
 at any specific place in a nested when-then-otherwise expression.</p>
 <h2 id="value">Value</h2>

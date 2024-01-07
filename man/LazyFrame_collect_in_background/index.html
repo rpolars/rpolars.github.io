@@ -13984,12 +13984,12 @@ TRUE)</code>.</p>
 
 <h2 id="details">Details</h2>
 <p>This function immediately returns an RThreadHandle. Use
-<code>\&lt;RPolarsRThreadHandle&gt;$is_finished()</code> to see if done. Use
-<code>\&lt;RPolarsRThreadHandle&gt;$join()</code> to wait and get the final
+<code>&lt;RPolarsRThreadHandle&gt;$is_finished()</code> to see if done. Use
+<code>&lt;RPolarsRThreadHandle&gt;$join()</code> to wait and get the final
 result.</p>
 <p>It is useful to not block the R session while query executes. If you use
-<code>\&lt;Expr&gt;$map_batches()</code> or
-<code>\&lt;Expr&gt;$map_elements()</code> to run R functions in the query,
+<code>&lt;Expr&gt;$map_batches()</code> or
+<code>&lt;Expr&gt;$map_elements()</code> to run R functions in the query,
 then you must pass <code>in_background = TRUE</code> in
 <code style="white-space: pre;">$map_batches()</code> (or
 <code style="white-space: pre;">$map_elements()</code>). Otherwise,

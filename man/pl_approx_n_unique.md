@@ -111,7 +111,7 @@ system.time(pl$approx_n_unique(lit_series)$to_series()$print())
     #> ]
 
     #>    user  system elapsed 
-    #>   0.029   0.001   0.029
+    #>    0.03    0.00    0.03
 
 ``` r
 system.time(pl$n_unique(lit_series)$to_series()$print())
@@ -124,4 +124,4 @@ system.time(pl$n_unique(lit_series)$to_series()$print())
     #> ]
 
     #>    user  system elapsed 
-    #>   0.123   0.000   0.074
+    #>   0.125   0.000   0.060
