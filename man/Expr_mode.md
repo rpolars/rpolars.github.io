@@ -1,7 +1,7 @@
 
 # Mode
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/3908b5beab9ec917b825bad8f9a820caad37cb4a/R/#L)
 
 ## Description
 
@@ -32,12 +32,12 @@ df$select(pl$col("a")$mode())
     #> │ --- │
     #> │ i32 │
     #> ╞═════╡
-    #> │ 2   │
+    #> │ 4   │
+    #> │ 3   │
     #> │ 6   │
     #> │ 1   │
-    #> │ 4   │
     #> │ 5   │
-    #> │ 3   │
+    #> │ 2   │
     #> └─────┘
 
 ``` r
@@ -50,8 +50,8 @@ df$select(pl$col("b")$mode())
     #> │ --- │
     #> │ i32 │
     #> ╞═════╡
-    #> │ 1   │
     #> │ 3   │
+    #> │ 1   │
     #> └─────┘
 
 ``` r
@@ -64,7 +64,7 @@ df$select(pl$col("c")$mode())
     #> │ --- │
     #> │ i32 │
     #> ╞═════╡
-    #> │ 2   │
-    #> │ 1   │
     #> │ 3   │
+    #> │ 1   │
+    #> │ 2   │
     #> └─────┘

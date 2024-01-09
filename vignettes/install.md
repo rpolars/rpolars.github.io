@@ -16,8 +16,7 @@ Sys.setenv(NOT_CRAN = "true") # Enable installation with pre-built Rust library 
 install.packages("polars", repos = "https://rpolars.r-universe.dev")
 ```
 
--   On amd64 architecture Windows and macOS, binary R packages will be
-    installed.
+-   On supported platforms, binary R package will be installed.
 -   On the other platforms, the pre-built Rust library binary will be
     downloaded while building the R source package.
 -   If the pre-built Rust library binary is not available, the Rust
@@ -108,7 +107,7 @@ The features enabled in the compiled Rust library are shown by the
 ``` r
 library(polars)
 polars_info()
-#> r-polars package version : 0.12.1.9000
+#> r-polars package version : 0.12.2
 #> rust-polars crate version: 0.36.2
 #> 
 #> Thread pool size: 4 

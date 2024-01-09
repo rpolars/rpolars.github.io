@@ -1,7 +1,7 @@
 
 # struct
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L715)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/3908b5beab9ec917b825bad8f9a820caad37cb4a/R/functions__lazy.R#L715)
 
 ## Description
 
