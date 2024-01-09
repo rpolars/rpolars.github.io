@@ -20,7 +20,7 @@
     
     
       
-        <title>fold_reduce - Polars R Package</title>
+        <title>fold - Polars R Package</title>
       
     
     
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              fold_reduce
+              fold
             
           </span>
         </div>
@@ -1056,7 +1056,7 @@
           
   
   <span class="md-ellipsis">
-    fold_reduce
+    fold
   </span>
   
 
@@ -1067,7 +1067,7 @@
         
   
   <span class="md-ellipsis">
-    fold_reduce
+    fold
   </span>
   
 
@@ -1511,6 +1511,27 @@
   
   <span class="md-ellipsis">
     raw_list
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pl_reduce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    reduce
   </span>
   
 
@@ -13971,22 +13992,20 @@
 
 
 <h1 id="accumulate-over-multiple-columns-horizontally-with-an-r-function">Accumulate over multiple columns horizontally with an R function</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L865"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p><code>pl$fold()</code> and <code>pl$reduce()</code> allows one to do
-rowwise operations. The only difference between them is that
-<code>pl$fold()</code> has an additional argument (<code>acc</code>)
-that contains the value that will be initialized when the fold starts.</p>
+<p>This allows one to do rowwise operations, starting with an initial value
+(<code>acc</code>). See <code>pl$reduce()</code> to do rowwise
+operations without this initial value.</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>pl$fold(acc, lambda, exprs)
-
-pl_reduce(lambda, exprs)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_fold_reduce_:_acc">acc</code>
+<code id="pl_fold_:_acc">acc</code>
 </td>
 <td>
 an Expr or Into<Expr> of the initial accumulator.
@@ -13994,7 +14013,7 @@ an Expr or Into<Expr> of the initial accumulator.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_fold_reduce_:_lambda">lambda</code>
+<code id="pl_fold_:_lambda">lambda</code>
 </td>
 <td>
 R function which takes two polars Series as input and return one.
@@ -14002,7 +14021,7 @@ R function which takes two polars Series as input and return one.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_fold_reduce_:_exprs">exprs</code>
+<code id="pl_fold_:_exprs">exprs</code>
 </td>
 <td>
 Expressions to aggregate over. May also be a wildcard expression.
@@ -14017,37 +14036,31 @@ Expressions to aggregate over. May also be a wildcard expression.
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Make the row-wise sum of all columns with fold, reduce and vectorized &quot;+&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Make the row-wise sum of all columns</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">reduce</span><span class="p">(</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="n">lambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>\<span class="p">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="n">acc</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">,</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="n">exprs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;mpg&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;drat&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;mpg_drat_sum_reduced&quot;</span><span class="p">),</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">fold</span><span class="p">(</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="n">acc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">0</span><span class="p">),</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="n">lambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>\<span class="p">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="n">acc</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">,</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="n">exprs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;mpg&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;drat&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;mpg_drat_sum_folded&quot;</span><span class="p">),</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;mpg&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;drat&quot;</span><span class="p">))</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;mpg_drat_vector_sum&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">fold</span><span class="p">(</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="n">acc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">0</span><span class="p">),</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="n">lambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>\<span class="p">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="n">acc</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">,</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="n">exprs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;*&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;mpg_drat_sum_folded&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (32, 14)
-#&gt; ┌──────┬─────┬───────┬───────┬───┬──────┬───────────────────┬───────────────────┬──────────────────┐
-#&gt; │ mpg  ┆ cyl ┆ disp  ┆ hp    ┆ … ┆ carb ┆ mpg_drat_sum_redu ┆ mpg_drat_sum_fold ┆ mpg_drat_vector_ │
-#&gt; │ ---  ┆ --- ┆ ---   ┆ ---   ┆   ┆ ---  ┆ ced               ┆ ed                ┆ sum              │
-#&gt; │ f64  ┆ f64 ┆ f64   ┆ f64   ┆   ┆ f64  ┆ ---               ┆ ---               ┆ ---              │
-#&gt; │      ┆     ┆       ┆       ┆   ┆      ┆ f64               ┆ f64               ┆ f64              │
-#&gt; ╞══════╪═════╪═══════╪═══════╪═══╪══════╪═══════════════════╪═══════════════════╪══════════════════╡
-#&gt; │ 21.0 ┆ 6.0 ┆ 160.0 ┆ 110.0 ┆ … ┆ 4.0  ┆ 24.9              ┆ 24.9              ┆ 24.9             │
-#&gt; │ 21.0 ┆ 6.0 ┆ 160.0 ┆ 110.0 ┆ … ┆ 4.0  ┆ 24.9              ┆ 24.9              ┆ 24.9             │
-#&gt; │ 22.8 ┆ 4.0 ┆ 108.0 ┆ 93.0  ┆ … ┆ 1.0  ┆ 26.65             ┆ 26.65             ┆ 26.65            │
-#&gt; │ 21.4 ┆ 6.0 ┆ 258.0 ┆ 110.0 ┆ … ┆ 1.0  ┆ 24.48             ┆ 24.48             ┆ 24.48            │
-#&gt; │ …    ┆ …   ┆ …     ┆ …     ┆ … ┆ …    ┆ …                 ┆ …                 ┆ …                │
-#&gt; │ 15.8 ┆ 8.0 ┆ 351.0 ┆ 264.0 ┆ … ┆ 4.0  ┆ 20.02             ┆ 20.02             ┆ 20.02            │
-#&gt; │ 19.7 ┆ 6.0 ┆ 145.0 ┆ 175.0 ┆ … ┆ 6.0  ┆ 23.32             ┆ 23.32             ┆ 23.32            │
-#&gt; │ 15.0 ┆ 8.0 ┆ 301.0 ┆ 335.0 ┆ … ┆ 8.0  ┆ 18.54             ┆ 18.54             ┆ 18.54            │
-#&gt; │ 21.4 ┆ 4.0 ┆ 121.0 ┆ 109.0 ┆ … ┆ 2.0  ┆ 25.51             ┆ 25.51             ┆ 25.51            │
-#&gt; └──────┴─────┴───────┴───────┴───┴──────┴───────────────────┴───────────────────┴──────────────────┘
+<div class="highlight"><pre><span></span><code>#&gt; shape: (32, 12)
+#&gt; ┌──────┬─────┬───────┬───────┬───┬─────┬──────┬──────┬─────────────────────┐
+#&gt; │ mpg  ┆ cyl ┆ disp  ┆ hp    ┆ … ┆ am  ┆ gear ┆ carb ┆ mpg_drat_sum_folded │
+#&gt; │ ---  ┆ --- ┆ ---   ┆ ---   ┆   ┆ --- ┆ ---  ┆ ---  ┆ ---                 │
+#&gt; │ f64  ┆ f64 ┆ f64   ┆ f64   ┆   ┆ f64 ┆ f64  ┆ f64  ┆ f64                 │
+#&gt; ╞══════╪═════╪═══════╪═══════╪═══╪═════╪══════╪══════╪═════════════════════╡
+#&gt; │ 21.0 ┆ 6.0 ┆ 160.0 ┆ 110.0 ┆ … ┆ 1.0 ┆ 4.0  ┆ 4.0  ┆ 328.98              │
+#&gt; │ 21.0 ┆ 6.0 ┆ 160.0 ┆ 110.0 ┆ … ┆ 1.0 ┆ 4.0  ┆ 4.0  ┆ 329.795             │
+#&gt; │ 22.8 ┆ 4.0 ┆ 108.0 ┆ 93.0  ┆ … ┆ 1.0 ┆ 4.0  ┆ 1.0  ┆ 259.58              │
+#&gt; │ 21.4 ┆ 6.0 ┆ 258.0 ┆ 110.0 ┆ … ┆ 0.0 ┆ 3.0  ┆ 1.0  ┆ 426.135             │
+#&gt; │ …    ┆ …   ┆ …     ┆ …     ┆ … ┆ …   ┆ …    ┆ …    ┆ …                   │
+#&gt; │ 15.8 ┆ 8.0 ┆ 351.0 ┆ 264.0 ┆ … ┆ 1.0 ┆ 5.0  ┆ 4.0  ┆ 670.69              │
+#&gt; │ 19.7 ┆ 6.0 ┆ 145.0 ┆ 175.0 ┆ … ┆ 1.0 ┆ 5.0  ┆ 6.0  ┆ 379.59              │
+#&gt; │ 15.0 ┆ 8.0 ┆ 301.0 ┆ 335.0 ┆ … ┆ 1.0 ┆ 5.0  ┆ 8.0  ┆ 694.71              │
+#&gt; │ 21.4 ┆ 4.0 ┆ 121.0 ┆ 109.0 ┆ … ┆ 1.0 ┆ 4.0  ┆ 2.0  ┆ 288.89              │
+#&gt; └──────┴─────┴───────┴───────┴───┴─────┴──────┴──────┴─────────────────────┘
 </code></pre></div>
 
 

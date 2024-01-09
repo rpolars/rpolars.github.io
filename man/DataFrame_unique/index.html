@@ -1041,11 +1041,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../pl_fold_reduce/" class="md-nav__link">
+      <a href="../pl_fold/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    fold_reduce
+    fold
   </span>
   
 
@@ -1424,6 +1424,27 @@
   
   <span class="md-ellipsis">
     raw_list
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pl_reduce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    reduce
   </span>
   
 
@@ -14044,7 +14065,7 @@ changed with <code>pl$set_options(maintain_order = TRUE)</code>.
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">()</span><span class="o">$</span><span class="n">height</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] 57
+<div class="highlight"><pre><span></span><code>#&gt; [1] 60
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">subset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">height</span>
 </code></pre></div>
@@ -14052,41 +14073,41 @@ changed with <code>pl$set_options(maintain_order = TRUE)</code>.
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">keep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;last&quot;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (57, 2)
+<div class="highlight"><pre><span></span><code>#&gt; shape: (60, 2)
 #&gt; ┌─────┬─────┐
 #&gt; │ x   ┆ y   │
 #&gt; │ --- ┆ --- │
 #&gt; │ i32 ┆ i32 │
 #&gt; ╞═════╪═════╡
-#&gt; │ 9   ┆ 10  │
-#&gt; │ 1   ┆ 5   │
-#&gt; │ 9   ┆ 3   │
-#&gt; │ 8   ┆ 2   │
-#&gt; │ …   ┆ …   │
-#&gt; │ 4   ┆ 1   │
-#&gt; │ 8   ┆ 10  │
-#&gt; │ 3   ┆ 8   │
+#&gt; │ 7   ┆ 8   │
+#&gt; │ 6   ┆ 8   │
+#&gt; │ 4   ┆ 10  │
 #&gt; │ 7   ┆ 6   │
+#&gt; │ …   ┆ …   │
+#&gt; │ 10  ┆ 3   │
+#&gt; │ 6   ┆ 5   │
+#&gt; │ 9   ┆ 3   │
+#&gt; │ 7   ┆ 10  │
 #&gt; └─────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># only keep unique rows</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">keep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;none&quot;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (27, 2)
+<div class="highlight"><pre><span></span><code>#&gt; shape: (34, 2)
 #&gt; ┌─────┬─────┐
 #&gt; │ x   ┆ y   │
 #&gt; │ --- ┆ --- │
 #&gt; │ i32 ┆ i32 │
 #&gt; ╞═════╪═════╡
-#&gt; │ 1   ┆ 8   │
-#&gt; │ 2   ┆ 3   │
-#&gt; │ 9   ┆ 3   │
-#&gt; │ 3   ┆ 6   │
+#&gt; │ 7   ┆ 2   │
+#&gt; │ 4   ┆ 10  │
+#&gt; │ 5   ┆ 3   │
+#&gt; │ 7   ┆ 5   │
 #&gt; │ …   ┆ …   │
-#&gt; │ 3   ┆ 8   │
-#&gt; │ 7   ┆ 6   │
-#&gt; │ 8   ┆ 5   │
-#&gt; │ 4   ┆ 9   │
+#&gt; │ 1   ┆ 7   │
+#&gt; │ 9   ┆ 7   │
+#&gt; │ 3   ┆ 6   │
+#&gt; │ 8   ┆ 4   │
 #&gt; └─────┴─────┘
 </code></pre></div>
 

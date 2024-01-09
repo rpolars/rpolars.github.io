@@ -1,7 +1,7 @@
 
 # Get the maximum value rowwise
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L921)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L928)
 
 ## Description
 

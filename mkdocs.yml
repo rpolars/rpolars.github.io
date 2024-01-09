@@ -65,7 +65,7 @@ nav:
         - enable_string_cache: man/pl_enable_string_cache.md
         - expr_to_r: man/pl_expr_to_r.md
         - first: man/pl_first.md
-        - fold_reduce: man/pl_fold_reduce.md
+        - fold: man/pl_fold.md
         - from_arrow: man/pl_from_arrow.md
         - head: man/pl_head.md
         - implode: man/pl_implode.md
@@ -84,6 +84,7 @@ nav:
         - pl: man/pl_pl.md
         - PTime: man/pl_PTime.md
         - raw_list: man/pl_raw_list.md
+        - reduce: man/pl_reduce.md
         - rolling_corr: man/pl_rolling_corr.md
         - rolling_cov: man/pl_rolling_cov.md
         - select: man/pl_select.md
