@@ -1,7 +1,7 @@
 
 # GroupBy Min
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/3908b5beab9ec917b825bad8f9a820caad37cb4a/R/group_by.R#L191)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/group_by.R#L191)
 
 ## Description
 

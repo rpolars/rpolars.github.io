@@ -107,7 +107,7 @@ The features enabled in the compiled Rust library are shown by the
 ``` r
 library(polars)
 polars_info()
-#> r-polars package version : 0.12.2
+#> r-polars package version : 0.12.2.9000
 #> rust-polars crate version: 0.36.2
 #> 
 #> Thread pool size: 4 
