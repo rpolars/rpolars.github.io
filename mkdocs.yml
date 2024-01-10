@@ -188,6 +188,7 @@ nav:
         - rechunk: man/DataFrame_rechunk.md
         - rename: man/DataFrame_rename.md
         - reverse: man/DataFrame_reverse.md
+        - rolling: man/DataFrame_rolling.md
         - sample: man/DataFrame_sample.md
         - select: man/DataFrame_select.md
         - shape: man/DataFrame_shape.md
@@ -242,6 +243,7 @@ nav:
         - quantile: man/LazyFrame_quantile.md
         - rename: man/LazyFrame_rename.md
         - reverse: man/LazyFrame_reverse.md
+        - rolling: man/LazyFrame_rolling.md
         - select: man/LazyFrame_select.md
         - set_optimization_toggle: man/LazyFrame_set_optimization_toggle.md
         - shift_and_fill: man/LazyFrame_shift_and_fill.md

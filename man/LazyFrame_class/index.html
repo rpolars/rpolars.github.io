@@ -3672,6 +3672,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../DataFrame_rolling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rolling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../DataFrame_sample/" class="md-nav__link">
         
   
@@ -4892,6 +4913,27 @@
   
   <span class="md-ellipsis">
     reverse
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LazyFrame_rolling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rolling
   </span>
   
 
@@ -14036,16 +14078,17 @@ replaced by any function prefixed <code>LazyFrame</em></code>.</p>
 #&gt; [27] &quot;min&quot;                     &quot;print&quot;                  
 #&gt; [29] &quot;profile&quot;                 &quot;quantile&quot;               
 #&gt; [31] &quot;rename&quot;                  &quot;reverse&quot;                
-#&gt; [33] &quot;schema&quot;                  &quot;select&quot;                 
-#&gt; [35] &quot;set_optimization_toggle&quot; &quot;shift&quot;                  
-#&gt; [37] &quot;shift_and_fill&quot;          &quot;sink_csv&quot;               
-#&gt; [39] &quot;sink_ipc&quot;                &quot;sink_parquet&quot;           
-#&gt; [41] &quot;slice&quot;                   &quot;sort&quot;                   
-#&gt; [43] &quot;std&quot;                     &quot;sum&quot;                    
-#&gt; [45] &quot;tail&quot;                    &quot;unique&quot;                 
-#&gt; [47] &quot;unnest&quot;                  &quot;var&quot;                    
-#&gt; [49] &quot;width&quot;                   &quot;with_columns&quot;           
-#&gt; [51] &quot;with_context&quot;            &quot;with_row_count&quot;
+#&gt; [33] &quot;rolling&quot;                 &quot;schema&quot;                 
+#&gt; [35] &quot;select&quot;                  &quot;set_optimization_toggle&quot;
+#&gt; [37] &quot;shift&quot;                   &quot;shift_and_fill&quot;         
+#&gt; [39] &quot;sink_csv&quot;                &quot;sink_ipc&quot;               
+#&gt; [41] &quot;sink_parquet&quot;            &quot;slice&quot;                  
+#&gt; [43] &quot;sort&quot;                    &quot;std&quot;                    
+#&gt; [45] &quot;sum&quot;                     &quot;tail&quot;                   
+#&gt; [47] &quot;unique&quot;                  &quot;unnest&quot;                 
+#&gt; [49] &quot;var&quot;                     &quot;width&quot;                  
+#&gt; [51] &quot;with_columns&quot;            &quot;with_context&quot;           
+#&gt; [53] &quot;with_row_count&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># see all private methods (not intended for regular use)</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nf">ls</span><span class="p">(</span><span class="n">.pr</span><span class="o">$</span><span class="n">LazyFrame</span><span class="p">)</span>
@@ -14065,16 +14108,17 @@ replaced by any function prefixed <code>LazyFrame</em></code>.</p>
 #&gt; [25] &quot;min&quot;                     &quot;print&quot;                  
 #&gt; [27] &quot;profile&quot;                 &quot;quantile&quot;               
 #&gt; [29] &quot;rename&quot;                  &quot;reverse&quot;                
-#&gt; [31] &quot;schema&quot;                  &quot;select&quot;                 
-#&gt; [33] &quot;select_str_as_lit&quot;       &quot;set_optimization_toggle&quot;
-#&gt; [35] &quot;shift&quot;                   &quot;shift_and_fill&quot;         
-#&gt; [37] &quot;sink_csv&quot;                &quot;sink_ipc&quot;               
-#&gt; [39] &quot;sink_parquet&quot;            &quot;slice&quot;                  
-#&gt; [41] &quot;sort_by_exprs&quot;           &quot;std&quot;                    
-#&gt; [43] &quot;sum&quot;                     &quot;tail&quot;                   
-#&gt; [45] &quot;unique&quot;                  &quot;unnest&quot;                 
-#&gt; [47] &quot;var&quot;                     &quot;with_columns&quot;           
-#&gt; [49] &quot;with_context&quot;            &quot;with_row_count&quot;
+#&gt; [31] &quot;rolling&quot;                 &quot;schema&quot;                 
+#&gt; [33] &quot;select&quot;                  &quot;select_str_as_lit&quot;      
+#&gt; [35] &quot;set_optimization_toggle&quot; &quot;shift&quot;                  
+#&gt; [37] &quot;shift_and_fill&quot;          &quot;sink_csv&quot;               
+#&gt; [39] &quot;sink_ipc&quot;                &quot;sink_parquet&quot;           
+#&gt; [41] &quot;slice&quot;                   &quot;sort_by_exprs&quot;          
+#&gt; [43] &quot;std&quot;                     &quot;sum&quot;                    
+#&gt; [45] &quot;tail&quot;                    &quot;unique&quot;                 
+#&gt; [47] &quot;unnest&quot;                  &quot;var&quot;                    
+#&gt; [49] &quot;with_columns&quot;            &quot;with_context&quot;           
+#&gt; [51] &quot;with_row_count&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Practical example ##</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># First writing R iris dataset to disk, to illustrte a difference</span>
@@ -14115,7 +14159,7 @@ replaced by any function prefixed <code>LazyFrame</em></code>.</p>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; FILTER [(col(&quot;Species&quot;)) == (String(setosa))] FROM
 #&gt; 
-#&gt;   Csv SCAN /tmp/Rtmpgg1Kjh/file6a7323524927
+#&gt;   Csv SCAN /tmp/RtmpYnLYwv/file6bad4c1cf2e8
 #&gt;   PROJECT */5 COLUMNS
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># NOTE For Ldf_okay, the full time to load csv alrady paid when creating Rdf and Pdf</span>
@@ -14128,7 +14172,7 @@ replaced by any function prefixed <code>LazyFrame</em></code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Ldf_best</span><span class="o">$</span><span class="nf">describe_optimized_plan</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; 
-#&gt;   Csv SCAN /tmp/Rtmpgg1Kjh/file6a7323524927
+#&gt;   Csv SCAN /tmp/RtmpYnLYwv/file6bad4c1cf2e8
 #&gt;   PROJECT */5 COLUMNS
 #&gt;   SELECTION: [(col(&quot;Species&quot;)) == (String(setosa))]
 </code></pre></div>

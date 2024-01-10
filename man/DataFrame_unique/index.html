@@ -3674,6 +3674,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../DataFrame_rolling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rolling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../DataFrame_sample/" class="md-nav__link">
         
   
@@ -4901,6 +4922,27 @@
   
   <span class="md-ellipsis">
     reverse
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LazyFrame_rolling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rolling
   </span>
   
 
@@ -14065,7 +14107,7 @@ changed with <code>pl$set_options(maintain_order = TRUE)</code>.
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">()</span><span class="o">$</span><span class="n">height</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] 70
+<div class="highlight"><pre><span></span><code>#&gt; [1] 66
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">subset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">height</span>
 </code></pre></div>
@@ -14073,41 +14115,41 @@ changed with <code>pl$set_options(maintain_order = TRUE)</code>.
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">keep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;last&quot;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (70, 2)
+<div class="highlight"><pre><span></span><code>#&gt; shape: (66, 2)
 #&gt; ┌─────┬─────┐
 #&gt; │ x   ┆ y   │
 #&gt; │ --- ┆ --- │
 #&gt; │ i32 ┆ i32 │
 #&gt; ╞═════╪═════╡
-#&gt; │ 2   ┆ 6   │
-#&gt; │ 5   ┆ 2   │
-#&gt; │ 2   ┆ 2   │
-#&gt; │ 3   ┆ 8   │
+#&gt; │ 3   ┆ 7   │
+#&gt; │ 6   ┆ 8   │
+#&gt; │ 1   ┆ 10  │
+#&gt; │ 7   ┆ 1   │
 #&gt; │ …   ┆ …   │
-#&gt; │ 6   ┆ 9   │
-#&gt; │ 6   ┆ 4   │
-#&gt; │ 1   ┆ 5   │
-#&gt; │ 6   ┆ 5   │
+#&gt; │ 9   ┆ 5   │
+#&gt; │ 4   ┆ 2   │
+#&gt; │ 1   ┆ 1   │
+#&gt; │ 2   ┆ 7   │
 #&gt; └─────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># only keep unique rows</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">keep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;none&quot;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (45, 2)
+<div class="highlight"><pre><span></span><code>#&gt; shape: (40, 2)
 #&gt; ┌─────┬─────┐
 #&gt; │ x   ┆ y   │
 #&gt; │ --- ┆ --- │
 #&gt; │ i32 ┆ i32 │
 #&gt; ╞═════╪═════╡
-#&gt; │ 4   ┆ 10  │
-#&gt; │ 2   ┆ 6   │
-#&gt; │ 2   ┆ 2   │
-#&gt; │ 10  ┆ 3   │
+#&gt; │ 10  ┆ 10  │
+#&gt; │ 10  ┆ 9   │
+#&gt; │ 6   ┆ 6   │
+#&gt; │ 9   ┆ 7   │
 #&gt; │ …   ┆ …   │
-#&gt; │ 1   ┆ 5   │
-#&gt; │ 6   ┆ 5   │
-#&gt; │ 1   ┆ 1   │
 #&gt; │ 5   ┆ 8   │
+#&gt; │ 2   ┆ 7   │
+#&gt; │ 2   ┆ 2   │
+#&gt; │ 4   ┆ 6   │
 #&gt; └─────┴─────┘
 </code></pre></div>
 

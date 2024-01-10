@@ -1,7 +1,7 @@
 
 # GroupBy_ungroup
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/group_by.R#L297)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/group_by.R#L302)
 
 ## Description
 

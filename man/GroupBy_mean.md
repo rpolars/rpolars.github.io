@@ -1,7 +1,7 @@
 
 # GroupBy Mean
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/group_by.R#L159)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/group_by.R#L164)
 
 ## Description
 

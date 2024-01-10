@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../DataFrame_reverse/">
+        <link rel="prev" href="../DataFrame_rolling/">
       
       
         <link rel="next" href="../DataFrame_select/">
@@ -3671,6 +3671,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../DataFrame_rolling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rolling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -4901,6 +4922,27 @@
   
   <span class="md-ellipsis">
     reverse
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LazyFrame_rolling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rolling
   </span>
   
 
@@ -14067,15 +14109,15 @@ Seed for the random number generator. If set to <code>NULL</code>
 #&gt; │ ---          ┆ ---         ┆ ---          ┆ ---         ┆ ---        │
 #&gt; │ f64          ┆ f64         ┆ f64          ┆ f64         ┆ cat        │
 #&gt; ╞══════════════╪═════════════╪══════════════╪═════════════╪════════════╡
-#&gt; │ 5.1          ┆ 3.5         ┆ 1.4          ┆ 0.3         ┆ setosa     │
-#&gt; │ 7.7          ┆ 2.6         ┆ 6.9          ┆ 2.3         ┆ virginica  │
-#&gt; │ 5.2          ┆ 2.7         ┆ 3.9          ┆ 1.4         ┆ versicolor │
-#&gt; │ 6.4          ┆ 3.2         ┆ 4.5          ┆ 1.5         ┆ versicolor │
+#&gt; │ 6.3          ┆ 2.5         ┆ 5.0          ┆ 1.9         ┆ virginica  │
+#&gt; │ 5.9          ┆ 3.0         ┆ 5.1          ┆ 1.8         ┆ virginica  │
+#&gt; │ 5.6          ┆ 3.0         ┆ 4.1          ┆ 1.3         ┆ versicolor │
+#&gt; │ 6.4          ┆ 2.8         ┆ 5.6          ┆ 2.1         ┆ virginica  │
 #&gt; │ …            ┆ …           ┆ …            ┆ …           ┆ …          │
-#&gt; │ 5.0          ┆ 3.5         ┆ 1.3          ┆ 0.3         ┆ setosa     │
-#&gt; │ 5.8          ┆ 2.7         ┆ 3.9          ┆ 1.2         ┆ versicolor │
-#&gt; │ 5.4          ┆ 3.4         ┆ 1.5          ┆ 0.4         ┆ setosa     │
-#&gt; │ 6.5          ┆ 2.8         ┆ 4.6          ┆ 1.5         ┆ versicolor │
+#&gt; │ 4.3          ┆ 3.0         ┆ 1.1          ┆ 0.1         ┆ setosa     │
+#&gt; │ 6.3          ┆ 2.5         ┆ 4.9          ┆ 1.5         ┆ versicolor │
+#&gt; │ 5.0          ┆ 3.6         ┆ 1.4          ┆ 0.2         ┆ setosa     │
+#&gt; │ 5.8          ┆ 4.0         ┆ 1.2          ┆ 0.2         ┆ setosa     │
 #&gt; └──────────────┴─────────────┴──────────────┴─────────────┴────────────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">sample</span><span class="p">(</span><span class="n">frac</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.1</span><span class="p">)</span>
@@ -14086,15 +14128,15 @@ Seed for the random number generator. If set to <code>NULL</code>
 #&gt; │ ---          ┆ ---         ┆ ---          ┆ ---         ┆ ---        │
 #&gt; │ f64          ┆ f64         ┆ f64          ┆ f64         ┆ cat        │
 #&gt; ╞══════════════╪═════════════╪══════════════╪═════════════╪════════════╡
-#&gt; │ 6.0          ┆ 2.2         ┆ 4.0          ┆ 1.0         ┆ versicolor │
-#&gt; │ 5.4          ┆ 3.9         ┆ 1.7          ┆ 0.4         ┆ setosa     │
-#&gt; │ 6.4          ┆ 2.9         ┆ 4.3          ┆ 1.3         ┆ versicolor │
-#&gt; │ 5.2          ┆ 3.5         ┆ 1.5          ┆ 0.2         ┆ setosa     │
+#&gt; │ 5.1          ┆ 3.8         ┆ 1.6          ┆ 0.2         ┆ setosa     │
+#&gt; │ 6.3          ┆ 2.9         ┆ 5.6          ┆ 1.8         ┆ virginica  │
+#&gt; │ 6.7          ┆ 3.1         ┆ 4.7          ┆ 1.5         ┆ versicolor │
+#&gt; │ 6.2          ┆ 2.8         ┆ 4.8          ┆ 1.8         ┆ virginica  │
 #&gt; │ …            ┆ …           ┆ …            ┆ …           ┆ …          │
-#&gt; │ 6.9          ┆ 3.1         ┆ 4.9          ┆ 1.5         ┆ versicolor │
-#&gt; │ 5.2          ┆ 4.1         ┆ 1.5          ┆ 0.1         ┆ setosa     │
-#&gt; │ 6.2          ┆ 3.4         ┆ 5.4          ┆ 2.3         ┆ virginica  │
-#&gt; │ 5.1          ┆ 3.7         ┆ 1.5          ┆ 0.4         ┆ setosa     │
+#&gt; │ 6.4          ┆ 2.9         ┆ 4.3          ┆ 1.3         ┆ versicolor │
+#&gt; │ 6.2          ┆ 2.9         ┆ 4.3          ┆ 1.3         ┆ versicolor │
+#&gt; │ 7.9          ┆ 3.8         ┆ 6.4          ┆ 2.0         ┆ virginica  │
+#&gt; │ 6.4          ┆ 2.8         ┆ 5.6          ┆ 2.2         ┆ virginica  │
 #&gt; └──────────────┴─────────────┴──────────────┴─────────────┴────────────┘
 </code></pre></div>
 
