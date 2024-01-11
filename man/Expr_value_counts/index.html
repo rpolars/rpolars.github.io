@@ -6015,6 +6015,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../IO_sink_ndjson/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sink_ndjson
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../IO_sink_parquet/" class="md-nav__link">
         
   
@@ -14099,17 +14120,17 @@ contention.
 #&gt; │ ---               │
 #&gt; │ struct[2]         │
 #&gt; ╞═══════════════════╡
-#&gt; │ {&quot;virginica&quot;,50}  │
-#&gt; │ {&quot;versicolor&quot;,50} │
 #&gt; │ {&quot;setosa&quot;,50}     │
+#&gt; │ {&quot;versicolor&quot;,50} │
+#&gt; │ {&quot;virginica&quot;,50}  │
 #&gt; └───────────────────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unnest</span><span class="p">()</span><span class="o">$</span><span class="nf">to_data_frame</span><span class="p">()</span><span class="w"> </span><span class="c1"># recommended to unnest structs before converting to R</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;      Species count
-#&gt; 1  virginica    50
+#&gt; 1     setosa    50
 #&gt; 2 versicolor    50
-#&gt; 3     setosa    50
+#&gt; 3  virginica    50
 </code></pre></div>
 
 

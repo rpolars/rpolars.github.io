@@ -1,7 +1,7 @@
 
 # Group a LazyFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L987)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1054)
 
 ## Description
 
@@ -31,7 +31,7 @@ Any Expr(s) or string(s) naming a column.
 <code id="LazyFrame_group_by_:_maintain_order">maintain_order</code>
 </td>
 <td>
-Keep the same order as the original <code>DataFrame</code>. Setting this
+Keep the same order as the original <code>LazyFrame</code>. Setting this
 to <code>TRUE</code> makes it more expensive to compute and blocks the
 possibility to run on the streaming engine. The default value can be
 changed with <code>pl$set_options(maintain_order = TRUE)</code>.

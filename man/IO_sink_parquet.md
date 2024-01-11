@@ -150,7 +150,7 @@ will be ~1MB.
 <code id="LazyFrame_sink_parquet_:_maintain_order">maintain_order</code>
 </td>
 <td>
-Keep the same order as the original <code>DataFrame</code>. Setting this
+Keep the same order as the original <code>LazyFrame</code>. Setting this
 to <code>TRUE</code> makes it more expensive to compute and blocks the
 possibility to run on the streaming engine. The default value can be
 changed with <code>pl$set_options(maintain_order = TRUE)</code>.

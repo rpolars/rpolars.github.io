@@ -295,6 +295,7 @@ nav:
         - scan_parquet: man/IO_scan_parquet.md
         - sink_csv: man/IO_sink_csv.md
         - sink_ipc: man/IO_sink_ipc.md
+        - sink_ndjson: man/IO_sink_ndjson.md
         - sink_parquet: man/IO_sink_parquet.md
         - write_csv: man/IO_write_csv.md
         - write_json: man/IO_write_json.md

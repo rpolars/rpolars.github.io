@@ -515,6 +515,7 @@ pl$show_all_public_methods()
     #>           [ shift_and_fill ; function ]
     #>           [ sink_csv ; function ]
     #>           [ sink_ipc ; function ]
+    #>           [ sink_ndjson ; function ]
     #>           [ sink_parquet ; function ]
     #>           [ slice ; function ]
     #>           [ sort ; function ]

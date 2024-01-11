@@ -5,6 +5,7 @@
 ### What's changed
 
 -   New method `$rolling()` for `DataFrame` and `LazyFrame` ([#682](https://github.com/pola-rs/r-polars/issues/682)).
+-   New method `$sink_ndjson()` for LazyFrame ([#681](https://github.com/pola-rs/r-polars/issues/681)).
 
 ## polars 0.12.2
 
