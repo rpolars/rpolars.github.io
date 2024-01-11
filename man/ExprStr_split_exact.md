@@ -1,7 +1,7 @@
 
 # Split the string by a substring using <code>n</code> splits
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L702)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L704)
 
 ## Description
 
@@ -52,17 +52,20 @@ Struct where each of n+1 fields is of String type
 library(polars)
 
 df = pl$DataFrame(s = c("a_1", NA, "c", "d_4"))
-df$select(pl$col("s")$str$split_exact(by = "_", 1))
+df$with_columns(
+  split = pl$col("s")$str$split_exact(by = "_", 1),
+  split_inclusive = pl$col("s")$str$split_exact(by = "_", 1, inclusive = TRUE)
+)
 ```
 
-    #> shape: (4, 1)
-    #> ┌─────────────┐
-    #> │ s           │
-    #> │ ---         │
-    #> │ struct[2]   │
-    #> ╞═════════════╡
-    #> │ {"a","1"}   │
-    #> │ {null,null} │
-    #> │ {"c",null}  │
-    #> │ {"d","4"}   │
-    #> └─────────────┘
+    #> shape: (4, 3)
+    #> ┌──────┬─────────────┬─────────────────┐
+    #> │ s    ┆ split       ┆ split_inclusive │
+    #> │ ---  ┆ ---         ┆ ---             │
+    #> │ str  ┆ struct[2]   ┆ struct[2]       │
+    #> ╞══════╪═════════════╪═════════════════╡
+    #> │ a_1  ┆ {"a","1"}   ┆ {"a_","1"}      │
+    #> │ null ┆ {null,null} ┆ {null,null}     │
+    #> │ c    ┆ {"c",null}  ┆ {"c",null}      │
+    #> │ d_4  ┆ {"d","4"}   ┆ {"d_","4"}      │
+    #> └──────┴─────────────┴─────────────────┘

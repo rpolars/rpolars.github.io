@@ -1,7 +1,7 @@
 
 # Correlation
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L818)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L817)
 
 ## Description
 

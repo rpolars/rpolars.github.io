@@ -5754,6 +5754,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../LazyGroupBy_class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    class
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../LazyGroupBy_head/" class="md-nav__link">
         
   
@@ -14077,27 +14098,27 @@ prefixed <code>DataFrame_</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># see all private methods (not intended for regular use)</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nf">ls</span><span class="p">(</span><span class="n">.pr</span><span class="o">$</span><span class="n">DataFrame</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt;  [1] &quot;by_agg&quot;                    &quot;clone_in_rust&quot;            
-#&gt;  [3] &quot;columns&quot;                   &quot;default&quot;                  
-#&gt;  [5] &quot;drop_all_in_place&quot;         &quot;drop_in_place&quot;            
-#&gt;  [7] &quot;dtype_strings&quot;             &quot;dtypes&quot;                   
-#&gt;  [9] &quot;equals&quot;                    &quot;estimated_size&quot;           
-#&gt; [11] &quot;export_stream&quot;             &quot;from_arrow_record_batches&quot;
-#&gt; [13] &quot;get_column&quot;                &quot;get_columns&quot;              
-#&gt; [15] &quot;lazy&quot;                      &quot;melt&quot;                     
-#&gt; [17] &quot;n_chunks&quot;                  &quot;new_with_capacity&quot;        
-#&gt; [19] &quot;null_count&quot;                &quot;pivot_expr&quot;               
-#&gt; [21] &quot;print&quot;                     &quot;rechunk&quot;                  
-#&gt; [23] &quot;sample_frac&quot;               &quot;sample_n&quot;                 
-#&gt; [25] &quot;schema&quot;                    &quot;select&quot;                   
-#&gt; [27] &quot;select_at_idx&quot;             &quot;set_column_from_robj&quot;     
-#&gt; [29] &quot;set_column_from_series&quot;    &quot;set_column_names_mut&quot;     
-#&gt; [31] &quot;shape&quot;                     &quot;to_list&quot;                  
-#&gt; [33] &quot;to_list_tag_structs&quot;       &quot;to_list_unwind&quot;           
-#&gt; [35] &quot;to_struct&quot;                 &quot;transpose&quot;                
-#&gt; [37] &quot;unnest&quot;                    &quot;with_columns&quot;             
-#&gt; [39] &quot;with_row_count&quot;            &quot;write_csv&quot;                
-#&gt; [41] &quot;write_json&quot;                &quot;write_ndjson&quot;
+<div class="highlight"><pre><span></span><code>#&gt;  [1] &quot;clone_in_rust&quot;             &quot;columns&quot;                  
+#&gt;  [3] &quot;default&quot;                   &quot;drop_all_in_place&quot;        
+#&gt;  [5] &quot;drop_in_place&quot;             &quot;dtype_strings&quot;            
+#&gt;  [7] &quot;dtypes&quot;                    &quot;equals&quot;                   
+#&gt;  [9] &quot;estimated_size&quot;            &quot;export_stream&quot;            
+#&gt; [11] &quot;from_arrow_record_batches&quot; &quot;get_column&quot;               
+#&gt; [13] &quot;get_columns&quot;               &quot;lazy&quot;                     
+#&gt; [15] &quot;melt&quot;                      &quot;n_chunks&quot;                 
+#&gt; [17] &quot;new_with_capacity&quot;         &quot;null_count&quot;               
+#&gt; [19] &quot;pivot_expr&quot;                &quot;print&quot;                    
+#&gt; [21] &quot;rechunk&quot;                   &quot;sample_frac&quot;              
+#&gt; [23] &quot;sample_n&quot;                  &quot;schema&quot;                   
+#&gt; [25] &quot;select&quot;                    &quot;select_at_idx&quot;            
+#&gt; [27] &quot;set_column_from_robj&quot;      &quot;set_column_from_series&quot;   
+#&gt; [29] &quot;set_column_names_mut&quot;      &quot;shape&quot;                    
+#&gt; [31] &quot;to_list&quot;                   &quot;to_list_tag_structs&quot;      
+#&gt; [33] &quot;to_list_unwind&quot;            &quot;to_struct&quot;                
+#&gt; [35] &quot;transpose&quot;                 &quot;unnest&quot;                   
+#&gt; [37] &quot;with_columns&quot;              &quot;with_row_count&quot;           
+#&gt; [39] &quot;write_csv&quot;                 &quot;write_json&quot;               
+#&gt; [41] &quot;write_ndjson&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># make an object</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>

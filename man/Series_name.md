@@ -1,7 +1,7 @@
 
 # Property: Name
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L501)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L500)
 
 ## Description
 

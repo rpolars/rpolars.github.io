@@ -1,7 +1,7 @@
 
 # pl$last
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L196)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L195)
 
 ## Description
 

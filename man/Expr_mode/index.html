@@ -5676,6 +5676,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../LazyGroupBy_class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    class
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../LazyGroupBy_head/" class="md-nav__link">
         
   
@@ -14041,11 +14062,11 @@ are ties.</p>
 #&gt; │ i32 │
 #&gt; ╞═════╡
 #&gt; │ 6   │
-#&gt; │ 5   │
-#&gt; │ 3   │
-#&gt; │ 2   │
 #&gt; │ 1   │
 #&gt; │ 4   │
+#&gt; │ 2   │
+#&gt; │ 3   │
+#&gt; │ 5   │
 #&gt; └─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;b&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">mode</span><span class="p">())</span>
@@ -14056,8 +14077,8 @@ are ties.</p>
 #&gt; │ --- │
 #&gt; │ i32 │
 #&gt; ╞═════╡
-#&gt; │ 3   │
 #&gt; │ 1   │
+#&gt; │ 3   │
 #&gt; └─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">mode</span><span class="p">())</span>
@@ -14068,9 +14089,9 @@ are ties.</p>
 #&gt; │ --- │
 #&gt; │ i32 │
 #&gt; ╞═════╡
+#&gt; │ 2   │
 #&gt; │ 1   │
 #&gt; │ 3   │
-#&gt; │ 2   │
 #&gt; └─────┘
 </code></pre></div>
 

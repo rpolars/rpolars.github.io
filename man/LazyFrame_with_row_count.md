@@ -1,7 +1,7 @@
 
 # Add a column for row indices
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L265)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L263)
 
 ## Description
 

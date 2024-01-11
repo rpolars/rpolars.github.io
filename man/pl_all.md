@@ -1,7 +1,7 @@
 
 # New Expr referring to all columns
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L15)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L16)
 
 ## Description
 
@@ -42,7 +42,8 @@ Boolean literal
 ``` r
 library(polars)
 
-pl$DataFrame(list(all = c(TRUE, TRUE), some = c(TRUE, FALSE)))$select(pl$all()$all())
+pl$DataFrame(all = c(TRUE, TRUE), some = c(TRUE, FALSE))$
+  select(pl$all()$all())
 ```
 
     #> shape: (1, 2)

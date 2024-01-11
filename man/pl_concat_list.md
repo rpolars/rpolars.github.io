@@ -1,7 +1,7 @@
 
 # Concat the arrays in a Series dtype List in linear time.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L647)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L646)
 
 ## Description
 

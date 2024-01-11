@@ -1,7 +1,7 @@
 
 # Compute the logarithm of elements
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L3250)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L3248)
 
 ## Description
 

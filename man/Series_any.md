@@ -1,7 +1,7 @@
 
 # Reduce Boolean Series with ANY
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L512)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L511)
 
 ## Description
 

@@ -1,7 +1,7 @@
 
 # Coalesce
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L577)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L576)
 
 ## Description
 

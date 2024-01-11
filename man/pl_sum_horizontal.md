@@ -1,7 +1,7 @@
 
 # Compute the sum rowwise
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L1007)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L1006)
 
 ## Description
 

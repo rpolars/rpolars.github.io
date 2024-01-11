@@ -1,7 +1,7 @@
 
 # Split the string by a substring, restricted to returning at most <code>n</code> items
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L728)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L732)
 
 ## Description
 
@@ -45,46 +45,22 @@ Struct where each of <code>n</code> fields is of String type
 ``` r
 library(polars)
 
-df = pl$DataFrame(s = c("a_1", NA, "c", "d_4"))
-df$select(pl$col("s")$str$splitn(by = "_", 0))
+df = pl$DataFrame(s = c("a_1", NA, "c", "d_4_e"))
+df$with_columns(
+  s1 = pl$col("s")$str$splitn(by = "_", 1),
+  s2 = pl$col("s")$str$splitn(by = "_", 2),
+  s3 = pl$col("s")$str$splitn(by = "_", 3)
+)
 ```
 
-    #> shape: (0, 1)
-    #> ┌───────────┐
-    #> │ s         │
-    #> │ ---       │
-    #> │ struct[1] │
-    #> ╞═══════════╡
-    #> └───────────┘
-
-``` r
-df$select(pl$col("s")$str$splitn(by = "_", 1))
-```
-
-    #> shape: (4, 1)
-    #> ┌───────────┐
-    #> │ s         │
-    #> │ ---       │
-    #> │ struct[1] │
-    #> ╞═══════════╡
-    #> │ {"a_1"}   │
-    #> │ {null}    │
-    #> │ {"c"}     │
-    #> │ {"d_4"}   │
-    #> └───────────┘
-
-``` r
-df$select(pl$col("s")$str$splitn(by = "_", 2))
-```
-
-    #> shape: (4, 1)
-    #> ┌─────────────┐
-    #> │ s           │
-    #> │ ---         │
-    #> │ struct[2]   │
-    #> ╞═════════════╡
-    #> │ {"a","1"}   │
-    #> │ {null,null} │
-    #> │ {"c",null}  │
-    #> │ {"d","4"}   │
-    #> └─────────────┘
+    #> shape: (4, 4)
+    #> ┌───────┬───────────┬─────────────┬──────────────────┐
+    #> │ s     ┆ s1        ┆ s2          ┆ s3               │
+    #> │ ---   ┆ ---       ┆ ---         ┆ ---              │
+    #> │ str   ┆ struct[1] ┆ struct[2]   ┆ struct[3]        │
+    #> ╞═══════╪═══════════╪═════════════╪══════════════════╡
+    #> │ a_1   ┆ {"a_1"}   ┆ {"a","1"}   ┆ {"a","1",null}   │
+    #> │ null  ┆ {null}    ┆ {null,null} ┆ {null,null,null} │
+    #> │ c     ┆ {"c"}     ┆ {"c",null}  ┆ {"c",null,null}  │
+    #> │ d_4_e ┆ {"d_4_e"} ┆ {"d","4_e"} ┆ {"d","4","e"}    │
+    #> └───────┴───────────┴─────────────┴──────────────────┘

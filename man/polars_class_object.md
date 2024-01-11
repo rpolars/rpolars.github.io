@@ -58,6 +58,5 @@ str(pl$DataFrame(iris)$group_by("Species"))
 
     #> Class 'RPolarsGroupBy' <externalptr> 
     #>  - attr(*, "private")=List of 2
-    #>   ..$ groupby_input :List of 1
-    #>   .. ..$ : chr "Species"
+    #>   ..$ groupby_input : chr "Species"
     #>   ..$ maintain_order: logi FALSE

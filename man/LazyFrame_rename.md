@@ -1,7 +1,7 @@
 
 # Rename columns of a DataFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1249)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1247)
 
 ## Description
 

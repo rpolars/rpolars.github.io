@@ -69,9 +69,7 @@ gb
     #> │ one ┆ 4.0 │
     #> │ two ┆ 1.0 │
     #> └─────┴─────┘
-    #> groups: [[1]]
-    #> [1] "foo"
-    #> 
+    #> groups: foo
     #> maintain order:  TRUE
 
 ``` r

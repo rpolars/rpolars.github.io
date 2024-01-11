@@ -1,7 +1,7 @@
 
 # Set Ordering
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__categorical.R#L19)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__categorical.R#L26)
 
 ## Description
 
@@ -52,10 +52,32 @@ library(polars)
 df = pl$DataFrame(
   cats = factor(c("z", "z", "k", "a", "b")),
   vals = c(3, 1, 2, 2, 3)
-)$with_columns(
-  pl$col("cats")$cat$set_ordering("physical")
 )
-df$select(pl$all()$sort())
+
+# sort by the string value of categories
+df$with_columns(
+  pl$col("cats")$cat$set_ordering("lexical")
+)$sort("cats", "vals")
+```
+
+    #> shape: (5, 2)
+    #> ┌──────┬──────┐
+    #> │ cats ┆ vals │
+    #> │ ---  ┆ ---  │
+    #> │ cat  ┆ f64  │
+    #> ╞══════╪══════╡
+    #> │ a    ┆ 2.0  │
+    #> │ b    ┆ 3.0  │
+    #> │ k    ┆ 2.0  │
+    #> │ z    ┆ 1.0  │
+    #> │ z    ┆ 3.0  │
+    #> └──────┴──────┘
+
+``` r
+# sort by the underlying value of categories
+df$with_columns(
+  pl$col("cats")$cat$set_ordering("physical")
+)$sort("cats", "vals")
 ```
 
     #> shape: (5, 2)
@@ -65,8 +87,8 @@ df$select(pl$all()$sort())
     #> │ cat  ┆ f64  │
     #> ╞══════╪══════╡
     #> │ z    ┆ 1.0  │
-    #> │ z    ┆ 2.0  │
+    #> │ z    ┆ 3.0  │
     #> │ k    ┆ 2.0  │
-    #> │ a    ┆ 3.0  │
+    #> │ a    ┆ 2.0  │
     #> │ b    ┆ 3.0  │
     #> └──────┴──────┘

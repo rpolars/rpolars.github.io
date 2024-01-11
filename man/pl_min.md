@@ -1,7 +1,7 @@
 
 # Find minimum value in one or several columns
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L495)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L494)
 
 ## Description
 
