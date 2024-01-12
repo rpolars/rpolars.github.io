@@ -6,6 +6,8 @@
 
 -   New method `$rolling()` for `DataFrame` and `LazyFrame` ([#682](https://github.com/pola-rs/r-polars/issues/682)).
 -   New method `$sink_ndjson()` for LazyFrame ([#681](https://github.com/pola-rs/r-polars/issues/681)).
+-   New function `pl$duration()` to create a duration by components (week, day,
+    hour, etc.), and use them with date(time) variables ([#692](https://github.com/pola-rs/r-polars/issues/692)).
 
 ## polars 0.12.2
 

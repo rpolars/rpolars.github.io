@@ -68,6 +68,7 @@ pl$show_all_public_functions()
     #>           [ Unknown ; RPolarsDataType ]
     #>           [ Utf8 ; RPolarsDataType ]
     #> 
+    #>        [ duration ; function ]
     #>        [ element ; function ]
     #>        [ enable_string_cache ; function ]
     #>        [ expr_to_r ; function ]

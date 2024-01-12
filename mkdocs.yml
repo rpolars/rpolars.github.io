@@ -61,6 +61,7 @@ nav:
         - Datetime: man/pl_Datetime.md
         - disable_string_cache: man/pl_disable_string_cache.md
         - dtypes: man/pl_dtypes.md
+        - duration: man/pl_duration.md
         - element: man/pl_element.md
         - enable_string_cache: man/pl_enable_string_cache.md
         - expr_to_r: man/pl_expr_to_r.md
