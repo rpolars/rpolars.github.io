@@ -56,7 +56,8 @@ str(some_polars_object) # External Pointer tagged with a class attribute.
 str(pl$DataFrame(iris)$group_by("Species"))
 ```
 
-    #> Class 'RPolarsGroupBy' <externalptr> 
-    #>  - attr(*, "private")=List of 2
+    #>  'RPolarsGroupBy' chr " "
+    #>  - attr(*, "private")=List of 3
+    #>   ..$ dat           :Class 'RPolarsDataFrame' <externalptr> 
     #>   ..$ groupby_input : chr "Species"
     #>   ..$ maintain_order: logi FALSE

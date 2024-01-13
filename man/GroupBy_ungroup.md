@@ -1,7 +1,7 @@
 
 # GroupBy_ungroup
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/group_by.R#L302)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/group_by.R#L298)
 
 ## Description
 
@@ -42,7 +42,7 @@ gb
     #> │ 21.4 ┆ 4.0 ┆ 121.0 ┆ 109.0 ┆ … ┆ 1.0 ┆ 1.0 ┆ 4.0  ┆ 2.0  │
     #> └──────┴─────┴───────┴───────┴───┴─────┴─────┴──────┴──────┘
     #> groups: cyl
-    #> maintain order:  FALSE
+    #> maintain order: FALSE
 
 ``` r
 gb$ungroup()

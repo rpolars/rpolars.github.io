@@ -286,6 +286,10 @@ nav:
         - print: man/LazyGroupBy_print.md
         - tail: man/LazyGroupBy_tail.md
         - ungroup: man/LazyGroupBy_ungroup.md
+      RollingGroupBy:
+        - agg: man/RollingGroupBy_agg.md
+        - class: man/RollingGroupBy_class.md
+        - ungroup: man/RollingGroupBy_ungroup.md
       Input/Output:
         - read_csv: man/IO_read_csv.md
         - read_ndjson: man/IO_read_ndjson.md

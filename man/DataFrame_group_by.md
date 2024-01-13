@@ -70,7 +70,7 @@ gb
     #> │ two ┆ 1.0 │
     #> └─────┴─────┘
     #> groups: foo
-    #> maintain order:  TRUE
+    #> maintain order: TRUE
 
 ``` r
 gb$agg(
