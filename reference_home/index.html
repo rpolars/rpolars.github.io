@@ -14070,11 +14070,14 @@ ability to choose between eager and lazy evaluation, that require
 respectively a <code>DataFrame</code> and a <code>LazyFrame</code> (with their counterparts
 <code>GroupBy</code> and <code>LazyGroupBy</code> for grouped data).</p>
 <p>We can apply functions directly on a <code>DataFrame</code> or <code>LazyFrame</code>, such as
-<code>rename()</code> or <code>drop()</code>. Most (but not all!) functions that can be
-applied to <code>DataFrame</code>s can also be used on <code>LazyFrame</code>s. Calling
-<code>&lt;DataFrame&gt;$lazy()</code> yields a <code>LazyFrame</code>. While calling
-<code>&lt;LazyFrame&gt;$collect()</code> starts a computation and yields a <code>DataFrame</code> as
-result.</p>
+<code>rename()</code> or <code>drop()</code>. Most functions that can be applied to
+<code>DataFrame</code>s can also be used on <code>LazyFrame</code>s, but some are specific to
+one or the other. For example:</p>
+<ul>
+<li><code>$equals()</code> exists for <code>DataFrame</code> but not for <code>LazyFrame</code>;</li>
+<li><code>$collect()</code> executes a lazy query, which means it can only be applied
+  on a <code>LazyFrame</code>.</li>
+</ul>
 <p>Another common data structure is the <code>Series</code>, which can be considered
 as the equivalent of R vectors in <code>polars</code>’ world. Therefore, a
 <code>DataFrame</code> is a list of <code>Series</code>.</p>
@@ -14122,7 +14125,7 @@ rows:</p>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;mpg&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">slice</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">)</span>
 </code></pre></div>
-<p>By contrast, in an <code>agg</code> context, any number of return values are
+<p>By contrast, in an <code>agg()</code> context, any number of return values are
 possible, as they are returned in a list, and only the new columns or
 the grouping columns are returned.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">test</span><span class="o">$</span><span class="nf">group_by</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;cyl&quot;</span><span class="p">))</span><span class="o">$</span><span class="nf">agg</span><span class="p">(</span>
@@ -14137,49 +14140,52 @@ the grouping columns are returned.</p>
 <a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1">#&gt; │ --- ┆ ---                  ┆ ---          ┆ ---        │</span>
 <a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1">#&gt; │ f64 ┆ list[f64]            ┆ list[f64]    ┆ f64        │</span>
 <a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="c1">#&gt; ╞═════╪══════════════════════╪══════════════╪════════════╡</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c1">#&gt; │ 8.0 ┆ [18.7, 14.3, … 15.0] ┆ [18.7, 14.3] ┆ 211.4      │</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c1">#&gt; │ 4.0 ┆ [22.8, 24.4, … 21.4] ┆ [22.8, 24.4] ┆ 293.3      │</span>
 <a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c1">#&gt; │ 6.0 ┆ [21.0, 21.0, … 19.7] ┆ [21.0, 21.0] ┆ 138.2      │</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="c1">#&gt; │ 4.0 ┆ [22.8, 24.4, … 21.4] ┆ [22.8, 24.4] ┆ 293.3      │</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="c1">#&gt; │ 8.0 ┆ [18.7, 14.3, … 15.0] ┆ [18.7, 14.3] ┆ 211.4      │</span>
 <a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="c1">#&gt; └─────┴──────────────────────┴──────────────┴────────────┘</span>
 </code></pre></div>
 <h2 id="expressions">Expressions</h2>
-<p><code>polars</code> is quite verbose and requires you to be very explicit on the
-operations you want to perform. This can be seen in the way expressions
-work. All polars public functions (excluding methods) are accessed via
-the namespace handle <code>pl</code>.</p>
+<p>Expressions are the building blocks that give all the flexibility we
+need to modify or create new columns.</p>
 <p>Two important expressions starters are <code>pl$col()</code> (names a column in the
 context) and <code>pl$lit()</code> (wraps a literal value or vector/series in an
 Expr). Most other expression starters are syntactic sugar derived from
 thereof, e.g. <code>pl$sum(_)</code> is actually <code>pl$col(_)$sum()</code>.</p>
-<p>Expressions can be chained with about 170 expression methods such as
+<p>Expressions can be chained with more than 170 expression methods such as
 <code>$sum()</code> which aggregates e.g. the column with summing.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># two examples of starting, chaining and combining expressions</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">)</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="c1"># take col mpg, slice it, sum it, then cast it</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">slice</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="o">$</span><span class="nf">sum</span><span class="p">()</span><span class="o">$</span><span class="nf">cast</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="n">Float32</span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;a_slice_sum_cast&quot;</span><span class="p">),</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="c1"># take 1:3, name it, then sum, then multiply with two</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;lit_sum_add_two&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">sum</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2L</span><span class="p">,</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="c1"># similar to above, but with `mul()`-method instead of `*`.</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span><span class="o">$</span><span class="nf">sum</span><span class="p">()</span><span class="o">$</span><span class="nf">mul</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">))</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;lit_sum_add_mpg&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="c1"># compute the cosine of column &quot;a&quot;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="n">a_cos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">cos</span><span class="p">()</span><span class="o">$</span><span class="nf">sin</span><span class="p">(),</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="c1"># standardize the values of column &quot;a&quot;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="n">a_stand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">mean</span><span class="p">())</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">std</span><span class="p">(),</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="c1"># take 1:3, name it, then sum, then multiply by two</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="n">lit_sum_add_two</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span><span class="o">$</span><span class="nf">sum</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2L</span>
 <a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="p">)</span>
 <a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1">#&gt; shape: (4, 4)</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c1">#&gt; ┌─────┬──────────────────┬─────────────────┬─────────────────┐</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="c1">#&gt; │ a   ┆ a_slice_sum_cast ┆ lit_sum_add_two ┆ lit_sum_add_mpg │</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="c1">#&gt; │ --- ┆ ---              ┆ ---             ┆ ---             │</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="c1">#&gt; │ i32 ┆ f32              ┆ i32             ┆ i32             │</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="c1">#&gt; ╞═════╪══════════════════╪═════════════════╪═════════════════╡</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="c1">#&gt; │ 1   ┆ 3.0              ┆ 12              ┆ 6               │</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="c1">#&gt; │ 2   ┆ 3.0              ┆ 12              ┆ 12              │</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="c1">#&gt; │ 3   ┆ 3.0              ┆ 12              ┆ 18              │</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="c1">#&gt; │ 4   ┆ 3.0              ┆ 12              ┆ 24              │</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="c1">#&gt; └─────┴──────────────────┴─────────────────┴─────────────────┘</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c1">#&gt; ┌─────┬───────────┬───────────┬─────────────────┐</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="c1">#&gt; │ a   ┆ a_cos     ┆ a_stand   ┆ lit_sum_add_two │</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="c1">#&gt; │ --- ┆ ---       ┆ ---       ┆ ---             │</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="c1">#&gt; │ i32 ┆ f64       ┆ f64       ┆ i32             │</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="c1">#&gt; ╞═════╪═══════════╪═══════════╪═════════════════╡</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="c1">#&gt; │ 1   ┆ 0.514395  ┆ -1.161895 ┆ 12              │</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="c1">#&gt; │ 2   ┆ -0.404239 ┆ -0.387298 ┆ 12              │</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="c1">#&gt; │ 3   ┆ -0.836022 ┆ 0.387298  ┆ 12              │</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="c1">#&gt; │ 4   ┆ -0.608083 ┆ 1.161895  ┆ 12              │</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="c1">#&gt; └─────┴───────────┴───────────┴─────────────────┘</span>
 </code></pre></div>
-<p>Moreover there are subnamespaces with special methods only applicable
-for a specific type <code>dt</code>(datetime), <code>arr</code>(list), <code>str</code>(strings),
-<code>struct</code>(structs), <code>cat</code>(categoricals) and <code>bin</code>(binary). As a sidenote,
-there is also an exotic subnamespace called <code>meta</code> which is rarely used
-to manipulate the expressions themselves. Each subsection in the
-“Expressions” section lists all operations available for a specific
+<p>Some methods share a common name but their behavior might be very
+different depending on the input type. For example, <code>$decode()</code> doesn’t
+do the same thing when it is applied on binary data or on string data.</p>
+<p>To be able to distinguish those usages and to check the validity of a
+query, <code>polars</code> stores methods in subnamespaces. For each datatype other
+than numeric (floats and integers), there is a subnamespace containing
+the available methods: <code>dt</code> (datetime), <code>list</code> (list), <code>str</code> (strings),
+<code>struct</code> (structs), <code>cat</code> (categoricals) and <code>bin</code> (binary). As a
+sidenote, there is also an exotic subnamespace called <code>meta</code> which is
+rarely used to manipulate the expressions themselves. Each subsection in
+the “Expressions” section lists all operations available for a specific
 subnamespace.</p>
 <p>For a concrete example for <code>dt</code>, suppose we have a column containing
 dates and that we want to extract the year from these dates:</p>
@@ -14205,10 +14211,10 @@ dates and that we want to extract the year from these dates:</p>
 <a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="c1">#&gt; │ 2023-01-01 │</span>
 <a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="c1">#&gt; └────────────┘</span>
 </code></pre></div>
-<p>The function <code>year()</code> only makes sense for date-time data, so the type
-of input that can receive this function is <code>dt</code> (for <strong>d</strong>ate-<strong>t</strong>ime):</p>
+<p>The function <code>year()</code> only makes sense for date-time data, so we look
+for functions in the <code>dt</code> subnamespace (for <strong>d</strong>ate-<strong>t</strong>ime):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;date&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">dt</span><span class="o">$</span><span class="nf">year</span><span class="p">()</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;year&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="n">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;date&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">dt</span><span class="o">$</span><span class="nf">year</span><span class="p">()</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">)</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1">#&gt; shape: (4, 2)</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1">#&gt; ┌────────────┬──────┐</span>
@@ -14222,22 +14228,21 @@ of input that can receive this function is <code>dt</code> (for <strong>d</stron
 <a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="c1">#&gt; │ 2023-01-01 ┆ 2023 │</span>
 <a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="c1">#&gt; └────────────┴──────┘</span>
 </code></pre></div>
-<p>Similarly, if we have text data that we want to convert text to
-uppercase, we use the <code>str</code> prefix before using <code>to_uppercase()</code>:</p>
+<p>Similarly, to convert a string column to uppercase, we use the <code>str</code>
+prefix before using <code>to_uppercase()</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Create the DataFrame</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;jake&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mary&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;john peter&quot;</span><span class="p">))</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">to_uppercase</span><span class="p">())</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1">#&gt; shape: (3, 1)</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1">#&gt; ┌────────────┐</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1">#&gt; │ foo        │</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c1">#&gt; │ ---        │</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="c1">#&gt; │ str        │</span>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="c1">#&gt; ╞════════════╡</span>
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c1">#&gt; │ JAKE       │</span>
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="c1">#&gt; │ MARY       │</span>
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="c1">#&gt; │ JOHN PETER │</span>
-<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="c1">#&gt; └────────────┘</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;jake&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mary&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;john peter&quot;</span><span class="p">))</span><span class="o">$</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="nf">with_columns</span><span class="p">(</span><span class="n">upper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">to_uppercase</span><span class="p">())</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1">#&gt; shape: (3, 2)</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1">#&gt; ┌────────────┬────────────┐</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1">#&gt; │ foo        ┆ upper      │</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1">#&gt; │ ---        ┆ ---        │</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c1">#&gt; │ str        ┆ str        │</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="c1">#&gt; ╞════════════╪════════════╡</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="c1">#&gt; │ jake       ┆ JAKE       │</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c1">#&gt; │ mary       ┆ MARY       │</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="c1">#&gt; │ john peter ┆ JOHN PETER │</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="c1">#&gt; └────────────┴────────────┘</span>
 </code></pre></div>
 
 
