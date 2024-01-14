@@ -14109,6 +14109,27 @@
   
   
     <li class="md-nav__item">
+      <a href="polars-package.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    polars-package
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="show_all_public_functions.html" class="md-nav__link">
         
   
@@ -14362,7 +14383,7 @@ changed with <code>pl$set_options(maintain_order = TRUE)</code>.
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">()</span><span class="o">$</span><span class="n">height</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] 67
+<div class="highlight"><pre><span></span><code>#&gt; [1] 63
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">subset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">height</span>
 </code></pre></div>
@@ -14370,41 +14391,41 @@ changed with <code>pl$set_options(maintain_order = TRUE)</code>.
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">keep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;last&quot;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (67, 2)
+<div class="highlight"><pre><span></span><code>#&gt; shape: (63, 2)
 #&gt; ┌─────┬─────┐
 #&gt; │ x   ┆ y   │
 #&gt; │ --- ┆ --- │
 #&gt; │ i32 ┆ i32 │
 #&gt; ╞═════╪═════╡
-#&gt; │ 1   ┆ 10  │
-#&gt; │ 10  ┆ 4   │
-#&gt; │ 8   ┆ 9   │
+#&gt; │ 6   ┆ 2   │
+#&gt; │ 6   ┆ 9   │
+#&gt; │ 4   ┆ 8   │
 #&gt; │ 6   ┆ 10  │
 #&gt; │ …   ┆ …   │
-#&gt; │ 6   ┆ 2   │
-#&gt; │ 5   ┆ 3   │
-#&gt; │ 10  ┆ 9   │
-#&gt; │ 3   ┆ 5   │
+#&gt; │ 1   ┆ 8   │
+#&gt; │ 1   ┆ 10  │
+#&gt; │ 10  ┆ 8   │
+#&gt; │ 10  ┆ 4   │
 #&gt; └─────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># only keep unique rows</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">keep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;none&quot;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (44, 2)
+<div class="highlight"><pre><span></span><code>#&gt; shape: (40, 2)
 #&gt; ┌─────┬─────┐
 #&gt; │ x   ┆ y   │
 #&gt; │ --- ┆ --- │
 #&gt; │ i32 ┆ i32 │
 #&gt; ╞═════╪═════╡
-#&gt; │ 1   ┆ 10  │
-#&gt; │ 9   ┆ 9   │
-#&gt; │ 8   ┆ 9   │
-#&gt; │ 6   ┆ 10  │
+#&gt; │ 7   ┆ 8   │
+#&gt; │ 3   ┆ 9   │
+#&gt; │ 10  ┆ 3   │
+#&gt; │ 9   ┆ 5   │
 #&gt; │ …   ┆ …   │
-#&gt; │ 10  ┆ 10  │
-#&gt; │ 7   ┆ 2   │
-#&gt; │ 3   ┆ 5   │
-#&gt; │ 6   ┆ 3   │
+#&gt; │ 3   ┆ 10  │
+#&gt; │ 2   ┆ 10  │
+#&gt; │ 6   ┆ 4   │
+#&gt; │ 8   ┆ 2   │
 #&gt; └─────┴─────┘
 </code></pre></div>
 

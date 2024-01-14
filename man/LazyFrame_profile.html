@@ -14127,6 +14127,27 @@
   
   
     <li class="md-nav__item">
+      <a href="polars-package.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    polars-package
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="show_all_public_functions.html" class="md-nav__link">
         
   
@@ -14530,7 +14551,7 @@ TRUE)</code>.
 #&gt; │ str                 ┆ u64   ┆ u64 │
 #&gt; ╞═════════════════════╪═══════╪═════╡
 #&gt; │ optimization        ┆ 0     ┆ 18  │
-#&gt; │ projection(literal) ┆ 18    ┆ 80  │
+#&gt; │ projection(literal) ┆ 18    ┆ 83  │
 #&gt; └─────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Use $profile() to compare two queries</span>
@@ -14561,9 +14582,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ ---  │
 #&gt; │ str                ┆ u64   ┆ u64  │
 #&gt; ╞════════════════════╪═══════╪══════╡
-#&gt; │ optimization       ┆ 0     ┆ 15   │
-#&gt; │ sort(Sepal.Length) ┆ 15    ┆ 785  │
-#&gt; │ group_by(Species)  ┆ 788   ┆ 1247 │
+#&gt; │ optimization       ┆ 0     ┆ 17   │
+#&gt; │ sort(Sepal.Length) ┆ 17    ┆ 507  │
+#&gt; │ group_by(Species)  ┆ 510   ┆ 1002 │
 #&gt; └────────────────────┴───────┴──────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)</span>
@@ -14601,9 +14622,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ ---   │
 #&gt; │ str                ┆ u64   ┆ u64   │
 #&gt; ╞════════════════════╪═══════╪═══════╡
-#&gt; │ optimization       ┆ 0     ┆ 6     │
-#&gt; │ sort(Sepal.Length) ┆ 6     ┆ 532   │
-#&gt; │ group_by(Species)  ┆ 534   ┆ 12235 │
+#&gt; │ optimization       ┆ 0     ┆ 12    │
+#&gt; │ sort(Sepal.Length) ┆ 12    ┆ 502   │
+#&gt; │ group_by(Species)  ┆ 504   ┆ 21594 │
 #&gt; └────────────────────┴───────┴───────┘
 </code></pre></div>
 

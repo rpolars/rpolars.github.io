@@ -53,9 +53,9 @@ df
     #> │ ---               │
     #> │ struct[2]         │
     #> ╞═══════════════════╡
-    #> │ {"setosa",50}     │
-    #> │ {"virginica",50}  │
     #> │ {"versicolor",50} │
+    #> │ {"virginica",50}  │
+    #> │ {"setosa",50}     │
     #> └───────────────────┘
 
 ``` r
@@ -63,6 +63,6 @@ df$unnest()$to_data_frame() # recommended to unnest structs before converting to
 ```
 
     #>      Species count
-    #> 1     setosa    50
+    #> 1 versicolor    50
     #> 2  virginica    50
-    #> 3 versicolor    50
+    #> 3     setosa    50
