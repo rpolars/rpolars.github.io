@@ -1,7 +1,7 @@
 
 # Drop NaN
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Drop NaN
 
 ## Usage
 
-<pre><code class='language-R'>Expr_drop_nans
+<pre><code class='language-R'>Expr_drop_nans()
 </code></pre>
 
 ## Details

@@ -1,7 +1,7 @@
 
 # Get the last row of a LazyFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Aggregate the columns in the LazyFrame to their maximum value.
 
 ## Usage
 
-<pre><code class='language-R'>LazyFrame_last
+<pre><code class='language-R'>LazyFrame_last()
 </code></pre>
 
 ## Value

@@ -1,7 +1,7 @@
 
 # Drop missing values
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Drop missing values
 
 ## Usage
 
-<pre><code class='language-R'>Expr_drop_nulls
+<pre><code class='language-R'>Expr_drop_nulls()
 </code></pre>
 
 ## Value

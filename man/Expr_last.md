@@ -1,7 +1,7 @@
 
 # Get the last value
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Get the last value
 
 ## Usage
 
-<pre><code class='language-R'>Expr_last
+<pre><code class='language-R'>Expr_last()
 </code></pre>
 
 ## Value

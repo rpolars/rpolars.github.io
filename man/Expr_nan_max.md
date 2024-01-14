@@ -1,7 +1,7 @@
 
 # Get maximum value with NaN
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Get maximum value, but returns <code>NaN</code> if there are any.
 
 ## Usage
 
-<pre><code class='language-R'>Expr_nan_max
+<pre><code class='language-R'>Expr_nan_max()
 </code></pre>
 
 ## Value

@@ -1,7 +1,7 @@
 
 # Get mean value
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Get mean value
 
 ## Usage
 
-<pre><code class='language-R'>Expr_mean
+<pre><code class='language-R'>Expr_mean()
 </code></pre>
 
 ## Value

@@ -1,7 +1,7 @@
 
 # Compute inverse hyperbolic sine
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Compute inverse hyperbolic sine
 
 ## Usage
 
-<pre><code class='language-R'>Expr_arcsinh
+<pre><code class='language-R'>Expr_arcsinh()
 </code></pre>
 
 ## Value

@@ -1,7 +1,7 @@
 
 # Product
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Compute the product of an expression.
 
 ## Usage
 
-<pre><code class='language-R'>Expr_product
+<pre><code class='language-R'>Expr_product()
 </code></pre>
 
 ## Value

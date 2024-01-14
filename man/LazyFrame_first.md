@@ -1,7 +1,7 @@
 
 # Get the first row of a LazyFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Get the first row of a LazyFrame
 
 ## Usage
 
-<pre><code class='language-R'>LazyFrame_first
+<pre><code class='language-R'>LazyFrame_first()
 </code></pre>
 
 ## Value

@@ -1,7 +1,7 @@
 
 # Find the lower bound of a DataType
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Find the lower bound of a DataType
 
 ## Usage
 
-<pre><code class='language-R'>Expr_lower_bound
+<pre><code class='language-R'>Expr_lower_bound()
 </code></pre>
 
 ## Value

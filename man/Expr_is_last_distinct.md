@@ -1,7 +1,7 @@
 
 # Check whether each value is the last occurrence
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Check whether each value is the last occurrence
 
 ## Usage
 
-<pre><code class='language-R'>Expr_is_last_distinct
+<pre><code class='language-R'>Expr_is_last_distinct()
 </code></pre>
 
 ## Value

@@ -1,7 +1,7 @@
 
 # Compute inverse hyperbolic tangent
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Compute inverse hyperbolic tangent
 
 ## Usage
 
-<pre><code class='language-R'>Expr_arctanh
+<pre><code class='language-R'>Expr_arctanh()
 </code></pre>
 
 ## Value

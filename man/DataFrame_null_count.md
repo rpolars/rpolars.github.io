@@ -1,7 +1,7 @@
 
 # Count null values
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -10,7 +10,7 @@ Create a new DataFrame that shows the null (which correspond to
 
 ## Usage
 
-<pre><code class='language-R'>DataFrame_null_count
+<pre><code class='language-R'>DataFrame_null_count()
 </code></pre>
 
 ## Format

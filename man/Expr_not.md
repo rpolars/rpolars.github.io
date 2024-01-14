@@ -1,7 +1,7 @@
 
 # Negate a boolean expression
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -10,7 +10,7 @@ literal (e.g an integer).
 
 ## Usage
 
-<pre><code class='language-R'>Expr_not
+<pre><code class='language-R'>Expr_not()
 
 # S3 method for class 'RPolarsExpr'
 !x

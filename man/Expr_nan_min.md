@@ -1,7 +1,7 @@
 
 # Get minimum value with NaN
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Get minimum value, but returns <code>NaN</code> if there are any.
 
 ## Usage
 
-<pre><code class='language-R'>Expr_nan_min
+<pre><code class='language-R'>Expr_nan_min()
 </code></pre>
 
 ## Value

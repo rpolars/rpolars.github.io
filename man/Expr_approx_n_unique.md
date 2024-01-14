@@ -1,7 +1,7 @@
 
 # Approx count unique values
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -10,7 +10,7 @@ estimation.
 
 ## Usage
 
-<pre><code class='language-R'>Expr_approx_n_unique
+<pre><code class='language-R'>Expr_approx_n_unique()
 </code></pre>
 
 ## Value

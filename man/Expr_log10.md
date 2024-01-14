@@ -1,7 +1,7 @@
 
 # Compute the base-10 logarithm of elements
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Compute the base-10 logarithm of elements
 
 ## Usage
 
-<pre><code class='language-R'>Expr_log10
+<pre><code class='language-R'>Expr_log10()
 </code></pre>
 
 ## Value

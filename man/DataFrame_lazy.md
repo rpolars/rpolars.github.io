@@ -1,7 +1,7 @@
 
 # Convert an existing DataFrame to a LazyFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Start a new lazy query from a DataFrame.
 
 ## Usage
 
-<pre><code class='language-R'>DataFrame_lazy
+<pre><code class='language-R'>DataFrame_lazy()
 </code></pre>
 
 ## Value

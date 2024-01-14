@@ -1,7 +1,7 @@
 
 # Check whether each value is unique
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Check whether each value is unique
 
 ## Usage
 
-<pre><code class='language-R'>Expr_is_unique
+<pre><code class='language-R'>Expr_is_unique()
 </code></pre>
 
 ## Value

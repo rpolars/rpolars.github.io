@@ -1,7 +1,7 @@
 
 # Get maximum value
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Get maximum value
 
 ## Usage
 
-<pre><code class='language-R'>Expr_max
+<pre><code class='language-R'>Expr_max()
 </code></pre>
 
 ## Value

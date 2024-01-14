@@ -1,7 +1,7 @@
 
 # Get median value
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Get median value
 
 ## Usage
 
-<pre><code class='language-R'>Expr_median
+<pre><code class='language-R'>Expr_median()
 </code></pre>
 
 ## Value

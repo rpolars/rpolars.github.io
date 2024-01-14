@@ -1,7 +1,7 @@
 
 # Shrink numeric columns to the minimal required datatype
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -10,12 +10,8 @@ be used to reduce memory pressure.
 
 ## Usage
 
-<pre><code class='language-R'>Expr_shrink_dtype
+<pre><code class='language-R'>Expr_shrink_dtype()
 </code></pre>
-
-## Format
-
-An object of class <code>character</code> of length 1.
 
 ## Value
 

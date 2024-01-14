@@ -1,7 +1,7 @@
 
 # Aggregate groups
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -10,7 +10,7 @@ aggregation context only.
 
 ## Usage
 
-<pre><code class='language-R'>Expr_agg_groups
+<pre><code class='language-R'>Expr_agg_groups()
 </code></pre>
 
 ## Value

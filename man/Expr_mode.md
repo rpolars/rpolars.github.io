@@ -1,7 +1,7 @@
 
 # Mode
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -10,7 +10,7 @@ are ties.
 
 ## Usage
 
-<pre><code class='language-R'>Expr_mode
+<pre><code class='language-R'>Expr_mode()
 </code></pre>
 
 ## Value
@@ -33,11 +33,11 @@ df$select(pl$col("a")$mode())
     #> │ i32 │
     #> ╞═════╡
     #> │ 4   │
-    #> │ 3   │
-    #> │ 5   │
-    #> │ 2   │
     #> │ 6   │
     #> │ 1   │
+    #> │ 2   │
+    #> │ 5   │
+    #> │ 3   │
     #> └─────┘
 
 ``` r

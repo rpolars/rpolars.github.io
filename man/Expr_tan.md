@@ -1,7 +1,7 @@
 
 # Compute tangent
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Compute tangent
 
 ## Usage
 
-<pre><code class='language-R'>Expr_tan
+<pre><code class='language-R'>Expr_tan()
 </code></pre>
 
 ## Value

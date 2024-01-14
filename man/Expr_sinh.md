@@ -1,7 +1,7 @@
 
 # Compute hyperbolic sine
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Compute hyperbolic sine
 
 ## Usage
 
-<pre><code class='language-R'>Expr_sinh
+<pre><code class='language-R'>Expr_sinh()
 </code></pre>
 
 ## Value

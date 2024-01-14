@@ -1,7 +1,7 @@
 
 # Compute the exponential of the elements
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Compute the exponential of the elements
 
 ## Usage
 
-<pre><code class='language-R'>Expr_exp
+<pre><code class='language-R'>Expr_exp()
 </code></pre>
 
 ## Value

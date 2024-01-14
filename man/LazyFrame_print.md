@@ -1,7 +1,7 @@
 
 # print LazyFrame internal method
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -24,10 +24,6 @@ LazyFrame
 </td>
 </tr>
 </table>
-
-## Format
-
-An object of class <code>character</code> of length 1.
 
 ## Value
 

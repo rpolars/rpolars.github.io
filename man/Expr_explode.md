@@ -1,7 +1,7 @@
 
 # Explode a list or String Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ This means that every item is expanded to a new row.
 
 ## Usage
 
-<pre><code class='language-R'>Expr_explode
+<pre><code class='language-R'>Expr_explode()
 </code></pre>
 
 ## Details

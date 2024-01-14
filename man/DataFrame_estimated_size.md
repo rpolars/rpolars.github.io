@@ -1,7 +1,7 @@
 
 # Estimated size
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -10,7 +10,7 @@ DataFrame.
 
 ## Usage
 
-<pre><code class='language-R'>DataFrame_estimated_size
+<pre><code class='language-R'>DataFrame_estimated_size()
 </code></pre>
 
 ## Format

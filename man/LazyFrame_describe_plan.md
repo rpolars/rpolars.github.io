@@ -1,7 +1,7 @@
 
 # Print the optimized or non-optimized plans of <code>LazyFrame</code>
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -17,12 +17,8 @@ find any way to optimize the query.
 
 <pre><code class='language-R'>LazyFrame_describe_optimized_plan()
 
-LazyFrame_describe_plan
+LazyFrame_describe_plan()
 </code></pre>
-
-## Format
-
-An object of class <code>character</code> of length 1.
 
 ## Value
 

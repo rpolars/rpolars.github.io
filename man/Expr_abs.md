@@ -1,7 +1,7 @@
 
 # Compute the absolute values
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Compute the absolute values
 
 ## Usage
 
-<pre><code class='language-R'>Expr_abs
+<pre><code class='language-R'>Expr_abs()
 </code></pre>
 
 ## Value

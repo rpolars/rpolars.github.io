@@ -1,7 +1,7 @@
 
 # Explode a list or String Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -10,12 +10,8 @@ This is an alias for
 
 ## Usage
 
-<pre><code class='language-R'>Expr_flatten
+<pre><code class='language-R'>Expr_flatten()
 </code></pre>
-
-## Format
-
-An object of class <code>character</code> of length 1.
 
 ## Value
 

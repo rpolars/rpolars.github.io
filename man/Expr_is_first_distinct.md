@@ -1,7 +1,7 @@
 
 # Check whether each value is the first occurrence
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Check whether each value is the first occurrence
 
 ## Usage
 
-<pre><code class='language-R'>Expr_is_first_distinct
+<pre><code class='language-R'>Expr_is_first_distinct()
 </code></pre>
 
 ## Value

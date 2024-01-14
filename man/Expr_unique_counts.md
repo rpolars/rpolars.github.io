@@ -1,7 +1,7 @@
 
 # Count unique values
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -12,7 +12,7 @@ not return the values, only the counts and it might be faster.
 
 ## Usage
 
-<pre><code class='language-R'>Expr_unique_counts
+<pre><code class='language-R'>Expr_unique_counts()
 </code></pre>
 
 ## Value

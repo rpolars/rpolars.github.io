@@ -1,7 +1,7 @@
 
 # Check if elements are not NaN
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -10,7 +10,7 @@ sugar for <code style="white-space: pre;">$is_nan()$not()</code>.
 
 ## Usage
 
-<pre><code class='language-R'>Expr_is_not_nan
+<pre><code class='language-R'>Expr_is_not_nan()
 </code></pre>
 
 ## Value

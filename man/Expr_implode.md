@@ -1,7 +1,7 @@
 
 # Wrap column in list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Aggregate values into a list.
 
 ## Usage
 
-<pre><code class='language-R'>Expr_implode
+<pre><code class='language-R'>Expr_implode()
 </code></pre>
 
 ## Details

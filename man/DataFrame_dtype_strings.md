@@ -1,7 +1,7 @@
 
 # Data types information
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -11,7 +11,7 @@ is also shown when printing the DataFrame.
 
 ## Usage
 
-<pre><code class='language-R'>DataFrame_dtype_strings
+<pre><code class='language-R'>DataFrame_dtype_strings()
 </code></pre>
 
 ## Value

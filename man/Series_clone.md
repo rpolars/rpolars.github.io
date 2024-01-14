@@ -1,7 +1,7 @@
 
 # Clone a Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -10,7 +10,7 @@ Series should lead to a clone anyways.
 
 ## Usage
 
-<pre><code class='language-R'>Series_clone
+<pre><code class='language-R'>Series_clone()
 </code></pre>
 
 ## Value

@@ -1,7 +1,7 @@
 
 # idx to max value
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ idx to max value
 
 ## Usage
 
-<pre><code class='language-R'>Series_arg_max
+<pre><code class='language-R'>Series_arg_max()
 </code></pre>
 
 ## Value

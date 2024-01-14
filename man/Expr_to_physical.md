@@ -1,7 +1,7 @@
 
 # Cast an Expr to its physical representation
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -43,7 +43,7 @@ unchanged.
 
 ## Usage
 
-<pre><code class='language-R'>Expr_to_physical
+<pre><code class='language-R'>Expr_to_physical()
 </code></pre>
 
 ## Value

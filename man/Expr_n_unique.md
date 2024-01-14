@@ -1,7 +1,7 @@
 
 # Count number of unique values
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Count number of unique values
 
 ## Usage
 
-<pre><code class='language-R'>Expr_n_unique
+<pre><code class='language-R'>Expr_n_unique()
 </code></pre>
 
 ## Value

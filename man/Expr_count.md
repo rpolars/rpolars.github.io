@@ -1,7 +1,7 @@
 
 # Count elements
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -11,14 +11,10 @@ Count the number of elements in this expression. Note that
 
 ## Usage
 
-<pre><code class='language-R'>Expr_count
+<pre><code class='language-R'>Expr_count()
 
-Expr_len
+Expr_len()
 </code></pre>
-
-## Format
-
-An object of class <code>character</code> of length 1.
 
 ## Value
 

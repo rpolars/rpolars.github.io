@@ -1,7 +1,7 @@
 
 # Check whether each value is duplicated
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -10,7 +10,7 @@ This is syntactic sugar for
 
 ## Usage
 
-<pre><code class='language-R'>Expr_is_duplicated
+<pre><code class='language-R'>Expr_is_duplicated()
 </code></pre>
 
 ## Value

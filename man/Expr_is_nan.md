@@ -1,7 +1,7 @@
 
 # Check if elements are NaN
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Returns a boolean Series indicating which values are NaN.
 
 ## Usage
 
-<pre><code class='language-R'>Expr_is_nan
+<pre><code class='language-R'>Expr_is_nan()
 </code></pre>
 
 ## Value

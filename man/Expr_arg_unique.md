@@ -1,7 +1,7 @@
 
 # Index of first unique values
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ This finds the position of first occurrence of each unique value.
 
 ## Usage
 
-<pre><code class='language-R'>Expr_arg_unique
+<pre><code class='language-R'>Expr_arg_unique()
 </code></pre>
 
 ## Value

@@ -1,7 +1,7 @@
 
 # Series_len
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Length of this Series.
 
 ## Usage
 
-<pre><code class='language-R'>Series_len
+<pre><code class='language-R'>Series_len()
 </code></pre>
 
 ## Value

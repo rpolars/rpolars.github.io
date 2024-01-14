@@ -1,7 +1,7 @@
 
 # Reverse
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,12 +9,8 @@ Reverse the LazyFrame (the last row becomes the first one, etc.).
 
 ## Usage
 
-<pre><code class='language-R'>LazyFrame_reverse
+<pre><code class='language-R'>LazyFrame_reverse()
 </code></pre>
-
-## Format
-
-An object of class <code>character</code> of length 1.
 
 ## Value
 

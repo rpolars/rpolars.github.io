@@ -1,7 +1,7 @@
 
 # Compute inverse sine
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Compute inverse sine
 
 ## Usage
 
-<pre><code class='language-R'>Expr_arcsin
+<pre><code class='language-R'>Expr_arcsin()
 </code></pre>
 
 ## Value

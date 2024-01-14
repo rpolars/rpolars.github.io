@@ -1,7 +1,7 @@
 
 # Compute hyperbolic cosine
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/#L)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -9,7 +9,7 @@ Compute hyperbolic cosine
 
 ## Usage
 
-<pre><code class='language-R'>Expr_cosh
+<pre><code class='language-R'>Expr_cosh()
 </code></pre>
 
 ## Value
