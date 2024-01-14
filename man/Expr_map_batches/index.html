@@ -894,27 +894,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../pl_Datetime/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Datetime
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../pl_disable_string_cache/" class="md-nav__link">
         
   
@@ -1193,27 +1172,6 @@
   
   <span class="md-ellipsis">
     LazyFrame
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pl_List/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    List
   </span>
   
 
@@ -1613,27 +1571,6 @@
   
   <span class="md-ellipsis">
     std
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pl_Struct_datatype/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Struct_datatype
   </span>
   
 
@@ -9738,27 +9675,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Expr_print/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    print
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Expr_product/" class="md-nav__link">
         
   
@@ -13931,6 +13847,69 @@
   
   
     <li class="md-nav__item">
+      <a href="../DataType_Datetime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataType_Datetime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DataType_List/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataType_List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DataType_Struct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataType_Struct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../DynamicGroupBy_agg/" class="md-nav__link">
         
   
@@ -14449,7 +14428,7 @@ sessions.</p>
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">)</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nf">system.time</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   0.015   0.001   0.413
+#&gt;   0.014   0.000   0.413
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># map in parallel 1: Overhead to start up extra R processes / sessions</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">pl</span><span class="o">$</span><span class="nf">set_options</span><span class="p">(</span><span class="n">rpool_cap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="c1"># drop any previous processes, just to show start-up overhead</span>
@@ -14466,7 +14445,7 @@ sessions.</p>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">)</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nf">system.time</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   0.000   0.006   0.790
+#&gt;   0.005   0.001   0.804
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># map in parallel 2: Reuse R processes in &quot;polars global_rpool&quot;.</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">pl</span><span class="o">$</span><span class="n">options</span><span class="o">$</span><span class="n">rpool_cap</span>
@@ -14481,7 +14460,7 @@ sessions.</p>
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">)</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nf">system.time</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   0.004   0.000   0.107
+#&gt;   0.004   0.000   0.111
 </code></pre></div>
 
 

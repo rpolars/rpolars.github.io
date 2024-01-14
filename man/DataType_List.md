@@ -1,16 +1,23 @@
 
 # Create List DataType
 
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L246)
+
 ## Description
 
 Create List DataType
+
+## Usage
+
+<pre><code class='language-R'>DataType_List(datatype = "unknown")
+</code></pre>
 
 ## Arguments
 
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_List_:_datatype">datatype</code>
+<code id="DataType_List_:_datatype">datatype</code>
 </td>
 <td>
 an inner DataType, default is "Unknown" (placeholder for when inner

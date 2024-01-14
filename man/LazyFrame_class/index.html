@@ -894,27 +894,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../pl_Datetime/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Datetime
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../pl_disable_string_cache/" class="md-nav__link">
         
   
@@ -1193,27 +1172,6 @@
   
   <span class="md-ellipsis">
     LazyFrame
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pl_List/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    List
   </span>
   
 
@@ -1613,27 +1571,6 @@
   
   <span class="md-ellipsis">
     std
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pl_Struct_datatype/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Struct_datatype
   </span>
   
 
@@ -9718,27 +9655,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Expr_print/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    print
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Expr_product/" class="md-nav__link">
         
   
@@ -13911,6 +13827,69 @@
   
   
     <li class="md-nav__item">
+      <a href="../DataType_Datetime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataType_Datetime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DataType_List/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataType_List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DataType_Struct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataType_Struct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../DynamicGroupBy_agg/" class="md-nav__link">
         
   
@@ -14437,7 +14416,7 @@ replaced by any function prefixed <code>LazyFrame</em></code>.</p>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; FILTER [(col(&quot;Species&quot;)) == (String(setosa))] FROM
 #&gt; 
-#&gt;   Csv SCAN /tmp/RtmpEaxqdY/file69fd7a7bd572
+#&gt;   Csv SCAN /tmp/RtmpfvrS8Y/file6e776dc674ed
 #&gt;   PROJECT */5 COLUMNS
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># NOTE For Ldf_okay, the full time to load csv alrady paid when creating Rdf and Pdf</span>
@@ -14450,7 +14429,7 @@ replaced by any function prefixed <code>LazyFrame</em></code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Ldf_best</span><span class="o">$</span><span class="nf">describe_optimized_plan</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; 
-#&gt;   Csv SCAN /tmp/RtmpEaxqdY/file69fd7a7bd572
+#&gt;   Csv SCAN /tmp/RtmpfvrS8Y/file6e776dc674ed
 #&gt;   PROJECT */5 COLUMNS
 #&gt;   SELECTION: [(col(&quot;Species&quot;)) == (String(setosa))]
 </code></pre></div>

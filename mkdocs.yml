@@ -58,7 +58,6 @@ nav:
         - cov: man/pl_cov.md
         - DataFrame: man/pl_DataFrame.md
         - date_range: man/pl_date_range.md
-        - Datetime: man/pl_Datetime.md
         - disable_string_cache: man/pl_disable_string_cache.md
         - dtypes: man/pl_dtypes.md
         - duration: man/pl_duration.md
@@ -73,7 +72,6 @@ nav:
         - is_schema: man/pl_is_schema.md
         - last: man/pl_last.md
         - LazyFrame: man/pl_LazyFrame.md
-        - List: man/pl_List.md
         - max_horizontal: man/pl_max_horizontal.md
         - max: man/pl_max.md
         - mean: man/pl_mean.md
@@ -93,7 +91,6 @@ nav:
         - Series: man/pl_Series.md
         - SQLContext: man/pl_SQLContext.md
         - std: man/pl_std.md
-        - Struct_datatype: man/pl_Struct_datatype.md
         - struct: man/pl_struct.md
         - sum_horizontal: man/pl_sum_horizontal.md
         - sum: man/pl_sum.md
@@ -460,7 +457,6 @@ nav:
             - peak_max: man/Expr_peak_max.md
             - peak_min: man/Expr_peak_min.md
             - pow: man/Expr_pow.md
-            - print: man/Expr_print.md
             - product: man/Expr_product.md
             - quantile: man/Expr_quantile.md
             - rank: man/Expr_rank.md
@@ -649,6 +645,9 @@ nav:
         - as_polars_df: man/as_polars_df.md
         - as_polars_lf: man/as_polars_lf.md
         - as_polars_series: man/as_polars_series.md
+        - DataType_Datetime: man/DataType_Datetime.md
+        - DataType_List: man/DataType_List.md
+        - DataType_Struct: man/DataType_Struct.md
         - DynamicGroupBy_agg: man/DynamicGroupBy_agg.md
         - DynamicGroupBy_class: man/DynamicGroupBy_class.md
         - DynamicGroupBy_ungroup: man/DynamicGroupBy_ungroup.md

@@ -894,27 +894,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../pl_Datetime/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Datetime
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../pl_disable_string_cache/" class="md-nav__link">
         
   
@@ -1193,27 +1172,6 @@
   
   <span class="md-ellipsis">
     LazyFrame
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pl_List/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    List
   </span>
   
 
@@ -1613,27 +1571,6 @@
   
   <span class="md-ellipsis">
     std
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pl_Struct_datatype/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Struct_datatype
   </span>
   
 
@@ -9736,27 +9673,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Expr_print/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    print
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Expr_product/" class="md-nav__link">
         
   
@@ -13929,6 +13845,69 @@
   
   
     <li class="md-nav__item">
+      <a href="../DataType_Datetime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataType_Datetime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DataType_List/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataType_List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DataType_Struct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataType_Struct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../DynamicGroupBy_agg/" class="md-nav__link">
         
   
@@ -14421,10 +14400,10 @@ FALSE</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nf">lapply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">tracemem</span><span class="p">)</span><span class="w"> </span><span class="c1"># trace chunks to verify no re-allocation</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [[1]]
-#&gt; [1] &quot;&lt;0x563b0324a6a8&gt;&quot;
+#&gt; [1] &quot;&lt;0x5650802cd5d0&gt;&quot;
 #&gt; 
 #&gt; [[2]]
-#&gt; [1] &quot;&lt;0x563b000e1710&gt;&quot;
+#&gt; [1] &quot;&lt;0x56507d15f710&gt;&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">z</span><span class="w"> </span><span class="c1"># looks like a plain vector</span>
@@ -14434,16 +14413,16 @@ FALSE</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nf">lapply</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="w"> </span><span class="n">tracemem</span><span class="p">)</span><span class="w"> </span><span class="c1"># mem allocation  in z are the same from x</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [[1]]
-#&gt; [1] &quot;&lt;0x563b0324a6a8&gt;&quot;
+#&gt; [1] &quot;&lt;0x5650802cd5d0&gt;&quot;
 #&gt; 
 #&gt; [[2]]
-#&gt; [1] &quot;&lt;0x563b000e1710&gt;&quot;
+#&gt; [1] &quot;&lt;0x56507d15f710&gt;&quot;
 #&gt; 
 #&gt; [[3]]
-#&gt; [1] &quot;&lt;0x563b0324a6a8&gt;&quot;
+#&gt; [1] &quot;&lt;0x5650802cd5d0&gt;&quot;
 #&gt; 
 #&gt; [[4]]
-#&gt; [1] &quot;&lt;0x563b000e1710&gt;&quot;
+#&gt; [1] &quot;&lt;0x56507d15f710&gt;&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nf">str</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 </code></pre></div>

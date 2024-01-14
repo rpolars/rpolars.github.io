@@ -894,27 +894,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../pl_Datetime/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Datetime
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../pl_disable_string_cache/" class="md-nav__link">
         
   
@@ -1193,27 +1172,6 @@
   
   <span class="md-ellipsis">
     LazyFrame
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pl_List/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    List
   </span>
   
 
@@ -1613,27 +1571,6 @@
   
   <span class="md-ellipsis">
     std
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pl_Struct_datatype/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Struct_datatype
   </span>
   
 
@@ -9720,27 +9657,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Expr_print/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    print
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Expr_product/" class="md-nav__link">
         
   
@@ -13913,6 +13829,69 @@
   
   
     <li class="md-nav__item">
+      <a href="../DataType_Datetime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataType_Datetime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DataType_List/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataType_List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DataType_Struct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataType_Struct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../DynamicGroupBy_agg/" class="md-nav__link">
         
   
@@ -14316,12 +14295,12 @@ are ties.</p>
 #&gt; │ --- │
 #&gt; │ i32 │
 #&gt; ╞═════╡
-#&gt; │ 5   │
 #&gt; │ 4   │
+#&gt; │ 3   │
+#&gt; │ 5   │
+#&gt; │ 2   │
 #&gt; │ 6   │
 #&gt; │ 1   │
-#&gt; │ 2   │
-#&gt; │ 3   │
 #&gt; └─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;b&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">mode</span><span class="p">())</span>
@@ -14332,8 +14311,8 @@ are ties.</p>
 #&gt; │ --- │
 #&gt; │ i32 │
 #&gt; ╞═════╡
-#&gt; │ 1   │
 #&gt; │ 3   │
+#&gt; │ 1   │
 #&gt; └─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">mode</span><span class="p">())</span>
@@ -14345,8 +14324,8 @@ are ties.</p>
 #&gt; │ i32 │
 #&gt; ╞═════╡
 #&gt; │ 2   │
-#&gt; │ 3   │
 #&gt; │ 1   │
+#&gt; │ 3   │
 #&gt; └─────┘
 </code></pre></div>
 
