@@ -1398,6 +1398,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../pl_options/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    options
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../pl_pl/" class="md-nav__link">
         
   
@@ -3273,6 +3294,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../DataFrame_group_by_dynamic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    group_by_dynamic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../DataFrame_group_by/" class="md-nav__link">
         
   
@@ -4522,6 +4564,27 @@
   
   <span class="md-ellipsis">
     get_optimization_toggle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LazyFrame_group_by_dynamic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    group_by_dynamic
   </span>
   
 
@@ -13875,6 +13938,69 @@
   
   
     <li class="md-nav__item">
+      <a href="../DynamicGroupBy_agg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DynamicGroupBy_agg
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DynamicGroupBy_class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DynamicGroupBy_class
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DynamicGroupBy_ungroup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DynamicGroupBy_ungroup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../global_rpool_cap/" class="md-nav__link">
         
   
@@ -14006,27 +14132,6 @@
   
   <span class="md-ellipsis">
     polars_info
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../polars_options/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    polars_options
   </span>
   
 
@@ -14445,8 +14550,8 @@ TRUE)</code>.
 #&gt; │ ---                 ┆ ---   ┆ --- │
 #&gt; │ str                 ┆ u64   ┆ u64 │
 #&gt; ╞═════════════════════╪═══════╪═════╡
-#&gt; │ optimization        ┆ 0     ┆ 9   │
-#&gt; │ projection(literal) ┆ 9     ┆ 87  │
+#&gt; │ optimization        ┆ 0     ┆ 25  │
+#&gt; │ projection(literal) ┆ 25    ┆ 91  │
 #&gt; └─────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Use $profile() to compare two queries</span>
@@ -14472,15 +14577,15 @@ TRUE)</code>.
 #&gt; 
 #&gt; $profile
 #&gt; shape: (3, 3)
-#&gt; ┌────────────────────┬───────┬──────┐
-#&gt; │ node               ┆ start ┆ end  │
-#&gt; │ ---                ┆ ---   ┆ ---  │
-#&gt; │ str                ┆ u64   ┆ u64  │
-#&gt; ╞════════════════════╪═══════╪══════╡
-#&gt; │ optimization       ┆ 0     ┆ 20   │
-#&gt; │ sort(Sepal.Length) ┆ 20    ┆ 1408 │
-#&gt; │ group_by(Species)  ┆ 1411  ┆ 1705 │
-#&gt; └────────────────────┴───────┴──────┘
+#&gt; ┌────────────────────┬───────┬─────┐
+#&gt; │ node               ┆ start ┆ end │
+#&gt; │ ---                ┆ ---   ┆ --- │
+#&gt; │ str                ┆ u64   ┆ u64 │
+#&gt; ╞════════════════════╪═══════╪═════╡
+#&gt; │ optimization       ┆ 0     ┆ 17  │
+#&gt; │ sort(Sepal.Length) ┆ 17    ┆ 676 │
+#&gt; │ group_by(Species)  ┆ 680   ┆ 955 │
+#&gt; └────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
@@ -14517,9 +14622,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ ---   │
 #&gt; │ str                ┆ u64   ┆ u64   │
 #&gt; ╞════════════════════╪═══════╪═══════╡
-#&gt; │ optimization       ┆ 0     ┆ 11    │
-#&gt; │ sort(Sepal.Length) ┆ 11    ┆ 346   │
-#&gt; │ group_by(Species)  ┆ 348   ┆ 11396 │
+#&gt; │ optimization       ┆ 0     ┆ 9     │
+#&gt; │ sort(Sepal.Length) ┆ 9     ┆ 664   │
+#&gt; │ group_by(Species)  ┆ 667   ┆ 14918 │
 #&gt; └────────────────────┴───────┴───────┘
 </code></pre></div>
 

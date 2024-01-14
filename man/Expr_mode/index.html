@@ -1398,6 +1398,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../pl_options/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    options
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../pl_pl/" class="md-nav__link">
         
   
@@ -3273,6 +3294,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../DataFrame_group_by_dynamic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    group_by_dynamic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../DataFrame_group_by/" class="md-nav__link">
         
   
@@ -4520,6 +4562,27 @@
   
   <span class="md-ellipsis">
     get_optimization_toggle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LazyFrame_group_by_dynamic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    group_by_dynamic
   </span>
   
 
@@ -13850,6 +13913,69 @@
   
   
     <li class="md-nav__item">
+      <a href="../DynamicGroupBy_agg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DynamicGroupBy_agg
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DynamicGroupBy_class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DynamicGroupBy_class
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DynamicGroupBy_ungroup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DynamicGroupBy_ungroup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../global_rpool_cap/" class="md-nav__link">
         
   
@@ -13981,27 +14107,6 @@
   
   <span class="md-ellipsis">
     polars_info
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../polars_options/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    polars_options
   </span>
   
 
@@ -14213,10 +14318,10 @@ are ties.</p>
 #&gt; ╞═════╡
 #&gt; │ 5   │
 #&gt; │ 4   │
-#&gt; │ 2   │
 #&gt; │ 6   │
-#&gt; │ 3   │
 #&gt; │ 1   │
+#&gt; │ 2   │
+#&gt; │ 3   │
 #&gt; └─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;b&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">mode</span><span class="p">())</span>
@@ -14239,9 +14344,9 @@ are ties.</p>
 #&gt; │ --- │
 #&gt; │ i32 │
 #&gt; ╞═════╡
+#&gt; │ 2   │
 #&gt; │ 3   │
 #&gt; │ 1   │
-#&gt; │ 2   │
 #&gt; └─────┘
 </code></pre></div>
 

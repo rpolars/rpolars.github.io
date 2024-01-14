@@ -60,6 +60,7 @@ whereas if you pass a non-default offset, then the windows will be:
 
 <pre><code class='language-R'>LazyFrame_rolling(
   index_column,
+  ...,
   period,
   offset = NULL,
   closed = "right",
@@ -82,6 +83,14 @@ Date/Datetime. This column must be sorted in ascending order (or, if
 within each group). In case of a rolling group by on indices, dtype
 needs to be either Int32 or Int64. Note that Int32 gets temporarily cast
 to Int64, so if performance matters use an Int64 column.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="LazyFrame_rolling_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>

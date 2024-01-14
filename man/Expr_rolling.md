@@ -1,7 +1,7 @@
 
 # Create rolling groups based on a time or numeric column
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L3572)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L3573)
 
 ## Description
 
@@ -60,6 +60,7 @@ whereas if you pass a non-default offset, then the windows will be:
 
 <pre><code class='language-R'>Expr_rolling(
   index_column,
+  ...,
   period,
   offset = NULL,
   closed = "right",
@@ -80,6 +81,14 @@ Date/Datetime. This column must be sorted in ascending order. If this
 column represents an index, it has to be either Int32 or Int64. Note
 that Int32 gets temporarily cast to Int64, so if performance matters use
 an Int64 column.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="Expr_rolling_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>

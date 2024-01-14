@@ -9,6 +9,7 @@ for more details.
 ## Usage
 
 <pre><code class='language-R'>pl_set_options(
+  ...,
   strictly_immutable = TRUE,
   maintain_order = FALSE,
   do_not_repeat_call = FALSE,
@@ -23,6 +24,14 @@ pl_reset_options()
 ## Arguments
 
 <table>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_set_options_:_...">…</code>
+</td>
+<td>
+Ignored.
+</td>
+</tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
 <code id="pl_set_options_:_strictly_immutable">strictly_immutable</code>
@@ -80,8 +89,6 @@ the background. See Details.
 </table>
 
 ## Details
-
-All args must be explicitly and fully named.
 
 <code>pl$options$rpool_active</code> indicates the number of R sessions
 already spawned in pool. <code>pl$options$rpool_cap</code> indicates the

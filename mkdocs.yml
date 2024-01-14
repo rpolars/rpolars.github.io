@@ -82,6 +82,7 @@ nav:
         - min_horizontal: man/pl_min_horizontal.md
         - min: man/pl_min.md
         - n_unique: man/pl_n_unique.md
+        - options: man/pl_options.md
         - pl: man/pl_pl.md
         - PTime: man/pl_PTime.md
         - raw_list: man/pl_raw_list.md
@@ -169,6 +170,7 @@ nav:
         - get_column: man/DataFrame_get_column.md
         - get_columns: man/DataFrame_get_columns.md
         - glimpse: man/DataFrame_glimpse.md
+        - group_by_dynamic: man/DataFrame_group_by_dynamic.md
         - group_by: man/DataFrame_group_by.md
         - head: man/DataFrame_head.md
         - height: man/DataFrame_height.md
@@ -228,6 +230,7 @@ nav:
         - filter: man/LazyFrame_filter.md
         - first: man/LazyFrame_first.md
         - get_optimization_toggle: man/LazyFrame_get_optimization_toggle.md
+        - group_by_dynamic: man/LazyFrame_group_by_dynamic.md
         - group_by: man/LazyFrame_group_by.md
         - head: man/LazyFrame_head.md
         - join_asof: man/LazyFrame_join_asof.md
@@ -646,6 +649,9 @@ nav:
         - as_polars_df: man/as_polars_df.md
         - as_polars_lf: man/as_polars_lf.md
         - as_polars_series: man/as_polars_series.md
+        - DynamicGroupBy_agg: man/DynamicGroupBy_agg.md
+        - DynamicGroupBy_class: man/DynamicGroupBy_class.md
+        - DynamicGroupBy_ungroup: man/DynamicGroupBy_ungroup.md
         - global_rpool_cap: man/global_rpool_cap.md
         - is_polars_df: man/is_polars_df.md
         - is_polars_lf: man/is_polars_lf.md
@@ -653,7 +659,6 @@ nav:
         - nanoarrow: man/nanoarrow.md
         - polars_class_object: man/polars_class_object.md
         - polars_info: man/polars_info.md
-        - polars_options: man/polars_options.md
         - show_all_public_functions: man/show_all_public_functions.md
         - show_all_public_methods: man/show_all_public_methods.md
   - About: about.md

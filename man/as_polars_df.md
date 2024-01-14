@@ -29,6 +29,9 @@ as_polars_df(x, ...)
 # S3 method for class 'RPolarsRollingGroupBy'
 as_polars_df(x, ...)
 
+# S3 method for class 'RPolarsDynamicGroupBy'
+as_polars_df(x, ...)
+
 # S3 method for class 'RPolarsSeries'
 as_polars_df(x, ...)
 
