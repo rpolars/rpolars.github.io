@@ -307,9 +307,9 @@ dat$group_by("cyl")$mean()
 #> │ --- ┆ ---       ┆ ---        ┆ ---        ┆   ┆ ---      ┆ ---      ┆ ---      ┆ ---      │
 #> │ f64 ┆ f64       ┆ f64        ┆ f64        ┆   ┆ f64      ┆ f64      ┆ f64      ┆ f64      │
 #> ╞═════╪═══════════╪════════════╪════════════╪═══╪══════════╪══════════╪══════════╪══════════╡
+#> │ 6.0 ┆ 19.742857 ┆ 183.314286 ┆ 122.285714 ┆ … ┆ 0.571429 ┆ 0.428571 ┆ 3.857143 ┆ 3.428571 │
 #> │ 4.0 ┆ 26.663636 ┆ 105.136364 ┆ 82.636364  ┆ … ┆ 0.909091 ┆ 0.727273 ┆ 4.090909 ┆ 1.545455 │
 #> │ 8.0 ┆ 15.1      ┆ 353.1      ┆ 209.214286 ┆ … ┆ 0.0      ┆ 0.142857 ┆ 3.285714 ┆ 3.5      │
-#> │ 6.0 ┆ 19.742857 ┆ 183.314286 ┆ 122.285714 ┆ … ┆ 0.571429 ┆ 0.428571 ┆ 3.857143 ┆ 3.428571 │
 #> └─────┴───────────┴────────────┴────────────┴───┴──────────┴──────────┴──────────┴──────────┘
 ```
 
@@ -317,10 +317,9 @@ dat$group_by("cyl")$mean()
 
 We can now start chaining together various methods (expressions) to
 manipulate it in different ways. For example, we can subset the data by
-rows
-([`filter()`](https://rpolars.github.io/reference/DataFrame_filter/))
+rows ([`filter()`](https://rpolars.github.io/man/DataFrame_filter.html))
 and also columns
-([`select()`](https://rpolars.github.io/reference/DataFrame_select/)):
+([`select()`](https://rpolars.github.io/man/DataFrame_select.html)):
 
 ``` r
 dat$filter(pl$col("cyl") == 6)
@@ -402,7 +401,7 @@ subsetting. However, the result will exclude any columns that weren’t
 specified as part of the expression. To modify or add some
 columns—whilst preserving all others in the dataset—it is therefore
 better to use the
-[`with_columns()`](https://rpolars.github.io/reference/DataFrame_with_columns/)
+[`with_columns()`](https://rpolars.github.io/man/DataFrame_with_columns.html)
 method. This next code chunk is equivalent to
 `mtcars |> dplyr::mutate(sum_mpg=sum(mpg), sum_hp=sum(hp), .by = cyl)`.
 
@@ -458,7 +457,7 @@ dat$with_columns(
 Similarly, here’s how we could have aggregated (i.e., collapsed) the
 dataset by groups instead of modifying them. We need simply invoke the
 `group_by()` and
-[`agg()`](https://rpolars.github.io/reference/Expr_agg_groups/) methods.
+[`agg()`](https://rpolars.github.io/man/Expr_agg_groups.html) methods.
 
 ``` r
 dat$group_by(
@@ -500,12 +499,12 @@ dat$group_by(
 #> │ --- ┆ ---    ┆ ---       ┆ ---    │
 #> │ f64 ┆ bool   ┆ f64       ┆ f64    │
 #> ╞═════╪════════╪═══════════╪════════╡
-#> │ 6.0 ┆ true   ┆ 20.566667 ┆ 110.0  │
-#> │ 8.0 ┆ false  ┆ 15.05     ┆ 180.0  │
+#> │ 4.0 ┆ false  ┆ 22.9      ┆ 95.0   │
 #> │ 8.0 ┆ true   ┆ 15.4      ┆ 299.5  │
 #> │ 4.0 ┆ true   ┆ 28.075    ┆ 78.5   │
 #> │ 6.0 ┆ false  ┆ 19.125    ┆ 116.5  │
-#> │ 4.0 ┆ false  ┆ 22.9      ┆ 95.0   │
+#> │ 6.0 ┆ true   ┆ 20.566667 ┆ 110.0  │
+#> │ 8.0 ┆ false  ┆ 15.05     ┆ 180.0  │
 #> └─────┴────────┴───────────┴────────┘
 ```
 
@@ -621,7 +620,7 @@ flights$join(
 ```
 
 More information on the **polars** joining method can be found in the
-[reference manual](https://rpolars.github.io/reference/DataFrame_join/).
+[reference manual](https://rpolars.github.io/man/DataFrame_join.html).
 
 The package supports many other data manipulation operations, which we
 won’t cover here. Hopefully, you will already have a sense of the key
@@ -638,7 +637,7 @@ execution until the last possible moment allows Polars to apply
 automatic optimization to every query. Let’s take a quick look.
 
 To create a so-called
-“[LazyFrame](https://rpolars.github.io/reference/LazyFrame_class/)” from
+“[LazyFrame](https://rpolars.github.io/man/LazyFrame_class.html)” from
 an existing object in memory, we can invoke the `lazy()` constructor.
 
 ``` r
@@ -775,8 +774,8 @@ aq$filter(
 #> │ ---   ┆ ---       ┆ ---       │
 #> │ i32   ┆ f64       ┆ f64       │
 #> ╞═══════╪═══════════╪═══════════╡
-#> │ 5     ┆ 23.615385 ┆ 65.548387 │
 #> │ 6     ┆ 29.444444 ┆ 79.1      │
+#> │ 5     ┆ 23.615385 ┆ 65.548387 │
 #> └───────┴───────────┴───────────┘
 ```
 
