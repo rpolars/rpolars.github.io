@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
     
     
       
@@ -10938,6 +10938,48 @@
   
   
     <li class="md-nav__item">
+      <a href="ExprList_all.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    all
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ExprList_any.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    any
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ExprList_arg_max.html" class="md-nav__link">
         
   
@@ -14484,10 +14526,10 @@ to achieve the best performance and avoid using
 #&gt; │           ┆ f64       ┆ f64       ┆ f64       ┆   ┆ list[f64] ┆ list[f64] ┆ list[f64] ┆ list[f64 │
 #&gt; │           ┆           ┆           ┆           ┆   ┆           ┆           ┆           ┆ ]        │
 #&gt; ╞═══════════╪═══════════╪═══════════╪═══════════╪═══╪═══════════╪═══════════╪═══════════╪══════════╡
-#&gt; │ versicolo ┆ 296.8     ┆ 138.5     ┆ 213.0     ┆ … ┆ [7.0,     ┆ [3.2,     ┆ [4.7,     ┆ [1.4,    │
-#&gt; │ r         ┆           ┆           ┆           ┆   ┆ 6.4]      ┆ 3.2]      ┆ 4.5]      ┆ 1.5]     │
 #&gt; │ virginica ┆ 329.4     ┆ 148.7     ┆ 277.6     ┆ … ┆ [6.3,     ┆ [3.3,     ┆ [6.0,     ┆ [2.5,    │
 #&gt; │           ┆           ┆           ┆           ┆   ┆ 5.8]      ┆ 2.7]      ┆ 5.1]      ┆ 1.9]     │
+#&gt; │ versicolo ┆ 296.8     ┆ 138.5     ┆ 213.0     ┆ … ┆ [7.0,     ┆ [3.2,     ┆ [4.7,     ┆ [1.4,    │
+#&gt; │ r         ┆           ┆           ┆           ┆   ┆ 6.4]      ┆ 3.2]      ┆ 4.5]      ┆ 1.5]     │
 #&gt; │ setosa    ┆ 250.3     ┆ 171.4     ┆ 73.1      ┆ … ┆ [5.1,     ┆ [3.5,     ┆ [1.4,     ┆ [0.2,    │
 #&gt; │           ┆           ┆           ┆           ┆   ┆ 4.9]      ┆ 3.0]      ┆ 1.4]      ┆ 0.2]     │
 #&gt; └───────────┴───────────┴───────────┴───────────┴───┴───────────┴───────────┴───────────┴──────────┘
@@ -14547,7 +14589,7 @@ to achieve the best performance and avoid using
 <a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="p">})</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   2.354   0.009   2.633
+#&gt;   2.535   0.011   2.920
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Comparing this to the standard polars syntax:</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nf">system.time</span><span class="p">({</span>
@@ -14575,7 +14617,7 @@ to achieve the best performance and avoid using
 <a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="p">})</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   0.018   0.004   1.219
+#&gt;   0.015   0.016   1.215
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># first run in parallel: there is some overhead to start up extra R processes</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># drop any previous processes, just to show start-up overhead here</span>
@@ -14596,7 +14638,7 @@ to achieve the best performance and avoid using
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">})</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   0.008   0.004   0.955
+#&gt;   0.007   0.008   1.369
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># second run in parallel: this reuses R processes in &quot;polars global_rpool&quot;.</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">pl</span><span class="o">$</span><span class="n">options</span><span class="o">$</span><span class="n">rpool_cap</span>
@@ -14613,7 +14655,7 @@ to achieve the best performance and avoid using
 <a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="p">})</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   0.004   0.004   0.319
+#&gt;   0.005   0.003   0.332
 </code></pre></div>
 
 
@@ -14667,10 +14709,10 @@ to achieve the best performance and avoid using
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../assets/javascripts/bundle.7389ff0e.min.js"></script>
       
     
   </body>

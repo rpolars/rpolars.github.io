@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
     
     
       
@@ -10927,6 +10927,48 @@
   
   
     <li class="md-nav__item">
+      <a href="ExprList_all.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    all
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ExprList_any.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    any
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ExprList_arg_max.html" class="md-nav__link">
         
   
@@ -14383,7 +14425,7 @@ changed with <code>pl$set_options(maintain_order = TRUE)</code>.
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">()</span><span class="o">$</span><span class="n">height</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] 63
+<div class="highlight"><pre><span></span><code>#&gt; [1] 64
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">subset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">height</span>
 </code></pre></div>
@@ -14391,41 +14433,41 @@ changed with <code>pl$set_options(maintain_order = TRUE)</code>.
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">keep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;last&quot;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (63, 2)
+<div class="highlight"><pre><span></span><code>#&gt; shape: (64, 2)
 #&gt; ┌─────┬─────┐
 #&gt; │ x   ┆ y   │
 #&gt; │ --- ┆ --- │
 #&gt; │ i32 ┆ i32 │
 #&gt; ╞═════╪═════╡
-#&gt; │ 6   ┆ 2   │
-#&gt; │ 6   ┆ 9   │
-#&gt; │ 4   ┆ 8   │
-#&gt; │ 6   ┆ 10  │
-#&gt; │ …   ┆ …   │
-#&gt; │ 1   ┆ 8   │
-#&gt; │ 1   ┆ 10  │
-#&gt; │ 10  ┆ 8   │
+#&gt; │ 6   ┆ 6   │
+#&gt; │ 2   ┆ 6   │
 #&gt; │ 10  ┆ 4   │
+#&gt; │ 4   ┆ 10  │
+#&gt; │ …   ┆ …   │
+#&gt; │ 8   ┆ 1   │
+#&gt; │ 9   ┆ 9   │
+#&gt; │ 9   ┆ 3   │
+#&gt; │ 2   ┆ 7   │
 #&gt; └─────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># only keep unique rows</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">keep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;none&quot;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (40, 2)
+<div class="highlight"><pre><span></span><code>#&gt; shape: (38, 2)
 #&gt; ┌─────┬─────┐
 #&gt; │ x   ┆ y   │
 #&gt; │ --- ┆ --- │
 #&gt; │ i32 ┆ i32 │
 #&gt; ╞═════╪═════╡
-#&gt; │ 7   ┆ 8   │
-#&gt; │ 3   ┆ 9   │
-#&gt; │ 10  ┆ 3   │
-#&gt; │ 9   ┆ 5   │
+#&gt; │ 6   ┆ 6   │
+#&gt; │ 4   ┆ 5   │
+#&gt; │ 3   ┆ 1   │
+#&gt; │ 1   ┆ 2   │
 #&gt; │ …   ┆ …   │
-#&gt; │ 3   ┆ 10  │
-#&gt; │ 2   ┆ 10  │
-#&gt; │ 6   ┆ 4   │
-#&gt; │ 8   ┆ 2   │
+#&gt; │ 4   ┆ 2   │
+#&gt; │ 9   ┆ 3   │
+#&gt; │ 8   ┆ 7   │
+#&gt; │ 2   ┆ 7   │
 #&gt; └─────┴─────┘
 </code></pre></div>
 
@@ -14480,10 +14522,10 @@ changed with <code>pl$set_options(maintain_order = TRUE)</code>.
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../assets/javascripts/bundle.7389ff0e.min.js"></script>
       
     
   </body>

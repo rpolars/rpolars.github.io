@@ -517,6 +517,8 @@ nav:
             - where: man/Expr_where.md
             - xor: man/Expr_xor.md
         - List:
+            - all: man/ExprList_all.md
+            - any: man/ExprList_any.md
             - arg_max: man/ExprList_arg_max.md
             - arg_min: man/ExprList_arg_min.md
             - concat: man/ExprList_concat.md
