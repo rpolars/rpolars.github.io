@@ -1083,6 +1083,27 @@
   
   
     <li class="md-nav__item">
+      <a href="pl_from_epoch.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    from_epoch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="pl_head.html" class="md-nav__link">
         
   
@@ -14592,8 +14613,8 @@ TRUE)</code>.
 #&gt; │ ---                 ┆ ---   ┆ --- │
 #&gt; │ str                 ┆ u64   ┆ u64 │
 #&gt; ╞═════════════════════╪═══════╪═════╡
-#&gt; │ optimization        ┆ 0     ┆ 14  │
-#&gt; │ projection(literal) ┆ 14    ┆ 82  │
+#&gt; │ optimization        ┆ 0     ┆ 11  │
+#&gt; │ projection(literal) ┆ 11    ┆ 67  │
 #&gt; └─────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Use $profile() to compare two queries</span>
@@ -14624,9 +14645,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ --- │
 #&gt; │ str                ┆ u64   ┆ u64 │
 #&gt; ╞════════════════════╪═══════╪═════╡
-#&gt; │ optimization       ┆ 0     ┆ 14  │
-#&gt; │ sort(Sepal.Length) ┆ 14    ┆ 563 │
-#&gt; │ group_by(Species)  ┆ 566   ┆ 998 │
+#&gt; │ optimization       ┆ 0     ┆ 7   │
+#&gt; │ sort(Sepal.Length) ┆ 7     ┆ 158 │
+#&gt; │ group_by(Species)  ┆ 161   ┆ 315 │
 #&gt; └────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)</span>
@@ -14659,15 +14680,15 @@ TRUE)</code>.
 #&gt; 
 #&gt; $profile
 #&gt; shape: (3, 3)
-#&gt; ┌────────────────────┬───────┬───────┐
-#&gt; │ node               ┆ start ┆ end   │
-#&gt; │ ---                ┆ ---   ┆ ---   │
-#&gt; │ str                ┆ u64   ┆ u64   │
-#&gt; ╞════════════════════╪═══════╪═══════╡
-#&gt; │ optimization       ┆ 0     ┆ 9     │
-#&gt; │ sort(Sepal.Length) ┆ 9     ┆ 547   │
-#&gt; │ group_by(Species)  ┆ 549   ┆ 12040 │
-#&gt; └────────────────────┴───────┴───────┘
+#&gt; ┌────────────────────┬───────┬──────┐
+#&gt; │ node               ┆ start ┆ end  │
+#&gt; │ ---                ┆ ---   ┆ ---  │
+#&gt; │ str                ┆ u64   ┆ u64  │
+#&gt; ╞════════════════════╪═══════╪══════╡
+#&gt; │ optimization       ┆ 0     ┆ 5    │
+#&gt; │ sort(Sepal.Length) ┆ 5     ┆ 137  │
+#&gt; │ group_by(Species)  ┆ 140   ┆ 8245 │
+#&gt; └────────────────────┴───────┴──────┘
 </code></pre></div>
 
 

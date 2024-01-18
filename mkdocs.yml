@@ -68,6 +68,7 @@ nav:
         - first: man/pl_first.md
         - fold: man/pl_fold.md
         - from_arrow: man/pl_from_arrow.md
+        - from_epoch: man/pl_from_epoch.md
         - head: man/pl_head.md
         - implode: man/pl_implode.md
         - is_schema: man/pl_is_schema.md

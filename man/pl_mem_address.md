@@ -41,4 +41,4 @@ library(polars)
 pl$mem_address(pl$Series(1:3))
 ```
 
-    #> [1] "0x7ff00b676010"
+    #> [1] "0x7fec7b076010"

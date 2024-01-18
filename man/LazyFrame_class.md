@@ -163,7 +163,7 @@ Ldf_best$describe_plan()
 
     #> FILTER [(col("Species")) == (String(setosa))] FROM
     #> 
-    #>   Csv SCAN /tmp/RtmpTjwehB/file9254643a1f40
+    #>   Csv SCAN /tmp/RtmpJMn8HH/file6df679db55d4
     #>   PROJECT */5 COLUMNS
 
 ``` r
@@ -180,7 +180,7 @@ Ldf_best$describe_optimized_plan()
 ```
 
     #> 
-    #>   Csv SCAN /tmp/RtmpTjwehB/file9254643a1f40
+    #>   Csv SCAN /tmp/RtmpJMn8HH/file6df679db55d4
     #>   PROJECT */5 COLUMNS
     #>   SELECTION: [(col("Species")) == (String(setosa))]
 

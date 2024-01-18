@@ -20,7 +20,7 @@ polars api.
 ## Format
 
 An object of class <code>pl_polars_env</code> (inherits from
-<code>environment</code>) of length 97.
+<code>environment</code>) of length 98.
 
 ## Details
 
@@ -109,6 +109,7 @@ pl$show_all_public_functions()
     #>        [ Float64 ; RPolarsDataType ]
     #>        [ fold ; function ]
     #>        [ from_arrow ; function ]
+    #>        [ from_epoch ; function ]
     #>        [ get_global_rpool_cap ; function ]
     #>        [ head ; function ]
     #>        [ implode ; function ]

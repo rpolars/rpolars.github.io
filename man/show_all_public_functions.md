@@ -79,6 +79,7 @@ pl$show_all_public_functions()
     #>        [ Float64 ; RPolarsDataType ]
     #>        [ fold ; function ]
     #>        [ from_arrow ; function ]
+    #>        [ from_epoch ; function ]
     #>        [ get_global_rpool_cap ; function ]
     #>        [ head ; function ]
     #>        [ implode ; function ]
