@@ -537,6 +537,10 @@ nav:
             - mean: man/ExprList_mean.md
             - min: man/ExprList_min.md
             - reverse: man/ExprList_reverse.md
+            - set_difference: man/ExprList_set_difference.md
+            - set_intersection: man/ExprList_set_intersection.md
+            - set_symmetric_difference: man/ExprList_set_symmetric_difference.md
+            - set_union: man/ExprList_set_union.md
             - shift: man/ExprList_shift.md
             - slice: man/ExprList_slice.md
             - sort: man/ExprList_sort.md

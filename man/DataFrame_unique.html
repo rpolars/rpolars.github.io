@@ -11347,6 +11347,90 @@
   
   
     <li class="md-nav__item">
+      <a href="ExprList_set_difference.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    set_difference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ExprList_set_intersection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    set_intersection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ExprList_set_symmetric_difference.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    set_symmetric_difference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ExprList_set_union.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    set_union
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ExprList_shift.html" class="md-nav__link">
         
   
@@ -14446,7 +14530,7 @@ changed with <code>pl$set_options(maintain_order = TRUE)</code>.
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">()</span><span class="o">$</span><span class="n">height</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] 65
+<div class="highlight"><pre><span></span><code>#&gt; [1] 61
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">subset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">height</span>
 </code></pre></div>
@@ -14454,41 +14538,41 @@ changed with <code>pl$set_options(maintain_order = TRUE)</code>.
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">keep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;last&quot;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (65, 2)
+<div class="highlight"><pre><span></span><code>#&gt; shape: (61, 2)
 #&gt; ┌─────┬─────┐
 #&gt; │ x   ┆ y   │
 #&gt; │ --- ┆ --- │
 #&gt; │ i32 ┆ i32 │
 #&gt; ╞═════╪═════╡
-#&gt; │ 2   ┆ 4   │
-#&gt; │ 4   ┆ 5   │
-#&gt; │ 3   ┆ 2   │
-#&gt; │ 1   ┆ 5   │
+#&gt; │ 4   ┆ 3   │
+#&gt; │ 7   ┆ 2   │
+#&gt; │ 8   ┆ 5   │
+#&gt; │ 10  ┆ 3   │
 #&gt; │ …   ┆ …   │
-#&gt; │ 5   ┆ 5   │
-#&gt; │ 1   ┆ 1   │
-#&gt; │ 3   ┆ 10  │
-#&gt; │ 2   ┆ 5   │
+#&gt; │ 5   ┆ 8   │
+#&gt; │ 1   ┆ 4   │
+#&gt; │ 2   ┆ 2   │
+#&gt; │ 6   ┆ 5   │
 #&gt; └─────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># only keep unique rows</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">keep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;none&quot;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (41, 2)
+<div class="highlight"><pre><span></span><code>#&gt; shape: (33, 2)
 #&gt; ┌─────┬─────┐
 #&gt; │ x   ┆ y   │
 #&gt; │ --- ┆ --- │
 #&gt; │ i32 ┆ i32 │
 #&gt; ╞═════╪═════╡
-#&gt; │ 5   ┆ 1   │
-#&gt; │ 1   ┆ 2   │
-#&gt; │ 8   ┆ 2   │
-#&gt; │ 4   ┆ 5   │
+#&gt; │ 7   ┆ 2   │
+#&gt; │ 3   ┆ 10  │
+#&gt; │ 4   ┆ 2   │
+#&gt; │ 9   ┆ 2   │
 #&gt; │ …   ┆ …   │
-#&gt; │ 9   ┆ 10  │
-#&gt; │ 4   ┆ 7   │
-#&gt; │ 2   ┆ 5   │
-#&gt; │ 7   ┆ 7   │
+#&gt; │ 5   ┆ 3   │
+#&gt; │ 1   ┆ 8   │
+#&gt; │ 6   ┆ 4   │
+#&gt; │ 4   ┆ 1   │
 #&gt; └─────┴─────┘
 </code></pre></div>
 
