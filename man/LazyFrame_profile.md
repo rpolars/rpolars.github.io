@@ -219,7 +219,7 @@ pl$LazyFrame()$select(pl$lit(2) + 2)$profile()
     #> │ str                 ┆ u64   ┆ u64 │
     #> ╞═════════════════════╪═══════╪═════╡
     #> │ optimization        ┆ 0     ┆ 9   │
-    #> │ projection(literal) ┆ 9     ┆ 75  │
+    #> │ projection(literal) ┆ 9     ┆ 76  │
     #> └─────────────────────┴───────┴─────┘
 
 ``` r
@@ -252,9 +252,9 @@ pl$LazyFrame(iris)$
     #> │ ---                ┆ ---   ┆ --- │
     #> │ str                ┆ u64   ┆ u64 │
     #> ╞════════════════════╪═══════╪═════╡
-    #> │ optimization       ┆ 0     ┆ 22  │
-    #> │ sort(Sepal.Length) ┆ 22    ┆ 516 │
-    #> │ group_by(Species)  ┆ 518   ┆ 885 │
+    #> │ optimization       ┆ 0     ┆ 24  │
+    #> │ sort(Sepal.Length) ┆ 24    ┆ 445 │
+    #> │ group_by(Species)  ┆ 448   ┆ 775 │
     #> └────────────────────┴───────┴─────┘
 
 ``` r
@@ -294,7 +294,7 @@ pl$LazyFrame(iris)$
     #> │ ---                ┆ ---   ┆ ---   │
     #> │ str                ┆ u64   ┆ u64   │
     #> ╞════════════════════╪═══════╪═══════╡
-    #> │ optimization       ┆ 0     ┆ 6     │
-    #> │ sort(Sepal.Length) ┆ 6     ┆ 472   │
-    #> │ group_by(Species)  ┆ 474   ┆ 11137 │
+    #> │ optimization       ┆ 0     ┆ 9     │
+    #> │ sort(Sepal.Length) ┆ 9     ┆ 544   │
+    #> │ group_by(Species)  ┆ 547   ┆ 13060 │
     #> └────────────────────┴───────┴───────┘

@@ -1,9 +1,32 @@
 
-# when-then-otherwise Expr
+# Make a then-when-otherwise expression
 
 ## Description
 
-Start a “when, then, otherwise” expression.
+<code>when-then-otherwise</code> is similar to R <code>ifelse()</code>.
+This has to start with
+<code style="white-space: pre;">pl$when(\<condition\>)$then(\<value if
+condition\>)</code>. From there, it can:
+
+<ul>
+<li>
+
+be chained to an <code style="white-space: pre;">$otherwise()</code>
+statement that specifies the Expr to apply to the rows where the
+condition is <code>FALSE</code>;
+
+</li>
+<li>
+
+or be chained to other
+<code style="white-space: pre;">$when()$then()</code> to specify more
+cases, and then use <code style="white-space: pre;">$otherwise()</code>
+when you arrive at the end of your chain. Note that one difference with
+the Python implementation is that we <em>must</em> end the chain with an
+<code style="white-space: pre;">$otherwise()</code> statement.
+
+</li>
+</ul>
 
 ## Usage
 
@@ -30,7 +53,7 @@ ChainedThen_otherwise(statement)
 <code id="Expr_when_then_otherwise_:_...">…</code>
 </td>
 <td>
-Into Expr into a boolean mask to branch by.
+Expr or something coercible to an Expr into a boolean mask to branch by.
 </td>
 </tr>
 <tr>
@@ -38,64 +61,58 @@ Into Expr into a boolean mask to branch by.
 <code id="Expr_when_then_otherwise_:_statement">statement</code>
 </td>
 <td>
-Into Expr value to insert in when() or otherwise(). Strings interpreted
-as column.
+Expr or something coercible to an Expr value to insert in when() or
+otherwise(). Strings interpreted as column.
 </td>
 </tr>
 </table>
 
 ## Details
 
-when-then-otherwise is similar to R <code>ifelse()</code>.
-<code>pl$when(condition)</code> takes a condition as input this will an
-polars <code style="white-space: pre;">\<Expr\></code> which renderes to
-a Boolean column. Then it is chained with a
-<code style="white-space: pre;">$then(statement)</code> when arg
-statement is an <code style="white-space: pre;">\<Expr\></code> which
-produces a column with values if idealy all Boolean are true. Then
-finally an <code style="white-space: pre;">$otherwise(statement)</code>
-with values if false.
-<code style="white-space: pre;">$otherwise()</code> returns an
-<code>Expr</code> which will mix the
-<code style="white-space: pre;">$then()</code> statement with the
-<code style="white-space: pre;">$otherwise()</code> as given by the
-when-condition.
+If you want to use the class of those <code>when-then-otherwise</code>
+statement, note that there are 6 different classes corresponding to the
+different steps:
 
-State-machine details below. The state machine consists of 4 classes
-<code style="white-space: pre;">\<When\></code>,
-<code style="white-space: pre;">\<Then\></code>,
-<code style="white-space: pre;">\<ChainedWhen\></code> &
-<code style="white-space: pre;">\<ChainedThen\></code> and a starter
-function <code>pl$when()</code> and the final expression class a polars
-<code style="white-space: pre;">\<Expr\></code>.
+<ul>
+<li>
 
-<code>pl$when</code>return a
-<code style="white-space: pre;">\<When\></code> object.
-<code style="white-space: pre;">pl$when(condition) -\> \<When\></code>
+<code>pl$when()</code>returns a <code>When</code> object,
 
-<code style="white-space: pre;">\<When\></code> has a single public
-method <code style="white-space: pre;">$then(statement)</code>
-<code style="white-space: pre;">\<When\>$then(statement) -\>
-\<Then\></code>
+</li>
+<li>
 
-#the follow objects and methods are
-<code style="white-space: pre;">\<Then\>$when(condition) -\>
-\<ChainedWhen\></code>
-<code style="white-space: pre;">\<Then\>$otherwise(statement) -\>
-\<Expr\></code>
-<code style="white-space: pre;">\<ChainedWhen\>$then(statement) -\>
-\<ChainedThen\></code>
-<code style="white-space: pre;">\<ChainedThen\>$when(condition) -\>
-\<Expr\></code>
-<code style="white-space: pre;">\<ChainedThen\>$otherwise(statement) -\>
-\<Expr\></code>
+<code>pl$then()</code>returns a <code>Then</code> object,
 
-This statemachine ensures only syntacticly allowed methods are availble
-at any specific place in a nested when-then-otherwise expression.
+</li>
+<li>
+
+<code style="white-space: pre;">\<Then\>$otherwise()</code>returns an
+Expression object,
+
+</li>
+<li>
+
+<code style="white-space: pre;">\<Then\>$when()</code>returns a
+<code>ChainedWhen</code> object,
+
+</li>
+<li>
+
+<code style="white-space: pre;">\<ChainedWhen\>$then()</code>returns a
+<code>ChainedThen</code> object,
+
+</li>
+<li>
+
+<code style="white-space: pre;">\<ChainedThen\>$otherwise()</code>returns
+an Expression object.
+
+</li>
+</ul>
 
 ## Value
 
-Expr
+an polars object, see details.
 
 ## Examples
 
@@ -104,9 +121,10 @@ library(polars)
 
 df = pl$DataFrame(foo = c(1, 3, 4), bar = c(3, 4, 0))
 
-# Add a column with the value 1, where column "foo" > 2 and the value -1 where it isn’t.
+# Add a column with the value 1, where column "foo" > 2 and the value -1
+# where it isn’t.
 df$with_columns(
-  pl$when(pl$col("foo") > 2)$then(1)$otherwise(-1)$alias("val")
+  val = pl$when(pl$col("foo") > 2)$then(1)$otherwise(-1)
 )
 ```
 
@@ -122,14 +140,13 @@ df$with_columns(
     #> └─────┴─────┴──────┘
 
 ``` r
-# With multiple when, thens chained:
+# With multiple when-then chained:
 df$with_columns(
-  pl$when(pl$col("foo") > 2)
+  val = pl$when(pl$col("foo") > 2)
   $then(1)
   $when(pl$col("bar") > 2)
   $then(4)
   $otherwise(-1)
-  $alias("val")
 )
 ```
 
