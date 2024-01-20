@@ -1,7 +1,7 @@
 
 # Any expr method on a Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L933)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L928)
 
 ## Description
 

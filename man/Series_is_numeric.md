@@ -1,7 +1,7 @@
 
 # is_numeric
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L891)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L886)
 
 ## Description
 

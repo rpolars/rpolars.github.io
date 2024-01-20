@@ -15,7 +15,8 @@ for more details.
   do_not_repeat_call = FALSE,
   debug_polars = FALSE,
   no_messages = FALSE,
-  rpool_cap = 4
+  rpool_cap = 4,
+  int64_conversion = c("bit64", "double", "string")
 )
 
 pl_reset_options()
@@ -86,6 +87,34 @@ The maximum number of R sessions that can be used to process R code in
 the background. See Details.
 </td>
 </tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_set_options_:_int64_conversion">int64_conversion</code>
+</td>
+<td>
+
+How should Int64 values be handled when converting a polars object to R?
+
+<ul>
+<li>
+
+<code>“double”</code> (default) converts the integer values to double.
+
+</li>
+<li>
+
+<code>“bit64”</code> uses <code>bit64::as.integer64()</code> to do the
+conversion (requires the package <code>bit64</code> to be attached).
+
+</li>
+<li>
+
+<code>“string”</code> converts Int64 values to character.
+
+</li>
+</ul>
+</td>
+</tr>
 </table>
 
 ## Details
@@ -94,14 +123,12 @@ the background. See Details.
 already spawned in pool. <code>pl$options$rpool_cap</code> indicates the
 maximum number of new R sessions that can be spawned. Anytime a polars
 thread worker needs a background R session specifically to run R code
-embedded in a query via <code style="white-space: pre;">$map_batches(…,
-in_background = TRUE)</code> or
-<code style="white-space: pre;">$map_elements(…, in_background =
-TRUE)</code>, it will obtain any R session idling in rpool, or spawn a
-new R session (process) and add it to the rpool if
-<code>rpool_cap</code> is not already reached. If <code>rpool_cap</code>
-is already reached, the thread worker will sleep until an R session is
-idling.
+embedded in a query via <code>$map_batches(…, in_background =
+TRUE)</code> or <code>$map_elements(…, in_background = TRUE)</code>, it
+will obtain any R session idling in rpool, or spawn a new R session
+(process) and add it to the rpool if <code>rpool_cap</code> is not
+already reached. If <code>rpool_cap</code> is already reached, the
+thread worker will sleep until an R session is idling.
 
 Background R sessions communicate via polars arrow IPC (series/vectors)
 or R serialize + shared memory buffers via the rust crate
@@ -132,6 +159,9 @@ pl$options
 
     #> $maintain_order
     #> [1] TRUE
+    #> 
+    #> $int64_conversion
+    #> [1] "double"
     #> 
     #> $rpool_cap
     #> [1] 4
@@ -164,7 +194,7 @@ tryCatch(
     #>    0: During function call [.main()]
     #>    1: The argument [strictly_immutable] caused an error
     #>    2: Got value [Rvalue: 42.0, Rsexp: Doubles, Rclass: ["numeric"]]
-    #>    3: Input must be TRUE or FALSE
+    #>    3: Input must be TRUE or FALSE.
     #> >
 
 ``` r

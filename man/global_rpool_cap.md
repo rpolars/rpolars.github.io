@@ -46,12 +46,12 @@ co-running external R sessions / processes.
 already spawned in the pool. <code>rpool_cap</code> is the limit of new
 R sessions to spawn. Anytime a polars thread worker needs a background R
 session specifically to run R code embedded in a query via
-<code style="white-space: pre;">$map(…, in_background = TRUE)</code> or
-<code style="white-space: pre;">$map_elements(…, in_background =
-TRUE)</code>, it will obtain any R session idling in rpool, or spawn a
-new R session (process) if <code>capacity</code> is not already reached.
-If <code>capacity</code> is already reached, the thread worker will
-sleep and in a R job queue until an R session is idle.
+<code>$map_batches(…, in_background = TRUE)</code> or
+<code>$map_elements(…, in_background = TRUE)</code>, it will obtain any
+R session idling in rpool, or spawn a new R session (process) if
+<code>capacity</code> is not already reached. If <code>capacity</code>
+is already reached, the thread worker will sleep and in a R job queue
+until an R session is idle.
 
 ## Examples
 

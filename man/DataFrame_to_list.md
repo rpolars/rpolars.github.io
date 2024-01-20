@@ -1,7 +1,7 @@
 
 # Return Polars DataFrame as a list of vectors
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L884)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L886)
 
 ## Description
 
@@ -9,7 +9,11 @@ Return Polars DataFrame as a list of vectors
 
 ## Usage
 
-<pre><code class='language-R'>DataFrame_to_list(unnest_structs = TRUE)
+<pre><code class='language-R'>DataFrame_to_list(
+  unnest_structs = TRUE,
+  ...,
+  int64_conversion = pl\$options\$int64_conversion
+)
 </code></pre>
 
 ## Arguments
@@ -23,6 +27,42 @@ Return Polars DataFrame as a list of vectors
 Boolean. If <code>TRUE</code> (default), then
 <code style="white-space: pre;">$unnest()</code> is applied on any
 struct column.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="DataFrame_to_list_:_...">…</code>
+</td>
+<td>
+Ignored.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="DataFrame_to_list_:_int64_conversion">int64_conversion</code>
+</td>
+<td>
+
+How should Int64 values be handled when converting a polars object to R?
+
+<ul>
+<li>
+
+<code>“double”</code> (default) converts the integer values to double.
+
+</li>
+<li>
+
+<code>“bit64”</code> uses <code>bit64::as.integer64()</code> to do the
+conversion (requires the package <code>bit64</code> to be attached).
+
+</li>
+<li>
+
+<code>“string”</code> converts Int64 values to character.
+
+</li>
+</ul>
 </td>
 </tr>
 </table>

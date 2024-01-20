@@ -1,7 +1,7 @@
 
 # Rolling maximum
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2421)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2394)
 
 ## Description
 

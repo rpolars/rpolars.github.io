@@ -14256,27 +14256,6 @@
   
   
     <li class="md-nav__item">
-      <a href="polars-package.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    polars-package
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="show_all_public_functions.html" class="md-nav__link">
         
   
@@ -14467,16 +14446,14 @@ query detached from the R session and return an
 <code>is_finished()</code> and <code>join()</code>.</p>
 <p>NOTICE: The background thread cannot use the main R session, but can
 access the pool of extra R sessions to process R code embedded in polars
-query via <code style="white-space: pre;">$map_batches(…, background =
-TRUE)</code> or
+query via <code>$map_batches(…, in_background = TRUE)</code> or
 <code style="white-space: pre;">$map_elements(background=TRUE)</code>.
 Use <code>pl$set_options(rpool_cap = XX)</code> to limit number of
 parallel R sessions. Starting polars
 <code>\&lt;LazyFrame&gt;$collect_in_background()</code> with e.g. some
-<code style="white-space: pre;">$map_batches(…, background =
-FALSE)</code> will raise an Error as the main R session is not available
-to process the R part of the polars query. Native polars query does not
-need any R session.</p>
+<code>$map_batches(…, in_background = FALSE)</code> will raise an Error
+as the main R session is not available to process the R part of the
+polars query. Native polars query does not need any R session.</p>
 <h2 id="value">Value</h2>
 <p>see methods: <code>is_finished()</code> <code>join()</code></p>
 <h2 id="see-also">See Also</h2>

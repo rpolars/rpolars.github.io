@@ -1,7 +1,7 @@
 
 # Get r vector/list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L277)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L278)
 
 ## Description
 
@@ -14,12 +14,45 @@ return R list (implicit as.list)
 
 ## Usage
 
-<pre><code class='language-R'>Series_to_r()
+<pre><code class='language-R'>Series_to_r(int64_conversion = pl\$options\$int64_conversion)
 
-Series_to_vector()
+Series_to_vector(int64_conversion = pl\$options\$int64_conversion)
 
-Series_to_r_list()
+Series_to_r_list(int64_conversion = pl\$options\$int64_conversion)
 </code></pre>
+
+## Arguments
+
+<table>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="Series_to_r_:_int64_conversion">int64_conversion</code>
+</td>
+<td>
+
+How should Int64 values be handled when converting a polars object to R?
+
+<ul>
+<li>
+
+<code>“double”</code> (default) converts the integer values to double.
+
+</li>
+<li>
+
+<code>“bit64”</code> uses <code>bit64::as.integer64()</code> to do the
+conversion (requires the package <code>bit64</code> to be attached).
+
+</li>
+<li>
+
+<code>“string”</code> converts Int64 values to character.
+
+</li>
+</ul>
+</td>
+</tr>
+</table>
 
 ## Details
 

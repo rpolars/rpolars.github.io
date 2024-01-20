@@ -1,7 +1,7 @@
 
 # Get data type of Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L703)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L698)
 
 ## Description
 

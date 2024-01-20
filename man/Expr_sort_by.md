@@ -1,7 +1,7 @@
 
 # Sort Expr by order of others
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1561)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1534)
 
 ## Description
 

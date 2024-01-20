@@ -20,7 +20,7 @@ polars api.
 ## Format
 
 An object of class <code>pl_polars_env</code> (inherits from
-<code>environment</code>) of length 98.
+<code>environment</code>) of length 97.
 
 ## Details
 
@@ -144,13 +144,13 @@ pl$show_all_public_functions()
     #>        options ( list ):
     #>           [ debug_polars ; logical ]
     #>           [ do_not_repeat_call ; logical ]
+    #>           [ int64_conversion ; character ]
     #>           [ maintain_order ; logical ]
     #>           [ no_messages ; logical ]
     #>           [ rpool_active ; numeric ]
     #>           [ rpool_cap ; numeric ]
     #>           [ strictly_immutable ; logical ]
     #> 
-    #>        [ polars_info ; function ]
     #>        [ PTime ; function ]
     #>        [ raw_list ; function ]
     #>        [ read_csv ; function ]
@@ -303,7 +303,6 @@ pl$show_all_public_methods()
     #>           [ and ; function ]
     #>           [ any ; function ]
     #>           [ append ; function ]
-    #>           [ apply ; function ]
     #>           [ approx_n_unique ; function ]
     #>           [ arccos ; function ]
     #>           [ arccosh ; function ]
@@ -390,7 +389,6 @@ pl$show_all_public_methods()
     #>           [ lower_bound ; function ]
     #>           [ lt ; function ]
     #>           [ lt_eq ; function ]
-    #>           [ map ; function ]
     #>           [ map_batches ; function ]
     #>           [ map_elements ; function ]
     #>           [ max ; function ]
@@ -551,7 +549,6 @@ pl$show_all_public_methods()
     #>           [ all ; function ]
     #>           [ any ; function ]
     #>           [ append ; function ]
-    #>           [ apply ; function ]
     #>           [ arg_max ; function ]
     #>           [ arg_min ; function ]
     #>           [ ceil ; function ]

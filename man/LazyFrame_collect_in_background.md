@@ -27,8 +27,8 @@ It is useful to not block the R session while query executes. If you use
 <code>\<Expr\>$map_batches()</code> or
 <code>\<Expr\>$map_elements()</code> to run R functions in the query,
 then you must pass <code>in_background = TRUE</code> in
-<code style="white-space: pre;">$map_batches()</code> (or
-<code style="white-space: pre;">$map_elements()</code>). Otherwise,
+<code>$map_batches()</code> (or <code>$map_elements()</code>).
+Otherwise,
 <code style="white-space: pre;">$collect_in_background()</code> will
 fail because the main R session is not available for polars execution.
 See also examples below.
@@ -43,7 +43,7 @@ RThreadHandle, a future-like thread handle for the task
 library(polars)
 
 # Some expression which does contain a map
-expr = pl$col("mpg")$map(
+expr = pl$col("mpg")$map_batches(
   \(x) {
     Sys.sleep(.1)
     x * 0.43

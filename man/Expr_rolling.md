@@ -1,7 +1,7 @@
 
 # Create rolling groups based on a time or numeric column
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L3573)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L3547)
 
 ## Description
 

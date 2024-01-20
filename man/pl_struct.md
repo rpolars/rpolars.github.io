@@ -170,6 +170,6 @@ df$select(e2)
 df$select(e2)$to_data_frame()
 ```
 
-    #>                  my_struct
-    #> 1 4.94065645841247e-324, a
-    #> 2 9.88131291682493e-324, b
+    #>   my_struct
+    #> 1      1, a
+    #> 2      2, b

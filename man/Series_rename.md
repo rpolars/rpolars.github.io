@@ -1,7 +1,7 @@
 
 # Rename a series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L833)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L828)
 
 ## Description
 

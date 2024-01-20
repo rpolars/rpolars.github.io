@@ -50,7 +50,6 @@ pl$show_all_public_methods("RPolarsSeries")
     #>           [ all ; function ]
     #>           [ any ; function ]
     #>           [ append ; function ]
-    #>           [ apply ; function ]
     #>           [ arg_max ; function ]
     #>           [ arg_min ; function ]
     #>           [ ceil ; function ]

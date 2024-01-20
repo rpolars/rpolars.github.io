@@ -15,16 +15,14 @@ query detached from the R session and return an
 
 NOTICE: The background thread cannot use the main R session, but can
 access the pool of extra R sessions to process R code embedded in polars
-query via <code style="white-space: pre;">$map_batches(…, background =
-TRUE)</code> or
+query via <code>$map_batches(…, in_background = TRUE)</code> or
 <code style="white-space: pre;">$map_elements(background=TRUE)</code>.
 Use <code>pl$set_options(rpool_cap = XX)</code> to limit number of
 parallel R sessions. Starting polars
 <code>\<LazyFrame\>$collect_in_background()</code> with e.g. some
-<code style="white-space: pre;">$map_batches(…, background =
-FALSE)</code> will raise an Error as the main R session is not available
-to process the R part of the polars query. Native polars query does not
-need any R session.
+<code>$map_batches(…, in_background = FALSE)</code> will raise an Error
+as the main R session is not available to process the R part of the
+polars query. Native polars query does not need any R session.
 
 ## Value
 

@@ -1,7 +1,7 @@
 
 # Series to Literal
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L984)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L979)
 
 ## Description
 

@@ -1,7 +1,7 @@
 
 # Map an expression with an R function
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L708)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L710)
 
 ## Description
 
@@ -58,9 +58,8 @@ with setting e.g. <code>pl$set_options(rpool_cap = 4)</code> it can
 speed up some slow R functions as they can run in parallel R sessions.
 The communication speed between processes is quite slower than between
 threads. This will likely only give a speed-up in a "low IO - high CPU"
-use case. If there are multiple
-<code style="white-space: pre;">$map(in_background = TRUE)</code> calls
-in the query, they will be run in parallel.
+use case. If there are multiple <code>$map_batches(in_background =
+TRUE)</code> calls in the query, they will be run in parallel.
 </td>
 </tr>
 </table>
@@ -69,21 +68,21 @@ in the query, they will be run in parallel.
 
 It is sometimes necessary to apply a specific R function on one or
 several columns. However, note that using R code in
-<code style="white-space: pre;">$map()</code> is slower than native
-polars. The user function must take one polars <code>Series</code> as
-input and the return should be a <code>Series</code> or any Robj
-convertible into a <code>Series</code> (e.g. vectors). Map fully
-supports <code>browser()</code>.
+<code>$map_batches()</code> is slower than native polars. The user
+function must take one polars <code>Series</code> as input and the
+return should be a <code>Series</code> or any Robj convertible into a
+<code>Series</code> (e.g. vectors). Map fully supports
+<code>browser()</code>.
 
 If <code>in_background = FALSE</code> the function can access any global
 variable of the R session. However, note that several calls to
-<code style="white-space: pre;">$map()</code> will sequentially share
-the same main R session, so the global environment might change between
-the start of the query and the moment a <code>map()</code> call is
-evaluated. Any native polars computations can still be executed
-meanwhile. If <code>in_background = TRUE</code>, the map will run in one
-or more other R sessions and will not have access to global variables.
-Use <code>pl$set_options(rpool_cap = 4)</code> and
+<code>$map_batches()</code> will sequentially share the same main R
+session, so the global environment might change between the start of the
+query and the moment a <code>$map_batches()</code> call is evaluated.
+Any native polars computations can still be executed meanwhile. If
+<code>in_background = TRUE</code>, the map will run in one or more other
+R sessions and will not have access to global variables. Use
+<code>pl$set_options(rpool_cap = 4)</code> and
 <code>pl$options$rpool_cap</code> to see and view number of parallel R
 sessions.
 
@@ -135,7 +134,7 @@ pl$LazyFrame(a = 1, b = 2, c = 3, d = 4)$select(
 ```
 
     #>    user  system elapsed 
-    #>   0.018   0.001   0.417
+    #>   0.008   0.005   0.414
 
 ``` r
 # map in parallel 1: Overhead to start up extra R processes / sessions
@@ -156,7 +155,7 @@ pl$LazyFrame(a = 1, b = 2, c = 3, d = 4)$select(
 ```
 
     #>    user  system elapsed 
-    #>   0.002   0.004   0.866
+    #>   0.006   0.000   0.883
 
 ``` r
 # map in parallel 2: Reuse R processes in "polars global_rpool".

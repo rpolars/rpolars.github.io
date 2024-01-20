@@ -14165,27 +14165,6 @@
   
   
     <li class="md-nav__item">
-      <a href="man/polars-package.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    polars-package
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="man/show_all_public_functions.html" class="md-nav__link">
         
   
@@ -15942,6 +15921,11 @@
 <h2 id="polars-development-version">polars (development version)</h2>
 <h3 id="breaking-changes">Breaking changes</h3>
 <ul>
+<li>Deprecated functions from 0.12.x are removed (<a href="https://github.com/pola-rs/r-polars/issues/714">#714</a>).<ul>
+<li><code>&lt;Expr&gt;$apply()</code> and <code>&lt;Expr&gt;$map()</code>, use <code>$map_elements()</code> and <code>$map_batches()</code> instead.</li>
+<li><code>pl$polars_info()</code>, use <code>polars_info()</code> instead.</li>
+</ul>
+</li>
 <li>The environment variables used when building the library have been changed. (<a href="https://github.com/pola-rs/r-polars/issues/693">#693</a>)
     This only affects selecting the feature flag and selecting profiles during source installation.<ul>
 <li><code>RPOLARS_PROFILE</code> is renamed to <code>LIBR_POLARS_PROFILE</code></li>
@@ -15966,6 +15950,10 @@
     variable (<a href="https://github.com/pola-rs/r-polars/issues/708">#708</a>).</li>
 <li>New methods for the <code>list</code> subnamespace: <code>$set_union()</code>, <code>$set_intersection()</code>,
     <code>$set_difference()</code>, <code>$set_symmetric_difference()</code> (<a href="https://github.com/pola-rs/r-polars/issues/712">#712</a>).</li>
+<li>New option <code>int64_conversion</code> to specify how Int64 columns (that don't have
+    equivalent in base R) should be converted. This option can either be set 
+    globally with <code>pl$set_options()</code> or on a case-by-case basis, e.g with 
+    <code>$to_data_frame(int64_conversion =)</code> (<a href="https://github.com/pola-rs/r-polars/issues/706">#706</a>).</li>
 </ul>
 <h2 id="polars-0122">polars 0.12.2</h2>
 <p>This is a small release including a few documentation improvements and internal updates.</p>
