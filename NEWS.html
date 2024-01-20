@@ -15935,6 +15935,8 @@
     If you want to use library binaries located elsewhere, use <code>LIBR_POLARS_PATH</code> instead.</li>
 </ul>
 </li>
+<li>Remove the <code>eager</code> argument of <code>&lt;SQLContext&gt;$execute()</code>.
+    Use the <code>$collect()</code> method after <code>$execute()</code> or <code>as_polars_df</code> to get the result as a <code>DataFrame</code>. (<a href="https://github.com/pola-rs/r-polars/issues/719">#719</a>)</li>
 </ul>
 <h3 id="whats-changed">What's changed</h3>
 <ul>
