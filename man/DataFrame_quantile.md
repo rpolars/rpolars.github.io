@@ -1,7 +1,7 @@
 
 # Quantile
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1167)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1166)
 
 ## Description
 
@@ -30,8 +30,8 @@ Numeric of length 1 between 0 and 1.
 <code id="DataFrame_quantile_:_interpolation">interpolation</code>
 </td>
 <td>
-Interpolation method: "nearest", "higher", "lower", "midpoint", or
-"linear".
+One of <code>“nearest”</code>, <code>“higher”</code>,
+<code>“lower”</code>, <code>“midpoint”</code>, or <code>“linear”</code>.
 </td>
 </tr>
 </table>
