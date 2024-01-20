@@ -1,7 +1,7 @@
 
 # Check if string ends with a regex
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L460)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L458)
 
 ## Description
 

@@ -1,7 +1,7 @@
 
 # Parse string values as JSON.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L500)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L498)
 
 ## Description
 

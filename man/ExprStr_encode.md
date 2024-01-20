@@ -1,7 +1,7 @@
 
 # Encode a value using the provided encoding
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L574)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L572)
 
 ## Description
 

@@ -1,7 +1,7 @@
 
 # Check if string contains a regex
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L442)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L440)
 
 ## Description
 

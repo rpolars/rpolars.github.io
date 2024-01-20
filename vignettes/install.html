@@ -14622,11 +14622,16 @@ cannot be changed at runtime.</p>
 </code></pre></div>
 <p>At this time, the following environment variables can be used to change
 the Rust library build time options.</p>
-<ul>
-<li><code>RPOLARS_FULL_FEATURES="true"</code> (Build with nightly feature enabled,
-    requires Rust nightly toolchain nightly-2023-12-23)</li>
-<li><code>RPOLARS_PROFILE="release-optimized"</code> (Build with more optimization)</li>
-</ul>
+<h4 id="features">Features</h4>
+<p>The feature flags can be set by the <code>LIBR_POLARS_FEATURES</code> environment
+variable. For example, to enable the <code>full_features</code> feature, set the
+environment variable as like <code>LIBR_POLARS_FEATURES="full_features"</code>.</p>
+<p>Note that these features requires the Rust nightly toolchain
+nightly-2023-12-23.</p>
+<h4 id="profile">Profile</h4>
+<p>The profile can be set by the <code>LIBR_POLARS_PROFILE</code> environment
+variable. For example, to build with more optimization, set the
+environment variable as like <code>LIBR_POLARS_PROFILE="release-optimized"</code>.</p>
 <h3 id="minimum-supported-rust-version-msrv">Minimum Supported Rust Version (MSRV)</h3>
 <p>The minimum supported Rust version (MSRV) is declared in the
 <code>src/rust/Cargo.toml</code> file’s <code>package.rust-version</code> field.</p>

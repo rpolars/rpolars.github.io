@@ -1,7 +1,7 @@
 
 # Convert a string to titlecase
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L275)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L273)
 
 ## Description
 
@@ -14,9 +14,8 @@ Transform to titlecase variant.
 
 ## Details
 
-This method is only available with the feature flag "simd" which can be
-set via envvar "RPOLARS_FULL_FEATURES" and it requires Rust nightly
-toolchain to compile. See polars_info for more details.
+This method is only available with the "simd" feature. See polars_info
+for more details.
 
 ## Value
 

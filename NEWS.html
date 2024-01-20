@@ -14319,6 +14319,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#breaking-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breaking changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#whats-changed" class="md-nav__link">
     <span class="md-ellipsis">
       What's changed
@@ -14520,7 +14529,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#breaking-changes" class="md-nav__link">
+  <a href="#breaking-changes_1" class="md-nav__link">
     <span class="md-ellipsis">
       Breaking changes
     </span>
@@ -14562,7 +14571,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#breaking-changes_1" class="md-nav__link">
+  <a href="#breaking-changes_2" class="md-nav__link">
     <span class="md-ellipsis">
       Breaking changes
     </span>
@@ -14661,7 +14670,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#breaking-changes_2" class="md-nav__link">
+  <a href="#breaking-changes_3" class="md-nav__link">
     <span class="md-ellipsis">
       BREAKING CHANGES
     </span>
@@ -14718,7 +14727,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#breaking-changes_3" class="md-nav__link">
+  <a href="#breaking-changes_4" class="md-nav__link">
     <span class="md-ellipsis">
       BREAKING CHANGES
     </span>
@@ -14991,7 +15000,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#breaking-changes_4" class="md-nav__link">
+  <a href="#breaking-changes_5" class="md-nav__link">
     <span class="md-ellipsis">
       Breaking changes
     </span>
@@ -15133,6 +15142,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#breaking-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breaking changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#whats-changed" class="md-nav__link">
     <span class="md-ellipsis">
       What's changed
@@ -15334,7 +15352,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#breaking-changes" class="md-nav__link">
+  <a href="#breaking-changes_1" class="md-nav__link">
     <span class="md-ellipsis">
       Breaking changes
     </span>
@@ -15376,7 +15394,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#breaking-changes_1" class="md-nav__link">
+  <a href="#breaking-changes_2" class="md-nav__link">
     <span class="md-ellipsis">
       Breaking changes
     </span>
@@ -15475,7 +15493,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#breaking-changes_2" class="md-nav__link">
+  <a href="#breaking-changes_3" class="md-nav__link">
     <span class="md-ellipsis">
       BREAKING CHANGES
     </span>
@@ -15532,7 +15550,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#breaking-changes_3" class="md-nav__link">
+  <a href="#breaking-changes_4" class="md-nav__link">
     <span class="md-ellipsis">
       BREAKING CHANGES
     </span>
@@ -15805,7 +15823,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#breaking-changes_4" class="md-nav__link">
+  <a href="#breaking-changes_5" class="md-nav__link">
     <span class="md-ellipsis">
       Breaking changes
     </span>
@@ -15922,6 +15940,18 @@
 
 <h1 id="news">NEWS</h1>
 <h2 id="polars-development-version">polars (development version)</h2>
+<h3 id="breaking-changes">Breaking changes</h3>
+<ul>
+<li>The environment variables used when building the library have been changed. (<a href="https://github.com/pola-rs/r-polars/issues/693">#693</a>)
+    This only affects selecting the feature flag and selecting profiles during source installation.<ul>
+<li><code>RPOLARS_PROFILE</code> is renamed to <code>LIBR_POLARS_PROFILE</code></li>
+<li><code>RPOLARS_FULL_FEATURES</code> is removed and <code>LIBR_POLARS_FEATURES</code> is added.
+    If want to select the <code>full_features</code>, we need to set <code>LIBR_POLARS_FEATURES="full_features"</code>.</li>
+<li><code>RPOLARS_RUST_SOURCE</code>, which was used for development, has been removed.
+    If you want to use library binaries located elsewhere, use <code>LIBR_POLARS_PATH</code> instead.</li>
+</ul>
+</li>
+</ul>
 <h3 id="whats-changed">What's changed</h3>
 <ul>
 <li>New method <code>$rolling()</code> for <code>DataFrame</code> and <code>LazyFrame</code>. When this is
@@ -16137,7 +16167,7 @@ a large amount of documentation improvements.</p>
 </ul>
 </li>
 </ul>
-<h3 id="breaking-changes">Breaking changes</h3>
+<h3 id="breaking-changes_1">Breaking changes</h3>
 <ul>
 <li><code>$scan_csv()</code> and <code>$read_csv()</code> now match more closely the Python-Polars API (<a href="https://github.com/pola-rs/r-polars/issues/455">#455</a>):<ul>
 <li><code>sep</code> is renamed <code>separator</code>, <code>overwrite_dtypes</code> is renamed <code>dtypes</code>,
@@ -16183,7 +16213,7 @@ a large amount of documentation improvements.</p>
 </ul>
 </li>
 </ul>
-<h3 id="breaking-changes_1">Breaking changes</h3>
+<h3 id="breaking-changes_2">Breaking changes</h3>
 <ul>
 <li>Remove some deprecated methods.<ul>
 <li>Method <code>$with_column()</code> has been removed (it was deprecated since 0.8.0).
@@ -16328,7 +16358,7 @@ features. Unrelated breaking changes and new features are put in separate sectio
     (<a href="https://github.com/pola-rs/r-polars/issues/326">#326</a>).</li>
 </ul>
 <h2 id="polars-070">polars 0.7.0</h2>
-<h3 id="breaking-changes_2">BREAKING CHANGES</h3>
+<h3 id="breaking-changes_3">BREAKING CHANGES</h3>
 <ul>
 <li>Replace the argument <code>reverse</code> by <code>descending</code> in all sorting functions. This
     is for consistency with the upstream Polars (<a href="https://github.com/pola-rs/r-polars/issues/291">#291</a>, <a href="https://github.com/pola-rs/r-polars/issues/293">#293</a>).</li>
@@ -16388,7 +16418,7 @@ features. Unrelated breaking changes and new features are put in separate sectio
 <li>Update nix flake. (<a href="https://github.com/pola-rs/r-polars/issues/227">#227</a>)</li>
 </ul>
 <h2 id="polars-060">polars 0.6.0</h2>
-<h3 id="breaking-changes_3">BREAKING CHANGES</h3>
+<h3 id="breaking-changes_4">BREAKING CHANGES</h3>
 <ul>
 <li>Bump rust-polars from 2023-02-17 unreleased version to 2023-04-20 unreleased version. (<a href="https://github.com/pola-rs/r-polars/issues/183">#183</a>)<ul>
 <li><code>top_k</code>'s <code>reverse</code> option is removed. Use the new <code>bottom_k</code> method instead.</li>
@@ -16557,7 +16587,7 @@ features. Unrelated breaking changes and new features are put in separate sectio
 </ul>
 <h2 id="rpolars-v040">rpolars v0.4.0</h2>
 <p>Release date: 2023-01-11. Full Changelog: <a href="https://github.com/pola-rs/r-polars/compare/V0.3.1...v0.4.0">v0.3.1...v0.4.0</a></p>
-<h3 id="breaking-changes_4">Breaking changes</h3>
+<h3 id="breaking-changes_5">Breaking changes</h3>
 <ul>
 <li>Class label "DataType" is now called "RPolarsDataType". Syntax wise 'DataType' can still be used, e.g. <code>.pr$DataType$</code></li>
 <li>try fix name space collision with arrow by <a href="https://github.com/sorhawell">@sorhawell</a> in <a href="https://github.com/pola-rs/r-polars/issues/15">#15</a></li>
