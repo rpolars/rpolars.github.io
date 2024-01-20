@@ -25,25 +25,15 @@ private methods as pure functions solved/simplified self-referential
 complications.
 
 <code>DataFrame</code> and <code>LazyFrame</code> can both be said to be
-a <code>Frame</code>. To convert use <code>DataFrame_object$lazy() -\>
-LazyFrame_object</code> and <code>LazyFrame_object$collect() -\>
-DataFrame_object</code>. You can also create a <code>LazyFrame</code>
-directly with <code>pl$LazyFrame()</code>. This is quite similar to the
-lazy-collect syntax of the dplyrpackage to interact with database
-connections such as SQL variants. Most SQL databases would be able to
-perform the same optimizations as polars such Predicate Pushdown and
-Projection. However polars can interact and optimize queries with both
-SQL DBs and other data sources such parquet files simultaneously. (#TODO
-implement r-polars SQL ;).
-
-## Details
-
-Check out the source code in R/LazyFrame\_*lazy.R how public methods are
-derived from private methods. Check out extendr-wrappers.R to see the
-extendr-auto-generated methods. These are moved to <code>.pr</code> and
-converted into pure external functions in after-wrappers.R. In zzz.R
-(named zzz to be last file sourced) the extendr-methods are removed and
-replaced by any function prefixed <code>LazyFrame*</code>.
+a <code>Frame</code>. To convert use <code>\<DataFrame\>$lazy()</code>
+and <code>\<LazyFrame\>$collect()</code>. You can also create a
+<code>LazyFrame</code> directly with <code>pl$LazyFrame()</code>. This
+is quite similar to the lazy-collect syntax of the <code>dplyr</code>
+package to interact with database connections such as SQL variants. Most
+SQL databases would be able to perform the same optimizations as polars
+such predicate pushdown and projection pushdown. However polars can
+interact and optimize queries with both SQL DBs and other data sources
+such parquet files simultaneously.
 
 ## Value
 
@@ -163,7 +153,7 @@ Ldf_best$describe_plan()
 
     #> FILTER [(col("Species")) == (String(setosa))] FROM
     #> 
-    #>   Csv SCAN /tmp/RtmpG0cglG/file6ea479233af1
+    #>   Csv SCAN /tmp/RtmpQh8pKk/file6e8c3998b41c
     #>   PROJECT */5 COLUMNS
 
 ``` r
@@ -180,7 +170,7 @@ Ldf_best$describe_optimized_plan()
 ```
 
     #> 
-    #>   Csv SCAN /tmp/RtmpG0cglG/file6ea479233af1
+    #>   Csv SCAN /tmp/RtmpQh8pKk/file6e8c3998b41c
     #>   PROJECT */5 COLUMNS
     #>   SELECTION: [(col("Species")) == (String(setosa))]
 

@@ -1,7 +1,7 @@
 
 # Drop nulls (missing values)
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1006)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1000)
 
 ## Description
 

@@ -4257,15 +4257,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#details" class="md-nav__link">
-    <span class="md-ellipsis">
-      Details
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -14331,15 +14322,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#details" class="md-nav__link">
-    <span class="md-ellipsis">
-      Details
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -14397,23 +14379,15 @@ take any self as an argument, thus they are pure functions. Having the
 private methods as pure functions solved/simplified self-referential
 complications.</p>
 <p><code>DataFrame</code> and <code>LazyFrame</code> can both be said to be
-a <code>Frame</code>. To convert use <code>DataFrame_object$lazy() -&gt;
-LazyFrame_object</code> and <code>LazyFrame_object$collect() -&gt;
-DataFrame_object</code>. You can also create a <code>LazyFrame</code>
-directly with <code>pl$LazyFrame()</code>. This is quite similar to the
-lazy-collect syntax of the dplyrpackage to interact with database
-connections such as SQL variants. Most SQL databases would be able to
-perform the same optimizations as polars such Predicate Pushdown and
-Projection. However polars can interact and optimize queries with both
-SQL DBs and other data sources such parquet files simultaneously. (#TODO
-implement r-polars SQL ;).</p>
-<h2 id="details">Details</h2>
-<p>Check out the source code in R/LazyFrame_<em>lazy.R how public methods are
-derived from private methods. Check out extendr-wrappers.R to see the
-extendr-auto-generated methods. These are moved to <code>.pr</code> and
-converted into pure external functions in after-wrappers.R. In zzz.R
-(named zzz to be last file sourced) the extendr-methods are removed and
-replaced by any function prefixed <code>LazyFrame</em></code>.</p>
+a <code>Frame</code>. To convert use <code>\&lt;DataFrame&gt;$lazy()</code>
+and <code>\&lt;LazyFrame&gt;$collect()</code>. You can also create a
+<code>LazyFrame</code> directly with <code>pl$LazyFrame()</code>. This
+is quite similar to the lazy-collect syntax of the <code>dplyr</code>
+package to interact with database connections such as SQL variants. Most
+SQL databases would be able to perform the same optimizations as polars
+such predicate pushdown and projection pushdown. However polars can
+interact and optimize queries with both SQL DBs and other data sources
+such parquet files simultaneously.</p>
 <h2 id="value">Value</h2>
 <p>not applicable</p>
 <h2 id="examples">Examples</h2>
@@ -14521,7 +14495,7 @@ replaced by any function prefixed <code>LazyFrame</em></code>.</p>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; FILTER [(col(&quot;Species&quot;)) == (String(setosa))] FROM
 #&gt; 
-#&gt;   Csv SCAN /tmp/RtmpG0cglG/file6ea479233af1
+#&gt;   Csv SCAN /tmp/RtmpQh8pKk/file6e8c3998b41c
 #&gt;   PROJECT */5 COLUMNS
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># NOTE For Ldf_okay, the full time to load csv alrady paid when creating Rdf and Pdf</span>
@@ -14534,7 +14508,7 @@ replaced by any function prefixed <code>LazyFrame</em></code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Ldf_best</span><span class="o">$</span><span class="nf">describe_optimized_plan</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; 
-#&gt;   Csv SCAN /tmp/RtmpG0cglG/file6ea479233af1
+#&gt;   Csv SCAN /tmp/RtmpQh8pKk/file6e8c3998b41c
 #&gt;   PROJECT */5 COLUMNS
 #&gt;   SELECTION: [(col(&quot;Species&quot;)) == (String(setosa))]
 </code></pre></div>
