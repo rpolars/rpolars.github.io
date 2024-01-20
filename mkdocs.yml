@@ -515,7 +515,6 @@ nav:
             - value_counts: man/Expr_value_counts.md
             - var: man/Expr_var.md
             - when_then_otherwise: man/Expr_when_then_otherwise.md
-            - where: man/Expr_where.md
             - xor: man/Expr_xor.md
         - List:
             - all: man/ExprList_all.md

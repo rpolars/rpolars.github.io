@@ -10770,27 +10770,6 @@
   
   
     <li class="md-nav__item">
-      <a href="man/Expr_where.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    where
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="man/Expr_xor.html" class="md-nav__link">
         
   
@@ -15921,6 +15900,7 @@
 <h2 id="polars-development-version">polars (development version)</h2>
 <h3 id="breaking-changes">Breaking changes</h3>
 <ul>
+<li><code>&lt;Expr&gt;$where()</code> is removed. Use <code>&lt;Expr&gt;$filter()</code> instead (<a href="https://github.com/pola-rs/r-polars/issues/718">#718</a>).</li>
 <li>Deprecated functions from 0.12.x are removed (<a href="https://github.com/pola-rs/r-polars/issues/714">#714</a>).<ul>
 <li><code>&lt;Expr&gt;$apply()</code> and <code>&lt;Expr&gt;$map()</code>, use <code>$map_elements()</code> and <code>$map_batches()</code> instead.</li>
 <li><code>pl$polars_info()</code>, use <code>polars_info()</code> instead.</li>
@@ -15942,7 +15922,7 @@
 <ul>
 <li>New method <code>$rolling()</code> for <code>DataFrame</code> and <code>LazyFrame</code>. When this is
     applied, it creates an object of class <code>RPolarsRollingGroupBy</code> (<a href="https://github.com/pola-rs/r-polars/issues/682">#682</a>, <a href="https://github.com/pola-rs/r-polars/issues/694">#694</a>).</li>
-<li>New method <code>$group_by_dynamic()</code> for <code>DataFrame</code> and <code>LazyFrame</code>. When this 
+<li>New method <code>$group_by_dynamic()</code> for <code>DataFrame</code> and <code>LazyFrame</code>. When this
     is applied, it creates an object of class <code>RPolarsDynamicGroupBy</code> (<a href="https://github.com/pola-rs/r-polars/issues/691">#691</a>).</li>
 <li>New method <code>$sink_ndjson()</code> for LazyFrame (<a href="https://github.com/pola-rs/r-polars/issues/681">#681</a>).</li>
 <li>New function <code>pl$duration()</code> to create a duration by components (week, day,

@@ -471,7 +471,6 @@ pl$show_all_public_methods()
     #>           [ upper_bound ; function ]
     #>           [ value_counts ; function ]
     #>           [ var ; function ]
-    #>           [ where ; function ]
     #>           [ xor ; function ]
     #> 
     #> 
