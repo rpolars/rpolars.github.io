@@ -369,7 +369,6 @@ pl$show_all_public_methods()
     #> 
     #>        RPolarsLazyGroupBy ( environment ):
     #>           [ agg ; function ]
-    #>           [ apply ; function ]
     #>           [ head ; function ]
     #>           [ print ; function ]
     #>           [ tail ; function ]

@@ -282,7 +282,6 @@ nav:
         - var: man/GroupBy_var.md
       LazyGroupBy:
         - agg: man/LazyGroupBy_agg.md
-        - apply: man/LazyGroupBy_apply.md
         - class: man/LazyGroupBy_class.md
         - head: man/LazyGroupBy_head.md
         - print: man/LazyGroupBy_print.md
