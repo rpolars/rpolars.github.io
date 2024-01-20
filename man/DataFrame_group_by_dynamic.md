@@ -1,7 +1,7 @@
 
 # Group based on a date/time or integer column
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1907)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1902)
 
 ## Description
 

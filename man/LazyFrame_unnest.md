@@ -1,7 +1,7 @@
 
 # Unnest the Struct columns of a LazyFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1643)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1688)
 
 ## Description
 

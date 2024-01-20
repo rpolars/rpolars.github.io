@@ -14415,7 +14415,7 @@
 
 
 <h1 id="join-lazyframes">Join LazyFrames</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1073"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1115"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>This function can do both mutating joins (adding columns based on
 matching observations, for example with <code>how = “left”</code>) and
@@ -14424,11 +14424,14 @@ for example with <code>how = “inner”</code>).</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;LazyFrame&gt;$join(
   other,
+  on = NULL,
+  how = c("inner", "left", "outer", "semi", "anti", "cross", "outer_coalesce"),
+  ...,
   left_on = NULL,
   right_on = NULL,
-  on = NULL,
-  how = c("inner", "left", "outer", "semi", "anti", "cross"),
   suffix = "_right",
+  validate = "m:m",
+  join_nulls = FALSE,
   allow_parallel = TRUE,
   force_parallel = FALSE
 )
@@ -14441,17 +14444,7 @@ for example with <code>how = “inner”</code>).</p>
 <code id="LazyFrame_join_:_other">other</code>
 </td>
 <td>
-DataFrame
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_join_:_left_on">left_on</code>,
-<code id="LazyFrame_join_:_right_on">right_on</code>
-</td>
-<td>
-Same as <code>on</code> but only for the left or the right DataFrame.
-They must have the same length.
+LazyFrame to join with.
 </td>
 </tr>
 <tr>
@@ -14470,7 +14463,25 @@ to match on are different between the two DataFrames.
 </td>
 <td>
 One of the following methods: "inner", "left", "outer", "semi", "anti",
-"cross".
+"cross", "outer_coalesce".
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="LazyFrame_join_:_...">…</code>
+</td>
+<td>
+Ignored.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="LazyFrame_join_:_left_on">left_on</code>,
+<code id="LazyFrame_join_:_right_on">right_on</code>
+</td>
+<td>
+Same as <code>on</code> but only for the left or the right DataFrame.
+They must have the same length.
 </td>
 </tr>
 <tr>
@@ -14483,10 +14494,56 @@ Suffix to add to duplicated column names.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="LazyFrame_join_:_validate">validate</code>
+</td>
+<td>
+
+Checks if join is of specified type:
+
+<ul>
+<li>
+
+<code>“m:m”</code> (default): many-to-many, doesn’t perform any checks;
+
+</li>
+<li>
+
+<code>“1:1”</code>: one-to-one, check if join keys are unique in both
+left and right datasets;
+
+</li>
+<li>
+
+<code>“1:m”</code>: one-to-many, check if join keys are unique in left
+dataset
+
+</li>
+<li>
+
+<code>“m:1”</code>: many-to-one, check if join keys are unique in right
+dataset
+
+</li>
+</ul>
+Note that this is currently not supported by the streaming engine, and
+is only supported when joining by single columns.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="LazyFrame_join_:_join_nulls">join_nulls</code>
+</td>
+<td>
+Join on null values. By default null values will never produce matches.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
 <code id="LazyFrame_join_:_allow_parallel">allow_parallel</code>
 </td>
 <td>
-Boolean.
+Allow the physical plan to optionally evaluate the computation of both
+DataFrames up to the join in parallel.
 </td>
 </tr>
 <tr>
@@ -14494,7 +14551,8 @@ Boolean.
 <code id="LazyFrame_join_:_force_parallel">force_parallel</code>
 </td>
 <td>
-Boolean.
+Force the physical plan to evaluate the computation of both DataFrames
+up to the join in parallel.
 </td>
 </tr>
 </table>
@@ -14529,6 +14587,24 @@ Boolean.
 #&gt; RIGHT PLAN ON: [col(&quot;y&quot;)]
 #&gt;   DF [&quot;y&quot;]; PROJECT */1 COLUMNS; SELECTION: &quot;None&quot;
 #&gt; END CROSS JOIN
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># use &quot;validate&quot; to ensure join keys are not duplicated</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">df1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">LazyFrame</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">letters</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">],</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">df2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">LazyFrame</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">letters</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">]),</span><span class="w"> </span><span class="n">y2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="o">:</span><span class="m">10</span><span class="p">)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># this throws an error because there are two keys in df2 that match the key</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># in df1</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nf">tryCatch</span><span class="p">(</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="n">df1</span><span class="o">$</span><span class="nf">join</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">validate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1:1&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">collect</span><span class="p">(),</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; &lt;RPolarsErr_error: Execution halted with the following contexts
+#&gt;    0: In R: in $collect():
+#&gt;    0: During function call [.main()]
+#&gt;    1: Encountered the following error in Rust-Polars:
+#&gt;          the join keys did not fulfil 1:1 validation
+#&gt; &gt;
 </code></pre></div>
 
 

@@ -1,7 +1,7 @@
 
 # Join DataFrames
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L926)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L914)
 
 ## Description
 
@@ -14,11 +14,14 @@ for example with <code>how = “inner”</code>).
 
 <pre><code class='language-R'>DataFrame_join(
   other,
+  on = NULL,
+  how = c("inner", "left", "outer", "semi", "anti", "cross", "outer_coalesce"),
+  ...,
   left_on = NULL,
   right_on = NULL,
-  on = NULL,
-  how = c("inner", "left", "outer", "semi", "anti", "cross"),
   suffix = "_right",
+  validate = "m:m",
+  join_nulls = FALSE,
   allow_parallel = TRUE,
   force_parallel = FALSE
 )
@@ -32,17 +35,7 @@ for example with <code>how = “inner”</code>).
 <code id="DataFrame_join_:_other">other</code>
 </td>
 <td>
-DataFrame
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_join_:_left_on">left_on</code>,
-<code id="DataFrame_join_:_right_on">right_on</code>
-</td>
-<td>
-Same as <code>on</code> but only for the left or the right DataFrame.
-They must have the same length.
+DataFrame to join with.
 </td>
 </tr>
 <tr>
@@ -61,7 +54,25 @@ to match on are different between the two DataFrames.
 </td>
 <td>
 One of the following methods: "inner", "left", "outer", "semi", "anti",
-"cross".
+"cross", "outer_coalesce".
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="DataFrame_join_:_...">…</code>
+</td>
+<td>
+Ignored.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="DataFrame_join_:_left_on">left_on</code>,
+<code id="DataFrame_join_:_right_on">right_on</code>
+</td>
+<td>
+Same as <code>on</code> but only for the left or the right DataFrame.
+They must have the same length.
 </td>
 </tr>
 <tr>
@@ -74,10 +85,56 @@ Suffix to add to duplicated column names.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="DataFrame_join_:_validate">validate</code>
+</td>
+<td>
+
+Checks if join is of specified type:
+
+<ul>
+<li>
+
+<code>“m:m”</code> (default): many-to-many, doesn’t perform any checks;
+
+</li>
+<li>
+
+<code>“1:1”</code>: one-to-one, check if join keys are unique in both
+left and right datasets;
+
+</li>
+<li>
+
+<code>“1:m”</code>: one-to-many, check if join keys are unique in left
+dataset
+
+</li>
+<li>
+
+<code>“m:1”</code>: many-to-one, check if join keys are unique in right
+dataset
+
+</li>
+</ul>
+Note that this is currently not supported by the streaming engine, and
+is only supported when joining by single columns.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="DataFrame_join_:_join_nulls">join_nulls</code>
+</td>
+<td>
+Join on null values. By default null values will never produce matches.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
 <code id="DataFrame_join_:_allow_parallel">allow_parallel</code>
 </td>
 <td>
-Boolean.
+Allow the physical plan to optionally evaluate the computation of both
+DataFrames up to the join in parallel.
 </td>
 </tr>
 <tr>
@@ -85,7 +142,8 @@ Boolean.
 <code id="DataFrame_join_:_force_parallel">force_parallel</code>
 </td>
 <td>
-Boolean.
+Force the physical plan to evaluate the computation of both DataFrames
+up to the join in parallel.
 </td>
 </tr>
 </table>

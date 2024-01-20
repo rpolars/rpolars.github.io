@@ -14451,7 +14451,7 @@
 
 
 <h1 id="collect-and-profile-a-lazy-query">Collect and profile a lazy query.</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1504"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1549"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>This will run the query and return a list containing the materialized
 DataFrame and a DataFrame that contains profiling information of each
@@ -14655,8 +14655,8 @@ TRUE)</code>.
 #&gt; │ ---                 ┆ ---   ┆ --- │
 #&gt; │ str                 ┆ u64   ┆ u64 │
 #&gt; ╞═════════════════════╪═══════╪═════╡
-#&gt; │ optimization        ┆ 0     ┆ 13  │
-#&gt; │ projection(literal) ┆ 13    ┆ 103 │
+#&gt; │ optimization        ┆ 0     ┆ 20  │
+#&gt; │ projection(literal) ┆ 20    ┆ 106 │
 #&gt; └─────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Use $profile() to compare two queries</span>
@@ -14687,9 +14687,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ --- │
 #&gt; │ str                ┆ u64   ┆ u64 │
 #&gt; ╞════════════════════╪═══════╪═════╡
-#&gt; │ optimization       ┆ 0     ┆ 16  │
-#&gt; │ sort(Sepal.Length) ┆ 16    ┆ 194 │
-#&gt; │ group_by(Species)  ┆ 197   ┆ 343 │
+#&gt; │ optimization       ┆ 0     ┆ 22  │
+#&gt; │ sort(Sepal.Length) ┆ 22    ┆ 237 │
+#&gt; │ group_by(Species)  ┆ 241   ┆ 427 │
 #&gt; └────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)</span>
@@ -14727,9 +14727,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ ---   │
 #&gt; │ str                ┆ u64   ┆ u64   │
 #&gt; ╞════════════════════╪═══════╪═══════╡
-#&gt; │ optimization       ┆ 0     ┆ 6     │
-#&gt; │ sort(Sepal.Length) ┆ 6     ┆ 115   │
-#&gt; │ group_by(Species)  ┆ 118   ┆ 11219 │
+#&gt; │ optimization       ┆ 0     ┆ 7     │
+#&gt; │ sort(Sepal.Length) ┆ 7     ┆ 440   │
+#&gt; │ group_by(Species)  ┆ 443   ┆ 12862 │
 #&gt; └────────────────────┴───────┴───────┘
 </code></pre></div>
 

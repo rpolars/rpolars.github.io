@@ -15936,6 +15936,18 @@
     equivalent in base R) should be converted. This option can either be set 
     globally with <code>pl$set_options()</code> or on a case-by-case basis, e.g with 
     <code>$to_data_frame(int64_conversion =)</code> (<a href="https://github.com/pola-rs/r-polars/issues/706">#706</a>).</li>
+<li>Several changes in <code>$join()</code> for <code>DataFrame</code> and <code>LazyFrame</code> (<a href="https://github.com/pola-rs/r-polars/issues/716">#716</a>):<ul>
+<li><code>&lt;LazyFrame&gt;$join()</code> now errors if <code>other</code> is not a <code>LazyFrame</code> and
+    <code>&lt;DataFrame&gt;$join()</code> errors if <code>other</code> is not a <code>DataFrame</code>.</li>
+<li>Some arguments have been reordered (e.g <code>how</code> now comes before <code>left_on</code>).
+    This can lead to bugs if the user didn't use argument names.</li>
+<li>Argument <code>how</code> now accepts <code>"outer_coalesce"</code> to coalesce the join keys
+    automatically after joining.</li>
+<li>New argument <code>validate</code> to perform some checks on join keys (e.g ensure 
+    that there is a one-to-one matching between join keys).</li>
+<li>New argument <code>join_nulls</code> to consider <code>null</code> values as a valid key.</li>
+</ul>
+</li>
 </ul>
 <h2 id="polars-0122">polars 0.12.2</h2>
 <p>This is a small release including a few documentation improvements and internal updates.</p>

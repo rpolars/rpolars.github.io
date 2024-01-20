@@ -1,7 +1,7 @@
 
 # Perform joins on nearest keys
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1230)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1275)
 
 ## Description
 
@@ -163,7 +163,8 @@ like <code>tolerance = pl$lit(42)$cast(pl$Uint64)</code>
 <code id="LazyFrame_join_asof_:_allow_parallel">allow_parallel</code>
 </td>
 <td>
-Boolean.
+Allow the physical plan to optionally evaluate the computation of both
+DataFrames up to the join in parallel.
 </td>
 </tr>
 <tr>
@@ -171,7 +172,8 @@ Boolean.
 <code id="LazyFrame_join_asof_:_force_parallel">force_parallel</code>
 </td>
 <td>
-Boolean.
+Force the physical plan to evaluate the computation of both DataFrames
+up to the join in parallel.
 </td>
 </tr>
 </table>
