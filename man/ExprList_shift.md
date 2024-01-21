@@ -1,11 +1,11 @@
 
-# Shift sublists
+# Shift list values by <code>n</code> indices
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L303)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L289)
 
 ## Description
 
-Shift values by the given period.
+Shift list values by <code>n</code> indices
 
 ## Usage
 
@@ -20,14 +20,11 @@ Shift values by the given period.
 <code id="ExprList_shift_:_periods">periods</code>
 </td>
 <td>
-Value. Number of places to shift (may be negative).
+Number of places to shift (may be negative). Can be an Expr. Strings are
+<em>not</em> parsed as columns.
 </td>
 </tr>
 </table>
-
-## Format
-
-function
 
 ## Value
 
@@ -38,16 +35,22 @@ Expr
 ``` r
 library(polars)
 
-df = pl$DataFrame(list(s = list(1:4, c(10L, 2L, 1L))))
-df$select(pl$col("s")$list$shift())
+df = pl$DataFrame(
+  s = list(1:4, c(10L, 2L, 1L)),
+  idx = 1:2
+)
+df$with_columns(
+  shift_by_expr = pl$col("s")$list$shift(pl$col("idx")),
+  shift_by_lit = pl$col("s")$list$shift(2)
+)
 ```
 
-    #> shape: (2, 1)
-    #> ┌────────────────┐
-    #> │ s              │
-    #> │ ---            │
-    #> │ list[i32]      │
-    #> ╞════════════════╡
-    #> │ [null, 1, … 3] │
-    #> │ [null, 10, 2]  │
-    #> └────────────────┘
+    #> shape: (2, 4)
+    #> ┌─────────────┬─────┬──────────────────┬───────────────────┐
+    #> │ s           ┆ idx ┆ shift_by_expr    ┆ shift_by_lit      │
+    #> │ ---         ┆ --- ┆ ---              ┆ ---               │
+    #> │ list[i32]   ┆ i32 ┆ list[i32]        ┆ list[i32]         │
+    #> ╞═════════════╪═════╪══════════════════╪═══════════════════╡
+    #> │ [1, 2, … 4] ┆ 1   ┆ [null, 1, … 3]   ┆ [null, null, … 2] │
+    #> │ [10, 2, 1]  ┆ 2   ┆ [null, null, 10] ┆ [null, null, 10]  │
+    #> └─────────────┴─────┴──────────────────┴───────────────────┘

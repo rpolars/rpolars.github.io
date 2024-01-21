@@ -1,11 +1,11 @@
 
-# Sublists contains
+# Check if list contains a given value
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L227)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L201)
 
 ## Description
 
-Check if sublists contain the given item.
+Check if list contains a given value
 
 ## Usage
 
@@ -20,35 +20,38 @@ Check if sublists contain the given item.
 <code id="ExprList_contains_:_item">item</code>
 </td>
 <td>
-any into Expr/literal
+Expr or something coercible to an Expr. Strings are <em>not</em> parsed
+as columns.
 </td>
 </tr>
 </table>
 
-## Format
-
-function
-
 ## Value
 
-Expr of a boolean mask
+Expr
 
 ## Examples
 
 ``` r
 library(polars)
 
-df = pl$DataFrame(list(a = list(3:1, NULL, 1:2))) # NULL or integer() or list()
-df$select(pl$col("a")$list$contains(1L))
+df = pl$DataFrame(
+  a = list(3:1, NULL, 1:2),
+  item = 0:2
+)
+df$with_columns(
+  with_expr = pl$col("a")$list$contains(pl$col("item")),
+  with_lit = pl$col("a")$list$contains(1)
+)
 ```
 
-    #> shape: (3, 1)
-    #> ┌───────┐
-    #> │ a     │
-    #> │ ---   │
-    #> │ bool  │
-    #> ╞═══════╡
-    #> │ true  │
-    #> │ false │
-    #> │ true  │
-    #> └───────┘
+    #> shape: (3, 4)
+    #> ┌───────────┬──────┬───────────┬──────────┐
+    #> │ a         ┆ item ┆ with_expr ┆ with_lit │
+    #> │ ---       ┆ ---  ┆ ---       ┆ ---      │
+    #> │ list[i32] ┆ i32  ┆ bool      ┆ bool     │
+    #> ╞═══════════╪══════╪═══════════╪══════════╡
+    #> │ [3, 2, 1] ┆ 0    ┆ false     ┆ true     │
+    #> │ []        ┆ 1    ┆ false     ┆ false    │
+    #> │ [1, 2]    ┆ 2    ┆ true      ┆ true     │
+    #> └───────────┴──────┴───────────┴──────────┘

@@ -1,11 +1,11 @@
 
-# Heads of sublists
+# Get the first <code>n</code> values of a list
 
 [**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L341)
 
 ## Description
 
-head the first <code>n</code> values of every sublist.
+Get the first <code>n</code> values of a list
 
 ## Usage
 
@@ -20,14 +20,11 @@ head the first <code>n</code> values of every sublist.
 <code id="ExprList_head_:_n">n</code>
 </td>
 <td>
-Numeric or Expr, number of values to return for each sublist.
+Number of values to return for each sublist. Can be an Expr. Strings are
+parsed as column names.
 </td>
 </tr>
 </table>
-
-## Format
-
-function
 
 ## Value
 
@@ -38,16 +35,22 @@ Expr
 ``` r
 library(polars)
 
-df = pl$DataFrame(list(a = list(1:4, c(10L, 2L, 1L))))
-df$select(pl$col("a")$list$head(2))
+df = pl$DataFrame(
+  s = list(1:4, c(10L, 2L, 1L)),
+  n = 1:2
+)
+df$with_columns(
+  head_by_expr = pl$col("s")$list$head("n"),
+  head_by_lit = pl$col("s")$list$head(2)
+)
 ```
 
-    #> shape: (2, 1)
-    #> ┌───────────┐
-    #> │ a         │
-    #> │ ---       │
-    #> │ list[i32] │
-    #> ╞═══════════╡
-    #> │ [1, 2]    │
-    #> │ [10, 2]   │
-    #> └───────────┘
+    #> shape: (2, 4)
+    #> ┌─────────────┬─────┬──────────────┬─────────────┐
+    #> │ s           ┆ n   ┆ head_by_expr ┆ head_by_lit │
+    #> │ ---         ┆ --- ┆ ---          ┆ ---         │
+    #> │ list[i32]   ┆ i32 ┆ list[i32]    ┆ list[i32]   │
+    #> ╞═════════════╪═════╪══════════════╪═════════════╡
+    #> │ [1, 2, … 4] ┆ 1   ┆ [1]          ┆ [1, 2]      │
+    #> │ [10, 2, 1]  ┆ 2   ┆ [10, 2]      ┆ [10, 2]     │
+    #> └─────────────┴─────┴──────────────┴─────────────┘

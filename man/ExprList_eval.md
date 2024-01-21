@@ -1,11 +1,11 @@
 
-# eval sublists (kinda like lapply)
+# Run any polars expression on the list values
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L421)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L450)
 
 ## Description
 
-Run any polars expression against the lists’ elements.
+Run any polars expression on the list values
 
 ## Usage
 
@@ -21,7 +21,8 @@ Run any polars expression against the lists’ elements.
 </td>
 <td>
 Expression to run. Note that you can select an element with
-<code>pl$first()</code>, or <code>pl$col()</code>
+<code>pl$element()</code>, <code>pl$first()</code>, and more. See
+Examples.
 </td>
 </tr>
 <tr>
@@ -31,15 +32,11 @@ Expression to run. Note that you can select an element with
 <td>
 Run all expression parallel. Don’t activate this blindly. Parallelism is
 worth it if there is enough work to do per thread. This likely should
-not be use in the groupby context, because we already do parallel
-execution per group.
+not be used in the <code style="white-space: pre;">$group_by()</code>
+context, because we already do parallel execution per group.
 </td>
 </tr>
 </table>
-
-## Format
-
-function
 
 ## Value
 
@@ -50,19 +47,31 @@ Expr
 ``` r
 library(polars)
 
-df = pl$DataFrame(a = c(1, 8, 3), b = c(4, 5, 2))
-df$select(pl$all()$cast(pl$dtypes$Int64))$with_columns(
-  pl$concat_list(c("a", "b"))$list$eval(pl$element()$rank())$alias("rank")
+df = pl$DataFrame(
+  a = list(c(1, 8, 3), c(3, 2), c(NA, NA, 1)),
+  b = list(c("R", "is", "amazing"), c("foo", "bar"), "text")
+)
+df$with_columns(
+  # standardize each value inside a list, using only the values in this list
+  a_stand = pl$col("a")$list$eval(
+    (pl$element() - pl$element()$mean()) / pl$element()$std()
+  ),
+
+  # count characters for each element in list. Since column "b" is list[str],
+  # we can apply all `$str` functions on elements in the list:
+  b_len_chars = pl$col("b")$list$eval(
+    pl$element()$str$len_chars()
+  )
 )
 ```
 
-    #> shape: (3, 3)
-    #> ┌─────┬─────┬────────────┐
-    #> │ a   ┆ b   ┆ rank       │
-    #> │ --- ┆ --- ┆ ---        │
-    #> │ i64 ┆ i64 ┆ list[f64]  │
-    #> ╞═════╪═════╪════════════╡
-    #> │ 1   ┆ 4   ┆ [1.0, 2.0] │
-    #> │ 8   ┆ 5   ┆ [2.0, 1.0] │
-    #> │ 3   ┆ 2   ┆ [2.0, 1.0] │
-    #> └─────┴─────┴────────────┘
+    #> shape: (3, 4)
+    #> ┌───────────────────┬────────────────────────┬──────────────────────────────┬─────────────┐
+    #> │ a                 ┆ b                      ┆ a_stand                      ┆ b_len_chars │
+    #> │ ---               ┆ ---                    ┆ ---                          ┆ ---         │
+    #> │ list[f64]         ┆ list[str]              ┆ list[f64]                    ┆ list[u32]   │
+    #> ╞═══════════════════╪════════════════════════╪══════════════════════════════╪═════════════╡
+    #> │ [1.0, 8.0, 3.0]   ┆ ["R", "is", "amazing"] ┆ [-0.83205, 1.1094, -0.27735] ┆ [1, 2, 7]   │
+    #> │ [3.0, 2.0]        ┆ ["foo", "bar"]         ┆ [0.707107, -0.707107]        ┆ [3, 3]      │
+    #> │ [null, null, 1.0] ┆ ["text"]               ┆ [null, null, null]           ┆ [4]         │
+    #> └───────────────────┴────────────────────────┴──────────────────────────────┴─────────────┘

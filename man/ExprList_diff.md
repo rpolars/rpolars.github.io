@@ -1,11 +1,15 @@
 
-# Diff sublists
+# Compute difference between list values
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L287)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L268)
 
 ## Description
 
-Calculate the n-th discrete difference of every sublist.
+This computes the first discrete difference between shifted items of
+every list. The parameter <code>n</code> gives the interval between
+items to subtract, e.g <code>n = 2</code> the output will be the
+difference between the 1st and the 3rd value, the 2nd and 4th value,
+etc.
 
 ## Usage
 
@@ -20,7 +24,7 @@ Calculate the n-th discrete difference of every sublist.
 <code id="ExprList_diff_:_n">n</code>
 </td>
 <td>
-Number of slots to shift
+Number of slots to shift.
 </td>
 </tr>
 <tr>
@@ -28,14 +32,11 @@ Number of slots to shift
 <code id="ExprList_diff_:_null_behavior">null_behavior</code>
 </td>
 <td>
-choice "ignore"(default) "drop"
+How to handle <code>null</code> values. Either <code>“ignore”</code>
+(default) or <code>“drop”</code>.
 </td>
 </tr>
 </table>
-
-## Format
-
-function
 
 ## Value
 
@@ -47,15 +48,15 @@ Expr
 library(polars)
 
 df = pl$DataFrame(list(s = list(1:4, c(10L, 2L, 1L))))
-df$select(pl$col("s")$list$diff(1))
+df$with_columns(diff = pl$col("s")$list$diff(2))
 ```
 
-    #> shape: (2, 1)
-    #> ┌────────────────┐
-    #> │ s              │
-    #> │ ---            │
-    #> │ list[i32]      │
-    #> ╞════════════════╡
-    #> │ [null, 1, … 1] │
-    #> │ [null, -8, -1] │
-    #> └────────────────┘
+    #> shape: (2, 2)
+    #> ┌─────────────┬───────────────────┐
+    #> │ s           ┆ diff              │
+    #> │ ---         ┆ ---               │
+    #> │ list[i32]   ┆ list[i32]         │
+    #> ╞═════════════╪═══════════════════╡
+    #> │ [1, 2, … 4] ┆ [null, null, … 2] │
+    #> │ [10, 2, 1]  ┆ [null, null, -9]  │
+    #> └─────────────┴───────────────────┘

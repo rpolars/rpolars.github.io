@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#arg-min-sublists" class="md-skip">
+        <a href="#get-the-index-of-the-minimal-value-in-list" class="md-skip">
           Skip to content
         </a>
       
@@ -10950,15 +10950,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Format
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -11202,11 +11193,11 @@
   
   
     <li class="md-nav__item">
-      <a href="ExprList_lengths.html" class="md-nav__link">
+      <a href="ExprList_len.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    lengths
+    len
   </span>
   
 
@@ -14351,15 +14342,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Format
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -14395,33 +14377,33 @@
   
 
 
-<h1 id="arg-min-sublists">Arg min sublists</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L258"><strong>Source code</strong></a></p>
+<h1 id="get-the-index-of-the-minimal-value-in-list">Get the index of the minimal value in list</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L236"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>Retrieve the index of the minimal value in every sublist.</p>
+<p>Get the index of the minimal value in list</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Expr&gt;$list$arg_min()
 </code></pre>
 
-<h2 id="format">Format</h2>
-<p>function</p>
 <h2 id="value">Value</h2>
 <p>Expr</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="o">:</span><span class="m">1</span><span class="p">)))</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;s&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">arg_min</span><span class="p">())</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="n">arg_min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;s&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">arg_min</span><span class="p">()</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (2, 1)
-#&gt; ┌─────┐
-#&gt; │ s   │
-#&gt; │ --- │
-#&gt; │ u32 │
-#&gt; ╞═════╡
-#&gt; │ 0   │
-#&gt; │ 1   │
-#&gt; └─────┘
+<div class="highlight"><pre><span></span><code>#&gt; shape: (2, 2)
+#&gt; ┌───────────┬─────────┐
+#&gt; │ s         ┆ arg_min │
+#&gt; │ ---       ┆ ---     │
+#&gt; │ list[i32] ┆ u32     │
+#&gt; ╞═══════════╪═════════╡
+#&gt; │ [1, 2]    ┆ 0       │
+#&gt; │ [2, 1]    ┆ 1       │
+#&gt; └───────────┴─────────┘
 </code></pre></div>
 
 

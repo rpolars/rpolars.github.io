@@ -1,11 +1,12 @@
 
-# take in sublists
+# Get several values by index in a list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L186)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L157)
 
 ## Description
 
-Get the take value of the sublists.
+This allows to extract several values per list. To extract a single
+value by index, use <code>$list$get()</code>.
 
 ## Usage
 
@@ -20,8 +21,11 @@ Get the take value of the sublists.
 <code id="ExprList_gather_:_index">index</code>
 </td>
 <td>
-R list of integers for each sub-element or Expr or Series of type
-<code>List\[usize\]</code>
+An Expr or something coercible to an Expr, that can return several
+single indices. Values are 0-indexed (so index 0 would return the first
+item of every sublist) and negative values start from the end (index
+<code>-1</code> returns the last item). If the index is out of bounds,
+it will return a <code>null</code>. Strings are parsed as column names.
 </td>
 </tr>
 <tr>
@@ -29,14 +33,10 @@ R list of integers for each sub-element or Expr or Series of type
 <code id="ExprList_gather_:_null_on_oob">null_on_oob</code>
 </td>
 <td>
-boolean
+Return a <code>null</code> value if index is out of bounds.
 </td>
 </tr>
 </table>
-
-## Format
-
-function
 
 ## Value
 

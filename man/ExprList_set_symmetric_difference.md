@@ -1,7 +1,7 @@
 
 # Get the symmetric difference of two list variables
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L523)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L552)
 
 ## Description
 

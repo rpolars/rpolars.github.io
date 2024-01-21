@@ -1,20 +1,16 @@
 
-# Arg min sublists
+# Get the index of the minimal value in list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L258)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L236)
 
 ## Description
 
-Retrieve the index of the minimal value in every sublist.
+Get the index of the minimal value in list
 
 ## Usage
 
 <pre><code class='language-R'>ExprList_arg_min()
 </code></pre>
-
-## Format
-
-function
 
 ## Value
 
@@ -26,15 +22,17 @@ Expr
 library(polars)
 
 df = pl$DataFrame(list(s = list(1:2, 2:1)))
-df$select(pl$col("s")$list$arg_min())
+df$with_columns(
+  arg_min = pl$col("s")$list$arg_min()
+)
 ```
 
-    #> shape: (2, 1)
-    #> ┌─────┐
-    #> │ s   │
-    #> │ --- │
-    #> │ u32 │
-    #> ╞═════╡
-    #> │ 0   │
-    #> │ 1   │
-    #> └─────┘
+    #> shape: (2, 2)
+    #> ┌───────────┬─────────┐
+    #> │ s         ┆ arg_min │
+    #> │ ---       ┆ ---     │
+    #> │ list[i32] ┆ u32     │
+    #> ╞═══════════╪═════════╡
+    #> │ [1, 2]    ┆ 0       │
+    #> │ [2, 1]    ┆ 1       │
+    #> └───────────┴─────────┘

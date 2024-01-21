@@ -1,20 +1,16 @@
 
-# Reverse list
+# Reverse values in a list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L93)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L72)
 
 ## Description
 
-Reverse the arrays in the list.
+Reverse values in a list
 
 ## Usage
 
 <pre><code class='language-R'>ExprList_reverse()
 </code></pre>
-
-## Format
-
-function
 
 ## Value
 
@@ -25,18 +21,17 @@ Expr
 ``` r
 library(polars)
 
-df = pl$DataFrame(list(
-  values = list(3:1, c(9L, 1:2))
-))
-df$select(pl$col("values")$list$reverse())
+df = pl$DataFrame(list(values = list(c(1, 2, 3, NA), c(2, 3), NA_real_)))
+df$with_columns(reverse = pl$col("values")$list$reverse())
 ```
 
-    #> shape: (2, 1)
-    #> ┌───────────┐
-    #> │ values    │
-    #> │ ---       │
-    #> │ list[i32] │
-    #> ╞═══════════╡
-    #> │ [1, 2, 3] │
-    #> │ [2, 1, 9] │
-    #> └───────────┘
+    #> shape: (3, 2)
+    #> ┌────────────────────┬────────────────────┐
+    #> │ values             ┆ reverse            │
+    #> │ ---                ┆ ---                │
+    #> │ list[f64]          ┆ list[f64]          │
+    #> ╞════════════════════╪════════════════════╡
+    #> │ [1.0, 2.0, … null] ┆ [null, 3.0, … 1.0] │
+    #> │ [2.0, 3.0]         ┆ [3.0, 2.0]         │
+    #> │ [null]             ┆ [null]             │
+    #> └────────────────────┴────────────────────┘

@@ -1,20 +1,16 @@
 
-# Last in sublists
+# Get the last value in a list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L214)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L183)
 
 ## Description
 
-Get the last value of the sublists.
+Get the last value in a list
 
 ## Usage
 
 <pre><code class='language-R'>ExprList_last()
 </code></pre>
-
-## Format
-
-function
 
 ## Value
 
@@ -25,17 +21,19 @@ Expr
 ``` r
 library(polars)
 
-df = pl$DataFrame(list(a = list(3:1, NULL, 1:2))) # NULL or integer() or list()
-df$select(pl$col("a")$list$last())
+df = pl$DataFrame(list(a = list(3:1, NULL, 1:2)))
+df$with_columns(
+  last = pl$col("a")$list$last()
+)
 ```
 
-    #> shape: (3, 1)
-    #> ┌──────┐
-    #> │ a    │
-    #> │ ---  │
-    #> │ i32  │
-    #> ╞══════╡
-    #> │ 1    │
-    #> │ null │
-    #> │ 2    │
-    #> └──────┘
+    #> shape: (3, 2)
+    #> ┌───────────┬──────┐
+    #> │ a         ┆ last │
+    #> │ ---       ┆ ---  │
+    #> │ list[i32] ┆ i32  │
+    #> ╞═══════════╪══════╡
+    #> │ [3, 2, 1] ┆ 1    │
+    #> │ []        ┆ null │
+    #> │ [1, 2]    ┆ 2    │
+    #> └───────────┴──────┘

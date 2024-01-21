@@ -1,20 +1,16 @@
 
-# First in sublists
+# Get the first value in a list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L202)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L172)
 
 ## Description
 
-Get the first value of the sublists.
+Get the first value in a list
 
 ## Usage
 
 <pre><code class='language-R'>ExprList_first()
 </code></pre>
-
-## Format
-
-function
 
 ## Value
 
@@ -25,17 +21,19 @@ Expr
 ``` r
 library(polars)
 
-df = pl$DataFrame(list(a = list(3:1, NULL, 1:2))) # NULL or integer() or list()
-df$select(pl$col("a")$list$first())
+df = pl$DataFrame(list(a = list(3:1, NULL, 1:2)))
+df$with_columns(
+  first = pl$col("a")$list$first()
+)
 ```
 
-    #> shape: (3, 1)
-    #> ┌──────┐
-    #> │ a    │
-    #> │ ---  │
-    #> │ i32  │
-    #> ╞══════╡
-    #> │ 3    │
-    #> │ null │
-    #> │ 1    │
-    #> └──────┘
+    #> shape: (3, 2)
+    #> ┌───────────┬───────┐
+    #> │ a         ┆ first │
+    #> │ ---       ┆ ---   │
+    #> │ list[i32] ┆ i32   │
+    #> ╞═══════════╪═══════╡
+    #> │ [3, 2, 1] ┆ 3     │
+    #> │ []        ┆ null  │
+    #> │ [1, 2]    ┆ 1     │
+    #> └───────────┴───────┘

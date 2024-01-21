@@ -530,7 +530,7 @@ nav:
             - head: man/ExprList_head.md
             - join: man/ExprList_join.md
             - last: man/ExprList_last.md
-            - lengths: man/ExprList_lengths.md
+            - len: man/ExprList_len.md
             - max: man/ExprList_max.md
             - mean: man/ExprList_mean.md
             - min: man/ExprList_min.md

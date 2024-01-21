@@ -1,11 +1,13 @@
 
-# Slice sublists
+# Slice list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L319)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L314)
 
 ## Description
 
-Slice every sublist.
+This extracts <code>length</code> values at most, starting at index
+<code>offset</code>. This can return less than <code>length</code>
+values if <code>length</code> is larger than the number of values.
 
 ## Usage
 
@@ -20,7 +22,8 @@ Slice every sublist.
 <code id="ExprList_slice_:_offset">offset</code>
 </td>
 <td>
-value or Expr. Start index. Negative indexing is supported.
+Start index. Negative indexing is supported. Can be an Expr. Strings are
+parsed as column names.
 </td>
 </tr>
 <tr>
@@ -28,15 +31,12 @@ value or Expr. Start index. Negative indexing is supported.
 <code id="ExprList_slice_:_length">length</code>
 </td>
 <td>
-value or Expr. Length of the slice. If set to <code>None</code>
-(default), the slice is taken to the end of the list.
+Length of the slice. If <code>NULL</code> (default), the slice is taken
+to the end of the list. Can be an Expr. Strings are parsed as column
+names.
 </td>
 </tr>
 </table>
-
-## Format
-
-function
 
 ## Value
 
@@ -47,16 +47,23 @@ Expr
 ``` r
 library(polars)
 
-df = pl$DataFrame(list(s = list(1:4, c(10L, 2L, 1L))))
-df$select(pl$col("s")$list$slice(2))
+df = pl$DataFrame(
+  s = list(1:4, c(10L, 2L, 1L)),
+  idx_off = 1:2,
+  len = c(4, 1)
+)
+df$with_columns(
+  slice_by_expr = pl$col("s")$list$slice("idx_off", "len"),
+  slice_by_lit = pl$col("s")$list$slice(2, 3)
+)
 ```
 
-    #> shape: (2, 1)
-    #> ┌───────────┐
-    #> │ s         │
-    #> │ ---       │
-    #> │ list[i32] │
-    #> ╞═══════════╡
-    #> │ [3, 4]    │
-    #> │ [1]       │
-    #> └───────────┘
+    #> shape: (2, 5)
+    #> ┌─────────────┬─────────┬─────┬───────────────┬──────────────┐
+    #> │ s           ┆ idx_off ┆ len ┆ slice_by_expr ┆ slice_by_lit │
+    #> │ ---         ┆ ---     ┆ --- ┆ ---           ┆ ---          │
+    #> │ list[i32]   ┆ i32     ┆ f64 ┆ list[i32]     ┆ list[i32]    │
+    #> ╞═════════════╪═════════╪═════╪═══════════════╪══════════════╡
+    #> │ [1, 2, … 4] ┆ 1       ┆ 4.0 ┆ [2, 3, 4]     ┆ [3, 4]       │
+    #> │ [10, 2, 1]  ┆ 2       ┆ 1.0 ┆ [1]           ┆ [1]          │
+    #> └─────────────┴─────────┴─────┴───────────────┴──────────────┘

@@ -20,7 +20,7 @@
     
     
       
-        <title>lengths - Polars R Package</title>
+        <title>len - Polars R Package</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lengths-arrays-in-list" class="md-skip">
+        <a href="#get-the-length-of-each-list" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              lengths
+              len
             
           </span>
         </div>
@@ -11130,18 +11130,18 @@
           
   
   <span class="md-ellipsis">
-    lengths
+    len
   </span>
   
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="ExprList_lengths.html" class="md-nav__link md-nav__link--active">
+      <a href="ExprList_len.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    lengths
+    len
   </span>
   
 
@@ -11175,15 +11175,6 @@
   <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
       Usage
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Format
     </span>
   </a>
   
@@ -14351,15 +14342,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Format
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -14395,33 +14377,35 @@
   
 
 
-<h1 id="lengths-arrays-in-list">Lengths arrays in list</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L21"><strong>Source code</strong></a></p>
+<h1 id="get-the-length-of-each-list">Get the length of each list</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L11"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>Get the length of the arrays as UInt32</p>
+<p>Return the number of elements in each list. Null values are counted in
+the total. <code style="white-space: pre;">$list$lengths()</code> is
+deprecated.</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>&lt;Expr&gt;$list$lengths()
+<pre><code class='language-R'>&lt;Expr&gt;$list$len()
+
+ExprList_lengths()
 </code></pre>
 
-<h2 id="format">Format</h2>
-<p>function</p>
 <h2 id="value">Value</h2>
 <p>Expr</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">list_of_strs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">)))</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;list_of_strs&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">lengths</span><span class="p">()</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;list_of_strs_lengths&quot;</span><span class="p">))</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">list_of_strs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">)))</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span><span class="n">len_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;list_of_strs&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">len</span><span class="p">())</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; shape: (2, 2)
-#&gt; ┌──────────────┬──────────────────────┐
-#&gt; │ list_of_strs ┆ list_of_strs_lengths │
-#&gt; │ ---          ┆ ---                  │
-#&gt; │ list[str]    ┆ u32                  │
-#&gt; ╞══════════════╪══════════════════════╡
-#&gt; │ [&quot;a&quot;, &quot;b&quot;]   ┆ 2                    │
-#&gt; │ [&quot;c&quot;]        ┆ 1                    │
-#&gt; └──────────────┴──────────────────────┘
+#&gt; ┌──────────────────┬──────────┐
+#&gt; │ list_of_strs     ┆ len_list │
+#&gt; │ ---              ┆ ---      │
+#&gt; │ list[str]        ┆ u32      │
+#&gt; ╞══════════════════╪══════════╡
+#&gt; │ [&quot;a&quot;, &quot;b&quot;, null] ┆ 3        │
+#&gt; │ [&quot;c&quot;]            ┆ 1        │
+#&gt; └──────────────────┴──────────┘
 </code></pre></div>
 
 

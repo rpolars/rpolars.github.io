@@ -1,7 +1,7 @@
 
 # Get the difference of two list variables
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L501)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L530)
 
 ## Description
 

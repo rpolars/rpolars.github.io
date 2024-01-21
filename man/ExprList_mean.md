@@ -1,20 +1,16 @@
 
-# Mean of lists
+# Compute the mean value of a list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L73)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L53)
 
 ## Description
 
-Compute the mean value of the lists in the array.
+Compute the mean value of a list
 
 ## Usage
 
 <pre><code class='language-R'>ExprList_mean()
 </code></pre>
-
-## Format
-
-function
 
 ## Value
 
@@ -25,16 +21,17 @@ Expr
 ``` r
 library(polars)
 
-df = pl$DataFrame(values = pl$Series(list(1L, 2:3)))
-df$select(pl$col("values")$list$mean())
+df = pl$DataFrame(list(values = list(c(1, 2, 3, NA), c(2, 3), NA_real_)))
+df$with_columns(mean = pl$col("values")$list$mean())
 ```
 
-    #> shape: (2, 1)
-    #> ┌────────┐
-    #> │ values │
-    #> │ ---    │
-    #> │ f64    │
-    #> ╞════════╡
-    #> │ 1.0    │
-    #> │ 2.5    │
-    #> └────────┘
+    #> shape: (3, 2)
+    #> ┌────────────────────┬──────┐
+    #> │ values             ┆ mean │
+    #> │ ---                ┆ ---  │
+    #> │ list[f64]          ┆ f64  │
+    #> ╞════════════════════╪══════╡
+    #> │ [1.0, 2.0, … null] ┆ 2.0  │
+    #> │ [2.0, 3.0]         ┆ 2.5  │
+    #> │ [null]             ┆ null │
+    #> └────────────────────┴──────┘

@@ -1,20 +1,16 @@
 
-# Arg max sublists
+# Get the index of the maximal value in list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L270)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L247)
 
 ## Description
 
-Retrieve the index of the maximum value in every sublist.
+Get the index of the maximal value in list
 
 ## Usage
 
 <pre><code class='language-R'>ExprList_arg_max()
 </code></pre>
-
-## Format
-
-function
 
 ## Value
 
@@ -26,15 +22,17 @@ Expr
 library(polars)
 
 df = pl$DataFrame(list(s = list(1:2, 2:1)))
-df$select(pl$col("s")$list$arg_max())
+df$with_columns(
+  arg_max = pl$col("s")$list$arg_max()
+)
 ```
 
-    #> shape: (2, 1)
-    #> ┌─────┐
-    #> │ s   │
-    #> │ --- │
-    #> │ u32 │
-    #> ╞═════╡
-    #> │ 1   │
-    #> │ 0   │
-    #> └─────┘
+    #> shape: (2, 2)
+    #> ┌───────────┬─────────┐
+    #> │ s         ┆ arg_max │
+    #> │ ---       ┆ ---     │
+    #> │ list[i32] ┆ u32     │
+    #> ╞═══════════╪═════════╡
+    #> │ [1, 2]    ┆ 1       │
+    #> │ [2, 1]    ┆ 0       │
+    #> └───────────┴─────────┘

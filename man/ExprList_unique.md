@@ -1,7 +1,7 @@
 
-# Unique list
+# Get unique values in a list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L106)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L84)
 
 ## Description
 
@@ -12,10 +12,6 @@ Get the unique/distinct values in the list.
 <pre><code class='language-R'>ExprList_unique()
 </code></pre>
 
-## Format
-
-function
-
 ## Value
 
 Expr
@@ -25,17 +21,17 @@ Expr
 ``` r
 library(polars)
 
-df = pl$DataFrame(list(a = list(1, 1, 2)))
-df$select(pl$col("a")$list$unique())
+df = pl$DataFrame(list(values = list(c(2, 2, NA), c(1, 2, 3), NA_real_)))
+df$with_columns(unique = pl$col("values")$list$unique())
 ```
 
-    #> shape: (3, 1)
-    #> ┌───────────┐
-    #> │ a         │
-    #> │ ---       │
-    #> │ list[f64] │
-    #> ╞═══════════╡
-    #> │ [1.0]     │
-    #> │ [1.0]     │
-    #> │ [2.0]     │
-    #> └───────────┘
+    #> shape: (3, 2)
+    #> ┌──────────────────┬─────────────────┐
+    #> │ values           ┆ unique          │
+    #> │ ---              ┆ ---             │
+    #> │ list[f64]        ┆ list[f64]       │
+    #> ╞══════════════════╪═════════════════╡
+    #> │ [2.0, 2.0, null] ┆ [null, 2.0]     │
+    #> │ [1.0, 2.0, 3.0]  ┆ [1.0, 2.0, 3.0] │
+    #> │ [null]           ┆ [null]          │
+    #> └──────────────────┴─────────────────┘

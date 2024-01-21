@@ -1,20 +1,16 @@
 
-# Max lists
+# Find the maximum value in a list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L47)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L35)
 
 ## Description
 
-Compute the max value of the lists in the array.
+Find the maximum value in a list
 
 ## Usage
 
 <pre><code class='language-R'>ExprList_max()
 </code></pre>
-
-## Format
-
-function
 
 ## Value
 
@@ -25,16 +21,17 @@ Expr
 ``` r
 library(polars)
 
-df = pl$DataFrame(values = pl$Series(list(1L, 2:3)))
-df$select(pl$col("values")$list$max())
+df = pl$DataFrame(list(values = list(c(1, 2, 3, NA), c(2, 3), NA_real_)))
+df$with_columns(max = pl$col("values")$list$max())
 ```
 
-    #> shape: (2, 1)
-    #> ┌────────┐
-    #> │ values │
-    #> │ ---    │
-    #> │ i32    │
-    #> ╞════════╡
-    #> │ 1      │
-    #> │ 3      │
-    #> └────────┘
+    #> shape: (3, 2)
+    #> ┌────────────────────┬──────┐
+    #> │ values             ┆ max  │
+    #> │ ---                ┆ ---  │
+    #> │ list[f64]          ┆ f64  │
+    #> ╞════════════════════╪══════╡
+    #> │ [1.0, 2.0, … null] ┆ 3.0  │
+    #> │ [2.0, 3.0]         ┆ 3.0  │
+    #> │ [null]             ┆ null │
+    #> └────────────────────┴──────┘

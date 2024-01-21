@@ -1,18 +1,16 @@
 
-# Get list
+# Get the value by index in a list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L149)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L131)
 
 ## Description
 
-Get the value by index in the sublists.
+This allows to extract one value per list only. To extract several
+values by index, use <code>$list$gather()</code>.
 
 ## Usage
 
 <pre><code class='language-R'>ExprList_get(index)
-
-# S3 method for class 'RPolarsExprListNameSpace'
-x[index]
 </code></pre>
 
 ## Arguments
@@ -23,28 +21,14 @@ x[index]
 <code id="ExprList_get_:_index">index</code>
 </td>
 <td>
-value to get
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprList_get_:_x">x</code>
-</td>
-<td>
-RPolarsExprListNameSpace
+An Expr or something coercible to an Expr, that must return a single
+index. Values are 0-indexed (so index 0 would return the first item of
+every sublist) and negative values start from the end (index
+<code>-1</code> returns the last item). If the index is out of bounds,
+it will return a <code>null</code>. Strings are parsed as column names.
 </td>
 </tr>
 </table>
-
-## Format
-
-function
-
-## Details
-
-<code style="white-space: pre;">\[.RPolarsExprListNameSpace</code> used
-as e.g. <code>pl$col(“a”)$arr\[0\]</code> same as
-<code>pl$col(“a”)$get(0)</code>
 
 ## Value
 
@@ -55,63 +39,26 @@ Expr
 ``` r
 library(polars)
 
-df = pl$DataFrame(list(a = list(3:1, NULL, 1:2))) # NULL or integer() or list()
-df$select(pl$col("a")$list$get(0))
+df = pl$DataFrame(
+  values = list(c(2, 2, NA), c(1, 2, 3), NA_real_, NULL),
+  idx = c(1, 2, NA, 3)
+)
+df$with_columns(
+  using_expr = pl$col("values")$list$get("idx"),
+  val_0 = pl$col("values")$list$get(0),
+  val_minus_1 = pl$col("values")$list$get(-1),
+  val_oob = pl$col("values")$list$get(10)
+)
 ```
 
-    #> shape: (3, 1)
-    #> ┌──────┐
-    #> │ a    │
-    #> │ ---  │
-    #> │ i32  │
-    #> ╞══════╡
-    #> │ 3    │
-    #> │ null │
-    #> │ 1    │
-    #> └──────┘
-
-``` r
-df$select(pl$col("a")$list$get(c(2, 0, -1)))
-```
-
-    #> shape: (3, 1)
-    #> ┌──────┐
-    #> │ a    │
-    #> │ ---  │
-    #> │ i32  │
-    #> ╞══════╡
-    #> │ 1    │
-    #> │ null │
-    #> │ 2    │
-    #> └──────┘
-
-``` r
-df = pl$DataFrame(list(a = list(3:1, NULL, 1:2))) # NULL or integer() or list()
-df$select(pl$col("a")$list[0])
-```
-
-    #> shape: (3, 1)
-    #> ┌──────┐
-    #> │ a    │
-    #> │ ---  │
-    #> │ i32  │
-    #> ╞══════╡
-    #> │ 3    │
-    #> │ null │
-    #> │ 1    │
-    #> └──────┘
-
-``` r
-df$select(pl$col("a")$list[c(2, 0, -1)])
-```
-
-    #> shape: (3, 1)
-    #> ┌──────┐
-    #> │ a    │
-    #> │ ---  │
-    #> │ i32  │
-    #> ╞══════╡
-    #> │ 1    │
-    #> │ null │
-    #> │ 2    │
-    #> └──────┘
+    #> shape: (4, 6)
+    #> ┌──────────────────┬──────┬────────────┬───────┬─────────────┬─────────┐
+    #> │ values           ┆ idx  ┆ using_expr ┆ val_0 ┆ val_minus_1 ┆ val_oob │
+    #> │ ---              ┆ ---  ┆ ---        ┆ ---   ┆ ---         ┆ ---     │
+    #> │ list[f64]        ┆ f64  ┆ f64        ┆ f64   ┆ f64         ┆ f64     │
+    #> ╞══════════════════╪══════╪════════════╪═══════╪═════════════╪═════════╡
+    #> │ [2.0, 2.0, null] ┆ 1.0  ┆ 2.0        ┆ 2.0   ┆ null        ┆ null    │
+    #> │ [1.0, 2.0, 3.0]  ┆ 2.0  ┆ 3.0        ┆ 1.0   ┆ 3.0         ┆ null    │
+    #> │ [null]           ┆ null ┆ null       ┆ null  ┆ null        ┆ null    │
+    #> │ []               ┆ 3.0  ┆ null       ┆ null  ┆ null        ┆ null    │
+    #> └──────────────────┴──────┴────────────┴───────┴─────────────┴─────────┘

@@ -1,20 +1,16 @@
 
-# #’ Min lists
+# Find the minimum value in a list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L60)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L44)
 
 ## Description
 
-Compute the min value of the lists in the array.
+Find the minimum value in a list
 
 ## Usage
 
 <pre><code class='language-R'>ExprList_min()
 </code></pre>
-
-## Format
-
-function
 
 ## Value
 
@@ -25,16 +21,17 @@ Expr
 ``` r
 library(polars)
 
-df = pl$DataFrame(values = pl$Series(list(1L, 2:3)))
-df$select(pl$col("values")$list$min())
+df = pl$DataFrame(list(values = list(c(1, 2, 3, NA), c(2, 3), NA_real_)))
+df$with_columns(min = pl$col("values")$list$min())
 ```
 
-    #> shape: (2, 1)
-    #> ┌────────┐
-    #> │ values │
-    #> │ ---    │
-    #> │ i32    │
-    #> ╞════════╡
-    #> │ 1      │
-    #> │ 2      │
-    #> └────────┘
+    #> shape: (3, 2)
+    #> ┌────────────────────┬──────┐
+    #> │ values             ┆ min  │
+    #> │ ---                ┆ ---  │
+    #> │ list[f64]          ┆ f64  │
+    #> ╞════════════════════╪══════╡
+    #> │ [1.0, 2.0, … null] ┆ 1.0  │
+    #> │ [2.0, 3.0]         ┆ 2.0  │
+    #> │ [null]             ┆ null │
+    #> └────────────────────┴──────┘

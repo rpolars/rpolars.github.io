@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#get-list" class="md-skip">
+        <a href="#get-the-value-by-index-in-a-list" class="md-skip">
           Skip to content
         </a>
       
@@ -11106,24 +11106,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Format
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#details" class="md-nav__link">
-    <span class="md-ellipsis">
-      Details
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -11220,11 +11202,11 @@
   
   
     <li class="md-nav__item">
-      <a href="ExprList_lengths.html" class="md-nav__link">
+      <a href="ExprList_len.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    lengths
+    len
   </span>
   
 
@@ -14378,24 +14360,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Format
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#details" class="md-nav__link">
-    <span class="md-ellipsis">
-      Details
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -14431,15 +14395,13 @@
   
 
 
-<h1 id="get-list">Get list</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L149"><strong>Source code</strong></a></p>
+<h1 id="get-the-value-by-index-in-a-list">Get the value by index in a list</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L131"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>Get the value by index in the sublists.</p>
+<p>This allows to extract one value per list only. To extract several
+values by index, use <code>$list$gather()</code>.</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Expr&gt;$list$get(index)
-
-# S3 method for class 'RPolarsExprListNameSpace'
-x[index]
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
@@ -14449,83 +14411,42 @@ x[index]
 <code id="ExprList_get_:_index">index</code>
 </td>
 <td>
-value to get
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprList_get_:_x">x</code>
-</td>
-<td>
-RPolarsExprListNameSpace
+An Expr or something coercible to an Expr, that must return a single
+index. Values are 0-indexed (so index 0 would return the first item of
+every sublist) and negative values start from the end (index
+<code>-1</code> returns the last item). If the index is out of bounds,
+it will return a <code>null</code>. Strings are parsed as column names.
 </td>
 </tr>
 </table>
 
-<h2 id="format">Format</h2>
-<p>function</p>
-<h2 id="details">Details</h2>
-<p><code style="white-space: pre;">[.RPolarsExprListNameSpace</code> used
-as e.g. <code>pl$col(“a”)$arr[0]</code> same as
-<code>pl$col(“a”)$get(0)</code></p>
 <h2 id="value">Value</h2>
 <p>Expr</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="m">3</span><span class="o">:</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">)))</span><span class="w"> </span><span class="c1"># NULL or integer() or list()</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">get</span><span class="p">(</span><span class="m">0</span><span class="p">))</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">),</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">),</span><span class="w"> </span><span class="kc">NA_real_</span><span class="p">,</span><span class="w"> </span><span class="kc">NULL</span><span class="p">),</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="n">using_expr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;values&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">get</span><span class="p">(</span><span class="s">&quot;idx&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="n">val_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;values&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">get</span><span class="p">(</span><span class="m">0</span><span class="p">),</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="n">val_minus_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;values&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">get</span><span class="p">(</span><span class="m">-1</span><span class="p">),</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="n">val_oob</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;values&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">get</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (3, 1)
-#&gt; ┌──────┐
-#&gt; │ a    │
-#&gt; │ ---  │
-#&gt; │ i32  │
-#&gt; ╞══════╡
-#&gt; │ 3    │
-#&gt; │ null │
-#&gt; │ 1    │
-#&gt; └──────┘
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">get</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">-1</span><span class="p">)))</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (3, 1)
-#&gt; ┌──────┐
-#&gt; │ a    │
-#&gt; │ ---  │
-#&gt; │ i32  │
-#&gt; ╞══════╡
-#&gt; │ 1    │
-#&gt; │ null │
-#&gt; │ 2    │
-#&gt; └──────┘
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="m">3</span><span class="o">:</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">)))</span><span class="w"> </span><span class="c1"># NULL or integer() or list()</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">list</span><span class="p">[</span><span class="m">0</span><span class="p">])</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (3, 1)
-#&gt; ┌──────┐
-#&gt; │ a    │
-#&gt; │ ---  │
-#&gt; │ i32  │
-#&gt; ╞══════╡
-#&gt; │ 3    │
-#&gt; │ null │
-#&gt; │ 1    │
-#&gt; └──────┘
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">list</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">-1</span><span class="p">)])</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (3, 1)
-#&gt; ┌──────┐
-#&gt; │ a    │
-#&gt; │ ---  │
-#&gt; │ i32  │
-#&gt; ╞══════╡
-#&gt; │ 1    │
-#&gt; │ null │
-#&gt; │ 2    │
-#&gt; └──────┘
+<div class="highlight"><pre><span></span><code>#&gt; shape: (4, 6)
+#&gt; ┌──────────────────┬──────┬────────────┬───────┬─────────────┬─────────┐
+#&gt; │ values           ┆ idx  ┆ using_expr ┆ val_0 ┆ val_minus_1 ┆ val_oob │
+#&gt; │ ---              ┆ ---  ┆ ---        ┆ ---   ┆ ---         ┆ ---     │
+#&gt; │ list[f64]        ┆ f64  ┆ f64        ┆ f64   ┆ f64         ┆ f64     │
+#&gt; ╞══════════════════╪══════╪════════════╪═══════╪═════════════╪═════════╡
+#&gt; │ [2.0, 2.0, null] ┆ 1.0  ┆ 2.0        ┆ 2.0   ┆ null        ┆ null    │
+#&gt; │ [1.0, 2.0, 3.0]  ┆ 2.0  ┆ 3.0        ┆ 1.0   ┆ 3.0         ┆ null    │
+#&gt; │ [null]           ┆ null ┆ null       ┆ null  ┆ null        ┆ null    │
+#&gt; │ []               ┆ 3.0  ┆ null       ┆ null  ┆ null        ┆ null    │
+#&gt; └──────────────────┴──────┴────────────┴───────┴─────────────┴─────────┘
 </code></pre></div>
 
 

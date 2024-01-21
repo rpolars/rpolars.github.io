@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#heads-of-sublists" class="md-skip">
+        <a href="#get-the-first-n-values-of-a-list" class="md-skip">
           Skip to content
         </a>
       
@@ -11127,15 +11127,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Format
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -11211,11 +11202,11 @@
   
   
     <li class="md-nav__item">
-      <a href="ExprList_lengths.html" class="md-nav__link">
+      <a href="ExprList_len.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    lengths
+    len
   </span>
   
 
@@ -14369,15 +14360,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Format
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -14413,10 +14395,10 @@
   
 
 
-<h1 id="heads-of-sublists">Heads of sublists</h1>
+<h1 id="get-the-first-n-values-of-a-list">Get the first <code>n</code> values of a list</h1>
 <p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L341"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>head the first <code>n</code> values of every sublist.</p>
+<p>Get the first <code>n</code> values of a list</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Expr&gt;$list$head(n = 5L)
 </code></pre>
@@ -14428,30 +14410,35 @@
 <code id="ExprList_head_:_n">n</code>
 </td>
 <td>
-Numeric or Expr, number of values to return for each sublist.
+Number of values to return for each sublist. Can be an Expr. Strings are
+parsed as column names.
 </td>
 </tr>
 </table>
 
-<h2 id="format">Format</h2>
-<p>function</p>
 <h2 id="value">Value</h2>
 <p>Expr</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">10L</span><span class="p">,</span><span class="w"> </span><span class="m">2L</span><span class="p">,</span><span class="w"> </span><span class="m">1L</span><span class="p">))))</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">head</span><span class="p">(</span><span class="m">2</span><span class="p">))</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">10L</span><span class="p">,</span><span class="w"> </span><span class="m">2L</span><span class="p">,</span><span class="w"> </span><span class="m">1L</span><span class="p">)),</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">2</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="n">head_by_expr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;s&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">head</span><span class="p">(</span><span class="s">&quot;n&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="n">head_by_lit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;s&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">head</span><span class="p">(</span><span class="m">2</span><span class="p">)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (2, 1)
-#&gt; ┌───────────┐
-#&gt; │ a         │
-#&gt; │ ---       │
-#&gt; │ list[i32] │
-#&gt; ╞═══════════╡
-#&gt; │ [1, 2]    │
-#&gt; │ [10, 2]   │
-#&gt; └───────────┘
+<div class="highlight"><pre><span></span><code>#&gt; shape: (2, 4)
+#&gt; ┌─────────────┬─────┬──────────────┬─────────────┐
+#&gt; │ s           ┆ n   ┆ head_by_expr ┆ head_by_lit │
+#&gt; │ ---         ┆ --- ┆ ---          ┆ ---         │
+#&gt; │ list[i32]   ┆ i32 ┆ list[i32]    ┆ list[i32]   │
+#&gt; ╞═════════════╪═════╪══════════════╪═════════════╡
+#&gt; │ [1, 2, … 4] ┆ 1   ┆ [1]          ┆ [1, 2]      │
+#&gt; │ [10, 2, 1]  ┆ 2   ┆ [10, 2]      ┆ [10, 2]     │
+#&gt; └─────────────┴─────┴──────────────┴─────────────┘
 </code></pre></div>
 
 

@@ -1,11 +1,11 @@
 
-# Sort an Expr
+# Sort values in a list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L78)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L63)
 
 ## Description
 
-Sort this column. If used in a groupby context, the groups are sorted.
+Sort values in a list
 
 ## Usage
 
@@ -28,3 +28,23 @@ Sort values in descending order
 ## Value
 
 Expr
+
+## Examples
+
+``` r
+library(polars)
+
+df = pl$DataFrame(list(values = list(c(1, 2, 3, NA), c(2, 3), NA_real_)))
+df$with_columns(sort = pl$col("values")$list$sort())
+```
+
+    #> shape: (3, 2)
+    #> ┌────────────────────┬────────────────────┐
+    #> │ values             ┆ sort               │
+    #> │ ---                ┆ ---                │
+    #> │ list[f64]          ┆ list[f64]          │
+    #> ╞════════════════════╪════════════════════╡
+    #> │ [1.0, 2.0, … null] ┆ [null, 1.0, … 3.0] │
+    #> │ [2.0, 3.0]         ┆ [2.0, 3.0]         │
+    #> │ [null]             ┆ [null]             │
+    #> └────────────────────┴────────────────────┘

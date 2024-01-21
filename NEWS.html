@@ -11109,11 +11109,11 @@
   
   
     <li class="md-nav__item">
-      <a href="man/ExprList_lengths.html" class="md-nav__link">
+      <a href="man/ExprList_len.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    lengths
+    len
   </span>
   
 
@@ -15881,21 +15881,28 @@
 <ul>
 <li><code>&lt;Expr&gt;$where()</code> is removed. Use <code>&lt;Expr&gt;$filter()</code> instead (<a href="https://github.com/pola-rs/r-polars/issues/718">#718</a>).</li>
 <li>Deprecated functions from 0.12.x are removed (<a href="https://github.com/pola-rs/r-polars/issues/714">#714</a>).<ul>
-<li><code>&lt;Expr&gt;$apply()</code> and <code>&lt;Expr&gt;$map()</code>, use <code>$map_elements()</code> and <code>$map_batches()</code> instead.</li>
+<li><code>&lt;Expr&gt;$apply()</code> and <code>&lt;Expr&gt;$map()</code>, use <code>$map_elements()</code> and 
+    <code>$map_batches()</code> instead.</li>
 <li><code>pl$polars_info()</code>, use <code>polars_info()</code> instead.</li>
 </ul>
 </li>
-<li>The environment variables used when building the library have been changed. (<a href="https://github.com/pola-rs/r-polars/issues/693">#693</a>)
-    This only affects selecting the feature flag and selecting profiles during source installation.<ul>
+<li>The environment variables used when building the library have been changed 
+    (<a href="https://github.com/pola-rs/r-polars/issues/693">#693</a>). This only affects selecting the feature flag and selecting profiles 
+    during source installation.<ul>
 <li><code>RPOLARS_PROFILE</code> is renamed to <code>LIBR_POLARS_PROFILE</code></li>
 <li><code>RPOLARS_FULL_FEATURES</code> is removed and <code>LIBR_POLARS_FEATURES</code> is added.
-    If want to select the <code>full_features</code>, we need to set <code>LIBR_POLARS_FEATURES="full_features"</code>.</li>
+    To select the <code>full_features</code>, set <code>LIBR_POLARS_FEATURES="full_features"</code>.</li>
 <li><code>RPOLARS_RUST_SOURCE</code>, which was used for development, has been removed.
-    If you want to use library binaries located elsewhere, use <code>LIBR_POLARS_PATH</code> instead.</li>
+    If you want to use library binaries located elsewhere, use <code>LIBR_POLARS_PATH</code>
+    instead.</li>
 </ul>
 </li>
 <li>Remove the <code>eager</code> argument of <code>&lt;SQLContext&gt;$execute()</code>.
-    Use the <code>$collect()</code> method after <code>$execute()</code> or <code>as_polars_df</code> to get the result as a <code>DataFrame</code>. (<a href="https://github.com/pola-rs/r-polars/issues/719">#719</a>)</li>
+    Use the <code>$collect()</code> method after <code>$execute()</code> or <code>as_polars_df</code> to get the 
+    result as a <code>DataFrame</code>. (<a href="https://github.com/pola-rs/r-polars/issues/719">#719</a>)</li>
+<li>The argument <code>name_generator</code> of <code>$list$to_struct()</code> is renamed <code>fields</code> 
+    (<a href="https://github.com/pola-rs/r-polars/issues/724">#724</a>).</li>
+<li>The S3 method <code>[</code> for the <code>$list</code> subnamespace is removed (<a href="https://github.com/pola-rs/r-polars/issues/724">#724</a>).</li>
 </ul>
 <h3 id="whats-changed">What's changed</h3>
 <ul>
@@ -15929,6 +15936,8 @@
 </li>
 <li><code>&lt;DataFrame&gt;$describe()</code> now works with all datatypes. It also gains an 
     <code>interpolation</code> argument that is used for quantiles computation (<a href="https://github.com/pola-rs/r-polars/issues/717">#717</a>).</li>
+<li><code>$list$lengths()</code> is deprecated and will be removed in 0.14.0. Use 
+    <code>$list$len()</code> instead (<a href="https://github.com/pola-rs/r-polars/issues/724">#724</a>).</li>
 </ul>
 <h2 id="polars-0122">polars 0.12.2</h2>
 <p>This is a small release including a few documentation improvements and internal updates.</p>
