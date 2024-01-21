@@ -1,11 +1,12 @@
 
 # from_arrow
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/convert.R#L27)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/convert.R#L29)
 
 ## Description
 
-import Arrow Table or Array
+Import Arrow Table or Array. Deprecated in favor of as_polars_df and
+as_polars_series. Will be removed in 0.14.0.
 
 ## Usage
 

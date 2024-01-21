@@ -1,7 +1,7 @@
 
 # To polars DataFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/as_polars.R#L30)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/as_polars.R#L50)
 
 ## Description
 
@@ -224,8 +224,8 @@ DataFrame. Useful in interactive mode to not lock R session.
 <code id="as_polars_df_:_rechunk">rechunk</code>
 </td>
 <td>
-bool rewrite in one array per column, Implemented for ChunkedArray Array
-is already contiguous. Not implemented for Table. C
+A logical flag (default <code>TRUE</code>). Make sure that all data of
+each column is in contiguous memory.
 </td>
 </tr>
 <tr>
@@ -233,10 +233,10 @@ is already contiguous. Not implemented for Table. C
 <code id="as_polars_df_:_schema">schema</code>
 </td>
 <td>
-named list of DataTypes or char vec of names. Same length as arrow
-table. If schema names or types do not match arrow table, the columns
-will be renamed/recast. NULL default is to import columns as is. Takes
-no effect for Array or ChunkedArray
+named list of DataTypes, or character vector of column names. Should be
+the same length as the number of columns of <code>x</code>. If schema
+names or types do not match <code>x</code>, the columns will be
+renamed/recast. If <code>NULL</code> (default), convert columns as is.
 </td>
 </tr>
 <tr>
@@ -244,8 +244,7 @@ no effect for Array or ChunkedArray
 <code id="as_polars_df_:_schema_overrides">schema_overrides</code>
 </td>
 <td>
-named list of DataTypes. Name some columns to recast by the DataType.
-Takes not effect for Array or ChunkedArray
+named list of DataTypes. Cast some columns to the DataType.
 </td>
 </tr>
 </table>
@@ -288,12 +287,92 @@ as_polars_df(mtcars, rownames = "car")
     #> └────────────────┴──────┴─────┴───────┴───┴─────┴─────┴──────┴──────┘
 
 ``` r
-# Convert an arrow Table to a polars LazyFrame
-lf = as_polars_df(
-  arrow::as_arrow_table(mtcars)
-)$lazy()
+# Convert an arrow Table to a polars DataFrame
+at = arrow::arrow_table(x = 1:5, y = 6:10)
+as_polars_df(at)
+```
 
-# Collect all rows
+    #> shape: (5, 2)
+    #> ┌─────┬─────┐
+    #> │ x   ┆ y   │
+    #> │ --- ┆ --- │
+    #> │ i32 ┆ i32 │
+    #> ╞═════╪═════╡
+    #> │ 1   ┆ 6   │
+    #> │ 2   ┆ 7   │
+    #> │ 3   ┆ 8   │
+    #> │ 4   ┆ 9   │
+    #> │ 5   ┆ 10  │
+    #> └─────┴─────┘
+
+``` r
+# Convert an arrow Table, with renaming all columns
+as_polars_df(
+  at,
+  schema = c("a", "b")
+)
+```
+
+    #> shape: (5, 2)
+    #> ┌─────┬─────┐
+    #> │ a   ┆ b   │
+    #> │ --- ┆ --- │
+    #> │ i32 ┆ i32 │
+    #> ╞═════╪═════╡
+    #> │ 1   ┆ 6   │
+    #> │ 2   ┆ 7   │
+    #> │ 3   ┆ 8   │
+    #> │ 4   ┆ 9   │
+    #> │ 5   ┆ 10  │
+    #> └─────┴─────┘
+
+``` r
+# Convert an arrow Table, with renaming and casting all columns
+as_polars_df(
+  at,
+  schema = list(a = pl$Int64, b = pl$String)
+)
+```
+
+    #> shape: (5, 2)
+    #> ┌─────┬─────┐
+    #> │ a   ┆ b   │
+    #> │ --- ┆ --- │
+    #> │ i64 ┆ str │
+    #> ╞═════╪═════╡
+    #> │ 1   ┆ 6   │
+    #> │ 2   ┆ 7   │
+    #> │ 3   ┆ 8   │
+    #> │ 4   ┆ 9   │
+    #> │ 5   ┆ 10  │
+    #> └─────┴─────┘
+
+``` r
+# Convert an arrow Table, with renaming and casting some columns
+as_polars_df(
+  at,
+  schema_overrides = list(y = pl$String) # cast some columns
+)
+```
+
+    #> shape: (5, 2)
+    #> ┌─────┬─────┐
+    #> │ x   ┆ y   │
+    #> │ --- ┆ --- │
+    #> │ i32 ┆ str │
+    #> ╞═════╪═════╡
+    #> │ 1   ┆ 6   │
+    #> │ 2   ┆ 7   │
+    #> │ 3   ┆ 8   │
+    #> │ 4   ┆ 9   │
+    #> │ 5   ┆ 10  │
+    #> └─────┴─────┘
+
+``` r
+# Create a polars DataFrame from a data.frame
+lf = as_polars_df(mtcars)$lazy()
+
+# Collect all rows from the LazyFrame
 as_polars_df(lf)
 ```
 
@@ -315,7 +394,7 @@ as_polars_df(lf)
     #> └──────┴─────┴───────┴───────┴───┴─────┴─────┴──────┴──────┘
 
 ``` r
-# Fetch 5 rows
+# Fetch 5 rows from the LazyFrame
 as_polars_df(lf, 5)
 ```
 
