@@ -1,7 +1,7 @@
 
 # To polars Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/as_polars.R#L243)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/as_polars.R#L242)
 
 ## Description
 
@@ -29,6 +29,12 @@ as_polars_series(x, name = NULL, ...)
 
 # S3 method for class 'vctrs_rcrd'
 as_polars_series(x, name = NULL, ...)
+
+# S3 method for class 'Array'
+as_polars_series(x, name = NULL, ..., rechunk = TRUE)
+
+# S3 method for class 'ChunkedArray'
+as_polars_series(x, name = NULL, ..., rechunk = TRUE)
 </code></pre>
 
 ## Arguments
@@ -58,6 +64,15 @@ created.
 </td>
 <td>
 Additional arguments passed to methods.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="as_polars_series_:_rechunk">rechunk</code>
+</td>
+<td>
+A logical flag (default <code>TRUE</code>). Make sure that all data is
+in contiguous memory.
 </td>
 </tr>
 </table>
