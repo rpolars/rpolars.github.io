@@ -134,7 +134,7 @@ pl$LazyFrame(a = 1, b = 2, c = 3, d = 4)$select(
 ```
 
     #>    user  system elapsed 
-    #>   0.023   0.001   0.431
+    #>   0.024   0.000   0.424
 
 ``` r
 # map in parallel 1: Overhead to start up extra R processes / sessions
@@ -155,7 +155,7 @@ pl$LazyFrame(a = 1, b = 2, c = 3, d = 4)$select(
 ```
 
     #>    user  system elapsed 
-    #>    0.01    0.00    0.86
+    #>   0.010   0.001   0.874
 
 ``` r
 # map in parallel 2: Reuse R processes in "polars global_rpool".
@@ -174,4 +174,4 @@ pl$LazyFrame(a = 1, b = 2, c = 3, d = 4)$select(
 ```
 
     #>    user  system elapsed 
-    #>   0.009   0.000   0.114
+    #>   0.007   0.000   0.110
