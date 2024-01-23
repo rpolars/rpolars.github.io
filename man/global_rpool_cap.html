@@ -14223,6 +14223,27 @@
   
   
     <li class="md-nav__item">
+      <a href="polars_options.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    polars_options
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="show_all_public_functions.html" class="md-nav__link">
         
   
@@ -14413,7 +14434,7 @@
 
 <h1 id="getset-global-r-session-pool-capacity-deprecated">Get/set global R session pool capacity (DEPRECATED)</h1>
 <h2 id="description">Description</h2>
-<p>Deprecated. Use pl$options to get, and pl$set_options() to set.</p>
+<p>Deprecated. Use polars_options() to get, and pl$set_options() to set.</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>pl_get_global_rpool_cap()
 
@@ -14444,12 +14465,12 @@ has as default double as many thread workers as cores. If any worker are
 queuing for or using R sessions, other workers can still continue any
 native polars parts as much as possible.</p>
 <h2 id="value">Value</h2>
-<p><code>pl$options$rpool_cap</code> returns the capacity ("limit") of
-co-running external R sessions / processes.
-<code>pl$options$rpool_active</code> is the number of R sessions are
-already spawned in the pool. <code>rpool_cap</code> is the limit of new
-R sessions to spawn. Anytime a polars thread worker needs a background R
-session specifically to run R code embedded in a query via
+<p><code>polars_options()$rpool_cap</code> returns the capacity ("limit")
+of co-running external R sessions / processes.
+<code>polars_options()$rpool_active</code> is the number of R sessions
+are already spawned in the pool. <code>rpool_cap</code> is the limit of
+new R sessions to spawn. Anytime a polars thread worker needs a
+background R session specifically to run R code embedded in a query via
 <code>$map_batches(…, in_background = TRUE)</code> or
 <code>$map_elements(…, in_background = TRUE)</code>, it will obtain any
 R session idling in rpool, or spawn a new R session (process) if
@@ -14459,17 +14480,17 @@ until an R session is idle.</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">default</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="n">options</span><span class="o">$</span><span class="n">rpool_cap</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nf">print</span><span class="p">()</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">default</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">polars_options</span><span class="p">()</span><span class="o">$</span><span class="n">rpool_cap</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nf">print</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [1] 4
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">set_options</span><span class="p">(</span><span class="n">rpool_cap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">8</span><span class="p">)</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">pl</span><span class="o">$</span><span class="n">options</span><span class="o">$</span><span class="n">rpool_cap</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nf">options</span><span class="p">(</span><span class="n">polars.rpool_cap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">8</span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nf">polars_options</span><span class="p">()</span><span class="o">$</span><span class="n">rpool_cap</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [1] 8
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">set_options</span><span class="p">(</span><span class="n">rpool_cap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">default</span><span class="p">)</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">pl</span><span class="o">$</span><span class="n">options</span><span class="o">$</span><span class="n">rpool_cap</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nf">options</span><span class="p">(</span><span class="n">polars.rpool_cap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">default</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nf">polars_options</span><span class="p">()</span><span class="o">$</span><span class="n">rpool_cap</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [1] 4
 </code></pre></div>

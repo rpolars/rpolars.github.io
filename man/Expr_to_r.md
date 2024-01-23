@@ -14,7 +14,7 @@ an empty DataFrame and return the first Series to R.
   df = NULL,
   i = 0,
   ...,
-  int64_conversion = pl\$options\$int64_conversion
+  int64_conversion = polars_options()\$int64_conversion
 )
 </code></pre>
 
@@ -45,7 +45,7 @@ column).
 <code id="Expr_to_r_:_...">…</code>
 </td>
 <td>
-Ignored.
+Any args pased to <code>as.data.frame()</code>.
 </td>
 </tr>
 <tr>

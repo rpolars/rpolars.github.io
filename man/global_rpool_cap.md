@@ -3,7 +3,7 @@
 
 ## Description
 
-Deprecated. Use pl$options to get, and pl$set_options() to set.
+Deprecated. Use polars_options() to get, and pl$set_options() to set.
 
 ## Usage
 
@@ -40,12 +40,12 @@ native polars parts as much as possible.
 
 ## Value
 
-<code>pl$options$rpool_cap</code> returns the capacity ("limit") of
-co-running external R sessions / processes.
-<code>pl$options$rpool_active</code> is the number of R sessions are
-already spawned in the pool. <code>rpool_cap</code> is the limit of new
-R sessions to spawn. Anytime a polars thread worker needs a background R
-session specifically to run R code embedded in a query via
+<code>polars_options()$rpool_cap</code> returns the capacity ("limit")
+of co-running external R sessions / processes.
+<code>polars_options()$rpool_active</code> is the number of R sessions
+are already spawned in the pool. <code>rpool_cap</code> is the limit of
+new R sessions to spawn. Anytime a polars thread worker needs a
+background R session specifically to run R code embedded in a query via
 <code>$map_batches(…, in_background = TRUE)</code> or
 <code>$map_elements(…, in_background = TRUE)</code>, it will obtain any
 R session idling in rpool, or spawn a new R session (process) if
@@ -58,21 +58,21 @@ until an R session is idle.
 ``` r
 library(polars)
 
-default = pl$options$rpool_cap |> print()
+default = polars_options()$rpool_cap |> print()
 ```
 
     #> [1] 4
 
 ``` r
-pl$set_options(rpool_cap = 8)
-pl$options$rpool_cap
+options(polars.rpool_cap = 8)
+polars_options()$rpool_cap
 ```
 
     #> [1] 8
 
 ``` r
-pl$set_options(rpool_cap = default)
-pl$options$rpool_cap
+options(polars.rpool_cap = default)
+polars_options()$rpool_cap
 ```
 
     #> [1] 4

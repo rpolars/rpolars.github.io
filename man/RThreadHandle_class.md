@@ -17,7 +17,7 @@ NOTICE: The background thread cannot use the main R session, but can
 access the pool of extra R sessions to process R code embedded in polars
 query via <code>$map_batches(…, in_background = TRUE)</code> or
 <code style="white-space: pre;">$map_elements(background=TRUE)</code>.
-Use <code>pl$set_options(rpool_cap = XX)</code> to limit number of
+Use <code>options(polars.rpool_cap = XX)</code> to limit number of
 parallel R sessions. Starting polars
 <code>\<LazyFrame\>$collect_in_background()</code> with e.g. some
 <code>$map_batches(…, in_background = FALSE)</code> will raise an Error

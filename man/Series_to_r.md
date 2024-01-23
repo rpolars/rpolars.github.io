@@ -14,11 +14,11 @@ return R list (implicit as.list)
 
 ## Usage
 
-<pre><code class='language-R'>Series_to_r(int64_conversion = pl\$options\$int64_conversion)
+<pre><code class='language-R'>Series_to_r(int64_conversion = polars_options()\$int64_conversion)
 
-Series_to_vector(int64_conversion = pl\$options\$int64_conversion)
+Series_to_vector(int64_conversion = polars_options()\$int64_conversion)
 
-Series_to_r_list(int64_conversion = pl\$options\$int64_conversion)
+Series_to_r_list(int64_conversion = polars_options()\$int64_conversion)
 </code></pre>
 
 ## Arguments

@@ -1,7 +1,7 @@
 
 # Return Polars DataFrame as R data.frame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L855)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L861)
 
 ## Description
 
@@ -9,7 +9,10 @@ Return Polars DataFrame as R data.frame
 
 ## Usage
 
-<pre><code class='language-R'>DataFrame_to_data_frame(..., int64_conversion = pl\$options\$int64_conversion)
+<pre><code class='language-R'>DataFrame_to_data_frame(
+  ...,
+  int64_conversion = polars_options()\$int64_conversion
+)
 </code></pre>
 
 ## Arguments

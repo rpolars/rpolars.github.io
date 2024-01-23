@@ -59,7 +59,7 @@ Which of the duplicate rows to keep:
 Keep the same order as the original <code>DataFrame</code>. Setting this
 to <code>TRUE</code> makes it more expensive to compute and blocks the
 possibility to run on the streaming engine. The default value can be
-changed with <code>pl$set_options(maintain_order = TRUE)</code>.
+changed with <code>options(polars.maintain_order = TRUE)</code>.
 </td>
 </tr>
 </table>
@@ -86,7 +86,7 @@ df$height
 df$unique()$height
 ```
 
-    #> [1] 65
+    #> [1] 55
 
 ``` r
 df$unique(subset = "x")$height
@@ -98,21 +98,21 @@ df$unique(subset = "x")$height
 df$unique(keep = "last")
 ```
 
-    #> shape: (65, 2)
+    #> shape: (55, 2)
     #> ┌─────┬─────┐
     #> │ x   ┆ y   │
     #> │ --- ┆ --- │
     #> │ i32 ┆ i32 │
     #> ╞═════╪═════╡
-    #> │ 8   ┆ 4   │
-    #> │ 10  ┆ 7   │
-    #> │ 9   ┆ 9   │
-    #> │ 5   ┆ 2   │
+    #> │ 7   ┆ 7   │
+    #> │ 9   ┆ 4   │
+    #> │ 9   ┆ 8   │
+    #> │ 4   ┆ 10  │
     #> │ …   ┆ …   │
-    #> │ 6   ┆ 9   │
-    #> │ 4   ┆ 8   │
-    #> │ 1   ┆ 10  │
-    #> │ 4   ┆ 3   │
+    #> │ 2   ┆ 2   │
+    #> │ 9   ┆ 9   │
+    #> │ 6   ┆ 8   │
+    #> │ 9   ┆ 3   │
     #> └─────┴─────┘
 
 ``` r
@@ -120,19 +120,19 @@ df$unique(keep = "last")
 df$unique(keep = "none")
 ```
 
-    #> shape: (38, 2)
+    #> shape: (23, 2)
     #> ┌─────┬─────┐
     #> │ x   ┆ y   │
     #> │ --- ┆ --- │
     #> │ i32 ┆ i32 │
     #> ╞═════╪═════╡
-    #> │ 5   ┆ 7   │
-    #> │ 5   ┆ 8   │
-    #> │ 9   ┆ 4   │
-    #> │ 3   ┆ 9   │
-    #> │ …   ┆ …   │
-    #> │ 3   ┆ 4   │
-    #> │ 1   ┆ 8   │
+    #> │ 2   ┆ 4   │
+    #> │ 2   ┆ 3   │
+    #> │ 5   ┆ 6   │
     #> │ 8   ┆ 10  │
-    #> │ 4   ┆ 3   │
+    #> │ …   ┆ …   │
+    #> │ 9   ┆ 3   │
+    #> │ 2   ┆ 10  │
+    #> │ 2   ┆ 8   │
+    #> │ 10  ┆ 3   │
     #> └─────┴─────┘

@@ -1,7 +1,7 @@
 
 # Return Polars DataFrame as a list of vectors
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L886)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L892)
 
 ## Description
 
@@ -12,7 +12,7 @@ Return Polars DataFrame as a list of vectors
 <pre><code class='language-R'>DataFrame_to_list(
   unnest_structs = TRUE,
   ...,
-  int64_conversion = pl\$options\$int64_conversion
+  int64_conversion = polars_options()\$int64_conversion
 )
 </code></pre>
 
@@ -34,7 +34,7 @@ struct column.
 <code id="DataFrame_to_list_:_...">…</code>
 </td>
 <td>
-Ignored.
+Any args pased to <code>as.data.frame()</code>.
 </td>
 </tr>
 <tr>

@@ -14123,6 +14123,27 @@
   
   
     <li class="md-nav__item">
+      <a href="man/polars_options.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    polars_options
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="man/show_all_public_functions.html" class="md-nav__link">
         
   
@@ -15942,6 +15963,20 @@
     rewritten and work better (<a href="https://github.com/pola-rs/r-polars/issues/727">#727</a>).</li>
 <li><code>pl$from_arrow()</code> is deprecated and will be removed in 0.14.0.
     Use <code>as_polars_df()</code> or <code>as_polars_series()</code> instead (<a href="https://github.com/pola-rs/r-polars/issues/728">#728</a>).</li>
+<li>Options handling has been rewritten to match the standard option handling in 
+    R (<a href="https://github.com/pola-rs/r-polars/issues/726">#726</a>):<ul>
+<li>Options are now passed via <code>options()</code>. The option names don't change but
+    they must be prefixed with <code>"polars."</code>. For example, we can now pass
+    <code>options(polars.strictly_immutable = FALSE)</code>.</li>
+<li>Options can be accessed with <code>polars_options()</code>, which returns a named
+    list (this is the replacement of <code>pl$options</code>).</li>
+<li>Options can be reset with <code>polars_options_reset()</code> (this is the 
+    replacement of <code>pl$reset_options()</code>).</li>
+<li><code>pl$set_options()</code> and <code>pl$reset_options()</code> are deprecated and will be
+    removed in 0.14.0.</li>
+<li>The option <code>polars.df_print</code> has been renamed <code>polars.df_knitr_print</code>.</li>
+</ul>
+</li>
 </ul>
 <h2 id="polars-0122">polars 0.12.2</h2>
 <p>This is a small release including a few documentation improvements and internal updates.</p>

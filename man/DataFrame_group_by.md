@@ -12,7 +12,7 @@ structure. This structure can then be used by several functions
 
 ## Usage
 
-<pre><code class='language-R'>DataFrame_group_by(..., maintain_order = pl\$options\$maintain_order)
+<pre><code class='language-R'>DataFrame_group_by(..., maintain_order = polars_options()\$maintain_order)
 </code></pre>
 
 ## Arguments
@@ -34,7 +34,7 @@ Any Expr(s) or string(s) naming a column.
 Keep the same order as the original <code>DataFrame</code>. Setting this
 to <code>TRUE</code> makes it more expensive to compute and blocks the
 possibility to run on the streaming engine. The default value can be
-changed with <code>pl$set_options(maintain_order = TRUE)</code>.
+changed with <code>options(polars.maintain_order = TRUE)</code>.
 </td>
 </tr>
 </table>

@@ -1,7 +1,7 @@
 
 # Pivot data from long to wide
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1407)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1413)
 
 ## Description
 
@@ -80,7 +80,7 @@ an Expr e.g. <code>pl$element()$sum()</code>
 Keep the same order as the original <code>DataFrame</code>. Setting this
 to <code>TRUE</code> makes it more expensive to compute and blocks the
 possibility to run on the streaming engine. The default value can be
-changed with <code>pl$set_options(maintain_order = TRUE)</code>.
+changed with <code>options(polars.maintain_order = TRUE)</code>.
 </td>
 </tr>
 <tr>

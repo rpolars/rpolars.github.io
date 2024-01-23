@@ -29,7 +29,7 @@ string the new name
 </td>
 <td>
 bool rename in-place, breaks immutability If true will throw an error
-unless this option has been set: <code>pl$set_options(strictly_immutable
+unless this option has been set: <code>options(polars.strictly_immutable
 = FALSE)</code>
 </td>
 </tr>

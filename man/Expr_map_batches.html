@@ -14225,6 +14225,27 @@
   
   
     <li class="md-nav__item">
+      <a href="polars_options.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    polars_options
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="show_all_public_functions.html" class="md-nav__link">
         
   
@@ -14462,7 +14483,7 @@ Aggregate list. Map from vector to group in group_by context.
 </td>
 <td>
 Boolean. Whether to execute the map in a background R process. Combined
-with setting e.g. <code>pl$set_options(rpool_cap = 4)</code> it can
+with setting e.g. <code>options(polars.rpool_cap = 4)</code> it can
 speed up some slow R functions as they can run in parallel R sessions.
 The communication speed between processes is quite slower than between
 threads. This will likely only give a speed-up in a "low IO - high CPU"
@@ -14488,9 +14509,9 @@ query and the moment a <code>$map_batches()</code> call is evaluated.
 Any native polars computations can still be executed meanwhile. If
 <code>in_background = TRUE</code>, the map will run in one or more other
 R sessions and will not have access to global variables. Use
-<code>pl$set_options(rpool_cap = 4)</code> and
-<code>pl$options$rpool_cap</code> to see and view number of parallel R
-sessions.</p>
+<code>options(polars.rpool_cap = 4)</code> and
+<code>polars_options()$rpool_cap</code> to set and view number of
+parallel R sessions.</p>
 <h2 id="value">Value</h2>
 <p>Expr</p>
 <h2 id="examples">Examples</h2>
@@ -14532,12 +14553,12 @@ sessions.</p>
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">)</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nf">system.time</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   0.013   0.000   0.414
+#&gt;   0.023   0.001   0.431
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># map in parallel 1: Overhead to start up extra R processes / sessions</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">pl</span><span class="o">$</span><span class="nf">set_options</span><span class="p">(</span><span class="n">rpool_cap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="c1"># drop any previous processes, just to show start-up overhead</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">set_options</span><span class="p">(</span><span class="n">rpool_cap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span><span class="p">)</span><span class="w"> </span><span class="c1"># set back to 4, the default</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">pl</span><span class="o">$</span><span class="n">options</span><span class="o">$</span><span class="n">rpool_cap</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nf">options</span><span class="p">(</span><span class="n">polars.rpool_cap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="c1"># drop any previous processes, just to show start-up overhead</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nf">options</span><span class="p">(</span><span class="n">polars.rpool_cap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span><span class="p">)</span><span class="w"> </span><span class="c1"># set back to 4, the default</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nf">polars_options</span><span class="p">()</span><span class="o">$</span><span class="n">rpool_cap</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [1] 4
 </code></pre></div>
@@ -14549,10 +14570,10 @@ sessions.</p>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">)</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nf">system.time</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   0.005   0.000   0.668
+#&gt;    0.01    0.00    0.86
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># map in parallel 2: Reuse R processes in &quot;polars global_rpool&quot;.</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">pl</span><span class="o">$</span><span class="n">options</span><span class="o">$</span><span class="n">rpool_cap</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nf">polars_options</span><span class="p">()</span><span class="o">$</span><span class="n">rpool_cap</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [1] 4
 </code></pre></div>
@@ -14564,7 +14585,7 @@ sessions.</p>
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">)</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nf">system.time</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   0.004   0.000   0.112
+#&gt;   0.009   0.000   0.114
 </code></pre></div>
 
 

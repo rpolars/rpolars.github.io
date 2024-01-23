@@ -14214,6 +14214,27 @@
   
   
     <li class="md-nav__item">
+      <a href="polars_options.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    polars_options
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="show_all_public_functions.html" class="md-nav__link">
         
   
@@ -14401,7 +14422,7 @@ structure. This structure can then be used by several functions
 (<code style="white-space: pre;">$agg()</code>,
 <code style="white-space: pre;">$filter()</code>, etc.).</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>&lt;LazyFrame&gt;$group_by(..., maintain_order = pl\$options\$maintain_order)
+<pre><code class='language-R'>&lt;LazyFrame&gt;$group_by(..., maintain_order = polars_options()\$maintain_order)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
@@ -14422,7 +14443,7 @@ Any Expr(s) or string(s) naming a column.
 Keep the same order as the original <code>LazyFrame</code>. Setting this
 to <code>TRUE</code> makes it more expensive to compute and blocks the
 possibility to run on the streaming engine. The default value can be
-changed with <code>pl$set_options(maintain_order = TRUE)</code>.
+changed with <code>options(polars.maintain_order = TRUE)</code>.
 </td>
 </tr>
 </table>

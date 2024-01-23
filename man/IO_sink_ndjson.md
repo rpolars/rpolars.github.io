@@ -42,7 +42,7 @@ File path to which the result should be written.
 Keep the same order as the original <code>LazyFrame</code>. Setting this
 to <code>TRUE</code> makes it more expensive to compute and blocks the
 possibility to run on the streaming engine. The default value can be
-changed with <code>pl$set_options(maintain_order = TRUE)</code>.
+changed with <code>options(polars.maintain_order = TRUE)</code>.
 </td>
 </tr>
 <tr>

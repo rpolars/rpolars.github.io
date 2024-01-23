@@ -30,7 +30,7 @@ Sort in descending order..
 <td>
 bool sort mutable in-place, breaks immutability If true will throw an
 error unless this option has been set:
-<code>pl$set_options(strictly_immutable = FALSE)</code>
+<code>options(polars.strictly_immutable = FALSE)</code>
 </td>
 </tr>
 </table>

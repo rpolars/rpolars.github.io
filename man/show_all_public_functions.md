@@ -110,17 +110,6 @@ pl$show_all_public_functions()
     #>           [ Int64 ; RPolarsDataType ]
     #>           [ Int8 ; RPolarsDataType ]
     #> 
-    #> 
-    #>        options ( list ):
-    #>           [ debug_polars ; logical ]
-    #>           [ do_not_repeat_call ; logical ]
-    #>           [ int64_conversion ; character ]
-    #>           [ maintain_order ; logical ]
-    #>           [ no_messages ; logical ]
-    #>           [ rpool_active ; numeric ]
-    #>           [ rpool_cap ; numeric ]
-    #>           [ strictly_immutable ; logical ]
-    #> 
     #>        [ PTime ; function ]
     #>        [ raw_list ; function ]
     #>        [ read_csv ; function ]

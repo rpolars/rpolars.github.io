@@ -44,13 +44,13 @@ function as follows:
 <ul>
 <li>
 
-<code>options(polars.df_print = “default”)</code> for the default print
-method.
+<code>options(polars.df_knitr_print = “default”)</code> for the default
+print method.
 
 </li>
 <li>
 
-<code>options(polars.df_print = “html”)</code> for the HTML table.
+<code>options(polars.df_knitr_print = “html”)</code> for the HTML table.
 
 </li>
 </ul>

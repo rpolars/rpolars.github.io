@@ -14214,6 +14214,27 @@
   
   
     <li class="md-nav__item">
+      <a href="polars_options.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    polars_options
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="show_all_public_functions.html" class="md-nav__link">
         
   
@@ -14417,7 +14438,7 @@ Sort the columns in descending order.
 </td>
 <td>
 if TRUE, will set flag mutably and return NULL. Remember to use
-pl$set_options(strictly_immutable = FALSE) otherwise an error will be
+options(polars.strictly_immutable = FALSE) otherwise an error will be
 thrown. If FALSE will return a cloned Series with set_flag which in the
 very most cases should be just fine.
 </td>

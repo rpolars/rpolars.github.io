@@ -54,7 +54,7 @@ Aggregate list. Map from vector to group in group_by context.
 </td>
 <td>
 Boolean. Whether to execute the map in a background R process. Combined
-with setting e.g. <code>pl$set_options(rpool_cap = 4)</code> it can
+with setting e.g. <code>options(polars.rpool_cap = 4)</code> it can
 speed up some slow R functions as they can run in parallel R sessions.
 The communication speed between processes is quite slower than between
 threads. This will likely only give a speed-up in a "low IO - high CPU"
@@ -82,9 +82,9 @@ query and the moment a <code>$map_batches()</code> call is evaluated.
 Any native polars computations can still be executed meanwhile. If
 <code>in_background = TRUE</code>, the map will run in one or more other
 R sessions and will not have access to global variables. Use
-<code>pl$set_options(rpool_cap = 4)</code> and
-<code>pl$options$rpool_cap</code> to see and view number of parallel R
-sessions.
+<code>options(polars.rpool_cap = 4)</code> and
+<code>polars_options()$rpool_cap</code> to set and view number of
+parallel R sessions.
 
 ## Value
 
@@ -134,13 +134,13 @@ pl$LazyFrame(a = 1, b = 2, c = 3, d = 4)$select(
 ```
 
     #>    user  system elapsed 
-    #>   0.013   0.000   0.414
+    #>   0.023   0.001   0.431
 
 ``` r
 # map in parallel 1: Overhead to start up extra R processes / sessions
-pl$set_options(rpool_cap = 0) # drop any previous processes, just to show start-up overhead
-pl$set_options(rpool_cap = 4) # set back to 4, the default
-pl$options$rpool_cap
+options(polars.rpool_cap = 0) # drop any previous processes, just to show start-up overhead
+options(polars.rpool_cap = 4) # set back to 4, the default
+polars_options()$rpool_cap
 ```
 
     #> [1] 4
@@ -155,11 +155,11 @@ pl$LazyFrame(a = 1, b = 2, c = 3, d = 4)$select(
 ```
 
     #>    user  system elapsed 
-    #>   0.005   0.000   0.668
+    #>    0.01    0.00    0.86
 
 ``` r
 # map in parallel 2: Reuse R processes in "polars global_rpool".
-pl$options$rpool_cap
+polars_options()$rpool_cap
 ```
 
     #> [1] 4
@@ -174,4 +174,4 @@ pl$LazyFrame(a = 1, b = 2, c = 3, d = 4)$select(
 ```
 
     #>    user  system elapsed 
-    #>   0.004   0.000   0.112
+    #>   0.009   0.000   0.114
