@@ -1,4 +1,5 @@
 
+
 # Collect and profile a lazy query.
 
 [**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1543)
@@ -218,8 +219,8 @@ pl$LazyFrame()$select(pl$lit(2) + 2)$profile()
     #> │ ---                 ┆ ---   ┆ --- │
     #> │ str                 ┆ u64   ┆ u64 │
     #> ╞═════════════════════╪═══════╪═════╡
-    #> │ optimization        ┆ 0     ┆ 19  │
-    #> │ projection(literal) ┆ 19    ┆ 100 │
+    #> │ optimization        ┆ 0     ┆ 12  │
+    #> │ projection(literal) ┆ 12    ┆ 84  │
     #> └─────────────────────┴───────┴─────┘
 
 ``` r
@@ -247,15 +248,15 @@ pl$LazyFrame(iris)$
     #> 
     #> $profile
     #> shape: (3, 3)
-    #> ┌────────────────────┬───────┬──────┐
-    #> │ node               ┆ start ┆ end  │
-    #> │ ---                ┆ ---   ┆ ---  │
-    #> │ str                ┆ u64   ┆ u64  │
-    #> ╞════════════════════╪═══════╪══════╡
-    #> │ optimization       ┆ 0     ┆ 24   │
-    #> │ sort(Sepal.Length) ┆ 24    ┆ 684  │
-    #> │ group_by(Species)  ┆ 687   ┆ 1146 │
-    #> └────────────────────┴───────┴──────┘
+    #> ┌────────────────────┬───────┬─────┐
+    #> │ node               ┆ start ┆ end │
+    #> │ ---                ┆ ---   ┆ --- │
+    #> │ str                ┆ u64   ┆ u64 │
+    #> ╞════════════════════╪═══════╪═════╡
+    #> │ optimization       ┆ 0     ┆ 21  │
+    #> │ sort(Sepal.Length) ┆ 21    ┆ 468 │
+    #> │ group_by(Species)  ┆ 471   ┆ 777 │
+    #> └────────────────────┴───────┴─────┘
 
 ``` r
 # -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)
@@ -294,7 +295,7 @@ pl$LazyFrame(iris)$
     #> │ ---                ┆ ---   ┆ ---   │
     #> │ str                ┆ u64   ┆ u64   │
     #> ╞════════════════════╪═══════╪═══════╡
-    #> │ optimization       ┆ 0     ┆ 11    │
-    #> │ sort(Sepal.Length) ┆ 11    ┆ 528   │
-    #> │ group_by(Species)  ┆ 532   ┆ 29734 │
+    #> │ optimization       ┆ 0     ┆ 9     │
+    #> │ sort(Sepal.Length) ┆ 9     ┆ 359   │
+    #> │ group_by(Species)  ┆ 362   ┆ 26574 │
     #> └────────────────────┴───────┴───────┘

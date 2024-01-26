@@ -1,4 +1,5 @@
 
+
 # Inner workings of the Series-class
 
 ## Description

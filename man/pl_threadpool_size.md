@@ -1,20 +1,46 @@
 
+
 # Get the number of threads in the Polars thread pool.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/info.R#L87)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/info.R#L103)
 
 ## Description
 
 The threadpool size can be overridden by setting the
 <code>POLARS_MAX_THREADS</code> environment variable before process
-start. (The thread pool is not behind a lock, so it cannot be modified
-once set). It is strongly recommended not to override this value as it
-will be set automatically by the engine.
+start. It cannot be modified once <code>polars</code> is loaded. It is
+strongly recommended not to override this value as it will be set
+automatically by the engine.
 
 ## Usage
 
 <pre><code class='language-R'>pl_threadpool_size()
 </code></pre>
+
+## Details
+
+For compatibility with CRAN, the threadpool size is set to 2 by default.
+To disable this behavior and let the engine determine the threadpool
+size, one of the following ways can be used:
+
+<ul>
+<li>
+
+Enable the <code>disable_limit_max_threads</code> feature of the
+library. This can be done by setting the feature flag when installing
+the package. See the installation vignette (<code>vignette(“install”,
+“polars”)</code>) for details.
+
+</li>
+<li>
+
+Set the <code>polars.limit_max_threads</code> option to
+<code>FALSE</code> with the <code>options()</code> function. Same as
+setting the <code>POLARS_MAX_THREADS</code> environment variable, this
+option must be set before loading the package.
+
+</li>
+</ul>
 
 ## Value
 

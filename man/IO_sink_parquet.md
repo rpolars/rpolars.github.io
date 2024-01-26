@@ -1,4 +1,5 @@
 
+
 # Stream the output of a query to a Parquet file
 
 ## Description

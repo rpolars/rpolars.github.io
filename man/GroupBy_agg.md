@@ -1,4 +1,5 @@
 
+
 # Aggregate over a GroupBy
 
 [**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/group_by.R#L89)
@@ -52,6 +53,6 @@ pl$DataFrame(
     #> │ --- ┆ ---     ┆ ---          │
     #> │ str ┆ f64     ┆ f64          │
     #> ╞═════╪═════════╪══════════════╡
-    #> │ two ┆ 6.0     ┆ 2.0          │
     #> │ one ┆ 9.0     ┆ 4.5          │
+    #> │ two ┆ 6.0     ┆ 2.0          │
     #> └─────┴─────────┴──────────────┘

@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.5">
     
     
       
@@ -14571,12 +14571,13 @@ cannot be changed at runtime.</p>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1">#&gt; </span>
 <a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1">#&gt; Thread pool size: 4 </span>
 <a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1">#&gt; </span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="c1">#&gt; Features:                         </span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1">#&gt; default              TRUE</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="c1">#&gt; full_features        TRUE</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="c1">#&gt; simd                 TRUE</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="c1">#&gt; sql                  TRUE</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="c1">#&gt; rpolars_debug_print FALSE</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="c1">#&gt; Features:                               </span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1">#&gt; default                    TRUE</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="c1">#&gt; full_features              TRUE</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="c1">#&gt; disable_limit_max_threads  TRUE</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="c1">#&gt; simd                       TRUE</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="c1">#&gt; sql                        TRUE</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="c1">#&gt; rpolars_debug_print       FALSE</span>
 </code></pre></div>
 <p>At this time, the following environment variables can be used to change
 the Rust library build time options.</p>
@@ -14584,7 +14585,23 @@ the Rust library build time options.</p>
 <p>The feature flags can be set by the <code>LIBR_POLARS_FEATURES</code> environment
 variable. For example, to enable the <code>full_features</code> feature, set the
 environment variable as like <code>LIBR_POLARS_FEATURES="full_features"</code>.</p>
-<p>Note that these features requires the Rust nightly toolchain
+<p>Currently <code>full_features</code> would work as a combination of the following
+features.</p>
+<ul>
+<li>Features for CRAN compatibility<ul>
+<li><code>disable_limit_max_threads</code>, this feature disables the automatic
+    limit of the maximum number of threads to 2 for CRAN
+    compatibility, and the maximum number of threads is used by
+    default. See <code>?pl_threadpool_size</code> for details.</li>
+</ul>
+</li>
+<li>Features for nightly toolchain<ul>
+<li><code>simd</code> for SIMD support.</li>
+<li><code>sql</code> for enable <code>pl$SQLContext()</code>.</li>
+</ul>
+</li>
+</ul>
+<p>Note that nightly features requires the Rust nightly toolchain
 nightly-2023-12-23.</p>
 <h4 id="profile">Profile</h4>
 <p>The profile can be set by the <code>LIBR_POLARS_PROFILE</code> environment
@@ -14647,10 +14664,10 @@ Rust toolchain is required.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      <script src="../assets/javascripts/bundle.c18c5fb9.min.js"></script>
       
     
   </body>

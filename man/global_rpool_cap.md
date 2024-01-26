@@ -1,4 +1,5 @@
 
+
 # Get/set global R session pool capacity (DEPRECATED)
 
 ## Description

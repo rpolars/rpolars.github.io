@@ -1,7 +1,8 @@
 
+
 # Check if the global string cache is enabled
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/options.R#L377)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/options.R#L379)
 
 ## Description
 

@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.5">
     
     
       
@@ -1752,6 +1752,15 @@
   <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
       Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details
     </span>
   </a>
   
@@ -14361,6 +14370,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -14397,16 +14415,39 @@
 
 
 <h1 id="get-the-number-of-threads-in-the-polars-thread-pool">Get the number of threads in the Polars thread pool.</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/info.R#L87"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/info.R#L103"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>The threadpool size can be overridden by setting the
 <code>POLARS_MAX_THREADS</code> environment variable before process
-start. (The thread pool is not behind a lock, so it cannot be modified
-once set). It is strongly recommended not to override this value as it
-will be set automatically by the engine.</p>
+start. It cannot be modified once <code>polars</code> is loaded. It is
+strongly recommended not to override this value as it will be set
+automatically by the engine.</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>pl$threadpool_size()
 </code></pre>
+
+<h2 id="details">Details</h2>
+<p>For compatibility with CRAN, the threadpool size is set to 2 by default.
+To disable this behavior and let the engine determine the threadpool
+size, one of the following ways can be used:</p>
+<ul>
+<li>
+
+Enable the <code>disable_limit_max_threads</code> feature of the
+library. This can be done by setting the feature flag when installing
+the package. See the installation vignette (<code>vignette(“install”,
+“polars”)</code>) for details.
+
+</li>
+<li>
+
+Set the <code>polars.limit_max_threads</code> option to
+<code>FALSE</code> with the <code>options()</code> function. Same as
+setting the <code>POLARS_MAX_THREADS</code> environment variable, this
+option must be set before loading the package.
+
+</li>
+</ul>
 
 <h2 id="value">Value</h2>
 <p>The number of threads</p>
@@ -14469,10 +14510,10 @@ will be set automatically by the engine.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      <script src="../assets/javascripts/bundle.c18c5fb9.min.js"></script>
       
     
   </body>

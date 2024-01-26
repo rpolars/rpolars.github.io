@@ -1,7 +1,8 @@
 
+
 # Report information of the package
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/info.R#L11)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/info.R#L15)
 
 ## Description
 
@@ -49,9 +50,22 @@ polars_info()
     #> 
     #> Thread pool size: 4 
     #> 
-    #> Features:                         
-    #> default              TRUE
-    #> full_features        TRUE
-    #> simd                 TRUE
-    #> sql                  TRUE
-    #> rpolars_debug_print FALSE
+    #> Features:                               
+    #> default                    TRUE
+    #> full_features              TRUE
+    #> disable_limit_max_threads  TRUE
+    #> simd                       TRUE
+    #> sql                        TRUE
+    #> rpolars_debug_print       FALSE
+
+``` r
+polars_info()$rust_polars
+```
+
+    #> [1] "0.36.2"
+
+``` r
+polars_info()$features$simd
+```
+
+    #> [1] TRUE

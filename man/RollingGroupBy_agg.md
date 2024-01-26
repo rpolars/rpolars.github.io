@@ -1,4 +1,5 @@
 
+
 # Aggregate over a RollingGroupBy
 
 [**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/group_by_rolling.R#L93)

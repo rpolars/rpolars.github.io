@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.5">
     
     
       
@@ -14397,7 +14397,7 @@
 
 
 <h1 id="report-information-of-the-package">Report information of the package</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/info.R#L11"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/info.R#L15"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>This function reports the following information:</p>
 <ul>
@@ -14436,12 +14436,21 @@ details)
 #&gt; 
 #&gt; Thread pool size: 4 
 #&gt; 
-#&gt; Features:                         
-#&gt; default              TRUE
-#&gt; full_features        TRUE
-#&gt; simd                 TRUE
-#&gt; sql                  TRUE
-#&gt; rpolars_debug_print FALSE
+#&gt; Features:                               
+#&gt; default                    TRUE
+#&gt; full_features              TRUE
+#&gt; disable_limit_max_threads  TRUE
+#&gt; simd                       TRUE
+#&gt; sql                        TRUE
+#&gt; rpolars_debug_print       FALSE
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nf">polars_info</span><span class="p">()</span><span class="o">$</span><span class="n">rust_polars</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; [1] &quot;0.36.2&quot;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nf">polars_info</span><span class="p">()</span><span class="o">$</span><span class="n">features</span><span class="o">$</span><span class="n">simd</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; [1] TRUE
 </code></pre></div>
 
 
@@ -14495,10 +14504,10 @@ details)
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      <script src="../assets/javascripts/bundle.c18c5fb9.min.js"></script>
       
     
   </body>

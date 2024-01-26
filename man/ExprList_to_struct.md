@@ -1,4 +1,5 @@
 
+
 # Convert a Series of type <code>List</code> to <code>Struct</code>
 
 [**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L414)

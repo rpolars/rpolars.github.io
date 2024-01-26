@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.5">
     
     
       
@@ -14433,7 +14433,7 @@
 
 
 <h1 id="get-and-reset-polars-options">Get and reset polars options</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/options.R#L163"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/options.R#L159"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p><code>polars_options()</code> returns a list of options for polars.
 Options can be set with <code>options()</code>. Note that
@@ -14488,6 +14488,14 @@ conversion (requires the package <code>bit64</code> to be attached).
 
 </li>
 </ul>
+</li>
+<li>
+
+<code>limit_max_threads</code>
+(<code>!polars_info()$features$disable_limit_max_threads</code>): See
+<code>?pl_threadpool_size</code> for details. This option should be set
+before the package is loaded.
+
 </li>
 <li>
 
@@ -14554,6 +14562,7 @@ Native polars query syntax runs in threads and have no overhead.</p>
 #&gt; df_knitr_print       auto
 #&gt; do_not_repeat_call  FALSE
 #&gt; int64_conversion   double
+#&gt; limit_max_threads   FALSE
 #&gt; maintain_order       TRUE
 #&gt; no_messages         FALSE
 #&gt; rpool_active            0
@@ -14574,7 +14583,7 @@ Native polars query syntax runs in threads and have no overhead.</p>
 #&gt; - maintain_order: input must be TRUE or FALSE.
 #&gt; - int64_conversion: input must be one of &quot;float&quot;, &quot;string&quot;, &quot;bit64&quot;.
 #&gt; 
-#&gt; More info at `?polars_options`.&gt;
+#&gt; More info at `?polars::polars_options`.&gt;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># reset options to their default value</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nf">polars_options_reset</span><span class="p">()</span>
@@ -14631,10 +14640,10 @@ Native polars query syntax runs in threads and have no overhead.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      <script src="../assets/javascripts/bundle.c18c5fb9.min.js"></script>
       
     
   </body>

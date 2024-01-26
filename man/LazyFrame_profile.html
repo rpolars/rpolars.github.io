@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.5">
     
     
       
@@ -14655,8 +14655,8 @@ TRUE)</code>.
 #&gt; │ ---                 ┆ ---   ┆ --- │
 #&gt; │ str                 ┆ u64   ┆ u64 │
 #&gt; ╞═════════════════════╪═══════╪═════╡
-#&gt; │ optimization        ┆ 0     ┆ 19  │
-#&gt; │ projection(literal) ┆ 19    ┆ 100 │
+#&gt; │ optimization        ┆ 0     ┆ 12  │
+#&gt; │ projection(literal) ┆ 12    ┆ 84  │
 #&gt; └─────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Use $profile() to compare two queries</span>
@@ -14682,15 +14682,15 @@ TRUE)</code>.
 #&gt; 
 #&gt; $profile
 #&gt; shape: (3, 3)
-#&gt; ┌────────────────────┬───────┬──────┐
-#&gt; │ node               ┆ start ┆ end  │
-#&gt; │ ---                ┆ ---   ┆ ---  │
-#&gt; │ str                ┆ u64   ┆ u64  │
-#&gt; ╞════════════════════╪═══════╪══════╡
-#&gt; │ optimization       ┆ 0     ┆ 24   │
-#&gt; │ sort(Sepal.Length) ┆ 24    ┆ 684  │
-#&gt; │ group_by(Species)  ┆ 687   ┆ 1146 │
-#&gt; └────────────────────┴───────┴──────┘
+#&gt; ┌────────────────────┬───────┬─────┐
+#&gt; │ node               ┆ start ┆ end │
+#&gt; │ ---                ┆ ---   ┆ --- │
+#&gt; │ str                ┆ u64   ┆ u64 │
+#&gt; ╞════════════════════╪═══════╪═════╡
+#&gt; │ optimization       ┆ 0     ┆ 21  │
+#&gt; │ sort(Sepal.Length) ┆ 21    ┆ 468 │
+#&gt; │ group_by(Species)  ┆ 471   ┆ 777 │
+#&gt; └────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
@@ -14727,9 +14727,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ ---   │
 #&gt; │ str                ┆ u64   ┆ u64   │
 #&gt; ╞════════════════════╪═══════╪═══════╡
-#&gt; │ optimization       ┆ 0     ┆ 11    │
-#&gt; │ sort(Sepal.Length) ┆ 11    ┆ 528   │
-#&gt; │ group_by(Species)  ┆ 532   ┆ 29734 │
+#&gt; │ optimization       ┆ 0     ┆ 9     │
+#&gt; │ sort(Sepal.Length) ┆ 9     ┆ 359   │
+#&gt; │ group_by(Species)  ┆ 362   ┆ 26574 │
 #&gt; └────────────────────┴───────┴───────┘
 </code></pre></div>
 
@@ -14784,10 +14784,10 @@ TRUE)</code>.
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      <script src="../assets/javascripts/bundle.c18c5fb9.min.js"></script>
       
     
   </body>

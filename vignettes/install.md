@@ -1,5 +1,6 @@
 # Installation details
 
+
 The `polars` package can be installed from R-universe or GitHub.
 
 Some platforms can install pre-compiled binaries, and others will need
@@ -112,12 +113,13 @@ polars_info()
 #> 
 #> Thread pool size: 4 
 #> 
-#> Features:                         
-#> default              TRUE
-#> full_features        TRUE
-#> simd                 TRUE
-#> sql                  TRUE
-#> rpolars_debug_print FALSE
+#> Features:                               
+#> default                    TRUE
+#> full_features              TRUE
+#> disable_limit_max_threads  TRUE
+#> simd                       TRUE
+#> sql                        TRUE
+#> rpolars_debug_print       FALSE
 ```
 
 At this time, the following environment variables can be used to change
@@ -129,7 +131,19 @@ The feature flags can be set by the `LIBR_POLARS_FEATURES` environment
 variable. For example, to enable the `full_features` feature, set the
 environment variable as like `LIBR_POLARS_FEATURES="full_features"`.
 
-Note that these features requires the Rust nightly toolchain
+Currently `full_features` would work as a combination of the following
+features.
+
+-   Features for CRAN compatibility
+    -   `disable_limit_max_threads`, this feature disables the automatic
+        limit of the maximum number of threads to 2 for CRAN
+        compatibility, and the maximum number of threads is used by
+        default. See `?pl_threadpool_size` for details.
+-   Features for nightly toolchain
+    -   `simd` for SIMD support.
+    -   `sql` for enable `pl$SQLContext()`.
+
+Note that nightly features requires the Rust nightly toolchain
 nightly-2023-12-23.
 
 #### Profile

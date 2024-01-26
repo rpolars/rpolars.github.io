@@ -14,7 +14,7 @@
       
       
       <link rel="icon" href="polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.5">
     
     
       
@@ -15927,6 +15927,15 @@
 </ul>
 <h3 id="whats-changed">What's changed</h3>
 <ul>
+<li>For compatibility with CRAN, the number of threads used by Polars is automatically set to 2
+    if the environment variable <code>POLARS_MAX_THREADS</code> is not set (<a href="https://github.com/pola-rs/r-polars/issues/720">#720</a>).
+    To disable this behavior and have the maximum number of threads used automatically,
+    one of the following ways can be used:<ul>
+<li>Build the Rust library with the <code>disable_limit_max_threads</code> feature.</li>
+<li>Set the <code>polars.limit_max_threads</code> option to <code>FALSE</code> with the <code>options()</code> function
+    before loading the package.</li>
+</ul>
+</li>
 <li>New method <code>$rolling()</code> for <code>DataFrame</code> and <code>LazyFrame</code>. When this is
     applied, it creates an object of class <code>RPolarsRollingGroupBy</code> (<a href="https://github.com/pola-rs/r-polars/issues/682">#682</a>, <a href="https://github.com/pola-rs/r-polars/issues/694">#694</a>).</li>
 <li>New method <code>$group_by_dynamic()</code> for <code>DataFrame</code> and <code>LazyFrame</code>. When this
@@ -16692,10 +16701,10 @@ features. Unrelated breaking changes and new features are put in separate sectio
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.7389ff0e.min.js"></script>
+      <script src="assets/javascripts/bundle.c18c5fb9.min.js"></script>
       
     
   </body>

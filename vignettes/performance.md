@@ -1,5 +1,6 @@
 # Optimize `polars` performance
 
+
 As highlighted by the [DuckDB
 benchmarks](https://duckdblabs.github.io/db-benchmark/), `polars` is
 very efficient to deal with large datasets. Still, one can make `polars`

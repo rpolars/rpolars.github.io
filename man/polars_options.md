@@ -1,7 +1,8 @@
 
+
 # Get and reset polars options
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/options.R#L163)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/options.R#L159)
 
 ## Description
 
@@ -63,6 +64,14 @@ conversion (requires the package <code>bit64</code> to be attached).
 
 </li>
 </ul>
+</li>
+<li>
+
+<code>limit_max_threads</code>
+(<code>!polars_info()$features$disable_limit_max_threads</code>): See
+<code>?pl_threadpool_size</code> for details. This option should be set
+before the package is loaded.
+
 </li>
 <li>
 
@@ -138,6 +147,7 @@ polars_options()
     #> df_knitr_print       auto
     #> do_not_repeat_call  FALSE
     #> int64_conversion   double
+    #> limit_max_threads   FALSE
     #> maintain_order       TRUE
     #> no_messages         FALSE
     #> rpool_active            0
@@ -160,7 +170,7 @@ tryCatch(
     #> - maintain_order: input must be TRUE or FALSE.
     #> - int64_conversion: input must be one of "float", "string", "bit64".
     #> 
-    #> More info at `?polars_options`.>
+    #> More info at `?polars::polars_options`.>
 
 ``` r
 # reset options to their default value

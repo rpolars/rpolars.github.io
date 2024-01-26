@@ -1,4 +1,5 @@
 
+
 # Mode
 
 [**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
@@ -32,12 +33,12 @@ df$select(pl$col("a")$mode())
     #> │ --- │
     #> │ i32 │
     #> ╞═════╡
-    #> │ 1   │
-    #> │ 5   │
-    #> │ 4   │
     #> │ 3   │
     #> │ 2   │
+    #> │ 1   │
     #> │ 6   │
+    #> │ 5   │
+    #> │ 4   │
     #> └─────┘
 
 ``` r
@@ -64,7 +65,7 @@ df$select(pl$col("c")$mode())
     #> │ --- │
     #> │ i32 │
     #> ╞═════╡
-    #> │ 3   │
     #> │ 2   │
+    #> │ 3   │
     #> │ 1   │
     #> └─────┘

@@ -1,4 +1,5 @@
 
+
 # Ungroup a DynamicGroupBy object
 
 [**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/group_by_dynamic.R#L130)
