@@ -2,7 +2,7 @@
 
 # Data types information
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L471)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L477)
 
 ## Description
 

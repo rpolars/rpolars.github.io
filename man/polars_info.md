@@ -2,7 +2,7 @@
 
 # Report information of the package
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/info.R#L15)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/polars_info.R#L15)
 
 ## Description
 

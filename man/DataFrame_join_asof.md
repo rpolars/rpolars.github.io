@@ -2,7 +2,7 @@
 
 # Perform joins on nearest keys
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1303)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1309)
 
 ## Description
 
@@ -20,7 +20,7 @@ rather than equal keys.
   by_left = NULL,
   by_right = NULL,
   by = NULL,
-  strategy = "backward",
+  strategy = c("backward", "forward", "nearest"),
   suffix = "_right",
   tolerance = NULL,
   allow_parallel = TRUE,

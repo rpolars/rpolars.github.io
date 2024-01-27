@@ -14193,6 +14193,27 @@
   
   
     <li class="md-nav__item">
+      <a href="polars_envvars.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    polars_envvars
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="polars_info.html" class="md-nav__link">
         
   
@@ -14419,7 +14440,11 @@
 <h2 id="description">Description</h2>
 <p>Drop duplicated rows</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>&lt;LazyFrame&gt;$unique(subset = NULL, keep = "first", maintain_order = FALSE)
+<pre><code class='language-R'>&lt;LazyFrame&gt;$unique(
+  subset = NULL,
+  keep = c("first", "last", "none"),
+  maintain_order = FALSE
+)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
@@ -14488,7 +14513,7 @@ changed with <code>options(polars.maintain_order = TRUE)</code>.
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">()</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span><span class="o">$</span><span class="n">height</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] 60
+<div class="highlight"><pre><span></span><code>#&gt; [1] 65
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">subset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span><span class="o">$</span><span class="n">height</span>
 </code></pre></div>

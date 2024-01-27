@@ -2,7 +2,7 @@
 
 # Skewness
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2667)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2672)
 
 ## Description
 

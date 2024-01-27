@@ -2,7 +2,7 @@
 
 # Rank elements
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2620)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2621)
 
 ## Description
 
@@ -10,7 +10,11 @@ Assign ranks to data, dealing with ties appropriately.
 
 ## Usage
 
-<pre><code class='language-R'>Expr_rank(method = "average", descending = FALSE)
+<pre><code class='language-R'>Expr_rank(
+  method = c("average", "min", "max", "dense", "ordinal", "random"),
+  descending = FALSE,
+  seed = NULL
+)
 </code></pre>
 
 ## Arguments
@@ -74,6 +78,14 @@ dependent on the order that the values occur in the Series.
 </td>
 <td>
 Rank in descending order.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="Expr_rank_:_seed">seed</code>
+</td>
+<td>
+string parsed or number converted into uint64. Used if method="random".
 </td>
 </tr>
 </table>

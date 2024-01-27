@@ -2,7 +2,7 @@
 
 # Drop duplicated rows
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L409)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L410)
 
 ## Description
 
@@ -10,7 +10,11 @@ Drop duplicated rows
 
 ## Usage
 
-<pre><code class='language-R'>DataFrame_unique(subset = NULL, keep = "first", maintain_order = FALSE)
+<pre><code class='language-R'>DataFrame_unique(
+  subset = NULL,
+  keep = c("first", "last", "none"),
+  maintain_order = FALSE
+)
 </code></pre>
 
 ## Arguments
@@ -75,45 +79,49 @@ DataFrame
 library(polars)
 
 df = pl$DataFrame(
-  x = sample(10, 100, rep = TRUE),
-  y = sample(10, 100, rep = TRUE)
+  x = c(1:3, 1:3, 3:1, 1L),
+  y = c(1:3, 1:3, 1:3, 1L)
 )
 df$height
-```
-
-    #> [1] 100
-
-``` r
-df$unique()$height
-```
-
-    #> [1] 66
-
-``` r
-df$unique(subset = "x")$height
 ```
 
     #> [1] 10
 
 ``` r
-df$unique(keep = "last")
+df$unique()$height
 ```
 
-    #> shape: (66, 2)
+    #> [1] 5
+
+``` r
+# subset to define unique, keep only last or first
+df$unique(subset = "x", keep = c("last"))
+```
+
+    #> shape: (3, 2)
     #> ┌─────┬─────┐
     #> │ x   ┆ y   │
     #> │ --- ┆ --- │
     #> │ i32 ┆ i32 │
     #> ╞═════╪═════╡
-    #> │ 10  ┆ 9   │
-    #> │ 7   ┆ 2   │
-    #> │ 6   ┆ 10  │
-    #> │ 1   ┆ 4   │
-    #> │ …   ┆ …   │
-    #> │ 5   ┆ 9   │
-    #> │ 8   ┆ 1   │
-    #> │ 8   ┆ 8   │
-    #> │ 4   ┆ 4   │
+    #> │ 2   ┆ 2   │
+    #> │ 3   ┆ 1   │
+    #> │ 1   ┆ 1   │
+    #> └─────┴─────┘
+
+``` r
+df$unique(subset = "x", keep = c("first"))
+```
+
+    #> shape: (3, 2)
+    #> ┌─────┬─────┐
+    #> │ x   ┆ y   │
+    #> │ --- ┆ --- │
+    #> │ i32 ┆ i32 │
+    #> ╞═════╪═════╡
+    #> │ 1   ┆ 1   │
+    #> │ 3   ┆ 3   │
+    #> │ 2   ┆ 2   │
     #> └─────┴─────┘
 
 ``` r
@@ -121,19 +129,12 @@ df$unique(keep = "last")
 df$unique(keep = "none")
 ```
 
-    #> shape: (37, 2)
+    #> shape: (2, 2)
     #> ┌─────┬─────┐
     #> │ x   ┆ y   │
     #> │ --- ┆ --- │
     #> │ i32 ┆ i32 │
     #> ╞═════╪═════╡
-    #> │ 6   ┆ 3   │
-    #> │ 5   ┆ 8   │
-    #> │ 5   ┆ 2   │
-    #> │ 7   ┆ 2   │
-    #> │ …   ┆ …   │
-    #> │ 4   ┆ 5   │
-    #> │ 7   ┆ 1   │
-    #> │ 4   ┆ 6   │
-    #> │ 4   ┆ 4   │
+    #> │ 3   ┆ 1   │
+    #> │ 1   ┆ 3   │
     #> └─────┴─────┘

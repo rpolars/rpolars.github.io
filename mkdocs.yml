@@ -663,6 +663,7 @@ nav:
         - is_polars_series: man/is_polars_series.md
         - nanoarrow: man/nanoarrow.md
         - polars_class_object: man/polars_class_object.md
+        - polars_envvars: man/polars_envvars.md
         - polars_info: man/polars_info.md
         - polars_options: man/polars_options.md
         - show_all_public_functions: man/show_all_public_functions.md

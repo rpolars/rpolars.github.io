@@ -10,7 +10,11 @@ Drop duplicated rows
 
 ## Usage
 
-<pre><code class='language-R'>LazyFrame_unique(subset = NULL, keep = "first", maintain_order = FALSE)
+<pre><code class='language-R'>LazyFrame_unique(
+  subset = NULL,
+  keep = c("first", "last", "none"),
+  maintain_order = FALSE
+)
 </code></pre>
 
 ## Arguments
@@ -87,7 +91,7 @@ df$collect()$height
 df$unique()$collect()$height
 ```
 
-    #> [1] 60
+    #> [1] 65
 
 ``` r
 df$unique(subset = "x")$collect()$height
