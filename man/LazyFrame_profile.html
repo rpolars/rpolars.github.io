@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.5">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.6">
     
     
       
@@ -14677,7 +14677,7 @@ TRUE)</code>.
 #&gt; │ str                 ┆ u64   ┆ u64 │
 #&gt; ╞═════════════════════╪═══════╪═════╡
 #&gt; │ optimization        ┆ 0     ┆ 12  │
-#&gt; │ projection(literal) ┆ 12    ┆ 98  │
+#&gt; │ projection(literal) ┆ 12    ┆ 62  │
 #&gt; └─────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Use $profile() to compare two queries</span>
@@ -14703,15 +14703,15 @@ TRUE)</code>.
 #&gt; 
 #&gt; $profile
 #&gt; shape: (3, 3)
-#&gt; ┌────────────────────┬───────┬──────┐
-#&gt; │ node               ┆ start ┆ end  │
-#&gt; │ ---                ┆ ---   ┆ ---  │
-#&gt; │ str                ┆ u64   ┆ u64  │
-#&gt; ╞════════════════════╪═══════╪══════╡
-#&gt; │ optimization       ┆ 0     ┆ 27   │
-#&gt; │ sort(Sepal.Length) ┆ 27    ┆ 3849 │
-#&gt; │ group_by(Species)  ┆ 3853  ┆ 3989 │
-#&gt; └────────────────────┴───────┴──────┘
+#&gt; ┌────────────────────┬───────┬─────┐
+#&gt; │ node               ┆ start ┆ end │
+#&gt; │ ---                ┆ ---   ┆ --- │
+#&gt; │ str                ┆ u64   ┆ u64 │
+#&gt; ╞════════════════════╪═══════╪═════╡
+#&gt; │ optimization       ┆ 0     ┆ 20  │
+#&gt; │ sort(Sepal.Length) ┆ 20    ┆ 408 │
+#&gt; │ group_by(Species)  ┆ 411   ┆ 657 │
+#&gt; └────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
@@ -14749,8 +14749,8 @@ TRUE)</code>.
 #&gt; │ str                ┆ u64   ┆ u64   │
 #&gt; ╞════════════════════╪═══════╪═══════╡
 #&gt; │ optimization       ┆ 0     ┆ 10    │
-#&gt; │ sort(Sepal.Length) ┆ 10    ┆ 393   │
-#&gt; │ group_by(Species)  ┆ 396   ┆ 23852 │
+#&gt; │ sort(Sepal.Length) ┆ 10    ┆ 374   │
+#&gt; │ group_by(Species)  ┆ 377   ┆ 27972 │
 #&gt; └────────────────────┴───────┴───────┘
 </code></pre></div>
 
@@ -14808,7 +14808,7 @@ TRUE)</code>.
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.c18c5fb9.min.js"></script>
+      <script src="../assets/javascripts/bundle.e1c3ead8.min.js"></script>
       
     
   </body>

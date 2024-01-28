@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.5">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.6">
     
     
       
@@ -14520,31 +14520,31 @@ attribute "tu" being either "s","ms","us" or "ns"</p>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">pl</span><span class="o">$</span><span class="nf">PTime</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">3600</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1E0</span><span class="p">,</span><span class="w"> </span><span class="n">tu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;s&quot;</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; PTime [ double ]: number of epochs [ s ] since midnight
-#&gt; [1] &quot;20:40:52 val: 74452&quot; &quot;08:21:38 val: 30098&quot; &quot;10:19:26 val: 37166&quot;
-#&gt; [4] &quot;13:25:41 val: 48341&quot; &quot;11:49:23 val: 42563&quot;
+#&gt; [1] &quot;11:26:53 val: 41213&quot; &quot;17:28:47 val: 62927&quot; &quot;20:09:58 val: 72598&quot;
+#&gt; [4] &quot;18:01:16 val: 64876&quot; &quot;13:46:13 val: 49573&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">PTime</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">3600</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1E3</span><span class="p">,</span><span class="w"> </span><span class="n">tu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ms&quot;</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; PTime [ double ]: number of epochs [ ms ] since midnight
-#&gt; [1] &quot;19:00:07:937ms val: 68407937&quot; &quot;23:59:02:894ms val: 86342894&quot;
-#&gt; [3] &quot;12:01:30:724ms val: 43290724&quot; &quot;01:27:40:365ms val: 5260365&quot; 
-#&gt; [5] &quot;02:49:41:037ms val: 10181037&quot;
+#&gt; [1] &quot;01:07:31:904ms val: 4051904&quot;  &quot;21:38:28:989ms val: 77908989&quot;
+#&gt; [3] &quot;02:53:30:742ms val: 10410742&quot; &quot;09:45:11:045ms val: 35111045&quot;
+#&gt; [5] &quot;06:04:19:960ms val: 21859960&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">PTime</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">3600</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1E6</span><span class="p">,</span><span class="w"> </span><span class="n">tu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;us&quot;</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; PTime [ double ]: number of epochs [ us ] since midnight
-#&gt; [1] &quot;08:47:20:082_073us val: 31640082073&quot; &quot;15:54:07:427_145us val: 57247427145&quot;
-#&gt; [3] &quot;06:07:39:430_579us val: 22059430579&quot; &quot;06:15:57:067_329us val: 22557067329&quot;
-#&gt; [5] &quot;17:14:56:282_981us val: 62096282981&quot;
+#&gt; [1] &quot;23:21:46:278_946us val: 84106278946&quot; &quot;13:45:49:031_263us val: 49549031263&quot;
+#&gt; [3] &quot;03:58:18:727_894us val: 14298727894&quot; &quot;16:00:57:455_337us val: 57657455337&quot;
+#&gt; [5] &quot;16:07:51:952_888us val: 58071952888&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">PTime</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">3600</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1E9</span><span class="p">,</span><span class="w"> </span><span class="n">tu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ns&quot;</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; PTime [ double ]: number of epochs [ ns ] since midnight
-#&gt; [1] &quot;17:33:59:097_724_109ns val: 63239097724109&quot;
-#&gt; [2] &quot;14:26:36:076_691_150ns val: 51996076691150&quot;
-#&gt; [3] &quot;19:18:31:133_951_693ns val: 69511133951693&quot;
-#&gt; [4] &quot;05:32:57:698_016_911ns val: 19977698016911&quot;
-#&gt; [5] &quot;14:47:41:449_892_073ns val: 53261449892073&quot;
+#&gt; [1] &quot;00:47:10:900_295_823ns val: 2830900295823&quot; 
+#&gt; [2] &quot;02:56:09:716_014_713ns val: 10569716014713&quot;
+#&gt; [3] &quot;08:18:39:372_256_100ns val: 29919372256100&quot;
+#&gt; [4] &quot;22:07:39:638_531_506ns val: 79659638531506&quot;
+#&gt; [5] &quot;07:07:44:956_466_853ns val: 25664956466853&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">PTime</span><span class="p">(</span><span class="s">&quot;23:59:59&quot;</span><span class="p">)</span>
 </code></pre></div>
@@ -14556,11 +14556,11 @@ attribute "tu" being either "s","ms","us" or "ns"</p>
 <div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (5,)
 #&gt; Series: &#39;&#39; [time]
 #&gt; [
-#&gt;  05:50:38
-#&gt;  21:31:44
-#&gt;  06:42:05
-#&gt;  01:32:06
-#&gt;  02:05:44
+#&gt;  07:00:06
+#&gt;  10:34:51
+#&gt;  11:29:25
+#&gt;  14:10:03
+#&gt;  03:41:39
 #&gt; ]
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">PTime</span><span class="p">(</span><span class="s">&quot;23:59:59&quot;</span><span class="p">))</span><span class="o">$</span><span class="nf">to_series</span><span class="p">()</span>
@@ -14631,7 +14631,7 @@ attribute "tu" being either "s","ms","us" or "ns"</p>
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.c18c5fb9.min.js"></script>
+      <script src="../assets/javascripts/bundle.e1c3ead8.min.js"></script>
       
     
   </body>
