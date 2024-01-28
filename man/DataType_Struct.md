@@ -2,7 +2,7 @@
 
 # Create Struct DataType
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/1fd6c01b862685c50e295d9b2ef690a69c3a7963/R/datatype.R#L202)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L202)
 
 ## Description
 
@@ -141,7 +141,7 @@ print(pl$dtypes)
     #>   }
     #>   unwrap(.pr$DataType$new_datetime(tu, tz))
     #> }
-    #> <bytecode: 0x5562cd57c910>
+    #> <bytecode: 0x555f99960830>
     #> <environment: namespace:polars>
     #> 
     #> $List
@@ -157,7 +157,7 @@ print(pl$dtypes)
     #>   }
     #>   .pr$DataType$new_list(datatype)
     #> }
-    #> <bytecode: 0x5562cd529578>
+    #> <bytecode: 0x555f9990d498>
     #> <environment: namespace:polars>
     #> 
     #> $Struct
@@ -191,7 +191,7 @@ print(pl$dtypes)
     #>     and_then(DataType$new_struct) |>
     #>     unwrap("in pl$Struct:")
     #> }
-    #> <bytecode: 0x5562cd5075b8>
+    #> <bytecode: 0x555f998eb4d8>
     #> <environment: namespace:polars>
 
 ``` r

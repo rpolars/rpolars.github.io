@@ -14472,7 +14472,7 @@
 
 
 <h1 id="collect-and-profile-a-lazy-query">Collect and profile a lazy query.</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/1fd6c01b862685c50e295d9b2ef690a69c3a7963/R/lazyframe__lazy.R#L1546"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1546"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>This will run the query and return a list containing the materialized
 DataFrame and a DataFrame that contains profiling information of each
@@ -14677,7 +14677,7 @@ TRUE)</code>.
 #&gt; │ str                 ┆ u64   ┆ u64 │
 #&gt; ╞═════════════════════╪═══════╪═════╡
 #&gt; │ optimization        ┆ 0     ┆ 12  │
-#&gt; │ projection(literal) ┆ 12    ┆ 67  │
+#&gt; │ projection(literal) ┆ 12    ┆ 98  │
 #&gt; └─────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Use $profile() to compare two queries</span>
@@ -14703,15 +14703,15 @@ TRUE)</code>.
 #&gt; 
 #&gt; $profile
 #&gt; shape: (3, 3)
-#&gt; ┌────────────────────┬───────┬─────┐
-#&gt; │ node               ┆ start ┆ end │
-#&gt; │ ---                ┆ ---   ┆ --- │
-#&gt; │ str                ┆ u64   ┆ u64 │
-#&gt; ╞════════════════════╪═══════╪═════╡
-#&gt; │ optimization       ┆ 0     ┆ 21  │
-#&gt; │ sort(Sepal.Length) ┆ 21    ┆ 409 │
-#&gt; │ group_by(Species)  ┆ 412   ┆ 673 │
-#&gt; └────────────────────┴───────┴─────┘
+#&gt; ┌────────────────────┬───────┬──────┐
+#&gt; │ node               ┆ start ┆ end  │
+#&gt; │ ---                ┆ ---   ┆ ---  │
+#&gt; │ str                ┆ u64   ┆ u64  │
+#&gt; ╞════════════════════╪═══════╪══════╡
+#&gt; │ optimization       ┆ 0     ┆ 27   │
+#&gt; │ sort(Sepal.Length) ┆ 27    ┆ 3849 │
+#&gt; │ group_by(Species)  ┆ 3853  ┆ 3989 │
+#&gt; └────────────────────┴───────┴──────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
@@ -14748,9 +14748,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ ---   │
 #&gt; │ str                ┆ u64   ┆ u64   │
 #&gt; ╞════════════════════╪═══════╪═══════╡
-#&gt; │ optimization       ┆ 0     ┆ 12    │
-#&gt; │ sort(Sepal.Length) ┆ 12    ┆ 464   │
-#&gt; │ group_by(Species)  ┆ 468   ┆ 39486 │
+#&gt; │ optimization       ┆ 0     ┆ 10    │
+#&gt; │ sort(Sepal.Length) ┆ 10    ┆ 393   │
+#&gt; │ group_by(Species)  ┆ 396   ┆ 23852 │
 #&gt; └────────────────────┴───────┴───────┘
 </code></pre></div>
 
