@@ -2,7 +2,7 @@
 
 # check if schema
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L9)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/1fd6c01b862685c50e295d9b2ef690a69c3a7963/R/datatype.R#L9)
 
 ## Description
 
