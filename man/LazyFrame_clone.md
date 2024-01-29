@@ -2,12 +2,15 @@
 
 # Clone a LazyFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1658)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1677)
 
 ## Description
 
 This makes a very cheap deep copy/clone of an existing
-<code>LazyFrame</code>.
+<code>LazyFrame</code>. Rarely useful as <code>LazyFrame</code>s are
+nearly 100% immutable. Any modification of a <code>LazyFrame</code>
+should lead to a clone anyways, but this can be useful when dealing with
+attributes (see examples).
 
 ## Usage
 
@@ -24,18 +27,37 @@ A LazyFrame
 library(polars)
 
 df1 = pl$LazyFrame(iris)
-df2 = df1$clone()
-df3 = df1
 
-# the clone and the original don't have the same address...
-pl$mem_address(df1) != pl$mem_address(df2)
+# Make a function to take a LazyFrame, add an attribute, and return a LazyFrame
+give_attr = function(data) {
+  attr(data, "created_on") = "2024-01-29"
+  data
+}
+df2 = give_attr(df1)
+
+# Problem: the original LazyFrame also gets the attribute while it shouldn't!
+attributes(df1)
 ```
 
-    #> [1] TRUE
+    #> $class
+    #> [1] "RPolarsLazyFrame"
+    #> 
+    #> $created_on
+    #> [1] "2024-01-29"
 
 ``` r
-# ... but simply assigning df1 to df3 change the address anyway
-pl$mem_address(df1) == pl$mem_address(df3)
+# Use $clone() inside the function to avoid that
+give_attr = function(data) {
+  data = data$clone()
+  attr(data, "created_on") = "2024-01-29"
+  data
+}
+df1 = pl$LazyFrame(iris)
+df2 = give_attr(df1)
+
+# now, the original LazyFrame doesn't get this attribute
+attributes(df1)
 ```
 
-    #> [1] TRUE
+    #> $class
+    #> [1] "RPolarsLazyFrame"

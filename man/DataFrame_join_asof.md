@@ -2,7 +2,7 @@
 
 # Perform joins on nearest keys
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1309)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1323)
 
 ## Description
 
