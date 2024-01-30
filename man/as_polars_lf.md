@@ -2,7 +2,7 @@
 
 # To polars LazyFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/as_polars.R#L223)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/as_polars.R#L259)
 
 ## Description
 

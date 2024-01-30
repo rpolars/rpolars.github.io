@@ -2,7 +2,7 @@
 
 # To polars Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/as_polars.R#L269)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/as_polars.R#L305)
 
 ## Description
 
@@ -36,6 +36,12 @@ as_polars_series(x, name = NULL, ..., rechunk = TRUE)
 
 # S3 method for class 'ChunkedArray'
 as_polars_series(x, name = NULL, ..., rechunk = TRUE)
+
+# S3 method for class 'nanoarrow_array'
+as_polars_series(x, name = NULL, ...)
+
+# S3 method for class 'nanoarrow_array_stream'
+as_polars_series(x, name = NULL, ...)
 </code></pre>
 
 ## Arguments

@@ -14436,7 +14436,7 @@
 
 
 <h1 id="to-polars-series">To polars Series</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/as_polars.R#L269"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/as_polars.R#L305"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p><code>as_polars_series()</code> is a generic function that converts an R
 object to a polars Series. It is basically a wrapper for pl$Series().</p>
@@ -14466,6 +14466,12 @@ as_polars_series(x, name = NULL, ..., rechunk = TRUE)
 
 # S3 method for class 'ChunkedArray'
 as_polars_series(x, name = NULL, ..., rechunk = TRUE)
+
+# S3 method for class 'nanoarrow_array'
+as_polars_series(x, name = NULL, ...)
+
+# S3 method for class 'nanoarrow_array_stream'
+as_polars_series(x, name = NULL, ...)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>

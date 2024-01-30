@@ -14489,23 +14489,31 @@ any function prefixed <code>Series_</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># see all private methods (not intended for regular use)</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nf">ls</span><span class="p">(</span><span class="n">.pr</span><span class="o">$</span><span class="n">Series</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt;  [1] &quot;abs&quot;                    &quot;add&quot;                    &quot;alias&quot;                 
-#&gt;  [4] &quot;all&quot;                    &quot;any&quot;                    &quot;append_mut&quot;            
-#&gt;  [7] &quot;arg_max&quot;                &quot;arg_min&quot;                &quot;ceil&quot;                  
-#&gt; [10] &quot;chunk_lengths&quot;          &quot;clone&quot;                  &quot;compare&quot;               
-#&gt; [13] &quot;cum_sum&quot;                &quot;div&quot;                    &quot;dtype&quot;                 
-#&gt; [16] &quot;equals&quot;                 &quot;floor&quot;                  &quot;from_arrow&quot;            
-#&gt; [19] &quot;get_fmt&quot;                &quot;is_sorted&quot;              &quot;is_sorted_flag&quot;        
-#&gt; [22] &quot;is_sorted_reverse_flag&quot; &quot;len&quot;                    &quot;map_elements&quot;          
-#&gt; [25] &quot;max&quot;                    &quot;mean&quot;                   &quot;median&quot;                
-#&gt; [28] &quot;min&quot;                    &quot;mul&quot;                    &quot;n_unique&quot;              
-#&gt; [31] &quot;name&quot;                   &quot;new&quot;                    &quot;panic&quot;                 
-#&gt; [34] &quot;print&quot;                  &quot;rem&quot;                    &quot;rename_mut&quot;            
-#&gt; [37] &quot;rep&quot;                    &quot;set_sorted_mut&quot;         &quot;shape&quot;                 
-#&gt; [40] &quot;sleep&quot;                  &quot;sort_mut&quot;               &quot;std&quot;                   
-#&gt; [43] &quot;sub&quot;                    &quot;sum&quot;                    &quot;to_fmt_char&quot;           
-#&gt; [46] &quot;to_frame&quot;               &quot;to_r&quot;                   &quot;value_counts&quot;          
-#&gt; [49] &quot;var&quot;
+<div class="highlight"><pre><span></span><code>#&gt;  [1] &quot;abs&quot;                         &quot;add&quot;                        
+#&gt;  [3] &quot;alias&quot;                       &quot;all&quot;                        
+#&gt;  [5] &quot;any&quot;                         &quot;append_mut&quot;                 
+#&gt;  [7] &quot;arg_max&quot;                     &quot;arg_min&quot;                    
+#&gt;  [9] &quot;ceil&quot;                        &quot;chunk_lengths&quot;              
+#&gt; [11] &quot;clone&quot;                       &quot;compare&quot;                    
+#&gt; [13] &quot;cum_sum&quot;                     &quot;div&quot;                        
+#&gt; [15] &quot;dtype&quot;                       &quot;equals&quot;                     
+#&gt; [17] &quot;floor&quot;                       &quot;from_arrow_array_robj&quot;      
+#&gt; [19] &quot;from_arrow_array_stream_str&quot; &quot;get_fmt&quot;                    
+#&gt; [21] &quot;is_sorted&quot;                   &quot;is_sorted_flag&quot;             
+#&gt; [23] &quot;is_sorted_reverse_flag&quot;      &quot;len&quot;                        
+#&gt; [25] &quot;map_elements&quot;                &quot;max&quot;                        
+#&gt; [27] &quot;mean&quot;                        &quot;median&quot;                     
+#&gt; [29] &quot;min&quot;                         &quot;mul&quot;                        
+#&gt; [31] &quot;n_unique&quot;                    &quot;name&quot;                       
+#&gt; [33] &quot;new&quot;                         &quot;panic&quot;                      
+#&gt; [35] &quot;print&quot;                       &quot;rem&quot;                        
+#&gt; [37] &quot;rename_mut&quot;                  &quot;rep&quot;                        
+#&gt; [39] &quot;set_sorted_mut&quot;              &quot;shape&quot;                      
+#&gt; [41] &quot;sleep&quot;                       &quot;sort_mut&quot;                   
+#&gt; [43] &quot;std&quot;                         &quot;sub&quot;                        
+#&gt; [45] &quot;sum&quot;                         &quot;to_fmt_char&quot;                
+#&gt; [47] &quot;to_frame&quot;                    &quot;to_r&quot;                       
+#&gt; [49] &quot;value_counts&quot;                &quot;var&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># make an object</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span>

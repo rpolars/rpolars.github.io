@@ -59,6 +59,9 @@ as_polars_df(x, ...)
 
 # S3 method for class 'ArrowTabular'
 as_polars_df(x, ..., rechunk = TRUE, schema = NULL, schema_overrides = NULL)
+
+# S3 method for class 'nanoarrow_array_stream'
+as_polars_df(x, ...)
 </code></pre>
 
 ## Arguments
