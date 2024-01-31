@@ -322,6 +322,9 @@ nav:
         - tables: man/SQLContext_tables.md
         - unregister: man/SQLContext_unregister.md
       S3 Methods:
+        - as_arrow_table: man/S3_as_arrow_table.md
+        - as_nanoarrow_array_stream: man/S3_as_nanoarrow_array_stream.md
+        - as_record_batch_reader: man/S3_as_record_batch_reader.md
         - as.character: man/S3_as.character.md
         - as.data.frame: man/S3_as.data.frame.md
         - as.matrix: man/S3_as.matrix.md
@@ -331,6 +334,7 @@ nav:
         - dimnames: man/S3_dimnames.md
         - extract: man/S3_extract.md
         - head: man/S3_head.md
+        - infer_nanoarrow_schema: man/S3_infer_nanoarrow_schema.md
         - knit_print: man/S3_knit_print.md
         - length: man/S3_length.md
         - max: man/S3_max.md
@@ -661,7 +665,6 @@ nav:
         - is_polars_df: man/is_polars_df.md
         - is_polars_lf: man/is_polars_lf.md
         - is_polars_series: man/is_polars_series.md
-        - nanoarrow: man/nanoarrow.md
         - polars_class_object: man/polars_class_object.md
         - polars_envvars: man/polars_envvars.md
         - polars_info: man/polars_info.md

@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="is_polars_series.html">
+        <link rel="prev" href="SQLContext_unregister.html">
       
       
-        <link rel="next" href="polars_class_object.html">
+        <link rel="next" href="S3_as_nanoarrow_array_stream.html">
       
       
       <link rel="icon" href="../polars-logo.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>nanoarrow - Polars R Package</title>
+        <title>as_arrow_table - Polars R Package</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#polars-to-nanoarrow-and-arrow" class="md-skip">
+        <a href="#create-a-arrow-table-from-a-polars-object" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              nanoarrow
+              as_arrow_table
             
           </span>
         </div>
@@ -6641,19 +6641,21 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_13" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_13" checked>
         
           
           <label class="md-nav__link" for="__nav_3_13" id="__nav_3_13_label" tabindex="0">
@@ -6667,12 +6669,151 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_13_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_13_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_13">
             <span class="md-nav__icon md-icon"></span>
             S3 Methods
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    as_arrow_table
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="S3_as_arrow_table.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    as_arrow_table
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="S3_as_nanoarrow_array_stream.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    as_nanoarrow_array_stream
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="S3_as_record_batch_reader.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    as_record_batch_reader
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -6854,6 +6995,27 @@
   
   <span class="md-ellipsis">
     head
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="S3_infer_nanoarrow_schema.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    infer_nanoarrow_schema
   </span>
   
 
@@ -13751,21 +13913,19 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_15" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_15" >
         
           
           <label class="md-nav__link" for="__nav_3_15" id="__nav_3_15_label" tabindex="0">
@@ -13779,7 +13939,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_15_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_15_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_15">
             <span class="md-nav__icon md-icon"></span>
             Other
@@ -14063,121 +14223,6 @@
                 
   
   
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    nanoarrow
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="nanoarrow.html" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    nanoarrow
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    <span class="md-ellipsis">
-      Description
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Usage
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#arguments" class="md-nav__link">
-    <span class="md-ellipsis">
-      Arguments
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#details" class="md-nav__link">
-    <span class="md-ellipsis">
-      Details
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#value" class="md-nav__link">
-    <span class="md-ellipsis">
-      Value
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      Examples
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
   
   
     <li class="md-nav__item">
@@ -14409,24 +14454,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#details" class="md-nav__link">
-    <span class="md-ellipsis">
-      Details
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#value" class="md-nav__link">
-    <span class="md-ellipsis">
-      Value
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -14453,195 +14480,41 @@
   
 
 
-<h1 id="polars-to-nanoarrow-and-arrow">polars to nanoarrow and arrow</h1>
+<h1 id="create-a-arrow-table-from-a-polars-object">Create a arrow Table from a Polars object</h1>
 <h2 id="description">Description</h2>
-<p>Conversion via native apache arrow array stream (fast), THIS REQUIRES
-´nanoarrow´</p>
+<p>Create a arrow Table from a Polars object</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>## S3 method for class 'RPolarsDataFrame'
-as_nanoarrow_array_stream(x, ..., schema = NULL)
-
-# S3 method for class 'RPolarsDataFrame'
-infer_nanoarrow_schema(x, ...)
-
-# S3 method for class 'RPolarsDataFrame'
 as_arrow_table(x, ...)
-
-# S3 method for class 'RPolarsDataFrame'
-as_record_batch_reader(x, ..., schema = NULL)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="nanoarrow_:_x">x</code>
+<code id="as_arrow_table.RPolarsDataFrame_:_x">x</code>
 </td>
 <td>
-a polars DataFrame
+A Polars DataFrame
 </td>
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="nanoarrow_:_...">…</code>
+<code id="as_arrow_table.RPolarsDataFrame_:_...">…</code>
 </td>
 <td>
-not used right now
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="nanoarrow_:_schema">schema</code>
-</td>
-<td>
-must stay at default value NULL
+Ignored
 </td>
 </tr>
 </table>
 
-<h2 id="details">Details</h2>
-<p>The following functions enable conversion to <code>nanoarrow</code> and
-<code>arrow</code>. Conversion kindly provided by "paleolimbot / Dewey
-Dunnington" Author of <code>nanoarrow</code>. Currently these
-conversions are the fastest way to convert from polars to R.</p>
-<h2 id="value">Value</h2>
-<ul>
-<li>
-
-a nanoarrow array stream
-
-</li>
-</ul>
-<ul>
-<li>
-
-a nanoarrow array schema
-
-</li>
-</ul>
-<ul>
-<li>
-
-an arrow table
-
-</li>
-</ul>
-<ul>
-<li>
-
-an arrow record batch reader
-
-</li>
-</ul>
-
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nf">library</span><span class="p">(</span><span class="n">nanoarrow</span><span class="p">)</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">nanoarrow_array_stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as_nanoarrow_array_stream</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">rdf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.data.frame</span><span class="p">(</span><span class="n">nanoarrow_array_stream</span><span class="p">)</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nf">print</span><span class="p">(</span><span class="nf">head</span><span class="p">(</span><span class="n">rdf</span><span class="p">))</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt;    mpg cyl disp  hp drat    wt  qsec vs am gear carb
-#&gt; 1 21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
-#&gt; 2 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
-#&gt; 3 22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
-#&gt; 4 21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
-#&gt; 5 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
-#&gt; 6 18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">nanoarrow_array_schema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">infer_nanoarrow_schema</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nf">print</span><span class="p">(</span><span class="n">nanoarrow_array_schema</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; &lt;nanoarrow_schema struct&gt;
-#&gt;  $ format    : chr &quot;+s&quot;
-#&gt;  $ name      : chr &quot;&quot;
-#&gt;  $ metadata  : list()
-#&gt;  $ flags     : int 0
-#&gt;  $ children  :List of 11
-#&gt;   ..$ mpg :&lt;nanoarrow_schema double&gt;
-#&gt;   .. ..$ format    : chr &quot;g&quot;
-#&gt;   .. ..$ name      : chr &quot;mpg&quot;
-#&gt;   .. ..$ metadata  : list()
-#&gt;   .. ..$ flags     : int 2
-#&gt;   .. ..$ children  : list()
-#&gt;   .. ..$ dictionary: NULL
-#&gt;   ..$ cyl :&lt;nanoarrow_schema double&gt;
-#&gt;   .. ..$ format    : chr &quot;g&quot;
-#&gt;   .. ..$ name      : chr &quot;cyl&quot;
-#&gt;   .. ..$ metadata  : list()
-#&gt;   .. ..$ flags     : int 2
-#&gt;   .. ..$ children  : list()
-#&gt;   .. ..$ dictionary: NULL
-#&gt;   ..$ disp:&lt;nanoarrow_schema double&gt;
-#&gt;   .. ..$ format    : chr &quot;g&quot;
-#&gt;   .. ..$ name      : chr &quot;disp&quot;
-#&gt;   .. ..$ metadata  : list()
-#&gt;   .. ..$ flags     : int 2
-#&gt;   .. ..$ children  : list()
-#&gt;   .. ..$ dictionary: NULL
-#&gt;   ..$ hp  :&lt;nanoarrow_schema double&gt;
-#&gt;   .. ..$ format    : chr &quot;g&quot;
-#&gt;   .. ..$ name      : chr &quot;hp&quot;
-#&gt;   .. ..$ metadata  : list()
-#&gt;   .. ..$ flags     : int 2
-#&gt;   .. ..$ children  : list()
-#&gt;   .. ..$ dictionary: NULL
-#&gt;   ..$ drat:&lt;nanoarrow_schema double&gt;
-#&gt;   .. ..$ format    : chr &quot;g&quot;
-#&gt;   .. ..$ name      : chr &quot;drat&quot;
-#&gt;   .. ..$ metadata  : list()
-#&gt;   .. ..$ flags     : int 2
-#&gt;   .. ..$ children  : list()
-#&gt;   .. ..$ dictionary: NULL
-#&gt;   ..$ wt  :&lt;nanoarrow_schema double&gt;
-#&gt;   .. ..$ format    : chr &quot;g&quot;
-#&gt;   .. ..$ name      : chr &quot;wt&quot;
-#&gt;   .. ..$ metadata  : list()
-#&gt;   .. ..$ flags     : int 2
-#&gt;   .. ..$ children  : list()
-#&gt;   .. ..$ dictionary: NULL
-#&gt;   ..$ qsec:&lt;nanoarrow_schema double&gt;
-#&gt;   .. ..$ format    : chr &quot;g&quot;
-#&gt;   .. ..$ name      : chr &quot;qsec&quot;
-#&gt;   .. ..$ metadata  : list()
-#&gt;   .. ..$ flags     : int 2
-#&gt;   .. ..$ children  : list()
-#&gt;   .. ..$ dictionary: NULL
-#&gt;   ..$ vs  :&lt;nanoarrow_schema double&gt;
-#&gt;   .. ..$ format    : chr &quot;g&quot;
-#&gt;   .. ..$ name      : chr &quot;vs&quot;
-#&gt;   .. ..$ metadata  : list()
-#&gt;   .. ..$ flags     : int 2
-#&gt;   .. ..$ children  : list()
-#&gt;   .. ..$ dictionary: NULL
-#&gt;   ..$ am  :&lt;nanoarrow_schema double&gt;
-#&gt;   .. ..$ format    : chr &quot;g&quot;
-#&gt;   .. ..$ name      : chr &quot;am&quot;
-#&gt;   .. ..$ metadata  : list()
-#&gt;   .. ..$ flags     : int 2
-#&gt;   .. ..$ children  : list()
-#&gt;   .. ..$ dictionary: NULL
-#&gt;   ..$ gear:&lt;nanoarrow_schema double&gt;
-#&gt;   .. ..$ format    : chr &quot;g&quot;
-#&gt;   .. ..$ name      : chr &quot;gear&quot;
-#&gt;   .. ..$ metadata  : list()
-#&gt;   .. ..$ flags     : int 2
-#&gt;   .. ..$ children  : list()
-#&gt;   .. ..$ dictionary: NULL
-#&gt;   ..$ carb:&lt;nanoarrow_schema double&gt;
-#&gt;   .. ..$ format    : chr &quot;g&quot;
-#&gt;   .. ..$ name      : chr &quot;carb&quot;
-#&gt;   .. ..$ metadata  : list()
-#&gt;   .. ..$ flags     : int 2
-#&gt;   .. ..$ children  : list()
-#&gt;   .. ..$ dictionary: NULL
-#&gt;  $ dictionary: NULL
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">arrow</span><span class="p">)</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">arrow_table</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as_arrow_table</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nf">print</span><span class="p">(</span><span class="n">arrow_table</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nf">library</span><span class="p">(</span><span class="n">arrow</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">pl_df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as_polars_df</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nf">as_arrow_table</span><span class="p">(</span><span class="n">pl_df</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; Table
 #&gt; 32 rows x 11 columns
@@ -14656,22 +14529,6 @@ an arrow record batch reader
 #&gt; $am &lt;double&gt;
 #&gt; $gear &lt;double&gt;
 #&gt; $carb &lt;double&gt;
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">arrow_record_batch_reader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as_record_batch_reader</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="w"> </span><span class="c1"># requires arrow</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nf">print</span><span class="p">(</span><span class="n">arrow_record_batch_reader</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; RecordBatchReader
-#&gt; mpg: double
-#&gt; cyl: double
-#&gt; disp: double
-#&gt; hp: double
-#&gt; drat: double
-#&gt; wt: double
-#&gt; qsec: double
-#&gt; vs: double
-#&gt; am: double
-#&gt; gear: double
-#&gt; carb: double
 </code></pre></div>
 
 

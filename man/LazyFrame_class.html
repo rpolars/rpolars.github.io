@@ -6750,6 +6750,69 @@
   
   
     <li class="md-nav__item">
+      <a href="S3_as_arrow_table.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    as_arrow_table
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="S3_as_nanoarrow_array_stream.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    as_nanoarrow_array_stream
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="S3_as_record_batch_reader.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    as_record_batch_reader
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="S3_as.character.html" class="md-nav__link">
         
   
@@ -6923,6 +6986,27 @@
   
   <span class="md-ellipsis">
     head
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="S3_infer_nanoarrow_schema.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    infer_nanoarrow_schema
   </span>
   
 
@@ -14133,27 +14217,6 @@
   
   
     <li class="md-nav__item">
-      <a href="nanoarrow.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    nanoarrow
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="polars_class_object.html" class="md-nav__link">
         
   
@@ -14537,7 +14600,7 @@ such parquet files simultaneously.</p>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; FILTER [(col(&quot;Species&quot;)) == (String(setosa))] FROM
 #&gt; 
-#&gt;   Csv SCAN /tmp/RtmpJNDkEy/file6ff2589e9ad9
+#&gt;   Csv SCAN /tmp/RtmpN7sNOP/file6c182c838fb5
 #&gt;   PROJECT */5 COLUMNS
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># NOTE For Ldf_okay, the full time to load csv alrady paid when creating Rdf and Pdf</span>
@@ -14550,7 +14613,7 @@ such parquet files simultaneously.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Ldf_best</span><span class="o">$</span><span class="nf">describe_optimized_plan</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; 
-#&gt;   Csv SCAN /tmp/RtmpJNDkEy/file6ff2589e9ad9
+#&gt;   Csv SCAN /tmp/RtmpN7sNOP/file6c182c838fb5
 #&gt;   PROJECT */5 COLUMNS
 #&gt;   SELECTION: [(col(&quot;Species&quot;)) == (String(setosa))]
 </code></pre></div>

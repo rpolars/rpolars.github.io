@@ -6786,6 +6786,69 @@
   
   
     <li class="md-nav__item">
+      <a href="S3_as_arrow_table.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    as_arrow_table
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="S3_as_nanoarrow_array_stream.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    as_nanoarrow_array_stream
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="S3_as_record_batch_reader.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    as_record_batch_reader
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="S3_as.character.html" class="md-nav__link">
         
   
@@ -6959,6 +7022,27 @@
   
   <span class="md-ellipsis">
     head
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="S3_infer_nanoarrow_schema.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    infer_nanoarrow_schema
   </span>
   
 
@@ -14169,27 +14253,6 @@
   
   
     <li class="md-nav__item">
-      <a href="nanoarrow.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    nanoarrow
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="polars_class_object.html" class="md-nav__link">
         
   
@@ -14676,8 +14739,8 @@ TRUE)</code>.
 #&gt; │ ---                 ┆ ---   ┆ --- │
 #&gt; │ str                 ┆ u64   ┆ u64 │
 #&gt; ╞═════════════════════╪═══════╪═════╡
-#&gt; │ optimization        ┆ 0     ┆ 85  │
-#&gt; │ projection(literal) ┆ 85    ┆ 282 │
+#&gt; │ optimization        ┆ 0     ┆ 13  │
+#&gt; │ projection(literal) ┆ 13    ┆ 78  │
 #&gt; └─────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Use $profile() to compare two queries</span>
@@ -14703,15 +14766,15 @@ TRUE)</code>.
 #&gt; 
 #&gt; $profile
 #&gt; shape: (3, 3)
-#&gt; ┌────────────────────┬───────┬─────┐
-#&gt; │ node               ┆ start ┆ end │
-#&gt; │ ---                ┆ ---   ┆ --- │
-#&gt; │ str                ┆ u64   ┆ u64 │
-#&gt; ╞════════════════════╪═══════╪═════╡
-#&gt; │ optimization       ┆ 0     ┆ 28  │
-#&gt; │ sort(Sepal.Length) ┆ 28    ┆ 634 │
-#&gt; │ group_by(Species)  ┆ 644   ┆ 992 │
-#&gt; └────────────────────┴───────┴─────┘
+#&gt; ┌────────────────────┬───────┬──────┐
+#&gt; │ node               ┆ start ┆ end  │
+#&gt; │ ---                ┆ ---   ┆ ---  │
+#&gt; │ str                ┆ u64   ┆ u64  │
+#&gt; ╞════════════════════╪═══════╪══════╡
+#&gt; │ optimization       ┆ 0     ┆ 34   │
+#&gt; │ sort(Sepal.Length) ┆ 34    ┆ 743  │
+#&gt; │ group_by(Species)  ┆ 752   ┆ 1043 │
+#&gt; └────────────────────┴───────┴──────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
@@ -14748,9 +14811,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ ---   │
 #&gt; │ str                ┆ u64   ┆ u64   │
 #&gt; ╞════════════════════╪═══════╪═══════╡
-#&gt; │ optimization       ┆ 0     ┆ 12    │
-#&gt; │ sort(Sepal.Length) ┆ 12    ┆ 516   │
-#&gt; │ group_by(Species)  ┆ 520   ┆ 29414 │
+#&gt; │ optimization       ┆ 0     ┆ 10    │
+#&gt; │ sort(Sepal.Length) ┆ 10    ┆ 511   │
+#&gt; │ group_by(Species)  ┆ 513   ┆ 27019 │
 #&gt; └────────────────────┴───────┴───────┘
 </code></pre></div>
 
