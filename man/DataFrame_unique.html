@@ -6329,6 +6329,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="IO_write_parquet.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    write_parquet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -14587,8 +14608,8 @@ changed with <code>options(polars.maintain_order = TRUE)</code>.
 #&gt; │ --- ┆ --- │
 #&gt; │ i32 ┆ i32 │
 #&gt; ╞═════╪═════╡
-#&gt; │ 1   ┆ 1   │
 #&gt; │ 2   ┆ 2   │
+#&gt; │ 1   ┆ 1   │
 #&gt; │ 3   ┆ 1   │
 #&gt; └─────┴─────┘
 </code></pre></div>
@@ -14600,9 +14621,9 @@ changed with <code>options(polars.maintain_order = TRUE)</code>.
 #&gt; │ --- ┆ --- │
 #&gt; │ i32 ┆ i32 │
 #&gt; ╞═════╪═════╡
-#&gt; │ 3   ┆ 3   │
-#&gt; │ 2   ┆ 2   │
 #&gt; │ 1   ┆ 1   │
+#&gt; │ 2   ┆ 2   │
+#&gt; │ 3   ┆ 3   │
 #&gt; └─────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># only keep unique rows</span>

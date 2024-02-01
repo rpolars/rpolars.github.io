@@ -266,6 +266,7 @@ pl$show_all_public_methods()
     #>           [ write_csv ; function ]
     #>           [ write_json ; function ]
     #>           [ write_ndjson ; function ]
+    #>           [ write_parquet ; function ]
     #> 
     #> 
     #>        RPolarsDataType ( environment ):

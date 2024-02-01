@@ -306,6 +306,7 @@ nav:
         - write_csv: man/IO_write_csv.md
         - write_json: man/IO_write_json.md
         - write_ndjson: man/IO_write_ndjson.md
+        - write_parquet: man/IO_write_parquet.md
       RField:
         - class: man/RField_class.md
         - datatype: man/RField_datatype.md
