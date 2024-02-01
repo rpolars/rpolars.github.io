@@ -1,12 +1,13 @@
 
 
-# Meta Equal
+# Check if two expressions are equivalent
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__meta.R#L25)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__meta.R#L22)
 
 ## Description
 
-Are two expressions on a meta level equal
+Indicate if this expression is the same as another expression. See also
+the counterpart <code>$meta$neq()</code>.
 
 ## Usage
 
@@ -28,7 +29,7 @@ Expr to compare with
 
 ## Value
 
-bool: TRUE if equal
+A boolean: <code>TRUE</code> if equal, <code>FALSE</code> otherwise
 
 ## Examples
 
@@ -47,18 +48,15 @@ e1$meta$eq(e3)
     #> [1] TRUE
 
 ``` r
-# e_test is an expression testing whether e1 and e2 evaluates to the same value.
-e_test = e1 == e2 # or e_test = e1$eq(e2)
-
-# direct evaluate e_test, possible because only made up of literals
-e_test$to_r()
+# when evaluated, e1 and e2 are equal
+e1$eq(e2)$to_r()
 ```
 
     #> [1] TRUE
 
 ``` r
-# e1 and e2 are on the meta-level NOT identical expressions
-e1$meta$neq(e2)
+# however, on the meta-level, e1 and e2 are NOT identical expressions
+e1$meta$eq(e2)
 ```
 
-    #> [1] TRUE
+    #> [1] FALSE

@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#output-name" class="md-skip">
+        <a href="#get-the-output-column-names" class="md-skip">
           Skip to content
         </a>
       
@@ -14482,33 +14482,26 @@
   
 
 
-<h1 id="output-name">Output Name</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__meta.R#L107"><strong>Source code</strong></a></p>
+<h1 id="get-the-output-column-names">Get the output column names</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__meta.R#L98"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Get the column name that this expression would produce. It might not
 always be possible to determine the output name as it might depend on
-the schema of the context. In that case this will raise an error.</p>
+the schema of the context. In that case this will raise an error. Use
+<code>$meta$root_names()</code> to get the name of input column.</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Expr&gt;$meta$output_name()
 </code></pre>
 
 <h2 id="value">Value</h2>
-<p>R charvec of output names.</p>
+<p>A character vector</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;alice&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;bob&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">e</span><span class="o">$</span><span class="n">meta</span><span class="o">$</span><span class="nf">root_names</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;alice&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;alice&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;eve&quot;</span><span class="p">))</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;bob&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">e</span><span class="o">$</span><span class="n">meta</span><span class="o">$</span><span class="nf">output_name</span><span class="p">()</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] TRUE
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">e</span><span class="o">$</span><span class="n">meta</span><span class="o">$</span><span class="nf">output_name</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;bob&quot;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] TRUE
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">e</span><span class="o">$</span><span class="n">meta</span><span class="o">$</span><span class="nf">undo_aliases</span><span class="p">()</span><span class="o">$</span><span class="n">meta</span><span class="o">$</span><span class="nf">output_name</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;alice&quot;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] TRUE
+<div class="highlight"><pre><span></span><code>#&gt; [1] &quot;bob&quot;
 </code></pre></div>
 
 

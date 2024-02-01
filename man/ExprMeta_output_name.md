@@ -1,14 +1,15 @@
 
 
-# Output Name
+# Get the output column names
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__meta.R#L107)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__meta.R#L98)
 
 ## Description
 
 Get the column name that this expression would produce. It might not
 always be possible to determine the output name as it might depend on
-the schema of the context. In that case this will raise an error.
+the schema of the context. In that case this will raise an error. Use
+<code>$meta$root_names()</code> to get the name of input column.
 
 ## Usage
 
@@ -17,27 +18,15 @@ the schema of the context. In that case this will raise an error.
 
 ## Value
 
-R charvec of output names.
+A character vector
 
 ## Examples
 
 ``` r
 library(polars)
 
-e = pl$col("alice")$alias("bob")
-e$meta$root_names() == "alice"
+e = (pl$col("alice") + pl$col("eve"))$alias("bob")
+e$meta$output_name()
 ```
 
-    #> [1] TRUE
-
-``` r
-e$meta$output_name() == "bob"
-```
-
-    #> [1] TRUE
-
-``` r
-e$meta$undo_aliases()$meta$output_name() == "alice"
-```
-
-    #> [1] TRUE
+    #> [1] "bob"

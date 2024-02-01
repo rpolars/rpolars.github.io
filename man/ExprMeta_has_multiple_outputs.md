@@ -1,12 +1,12 @@
 
 
-# Has multiple outputs
+# Indicate if an expression has multiple outputs
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__meta.R#L136)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__meta.R#L128)
 
 ## Description
 
-Whether this expression expands into multiple expressions.
+Indicate if an expression has multiple outputs
 
 ## Usage
 
@@ -15,20 +15,22 @@ Whether this expression expands into multiple expressions.
 
 ## Value
 
-Bool
+Boolean
 
 ## Examples
 
 ``` r
 library(polars)
 
+e = (pl$col("alice") + pl$col("eve"))$alias("bob")
+e$meta$has_multiple_outputs()
+```
+
+    #> [1] FALSE
+
+``` r
+# pl$all() select multiple cols to modify them, so it has multiple outputs
 pl$all()$meta$has_multiple_outputs()
 ```
 
     #> [1] TRUE
-
-``` r
-pl$col("some_colname")$meta$has_multiple_outputs()
-```
-
-    #> [1] FALSE

@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#meta-equal" class="md-skip">
+        <a href="#check-if-two-expressions-are-equivalent" class="md-skip">
           Skip to content
         </a>
       
@@ -14500,10 +14500,11 @@
   
 
 
-<h1 id="meta-equal">Meta Equal</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__meta.R#L25"><strong>Source code</strong></a></p>
+<h1 id="check-if-two-expressions-are-equivalent">Check if two expressions are equivalent</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__meta.R#L22"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>Are two expressions on a meta level equal</p>
+<p>Indicate if this expression is the same as another expression. See also
+the counterpart <code>$meta$neq()</code>.</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Expr&gt;$meta$eq(other)
 </code></pre>
@@ -14521,7 +14522,7 @@ Expr to compare with
 </table>
 
 <h2 id="value">Value</h2>
-<p>bool: TRUE if equal</p>
+<p>A boolean: <code>TRUE</code> if equal, <code>FALSE</code> otherwise</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -14535,18 +14536,15 @@ Expr to compare with
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [1] TRUE
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># e_test is an expression testing whether e1 and e2 evaluates to the same value.</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">e_test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">e2</span><span class="w"> </span><span class="c1"># or e_test = e1$eq(e2)</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># direct evaluate e_test, possible because only made up of literals</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">e_test</span><span class="o">$</span><span class="nf">to_r</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># when evaluated, e1 and e2 are equal</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">e1</span><span class="o">$</span><span class="nf">eq</span><span class="p">(</span><span class="n">e2</span><span class="p">)</span><span class="o">$</span><span class="nf">to_r</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [1] TRUE
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># e1 and e2 are on the meta-level NOT identical expressions</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">e1</span><span class="o">$</span><span class="n">meta</span><span class="o">$</span><span class="nf">neq</span><span class="p">(</span><span class="n">e2</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># however, on the meta-level, e1 and e2 are NOT identical expressions</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">e1</span><span class="o">$</span><span class="n">meta</span><span class="o">$</span><span class="nf">eq</span><span class="p">(</span><span class="n">e2</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] TRUE
+<div class="highlight"><pre><span></span><code>#&gt; [1] FALSE
 </code></pre></div>
 
 

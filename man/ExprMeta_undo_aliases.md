@@ -1,13 +1,15 @@
 
 
-# Undo aliases
+# Undo any renaming operation
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__meta.R#L122)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__meta.R#L114)
 
 ## Description
 
-Undo any renaming operation like <code>alias</code> or
-<code>keep_name</code>.
+This removes any renaming operation like <code>$alias()</code> or
+<code>$name$keep()</code>. Polars uses the "leftmost rule" to determine
+naming, meaning that the first element of the expression will be used to
+name the output.
 
 ## Usage
 
@@ -23,20 +25,14 @@ Expr with aliases undone
 ``` r
 library(polars)
 
-e = pl$col("alice")$alias("bob")
-e$meta$root_names() == "alice"
+e = (pl$col("alice") + pl$col("eve"))$alias("bob")
+e$meta$output_name()
 ```
 
-    #> [1] TRUE
+    #> [1] "bob"
 
 ``` r
-e$meta$output_name() == "bob"
+e$meta$undo_aliases()$meta$output_name()
 ```
 
-    #> [1] TRUE
-
-``` r
-e$meta$undo_aliases()$meta$output_name() == "alice"
-```
-
-    #> [1] TRUE
+    #> [1] "alice"

@@ -2,7 +2,7 @@
 
 # Pop
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__meta.R#L73)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__meta.R#L68)
 
 ## Description
 
@@ -16,8 +16,9 @@ expression.
 
 ## Value
 
-R list of Expr(s) usually one, only multiple if top Expr took more Expr
-as input.
+A list of expressions which in most cases will have a unit length. This
+is not the case when an expression has multiple inputs, for instance in
+a <code>$fold()</code> expression.
 
 ## Examples
 

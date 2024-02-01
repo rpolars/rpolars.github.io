@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#undo-aliases" class="md-skip">
+        <a href="#undo-any-renaming-operation" class="md-skip">
           Skip to content
         </a>
       
@@ -14482,11 +14482,13 @@
   
 
 
-<h1 id="undo-aliases">Undo aliases</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__meta.R#L122"><strong>Source code</strong></a></p>
+<h1 id="undo-any-renaming-operation">Undo any renaming operation</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__meta.R#L114"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>Undo any renaming operation like <code>alias</code> or
-<code>keep_name</code>.</p>
+<p>This removes any renaming operation like <code>$alias()</code> or
+<code>$name$keep()</code>. Polars uses the "leftmost rule" to determine
+naming, meaning that the first element of the expression will be used to
+name the output.</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Expr&gt;$meta$undo_aliases()
 </code></pre>
@@ -14496,18 +14498,14 @@
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;alice&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;bob&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">e</span><span class="o">$</span><span class="n">meta</span><span class="o">$</span><span class="nf">root_names</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;alice&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;alice&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;eve&quot;</span><span class="p">))</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;bob&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">e</span><span class="o">$</span><span class="n">meta</span><span class="o">$</span><span class="nf">output_name</span><span class="p">()</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] TRUE
+<div class="highlight"><pre><span></span><code>#&gt; [1] &quot;bob&quot;
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">e</span><span class="o">$</span><span class="n">meta</span><span class="o">$</span><span class="nf">output_name</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;bob&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">e</span><span class="o">$</span><span class="n">meta</span><span class="o">$</span><span class="nf">undo_aliases</span><span class="p">()</span><span class="o">$</span><span class="n">meta</span><span class="o">$</span><span class="nf">output_name</span><span class="p">()</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] TRUE
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">e</span><span class="o">$</span><span class="n">meta</span><span class="o">$</span><span class="nf">undo_aliases</span><span class="p">()</span><span class="o">$</span><span class="n">meta</span><span class="o">$</span><span class="nf">output_name</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;alice&quot;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] TRUE
+<div class="highlight"><pre><span></span><code>#&gt; [1] &quot;alice&quot;
 </code></pre></div>
 
 
