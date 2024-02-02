@@ -4,7 +4,7 @@
 
 ## Description
 
-Convert to a matrix
+Equivalent to <code>as.data.frame(x, …) |\> as.matrix()</code>.
 
 ## Usage
 
@@ -23,7 +23,7 @@ as.matrix(x, ...)
 <code id="as.matrix.RPolarsDataFrame_:_x">x</code>
 </td>
 <td>
-A DataFrame or LazyFrame
+An object to convert to a matrix.
 </td>
 </tr>
 <tr>
@@ -31,7 +31,7 @@ A DataFrame or LazyFrame
 <code id="as.matrix.RPolarsDataFrame_:_...">…</code>
 </td>
 <td>
-Any arguments passed to <code>data.frame()</code>.
+Additional arguments passed to methods.
 </td>
 </tr>
 </table>

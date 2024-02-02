@@ -91,7 +91,7 @@ df$collect()$height
 df$unique()$collect()$height
 ```
 
-    #> [1] 70
+    #> [1] 65
 
 ``` r
 df$unique(subset = "x")$collect()$height

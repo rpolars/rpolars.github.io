@@ -14530,7 +14530,7 @@
 
 <h1 id="convert-to-a-matrix">Convert to a matrix</h1>
 <h2 id="description">Description</h2>
-<p>Convert to a matrix</p>
+<p>Equivalent to <code>as.data.frame(x, …) |&gt; as.matrix()</code>.</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>## S3 method for class 'RPolarsDataFrame'
 as.matrix(x, ...)
@@ -14546,7 +14546,7 @@ as.matrix(x, ...)
 <code id="as.matrix.RPolarsDataFrame_:_x">x</code>
 </td>
 <td>
-A DataFrame or LazyFrame
+An object to convert to a matrix.
 </td>
 </tr>
 <tr>
@@ -14554,7 +14554,7 @@ A DataFrame or LazyFrame
 <code id="as.matrix.RPolarsDataFrame_:_...">…</code>
 </td>
 <td>
-Any arguments passed to <code>data.frame()</code>.
+Additional arguments passed to methods.
 </td>
 </tr>
 </table>
