@@ -291,6 +291,10 @@ nav:
         - agg: man/RollingGroupBy_agg.md
         - class: man/RollingGroupBy_class.md
         - ungroup: man/RollingGroupBy_ungroup.md
+      DynamicGroupBy:
+        - agg: man/DynamicGroupBy_agg.md
+        - class: man/DynamicGroupBy_class.md
+        - ungroup: man/DynamicGroupBy_ungroup.md
       Input/Output:
         - read_csv: man/IO_read_csv.md
         - read_ndjson: man/IO_read_ndjson.md
@@ -659,9 +663,6 @@ nav:
         - DataType_Datetime: man/DataType_Datetime.md
         - DataType_List: man/DataType_List.md
         - DataType_Struct: man/DataType_Struct.md
-        - DynamicGroupBy_agg: man/DynamicGroupBy_agg.md
-        - DynamicGroupBy_class: man/DynamicGroupBy_class.md
-        - DynamicGroupBy_ungroup: man/DynamicGroupBy_ungroup.md
         - global_rpool_cap: man/global_rpool_cap.md
         - is_polars_df: man/is_polars_df.md
         - is_polars_lf: man/is_polars_lf.md

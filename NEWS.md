@@ -2,6 +2,10 @@
 
 ## polars (development version)
 
+### New features
+
+-   New method `$write_parquet()` for DataFrame ([#758](https://github.com/pola-rs/r-polars/issues/758)).
+
 ### Bug fixes
 
 -   `$sort()` no longer panicks when `descending = NULL` ([#748](https://github.com/pola-rs/r-polars/issues/748)).
@@ -91,7 +95,6 @@
         replacement of `pl$reset_options()`).
 -   New function `polars_envvars()` to print the list of environment variables
     related to polars ([#735](https://github.com/pola-rs/r-polars/issues/735)).
--   New method `$write_parquet()` for DataFrame ([#758](https://github.com/pola-rs/r-polars/issues/758)).
 
 ## polars 0.12.2
 
