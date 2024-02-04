@@ -2,7 +2,7 @@
 
 # Drop duplicated rows
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1022)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/f1aede4d7d7f090c98651365a4120a8232503a4d/R/lazyframe__lazy.R#L1022)
 
 ## Description
 
@@ -91,7 +91,7 @@ df$collect()$height
 df$unique()$collect()$height
 ```
 
-    #> [1] 70
+    #> [1] 63
 
 ``` r
 df$unique(subset = "x")$collect()$height

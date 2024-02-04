@@ -14565,7 +14565,7 @@
 
 
 <h1 id="drop-duplicated-rows">Drop duplicated rows</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L410"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/f1aede4d7d7f090c98651365a4120a8232503a4d/R/dataframe__frame.R#L410"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Drop duplicated rows</p>
 <h2 id="usage">Usage</h2>
@@ -14653,9 +14653,9 @@ changed with <code>options(polars.maintain_order = TRUE)</code>.
 #&gt; │ --- ┆ --- │
 #&gt; │ i32 ┆ i32 │
 #&gt; ╞═════╪═════╡
-#&gt; │ 3   ┆ 1   │
 #&gt; │ 2   ┆ 2   │
 #&gt; │ 1   ┆ 1   │
+#&gt; │ 3   ┆ 1   │
 #&gt; └─────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">subset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">keep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;first&quot;</span><span class="p">))</span>
@@ -14666,8 +14666,8 @@ changed with <code>options(polars.maintain_order = TRUE)</code>.
 #&gt; │ --- ┆ --- │
 #&gt; │ i32 ┆ i32 │
 #&gt; ╞═════╪═════╡
-#&gt; │ 3   ┆ 3   │
 #&gt; │ 2   ┆ 2   │
+#&gt; │ 3   ┆ 3   │
 #&gt; │ 1   ┆ 1   │
 #&gt; └─────┴─────┘
 </code></pre></div>

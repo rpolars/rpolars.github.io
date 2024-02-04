@@ -2,7 +2,7 @@
 
 # Indicate if an expression uses a regex projection
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__meta.R#L139)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/f1aede4d7d7f090c98651365a4120a8232503a4d/R/expr__meta.R#L139)
 
 ## Description
 

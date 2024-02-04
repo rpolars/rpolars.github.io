@@ -14583,7 +14583,7 @@
 
 
 <h1 id="rechunk-a-dataframe">Rechunk a DataFrame</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1103"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/f1aede4d7d7f090c98651365a4120a8232503a4d/R/dataframe__frame.R#L1103"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Rechunking re-allocates any "chunked" memory allocations to speed-up
 e.g. vectorized operations.</p>
@@ -14676,10 +14676,10 @@ FALSE</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nf">lapply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">tracemem</span><span class="p">)</span><span class="w"> </span><span class="c1"># trace chunks to verify no re-allocation</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [[1]]
-#&gt; [1] &quot;&lt;0x5584894f8398&gt;&quot;
+#&gt; [1] &quot;&lt;0x5642f172c868&gt;&quot;
 #&gt; 
 #&gt; [[2]]
-#&gt; [1] &quot;&lt;0x558486cd70b8&gt;&quot;
+#&gt; [1] &quot;&lt;0x5642eef0c6b8&gt;&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">z</span><span class="w"> </span><span class="c1"># looks like a plain vector</span>
@@ -14689,16 +14689,16 @@ FALSE</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nf">lapply</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="w"> </span><span class="n">tracemem</span><span class="p">)</span><span class="w"> </span><span class="c1"># mem allocation  in z are the same from x</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [[1]]
-#&gt; [1] &quot;&lt;0x5584894f8398&gt;&quot;
+#&gt; [1] &quot;&lt;0x5642f172c868&gt;&quot;
 #&gt; 
 #&gt; [[2]]
-#&gt; [1] &quot;&lt;0x558486cd70b8&gt;&quot;
+#&gt; [1] &quot;&lt;0x5642eef0c6b8&gt;&quot;
 #&gt; 
 #&gt; [[3]]
-#&gt; [1] &quot;&lt;0x5584894f8398&gt;&quot;
+#&gt; [1] &quot;&lt;0x5642f172c868&gt;&quot;
 #&gt; 
 #&gt; [[4]]
-#&gt; [1] &quot;&lt;0x558486cd70b8&gt;&quot;
+#&gt; [1] &quot;&lt;0x5642eef0c6b8&gt;&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nf">str</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 </code></pre></div>
