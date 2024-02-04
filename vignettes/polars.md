@@ -89,15 +89,45 @@ to avoid collision with classes provided by other packages, the class
 name of all objects created by `polars` starts with “RPolars”. For
 example, a `polars` `DataFrame` has the class “RPolarsDataFrame”.
 
-To convert R vectors and data frames to Polars `Series` and
-`DataFrames`, we load the library and use constructor functions with the
-`pl$` prefix. This prefix is very important, as most of the `polars`
-functions are made available via `pl$`:
+To create Polars `Series` and `DataFrames` objects, we load the library
+and use constructor functions with the `pl$` prefix. This prefix is very
+important, as most of the `polars` functions are made available via
+`pl$`:
 
 ``` r
 library(polars)
 
-ser = pl$Series((1:5) * 5)
+pl$Series((1:5) * 5)
+#> polars Series: shape: (5,)
+#> Series: '' [f64]
+#> [
+#>  5.0
+#>  10.0
+#>  15.0
+#>  20.0
+#>  25.0
+#> ]
+
+pl$DataFrame(a = 1:5, b = letters[1:5])
+#> shape: (5, 2)
+#> ┌─────┬─────┐
+#> │ a   ┆ b   │
+#> │ --- ┆ --- │
+#> │ i32 ┆ str │
+#> ╞═════╪═════╡
+#> │ 1   ┆ a   │
+#> │ 2   ┆ b   │
+#> │ 3   ┆ c   │
+#> │ 4   ┆ d   │
+#> │ 5   ┆ e   │
+#> └─────┴─────┘
+```
+
+Or, to convert existing R objects to Polars objects, we can use the
+`as_polars_series()` and `as_polars_df()` generic functions.
+
+``` r
+ser = as_polars_series((1:5) * 5)
 ser
 #> polars Series: shape: (5,)
 #> Series: '' [f64]
@@ -109,7 +139,7 @@ ser
 #>  25.0
 #> ]
 
-dat = pl$DataFrame(mtcars)
+dat = as_polars_df(mtcars)
 dat
 #> shape: (32, 11)
 #> ┌──────┬─────┬───────┬───────┬───┬─────┬─────┬──────┬──────┐
@@ -128,6 +158,9 @@ dat
 #> │ 21.4 ┆ 4.0 ┆ 121.0 ┆ 109.0 ┆ … ┆ 1.0 ┆ 1.0 ┆ 4.0  ┆ 2.0  │
 #> └──────┴─────┴───────┴───────┴───┴─────┴─────┴──────┴──────┘
 ```
+
+`pl$DataFrame()` is similar to `data.frame()`, and `as_polars_df()` is
+similar to `as.data.frame()`.
 
 Both Polars and R are column-orientated. So you can think of
 `DataFrames` (data.frames) as being made up of a collection of `Series`
@@ -205,13 +238,20 @@ head(dat, n = 2)
 
 Although some simple R functions work out of the box on **polars**
 objects, the full power of Polars is realized via *methods*. Polars
-methods are accessed using the `$` syntax. For example, to convert
-Polars `Series` and `DataFrames` back to standard R objects, we use the
-`$to_vector()` and `$to_data_frame()` methods:
+methods are accessed using the `$` syntax. For example, to sort a
+`Series` object, we use the `$sort()` method:
 
 ``` r
-ser$to_vector()
-#> [1]  5 10 15 20 25
+ser$sort()
+#> polars Series: shape: (5,)
+#> Series: '' [f64]
+#> [
+#>  5.0
+#>  10.0
+#>  15.0
+#>  20.0
+#>  25.0
+#> ]
 ```
 
 There are numerous methods designed to accomplish various tasks:
@@ -290,7 +330,8 @@ dat$tail(10)$max()
 Finally, we convert the result to a standard R data frame:
 
 ``` r
-dat$tail(10)$max()$to_data_frame()
+dat$tail(10)$max() |>
+  as.data.frame()
 #>    mpg cyl disp  hp drat    wt qsec vs am gear carb
 #> 1 30.4   8  400 335 4.43 3.845 18.9  1  1    5    8
 ```
@@ -308,9 +349,9 @@ dat$group_by("cyl")$mean()
 #> │ --- ┆ ---       ┆ ---        ┆ ---        ┆   ┆ ---      ┆ ---      ┆ ---      ┆ ---      │
 #> │ f64 ┆ f64       ┆ f64        ┆ f64        ┆   ┆ f64      ┆ f64      ┆ f64      ┆ f64      │
 #> ╞═════╪═══════════╪════════════╪════════════╪═══╪══════════╪══════════╪══════════╪══════════╡
+#> │ 8.0 ┆ 15.1      ┆ 353.1      ┆ 209.214286 ┆ … ┆ 0.0      ┆ 0.142857 ┆ 3.285714 ┆ 3.5      │
 #> │ 6.0 ┆ 19.742857 ┆ 183.314286 ┆ 122.285714 ┆ … ┆ 0.571429 ┆ 0.428571 ┆ 3.857143 ┆ 3.428571 │
 #> │ 4.0 ┆ 26.663636 ┆ 105.136364 ┆ 82.636364  ┆ … ┆ 0.909091 ┆ 0.727273 ┆ 4.090909 ┆ 1.545455 │
-#> │ 8.0 ┆ 15.1      ┆ 353.1      ┆ 209.214286 ┆ … ┆ 0.0      ┆ 0.142857 ┆ 3.285714 ┆ 3.5      │
 #> └─────┴───────────┴────────────┴────────────┴───┴──────────┴──────────┴──────────┴──────────┘
 ```
 
@@ -501,11 +542,11 @@ dat$group_by(
 #> │ f64 ┆ bool   ┆ f64       ┆ f64    │
 #> ╞═════╪════════╪═══════════╪════════╡
 #> │ 6.0 ┆ true   ┆ 20.566667 ┆ 110.0  │
+#> │ 8.0 ┆ false  ┆ 15.05     ┆ 180.0  │
 #> │ 4.0 ┆ false  ┆ 22.9      ┆ 95.0   │
-#> │ 8.0 ┆ true   ┆ 15.4      ┆ 299.5  │
 #> │ 4.0 ┆ true   ┆ 28.075    ┆ 78.5   │
 #> │ 6.0 ┆ false  ┆ 19.125    ┆ 116.5  │
-#> │ 8.0 ┆ false  ┆ 15.05     ┆ 180.0  │
+#> │ 8.0 ┆ true   ┆ 15.4      ┆ 299.5  │
 #> └─────┴────────┴───────────┴────────┘
 ```
 
@@ -520,7 +561,7 @@ demonstrate some basic examples. Note that the data are currently in
 long format.
 
 ``` r
-indo = pl$DataFrame(Indometh)
+indo = as_polars_df(Indometh)
 ```
 
 To go from long to wide, we use the `pivot` method. Here we pivot the
@@ -594,8 +635,8 @@ borrow some datasets from the **nycflights13** package.
 
 ``` r
 data("flights", "planes", package = "nycflights13")
-flights = pl$DataFrame(flights)
-planes = pl$DataFrame(planes)
+flights = as_polars_df(flights)
+planes = as_polars_df(planes)
 
 flights$join(
   planes,
@@ -644,6 +685,14 @@ an existing object in memory, we can invoke the `lazy()` constructor.
 ``` r
 ldat = dat$lazy()
 ldat
+#> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
+#> DF ["mpg", "cyl", "disp", "hp"]; PROJECT */11 COLUMNS; SELECTION: "None"
+```
+
+Or, use the `as_polars_lf()` generic function.
+
+``` r
+as_polars_lf(dat)
 #> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
 #> DF ["mpg", "cyl", "disp", "hp"]; PROJECT */11 COLUMNS; SELECTION: "None"
 ```
@@ -713,25 +762,25 @@ Here we demonstrate using the `airquality` dataset that also comes
 bundled with base R.
 
 ``` r
-write.csv(airquality, "airquality.csv")
+write.csv(airquality, "airquality.csv", row.names = FALSE)
 
 pl$read_csv("airquality.csv")
-#> shape: (153, 7)
-#> ┌─────┬───────┬─────────┬──────┬──────┬───────┬─────┐
-#> │     ┆ Ozone ┆ Solar.R ┆ Wind ┆ Temp ┆ Month ┆ Day │
-#> │ --- ┆ ---   ┆ ---     ┆ ---  ┆ ---  ┆ ---   ┆ --- │
-#> │ i64 ┆ str   ┆ str     ┆ f64  ┆ i64  ┆ i64   ┆ i64 │
-#> ╞═════╪═══════╪═════════╪══════╪══════╪═══════╪═════╡
-#> │ 1   ┆ 41    ┆ 190     ┆ 7.4  ┆ 67   ┆ 5     ┆ 1   │
-#> │ 2   ┆ 36    ┆ 118     ┆ 8.0  ┆ 72   ┆ 5     ┆ 2   │
-#> │ 3   ┆ 12    ┆ 149     ┆ 12.6 ┆ 74   ┆ 5     ┆ 3   │
-#> │ 4   ┆ 18    ┆ 313     ┆ 11.5 ┆ 62   ┆ 5     ┆ 4   │
-#> │ …   ┆ …     ┆ …       ┆ …    ┆ …    ┆ …     ┆ …   │
-#> │ 150 ┆ NA    ┆ 145     ┆ 13.2 ┆ 77   ┆ 9     ┆ 27  │
-#> │ 151 ┆ 14    ┆ 191     ┆ 14.3 ┆ 75   ┆ 9     ┆ 28  │
-#> │ 152 ┆ 18    ┆ 131     ┆ 8.0  ┆ 76   ┆ 9     ┆ 29  │
-#> │ 153 ┆ 20    ┆ 223     ┆ 11.5 ┆ 68   ┆ 9     ┆ 30  │
-#> └─────┴───────┴─────────┴──────┴──────┴───────┴─────┘
+#> shape: (153, 6)
+#> ┌───────┬─────────┬──────┬──────┬───────┬─────┐
+#> │ Ozone ┆ Solar.R ┆ Wind ┆ Temp ┆ Month ┆ Day │
+#> │ ---   ┆ ---     ┆ ---  ┆ ---  ┆ ---   ┆ --- │
+#> │ str   ┆ str     ┆ f64  ┆ i64  ┆ i64   ┆ i64 │
+#> ╞═══════╪═════════╪══════╪══════╪═══════╪═════╡
+#> │ 41    ┆ 190     ┆ 7.4  ┆ 67   ┆ 5     ┆ 1   │
+#> │ 36    ┆ 118     ┆ 8.0  ┆ 72   ┆ 5     ┆ 2   │
+#> │ 12    ┆ 149     ┆ 12.6 ┆ 74   ┆ 5     ┆ 3   │
+#> │ 18    ┆ 313     ┆ 11.5 ┆ 62   ┆ 5     ┆ 4   │
+#> │ …     ┆ …       ┆ …    ┆ …    ┆ …     ┆ …   │
+#> │ NA    ┆ 145     ┆ 13.2 ┆ 77   ┆ 9     ┆ 27  │
+#> │ 14    ┆ 191     ┆ 14.3 ┆ 75   ┆ 9     ┆ 28  │
+#> │ 18    ┆ 131     ┆ 8.0  ┆ 76   ┆ 9     ┆ 29  │
+#> │ 20    ┆ 223     ┆ 11.5 ┆ 68   ┆ 9     ┆ 30  │
+#> └───────┴─────────┴──────┴──────┴───────┴─────┘
 ```
 
 Again, however, the package works best if we take the lazy approach.
@@ -741,7 +790,7 @@ pl$scan_csv("airquality.csv")
 #> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
 #> 
 #>   Csv SCAN airquality.csv
-#>   PROJECT */7 COLUMNS
+#>   PROJECT */6 COLUMNS
 ```
 
 We could obviously append a set of query operators to the above
@@ -750,17 +799,13 @@ better suited to Parquet files, since we can leverage their efficient
 storage format on disk. Let’s see an example.
 
 ``` r
-library(arrow)
-#> 
-#> Attaching package: 'arrow'
-#> The following object is masked from 'package:utils':
-#> 
-#>     timestamp
+as_polars_df(airquality)$write_parquet("airquality.parquet")
 
-write_parquet(airquality, "airquality.parquet")
+# eager version (okay)
+aq_collected = pl$read_parquet("airquality.parquet")
 
-# aq = read_parquet("airquality.parquet) # eager version (okay)
-aq = pl$scan_parquet("airquality.parquet") # lazy version (better)
+# lazy version (better)
+aq = pl$scan_parquet("airquality.parquet")
 
 aq$filter(
   pl$col("Month") <= 6
@@ -785,7 +830,9 @@ pattern globbing.
 
 ``` r
 dir.create("airquality-ds")
-write_dataset(airquality, "airquality-ds", partitioning = "Month")
+
+# Create a hive-partitioned dataset with the function from the arrow package
+arrow::write_dataset(airquality, "airquality-ds", partitioning = "Month")
 
 # Use pattern globbing to scan all parquet files in the folder
 aq2 = pl$scan_parquet("airquality-ds/**/*.parquet")
@@ -820,13 +867,14 @@ inhibit performance. R functions are typically slower, so we recommend
 using native Polars functions and expressions wherever possible.
 
 ``` r
-pl$DataFrame(iris)$select(
+as_polars_df(iris)$select(
   pl$col("Sepal.Length")$map_batches(\(s) { # map with a R function
     x = s$to_vector() # convert from Polars Series to a native R vector
     x[x >= 5] = 10
     x[1:10] # if return is R vector, it will automatically be converted to Polars Series again
   })
-)$to_data_frame()
+) |>
+  as.data.frame()
 #>    Sepal.Length
 #> 1          10.0
 #> 2           4.9

@@ -14,7 +14,7 @@
       
       
       <link rel="icon" href="polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.6">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.7">
     
     
       
@@ -22,7 +22,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.f2e4d321.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
@@ -14444,6 +14444,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#other-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other enhancements
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -15309,6 +15318,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#other-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other enhancements
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -16135,10 +16153,24 @@
 <h3 id="new-features">New features</h3>
 <ul>
 <li>New method <code>$write_parquet()</code> for DataFrame (<a href="https://github.com/pola-rs/r-polars/issues/758">#758</a>).</li>
+<li>S3 methods of <code>as.data.frame()</code> for <code>RPolarsDataFrame</code> and <code>RPolarsLazyFrame</code>
+    accepts more arguments of <code>as_polars_df()</code> and <code>&lt;DataFrame&gt;$to_data_frame()</code> (<a href="https://github.com/pola-rs/r-polars/issues/762">#762</a>).</li>
+<li>S3 methods of <code>arrow::as_arrow_table()</code> and <code>arrow::as_record_batch_reader()</code> for
+    <code>RPolarsDataFrame</code> no longer need the <code>{nanoarrow}</code> package (<a href="https://github.com/pola-rs/r-polars/issues/754">#754</a>).</li>
+<li>Some S3 methods for the <code>{nanoarrow}</code> package are added (<a href="https://github.com/pola-rs/r-polars/issues/730">#730</a>).<ul>
+<li><code>as_polars_df(&lt;nanoarrow_array_stream&gt;)</code></li>
+<li><code>as_polars_series(&lt;nanoarrow_array&gt;)</code></li>
+<li><code>as_polars_series(&lt;nanoarrow_array_stream&gt;)</code></li>
+</ul>
+</li>
 </ul>
 <h3 id="bug-fixes">Bug fixes</h3>
 <ul>
 <li><code>$sort()</code> no longer panicks when <code>descending = NULL</code> (<a href="https://github.com/pola-rs/r-polars/issues/748">#748</a>).</li>
+</ul>
+<h3 id="other-enhancements">Other enhancements</h3>
+<ul>
+<li><code>downlit::autolink()</code> now recognize the reference pages of this package (<a href="https://github.com/pola-rs/r-polars/issues/739">#739</a>).</li>
 </ul>
 <h2 id="polars-0130">polars 0.13.0</h2>
 <h3 id="breaking-changes">Breaking changes</h3>
@@ -16952,7 +16984,7 @@ features. Unrelated breaking changes and new features are put in separate sectio
     <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.e1c3ead8.min.js"></script>
+      <script src="assets/javascripts/bundle.caa56a14.min.js"></script>
       
     
   </body>
