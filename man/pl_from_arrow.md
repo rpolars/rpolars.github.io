@@ -2,7 +2,7 @@
 
 # from_arrow
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/f1aede4d7d7f090c98651365a4120a8232503a4d/R/convert.R#L29)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/convert.R#L29)
 
 ## Description
 

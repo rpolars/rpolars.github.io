@@ -45,11 +45,20 @@ install.packages(
 )
 ```
 
-#### macOS (x86_64)
+#### macOS (x86_64, a.k.a. Intel)
 
 ``` r
 install.packages(
   "https://github.com/pola-rs/r-polars/releases/latest/download/polars__x86_64-apple-darwin20.tgz",
+  repos = NULL
+)
+```
+
+#### macOS (aarch64, a.k.a. Apple Silicon)
+
+``` r
+install.packages(
+  "https://github.com/pola-rs/r-polars/releases/latest/download/polars__aarch64-apple-darwin20.tgz",
   repos = NULL
 )
 ```
@@ -108,7 +117,7 @@ The features enabled in the compiled Rust library are shown by the
 ``` r
 library(polars)
 polars_info()
-#> r-polars package version : 0.13.1
+#> r-polars package version : 0.13.1.9000
 #> rust-polars crate version: 0.36.2
 #> 
 #> Thread pool size: 4 

@@ -14671,18 +14671,24 @@ to build from source.</p>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="n">repos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">)</span>
 </code></pre></div>
-<h4 id="macos-x86_64">macOS (x86_64)</h4>
+<h4 id="macos-x86_64-aka-intel">macOS (x86_64, a.k.a. Intel)</h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nf">install.packages</span><span class="p">(</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="s">&quot;https://github.com/pola-rs/r-polars/releases/latest/download/polars__x86_64-apple-darwin20.tgz&quot;</span><span class="p">,</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="n">repos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">)</span>
 </code></pre></div>
+<h4 id="macos-aarch64-aka-apple-silicon">macOS (aarch64, a.k.a. Apple Silicon)</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nf">install.packages</span><span class="p">(</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="s">&quot;https://github.com/pola-rs/r-polars/releases/latest/download/polars__aarch64-apple-darwin20.tgz&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="n">repos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">)</span>
+</code></pre></div>
 <h3 id="from-github-commits">From GitHub commits</h3>
 <p>Installing from GitHub commits or GitHub releases can be done using the
 <code>{remotes}</code> package’s functions.</p>
 <p>For example, installing the version 0.9.0 from the GitHub release.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">NOT_CRAN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1"># Enable installation with pre-built Rust library binary, or enable Rust caching</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">remotes</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">&quot;pola-rs/r-polars@v0.9.0&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">NOT_CRAN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1"># Enable installation with pre-built Rust library binary, or enable Rust caching</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">remotes</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">&quot;pola-rs/r-polars@v0.9.0&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="details-of-installation">Details of installation</h2>
 <h3 id="pre-built-rust-library-binaries">Pre-built Rust library binaries</h3>
@@ -14703,9 +14709,9 @@ building from source.</p>
 <p>If you want to use a pre-built Rust library binary that exists locally,
 set the <code>LIBR_POLARS_PATH</code> environment variable to the path to the
 binary. For example (on Bash):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">LIBR_POLARS_BUILD</span><span class="o">=</span><span class="s2">&quot;false&quot;</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">LIBR_POLARS_PATH</span><span class="o">=</span><span class="s2">&quot;/tmp/libr_polars.a&quot;</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Rscript<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;install.packages(&quot;polars&quot;, repos = &quot;https://rpolars.r-universe.dev&quot;, type = &quot;source&quot;)&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">LIBR_POLARS_BUILD</span><span class="o">=</span><span class="s2">&quot;false&quot;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">LIBR_POLARS_PATH</span><span class="o">=</span><span class="s2">&quot;/tmp/libr_polars.a&quot;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Rscript<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;install.packages(&quot;polars&quot;, repos = &quot;https://rpolars.r-universe.dev&quot;, type = &quot;source&quot;)&#39;</span>
 </code></pre></div>
 <h3 id="rust-build-time-options">Rust build time options</h3>
 <p>r-polars Rust library has some <a href="https://doc.rust-lang.org/cargo/reference/features.html">feature
@@ -14714,20 +14720,20 @@ affect the R package features. These flags are set at compile time, and
 cannot be changed at runtime.</p>
 <p>The features enabled in the compiled Rust library are shown by the
 <code>polars_info()</code> function.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nf">polars_info</span><span class="p">()</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1">#&gt; r-polars package version : 0.13.1</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1">#&gt; rust-polars crate version: 0.36.2</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1">#&gt; </span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1">#&gt; Thread pool size: 4 </span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1">#&gt; </span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="c1">#&gt; Features:                               </span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1">#&gt; default                    TRUE</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="c1">#&gt; full_features              TRUE</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="c1">#&gt; disable_limit_max_threads  TRUE</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="c1">#&gt; simd                       TRUE</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="c1">#&gt; sql                        TRUE</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="c1">#&gt; rpolars_debug_print       FALSE</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nf">polars_info</span><span class="p">()</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1">#&gt; r-polars package version : 0.13.1.9000</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1">#&gt; rust-polars crate version: 0.36.2</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1">#&gt; </span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1">#&gt; Thread pool size: 4 </span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1">#&gt; </span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c1">#&gt; Features:                               </span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="c1">#&gt; default                    TRUE</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="c1">#&gt; full_features              TRUE</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c1">#&gt; disable_limit_max_threads  TRUE</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="c1">#&gt; simd                       TRUE</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="c1">#&gt; sql                        TRUE</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="c1">#&gt; rpolars_debug_print       FALSE</span>
 </code></pre></div>
 <p>At this time, the following environment variables can be used to change
 the Rust library build time options.</p>
