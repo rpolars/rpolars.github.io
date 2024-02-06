@@ -897,27 +897,6 @@
   
   
     <li class="md-nav__item">
-      <a href="pl_count.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    count
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="pl_cov.html" class="md-nav__link">
         
   
@@ -1280,6 +1259,27 @@
   
   <span class="md-ellipsis">
     LazyFrame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_len.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    len
   </span>
   
 
@@ -4221,11 +4221,11 @@
   
   
     <li class="md-nav__item">
-      <a href="DataFrame_with_row_count.html" class="md-nav__link">
+      <a href="DataFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -5316,11 +5316,11 @@
   
   
     <li class="md-nav__item">
-      <a href="LazyFrame_with_row_count.html" class="md-nav__link">
+      <a href="LazyFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -14565,11 +14565,11 @@
 
 
 <h1 id="horizontally-concatenate-columns-into-a-single-string-column">Horizontally concatenate columns into a single string column</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L764"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L775"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Horizontally concatenate columns into a single string column</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>pl$concat_str(..., separator = "")
+<pre><code class='language-R'>pl$concat_str(..., separator = "", ignore_nulls = FALSE)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
@@ -14592,6 +14592,15 @@ parsed as literals. Non-String columns are cast to String
 String that will be used to separate the values of each column.
 </td>
 </tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_concat_str_:_ignore_nulls">ignore_nulls</code>
+</td>
+<td>
+If <code>FALSE</code> (default), null values are propagated: if the row
+contains any null values, the output is null.
+</td>
+</tr>
 </table>
 
 <h2 id="value">Value</h2>
@@ -14600,31 +14609,47 @@ String that will be used to separate the values of each column.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">),</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;dogs&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;cats&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">),</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;play&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;swim&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;walk&quot;</span><span class="p">)</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">)</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">concat_str</span><span class="p">(</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2</span><span class="p">,</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="s">&quot;b&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="s">&quot;c&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="s">&quot;!&quot;</span><span class="p">),</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="n">separator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot; &quot;</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;full_sentence&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="p">)</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2L</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="s">&quot;!&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="n">separator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot; &quot;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;full_sentence&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; shape: (3, 4)
-#&gt; ┌─────┬──────┬──────┬─────────────────┐
-#&gt; │ a   ┆ b    ┆ c    ┆ full_sentence   │
-#&gt; │ --- ┆ ---  ┆ ---  ┆ ---             │
-#&gt; │ f64 ┆ str  ┆ str  ┆ str             │
-#&gt; ╞═════╪══════╪══════╪═════════════════╡
-#&gt; │ 1.0 ┆ dogs ┆ play ┆ 2.0 dogs play ! │
-#&gt; │ 2.0 ┆ cats ┆ swim ┆ 4.0 cats swim ! │
-#&gt; │ 3.0 ┆ null ┆ walk ┆ null            │
-#&gt; └─────┴──────┴──────┴─────────────────┘
+#&gt; ┌─────┬──────┬──────┬───────────────┐
+#&gt; │ a   ┆ b    ┆ c    ┆ full_sentence │
+#&gt; │ --- ┆ ---  ┆ ---  ┆ ---           │
+#&gt; │ i32 ┆ str  ┆ str  ┆ str           │
+#&gt; ╞═════╪══════╪══════╪═══════════════╡
+#&gt; │ 1   ┆ dogs ┆ play ┆ 2 dogs play ! │
+#&gt; │ 2   ┆ cats ┆ swim ┆ 4 cats swim ! │
+#&gt; │ 3   ┆ null ┆ walk ┆ null          │
+#&gt; └─────┴──────┴──────┴───────────────┘
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">concat_str</span><span class="p">(</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2L</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="s">&quot;!&quot;</span><span class="p">),</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="n">separator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="n">ignore_nulls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;full_sentence&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; shape: (3, 4)
+#&gt; ┌─────┬──────┬──────┬───────────────┐
+#&gt; │ a   ┆ b    ┆ c    ┆ full_sentence │
+#&gt; │ --- ┆ ---  ┆ ---  ┆ ---           │
+#&gt; │ i32 ┆ str  ┆ str  ┆ str           │
+#&gt; ╞═════╪══════╪══════╪═══════════════╡
+#&gt; │ 1   ┆ dogs ┆ play ┆ 2 dogs play ! │
+#&gt; │ 2   ┆ cats ┆ swim ┆ 4 cats swim ! │
+#&gt; │ 3   ┆ null ┆ walk ┆ 6 walk !      │
+#&gt; └─────┴──────┴──────┴───────────────┘
 </code></pre></div>
 
 

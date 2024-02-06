@@ -2,7 +2,7 @@
 
 # Fills the string with zeroes.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L382)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L383)
 
 ## Description
 
@@ -23,7 +23,8 @@ string is not modified.
 <code id="ExprStr_zfill_:_alignment">alignment</code>
 </td>
 <td>
-Fill the value up to this length.
+Fill the value up to this length. This can be an Expr or something
+coercible to an Expr. Strings are parsed as column names.
 </td>
 </tr>
 </table>

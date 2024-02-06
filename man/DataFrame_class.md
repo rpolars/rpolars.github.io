@@ -67,8 +67,8 @@ ls(.pr$env$RPolarsDataFrame)
     #> [49] "sort"             "std"              "sum"              "tail"            
     #> [53] "to_data_frame"    "to_list"          "to_series"        "to_struct"       
     #> [57] "transpose"        "unique"           "unnest"           "var"             
-    #> [61] "width"            "with_columns"     "with_row_count"   "write_csv"       
-    #> [65] "write_json"       "write_ndjson"     "write_parquet"
+    #> [61] "width"            "with_columns"     "with_row_count"   "with_row_index"  
+    #> [65] "write_csv"        "write_json"       "write_ndjson"     "write_parquet"
 
 ``` r
 # see all private methods (not intended for regular use)
@@ -93,7 +93,7 @@ ls(.pr$DataFrame)
     #> [31] "to_list"                   "to_list_tag_structs"      
     #> [33] "to_list_unwind"            "to_struct"                
     #> [35] "transpose"                 "unnest"                   
-    #> [37] "with_columns"              "with_row_count"           
+    #> [37] "with_columns"              "with_row_index"           
     #> [39] "write_csv"                 "write_json"               
     #> [41] "write_ndjson"              "write_parquet"
 

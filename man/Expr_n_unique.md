@@ -35,7 +35,9 @@ pl$DataFrame(iris[, 4:5])$with_columns(count = pl$col("Species")$n_unique())
     #> │ 0.2         ┆ setosa    ┆ 3     │
     #> │ 0.2         ┆ setosa    ┆ 3     │
     #> │ 0.2         ┆ setosa    ┆ 3     │
+    #> │ 0.2         ┆ setosa    ┆ 3     │
     #> │ …           ┆ …         ┆ …     │
+    #> │ 2.3         ┆ virginica ┆ 3     │
     #> │ 1.9         ┆ virginica ┆ 3     │
     #> │ 2.0         ┆ virginica ┆ 3     │
     #> │ 2.3         ┆ virginica ┆ 3     │

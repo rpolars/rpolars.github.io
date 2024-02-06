@@ -812,27 +812,6 @@
   
   
     <li class="md-nav__item">
-      <a href="pl_count.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    count
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="pl_cov.html" class="md-nav__link">
         
   
@@ -1195,6 +1174,27 @@
   
   <span class="md-ellipsis">
     LazyFrame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_len.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    len
   </span>
   
 
@@ -4230,11 +4230,11 @@
   
   
     <li class="md-nav__item">
-      <a href="DataFrame_with_row_count.html" class="md-nav__link">
+      <a href="DataFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -5325,11 +5325,11 @@
   
   
     <li class="md-nav__item">
-      <a href="LazyFrame_with_row_count.html" class="md-nav__link">
+      <a href="LazyFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -14649,31 +14649,31 @@ attribute "tu" being either "s","ms","us" or "ns"</p>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">pl</span><span class="o">$</span><span class="nf">PTime</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">3600</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1E0</span><span class="p">,</span><span class="w"> </span><span class="n">tu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;s&quot;</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; PTime [ double ]: number of epochs [ s ] since midnight
-#&gt; [1] &quot;20:33:28 val: 74008&quot; &quot;07:23:46 val: 26626&quot; &quot;03:32:07 val: 12727&quot;
-#&gt; [4] &quot;21:24:11 val: 77051&quot; &quot;03:43:17 val: 13397&quot;
+#&gt; [1] &quot;04:24:22 val: 15862&quot; &quot;00:42:22 val: 2542&quot;  &quot;00:26:33 val: 1593&quot; 
+#&gt; [4] &quot;10:20:45 val: 37245&quot; &quot;04:43:00 val: 16980&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">PTime</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">3600</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1E3</span><span class="p">,</span><span class="w"> </span><span class="n">tu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ms&quot;</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; PTime [ double ]: number of epochs [ ms ] since midnight
-#&gt; [1] &quot;02:21:02:808ms val: 8462808&quot;  &quot;07:28:27:647ms val: 26907647&quot;
-#&gt; [3] &quot;23:08:16:851ms val: 83296851&quot; &quot;00:06:04:635ms val: 364635&quot;  
-#&gt; [5] &quot;21:33:14:562ms val: 77594562&quot;
+#&gt; [1] &quot;15:44:07:580ms val: 56647580&quot; &quot;12:12:30:388ms val: 43950388&quot;
+#&gt; [3] &quot;19:40:49:520ms val: 70849520&quot; &quot;13:23:10:027ms val: 48190027&quot;
+#&gt; [5] &quot;17:13:52:791ms val: 62032791&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">PTime</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">3600</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1E6</span><span class="p">,</span><span class="w"> </span><span class="n">tu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;us&quot;</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; PTime [ double ]: number of epochs [ us ] since midnight
-#&gt; [1] &quot;19:50:31:319_573us val: 71431319573&quot; &quot;20:34:53:147_179us val: 74093147179&quot;
-#&gt; [3] &quot;22:26:07:395_910us val: 80767395910&quot; &quot;01:53:04:490_519us val: 6784490519&quot; 
-#&gt; [5] &quot;02:18:51:356_942us val: 8331356942&quot;
+#&gt; [1] &quot;14:45:35:182_160us val: 53135182160&quot; &quot;08:43:42:990_050us val: 31422990050&quot;
+#&gt; [3] &quot;14:57:25:074_024us val: 53845074024&quot; &quot;08:12:05:121_045us val: 29525121045&quot;
+#&gt; [5] &quot;03:24:50:891_812us val: 12290891812&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">PTime</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">3600</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1E9</span><span class="p">,</span><span class="w"> </span><span class="n">tu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ns&quot;</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; PTime [ double ]: number of epochs [ ns ] since midnight
-#&gt; [1] &quot;09:30:30:700_229_108ns val: 34230700229108&quot;
-#&gt; [2] &quot;07:54:07:361_330_688ns val: 28447361330688&quot;
-#&gt; [3] &quot;08:09:18:767_330_646ns val: 29358767330646&quot;
-#&gt; [4] &quot;11:05:07:023_473_829ns val: 39907023473829&quot;
-#&gt; [5] &quot;18:21:24:892_588_108ns val: 66084892588108&quot;
+#&gt; [1] &quot;21:10:20:038_318_634ns val: 76220038318634&quot;
+#&gt; [2] &quot;10:22:53:416_496_068ns val: 37373416496068&quot;
+#&gt; [3] &quot;07:59:14:950_127_005ns val: 28754950127005&quot;
+#&gt; [4] &quot;05:02:00:558_904_856ns val: 18120558904856&quot;
+#&gt; [5] &quot;03:17:59:102_052_748ns val: 11879102052748&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">PTime</span><span class="p">(</span><span class="s">&quot;23:59:59&quot;</span><span class="p">)</span>
 </code></pre></div>
@@ -14685,11 +14685,11 @@ attribute "tu" being either "s","ms","us" or "ns"</p>
 <div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (5,)
 #&gt; Series: &#39;&#39; [time]
 #&gt; [
-#&gt;  05:54:56
-#&gt;  13:40:23
-#&gt;  04:13:29
-#&gt;  22:12:23
-#&gt;  05:11:23
+#&gt;  12:54:38
+#&gt;  23:25:53
+#&gt;  04:09:37
+#&gt;  01:05:57
+#&gt;  20:37:30
 #&gt; ]
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">PTime</span><span class="p">(</span><span class="s">&quot;23:59:59&quot;</span><span class="p">))</span><span class="o">$</span><span class="nf">to_series</span><span class="p">()</span>

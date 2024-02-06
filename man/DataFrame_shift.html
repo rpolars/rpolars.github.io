@@ -810,27 +810,6 @@
   
   
     <li class="md-nav__item">
-      <a href="pl_count.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    count
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="pl_cov.html" class="md-nav__link">
         
   
@@ -1193,6 +1172,27 @@
   
   <span class="md-ellipsis">
     LazyFrame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_len.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    len
   </span>
   
 
@@ -4221,11 +4221,11 @@
   
   
     <li class="md-nav__item">
-      <a href="DataFrame_with_row_count.html" class="md-nav__link">
+      <a href="DataFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -5316,11 +5316,11 @@
   
   
     <li class="md-nav__item">
-      <a href="LazyFrame_with_row_count.html" class="md-nav__link">
+      <a href="LazyFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -14565,7 +14565,7 @@
 
 
 <h1 id="shift-a-dataframe">Shift a DataFrame</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L709"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L716"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Shift the values by a given period. If the period (<code>n</code>) is
 positive, then <code>n</code> rows will be inserted at the top of the
@@ -14605,7 +14605,9 @@ Number of periods to shift (can be negative).
 #&gt; │ null ┆ null ┆ null  ┆ null  ┆ … ┆ null ┆ null ┆ null ┆ null │
 #&gt; │ 21.0 ┆ 6.0  ┆ 160.0 ┆ 110.0 ┆ … ┆ 0.0  ┆ 1.0  ┆ 4.0  ┆ 4.0  │
 #&gt; │ 21.0 ┆ 6.0  ┆ 160.0 ┆ 110.0 ┆ … ┆ 0.0  ┆ 1.0  ┆ 4.0  ┆ 4.0  │
+#&gt; │ 22.8 ┆ 4.0  ┆ 108.0 ┆ 93.0  ┆ … ┆ 1.0  ┆ 1.0  ┆ 4.0  ┆ 1.0  │
 #&gt; │ …    ┆ …    ┆ …     ┆ …     ┆ … ┆ …    ┆ …    ┆ …    ┆ …    │
+#&gt; │ 27.3 ┆ 4.0  ┆ 79.0  ┆ 66.0  ┆ … ┆ 1.0  ┆ 1.0  ┆ 4.0  ┆ 1.0  │
 #&gt; │ 26.0 ┆ 4.0  ┆ 120.3 ┆ 91.0  ┆ … ┆ 0.0  ┆ 1.0  ┆ 5.0  ┆ 2.0  │
 #&gt; │ 30.4 ┆ 4.0  ┆ 95.1  ┆ 113.0 ┆ … ┆ 1.0  ┆ 1.0  ┆ 5.0  ┆ 2.0  │
 #&gt; │ 15.8 ┆ 8.0  ┆ 351.0 ┆ 264.0 ┆ … ┆ 0.0  ┆ 1.0  ┆ 5.0  ┆ 4.0  │
@@ -14624,7 +14626,9 @@ Number of periods to shift (can be negative).
 #&gt; │ 21.4 ┆ 6.0  ┆ 258.0 ┆ 110.0 ┆ … ┆ 1.0  ┆ 0.0  ┆ 3.0  ┆ 1.0  │
 #&gt; │ 18.7 ┆ 8.0  ┆ 360.0 ┆ 175.0 ┆ … ┆ 0.0  ┆ 0.0  ┆ 3.0  ┆ 2.0  │
 #&gt; │ 18.1 ┆ 6.0  ┆ 225.0 ┆ 105.0 ┆ … ┆ 1.0  ┆ 0.0  ┆ 3.0  ┆ 1.0  │
+#&gt; │ 14.3 ┆ 8.0  ┆ 360.0 ┆ 245.0 ┆ … ┆ 0.0  ┆ 0.0  ┆ 3.0  ┆ 4.0  │
 #&gt; │ …    ┆ …    ┆ …     ┆ …     ┆ … ┆ …    ┆ …    ┆ …    ┆ …    │
+#&gt; │ 19.7 ┆ 6.0  ┆ 145.0 ┆ 175.0 ┆ … ┆ 0.0  ┆ 1.0  ┆ 5.0  ┆ 6.0  │
 #&gt; │ 15.0 ┆ 8.0  ┆ 301.0 ┆ 335.0 ┆ … ┆ 0.0  ┆ 1.0  ┆ 5.0  ┆ 8.0  │
 #&gt; │ 21.4 ┆ 4.0  ┆ 121.0 ┆ 109.0 ┆ … ┆ 1.0  ┆ 1.0  ┆ 4.0  ┆ 2.0  │
 #&gt; │ null ┆ null ┆ null  ┆ null  ┆ … ┆ null ┆ null ┆ null ┆ null │

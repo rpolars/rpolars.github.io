@@ -810,27 +810,6 @@
   
   
     <li class="md-nav__item">
-      <a href="pl_count.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    count
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="pl_cov.html" class="md-nav__link">
         
   
@@ -1193,6 +1172,27 @@
   
   <span class="md-ellipsis">
     LazyFrame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_len.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    len
   </span>
   
 
@@ -4134,11 +4134,11 @@
   
   
     <li class="md-nav__item">
-      <a href="DataFrame_with_row_count.html" class="md-nav__link">
+      <a href="DataFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -5325,11 +5325,11 @@
   
   
     <li class="md-nav__item">
-      <a href="LazyFrame_with_row_count.html" class="md-nav__link">
+      <a href="LazyFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -14583,7 +14583,7 @@
 
 
 <h1 id="explode-columns-containing-a-list-of-values">Explode columns containing a list of values</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1638"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1642"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>This will take every element of a list column and add it on an
 additional row.</p>
@@ -14611,7 +14611,7 @@ implicitly converted to <code>pl$col(“name”)</code>.
 </table>
 
 <h2 id="details">Details</h2>
-<p>Only columns of DataType <code>List</code> or <code>String</code> can be
+<p>Only columns of DataType <code>List</code> or <code>Array</code> can be
 exploded.</p>
 <p>Named expressions like <code style="white-space: pre;">$explode(a =
 pl$col(“b”))</code> will not implicitly trigger
@@ -14651,16 +14651,9 @@ variant <code>Expr::Column</code> is supported in rust-polars.</p>
 #&gt; │ cc      ┆ 8.0     ┆ [5.0, 6.0, 7.0] │
 #&gt; └─────────┴─────────┴─────────────────┘
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># it is also possible to explode a character column to have one letter per row</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">explode</span><span class="p">(</span><span class="s">&quot;letters&quot;</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] &quot;polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)&quot;
-#&gt; EXPLODE
-#&gt;   DF [&quot;letters&quot;, &quot;numbers&quot;, &quot;numbers_2&quot;]; PROJECT */3 COLUMNS; SELECTION: &quot;None&quot;
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># explode two columns of same nesting structure, by names or the common dtype</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># &quot;List(Float64)&quot;</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">df</span><span class="o">$</span><span class="nf">explode</span><span class="p">(</span><span class="s">&quot;numbers&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;numbers_2&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># explode two columns of same nesting structure, by names or the common dtype</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># &quot;List(Float64)&quot;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">df</span><span class="o">$</span><span class="nf">explode</span><span class="p">(</span><span class="s">&quot;numbers&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;numbers_2&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; shape: (8, 3)
 #&gt; ┌─────────┬─────────┬───────────┐
@@ -14678,7 +14671,7 @@ variant <code>Expr::Column</code> is supported in rust-polars.</p>
 #&gt; │ cc      ┆ 8.0     ┆ 7.0       │
 #&gt; └─────────┴─────────┴───────────┘
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">explode</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">List</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="n">Float64</span><span class="p">)))</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">explode</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">List</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="n">Float64</span><span class="p">)))</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; shape: (8, 3)
 #&gt; ┌─────────┬─────────┬───────────┐

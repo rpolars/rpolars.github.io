@@ -118,7 +118,7 @@ The features enabled in the compiled Rust library are shown by the
 library(polars)
 polars_info()
 #> r-polars package version : 0.13.1.9000
-#> rust-polars crate version: 0.36.2
+#> rust-polars crate version: 0.37.0
 #> 
 #> Thread pool size: 4 
 #> 
@@ -153,7 +153,7 @@ features.
     -   `sql` for enable `pl$SQLContext()`.
 
 Note that nightly features requires the Rust nightly toolchain
-nightly-2023-12-23.
+nightly-2024-02-03.
 
 #### Profile
 

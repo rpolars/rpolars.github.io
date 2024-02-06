@@ -21,7 +21,7 @@ polars api.
 ## Format
 
 An object of class <code>pl_polars_env</code> (inherits from
-<code>environment</code>) of length 96.
+<code>environment</code>) of length 97.
 
 ## Details
 
@@ -121,6 +121,7 @@ pl$show_all_public_functions()
     #>        [ is_schema ; function ]
     #>        [ last ; function ]
     #>        [ LazyFrame ; function ]
+    #>        [ len ; function ]
     #>        [ List ; function ]
     #>        [ lit ; function ]
     #>        [ max ; function ]
@@ -263,6 +264,7 @@ pl$show_all_public_methods()
     #>           [ width ; property function ]
     #>           [ with_columns ; function ]
     #>           [ with_row_count ; function ]
+    #>           [ with_row_index ; function ]
     #>           [ write_csv ; function ]
     #>           [ write_json ; function ]
     #>           [ write_ndjson ; function ]
@@ -521,6 +523,7 @@ pl$show_all_public_methods()
     #>           [ with_columns ; function ]
     #>           [ with_context ; function ]
     #>           [ with_row_count ; function ]
+    #>           [ with_row_index ; function ]
     #> 
     #> 
     #>        RPolarsLazyGroupBy ( environment ):

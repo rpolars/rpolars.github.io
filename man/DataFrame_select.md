@@ -2,7 +2,7 @@
 
 # Select and modify columns of a DataFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L657)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L664)
 
 ## Description
 
@@ -55,7 +55,9 @@ pl$DataFrame(iris)$select(
     #> │ 4.9    ┆ 6.9      │
     #> │ 4.7    ┆ 6.7      │
     #> │ 4.6    ┆ 6.6      │
+    #> │ 5.0    ┆ 7.0      │
     #> │ …      ┆ …        │
+    #> │ 6.7    ┆ 8.7      │
     #> │ 6.3    ┆ 8.3      │
     #> │ 6.5    ┆ 8.5      │
     #> │ 6.2    ┆ 8.2      │

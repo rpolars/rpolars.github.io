@@ -812,27 +812,6 @@
   
   
     <li class="md-nav__item">
-      <a href="pl_count.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    count
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="pl_cov.html" class="md-nav__link">
         
   
@@ -1195,6 +1174,27 @@
   
   <span class="md-ellipsis">
     LazyFrame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_len.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    len
   </span>
   
 
@@ -4230,11 +4230,11 @@
   
   
     <li class="md-nav__item">
-      <a href="DataFrame_with_row_count.html" class="md-nav__link">
+      <a href="DataFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -5325,11 +5325,11 @@
   
   
     <li class="md-nav__item">
-      <a href="LazyFrame_with_row_count.html" class="md-nav__link">
+      <a href="LazyFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -14597,7 +14597,7 @@ polars api.</p>
 
 <h2 id="format">Format</h2>
 <p>An object of class <code>pl_polars_env</code> (inherits from
-<code>environment</code>) of length 96.</p>
+<code>environment</code>) of length 97.</p>
 <h2 id="details">Details</h2>
 <p>If someone do not particularly like the letter combination
 <code>pl</code>, they are free to bind the environment to another
@@ -14687,6 +14687,7 @@ variable name as <code>simon_says = pl</code> or even do
 #&gt;        [ is_schema ; function ]
 #&gt;        [ last ; function ]
 #&gt;        [ LazyFrame ; function ]
+#&gt;        [ len ; function ]
 #&gt;        [ List ; function ]
 #&gt;        [ lit ; function ]
 #&gt;        [ max ; function ]
@@ -14827,6 +14828,7 @@ variable name as <code>simon_says = pl</code> or even do
 #&gt;           [ width ; property function ]
 #&gt;           [ with_columns ; function ]
 #&gt;           [ with_row_count ; function ]
+#&gt;           [ with_row_index ; function ]
 #&gt;           [ write_csv ; function ]
 #&gt;           [ write_json ; function ]
 #&gt;           [ write_ndjson ; function ]
@@ -15085,6 +15087,7 @@ variable name as <code>simon_says = pl</code> or even do
 #&gt;           [ with_columns ; function ]
 #&gt;           [ with_context ; function ]
 #&gt;           [ with_row_count ; function ]
+#&gt;           [ with_row_index ; function ]
 #&gt; 
 #&gt; 
 #&gt;        RPolarsLazyGroupBy ( environment ):

@@ -14,9 +14,10 @@ Read a file from path into a polars DataFrame.
   batch_size = NULL,
   n_rows = NULL,
   low_memory = FALSE,
-  rechunk = TRUE,
-  row_count_name = NULL,
-  row_count_offset = 0
+  rechunk = FALSE,
+  row_index_name = NULL,
+  row_index_offset = 0,
+  ignore_errors = FALSE
 )
 </code></pre>
 
@@ -77,7 +78,7 @@ Reallocate to contiguous memory when all chunks / files are parsed.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_ndjson_:_row_count_name">row_count_name</code>
+<code id="pl_read_ndjson_:_row_index_name">row_index_name</code>
 </td>
 <td>
 If not <code>NULL</code>, this will insert a row count column with the
@@ -86,10 +87,19 @@ given name into the DataFrame.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_ndjson_:_row_count_offset">row_count_offset</code>
+<code id="pl_read_ndjson_:_row_index_offset">row_index_offset</code>
 </td>
 <td>
 Offset to start the row_count column (only used if the name is set).
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_read_ndjson_:_ignore_errors">ignore_errors</code>
+</td>
+<td>
+If <code>TRUE</code>, do not error if parsing fails because of schema
+mismatches.
 </td>
 </tr>
 </table>
@@ -120,7 +130,9 @@ if (require("jsonlite", quietly = TRUE)) {
     #> │ 4.9          ┆ 3.0         ┆ 1.4          ┆ 0.2         ┆ setosa    │
     #> │ 4.7          ┆ 3.2         ┆ 1.3          ┆ 0.2         ┆ setosa    │
     #> │ 4.6          ┆ 3.1         ┆ 1.5          ┆ 0.2         ┆ setosa    │
+    #> │ 5.0          ┆ 3.6         ┆ 1.4          ┆ 0.2         ┆ setosa    │
     #> │ …            ┆ …           ┆ …            ┆ …           ┆ …         │
+    #> │ 6.7          ┆ 3.0         ┆ 5.2          ┆ 2.3         ┆ virginica │
     #> │ 6.3          ┆ 2.5         ┆ 5.0          ┆ 1.9         ┆ virginica │
     #> │ 6.5          ┆ 3.0         ┆ 5.2          ┆ 2.0         ┆ virginica │
     #> │ 6.2          ┆ 3.4         ┆ 5.4          ┆ 2.3         ┆ virginica │

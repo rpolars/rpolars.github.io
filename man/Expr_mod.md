@@ -95,7 +95,9 @@ pl$select(x == (x %% y) + y * (x %/% y))
     #> │ true  │
     #> │ true  │
     #> │ true  │
+    #> │ true  │
     #> │ …     │
+    #> │ true  │
     #> │ true  │
     #> │ true  │
     #> │ true  │

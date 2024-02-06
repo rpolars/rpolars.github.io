@@ -2,7 +2,7 @@
 
 # Approximate count of unique values.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L423)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L428)
 
 ## Description
 
@@ -112,7 +112,7 @@ system.time(pl$approx_n_unique(lit_series)$to_series()$print())
     #> ]
 
     #>    user  system elapsed 
-    #>   0.031   0.000   0.032
+    #>   0.032   0.000   0.032
 
 ``` r
 system.time(pl$n_unique(lit_series)$to_series()$print())
@@ -125,4 +125,4 @@ system.time(pl$n_unique(lit_series)$to_series()$print())
     #> ]
 
     #>    user  system elapsed 
-    #>   0.119   0.000   0.069
+    #>   0.121   0.003   0.065

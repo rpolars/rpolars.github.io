@@ -2,7 +2,7 @@
 
 # Apply filter to LazyFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L280)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L287)
 
 ## Description
 
@@ -56,7 +56,9 @@ lf$filter(pl$col("Species") == "setosa")$collect()
     #> │ 4.9          ┆ 3.0         ┆ 1.4          ┆ 0.2         ┆ setosa  │
     #> │ 4.7          ┆ 3.2         ┆ 1.3          ┆ 0.2         ┆ setosa  │
     #> │ 4.6          ┆ 3.1         ┆ 1.5          ┆ 0.2         ┆ setosa  │
+    #> │ 5.0          ┆ 3.6         ┆ 1.4          ┆ 0.2         ┆ setosa  │
     #> │ …            ┆ …           ┆ …            ┆ …           ┆ …       │
+    #> │ 4.8          ┆ 3.0         ┆ 1.4          ┆ 0.3         ┆ setosa  │
     #> │ 5.1          ┆ 3.8         ┆ 1.6          ┆ 0.2         ┆ setosa  │
     #> │ 4.6          ┆ 3.2         ┆ 1.4          ┆ 0.2         ┆ setosa  │
     #> │ 5.3          ┆ 3.7         ┆ 1.5          ┆ 0.2         ┆ setosa  │

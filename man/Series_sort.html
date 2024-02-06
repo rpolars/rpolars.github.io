@@ -810,27 +810,6 @@
   
   
     <li class="md-nav__item">
-      <a href="pl_count.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    count
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="pl_cov.html" class="md-nav__link">
         
   
@@ -1193,6 +1172,27 @@
   
   <span class="md-ellipsis">
     LazyFrame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_len.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    len
   </span>
   
 
@@ -4221,11 +4221,11 @@
   
   
     <li class="md-nav__item">
-      <a href="DataFrame_with_row_count.html" class="md-nav__link">
+      <a href="DataFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -5316,11 +5316,11 @@
   
   
     <li class="md-nav__item">
-      <a href="LazyFrame_with_row_count.html" class="md-nav__link">
+      <a href="LazyFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -14565,11 +14565,11 @@
 
 
 <h1 id="sort-this-series">Sort this Series</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L777"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L778"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Sort this Series</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>&lt;Series&gt;$sort(descending = FALSE, in_place = FALSE)
+<pre><code class='language-R'>&lt;Series&gt;$sort(descending = FALSE, nulls_last = FALSE, in_place = FALSE)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
@@ -14579,7 +14579,15 @@
 <code id="Series_sort_:_descending">descending</code>
 </td>
 <td>
-Sort in descending order..
+Sort in descending order.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="Series_sort_:_nulls_last">nulls_last</code>
+</td>
+<td>
+Place null values last instead of first.
 </td>
 </tr>
 <tr>

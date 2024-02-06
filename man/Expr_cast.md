@@ -89,5 +89,5 @@ tryCatch(
     #>    0: In R: in $select()
     #>    0: During function call [.main()]
     #>    1: Encountered the following error in Rust-Polars:
-    #>          cannot cast non numeric any-value to numeric dtype
+    #>          conversion from `str` to `f64` failed in column 'literal' for 1 out of 1 values: ["a"]
     #> >

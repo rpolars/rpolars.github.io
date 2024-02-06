@@ -820,27 +820,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../man/pl_count.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    count
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../man/pl_cov.html" class="md-nav__link">
         
   
@@ -1203,6 +1182,27 @@
   
   <span class="md-ellipsis">
     LazyFrame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../man/pl_len.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    len
   </span>
   
 
@@ -4144,11 +4144,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../man/DataFrame_with_row_count.html" class="md-nav__link">
+      <a href="../man/DataFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -5239,11 +5239,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../man/LazyFrame_with_row_count.html" class="md-nav__link">
+      <a href="../man/LazyFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -14534,12 +14534,14 @@ file for instance, we would have to scan it first with <code>pl$scan_csv()</code
 <a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c1">#&gt; │ Japan   ┆ 96  ┆ 672 │</span>
 <a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c1">#&gt; │ Japan   ┆ 17  ┆ 710 │</span>
 <a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="c1">#&gt; │ Japan   ┆ 68  ┆ 41  │</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="c1">#&gt; │ …       ┆ …   ┆ …   │</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="c1">#&gt; │ Vietnam ┆ 62  ┆ 8   │</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="c1">#&gt; │ Vietnam ┆ 52  ┆ 988 │</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="c1">#&gt; │ Vietnam ┆ 85  ┆ 982 │</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="c1">#&gt; │ Vietnam ┆ 74  ┆ 692 │</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="c1">#&gt; └─────────┴─────┴─────┘</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="c1">#&gt; │ Japan   ┆ 100 ┆ 109 │</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="c1">#&gt; │ …       ┆ …   ┆ …   │</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="c1">#&gt; │ Vietnam ┆ 89  ┆ 352 │</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="c1">#&gt; │ Vietnam ┆ 62  ┆ 8   │</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="c1">#&gt; │ Vietnam ┆ 52  ┆ 988 │</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="c1">#&gt; │ Vietnam ┆ 85  ┆ 982 │</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="c1">#&gt; │ Vietnam ┆ 74  ┆ 692 │</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="c1">#&gt; └─────────┴─────┴─────┘</span>
 </code></pre></div>
 <p>This works for the <code>DataFrame</code>, that uses eager execution. For the
 <code>LazyFrame</code>, we can write the same query:</p>

@@ -2,7 +2,7 @@
 
 # Sort this Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L777)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L778)
 
 ## Description
 
@@ -10,7 +10,7 @@ Sort this Series
 
 ## Usage
 
-<pre><code class='language-R'>Series_sort(descending = FALSE, in_place = FALSE)
+<pre><code class='language-R'>Series_sort(descending = FALSE, nulls_last = FALSE, in_place = FALSE)
 </code></pre>
 
 ## Arguments
@@ -21,7 +21,15 @@ Sort this Series
 <code id="Series_sort_:_descending">descending</code>
 </td>
 <td>
-Sort in descending order..
+Sort in descending order.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="Series_sort_:_nulls_last">nulls_last</code>
+</td>
+<td>
+Place null values last instead of first.
 </td>
 </tr>
 <tr>

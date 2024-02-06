@@ -2,7 +2,7 @@
 
 # Shift
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L933)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L940)
 
 ## Description
 
@@ -48,7 +48,9 @@ pl$LazyFrame(mtcars)$shift(2)$collect()
     #> │ null ┆ null ┆ null  ┆ null  ┆ … ┆ null ┆ null ┆ null ┆ null │
     #> │ 21.0 ┆ 6.0  ┆ 160.0 ┆ 110.0 ┆ … ┆ 0.0  ┆ 1.0  ┆ 4.0  ┆ 4.0  │
     #> │ 21.0 ┆ 6.0  ┆ 160.0 ┆ 110.0 ┆ … ┆ 0.0  ┆ 1.0  ┆ 4.0  ┆ 4.0  │
+    #> │ 22.8 ┆ 4.0  ┆ 108.0 ┆ 93.0  ┆ … ┆ 1.0  ┆ 1.0  ┆ 4.0  ┆ 1.0  │
     #> │ …    ┆ …    ┆ …     ┆ …     ┆ … ┆ …    ┆ …    ┆ …    ┆ …    │
+    #> │ 27.3 ┆ 4.0  ┆ 79.0  ┆ 66.0  ┆ … ┆ 1.0  ┆ 1.0  ┆ 4.0  ┆ 1.0  │
     #> │ 26.0 ┆ 4.0  ┆ 120.3 ┆ 91.0  ┆ … ┆ 0.0  ┆ 1.0  ┆ 5.0  ┆ 2.0  │
     #> │ 30.4 ┆ 4.0  ┆ 95.1  ┆ 113.0 ┆ … ┆ 1.0  ┆ 1.0  ┆ 5.0  ┆ 2.0  │
     #> │ 15.8 ┆ 8.0  ┆ 351.0 ┆ 264.0 ┆ … ┆ 0.0  ┆ 1.0  ┆ 5.0  ┆ 4.0  │

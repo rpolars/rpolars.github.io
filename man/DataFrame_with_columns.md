@@ -2,7 +2,7 @@
 
 # Modify/append column(s)
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L764)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L771)
 
 ## Description
 
@@ -54,7 +54,9 @@ pl$DataFrame(iris)$with_columns(
     #> │ 4.9          ┆ 3.0         ┆ 1.4          ┆ 0.2         ┆ setosa    ┆ 4.9    ┆ 6.9      │
     #> │ 4.7          ┆ 3.2         ┆ 1.3          ┆ 0.2         ┆ setosa    ┆ 4.7    ┆ 6.7      │
     #> │ 4.6          ┆ 3.1         ┆ 1.5          ┆ 0.2         ┆ setosa    ┆ 4.6    ┆ 6.6      │
+    #> │ 5.0          ┆ 3.6         ┆ 1.4          ┆ 0.2         ┆ setosa    ┆ 5.0    ┆ 7.0      │
     #> │ …            ┆ …           ┆ …            ┆ …           ┆ …         ┆ …      ┆ …        │
+    #> │ 6.7          ┆ 3.0         ┆ 5.2          ┆ 2.3         ┆ virginica ┆ 6.7    ┆ 8.7      │
     #> │ 6.3          ┆ 2.5         ┆ 5.0          ┆ 1.9         ┆ virginica ┆ 6.3    ┆ 8.3      │
     #> │ 6.5          ┆ 3.0         ┆ 5.2          ┆ 2.0         ┆ virginica ┆ 6.5    ┆ 8.5      │
     #> │ 6.2          ┆ 3.4         ┆ 5.4          ┆ 2.3         ┆ virginica ┆ 6.2    ┆ 8.2      │
@@ -80,7 +82,9 @@ pl$DataFrame(iris)$with_columns(l_expr)
     #> │ 4.9          ┆ 3.0         ┆ 1.4          ┆ 0.2         ┆ setosa    ┆ 4.9    ┆ 6.9      │
     #> │ 4.7          ┆ 3.2         ┆ 1.3          ┆ 0.2         ┆ setosa    ┆ 4.7    ┆ 6.7      │
     #> │ 4.6          ┆ 3.1         ┆ 1.5          ┆ 0.2         ┆ setosa    ┆ 4.6    ┆ 6.6      │
+    #> │ 5.0          ┆ 3.6         ┆ 1.4          ┆ 0.2         ┆ setosa    ┆ 5.0    ┆ 7.0      │
     #> │ …            ┆ …           ┆ …            ┆ …           ┆ …         ┆ …      ┆ …        │
+    #> │ 6.7          ┆ 3.0         ┆ 5.2          ┆ 2.3         ┆ virginica ┆ 6.7    ┆ 8.7      │
     #> │ 6.3          ┆ 2.5         ┆ 5.0          ┆ 1.9         ┆ virginica ┆ 6.3    ┆ 8.3      │
     #> │ 6.5          ┆ 3.0         ┆ 5.2          ┆ 2.0         ┆ virginica ┆ 6.5    ┆ 8.5      │
     #> │ 6.2          ┆ 3.4         ┆ 5.4          ┆ 2.3         ┆ virginica ┆ 6.2    ┆ 8.2      │
@@ -104,7 +108,9 @@ pl$DataFrame(iris)$with_columns(
     #> │ 4.9          ┆ 3.0         ┆ 1.4          ┆ 0.2         ┆ setosa    ┆ 5.0      │
     #> │ 4.7          ┆ 3.2         ┆ 1.3          ┆ 0.2         ┆ setosa    ┆ 5.2      │
     #> │ 4.6          ┆ 3.1         ┆ 1.5          ┆ 0.2         ┆ setosa    ┆ 5.1      │
+    #> │ 5.0          ┆ 3.6         ┆ 1.4          ┆ 0.2         ┆ setosa    ┆ 5.6      │
     #> │ …            ┆ …           ┆ …            ┆ …           ┆ …         ┆ …        │
+    #> │ 6.7          ┆ 3.0         ┆ 5.2          ┆ 2.3         ┆ virginica ┆ 5.0      │
     #> │ 6.3          ┆ 2.5         ┆ 5.0          ┆ 1.9         ┆ virginica ┆ 4.5      │
     #> │ 6.5          ┆ 3.0         ┆ 5.2          ┆ 2.0         ┆ virginica ┆ 5.0      │
     #> │ 6.2          ┆ 3.4         ┆ 5.4          ┆ 2.3         ┆ virginica ┆ 5.4      │

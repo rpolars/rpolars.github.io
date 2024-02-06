@@ -2,7 +2,7 @@
 
 # Extract the target capture group from provided patterns
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L605)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L607)
 
 ## Description
 
@@ -21,7 +21,8 @@ Extract the target capture group from provided patterns
 <code id="ExprStr_extract_:_pattern">pattern</code>
 </td>
 <td>
-A valid regex pattern
+A valid regex pattern. Can be an Expr or something coercible to an Expr.
+Strings are parsed as column names.
 </td>
 </tr>
 <tr>
@@ -52,18 +53,18 @@ df = pl$DataFrame(
     "http://vote.com/ballon_dor?candidate=ronaldo&ref=polars"
   )
 )
-df$select(
-  pl$col("a")$str$extract(r"(candidate=(\w+))", 1)
+df$with_columns(
+  extracted = pl$col("a")$str$extract(pl$lit(r"(candidate=(\w+))"), 1)
 )
 ```
 
-    #> shape: (3, 1)
-    #> ┌─────────┐
-    #> │ a       │
-    #> │ ---     │
-    #> │ str     │
-    #> ╞═════════╡
-    #> │ messi   │
-    #> │ null    │
-    #> │ ronaldo │
-    #> └─────────┘
+    #> shape: (3, 2)
+    #> ┌───────────────────────────────────┬───────────┐
+    #> │ a                                 ┆ extracted │
+    #> │ ---                               ┆ ---       │
+    #> │ str                               ┆ str       │
+    #> ╞═══════════════════════════════════╪═══════════╡
+    #> │ http://vote.com/ballon_dor?candi… ┆ messi     │
+    #> │ http://vote.com/ballon_dor?candi… ┆ null      │
+    #> │ http://vote.com/ballon_dor?candi… ┆ ronaldo   │
+    #> └───────────────────────────────────┴───────────┘

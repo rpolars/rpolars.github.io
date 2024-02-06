@@ -2,7 +2,7 @@
 
 # Explode columns containing a list of values
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1638)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1642)
 
 ## Description
 
@@ -36,7 +36,7 @@ implicitly converted to <code>pl$col(“name”)</code>.
 
 ## Details
 
-Only columns of DataType <code>List</code> or <code>String</code> can be
+Only columns of DataType <code>List</code> or <code>Array</code> can be
 exploded.
 
 Named expressions like <code style="white-space: pre;">$explode(a =
@@ -84,15 +84,6 @@ df$explode("numbers")$collect()
     #> │ cc      ┆ 7.0     ┆ [5.0, 6.0, 7.0] │
     #> │ cc      ┆ 8.0     ┆ [5.0, 6.0, 7.0] │
     #> └─────────┴─────────┴─────────────────┘
-
-``` r
-# it is also possible to explode a character column to have one letter per row
-df$explode("letters")
-```
-
-    #> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
-    #> EXPLODE
-    #>   DF ["letters", "numbers", "numbers_2"]; PROJECT */3 COLUMNS; SELECTION: "None"
 
 ``` r
 # explode two columns of same nesting structure, by names or the common dtype

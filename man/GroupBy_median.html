@@ -810,27 +810,6 @@
   
   
     <li class="md-nav__item">
-      <a href="pl_count.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    count
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="pl_cov.html" class="md-nav__link">
         
   
@@ -1193,6 +1172,27 @@
   
   <span class="md-ellipsis">
     LazyFrame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_len.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    len
   </span>
   
 
@@ -4134,11 +4134,11 @@
   
   
     <li class="md-nav__item">
-      <a href="DataFrame_with_row_count.html" class="md-nav__link">
+      <a href="DataFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -5229,11 +5229,11 @@
   
   
     <li class="md-nav__item">
-      <a href="LazyFrame_with_row_count.html" class="md-nav__link">
+      <a href="LazyFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -14568,15 +14568,15 @@
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">df</span><span class="o">$</span><span class="nf">group_by</span><span class="p">(</span><span class="s">&quot;d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">maintain_order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="o">$</span><span class="nf">median</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; shape: (3, 4)
-#&gt; ┌────────┬─────┬──────┬──────┐
-#&gt; │ d      ┆ a   ┆ b    ┆ c    │
-#&gt; │ ---    ┆ --- ┆ ---  ┆ ---  │
-#&gt; │ str    ┆ f64 ┆ f64  ┆ bool │
-#&gt; ╞════════╪═════╪══════╪══════╡
-#&gt; │ Apple  ┆ 2.0 ┆ 4.0  ┆ null │
-#&gt; │ Orange ┆ 2.0 ┆ 0.5  ┆ null │
-#&gt; │ Banana ┆ 4.5 ┆ 13.5 ┆ null │
-#&gt; └────────┴─────┴──────┴──────┘
+#&gt; ┌────────┬─────┬──────┬─────┐
+#&gt; │ d      ┆ a   ┆ b    ┆ c   │
+#&gt; │ ---    ┆ --- ┆ ---  ┆ --- │
+#&gt; │ str    ┆ f64 ┆ f64  ┆ f64 │
+#&gt; ╞════════╪═════╪══════╪═════╡
+#&gt; │ Apple  ┆ 2.0 ┆ 4.0  ┆ 1.0 │
+#&gt; │ Orange ┆ 2.0 ┆ 0.5  ┆ 1.0 │
+#&gt; │ Banana ┆ 4.5 ┆ 13.5 ┆ 0.5 │
+#&gt; └────────┴─────┴──────┴─────┘
 </code></pre></div>
 
 

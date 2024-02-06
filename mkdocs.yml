@@ -55,7 +55,6 @@ nav:
         - concat_str: man/pl_concat_str.md
         - concat: man/pl_concat.md
         - corr: man/pl_corr.md
-        - count: man/pl_count.md
         - cov: man/pl_cov.md
         - DataFrame: man/pl_DataFrame.md
         - date_range: man/pl_date_range.md
@@ -74,6 +73,7 @@ nav:
         - is_schema: man/pl_is_schema.md
         - last: man/pl_last.md
         - LazyFrame: man/pl_LazyFrame.md
+        - len: man/pl_len.md
         - max_horizontal: man/pl_max_horizontal.md
         - max: man/pl_max.md
         - mean: man/pl_mean.md
@@ -211,7 +211,7 @@ nav:
         - var: man/DataFrame_var.md
         - width: man/DataFrame_width.md
         - with_columns: man/DataFrame_with_columns.md
-        - with_row_count: man/DataFrame_with_row_count.md
+        - with_row_index: man/DataFrame_with_row_index.md
       LazyFrame:
         - class: man/LazyFrame_class.md
         - clone: man/LazyFrame_clone.md
@@ -262,7 +262,7 @@ nav:
         - width: man/LazyFrame_width.md
         - with_columns: man/LazyFrame_with_columns.md
         - with_context: man/LazyFrame_with_context.md
-        - with_row_count: man/LazyFrame_with_row_count.md
+        - with_row_index: man/LazyFrame_with_row_index.md
       GroupBy:
         - agg: man/GroupBy_agg.md
         - class: man/GroupBy_class.md

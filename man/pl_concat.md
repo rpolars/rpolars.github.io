@@ -104,7 +104,9 @@ pl$concat(l_ver, how = "vertical")
     #> │ 2   ┆ b   │
     #> │ 3   ┆ c   │
     #> │ 4   ┆ d   │
+    #> │ 5   ┆ e   │
     #> │ …   ┆ …   │
+    #> │ 1   ┆ a   │
     #> │ 2   ┆ b   │
     #> │ 3   ┆ c   │
     #> │ 4   ┆ d   │
@@ -152,7 +154,9 @@ pl$concat(l_hor, how = "diagonal")
     #> │ 2    ┆ b    ┆ null ┆ null ┆ … ┆ null ┆ null ┆ null ┆ null │
     #> │ 3    ┆ c    ┆ null ┆ null ┆ … ┆ null ┆ null ┆ null ┆ null │
     #> │ 4    ┆ d    ┆ null ┆ null ┆ … ┆ null ┆ null ┆ null ┆ null │
+    #> │ 5    ┆ e    ┆ null ┆ null ┆ … ┆ null ┆ null ┆ null ┆ null │
     #> │ …    ┆ …    ┆ …    ┆ …    ┆ … ┆ …    ┆ …    ┆ …    ┆ …    │
+    #> │ null ┆ null ┆ null ┆ null ┆ … ┆ null ┆ null ┆ 1    ┆ a    │
     #> │ null ┆ null ┆ null ┆ null ┆ … ┆ null ┆ null ┆ 2    ┆ b    │
     #> │ null ┆ null ┆ null ┆ null ┆ … ┆ null ┆ null ┆ 3    ┆ c    │
     #> │ null ┆ null ┆ null ┆ null ┆ … ┆ null ┆ null ┆ 4    ┆ d    │

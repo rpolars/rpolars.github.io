@@ -14,8 +14,8 @@ Scan a parquet file
   cache = TRUE,
   parallel = c("Auto", "None", "Columns", "RowGroups"),
   rechunk = TRUE,
-  row_count_name = NULL,
-  row_count_offset = 0L,
+  row_index_name = NULL,
+  row_index_offset = 0L,
   low_memory = FALSE,
   use_statistics = TRUE,
   hive_partitioning = TRUE
@@ -72,7 +72,7 @@ DataFrame into contiguous memory chunks.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="scan_parquet_:_row_count_name">row_count_name</code>
+<code id="scan_parquet_:_row_index_name">row_index_name</code>
 </td>
 <td>
 If not <code>NULL</code>, this will insert a row count column with the
@@ -81,10 +81,10 @@ given name into the DataFrame.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="scan_parquet_:_row_count_offset">row_count_offset</code>
+<code id="scan_parquet_:_row_index_offset">row_index_offset</code>
 </td>
 <td>
-Offset to start the row_count column (only used if the name is set).
+Offset to start the row_index column (only used if the name is set).
 </td>
 </tr>
 <tr>
@@ -159,7 +159,9 @@ pl$scan_parquet(
     #> │ 22.8 ┆ 108.0 ┆ 93.0  ┆ 3.85 ┆ … ┆ 1.0 ┆ 1.0  ┆ 4   ┆ 4    │
     #> │ 24.4 ┆ 146.7 ┆ 62.0  ┆ 3.69 ┆ … ┆ 0.0 ┆ 2.0  ┆ 4   ┆ 4    │
     #> │ 22.8 ┆ 140.8 ┆ 95.0  ┆ 3.92 ┆ … ┆ 0.0 ┆ 2.0  ┆ 4   ┆ 4    │
+    #> │ 32.4 ┆ 78.7  ┆ 66.0  ┆ 4.08 ┆ … ┆ 1.0 ┆ 1.0  ┆ 4   ┆ 4    │
     #> │ …    ┆ …     ┆ …     ┆ …    ┆ … ┆ …   ┆ …    ┆ …   ┆ …    │
+    #> │ 15.2 ┆ 304.0 ┆ 150.0 ┆ 3.15 ┆ … ┆ 0.0 ┆ 2.0  ┆ 8   ┆ 3    │
     #> │ 13.3 ┆ 350.0 ┆ 245.0 ┆ 3.73 ┆ … ┆ 0.0 ┆ 4.0  ┆ 8   ┆ 3    │
     #> │ 19.2 ┆ 400.0 ┆ 175.0 ┆ 3.08 ┆ … ┆ 0.0 ┆ 2.0  ┆ 8   ┆ 3    │
     #> │ 15.8 ┆ 351.0 ┆ 264.0 ┆ 4.22 ┆ … ┆ 1.0 ┆ 4.0  ┆ 8   ┆ 5    │

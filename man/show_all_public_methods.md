@@ -109,6 +109,7 @@ pl$show_all_public_methods()
     #>           [ width ; property function ]
     #>           [ with_columns ; function ]
     #>           [ with_row_count ; function ]
+    #>           [ with_row_index ; function ]
     #>           [ write_csv ; function ]
     #>           [ write_json ; function ]
     #>           [ write_ndjson ; function ]
@@ -367,6 +368,7 @@ pl$show_all_public_methods()
     #>           [ with_columns ; function ]
     #>           [ with_context ; function ]
     #>           [ with_row_count ; function ]
+    #>           [ with_row_index ; function ]
     #> 
     #> 
     #>        RPolarsLazyGroupBy ( environment ):

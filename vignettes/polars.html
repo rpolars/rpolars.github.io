@@ -958,27 +958,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../man/pl_count.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    count
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../man/pl_cov.html" class="md-nav__link">
         
   
@@ -1341,6 +1320,27 @@
   
   <span class="md-ellipsis">
     LazyFrame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../man/pl_len.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    len
   </span>
   
 
@@ -4282,11 +4282,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../man/DataFrame_with_row_count.html" class="md-nav__link">
+      <a href="../man/DataFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -5377,11 +5377,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../man/LazyFrame_with_row_count.html" class="md-nav__link">
+      <a href="../man/LazyFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -14817,12 +14817,14 @@ important, as most of the <code>polars</code> functions are made available via
 <a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="c1">#&gt; │ 21.0 ┆ 6.0 ┆ 160.0 ┆ 110.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 4.0  ┆ 4.0  │</span>
 <a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="c1">#&gt; │ 22.8 ┆ 4.0 ┆ 108.0 ┆ 93.0  ┆ … ┆ 1.0 ┆ 1.0 ┆ 4.0  ┆ 1.0  │</span>
 <a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="c1">#&gt; │ 21.4 ┆ 6.0 ┆ 258.0 ┆ 110.0 ┆ … ┆ 1.0 ┆ 0.0 ┆ 3.0  ┆ 1.0  │</span>
-<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="c1">#&gt; │ …    ┆ …   ┆ …     ┆ …     ┆ … ┆ …   ┆ …   ┆ …    ┆ …    │</span>
-<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="c1">#&gt; │ 15.8 ┆ 8.0 ┆ 351.0 ┆ 264.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 5.0  ┆ 4.0  │</span>
-<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="c1">#&gt; │ 19.7 ┆ 6.0 ┆ 145.0 ┆ 175.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 5.0  ┆ 6.0  │</span>
-<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="c1">#&gt; │ 15.0 ┆ 8.0 ┆ 301.0 ┆ 335.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 5.0  ┆ 8.0  │</span>
-<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="c1">#&gt; │ 21.4 ┆ 4.0 ┆ 121.0 ┆ 109.0 ┆ … ┆ 1.0 ┆ 1.0 ┆ 4.0  ┆ 2.0  │</span>
-<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="c1">#&gt; └──────┴─────┴───────┴───────┴───┴─────┴─────┴──────┴──────┘</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="c1">#&gt; │ 18.7 ┆ 8.0 ┆ 360.0 ┆ 175.0 ┆ … ┆ 0.0 ┆ 0.0 ┆ 3.0  ┆ 2.0  │</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="c1">#&gt; │ …    ┆ …   ┆ …     ┆ …     ┆ … ┆ …   ┆ …   ┆ …    ┆ …    │</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="c1">#&gt; │ 30.4 ┆ 4.0 ┆ 95.1  ┆ 113.0 ┆ … ┆ 1.0 ┆ 1.0 ┆ 5.0  ┆ 2.0  │</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="c1">#&gt; │ 15.8 ┆ 8.0 ┆ 351.0 ┆ 264.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 5.0  ┆ 4.0  │</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="c1">#&gt; │ 19.7 ┆ 6.0 ┆ 145.0 ┆ 175.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 5.0  ┆ 6.0  │</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="c1">#&gt; │ 15.0 ┆ 8.0 ┆ 301.0 ┆ 335.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 5.0  ┆ 8.0  │</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="c1">#&gt; │ 21.4 ┆ 4.0 ┆ 121.0 ┆ 109.0 ┆ … ┆ 1.0 ┆ 1.0 ┆ 4.0  ┆ 2.0  │</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="c1">#&gt; └──────┴─────┴───────┴───────┴───┴─────┴─────┴──────┴──────┘</span>
 </code></pre></div>
 <p><code>pl$DataFrame()</code> is similar to <code>data.frame()</code>, and <code>as_polars_df()</code> is
 similar to <code>as.data.frame()</code>.</p>
@@ -15036,12 +15038,14 @@ and also columns
 <a id="__codelineno-13-37" name="__codelineno-13-37" href="#__codelineno-13-37"></a><span class="c1">#&gt; │ 21.0 ┆ 110.0 │</span>
 <a id="__codelineno-13-38" name="__codelineno-13-38" href="#__codelineno-13-38"></a><span class="c1">#&gt; │ 22.8 ┆ 93.0  │</span>
 <a id="__codelineno-13-39" name="__codelineno-13-39" href="#__codelineno-13-39"></a><span class="c1">#&gt; │ 21.4 ┆ 110.0 │</span>
-<a id="__codelineno-13-40" name="__codelineno-13-40" href="#__codelineno-13-40"></a><span class="c1">#&gt; │ …    ┆ …     │</span>
-<a id="__codelineno-13-41" name="__codelineno-13-41" href="#__codelineno-13-41"></a><span class="c1">#&gt; │ 15.8 ┆ 264.0 │</span>
-<a id="__codelineno-13-42" name="__codelineno-13-42" href="#__codelineno-13-42"></a><span class="c1">#&gt; │ 19.7 ┆ 175.0 │</span>
-<a id="__codelineno-13-43" name="__codelineno-13-43" href="#__codelineno-13-43"></a><span class="c1">#&gt; │ 15.0 ┆ 335.0 │</span>
-<a id="__codelineno-13-44" name="__codelineno-13-44" href="#__codelineno-13-44"></a><span class="c1">#&gt; │ 21.4 ┆ 109.0 │</span>
-<a id="__codelineno-13-45" name="__codelineno-13-45" href="#__codelineno-13-45"></a><span class="c1">#&gt; └──────┴───────┘</span>
+<a id="__codelineno-13-40" name="__codelineno-13-40" href="#__codelineno-13-40"></a><span class="c1">#&gt; │ 18.7 ┆ 175.0 │</span>
+<a id="__codelineno-13-41" name="__codelineno-13-41" href="#__codelineno-13-41"></a><span class="c1">#&gt; │ …    ┆ …     │</span>
+<a id="__codelineno-13-42" name="__codelineno-13-42" href="#__codelineno-13-42"></a><span class="c1">#&gt; │ 30.4 ┆ 113.0 │</span>
+<a id="__codelineno-13-43" name="__codelineno-13-43" href="#__codelineno-13-43"></a><span class="c1">#&gt; │ 15.8 ┆ 264.0 │</span>
+<a id="__codelineno-13-44" name="__codelineno-13-44" href="#__codelineno-13-44"></a><span class="c1">#&gt; │ 19.7 ┆ 175.0 │</span>
+<a id="__codelineno-13-45" name="__codelineno-13-45" href="#__codelineno-13-45"></a><span class="c1">#&gt; │ 15.0 ┆ 335.0 │</span>
+<a id="__codelineno-13-46" name="__codelineno-13-46" href="#__codelineno-13-46"></a><span class="c1">#&gt; │ 21.4 ┆ 109.0 │</span>
+<a id="__codelineno-13-47" name="__codelineno-13-47" href="#__codelineno-13-47"></a><span class="c1">#&gt; └──────┴───────┘</span>
 </code></pre></div>
 <p>Of course, we can chain those methods to create a pipeline:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">dat</span><span class="o">$</span><span class="nf">filter</span><span class="p">(</span>
@@ -15089,12 +15093,14 @@ method. This next code chunk is equivalent to
 <a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="c1">#&gt; │ 21.0 ┆ 6.0 ┆ 160.0 ┆ 110.0 ┆ … ┆ 4.0  ┆ 4.0  ┆ 138.2   ┆ 856.0  │</span>
 <a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="c1">#&gt; │ 22.8 ┆ 4.0 ┆ 108.0 ┆ 93.0  ┆ … ┆ 4.0  ┆ 1.0  ┆ 293.3   ┆ 909.0  │</span>
 <a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="c1">#&gt; │ 21.4 ┆ 6.0 ┆ 258.0 ┆ 110.0 ┆ … ┆ 3.0  ┆ 1.0  ┆ 138.2   ┆ 856.0  │</span>
-<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="c1">#&gt; │ …    ┆ …   ┆ …     ┆ …     ┆ … ┆ …    ┆ …    ┆ …       ┆ …      │</span>
-<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="c1">#&gt; │ 15.8 ┆ 8.0 ┆ 351.0 ┆ 264.0 ┆ … ┆ 5.0  ┆ 4.0  ┆ 211.4   ┆ 2929.0 │</span>
-<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="c1">#&gt; │ 19.7 ┆ 6.0 ┆ 145.0 ┆ 175.0 ┆ … ┆ 5.0  ┆ 6.0  ┆ 138.2   ┆ 856.0  │</span>
-<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="c1">#&gt; │ 15.0 ┆ 8.0 ┆ 301.0 ┆ 335.0 ┆ … ┆ 5.0  ┆ 8.0  ┆ 211.4   ┆ 2929.0 │</span>
-<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="c1">#&gt; │ 21.4 ┆ 4.0 ┆ 121.0 ┆ 109.0 ┆ … ┆ 4.0  ┆ 2.0  ┆ 293.3   ┆ 909.0  │</span>
-<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="c1">#&gt; └──────┴─────┴───────┴───────┴───┴──────┴──────┴─────────┴────────┘</span>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="c1">#&gt; │ 18.7 ┆ 8.0 ┆ 360.0 ┆ 175.0 ┆ … ┆ 3.0  ┆ 2.0  ┆ 211.4   ┆ 2929.0 │</span>
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="c1">#&gt; │ …    ┆ …   ┆ …     ┆ …     ┆ … ┆ …    ┆ …    ┆ …       ┆ …      │</span>
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="c1">#&gt; │ 30.4 ┆ 4.0 ┆ 95.1  ┆ 113.0 ┆ … ┆ 5.0  ┆ 2.0  ┆ 293.3   ┆ 909.0  │</span>
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="c1">#&gt; │ 15.8 ┆ 8.0 ┆ 351.0 ┆ 264.0 ┆ … ┆ 5.0  ┆ 4.0  ┆ 211.4   ┆ 2929.0 │</span>
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="c1">#&gt; │ 19.7 ┆ 6.0 ┆ 145.0 ┆ 175.0 ┆ … ┆ 5.0  ┆ 6.0  ┆ 138.2   ┆ 856.0  │</span>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="c1">#&gt; │ 15.0 ┆ 8.0 ┆ 301.0 ┆ 335.0 ┆ … ┆ 5.0  ┆ 8.0  ┆ 211.4   ┆ 2929.0 │</span>
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="c1">#&gt; │ 21.4 ┆ 4.0 ┆ 121.0 ┆ 109.0 ┆ … ┆ 4.0  ┆ 2.0  ┆ 293.3   ┆ 909.0  │</span>
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="c1">#&gt; └──────┴─────┴───────┴───────┴───┴──────┴──────┴─────────┴────────┘</span>
 </code></pre></div>
 <p>For what it’s worth, the previous query could have been written more
 concisely as:</p>
@@ -15111,12 +15117,14 @@ concisely as:</p>
 <a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="c1">#&gt; │ 21.0 ┆ 6.0 ┆ 160.0 ┆ 110.0 ┆ … ┆ 4.0  ┆ 4.0  ┆ 138.2   ┆ 856.0  │</span>
 <a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="c1">#&gt; │ 22.8 ┆ 4.0 ┆ 108.0 ┆ 93.0  ┆ … ┆ 4.0  ┆ 1.0  ┆ 293.3   ┆ 909.0  │</span>
 <a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="c1">#&gt; │ 21.4 ┆ 6.0 ┆ 258.0 ┆ 110.0 ┆ … ┆ 3.0  ┆ 1.0  ┆ 138.2   ┆ 856.0  │</span>
-<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="c1">#&gt; │ …    ┆ …   ┆ …     ┆ …     ┆ … ┆ …    ┆ …    ┆ …       ┆ …      │</span>
-<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="c1">#&gt; │ 15.8 ┆ 8.0 ┆ 351.0 ┆ 264.0 ┆ … ┆ 5.0  ┆ 4.0  ┆ 211.4   ┆ 2929.0 │</span>
-<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="c1">#&gt; │ 19.7 ┆ 6.0 ┆ 145.0 ┆ 175.0 ┆ … ┆ 5.0  ┆ 6.0  ┆ 138.2   ┆ 856.0  │</span>
-<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="c1">#&gt; │ 15.0 ┆ 8.0 ┆ 301.0 ┆ 335.0 ┆ … ┆ 5.0  ┆ 8.0  ┆ 211.4   ┆ 2929.0 │</span>
-<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="c1">#&gt; │ 21.4 ┆ 4.0 ┆ 121.0 ┆ 109.0 ┆ … ┆ 4.0  ┆ 2.0  ┆ 293.3   ┆ 909.0  │</span>
-<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="c1">#&gt; └──────┴─────┴───────┴───────┴───┴──────┴──────┴─────────┴────────┘</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="c1">#&gt; │ 18.7 ┆ 8.0 ┆ 360.0 ┆ 175.0 ┆ … ┆ 3.0  ┆ 2.0  ┆ 211.4   ┆ 2929.0 │</span>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="c1">#&gt; │ …    ┆ …   ┆ …     ┆ …     ┆ … ┆ …    ┆ …    ┆ …       ┆ …      │</span>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="c1">#&gt; │ 30.4 ┆ 4.0 ┆ 95.1  ┆ 113.0 ┆ … ┆ 5.0  ┆ 2.0  ┆ 293.3   ┆ 909.0  │</span>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="c1">#&gt; │ 15.8 ┆ 8.0 ┆ 351.0 ┆ 264.0 ┆ … ┆ 5.0  ┆ 4.0  ┆ 211.4   ┆ 2929.0 │</span>
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="c1">#&gt; │ 19.7 ┆ 6.0 ┆ 145.0 ┆ 175.0 ┆ … ┆ 5.0  ┆ 6.0  ┆ 138.2   ┆ 856.0  │</span>
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="c1">#&gt; │ 15.0 ┆ 8.0 ┆ 301.0 ┆ 335.0 ┆ … ┆ 5.0  ┆ 8.0  ┆ 211.4   ┆ 2929.0 │</span>
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="c1">#&gt; │ 21.4 ┆ 4.0 ┆ 121.0 ┆ 109.0 ┆ … ┆ 4.0  ┆ 2.0  ┆ 293.3   ┆ 909.0  │</span>
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="c1">#&gt; └──────┴─────┴───────┴───────┴───┴──────┴──────┴─────────┴────────┘</span>
 </code></pre></div>
 <p>Similarly, here’s how we could have aggregated (i.e., collapsed) the
 dataset by groups instead of modifying them. We need simply invoke the
@@ -15158,11 +15166,11 @@ group by multiple variables and aggregation types.</p>
 <a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="c1">#&gt; │ f64 ┆ bool   ┆ f64       ┆ f64    │</span>
 <a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="c1">#&gt; ╞═════╪════════╪═══════════╪════════╡</span>
 <a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="c1">#&gt; │ 6.0 ┆ true   ┆ 20.566667 ┆ 110.0  │</span>
-<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="c1">#&gt; │ 6.0 ┆ false  ┆ 19.125    ┆ 116.5  │</span>
-<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="c1">#&gt; │ 8.0 ┆ true   ┆ 15.4      ┆ 299.5  │</span>
-<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="c1">#&gt; │ 4.0 ┆ false  ┆ 22.9      ┆ 95.0   │</span>
-<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="c1">#&gt; │ 4.0 ┆ true   ┆ 28.075    ┆ 78.5   │</span>
-<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a><span class="c1">#&gt; │ 8.0 ┆ false  ┆ 15.05     ┆ 180.0  │</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="c1">#&gt; │ 8.0 ┆ false  ┆ 15.05     ┆ 180.0  │</span>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="c1">#&gt; │ 4.0 ┆ false  ┆ 22.9      ┆ 95.0   │</span>
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="c1">#&gt; │ 6.0 ┆ false  ┆ 19.125    ┆ 116.5  │</span>
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="c1">#&gt; │ 8.0 ┆ true   ┆ 15.4      ┆ 299.5  │</span>
+<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a><span class="c1">#&gt; │ 4.0 ┆ true   ┆ 28.075    ┆ 78.5   │</span>
 <a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a><span class="c1">#&gt; └─────┴────────┴───────────┴────────┘</span>
 </code></pre></div>
 <p>Note that we used the <code>cast</code> method to convert the data type of the <code>am</code>
@@ -15191,12 +15199,14 @@ data so that every subject takes its own column.</p>
 <a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="c1">#&gt; │ 0.5  ┆ 1       ┆ 0.94 │</span>
 <a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="c1">#&gt; │ 0.75 ┆ 1       ┆ 0.78 │</span>
 <a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="c1">#&gt; │ 1.0  ┆ 1       ┆ 0.48 │</span>
-<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="c1">#&gt; │ …    ┆ …       ┆ …    │</span>
-<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="c1">#&gt; │ 4.0  ┆ 6       ┆ 0.17 │</span>
-<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="c1">#&gt; │ 5.0  ┆ 6       ┆ 0.13 │</span>
-<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="c1">#&gt; │ 6.0  ┆ 6       ┆ 0.1  │</span>
-<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="c1">#&gt; │ 8.0  ┆ 6       ┆ 0.09 │</span>
-<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a><span class="c1">#&gt; └──────┴─────────┴──────┘</span>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="c1">#&gt; │ 1.25 ┆ 1       ┆ 0.37 │</span>
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="c1">#&gt; │ …    ┆ …       ┆ …    │</span>
+<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="c1">#&gt; │ 3.0  ┆ 6       ┆ 0.24 │</span>
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="c1">#&gt; │ 4.0  ┆ 6       ┆ 0.17 │</span>
+<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="c1">#&gt; │ 5.0  ┆ 6       ┆ 0.13 │</span>
+<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a><span class="c1">#&gt; │ 6.0  ┆ 6       ┆ 0.1  │</span>
+<a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a><span class="c1">#&gt; │ 8.0  ┆ 6       ┆ 0.09 │</span>
+<a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a><span class="c1">#&gt; └──────┴─────────┴──────┘</span>
 </code></pre></div>
 <p>Basic functionality aside, it should be noted that <code>pivot</code> can perform
 aggregations as part of the reshaping operation. This is useful when you
@@ -15250,12 +15260,14 @@ borrow some datasets from the <strong>nycflights13</strong> package.</p>
 <a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a><span class="c1">#&gt; │ 2013 ┆ 1     ┆ 1   ┆ 533      ┆ … ┆ 2       ┆ 149   ┆ null  ┆ Turbo-fan │</span>
 <a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a><span class="c1">#&gt; │ 2013 ┆ 1     ┆ 1   ┆ 542      ┆ … ┆ 2       ┆ 178   ┆ null  ┆ Turbo-fan │</span>
 <a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a><span class="c1">#&gt; │ 2013 ┆ 1     ┆ 1   ┆ 544      ┆ … ┆ 2       ┆ 200   ┆ null  ┆ Turbo-fan │</span>
-<a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a><span class="c1">#&gt; │ …    ┆ …     ┆ …   ┆ …        ┆ … ┆ …       ┆ …     ┆ …     ┆ …         │</span>
-<a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a><span class="c1">#&gt; │ 2013 ┆ 9     ┆ 30  ┆ null     ┆ … ┆ null    ┆ null  ┆ null  ┆ null      │</span>
+<a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a><span class="c1">#&gt; │ 2013 ┆ 1     ┆ 1   ┆ 554      ┆ … ┆ 2       ┆ 178   ┆ null  ┆ Turbo-fan │</span>
+<a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a><span class="c1">#&gt; │ …    ┆ …     ┆ …   ┆ …        ┆ … ┆ …       ┆ …     ┆ …     ┆ …         │</span>
 <a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a><span class="c1">#&gt; │ 2013 ┆ 9     ┆ 30  ┆ null     ┆ … ┆ null    ┆ null  ┆ null  ┆ null      │</span>
 <a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a><span class="c1">#&gt; │ 2013 ┆ 9     ┆ 30  ┆ null     ┆ … ┆ null    ┆ null  ┆ null  ┆ null      │</span>
 <a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a><span class="c1">#&gt; │ 2013 ┆ 9     ┆ 30  ┆ null     ┆ … ┆ null    ┆ null  ┆ null  ┆ null      │</span>
-<a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a><span class="c1">#&gt; └──────┴───────┴─────┴──────────┴───┴─────────┴───────┴───────┴───────────┘</span>
+<a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a><span class="c1">#&gt; │ 2013 ┆ 9     ┆ 30  ┆ null     ┆ … ┆ null    ┆ null  ┆ null  ┆ null      │</span>
+<a id="__codelineno-23-26" name="__codelineno-23-26" href="#__codelineno-23-26"></a><span class="c1">#&gt; │ 2013 ┆ 9     ┆ 30  ┆ null     ┆ … ┆ null    ┆ null  ┆ null  ┆ null      │</span>
+<a id="__codelineno-23-27" name="__codelineno-23-27" href="#__codelineno-23-27"></a><span class="c1">#&gt; └──────┴───────┴─────┴──────────┴───┴─────────┴───────┴───────┴───────────┘</span>
 </code></pre></div>
 <p>More information on the <strong>polars</strong> joining method can be found in the
 <a href="https://rpolars.github.io/man/DataFrame_join.html">reference manual</a>.</p>
@@ -15348,12 +15360,14 @@ bundled with base R.</p>
 <a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="c1">#&gt; │ 36    ┆ 118     ┆ 8.0  ┆ 72   ┆ 5     ┆ 2   │</span>
 <a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a><span class="c1">#&gt; │ 12    ┆ 149     ┆ 12.6 ┆ 74   ┆ 5     ┆ 3   │</span>
 <a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a><span class="c1">#&gt; │ 18    ┆ 313     ┆ 11.5 ┆ 62   ┆ 5     ┆ 4   │</span>
-<a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="c1">#&gt; │ …     ┆ …       ┆ …    ┆ …    ┆ …     ┆ …   │</span>
-<a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a><span class="c1">#&gt; │ NA    ┆ 145     ┆ 13.2 ┆ 77   ┆ 9     ┆ 27  │</span>
-<a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a><span class="c1">#&gt; │ 14    ┆ 191     ┆ 14.3 ┆ 75   ┆ 9     ┆ 28  │</span>
-<a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a><span class="c1">#&gt; │ 18    ┆ 131     ┆ 8.0  ┆ 76   ┆ 9     ┆ 29  │</span>
-<a id="__codelineno-29-18" name="__codelineno-29-18" href="#__codelineno-29-18"></a><span class="c1">#&gt; │ 20    ┆ 223     ┆ 11.5 ┆ 68   ┆ 9     ┆ 30  │</span>
-<a id="__codelineno-29-19" name="__codelineno-29-19" href="#__codelineno-29-19"></a><span class="c1">#&gt; └───────┴─────────┴──────┴──────┴───────┴─────┘</span>
+<a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="c1">#&gt; │ NA    ┆ NA      ┆ 14.3 ┆ 56   ┆ 5     ┆ 5   │</span>
+<a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a><span class="c1">#&gt; │ …     ┆ …       ┆ …    ┆ …    ┆ …     ┆ …   │</span>
+<a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a><span class="c1">#&gt; │ 30    ┆ 193     ┆ 6.9  ┆ 70   ┆ 9     ┆ 26  │</span>
+<a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a><span class="c1">#&gt; │ NA    ┆ 145     ┆ 13.2 ┆ 77   ┆ 9     ┆ 27  │</span>
+<a id="__codelineno-29-18" name="__codelineno-29-18" href="#__codelineno-29-18"></a><span class="c1">#&gt; │ 14    ┆ 191     ┆ 14.3 ┆ 75   ┆ 9     ┆ 28  │</span>
+<a id="__codelineno-29-19" name="__codelineno-29-19" href="#__codelineno-29-19"></a><span class="c1">#&gt; │ 18    ┆ 131     ┆ 8.0  ┆ 76   ┆ 9     ┆ 29  │</span>
+<a id="__codelineno-29-20" name="__codelineno-29-20" href="#__codelineno-29-20"></a><span class="c1">#&gt; │ 20    ┆ 223     ┆ 11.5 ┆ 68   ┆ 9     ┆ 30  │</span>
+<a id="__codelineno-29-21" name="__codelineno-29-21" href="#__codelineno-29-21"></a><span class="c1">#&gt; └───────┴─────────┴──────┴──────┴───────┴─────┘</span>
 </code></pre></div>
 <p>Again, however, the package works best if we take the lazy approach.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">scan_csv</span><span class="p">(</span><span class="s">&quot;airquality.csv&quot;</span><span class="p">)</span>

@@ -20,7 +20,7 @@
     
     
       
-        <title>with_row_count - Polars R Package</title>
+        <title>with_row_index - Polars R Package</title>
       
     
     
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              with_row_count
+              with_row_index
             
           </span>
         </div>
@@ -810,27 +810,6 @@
   
   
     <li class="md-nav__item">
-      <a href="pl_count.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    count
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="pl_cov.html" class="md-nav__link">
         
   
@@ -1193,6 +1172,27 @@
   
   <span class="md-ellipsis">
     LazyFrame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_len.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    len
   </span>
   
 
@@ -4149,18 +4149,18 @@
           
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="DataFrame_with_row_count.html" class="md-nav__link md-nav__link--active">
+      <a href="DataFrame_with_row_index.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -5316,11 +5316,11 @@
   
   
     <li class="md-nav__item">
-      <a href="LazyFrame_with_row_count.html" class="md-nav__link">
+      <a href="LazyFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -14569,14 +14569,14 @@
 <h2 id="description">Description</h2>
 <p>Add a new column at index 0 that counts the rows</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>&lt;DataFrame&gt;$with_row_count(name, offset = NULL)
+<pre><code class='language-R'>&lt;DataFrame&gt;$with_row_index(name, offset = NULL)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_with_row_count_:_name">name</code>
+<code id="DataFrame_with_row_index_:_name">name</code>
 </td>
 <td>
 string name of the created column
@@ -14584,7 +14584,7 @@ string name of the created column
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_with_row_count_:_offset">offset</code>
+<code id="DataFrame_with_row_index_:_offset">offset</code>
 </td>
 <td>
 positive integer offset for the start of the counter
@@ -14600,7 +14600,7 @@ positive integer offset for the start of the counter
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># by default, the index starts at 0 (to mimic the behavior of Python Polars)</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_row_count</span><span class="p">(</span><span class="s">&quot;idx&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_row_index</span><span class="p">(</span><span class="s">&quot;idx&quot;</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; shape: (32, 12)
 #&gt; ┌─────┬──────┬─────┬───────┬───┬─────┬─────┬──────┬──────┐
@@ -14612,7 +14612,9 @@ positive integer offset for the start of the counter
 #&gt; │ 1   ┆ 21.0 ┆ 6.0 ┆ 160.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 4.0  ┆ 4.0  │
 #&gt; │ 2   ┆ 22.8 ┆ 4.0 ┆ 108.0 ┆ … ┆ 1.0 ┆ 1.0 ┆ 4.0  ┆ 1.0  │
 #&gt; │ 3   ┆ 21.4 ┆ 6.0 ┆ 258.0 ┆ … ┆ 1.0 ┆ 0.0 ┆ 3.0  ┆ 1.0  │
+#&gt; │ 4   ┆ 18.7 ┆ 8.0 ┆ 360.0 ┆ … ┆ 0.0 ┆ 0.0 ┆ 3.0  ┆ 2.0  │
 #&gt; │ …   ┆ …    ┆ …   ┆ …     ┆ … ┆ …   ┆ …   ┆ …    ┆ …    │
+#&gt; │ 27  ┆ 30.4 ┆ 4.0 ┆ 95.1  ┆ … ┆ 1.0 ┆ 1.0 ┆ 5.0  ┆ 2.0  │
 #&gt; │ 28  ┆ 15.8 ┆ 8.0 ┆ 351.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 5.0  ┆ 4.0  │
 #&gt; │ 29  ┆ 19.7 ┆ 6.0 ┆ 145.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 5.0  ┆ 6.0  │
 #&gt; │ 30  ┆ 15.0 ┆ 8.0 ┆ 301.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 5.0  ┆ 8.0  │
@@ -14620,7 +14622,7 @@ positive integer offset for the start of the counter
 #&gt; └─────┴──────┴─────┴───────┴───┴─────┴─────┴──────┴──────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># but in R, we use a 1-index</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_row_count</span><span class="p">(</span><span class="s">&quot;idx&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_row_index</span><span class="p">(</span><span class="s">&quot;idx&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; shape: (32, 12)
 #&gt; ┌─────┬──────┬─────┬───────┬───┬─────┬─────┬──────┬──────┐
@@ -14632,7 +14634,9 @@ positive integer offset for the start of the counter
 #&gt; │ 2   ┆ 21.0 ┆ 6.0 ┆ 160.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 4.0  ┆ 4.0  │
 #&gt; │ 3   ┆ 22.8 ┆ 4.0 ┆ 108.0 ┆ … ┆ 1.0 ┆ 1.0 ┆ 4.0  ┆ 1.0  │
 #&gt; │ 4   ┆ 21.4 ┆ 6.0 ┆ 258.0 ┆ … ┆ 1.0 ┆ 0.0 ┆ 3.0  ┆ 1.0  │
+#&gt; │ 5   ┆ 18.7 ┆ 8.0 ┆ 360.0 ┆ … ┆ 0.0 ┆ 0.0 ┆ 3.0  ┆ 2.0  │
 #&gt; │ …   ┆ …    ┆ …   ┆ …     ┆ … ┆ …   ┆ …   ┆ …    ┆ …    │
+#&gt; │ 28  ┆ 30.4 ┆ 4.0 ┆ 95.1  ┆ … ┆ 1.0 ┆ 1.0 ┆ 5.0  ┆ 2.0  │
 #&gt; │ 29  ┆ 15.8 ┆ 8.0 ┆ 351.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 5.0  ┆ 4.0  │
 #&gt; │ 30  ┆ 19.7 ┆ 6.0 ┆ 145.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 5.0  ┆ 6.0  │
 #&gt; │ 31  ┆ 15.0 ┆ 8.0 ┆ 301.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 5.0  ┆ 8.0  │

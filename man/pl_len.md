@@ -10,7 +10,7 @@ Count the number of values in this column/context.
 
 ## Usage
 
-<pre><code class='language-R'>pl_count(column = NULL)
+<pre><code class='language-R'>pl_len(column = NULL)
 </code></pre>
 
 ## Arguments
@@ -18,7 +18,7 @@ Count the number of values in this column/context.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_count_:_column">column</code>
+<code id="pl_len_:_column">column</code>
 </td>
 <td>
 
@@ -60,28 +60,28 @@ df = pl$DataFrame(
   b = c(4, 5, 2),
   c = c("foo", "bar", "foo")
 )
-df$select(pl$count())
+df$select(pl$len())
 ```
 
     #> shape: (1, 1)
-    #> ┌───────┐
-    #> │ count │
-    #> │ ---   │
-    #> │ u32   │
-    #> ╞═══════╡
-    #> │ 3     │
-    #> └───────┘
+    #> ┌─────┐
+    #> │ len │
+    #> │ --- │
+    #> │ u32 │
+    #> ╞═════╡
+    #> │ 3   │
+    #> └─────┘
 
 ``` r
-df$group_by("c", maintain_order = TRUE)$agg(pl$count())
+df$group_by("c", maintain_order = TRUE)$agg(pl$len())
 ```
 
     #> shape: (2, 2)
-    #> ┌─────┬───────┐
-    #> │ c   ┆ count │
-    #> │ --- ┆ ---   │
-    #> │ str ┆ u32   │
-    #> ╞═════╪═══════╡
-    #> │ foo ┆ 2     │
-    #> │ bar ┆ 1     │
-    #> └─────┴───────┘
+    #> ┌─────┬─────┐
+    #> │ c   ┆ len │
+    #> │ --- ┆ --- │
+    #> │ str ┆ u32 │
+    #> ╞═════╪═════╡
+    #> │ foo ┆ 2   │
+    #> │ bar ┆ 1   │
+    #> └─────┴─────┘

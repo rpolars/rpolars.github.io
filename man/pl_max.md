@@ -2,7 +2,7 @@
 
 # Find maximum value in one or several columns
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L534)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L539)
 
 ## Description
 

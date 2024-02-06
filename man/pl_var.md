@@ -2,7 +2,7 @@
 
 # Variance
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L606)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L611)
 
 ## Description
 

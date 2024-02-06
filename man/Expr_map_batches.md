@@ -114,7 +114,9 @@ pl$DataFrame(iris)$
     #> │ cheese 4.9   │
     #> │ cheese 4.7   │
     #> │ cheese 4.6   │
+    #> │ cheese 5     │
     #> │ …            │
+    #> │ cheese 6.7   │
     #> │ cheese 6.3   │
     #> │ cheese 6.5   │
     #> │ cheese 6.2   │
@@ -135,7 +137,7 @@ pl$LazyFrame(a = 1, b = 2, c = 3, d = 4)$select(
 ```
 
     #>    user  system elapsed 
-    #>   0.023   0.000   0.431
+    #>   0.019   0.004   0.428
 
 ``` r
 # map in parallel 1: Overhead to start up extra R processes / sessions
@@ -156,7 +158,7 @@ pl$LazyFrame(a = 1, b = 2, c = 3, d = 4)$select(
 ```
 
     #>    user  system elapsed 
-    #>   0.011   0.000   0.844
+    #>   0.006   0.002   0.712
 
 ``` r
 # map in parallel 2: Reuse R processes in "polars global_rpool".
@@ -175,4 +177,4 @@ pl$LazyFrame(a = 1, b = 2, c = 3, d = 4)$select(
 ```
 
     #>    user  system elapsed 
-    #>   0.009   0.000   0.113
+    #>   0.005   0.003   0.115

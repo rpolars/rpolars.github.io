@@ -46,7 +46,7 @@ polars_info()
 ```
 
     #> r-polars package version : 0.13.1.9000
-    #> rust-polars crate version: 0.36.2
+    #> rust-polars crate version: 0.37.0
     #> 
     #> Thread pool size: 4 
     #> 
@@ -62,7 +62,7 @@ polars_info()
 polars_info()$rust_polars
 ```
 
-    #> [1] "0.36.2"
+    #> [1] "0.37.0"
 
 ``` r
 polars_info()$features$simd

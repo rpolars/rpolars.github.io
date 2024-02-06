@@ -2,7 +2,7 @@
 
 # Join DataFrames
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L940)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L947)
 
 ## Description
 
@@ -190,7 +190,9 @@ df1$join(other = df2, how = "cross")
     #> │ a   ┆ 2   │
     #> │ a   ┆ 3   │
     #> │ a   ┆ 4   │
+    #> │ b   ┆ 1   │
     #> │ …   ┆ …   │
+    #> │ b   ┆ 4   │
     #> │ c   ┆ 1   │
     #> │ c   ┆ 2   │
     #> │ c   ┆ 3   │

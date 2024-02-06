@@ -810,27 +810,6 @@
   
   
     <li class="md-nav__item">
-      <a href="pl_count.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    count
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="pl_cov.html" class="md-nav__link">
         
   
@@ -1193,6 +1172,27 @@
   
   <span class="md-ellipsis">
     LazyFrame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_len.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    len
   </span>
   
 
@@ -4134,11 +4134,11 @@
   
   
     <li class="md-nav__item">
-      <a href="DataFrame_with_row_count.html" class="md-nav__link">
+      <a href="DataFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -5325,11 +5325,11 @@
   
   
     <li class="md-nav__item">
-      <a href="LazyFrame_with_row_count.html" class="md-nav__link">
+      <a href="LazyFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -14583,7 +14583,7 @@
 
 
 <h1 id="apply-filter-to-lazyframe">Apply filter to LazyFrame</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L280"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L287"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Filter rows with an Expression defining a boolean column. Multiple
 expressions are combined with <code>&amp;</code> (AND). This is equivalent
@@ -14625,7 +14625,9 @@ Polars expressions which will evaluate to a boolean.
 #&gt; │ 4.9          ┆ 3.0         ┆ 1.4          ┆ 0.2         ┆ setosa  │
 #&gt; │ 4.7          ┆ 3.2         ┆ 1.3          ┆ 0.2         ┆ setosa  │
 #&gt; │ 4.6          ┆ 3.1         ┆ 1.5          ┆ 0.2         ┆ setosa  │
+#&gt; │ 5.0          ┆ 3.6         ┆ 1.4          ┆ 0.2         ┆ setosa  │
 #&gt; │ …            ┆ …           ┆ …            ┆ …           ┆ …       │
+#&gt; │ 4.8          ┆ 3.0         ┆ 1.4          ┆ 0.3         ┆ setosa  │
 #&gt; │ 5.1          ┆ 3.8         ┆ 1.6          ┆ 0.2         ┆ setosa  │
 #&gt; │ 4.6          ┆ 3.2         ┆ 1.4          ┆ 0.2         ┆ setosa  │
 #&gt; │ 5.3          ┆ 3.7         ┆ 1.5          ┆ 0.2         ┆ setosa  │

@@ -2,7 +2,7 @@
 
 # Glimpse values in a DataFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1639)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1646)
 
 ## Description
 

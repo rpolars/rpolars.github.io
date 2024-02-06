@@ -2,7 +2,7 @@
 
 # Join elements of a list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L222)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L224)
 
 ## Description
 
@@ -11,7 +11,7 @@ This only works on columns of type <code>list\[str\]</code>.
 
 ## Usage
 
-<pre><code class='language-R'>ExprList_join(separator)
+<pre><code class='language-R'>ExprList_join(separator, ignore_nulls = FALSE)
 </code></pre>
 
 ## Arguments
@@ -24,6 +24,15 @@ This only works on columns of type <code>list\[str\]</code>.
 <td>
 String to separate the items with. Can be an Expr. Strings are
 <em>not</em> parsed as columns.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="ExprList_join_:_ignore_nulls">ignore_nulls</code>
+</td>
+<td>
+If <code>FALSE</code> (default), null values are propagated: if the row
+contains any null values, the output is null.
 </td>
 </tr>
 </table>
@@ -43,17 +52,18 @@ df = pl$DataFrame(
 )
 df$with_columns(
   join_with_expr = pl$col("s")$list$join(pl$col("separator")),
-  join_with_lit = pl$col("s")$list$join(" ")
+  join_with_lit = pl$col("s")$list$join(" "),
+  join_ignore_null = pl$col("s")$list$join(" ", ignore_nulls = TRUE)
 )
 ```
 
-    #> shape: (3, 4)
-    #> ┌─────────────────┬───────────┬────────────────┬───────────────┐
-    #> │ s               ┆ separator ┆ join_with_expr ┆ join_with_lit │
-    #> │ ---             ┆ ---       ┆ ---            ┆ ---           │
-    #> │ list[str]       ┆ str       ┆ str            ┆ str           │
-    #> ╞═════════════════╪═══════════╪════════════════╪═══════════════╡
-    #> │ ["a", "b", "c"] ┆ -         ┆ a-b-c          ┆ a b c         │
-    #> │ ["x", "y"]      ┆ +         ┆ x+y            ┆ x y           │
-    #> │ ["e", null]     ┆ /         ┆ e/null         ┆ e null        │
-    #> └─────────────────┴───────────┴────────────────┴───────────────┘
+    #> shape: (3, 5)
+    #> ┌─────────────────┬───────────┬────────────────┬───────────────┬──────────────────┐
+    #> │ s               ┆ separator ┆ join_with_expr ┆ join_with_lit ┆ join_ignore_null │
+    #> │ ---             ┆ ---       ┆ ---            ┆ ---           ┆ ---              │
+    #> │ list[str]       ┆ str       ┆ str            ┆ str           ┆ str              │
+    #> ╞═════════════════╪═══════════╪════════════════╪═══════════════╪══════════════════╡
+    #> │ ["a", "b", "c"] ┆ -         ┆ a-b-c          ┆ a b c         ┆ a b c            │
+    #> │ ["x", "y"]      ┆ +         ┆ x+y            ┆ x y           ┆ x y              │
+    #> │ ["e", null]     ┆ /         ┆ null           ┆ null          ┆ e                │
+    #> └─────────────────┴───────────┴────────────────┴───────────────┴──────────────────┘

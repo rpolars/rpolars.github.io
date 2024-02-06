@@ -91,6 +91,7 @@ pl$show_all_public_functions()
     #>        [ is_schema ; function ]
     #>        [ last ; function ]
     #>        [ LazyFrame ; function ]
+    #>        [ len ; function ]
     #>        [ List ; function ]
     #>        [ lit ; function ]
     #>        [ max ; function ]

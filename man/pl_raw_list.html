@@ -812,27 +812,6 @@
   
   
     <li class="md-nav__item">
-      <a href="pl_count.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    count
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="pl_cov.html" class="md-nav__link">
         
   
@@ -1195,6 +1174,27 @@
   
   <span class="md-ellipsis">
     LazyFrame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_len.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    len
   </span>
   
 
@@ -4230,11 +4230,11 @@
   
   
     <li class="md-nav__item">
-      <a href="DataFrame_with_row_count.html" class="md-nav__link">
+      <a href="DataFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -5325,11 +5325,11 @@
   
   
     <li class="md-nav__item">
-      <a href="LazyFrame_with_row_count.html" class="md-nav__link">
+      <a href="LazyFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -14649,9 +14649,9 @@ the S3 class is <code>c(“rpolars_raw_list”,“list”)</code>.</p>
 <div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (4,)
 #&gt; Series: &#39;&#39; [binary]
 #&gt; [
-#&gt;  [binary data]
-#&gt;  [binary data]
-#&gt;  [binary data]
+#&gt;  b&quot;\x00&quot;
+#&gt;  b&quot;\x00\x00\x00&quot;
+#&gt;  b&quot;alice&quot;
 #&gt;  null
 #&gt; ]
 </code></pre></div>
@@ -14684,8 +14684,8 @@ the S3 class is <code>c(“rpolars_raw_list”,“list”)</code>.</p>
 <div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (2,)
 #&gt; Series: &#39;&#39; [list[binary]]
 #&gt; [
-#&gt;  [[binary data]]
-#&gt;  [[binary data]]
+#&gt;  [b&quot;\x00&quot;]
+#&gt;  [b&quot;\x00\x00&quot;]
 #&gt; ]
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># to regular list, use as.list or unclass</span>

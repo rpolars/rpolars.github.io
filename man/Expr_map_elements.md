@@ -208,7 +208,9 @@ pl$DataFrame(iris)$select(e_add10, e_letter)
     #> │ 14.9       ┆ 13.0       ┆ 11.4       ┆ 10.2      ┆ e         ┆ c         ┆ b         ┆ a         │
     #> │ 14.7       ┆ 13.2       ┆ 11.3       ┆ 10.2      ┆ e         ┆ d         ┆ b         ┆ a         │
     #> │ 14.6       ┆ 13.1       ┆ 11.5       ┆ 10.2      ┆ e         ┆ d         ┆ b         ┆ a         │
+    #> │ 15.0       ┆ 13.6       ┆ 11.4       ┆ 10.2      ┆ e         ┆ d         ┆ b         ┆ a         │
     #> │ …          ┆ …          ┆ …          ┆ …         ┆ …         ┆ …         ┆ …         ┆ …         │
+    #> │ 16.7       ┆ 13.0       ┆ 15.2       ┆ 12.3      ┆ g         ┆ c         ┆ f         ┆ c         │
     #> │ 16.3       ┆ 12.5       ┆ 15.0       ┆ 11.9      ┆ g         ┆ c         ┆ e         ┆ b         │
     #> │ 16.5       ┆ 13.0       ┆ 15.2       ┆ 12.0      ┆ g         ┆ c         ┆ f         ┆ b         │
     #> │ 16.2       ┆ 13.4       ┆ 15.4       ┆ 12.3      ┆ g         ┆ d         ┆ f         ┆ c         │
@@ -237,7 +239,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   2.155   0.012   2.374
+    #>   2.352   0.000   2.623
 
 ``` r
 # Comparing this to the standard polars syntax:
@@ -249,7 +251,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.004   0.000   0.004
+    #>   0.003   0.001   0.015
 
 ``` r
 # Running in parallel --------------------------------
@@ -269,7 +271,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.033   0.000   1.234
+    #>   0.034   0.000   1.249
 
 ``` r
 # first run in parallel: there is some overhead to start up extra R processes
@@ -294,7 +296,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.013   0.004   1.051
+    #>   0.012   0.004   1.000
 
 ``` r
 # second run in parallel: this reuses R processes in "polars global_rpool".
@@ -315,4 +317,4 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.016   0.000   0.332
+    #>   0.013   0.000   0.331

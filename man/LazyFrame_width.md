@@ -2,7 +2,7 @@
 
 # Number of columns of a LazyFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1396)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1403)
 
 ## Description
 

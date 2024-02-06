@@ -906,27 +906,6 @@
   
   
     <li class="md-nav__item">
-      <a href="pl_count.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    count
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="pl_cov.html" class="md-nav__link">
         
   
@@ -1289,6 +1268,27 @@
   
   <span class="md-ellipsis">
     LazyFrame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_len.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    len
   </span>
   
 
@@ -4230,11 +4230,11 @@
   
   
     <li class="md-nav__item">
-      <a href="DataFrame_with_row_count.html" class="md-nav__link">
+      <a href="DataFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -5325,11 +5325,11 @@
   
   
     <li class="md-nav__item">
-      <a href="LazyFrame_with_row_count.html" class="md-nav__link">
+      <a href="LazyFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -14673,7 +14673,9 @@ string cache enabled. See <code>pl$enable_string_cache()</code>.</p>
 #&gt; │ 2   ┆ b   │
 #&gt; │ 3   ┆ c   │
 #&gt; │ 4   ┆ d   │
+#&gt; │ 5   ┆ e   │
 #&gt; │ …   ┆ …   │
+#&gt; │ 1   ┆ a   │
 #&gt; │ 2   ┆ b   │
 #&gt; │ 3   ┆ c   │
 #&gt; │ 4   ┆ d   │
@@ -14717,7 +14719,9 @@ string cache enabled. See <code>pl$enable_string_cache()</code>.</p>
 #&gt; │ 2    ┆ b    ┆ null ┆ null ┆ … ┆ null ┆ null ┆ null ┆ null │
 #&gt; │ 3    ┆ c    ┆ null ┆ null ┆ … ┆ null ┆ null ┆ null ┆ null │
 #&gt; │ 4    ┆ d    ┆ null ┆ null ┆ … ┆ null ┆ null ┆ null ┆ null │
+#&gt; │ 5    ┆ e    ┆ null ┆ null ┆ … ┆ null ┆ null ┆ null ┆ null │
 #&gt; │ …    ┆ …    ┆ …    ┆ …    ┆ … ┆ …    ┆ …    ┆ …    ┆ …    │
+#&gt; │ null ┆ null ┆ null ┆ null ┆ … ┆ null ┆ null ┆ 1    ┆ a    │
 #&gt; │ null ┆ null ┆ null ┆ null ┆ … ┆ null ┆ null ┆ 2    ┆ b    │
 #&gt; │ null ┆ null ┆ null ┆ null ┆ … ┆ null ┆ null ┆ 3    ┆ c    │
 #&gt; │ null ┆ null ┆ null ┆ null ┆ … ┆ null ┆ null ┆ 4    ┆ d    │

@@ -81,9 +81,9 @@ pl$Series(raw_list)
     #> polars Series: shape: (4,)
     #> Series: '' [binary]
     #> [
-    #>  [binary data]
-    #>  [binary data]
-    #>  [binary data]
+    #>  b"\x00"
+    #>  b"\x00\x00\x00"
+    #>  b"alice"
     #>  null
     #> ]
 
@@ -122,8 +122,8 @@ pl$Series(list(raw(1), raw(2)))
     #> polars Series: shape: (2,)
     #> Series: '' [list[binary]]
     #> [
-    #>  [[binary data]]
-    #>  [[binary data]]
+    #>  [b"\x00"]
+    #>  [b"\x00\x00"]
     #> ]
 
 ``` r

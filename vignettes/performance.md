@@ -119,7 +119,9 @@ df_test$
 #> │ Japan   ┆ 96  ┆ 672 │
 #> │ Japan   ┆ 17  ┆ 710 │
 #> │ Japan   ┆ 68  ┆ 41  │
+#> │ Japan   ┆ 100 ┆ 109 │
 #> │ …       ┆ …   ┆ …   │
+#> │ Vietnam ┆ 89  ┆ 352 │
 #> │ Vietnam ┆ 62  ┆ 8   │
 #> │ Vietnam ┆ 52  ┆ 988 │
 #> │ Vietnam ┆ 85  ┆ 982 │

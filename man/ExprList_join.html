@@ -810,27 +810,6 @@
   
   
     <li class="md-nav__item">
-      <a href="pl_count.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    count
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="pl_cov.html" class="md-nav__link">
         
   
@@ -1193,6 +1172,27 @@
   
   <span class="md-ellipsis">
     LazyFrame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_len.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    len
   </span>
   
 
@@ -4134,11 +4134,11 @@
   
   
     <li class="md-nav__item">
-      <a href="DataFrame_with_row_count.html" class="md-nav__link">
+      <a href="DataFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -5229,11 +5229,11 @@
   
   
     <li class="md-nav__item">
-      <a href="LazyFrame_with_row_count.html" class="md-nav__link">
+      <a href="LazyFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -14567,12 +14567,12 @@
 
 
 <h1 id="join-elements-of-a-list">Join elements of a list</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L222"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L224"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Join all string items in a sublist and place a separator between them.
 This only works on columns of type <code>list[str]</code>.</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>&lt;Expr&gt;$list$join(separator)
+<pre><code class='language-R'>&lt;Expr&gt;$list$join(separator, ignore_nulls = FALSE)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
@@ -14584,6 +14584,15 @@ This only works on columns of type <code>list[str]</code>.</p>
 <td>
 String to separate the items with. Can be an Expr. Strings are
 <em>not</em> parsed as columns.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="ExprList_join_:_ignore_nulls">ignore_nulls</code>
+</td>
+<td>
+If <code>FALSE</code> (default), null values are propagated: if the row
+contains any null values, the output is null.
 </td>
 </tr>
 </table>
@@ -14599,19 +14608,20 @@ String to separate the items with. Can be an Expr. Strings are
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">)</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="n">join_with_expr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;s&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">join</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;separator&quot;</span><span class="p">)),</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="n">join_with_lit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;s&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">join</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">)</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">)</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="n">join_with_lit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;s&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">join</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">),</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="n">join_ignore_null</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;s&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">join</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ignore_nulls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (3, 4)
-#&gt; ┌─────────────────┬───────────┬────────────────┬───────────────┐
-#&gt; │ s               ┆ separator ┆ join_with_expr ┆ join_with_lit │
-#&gt; │ ---             ┆ ---       ┆ ---            ┆ ---           │
-#&gt; │ list[str]       ┆ str       ┆ str            ┆ str           │
-#&gt; ╞═════════════════╪═══════════╪════════════════╪═══════════════╡
-#&gt; │ [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;] ┆ -         ┆ a-b-c          ┆ a b c         │
-#&gt; │ [&quot;x&quot;, &quot;y&quot;]      ┆ +         ┆ x+y            ┆ x y           │
-#&gt; │ [&quot;e&quot;, null]     ┆ /         ┆ e/null         ┆ e null        │
-#&gt; └─────────────────┴───────────┴────────────────┴───────────────┘
+<div class="highlight"><pre><span></span><code>#&gt; shape: (3, 5)
+#&gt; ┌─────────────────┬───────────┬────────────────┬───────────────┬──────────────────┐
+#&gt; │ s               ┆ separator ┆ join_with_expr ┆ join_with_lit ┆ join_ignore_null │
+#&gt; │ ---             ┆ ---       ┆ ---            ┆ ---           ┆ ---              │
+#&gt; │ list[str]       ┆ str       ┆ str            ┆ str           ┆ str              │
+#&gt; ╞═════════════════╪═══════════╪════════════════╪═══════════════╪══════════════════╡
+#&gt; │ [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;] ┆ -         ┆ a-b-c          ┆ a b c         ┆ a b c            │
+#&gt; │ [&quot;x&quot;, &quot;y&quot;]      ┆ +         ┆ x+y            ┆ x y           ┆ x y              │
+#&gt; │ [&quot;e&quot;, null]     ┆ /         ┆ null           ┆ null          ┆ e                │
+#&gt; └─────────────────┴───────────┴────────────────┴───────────────┴──────────────────┘
 </code></pre></div>
 
 

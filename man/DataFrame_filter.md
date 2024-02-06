@@ -2,7 +2,7 @@
 
 # Filter rows of a DataFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L834)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L841)
 
 ## Description
 
@@ -57,7 +57,9 @@ df$filter(pl$col("Sepal.Length") > 5)
     #> │ 5.4          ┆ 3.9         ┆ 1.7          ┆ 0.4         ┆ setosa    │
     #> │ 5.4          ┆ 3.7         ┆ 1.5          ┆ 0.2         ┆ setosa    │
     #> │ 5.8          ┆ 4.0         ┆ 1.2          ┆ 0.2         ┆ setosa    │
+    #> │ 5.7          ┆ 4.4         ┆ 1.5          ┆ 0.4         ┆ setosa    │
     #> │ …            ┆ …           ┆ …            ┆ …           ┆ …         │
+    #> │ 6.7          ┆ 3.0         ┆ 5.2          ┆ 2.3         ┆ virginica │
     #> │ 6.3          ┆ 2.5         ┆ 5.0          ┆ 1.9         ┆ virginica │
     #> │ 6.5          ┆ 3.0         ┆ 5.2          ┆ 2.0         ┆ virginica │
     #> │ 6.2          ┆ 3.4         ┆ 5.4          ┆ 2.3         ┆ virginica │
@@ -80,7 +82,9 @@ df$filter(pl$col("Sepal.Length") > 5, pl$col("Petal.Width") < 1)
     #> │ 5.4          ┆ 3.9         ┆ 1.7          ┆ 0.4         ┆ setosa  │
     #> │ 5.4          ┆ 3.7         ┆ 1.5          ┆ 0.2         ┆ setosa  │
     #> │ 5.8          ┆ 4.0         ┆ 1.2          ┆ 0.2         ┆ setosa  │
+    #> │ 5.7          ┆ 4.4         ┆ 1.5          ┆ 0.4         ┆ setosa  │
     #> │ …            ┆ …           ┆ …            ┆ …           ┆ …       │
+    #> │ 5.5          ┆ 3.5         ┆ 1.3          ┆ 0.2         ┆ setosa  │
     #> │ 5.1          ┆ 3.4         ┆ 1.5          ┆ 0.2         ┆ setosa  │
     #> │ 5.1          ┆ 3.8         ┆ 1.9          ┆ 0.4         ┆ setosa  │
     #> │ 5.1          ┆ 3.8         ┆ 1.6          ┆ 0.2         ┆ setosa  │
@@ -106,7 +110,9 @@ df$filter(pl$col("Species") == "setosa")
     #> │ 4.6          ┆ 3.1         ┆ 1.5          ┆ 0.2         ┆ setosa  │
     #> │ 5.4          ┆ 3.9         ┆ 1.7          ┆ 0.4         ┆ setosa  │
     #> │ 4.6          ┆ 3.4         ┆ 1.4          ┆ 0.3         ┆ setosa  │
+    #> │ 5.0          ┆ 3.4         ┆ 1.5          ┆ 0.2         ┆ setosa  │
     #> │ …            ┆ …           ┆ …            ┆ …           ┆ …       │
+    #> │ 4.8          ┆ 3.0         ┆ 1.4          ┆ 0.3         ┆ setosa  │
     #> │ 5.1          ┆ 3.8         ┆ 1.6          ┆ 0.2         ┆ setosa  │
     #> │ 4.6          ┆ 3.2         ┆ 1.4          ┆ 0.2         ┆ setosa  │
     #> │ 5.3          ┆ 3.7         ┆ 1.5          ┆ 0.2         ┆ setosa  │

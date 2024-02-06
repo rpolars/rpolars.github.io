@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="DataFrame_with_row_count.html">
+        <link rel="prev" href="DataFrame_with_row_index.html">
       
       
         <link rel="next" href="LazyFrame_clone.html">
@@ -810,27 +810,6 @@
   
   
     <li class="md-nav__item">
-      <a href="pl_count.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    count
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="pl_cov.html" class="md-nav__link">
         
   
@@ -1193,6 +1172,27 @@
   
   <span class="md-ellipsis">
     LazyFrame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_len.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    len
   </span>
   
 
@@ -4134,11 +4134,11 @@
   
   
     <li class="md-nav__item">
-      <a href="DataFrame_with_row_count.html" class="md-nav__link">
+      <a href="DataFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -5298,11 +5298,11 @@
   
   
     <li class="md-nav__item">
-      <a href="LazyFrame_with_row_count.html" class="md-nav__link">
+      <a href="LazyFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -14594,7 +14594,7 @@ such parquet files simultaneously.</p>
 #&gt; [49] &quot;unique&quot;                  &quot;unnest&quot;                 
 #&gt; [51] &quot;var&quot;                     &quot;width&quot;                  
 #&gt; [53] &quot;with_columns&quot;            &quot;with_context&quot;           
-#&gt; [55] &quot;with_row_count&quot;
+#&gt; [55] &quot;with_row_count&quot;          &quot;with_row_index&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># see all private methods (not intended for regular use)</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nf">ls</span><span class="p">(</span><span class="n">.pr</span><span class="o">$</span><span class="n">LazyFrame</span><span class="p">)</span>
@@ -14625,7 +14625,7 @@ such parquet files simultaneously.</p>
 #&gt; [47] &quot;tail&quot;                    &quot;unique&quot;                 
 #&gt; [49] &quot;unnest&quot;                  &quot;var&quot;                    
 #&gt; [51] &quot;with_columns&quot;            &quot;with_context&quot;           
-#&gt; [53] &quot;with_row_count&quot;
+#&gt; [53] &quot;with_row_index&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Practical example ##</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># First writing R iris dataset to disk, to illustrte a difference</span>
@@ -14666,7 +14666,7 @@ such parquet files simultaneously.</p>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; FILTER [(col(&quot;Species&quot;)) == (String(setosa))] FROM
 #&gt; 
-#&gt;   Csv SCAN /tmp/RtmpXcb8fO/file6c94ca199e0
+#&gt;   Csv SCAN /tmp/Rtmp93UUtP/file8fd26dd731b
 #&gt;   PROJECT */5 COLUMNS
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># NOTE For Ldf_okay, the full time to load csv alrady paid when creating Rdf and Pdf</span>
@@ -14679,7 +14679,7 @@ such parquet files simultaneously.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Ldf_best</span><span class="o">$</span><span class="nf">describe_optimized_plan</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; 
-#&gt;   Csv SCAN /tmp/RtmpXcb8fO/file6c94ca199e0
+#&gt;   Csv SCAN /tmp/Rtmp93UUtP/file8fd26dd731b
 #&gt;   PROJECT */5 COLUMNS
 #&gt;   SELECTION: [(col(&quot;Species&quot;)) == (String(setosa))]
 </code></pre></div>

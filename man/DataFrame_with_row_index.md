@@ -10,7 +10,7 @@ Add a new column at index 0 that counts the rows
 
 ## Usage
 
-<pre><code class='language-R'>DataFrame_with_row_count(name, offset = NULL)
+<pre><code class='language-R'>DataFrame_with_row_index(name, offset = NULL)
 </code></pre>
 
 ## Arguments
@@ -18,7 +18,7 @@ Add a new column at index 0 that counts the rows
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_with_row_count_:_name">name</code>
+<code id="DataFrame_with_row_index_:_name">name</code>
 </td>
 <td>
 string name of the created column
@@ -26,7 +26,7 @@ string name of the created column
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_with_row_count_:_offset">offset</code>
+<code id="DataFrame_with_row_index_:_offset">offset</code>
 </td>
 <td>
 positive integer offset for the start of the counter
@@ -46,7 +46,7 @@ library(polars)
 df = pl$DataFrame(mtcars)
 
 # by default, the index starts at 0 (to mimic the behavior of Python Polars)
-df$with_row_count("idx")
+df$with_row_index("idx")
 ```
 
     #> shape: (32, 12)
@@ -59,7 +59,9 @@ df$with_row_count("idx")
     #> │ 1   ┆ 21.0 ┆ 6.0 ┆ 160.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 4.0  ┆ 4.0  │
     #> │ 2   ┆ 22.8 ┆ 4.0 ┆ 108.0 ┆ … ┆ 1.0 ┆ 1.0 ┆ 4.0  ┆ 1.0  │
     #> │ 3   ┆ 21.4 ┆ 6.0 ┆ 258.0 ┆ … ┆ 1.0 ┆ 0.0 ┆ 3.0  ┆ 1.0  │
+    #> │ 4   ┆ 18.7 ┆ 8.0 ┆ 360.0 ┆ … ┆ 0.0 ┆ 0.0 ┆ 3.0  ┆ 2.0  │
     #> │ …   ┆ …    ┆ …   ┆ …     ┆ … ┆ …   ┆ …   ┆ …    ┆ …    │
+    #> │ 27  ┆ 30.4 ┆ 4.0 ┆ 95.1  ┆ … ┆ 1.0 ┆ 1.0 ┆ 5.0  ┆ 2.0  │
     #> │ 28  ┆ 15.8 ┆ 8.0 ┆ 351.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 5.0  ┆ 4.0  │
     #> │ 29  ┆ 19.7 ┆ 6.0 ┆ 145.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 5.0  ┆ 6.0  │
     #> │ 30  ┆ 15.0 ┆ 8.0 ┆ 301.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 5.0  ┆ 8.0  │
@@ -68,7 +70,7 @@ df$with_row_count("idx")
 
 ``` r
 # but in R, we use a 1-index
-df$with_row_count("idx", offset = 1)
+df$with_row_index("idx", offset = 1)
 ```
 
     #> shape: (32, 12)
@@ -81,7 +83,9 @@ df$with_row_count("idx", offset = 1)
     #> │ 2   ┆ 21.0 ┆ 6.0 ┆ 160.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 4.0  ┆ 4.0  │
     #> │ 3   ┆ 22.8 ┆ 4.0 ┆ 108.0 ┆ … ┆ 1.0 ┆ 1.0 ┆ 4.0  ┆ 1.0  │
     #> │ 4   ┆ 21.4 ┆ 6.0 ┆ 258.0 ┆ … ┆ 1.0 ┆ 0.0 ┆ 3.0  ┆ 1.0  │
+    #> │ 5   ┆ 18.7 ┆ 8.0 ┆ 360.0 ┆ … ┆ 0.0 ┆ 0.0 ┆ 3.0  ┆ 2.0  │
     #> │ …   ┆ …    ┆ …   ┆ …     ┆ … ┆ …   ┆ …   ┆ …    ┆ …    │
+    #> │ 28  ┆ 30.4 ┆ 4.0 ┆ 95.1  ┆ … ┆ 1.0 ┆ 1.0 ┆ 5.0  ┆ 2.0  │
     #> │ 29  ┆ 15.8 ┆ 8.0 ┆ 351.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 5.0  ┆ 4.0  │
     #> │ 30  ┆ 19.7 ┆ 6.0 ┆ 145.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 5.0  ┆ 6.0  │
     #> │ 31  ┆ 15.0 ┆ 8.0 ┆ 301.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 5.0  ┆ 8.0  │

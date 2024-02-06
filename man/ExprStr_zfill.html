@@ -810,27 +810,6 @@
   
   
     <li class="md-nav__item">
-      <a href="pl_count.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    count
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="pl_cov.html" class="md-nav__link">
         
   
@@ -1193,6 +1172,27 @@
   
   <span class="md-ellipsis">
     LazyFrame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_len.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    len
   </span>
   
 
@@ -4134,11 +4134,11 @@
   
   
     <li class="md-nav__item">
-      <a href="DataFrame_with_row_count.html" class="md-nav__link">
+      <a href="DataFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -5229,11 +5229,11 @@
   
   
     <li class="md-nav__item">
-      <a href="LazyFrame_with_row_count.html" class="md-nav__link">
+      <a href="LazyFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -14585,7 +14585,7 @@
 
 
 <h1 id="fills-the-string-with-zeroes">Fills the string with zeroes.</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L382"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L383"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Add zeroes to a string until it reaches <code>n</code> characters. If
 the number of characters is already greater than <code>n</code>, the
@@ -14601,7 +14601,8 @@ string is not modified.</p>
 <code id="ExprStr_zfill_:_alignment">alignment</code>
 </td>
 <td>
-Fill the value up to this length.
+Fill the value up to this length. This can be an Expr or something
+coercible to an Expr. Strings are parsed as column names.
 </td>
 </tr>
 </table>

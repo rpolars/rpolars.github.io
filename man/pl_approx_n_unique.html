@@ -906,27 +906,6 @@
   
   
     <li class="md-nav__item">
-      <a href="pl_count.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    count
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="pl_cov.html" class="md-nav__link">
         
   
@@ -1289,6 +1268,27 @@
   
   <span class="md-ellipsis">
     LazyFrame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_len.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    len
   </span>
   
 
@@ -4230,11 +4230,11 @@
   
   
     <li class="md-nav__item">
-      <a href="DataFrame_with_row_count.html" class="md-nav__link">
+      <a href="DataFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -5325,11 +5325,11 @@
   
   
     <li class="md-nav__item">
-      <a href="LazyFrame_with_row_count.html" class="md-nav__link">
+      <a href="LazyFrame_with_row_index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    with_row_count
+    with_row_index
   </span>
   
 
@@ -14583,7 +14583,7 @@
 
 
 <h1 id="approximate-count-of-unique-values">Approximate count of unique values.</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L423"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L428"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>This is done using the HyperLogLog++ algorithm for cardinality
 estimation.</p>
@@ -14673,7 +14673,7 @@ that the relative performance difference increases with column size.</p>
 #&gt; ]
 
 #&gt;    user  system elapsed 
-#&gt;   0.031   0.000   0.032
+#&gt;   0.032   0.000   0.032
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nf">system.time</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">n_unique</span><span class="p">(</span><span class="n">lit_series</span><span class="p">)</span><span class="o">$</span><span class="nf">to_series</span><span class="p">()</span><span class="o">$</span><span class="nf">print</span><span class="p">())</span>
 </code></pre></div>
@@ -14684,7 +14684,7 @@ that the relative performance difference increases with column size.</p>
 #&gt; ]
 
 #&gt;    user  system elapsed 
-#&gt;   0.119   0.000   0.069
+#&gt;   0.121   0.003   0.065
 </code></pre></div>
 
 
