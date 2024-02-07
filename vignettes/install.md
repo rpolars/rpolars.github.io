@@ -147,7 +147,7 @@ features.
     -   `disable_limit_max_threads`, this feature disables the automatic
         limit of the maximum number of threads to 2 for CRAN
         compatibility, and the maximum number of threads is used by
-        default. See `?pl_threadpool_size` for details.
+        default. See `?pl_thread_pool_size` for details.
 -   Features for nightly toolchain
     -   `simd` for SIMD support.
     -   `sql` for enable `pl$SQLContext()`.

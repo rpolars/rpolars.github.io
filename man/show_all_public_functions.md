@@ -140,6 +140,7 @@ pl$show_all_public_functions()
     #>        [ sum ; function ]
     #>        [ sum_horizontal ; function ]
     #>        [ tail ; function ]
+    #>        [ thread_pool_size ; function ]
     #>        [ threadpool_size ; function ]
     #>        [ Time ; RPolarsDataType ]
     #>        [ UInt16 ; RPolarsDataType ]

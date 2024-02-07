@@ -97,7 +97,7 @@ nav:
         - sum_horizontal: man/pl_sum_horizontal.md
         - sum: man/pl_sum.md
         - tail: man/pl_tail.md
-        - threadpool_size: man/pl_threadpool_size.md
+        - thread_pool_size: man/pl_thread_pool_size.md
         - using_string_cache: man/pl_using_string_cache.md
         - var: man/pl_var.md
         - with_string_cache: man/pl_with_string_cache.md

@@ -1688,11 +1688,11 @@
   
   
     <li class="md-nav__item">
-      <a href="man/pl_threadpool_size.html" class="md-nav__link">
+      <a href="man/pl_thread_pool_size.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    threadpool_size
+    thread_pool_size
   </span>
   
 
@@ -14435,6 +14435,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#deprecations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deprecations
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -14502,7 +14511,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#deprecations" class="md-nav__link">
+  <a href="#deprecations_1" class="md-nav__link">
     <span class="md-ellipsis">
       Deprecations
     </span>
@@ -14544,7 +14553,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#deprecations_1" class="md-nav__link">
+  <a href="#deprecations_2" class="md-nav__link">
     <span class="md-ellipsis">
       Deprecations
     </span>
@@ -15333,6 +15342,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#deprecations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deprecations
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -15400,7 +15418,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#deprecations" class="md-nav__link">
+  <a href="#deprecations_1" class="md-nav__link">
     <span class="md-ellipsis">
       Deprecations
     </span>
@@ -15442,7 +15460,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#deprecations_1" class="md-nav__link">
+  <a href="#deprecations_2" class="md-nav__link">
     <span class="md-ellipsis">
       Deprecations
     </span>
@@ -16219,6 +16237,11 @@
 </ul>
 </li>
 </ul>
+<h3 id="deprecations">Deprecations</h3>
+<ul>
+<li><code>pl$threadpool_size()</code> is deprecated and will be removed in 0.15.0. Use 
+    <code>pl$thread_pool_size()</code> instead (<a href="https://github.com/pola-rs/r-polars/issues/784">#784</a>).</li>
+</ul>
 <h2 id="polars-r-package-0131">Polars R Package 0.13.1</h2>
 <h3 id="new-features">New features</h3>
 <ul>
@@ -16271,7 +16294,7 @@
 <li>The S3 method <code>[</code> for the <code>$list</code> subnamespace is removed (<a href="https://github.com/pola-rs/r-polars/issues/724">#724</a>).</li>
 <li>The option <code>polars.df_print</code> has been renamed <code>polars.df_knitr_print</code> (<a href="https://github.com/pola-rs/r-polars/issues/726">#726</a>).</li>
 </ul>
-<h3 id="deprecations">Deprecations</h3>
+<h3 id="deprecations_1">Deprecations</h3>
 <ul>
 <li><code>$list$lengths()</code> is deprecated and will be removed in 0.14.0. Use
     <code>$list$len()</code> instead (<a href="https://github.com/pola-rs/r-polars/issues/724">#724</a>).</li>
@@ -16342,7 +16365,7 @@
 <h2 id="polars-r-package-0121">Polars R Package 0.12.1</h2>
 <p>This version includes a few additional features and
 a large amount of documentation improvements.</p>
-<h3 id="deprecations_1">Deprecations</h3>
+<h3 id="deprecations_2">Deprecations</h3>
 <ul>
 <li><code>pl$polars_info()</code> is moved to <code>polars_info()</code>. <code>pl$polars_info()</code> is deprecated
     and will be removed in 0.13.0 (<a href="https://github.com/pola-rs/r-polars/issues/662">#662</a>).</li>

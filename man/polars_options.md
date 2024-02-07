@@ -69,7 +69,7 @@ conversion (requires the package <code>bit64</code> to be attached).
 
 <code>limit_max_threads</code>
 (<code>!polars_info()$features$disable_limit_max_threads</code>): See
-<code>?pl_threadpool_size</code> for details. This option should be set
+<code>?pl_thread_pool_size</code> for details. This option should be set
 before the package is loaded.
 
 </li>

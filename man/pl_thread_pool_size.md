@@ -14,7 +14,9 @@ automatically by the engine.
 
 ## Usage
 
-<pre><code class='language-R'>pl_threadpool_size()
+<pre><code class='language-R'>pl_thread_pool_size()
+
+pl_threadpool_size()
 </code></pre>
 
 ## Details
@@ -51,7 +53,7 @@ The number of threads
 ``` r
 library(polars)
 
-pl$threadpool_size()
+pl$thread_pool_size()
 ```
 
     #> [1] 4

@@ -20,7 +20,7 @@
     
     
       
-        <title>threadpool_size - Polars R Package</title>
+        <title>thread_pool_size - Polars R Package</title>
       
     
     
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              threadpool_size
+              thread_pool_size
             
           </span>
         </div>
@@ -1707,18 +1707,18 @@
           
   
   <span class="md-ellipsis">
-    threadpool_size
+    thread_pool_size
   </span>
   
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="pl_threadpool_size.html" class="md-nav__link md-nav__link--active">
+      <a href="pl_thread_pool_size.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    threadpool_size
+    thread_pool_size
   </span>
   
 
@@ -14573,7 +14573,9 @@ start. It cannot be modified once <code>polars</code> is loaded. It is
 strongly recommended not to override this value as it will be set
 automatically by the engine.</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>pl$threadpool_size()
+<pre><code class='language-R'>pl$thread_pool_size()
+
+pl_threadpool_size()
 </code></pre>
 
 <h2 id="details">Details</h2>
@@ -14604,7 +14606,7 @@ option must be set before loading the package.
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">threadpool_size</span><span class="p">()</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">thread_pool_size</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [1] 4
 </code></pre></div>

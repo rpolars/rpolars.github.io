@@ -1692,11 +1692,11 @@
   
   
     <li class="md-nav__item">
-      <a href="pl_threadpool_size.html" class="md-nav__link">
+      <a href="pl_thread_pool_size.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    threadpool_size
+    thread_pool_size
   </span>
   
 
@@ -14805,8 +14805,8 @@ TRUE)</code>.
 #&gt; │ ---                 ┆ ---   ┆ --- │
 #&gt; │ str                 ┆ u64   ┆ u64 │
 #&gt; ╞═════════════════════╪═══════╪═════╡
-#&gt; │ optimization        ┆ 0     ┆ 25  │
-#&gt; │ projection(literal) ┆ 25    ┆ 105 │
+#&gt; │ optimization        ┆ 0     ┆ 22  │
+#&gt; │ projection(literal) ┆ 22    ┆ 75  │
 #&gt; └─────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Use $profile() to compare two queries</span>
@@ -14838,8 +14838,8 @@ TRUE)</code>.
 #&gt; │ str                ┆ u64   ┆ u64 │
 #&gt; ╞════════════════════╪═══════╪═════╡
 #&gt; │ optimization       ┆ 0     ┆ 17  │
-#&gt; │ sort(Sepal.Length) ┆ 17    ┆ 301 │
-#&gt; │ group_by(Species)  ┆ 305   ┆ 619 │
+#&gt; │ sort(Sepal.Length) ┆ 17    ┆ 538 │
+#&gt; │ group_by(Species)  ┆ 541   ┆ 890 │
 #&gt; └────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)</span>
@@ -14877,9 +14877,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ ---   │
 #&gt; │ str                ┆ u64   ┆ u64   │
 #&gt; ╞════════════════════╪═══════╪═══════╡
-#&gt; │ optimization       ┆ 0     ┆ 8     │
-#&gt; │ sort(Sepal.Length) ┆ 8     ┆ 265   │
-#&gt; │ group_by(Species)  ┆ 268   ┆ 28023 │
+#&gt; │ optimization       ┆ 0     ┆ 10    │
+#&gt; │ sort(Sepal.Length) ┆ 10    ┆ 475   │
+#&gt; │ group_by(Species)  ┆ 478   ┆ 27352 │
 #&gt; └────────────────────┴───────┴───────┘
 </code></pre></div>
 
