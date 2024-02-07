@@ -2,7 +2,7 @@
 
 # Evaluate whether any boolean values in a list are true
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L474)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L468)
 
 ## Description
 

@@ -2,7 +2,7 @@
 
 # Sum all elements in a list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L26)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L20)
 
 ## Description
 

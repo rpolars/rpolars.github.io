@@ -13,8 +13,6 @@ deprecated.
 ## Usage
 
 <pre><code class='language-R'>ExprList_len()
-
-ExprList_lengths()
 </code></pre>
 
 ## Value

@@ -21,7 +21,7 @@ polars api.
 ## Format
 
 An object of class <code>pl_polars_env</code> (inherits from
-<code>environment</code>) of length 98.
+<code>environment</code>) of length 95.
 
 ## Details
 
@@ -109,7 +109,6 @@ pl$show_all_public_functions()
     #>        [ Float32 ; RPolarsDataType ]
     #>        [ Float64 ; RPolarsDataType ]
     #>        [ fold ; function ]
-    #>        [ from_arrow ; function ]
     #>        [ from_epoch ; function ]
     #>        [ get_global_rpool_cap ; function ]
     #>        [ head ; function ]
@@ -148,7 +147,6 @@ pl$show_all_public_functions()
     #>        [ read_ndjson ; function ]
     #>        [ read_parquet ; function ]
     #>        [ reduce ; function ]
-    #>        [ reset_options ; function ]
     #>        [ rolling_corr ; function ]
     #>        [ rolling_cov ; function ]
     #>        [ same_outer_dt ; function ]
@@ -159,7 +157,6 @@ pl$show_all_public_functions()
     #>        [ select ; function ]
     #>        [ Series ; function ]
     #>        [ set_global_rpool_cap ; function ]
-    #>        [ set_options ; function ]
     #>        [ show_all_public_functions ; function ]
     #>        [ show_all_public_methods ; function ]
     #>        [ SQLContext ; function ]

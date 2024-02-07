@@ -2,7 +2,7 @@
 
 # Compute difference between list values
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L270)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L264)
 
 ## Description
 

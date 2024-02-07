@@ -2,7 +2,7 @@
 
 # Concat two list variables
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L103)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L97)
 
 ## Description
 

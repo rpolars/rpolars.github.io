@@ -1041,27 +1041,6 @@
   
   
     <li class="md-nav__item">
-      <a href="pl_from_arrow.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    from_arrow
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="pl_from_epoch.html" class="md-nav__link">
         
   
@@ -1361,27 +1340,6 @@
   
   <span class="md-ellipsis">
     n_unique
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="pl_options.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    options
   </span>
   
 
@@ -14805,8 +14763,8 @@ TRUE)</code>.
 #&gt; │ ---                 ┆ ---   ┆ --- │
 #&gt; │ str                 ┆ u64   ┆ u64 │
 #&gt; ╞═════════════════════╪═══════╪═════╡
-#&gt; │ optimization        ┆ 0     ┆ 22  │
-#&gt; │ projection(literal) ┆ 22    ┆ 75  │
+#&gt; │ optimization        ┆ 0     ┆ 127 │
+#&gt; │ projection(literal) ┆ 127   ┆ 182 │
 #&gt; └─────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Use $profile() to compare two queries</span>
@@ -14838,8 +14796,8 @@ TRUE)</code>.
 #&gt; │ str                ┆ u64   ┆ u64 │
 #&gt; ╞════════════════════╪═══════╪═════╡
 #&gt; │ optimization       ┆ 0     ┆ 17  │
-#&gt; │ sort(Sepal.Length) ┆ 17    ┆ 538 │
-#&gt; │ group_by(Species)  ┆ 541   ┆ 890 │
+#&gt; │ sort(Sepal.Length) ┆ 17    ┆ 518 │
+#&gt; │ group_by(Species)  ┆ 522   ┆ 885 │
 #&gt; └────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)</span>
@@ -14877,9 +14835,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ ---   │
 #&gt; │ str                ┆ u64   ┆ u64   │
 #&gt; ╞════════════════════╪═══════╪═══════╡
-#&gt; │ optimization       ┆ 0     ┆ 10    │
-#&gt; │ sort(Sepal.Length) ┆ 10    ┆ 475   │
-#&gt; │ group_by(Species)  ┆ 478   ┆ 27352 │
+#&gt; │ optimization       ┆ 0     ┆ 8     │
+#&gt; │ sort(Sepal.Length) ┆ 8     ┆ 270   │
+#&gt; │ group_by(Species)  ┆ 272   ┆ 26256 │
 #&gt; └────────────────────┴───────┴───────┘
 </code></pre></div>
 

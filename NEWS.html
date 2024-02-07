@@ -1037,27 +1037,6 @@
   
   
     <li class="md-nav__item">
-      <a href="man/pl_from_arrow.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    from_arrow
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="man/pl_from_epoch.html" class="md-nav__link">
         
   
@@ -1357,27 +1336,6 @@
   
   <span class="md-ellipsis">
     n_unique
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="man/pl_options.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    options
   </span>
   
 
@@ -14429,7 +14387,16 @@
           <li class="md-nav__item">
   <a href="#breaking-changes-due-to-rust-polars-update" class="md-nav__link">
     <span class="md-ellipsis">
-      BREAKING CHANGES DUE TO RUST-POLARS UPDATE
+      Breaking changes due to Rust-polars update
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-breaking-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other breaking changes
     </span>
   </a>
   
@@ -14829,7 +14796,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#other-breaking-changes" class="md-nav__link">
+  <a href="#other-breaking-changes_1" class="md-nav__link">
     <span class="md-ellipsis">
       OTHER BREAKING CHANGES
     </span>
@@ -15336,7 +15303,16 @@
           <li class="md-nav__item">
   <a href="#breaking-changes-due-to-rust-polars-update" class="md-nav__link">
     <span class="md-ellipsis">
-      BREAKING CHANGES DUE TO RUST-POLARS UPDATE
+      Breaking changes due to Rust-polars update
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-breaking-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other breaking changes
     </span>
   </a>
   
@@ -15736,7 +15712,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#other-breaking-changes" class="md-nav__link">
+  <a href="#other-breaking-changes_1" class="md-nav__link">
     <span class="md-ellipsis">
       OTHER BREAKING CHANGES
     </span>
@@ -16216,7 +16192,7 @@
 
 <h1 id="news">NEWS</h1>
 <h2 id="polars-r-package-development-version">Polars R Package (development version)</h2>
-<h3 id="breaking-changes-due-to-rust-polars-update">BREAKING CHANGES DUE TO RUST-POLARS UPDATE</h3>
+<h3 id="breaking-changes-due-to-rust-polars-update">Breaking changes due to Rust-polars update</h3>
 <ul>
 <li>rust-polars is updated to 0.37.0 (<a href="https://github.com/pola-rs/r-polars/issues/776">#776</a>). <ul>
 <li><code>$with_row_count()</code> for <code>DataFrame</code> and <code>LazyFrame</code> is deprecated and 
@@ -16234,6 +16210,15 @@
 <li><code>$str$extract()</code> and <code>$str$zfill()</code> now accept an <code>Expr</code> and parse
     strings as column names. Use <code>pl$lit()</code> to recover the old behavior.</li>
 <li><code>$cum_count()</code> now starts from 1 instead of 0.</li>
+</ul>
+</li>
+</ul>
+<h3 id="other-breaking-changes">Other breaking changes</h3>
+<ul>
+<li>The following functions were deprecated in 0.13.0 and are now removed (<a href="https://github.com/pola-rs/r-polars/issues/783">#783</a>):<ul>
+<li><code>$list$lengths()</code> -&gt; <code>$list$len()</code> </li>
+<li><code>pl$from_arrow()</code> -&gt; <code>as_polars_df()</code> or <code>as_polars_series()</code></li>
+<li><code>pl$set_options()</code> and <code>pl$reset_options()</code> -&gt; <code>polars_options()</code> </li>
 </ul>
 </li>
 </ul>
@@ -16706,7 +16691,7 @@ features. Unrelated breaking changes and new features are put in separate sectio
 <li><code>&lt;DataFrame&gt;$sort()</code> and <code>&lt;LazyFrame&gt;$sort()</code> have a new arg
     <code>maintain_order = FALSE</code>.</li>
 </ul>
-<h3 id="other-breaking-changes">OTHER BREAKING CHANGES</h3>
+<h3 id="other-breaking-changes_1">OTHER BREAKING CHANGES</h3>
 <ul>
 <li><code>$rpow()</code> is removed. It should never have been translated. Use <code>^</code> and <code>$pow()</code>
     instead (<a href="https://github.com/pola-rs/r-polars/issues/346">#346</a>).</li>

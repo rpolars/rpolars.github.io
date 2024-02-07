@@ -66,7 +66,6 @@ nav:
         - expr_to_r: man/pl_expr_to_r.md
         - first: man/pl_first.md
         - fold: man/pl_fold.md
-        - from_arrow: man/pl_from_arrow.md
         - from_epoch: man/pl_from_epoch.md
         - head: man/pl_head.md
         - implode: man/pl_implode.md
@@ -82,7 +81,6 @@ nav:
         - min_horizontal: man/pl_min_horizontal.md
         - min: man/pl_min.md
         - n_unique: man/pl_n_unique.md
-        - options: man/pl_options.md
         - pl: man/pl_pl.md
         - PTime: man/pl_PTime.md
         - raw_list: man/pl_raw_list.md

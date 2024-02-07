@@ -2,7 +2,7 @@
 
 # Sort values in a list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L63)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L57)
 
 ## Description
 
