@@ -2,7 +2,7 @@
 
 # Exponentially-weighted moving standard deviation
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L3057)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L3055)
 
 ## Description
 

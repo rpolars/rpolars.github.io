@@ -16221,6 +16221,13 @@
 <li><code>pl$set_options()</code> and <code>pl$reset_options()</code> -&gt; <code>polars_options()</code> </li>
 </ul>
 </li>
+<li><code>$is_between()</code> had several changes (<a href="https://github.com/pola-rs/r-polars/issues/788">#788</a>):<ul>
+<li>arguments <code>start</code> and <code>end</code> are renamed <code>lower_bound</code> and <code>upper_bound</code>.
+    Their behaviour doesn't change. </li>
+<li><code>include_bounds</code> is renamed <code>closed</code> and must be one of <code>"left"</code>, 
+    <code>"right"</code>, <code>"both"</code>, or <code>"none"</code>.</li>
+</ul>
+</li>
 </ul>
 <h3 id="deprecations">Deprecations</h3>
 <ul>
