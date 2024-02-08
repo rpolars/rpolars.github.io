@@ -16194,17 +16194,17 @@
 <h2 id="polars-r-package-development-version">Polars R Package (development version)</h2>
 <h3 id="breaking-changes-due-to-rust-polars-update">Breaking changes due to Rust-polars update</h3>
 <ul>
-<li>rust-polars is updated to 0.37.0 (<a href="https://github.com/pola-rs/r-polars/issues/776">#776</a>). <ul>
-<li><code>$with_row_count()</code> for <code>DataFrame</code> and <code>LazyFrame</code> is deprecated and 
-    will be removed in 0.15.0. It is replaced by <code>$with_row_index()</code>. </li>
+<li>rust-polars is updated to 0.37.0 (<a href="https://github.com/pola-rs/r-polars/issues/776">#776</a>).<ul>
+<li><code>$with_row_count()</code> for <code>DataFrame</code> and <code>LazyFrame</code> is deprecated and
+    will be removed in 0.15.0. It is replaced by <code>$with_row_index()</code>.</li>
 <li><code>pl$count()</code> is deprecated and will be removed in 0.15.0. It is replaced
-    by <code>pl$len()</code>. </li>
-<li><code>$explode()</code> for <code>DataFrame</code> and <code>LazyFrame</code> doesn't work anymore on 
-    string columns. </li>
-<li><code>$list$join()</code> and <code>pl$concat_str()</code> gain an argument <code>ignore_nulls</code>. 
+    by <code>pl$len()</code>.</li>
+<li><code>$explode()</code> for <code>DataFrame</code> and <code>LazyFrame</code> doesn't work anymore on
+    string columns.</li>
+<li><code>$list$join()</code> and <code>pl$concat_str()</code> gain an argument <code>ignore_nulls</code>.
     The current behavior is to return a <code>null</code> if the row contains any <code>null</code>.
     Setting <code>ignore_nulls = TRUE</code> changes that.</li>
-<li>All <code>row_count_*</code> args in reading/scanning functions are renamed 
+<li>All <code>row_count_*</code> args in reading/scanning functions are renamed
     <code>row_index_*</code>.</li>
 <li><code>$sort()</code> for <code>Series</code> gains an argument <code>nulls_last</code>.</li>
 <li><code>$str$extract()</code> and <code>$str$zfill()</code> now accept an <code>Expr</code> and parse
@@ -16216,22 +16216,31 @@
 <h3 id="other-breaking-changes">Other breaking changes</h3>
 <ul>
 <li>The following functions were deprecated in 0.13.0 and are now removed (<a href="https://github.com/pola-rs/r-polars/issues/783">#783</a>):<ul>
-<li><code>$list$lengths()</code> -&gt; <code>$list$len()</code> </li>
+<li><code>$list$lengths()</code> -&gt; <code>$list$len()</code></li>
 <li><code>pl$from_arrow()</code> -&gt; <code>as_polars_df()</code> or <code>as_polars_series()</code></li>
-<li><code>pl$set_options()</code> and <code>pl$reset_options()</code> -&gt; <code>polars_options()</code> </li>
+<li><code>pl$set_options()</code> and <code>pl$reset_options()</code> -&gt; <code>polars_options()</code></li>
 </ul>
 </li>
 <li><code>$is_between()</code> had several changes (<a href="https://github.com/pola-rs/r-polars/issues/788">#788</a>):<ul>
 <li>arguments <code>start</code> and <code>end</code> are renamed <code>lower_bound</code> and <code>upper_bound</code>.
-    Their behaviour doesn't change. </li>
-<li><code>include_bounds</code> is renamed <code>closed</code> and must be one of <code>"left"</code>, 
+    Their behaviour doesn't change.</li>
+<li><code>include_bounds</code> is renamed <code>closed</code> and must be one of <code>"left"</code>,
     <code>"right"</code>, <code>"both"</code>, or <code>"none"</code>.</li>
+</ul>
+</li>
+<li><code>polars_info()</code> returns a slightly changed list.<ul>
+<li><code>$threadpool_size</code>, which means the number of threads used by Polars,
+    is changed to <code>$thread_pool_size</code> (<a href="https://github.com/pola-rs/r-polars/issues/784">#784</a>)</li>
+<li><code>$version</code>, which indicates the version of this package,
+    is changed to <code>$versions$r_package</code> (<a href="https://github.com/pola-rs/r-polars/issues/791">#791</a>).</li>
+<li><code>$rust_polars</code>, which indicates the version of the dependent Rust Polars,
+    is changed to <code>$versions$rust_crate</code> (<a href="https://github.com/pola-rs/r-polars/issues/791">#791</a>).</li>
 </ul>
 </li>
 </ul>
 <h3 id="deprecations">Deprecations</h3>
 <ul>
-<li><code>pl$threadpool_size()</code> is deprecated and will be removed in 0.15.0. Use 
+<li><code>pl$threadpool_size()</code> is deprecated and will be removed in 0.15.0. Use
     <code>pl$thread_pool_size()</code> instead (<a href="https://github.com/pola-rs/r-polars/issues/784">#784</a>).</li>
 </ul>
 <h2 id="polars-r-package-0131">Polars R Package 0.13.1</h2>

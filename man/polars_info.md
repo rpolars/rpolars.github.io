@@ -11,8 +11,8 @@ This function reports the following information:
 <ul>
 <li>
 
-Package versions (the R package version and the dependent Rust Polars
-version)
+Package versions (the Polars R package version and the dependent Rust
+Polars crate version)
 
 </li>
 <li>
@@ -45,8 +45,8 @@ library(polars)
 polars_info()
 ```
 
-    #> r-polars package version : 0.13.1.9000
-    #> rust-polars crate version: 0.37.0
+    #> Polars R package version : 0.13.1.9000
+    #> Rust Polars crate version: 0.37.0
     #> 
     #> Thread pool size: 4 
     #> 
@@ -62,7 +62,7 @@ polars_info()
 polars_info()$rust_polars
 ```
 
-    #> [1] "0.37.0"
+    #> NULL
 
 ``` r
 polars_info()$features$simd
