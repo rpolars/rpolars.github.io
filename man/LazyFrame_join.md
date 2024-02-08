@@ -2,7 +2,7 @@
 
 # Join LazyFrames
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1119)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1122)
 
 ## Description
 
@@ -164,7 +164,10 @@ df2 = pl$LazyFrame(list(key = c(3L, 4L, 5L, NA_integer_)))
 df1$join(other = df2, on = "key")
 ```
 
-    #> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
+    #> polars LazyFrame
+    #>  $describe_optimized_plan() : Show the optimized query plan.
+    #> 
+    #> Naive plan:
     #> INNER JOIN:
     #> LEFT PLAN ON: [col("key")]
     #>   DF ["key", "payload"]; PROJECT */2 COLUMNS; SELECTION: "None"
@@ -179,7 +182,10 @@ df2 = pl$LazyFrame(y = 1:4)
 df1$join(other = df2, how = "cross")
 ```
 
-    #> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
+    #> polars LazyFrame
+    #>  $describe_optimized_plan() : Show the optimized query plan.
+    #> 
+    #> Naive plan:
     #> CROSS JOIN:
     #> LEFT PLAN ON: [col("x")]
     #>   DF ["x"]; PROJECT */1 COLUMNS; SELECTION: "None"

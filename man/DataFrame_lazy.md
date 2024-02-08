@@ -25,5 +25,8 @@ library(polars)
 pl$DataFrame(iris)$lazy()
 ```
 
-    #> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
+    #> polars LazyFrame
+    #>  $describe_optimized_plan() : Show the optimized query plan.
+    #> 
+    #> Naive plan:
     #> DF ["Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width"]; PROJECT */5 COLUMNS; SELECTION: "None"

@@ -42,7 +42,10 @@ query = "SELECT * FROM mtcars WHERE cyl = 4"
 pl$SQLContext(mtcars = mtcars)$execute(query)
 ```
 
-    #> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
+    #> polars LazyFrame
+    #>  $describe_optimized_plan() : Show the optimized query plan.
+    #> 
+    #> Naive plan:
     #>  SELECT [col("mpg"), col("cyl"), col("disp"), col("hp"), col("drat"), col("wt"), col("qsec"), col("vs"), col("am"), col("gear"), col("carb")] FROM
     #>   FILTER [(col("cyl")) == (4)] FROM
     #> 

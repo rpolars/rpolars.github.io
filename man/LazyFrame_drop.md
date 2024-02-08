@@ -2,7 +2,7 @@
 
 # Drop columns of a LazyFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L962)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L965)
 
 ## Description
 
@@ -38,6 +38,9 @@ library(polars)
 pl$LazyFrame(mtcars)$drop(c("mpg", "hp"))
 ```
 
-    #> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
+    #> polars LazyFrame
+    #>  $describe_optimized_plan() : Show the optimized query plan.
+    #> 
+    #> Naive plan:
     #>  SELECT [col("cyl"), col("disp"), col("drat"), col("wt"), col("qsec"), col("vs"), col("am"), col("gear"), col("carb")] FROM
     #>   DF ["mpg", "cyl", "disp", "hp"]; PROJECT */11 COLUMNS; SELECTION: "None"

@@ -14549,19 +14549,28 @@ Not used.
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="nf">data.frame</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="o">:</span><span class="m">10</span><span class="p">),</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="o">:</span><span class="m">10</span><span class="p">)))</span><span class="o">$</span><span class="nf">lazy</span><span class="p">()</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nf">na.omit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] &quot;polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)&quot;
+<div class="highlight"><pre><span></span><code>#&gt; polars LazyFrame
+#&gt;  $describe_optimized_plan() : Show the optimized query plan.
+#&gt; 
+#&gt; Naive plan:
 #&gt; FILTER col(&quot;a&quot;).is_not_null().all_horizontal([col(&quot;b&quot;).is_not_null()]) FROM
 #&gt; DF [&quot;a&quot;, &quot;b&quot;]; PROJECT */2 COLUMNS; SELECTION: &quot;None&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nf">na.omit</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">subset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] &quot;polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)&quot;
+<div class="highlight"><pre><span></span><code>#&gt; polars LazyFrame
+#&gt;  $describe_optimized_plan() : Show the optimized query plan.
+#&gt; 
+#&gt; Naive plan:
 #&gt; FILTER col(&quot;a&quot;).is_not_null().all_horizontal() FROM
 #&gt; DF [&quot;a&quot;, &quot;b&quot;]; PROJECT */2 COLUMNS; SELECTION: &quot;None&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nf">na.omit</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">subset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">))</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] &quot;polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)&quot;
+<div class="highlight"><pre><span></span><code>#&gt; polars LazyFrame
+#&gt;  $describe_optimized_plan() : Show the optimized query plan.
+#&gt; 
+#&gt; Naive plan:
 #&gt; FILTER [(col(&quot;a&quot;).is_not_null()) &amp; (col(&quot;b&quot;).is_not_null())] FROM
 #&gt; DF [&quot;a&quot;, &quot;b&quot;]; PROJECT */2 COLUMNS; SELECTION: &quot;None&quot;
 </code></pre></div>

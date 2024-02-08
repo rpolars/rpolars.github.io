@@ -2,7 +2,7 @@
 
 # Configure optimization toggles
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L328)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L331)
 
 ## Description
 
@@ -118,7 +118,10 @@ pl$LazyFrame(mtcars)$set_optimization_toggle(type_coercion = FALSE)
 ```
 
     #> $ok
-    #> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
+    #> polars LazyFrame
+    #>  $describe_optimized_plan() : Show the optimized query plan.
+    #> 
+    #> Naive plan:
     #> DF ["mpg", "cyl", "disp", "hp"]; PROJECT */11 COLUMNS; SELECTION: "None"
     #> 
     #> $err

@@ -53,7 +53,10 @@ df = pl$DataFrame(data.frame(a = c(NA, 2:10), b = c(1, NA, 3:10)))$lazy()
 na.omit(df)
 ```
 
-    #> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
+    #> polars LazyFrame
+    #>  $describe_optimized_plan() : Show the optimized query plan.
+    #> 
+    #> Naive plan:
     #> FILTER col("a").is_not_null().all_horizontal([col("b").is_not_null()]) FROM
     #> DF ["a", "b"]; PROJECT */2 COLUMNS; SELECTION: "None"
 
@@ -61,7 +64,10 @@ na.omit(df)
 na.omit(df, subset = "a")
 ```
 
-    #> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
+    #> polars LazyFrame
+    #>  $describe_optimized_plan() : Show the optimized query plan.
+    #> 
+    #> Naive plan:
     #> FILTER col("a").is_not_null().all_horizontal() FROM
     #> DF ["a", "b"]; PROJECT */2 COLUMNS; SELECTION: "None"
 
@@ -69,6 +75,9 @@ na.omit(df, subset = "a")
 na.omit(df, subset = c("a", "b"))
 ```
 
-    #> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
+    #> polars LazyFrame
+    #>  $describe_optimized_plan() : Show the optimized query plan.
+    #> 
+    #> Naive plan:
     #> FILTER [(col("a").is_not_null()) & (col("b").is_not_null())] FROM
     #> DF ["a", "b"]; PROJECT */2 COLUMNS; SELECTION: "None"

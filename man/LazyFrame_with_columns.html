@@ -14523,7 +14523,7 @@
 
 
 <h1 id="select-and-modify-columns-of-a-lazyframe">Select and modify columns of a LazyFrame</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L240"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L243"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Add columns or modify existing ones with expressions. This is the
 equivalent of <code>dplyr::mutate()</code> as it keeps unmentioned
@@ -14555,7 +14555,10 @@ first and only element is a list, it is unwrapped as a list of args.
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;Sepal.Length&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;add_2_SL&quot;</span><span class="p">)</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] &quot;polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)&quot;
+<div class="highlight"><pre><span></span><code>#&gt; polars LazyFrame
+#&gt;  $describe_optimized_plan() : Show the optimized query plan.
+#&gt; 
+#&gt; Naive plan:
 #&gt;  WITH_COLUMNS:
 #&gt;  [col(&quot;Sepal.Length&quot;).abs().alias(&quot;abs_SL&quot;), [(col(&quot;Sepal.Length&quot;)) + (2.0)].alias(&quot;add_2_SL&quot;)]
 #&gt;   DF [&quot;Sepal.Length&quot;, &quot;Sepal.Width&quot;, &quot;Petal.Length&quot;, &quot;Petal.Width&quot;]; PROJECT */5 COLUMNS; SELECTION: &quot;None&quot;
@@ -14567,7 +14570,10 @@ first and only element is a list, it is unwrapped as a list of args.
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">)</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">pl</span><span class="o">$</span><span class="nf">LazyFrame</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span><span class="n">l_expr</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] &quot;polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)&quot;
+<div class="highlight"><pre><span></span><code>#&gt; polars LazyFrame
+#&gt;  $describe_optimized_plan() : Show the optimized query plan.
+#&gt; 
+#&gt; Naive plan:
 #&gt;  WITH_COLUMNS:
 #&gt;  [col(&quot;Sepal.Length&quot;).abs().alias(&quot;abs_SL&quot;), [(col(&quot;Sepal.Length&quot;)) + (2.0)].alias(&quot;add_2_SL&quot;)]
 #&gt;   DF [&quot;Sepal.Length&quot;, &quot;Sepal.Width&quot;, &quot;Petal.Length&quot;, &quot;Petal.Width&quot;]; PROJECT */5 COLUMNS; SELECTION: &quot;None&quot;
@@ -14577,7 +14583,10 @@ first and only element is a list, it is unwrapped as a list of args.
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="n">SW_add_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;Sepal.Width&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] &quot;polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)&quot;
+<div class="highlight"><pre><span></span><code>#&gt; polars LazyFrame
+#&gt;  $describe_optimized_plan() : Show the optimized query plan.
+#&gt; 
+#&gt; Naive plan:
 #&gt;  WITH_COLUMNS:
 #&gt;  [col(&quot;Sepal.Length&quot;).abs(), [(col(&quot;Sepal.Width&quot;)) + (2.0)].alias(&quot;SW_add_2&quot;)]
 #&gt;   DF [&quot;Sepal.Length&quot;, &quot;Sepal.Width&quot;, &quot;Petal.Length&quot;, &quot;Petal.Width&quot;]; PROJECT */5 COLUMNS; SELECTION: &quot;None&quot;

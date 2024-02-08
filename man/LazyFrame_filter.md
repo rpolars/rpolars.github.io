@@ -2,7 +2,7 @@
 
 # Apply filter to LazyFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L287)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L290)
 
 ## Description
 
@@ -71,6 +71,9 @@ lf$filter(pl$col("Species") == "setosa")$collect()
 lf$filter(pl$col("Sepal.Length") > 5, pl$col("Petal.Width") < 1)
 ```
 
-    #> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
+    #> polars LazyFrame
+    #>  $describe_optimized_plan() : Show the optimized query plan.
+    #> 
+    #> Naive plan:
     #> FILTER [([(col("Sepal.Length")) > (5.0)]) & ([(col("Petal.Width")) < (1.0)])] FROM
     #> DF ["Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width"]; PROJECT */5 COLUMNS; SELECTION: "None"

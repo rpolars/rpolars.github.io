@@ -2,7 +2,7 @@
 
 # Drop duplicated rows
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1029)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1032)
 
 ## Description
 
@@ -91,7 +91,7 @@ df$collect()$height
 df$unique()$collect()$height
 ```
 
-    #> [1] 64
+    #> [1] 65
 
 ``` r
 df$unique(subset = "x")$collect()$height
@@ -103,7 +103,10 @@ df$unique(subset = "x")$collect()$height
 df$unique(keep = "last")
 ```
 
-    #> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
+    #> polars LazyFrame
+    #>  $describe_optimized_plan() : Show the optimized query plan.
+    #> 
+    #> Naive plan:
     #> UNIQUE BY None
     #>   DF ["x", "y"]; PROJECT */2 COLUMNS; SELECTION: "None"
 
@@ -112,6 +115,9 @@ df$unique(keep = "last")
 df$unique(keep = "none")
 ```
 
-    #> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
+    #> polars LazyFrame
+    #>  $describe_optimized_plan() : Show the optimized query plan.
+    #> 
+    #> Naive plan:
     #> UNIQUE BY None
     #>   DF ["x", "y"]; PROJECT */2 COLUMNS; SELECTION: "None"

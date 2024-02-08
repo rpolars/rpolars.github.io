@@ -14510,10 +14510,13 @@ file for instance, we would have to scan it first with <code>pl$scan_csv()</code
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">)</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="n">lazy_query</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c1">#&gt; [1] &quot;polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)&quot;</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c1">#&gt; FILTER col(&quot;country&quot;).is_in([Series]) FROM</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1">#&gt; SORT BY [col(&quot;country&quot;)]</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c1">#&gt;   DF [&quot;country&quot;, &quot;x&quot;, &quot;y&quot;]; PROJECT */3 COLUMNS; SELECTION: &quot;None&quot;</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c1">#&gt; polars LazyFrame</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c1">#&gt;  $describe_optimized_plan() : Show the optimized query plan.</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1">#&gt; </span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c1">#&gt; Naive plan:</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="c1">#&gt; FILTER col(&quot;country&quot;).is_in([Series]) FROM</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="c1">#&gt; SORT BY [col(&quot;country&quot;)]</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="c1">#&gt;   DF [&quot;country&quot;, &quot;x&quot;, &quot;y&quot;]; PROJECT */3 COLUMNS; SELECTION: &quot;None&quot;</span>
 </code></pre></div>
 <p>However, this doesn’t do anything to the data until we call <code>collect()</code>
 at the end. We can now compare the two approaches (in the <code>lazy</code> timing,

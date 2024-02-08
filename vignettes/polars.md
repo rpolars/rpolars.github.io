@@ -351,9 +351,9 @@ dat$group_by("cyl")$mean()
 #> │ --- ┆ ---       ┆ ---        ┆ ---        ┆   ┆ ---      ┆ ---      ┆ ---      ┆ ---      │
 #> │ f64 ┆ f64       ┆ f64        ┆ f64        ┆   ┆ f64      ┆ f64      ┆ f64      ┆ f64      │
 #> ╞═════╪═══════════╪════════════╪════════════╪═══╪══════════╪══════════╪══════════╪══════════╡
+#> │ 6.0 ┆ 19.742857 ┆ 183.314286 ┆ 122.285714 ┆ … ┆ 0.571429 ┆ 0.428571 ┆ 3.857143 ┆ 3.428571 │
 #> │ 4.0 ┆ 26.663636 ┆ 105.136364 ┆ 82.636364  ┆ … ┆ 0.909091 ┆ 0.727273 ┆ 4.090909 ┆ 1.545455 │
 #> │ 8.0 ┆ 15.1      ┆ 353.1      ┆ 209.214286 ┆ … ┆ 0.0      ┆ 0.142857 ┆ 3.285714 ┆ 3.5      │
-#> │ 6.0 ┆ 19.742857 ┆ 183.314286 ┆ 122.285714 ┆ … ┆ 0.571429 ┆ 0.428571 ┆ 3.857143 ┆ 3.428571 │
 #> └─────┴───────────┴────────────┴────────────┴───┴──────────┴──────────┴──────────┴──────────┘
 ```
 
@@ -551,10 +551,10 @@ dat$group_by(
 #> ╞═════╪════════╪═══════════╪════════╡
 #> │ 6.0 ┆ true   ┆ 20.566667 ┆ 110.0  │
 #> │ 8.0 ┆ false  ┆ 15.05     ┆ 180.0  │
-#> │ 4.0 ┆ true   ┆ 28.075    ┆ 78.5   │
-#> │ 6.0 ┆ false  ┆ 19.125    ┆ 116.5  │
 #> │ 4.0 ┆ false  ┆ 22.9      ┆ 95.0   │
 #> │ 8.0 ┆ true   ┆ 15.4      ┆ 299.5  │
+#> │ 4.0 ┆ true   ┆ 28.075    ┆ 78.5   │
+#> │ 6.0 ┆ false  ┆ 19.125    ┆ 116.5  │
 #> └─────┴────────┴───────────┴────────┘
 ```
 
@@ -697,7 +697,10 @@ an existing object in memory, we can invoke the `lazy()` constructor.
 ``` r
 ldat = dat$lazy()
 ldat
-#> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
+#> polars LazyFrame
+#>  $describe_optimized_plan() : Show the optimized query plan.
+#> 
+#> Naive plan:
 #> DF ["mpg", "cyl", "disp", "hp"]; PROJECT */11 COLUMNS; SELECTION: "None"
 ```
 
@@ -705,7 +708,10 @@ Or, use the `as_polars_lf()` generic function.
 
 ``` r
 as_polars_lf(dat)
-#> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
+#> polars LazyFrame
+#>  $describe_optimized_plan() : Show the optimized query plan.
+#> 
+#> Naive plan:
 #> DF ["mpg", "cyl", "disp", "hp"]; PROJECT */11 COLUMNS; SELECTION: "None"
 ```
 
@@ -720,7 +726,10 @@ subset_query = ldat$filter(
 )
 
 subset_query
-#> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
+#> polars LazyFrame
+#>  $describe_optimized_plan() : Show the optimized query plan.
+#> 
+#> Naive plan:
 #>  SELECT [col("mpg"), col("hp"), col("cyl")] FROM
 #>   FILTER [(col("cyl")) == (6.0)] FROM
 #> 
@@ -801,7 +810,10 @@ Again, however, the package works best if we take the lazy approach.
 
 ``` r
 pl$scan_csv("airquality.csv")
-#> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
+#> polars LazyFrame
+#>  $describe_optimized_plan() : Show the optimized query plan.
+#> 
+#> Naive plan:
 #> 
 #>   Csv SCAN airquality.csv
 #>   PROJECT */6 COLUMNS
@@ -834,8 +846,8 @@ aq$filter(
 #> │ ---   ┆ ---       ┆ ---       │
 #> │ i32   ┆ f64       ┆ f64       │
 #> ╞═══════╪═══════════╪═══════════╡
-#> │ 6     ┆ 29.444444 ┆ 79.1      │
 #> │ 5     ┆ 23.615385 ┆ 65.548387 │
+#> │ 6     ┆ 29.444444 ┆ 79.1      │
 #> └───────┴───────────┴───────────┘
 ```
 

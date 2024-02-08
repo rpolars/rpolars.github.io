@@ -14553,7 +14553,10 @@ A valid string SQL query.
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">pl</span><span class="o">$</span><span class="nf">SQLContext</span><span class="p">(</span><span class="n">mtcars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mtcars</span><span class="p">)</span><span class="o">$</span><span class="nf">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] &quot;polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)&quot;
+<div class="highlight"><pre><span></span><code>#&gt; polars LazyFrame
+#&gt;  $describe_optimized_plan() : Show the optimized query plan.
+#&gt; 
+#&gt; Naive plan:
 #&gt;  SELECT [col(&quot;mpg&quot;), col(&quot;cyl&quot;), col(&quot;disp&quot;), col(&quot;hp&quot;), col(&quot;drat&quot;), col(&quot;wt&quot;), col(&quot;qsec&quot;), col(&quot;vs&quot;), col(&quot;am&quot;), col(&quot;gear&quot;), col(&quot;carb&quot;)] FROM
 #&gt;   FILTER [(col(&quot;cyl&quot;)) == (4)] FROM
 #&gt; 

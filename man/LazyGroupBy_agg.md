@@ -58,7 +58,10 @@ lgb$
 )
 ```
 
-    #> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
+    #> polars LazyFrame
+    #>  $describe_optimized_plan() : Show the optimized query plan.
+    #> 
+    #> Naive plan:
     #> AGGREGATE
     #>  [col("bar").sum().alias("bar_sum"), col("bar").mean().alias("bar_tail_sum")] BY [col("foo")] FROM
     #>   DF ["foo", "bar"]; PROJECT */2 COLUMNS; SELECTION: "None"

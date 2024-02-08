@@ -14541,7 +14541,7 @@
 
 
 <h1 id="apply-filter-to-lazyframe">Apply filter to LazyFrame</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L287"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L290"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Filter rows with an Expression defining a boolean column. Multiple
 expressions are combined with <code>&amp;</code> (AND). This is equivalent
@@ -14596,7 +14596,10 @@ Polars expressions which will evaluate to a boolean.
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># lf$filter(pl$col(&quot;Sepal.Length&quot;) &gt; 5 &amp; pl$col(&quot;Petal.Width&quot;) &lt; 1)</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">lf</span><span class="o">$</span><span class="nf">filter</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;Sepal.Length&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;Petal.Width&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] &quot;polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)&quot;
+<div class="highlight"><pre><span></span><code>#&gt; polars LazyFrame
+#&gt;  $describe_optimized_plan() : Show the optimized query plan.
+#&gt; 
+#&gt; Naive plan:
 #&gt; FILTER [([(col(&quot;Sepal.Length&quot;)) &gt; (5.0)]) &amp; ([(col(&quot;Petal.Width&quot;)) &lt; (1.0)])] FROM
 #&gt; DF [&quot;Sepal.Length&quot;, &quot;Sepal.Width&quot;, &quot;Petal.Length&quot;, &quot;Petal.Width&quot;]; PROJECT */5 COLUMNS; SELECTION: &quot;None&quot;
 </code></pre></div>

@@ -2,7 +2,7 @@
 
 # Group a LazyFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1058)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1061)
 
 ## Description
 
@@ -68,6 +68,6 @@ pl$LazyFrame(
     #> │ --- ┆ ---     ┆ ---          │
     #> │ str ┆ f64     ┆ f64          │
     #> ╞═════╪═════════╪══════════════╡
-    #> │ two ┆ 6.0     ┆ 2.0          │
     #> │ one ┆ 9.0     ┆ 4.5          │
+    #> │ two ┆ 6.0     ┆ 2.0          │
     #> └─────┴─────────┴──────────────┘

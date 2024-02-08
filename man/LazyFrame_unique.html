@@ -14523,7 +14523,7 @@
 
 
 <h1 id="drop-duplicated-rows">Drop duplicated rows</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1029"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1032"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Drop duplicated rows</p>
 <h2 id="usage">Usage</h2>
@@ -14600,7 +14600,7 @@ changed with <code>options(polars.maintain_order = TRUE)</code>.
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">()</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span><span class="o">$</span><span class="n">height</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] 64
+<div class="highlight"><pre><span></span><code>#&gt; [1] 65
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">subset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span><span class="o">$</span><span class="n">height</span>
 </code></pre></div>
@@ -14608,14 +14608,20 @@ changed with <code>options(polars.maintain_order = TRUE)</code>.
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">keep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;last&quot;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] &quot;polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)&quot;
+<div class="highlight"><pre><span></span><code>#&gt; polars LazyFrame
+#&gt;  $describe_optimized_plan() : Show the optimized query plan.
+#&gt; 
+#&gt; Naive plan:
 #&gt; UNIQUE BY None
 #&gt;   DF [&quot;x&quot;, &quot;y&quot;]; PROJECT */2 COLUMNS; SELECTION: &quot;None&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># only keep unique rows</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">keep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;none&quot;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] &quot;polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)&quot;
+<div class="highlight"><pre><span></span><code>#&gt; polars LazyFrame
+#&gt;  $describe_optimized_plan() : Show the optimized query plan.
+#&gt; 
+#&gt; Naive plan:
 #&gt; UNIQUE BY None
 #&gt;   DF [&quot;x&quot;, &quot;y&quot;]; PROJECT */2 COLUMNS; SELECTION: &quot;None&quot;
 </code></pre></div>

@@ -14567,7 +14567,10 @@ exprs to aggregate over. … args can also be passed wrapped in a list
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">mean</span><span class="p">()</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;bar_tail_sum&quot;</span><span class="p">)</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] &quot;polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)&quot;
+<div class="highlight"><pre><span></span><code>#&gt; polars LazyFrame
+#&gt;  $describe_optimized_plan() : Show the optimized query plan.
+#&gt; 
+#&gt; Naive plan:
 #&gt; AGGREGATE
 #&gt;  [col(&quot;bar&quot;).sum().alias(&quot;bar_sum&quot;), col(&quot;bar&quot;).mean().alias(&quot;bar_tail_sum&quot;)] BY [col(&quot;foo&quot;)] FROM
 #&gt;   DF [&quot;foo&quot;, &quot;bar&quot;]; PROJECT */2 COLUMNS; SELECTION: &quot;None&quot;

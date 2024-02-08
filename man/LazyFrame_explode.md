@@ -2,7 +2,7 @@
 
 # Explode columns containing a list of values
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1642)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1645)
 
 ## Description
 
@@ -61,7 +61,10 @@ df = pl$LazyFrame(
 df
 ```
 
-    #> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
+    #> polars LazyFrame
+    #>  $describe_optimized_plan() : Show the optimized query plan.
+    #> 
+    #> Naive plan:
     #> DF ["letters", "numbers", "numbers_2"]; PROJECT */3 COLUMNS; SELECTION: "None"
 
 ``` r

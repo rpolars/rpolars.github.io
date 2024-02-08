@@ -46,7 +46,10 @@ pl$LazyFrame(
 ) # directly from vectors
 ```
 
-    #> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
+    #> polars LazyFrame
+    #>  $describe_optimized_plan() : Show the optimized query plan.
+    #> 
+    #> Naive plan:
     #> DF ["a", "b", "c", "d"]; PROJECT */4 COLUMNS; SELECTION: "None"
 
 ``` r
@@ -59,7 +62,10 @@ pl$LazyFrame(list(
 ))
 ```
 
-    #> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
+    #> polars LazyFrame
+    #>  $describe_optimized_plan() : Show the optimized query plan.
+    #> 
+    #> Naive plan:
     #> DF ["a", "b", "c", "d"]; PROJECT */4 COLUMNS; SELECTION: "None"
 
 ``` r

@@ -461,7 +461,10 @@ df = pl$LazyFrame(
 df
 ```
 
-    #> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
+    #> polars LazyFrame
+    #>  $describe_optimized_plan() : Show the optimized query plan.
+    #> 
+    #> Naive plan:
     #>  WITH_COLUMNS:
     #>  [col("idx").map()]
     #>   DF ["idx", "A"]; PROJECT */2 COLUMNS; SELECTION: "None"
@@ -476,7 +479,10 @@ df$group_by_dynamic(
 )$agg(A_agg_list = pl$col("A"))
 ```
 
-    #> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
+    #> polars LazyFrame
+    #>  $describe_optimized_plan() : Show the optimized query plan.
+    #> 
+    #> Naive plan:
     #> AGGREGATE
     #>  [col("A").alias("A_agg_list")] BY [] FROM
     #>    WITH_COLUMNS:

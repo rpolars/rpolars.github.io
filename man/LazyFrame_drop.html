@@ -14523,7 +14523,7 @@
 
 
 <h1 id="drop-columns-of-a-lazyframe">Drop columns of a LazyFrame</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L962"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L965"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Drop columns of a LazyFrame</p>
 <h2 id="usage">Usage</h2>
@@ -14549,7 +14549,10 @@ A character vector with the names of the column(s) to remove.
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">LazyFrame</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span><span class="o">$</span><span class="nf">drop</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;mpg&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;hp&quot;</span><span class="p">))</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] &quot;polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)&quot;
+<div class="highlight"><pre><span></span><code>#&gt; polars LazyFrame
+#&gt;  $describe_optimized_plan() : Show the optimized query plan.
+#&gt; 
+#&gt; Naive plan:
 #&gt;  SELECT [col(&quot;cyl&quot;), col(&quot;disp&quot;), col(&quot;drat&quot;), col(&quot;wt&quot;), col(&quot;qsec&quot;), col(&quot;vs&quot;), col(&quot;am&quot;), col(&quot;gear&quot;), col(&quot;carb&quot;)] FROM
 #&gt;   DF [&quot;mpg&quot;, &quot;cyl&quot;, &quot;disp&quot;, &quot;hp&quot;]; PROJECT */11 COLUMNS; SELECTION: &quot;None&quot;
 </code></pre></div>

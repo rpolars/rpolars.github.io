@@ -140,7 +140,10 @@ lazy_query = lf_test$
 )
 
 lazy_query
-#> [1] "polars LazyFrame naive plan: (run ldf$describe_optimized_plan() to see the optimized plan)"
+#> polars LazyFrame
+#>  $describe_optimized_plan() : Show the optimized query plan.
+#> 
+#> Naive plan:
 #> FILTER col("country").is_in([Series]) FROM
 #> SORT BY [col("country")]
 #>   DF ["country", "x", "y"]; PROJECT */3 COLUMNS; SELECTION: "None"
