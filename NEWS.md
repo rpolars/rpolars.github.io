@@ -5,6 +5,7 @@
 ### Breaking changes due to Rust-polars update
 
 -   rust-polars is updated to 0.37.0 ([#776](https://github.com/pola-rs/r-polars/issues/776)).
+    -   Minimum supported Rust version (MSRV) is now 1.74.1.
     -   `$with_row_count()` for `DataFrame` and `LazyFrame` is deprecated and
         will be removed in 0.15.0. It is replaced by `$with_row_index()`.
     -   `pl$count()` is deprecated and will be removed in 0.15.0. It is replaced
@@ -39,6 +40,11 @@
         is changed to `$versions$r_package` ([#791](https://github.com/pola-rs/r-polars/issues/791)).
     -   `$rust_polars`, which indicates the version of the dependent Rust Polars,
         is changed to `$versions$rust_crate` ([#791](https://github.com/pola-rs/r-polars/issues/791)).
+-   New behavior when creating a `DataFrame` with a single list-variable.
+    `pl$DataFrame(x = list(1:2, 3:4))` used to create a `DataFrame` with two
+    columns named "new_column" and "new_column_1", which was unexpected. It now
+    produces a `DataFrame` with a single `list` variable. This also applies to
+    list-column created in `$with_columns()` and `$select()` ([#794](https://github.com/pola-rs/r-polars/issues/794)).
 
 ### Deprecations
 
@@ -331,6 +337,7 @@ a large amount of documentation improvements.
 ### BREAKING CHANGES DUE TO RUST-POLARS UPDATE
 
 -   rust-polars is updated to 2023-10-25 unreleased version ([#442](https://github.com/pola-rs/r-polars/issues/442))
+    -   Minimum supported Rust version (MSRV) is now 1.73.
     -   New subnamespace `"name"` that contains methods `$prefix()`, `$suffix()`
         `keep()` (renamed from `keep_name()`) and `map()` (renamed from `map_alias()`).
     -   `$dt$round()` gains an argument `ambiguous`.

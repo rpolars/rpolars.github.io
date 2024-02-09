@@ -16195,6 +16195,7 @@
 <h3 id="breaking-changes-due-to-rust-polars-update">Breaking changes due to Rust-polars update</h3>
 <ul>
 <li>rust-polars is updated to 0.37.0 (<a href="https://github.com/pola-rs/r-polars/issues/776">#776</a>).<ul>
+<li>Minimum supported Rust version (MSRV) is now 1.74.1.</li>
 <li><code>$with_row_count()</code> for <code>DataFrame</code> and <code>LazyFrame</code> is deprecated and
     will be removed in 0.15.0. It is replaced by <code>$with_row_index()</code>.</li>
 <li><code>pl$count()</code> is deprecated and will be removed in 0.15.0. It is replaced
@@ -16237,6 +16238,11 @@
     is changed to <code>$versions$rust_crate</code> (<a href="https://github.com/pola-rs/r-polars/issues/791">#791</a>).</li>
 </ul>
 </li>
+<li>New behavior when creating a <code>DataFrame</code> with a single list-variable.
+    <code>pl$DataFrame(x = list(1:2, 3:4))</code> used to create a <code>DataFrame</code> with two
+    columns named "new_column" and "new_column_1", which was unexpected. It now
+    produces a <code>DataFrame</code> with a single <code>list</code> variable. This also applies to
+    list-column created in <code>$with_columns()</code> and <code>$select()</code> (<a href="https://github.com/pola-rs/r-polars/issues/794">#794</a>).</li>
 </ul>
 <h3 id="deprecations">Deprecations</h3>
 <ul>
@@ -16539,6 +16545,7 @@ a large amount of documentation improvements.</p>
 <h3 id="breaking-changes-due-to-rust-polars-update_3">BREAKING CHANGES DUE TO RUST-POLARS UPDATE</h3>
 <ul>
 <li>rust-polars is updated to 2023-10-25 unreleased version (<a href="https://github.com/pola-rs/r-polars/issues/442">#442</a>)<ul>
+<li>Minimum supported Rust version (MSRV) is now 1.73.</li>
 <li>New subnamespace <code>"name"</code> that contains methods <code>$prefix()</code>, <code>$suffix()</code>
     <code>keep()</code> (renamed from <code>keep_name()</code>) and <code>map()</code> (renamed from <code>map_alias()</code>).</li>
 <li><code>$dt$round()</code> gains an argument <code>ambiguous</code>.</li>
