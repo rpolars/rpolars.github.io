@@ -2,7 +2,7 @@
 
 # Disable the global string cache
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/polars_options.R#L275)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/polars_options.R#L276)
 
 ## Description
 

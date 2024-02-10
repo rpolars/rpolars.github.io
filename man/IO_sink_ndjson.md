@@ -40,10 +40,8 @@ File path to which the result should be written.
 <code id="LazyFrame_sink_ndjson_:_maintain_order">maintain_order</code>
 </td>
 <td>
-Keep the same order as the original <code>LazyFrame</code>. Setting this
-to <code>TRUE</code> makes it more expensive to compute and blocks the
-possibility to run on the streaming engine. The default value can be
-changed with <code>options(polars.maintain_order = TRUE)</code>.
+Maintain the order in which data is processed. Setting this to
+<code>FALSE</code> will be slightly faster.
 </td>
 </tr>
 <tr>

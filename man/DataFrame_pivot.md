@@ -78,10 +78,7 @@ an Expr e.g. <code>pl$element()$sum()</code>
 <code id="DataFrame_pivot_:_maintain_order">maintain_order</code>
 </td>
 <td>
-Keep the same order as the original <code>DataFrame</code>. Setting this
-to <code>TRUE</code> makes it more expensive to compute and blocks the
-possibility to run on the streaming engine. The default value can be
-changed with <code>options(polars.maintain_order = TRUE)</code>.
+Sort the grouped keys so that the output order is predictable.
 </td>
 </tr>
 <tr>

@@ -2,7 +2,7 @@
 
 # Sort a DataFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L634)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L633)
 
 ## Description
 
@@ -63,10 +63,9 @@ Boolean. Place <code>NULL</code>s at the end? Default is
 <code id="DataFrame_sort_:_maintain_order">maintain_order</code>
 </td>
 <td>
-Keep the same order as the original <code>DataFrame</code>. Setting this
-to <code>TRUE</code> makes it more expensive to compute and blocks the
-possibility to run on the streaming engine. The default value can be
-changed with <code>options(polars.maintain_order = TRUE)</code>.
+Whether the order should be maintained if elements are equal. If
+<code>TRUE</code>, streaming is not possible and performance might be
+worse since this requires a stable search.
 </td>
 </tr>
 </table>

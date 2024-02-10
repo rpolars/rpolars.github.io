@@ -2,7 +2,7 @@
 
 # Drop in place
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L681)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L680)
 
 ## Description
 

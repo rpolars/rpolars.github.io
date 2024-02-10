@@ -2,7 +2,7 @@
 
 # Number of chunks of the Series in a DataFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1096)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1095)
 
 ## Description
 
@@ -138,10 +138,10 @@ lapply(x, tracemem) # trace chunks to verify no re-allocation
 ```
 
     #> [[1]]
-    #> [1] "<0x56179c53e120>"
+    #> [1] "<0x55f434440700>"
     #> 
     #> [[2]]
-    #> [1] "<0x561799d9a250>"
+    #> [1] "<0x55f431c9e818>"
 
 ``` r
 z = c(x, x)
@@ -155,16 +155,16 @@ lapply(z, tracemem) # mem allocation  in z are the same from x
 ```
 
     #> [[1]]
-    #> [1] "<0x56179c53e120>"
+    #> [1] "<0x55f434440700>"
     #> 
     #> [[2]]
-    #> [1] "<0x561799d9a250>"
+    #> [1] "<0x55f431c9e818>"
     #> 
     #> [[3]]
-    #> [1] "<0x56179c53e120>"
+    #> [1] "<0x55f434440700>"
     #> 
     #> [[4]]
-    #> [1] "<0x561799d9a250>"
+    #> [1] "<0x55f431c9e818>"
 
 ``` r
 str(z)

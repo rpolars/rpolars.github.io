@@ -2,7 +2,7 @@
 
 # Drop duplicated rows
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1032)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1037)
 
 ## Description
 
@@ -61,10 +61,9 @@ Which of the duplicate rows to keep:
 <code id="LazyFrame_unique_:_maintain_order">maintain_order</code>
 </td>
 <td>
-Keep the same order as the original <code>DataFrame</code>. Setting this
-to <code>TRUE</code> makes it more expensive to compute and blocks the
-possibility to run on the streaming engine. The default value can be
-changed with <code>options(polars.maintain_order = TRUE)</code>.
+Keep the same order as the original data. Setting this to
+<code>TRUE</code> makes it more expensive to compute and blocks the
+possibility to run on the streaming engine.
 </td>
 </tr>
 </table>
@@ -91,7 +90,7 @@ df$collect()$height
 df$unique()$collect()$height
 ```
 
-    #> [1] 67
+    #> [1] 65
 
 ``` r
 df$unique(subset = "x")$collect()$height

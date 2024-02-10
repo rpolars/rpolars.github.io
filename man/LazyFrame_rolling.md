@@ -2,7 +2,7 @@
 
 # Create rolling groups based on a date/time or integer column
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1781)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1788)
 
 ## Description
 

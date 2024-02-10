@@ -2,7 +2,7 @@
 
 # Get and reset polars options
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/polars_options.R#L77)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/polars_options.R#L78)
 
 ## Description
 
@@ -75,10 +75,10 @@ before the package is loaded.
 </li>
 <li>
 
-<code>maintain_order</code> (<code>FALSE</code>): Default for all
-<code>maintain_order</code> options (present in
-<code style="white-space: pre;">$group_by()</code> or
-<code style="white-space: pre;">$unique()</code> for example).
+<code>maintain_order</code> (<code>FALSE</code>): Default for the
+<code>maintain_order</code> argument in
+<code>\<LazyFrame\>$group_by()</code> and
+<code>\<DataFrame\>$group_by()</code>.
 
 </li>
 <li>

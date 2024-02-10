@@ -2,7 +2,7 @@
 
 # Group a DataFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L862)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L861)
 
 ## Description
 
@@ -32,10 +32,11 @@ Any Expr(s) or string(s) naming a column.
 <code id="DataFrame_group_by_:_maintain_order">maintain_order</code>
 </td>
 <td>
-Keep the same order as the original <code>DataFrame</code>. Setting this
-to <code>TRUE</code> makes it more expensive to compute and blocks the
-possibility to run on the streaming engine. The default value can be
-changed with <code>options(polars.maintain_order = TRUE)</code>.
+Keep the same group order as in the original data. Within each group,
+the order of rows is always preserved, regardless of this argument.
+Setting this to <code>TRUE</code> makes it more expensive to compute and
+blocks the possibility to run on the streaming engine. The default value
+can be changed with <code>options(polars.maintain_order = TRUE)</code>.
 </td>
 </tr>
 </table>

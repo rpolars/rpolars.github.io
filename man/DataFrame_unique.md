@@ -2,7 +2,7 @@
 
 # Drop duplicated rows
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L417)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L416)
 
 ## Description
 
@@ -61,10 +61,9 @@ Which of the duplicate rows to keep:
 <code id="DataFrame_unique_:_maintain_order">maintain_order</code>
 </td>
 <td>
-Keep the same order as the original <code>DataFrame</code>. Setting this
-to <code>TRUE</code> makes it more expensive to compute and blocks the
-possibility to run on the streaming engine. The default value can be
-changed with <code>options(polars.maintain_order = TRUE)</code>.
+Keep the same order as the original data. Setting this to
+<code>TRUE</code> makes it more expensive to compute and blocks the
+possibility to run on the streaming engine.
 </td>
 </tr>
 </table>
@@ -104,8 +103,8 @@ df$unique(subset = "x", keep = c("last"))
     #> │ --- ┆ --- │
     #> │ i32 ┆ i32 │
     #> ╞═════╪═════╡
-    #> │ 2   ┆ 2   │
     #> │ 3   ┆ 1   │
+    #> │ 2   ┆ 2   │
     #> │ 1   ┆ 1   │
     #> └─────┴─────┘
 
@@ -119,9 +118,9 @@ df$unique(subset = "x", keep = c("first"))
     #> │ --- ┆ --- │
     #> │ i32 ┆ i32 │
     #> ╞═════╪═════╡
-    #> │ 3   ┆ 3   │
-    #> │ 1   ┆ 1   │
     #> │ 2   ┆ 2   │
+    #> │ 1   ┆ 1   │
+    #> │ 3   ┆ 3   │
     #> └─────┴─────┘
 
 ``` r
