@@ -2,7 +2,7 @@
 
 # Create Struct DataType
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L202)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L203)
 
 ## Description
 
@@ -141,7 +141,24 @@ print(pl$dtypes)
     #>   }
     #>   unwrap(.pr$DataType$new_datetime(tu, tz))
     #> }
-    #> <bytecode: 0x563f64712c08>
+    #> <bytecode: 0x562de33276a8>
+    #> <environment: namespace:polars>
+    #> 
+    #> $Array
+    #> function(datatype = "unknown", width) {
+    #>   if (is.character(datatype) && length(datatype) == 1) {
+    #>     datatype = .pr$DataType$new(datatype)
+    #>   }
+    #>   if (!inherits(datatype, "RPolarsDataType")) {
+    #>     stop(paste(
+    #>       "input for generating a array DataType must be another DataType",
+    #>       "or an interpretable name thereof."
+    #>     ))
+    #>   }
+    #>   .pr$DataType$new_array(datatype, width) |>
+    #>     unwrap("in pl$Array():")
+    #> }
+    #> <bytecode: 0x562de331ca78>
     #> <environment: namespace:polars>
     #> 
     #> $List
@@ -157,7 +174,7 @@ print(pl$dtypes)
     #>   }
     #>   .pr$DataType$new_list(datatype)
     #> }
-    #> <bytecode: 0x563f646fee10>
+    #> <bytecode: 0x562de32da560>
     #> <environment: namespace:polars>
     #> 
     #> $Struct
@@ -191,7 +208,7 @@ print(pl$dtypes)
     #>     and_then(DataType$new_struct) |>
     #>     unwrap("in pl$Struct:")
     #> }
-    #> <bytecode: 0x563f6469abb8>
+    #> <bytecode: 0x562de327e2c8>
     #> <environment: namespace:polars>
 
 ``` r

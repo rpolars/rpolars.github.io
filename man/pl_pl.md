@@ -21,7 +21,7 @@ polars api.
 ## Format
 
 An object of class <code>pl_polars_env</code> (inherits from
-<code>environment</code>) of length 95.
+<code>environment</code>) of length 96.
 
 ## Details
 
@@ -57,6 +57,7 @@ pl$show_all_public_functions()
     #>        [ all_horizontal ; function ]
     #>        [ any_horizontal ; function ]
     #>        [ approx_n_unique ; function ]
+    #>        [ Array ; function ]
     #>        [ Binary ; RPolarsDataType ]
     #>        [ Boolean ; RPolarsDataType ]
     #>        [ Categorical ; RPolarsDataType ]
@@ -76,6 +77,7 @@ pl$show_all_public_functions()
     #>        [ disable_string_cache ; function ]
     #> 
     #>        dtypes ( list ):
+    #>           [ Array ; function ]
     #>           [ Binary ; RPolarsDataType ]
     #>           [ Boolean ; RPolarsDataType ]
     #>           [ Categorical ; RPolarsDataType ]
@@ -276,6 +278,7 @@ pl$show_all_public_methods()
     #>           [ is_temporal ; function ]
     #>           [ ne ; function ]
     #>           [ new ; function ]
+    #>           [ new_array ; function ]
     #>           [ new_datetime ; function ]
     #>           [ new_duration ; function ]
     #>           [ new_list ; function ]
@@ -306,6 +309,7 @@ pl$show_all_public_methods()
     #>           [ arg_sort ; function ]
     #>           [ arg_unique ; function ]
     #>           [ argsort ; function ]
+    #>           [ arr ; property function ]
     #>           [ backward_fill ; function ]
     #>           [ bin ; property function ]
     #>           [ bottom_k ; function ]

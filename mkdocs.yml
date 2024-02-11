@@ -522,6 +522,20 @@ nav:
             - var: man/Expr_var.md
             - when_then_otherwise: man/Expr_when_then_otherwise.md
             - xor: man/Expr_xor.md
+        - Array:
+            - all: man/ExprArr_all.md
+            - any: man/ExprArr_any.md
+            - arg_max: man/ExprArr_arg_max.md
+            - arg_min: man/ExprArr_arg_min.md
+            - contains: man/ExprArr_contains.md
+            - get: man/ExprArr_get.md
+            - join: man/ExprArr_join.md
+            - max: man/ExprArr_max.md
+            - min: man/ExprArr_min.md
+            - reverse: man/ExprArr_reverse.md
+            - sort: man/ExprArr_sort.md
+            - sum: man/ExprArr_sum.md
+            - unique: man/ExprArr_unique.md
         - List:
             - all: man/ExprList_all.md
             - any: man/ExprList_any.md
@@ -658,6 +672,7 @@ nav:
         - as_polars_df: man/as_polars_df.md
         - as_polars_lf: man/as_polars_lf.md
         - as_polars_series: man/as_polars_series.md
+        - DataType_Array: man/DataType_Array.md
         - DataType_Datetime: man/DataType_Datetime.md
         - DataType_List: man/DataType_List.md
         - DataType_Struct: man/DataType_Struct.md

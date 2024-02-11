@@ -18,11 +18,11 @@ library(polars)
 print(ls(pl$dtypes))
 ```
 
-    #>  [1] "Binary"      "Boolean"     "Categorical" "Date"        "Datetime"   
-    #>  [6] "Float32"     "Float64"     "Int16"       "Int32"       "Int64"      
-    #> [11] "Int8"        "List"        "Null"        "String"      "Struct"     
-    #> [16] "Time"        "UInt16"      "UInt32"      "UInt64"      "UInt8"      
-    #> [21] "Unknown"     "Utf8"
+    #>  [1] "Array"       "Binary"      "Boolean"     "Categorical" "Date"       
+    #>  [6] "Datetime"    "Float32"     "Float64"     "Int16"       "Int32"      
+    #> [11] "Int64"       "Int8"        "List"        "Null"        "String"     
+    #> [16] "Struct"      "Time"        "UInt16"      "UInt32"      "UInt64"     
+    #> [21] "UInt8"       "Unknown"     "Utf8"
 
 ``` r
 pl$dtypes$Float64

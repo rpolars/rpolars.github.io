@@ -27,6 +27,7 @@ pl$show_all_public_functions()
     #>        [ all_horizontal ; function ]
     #>        [ any_horizontal ; function ]
     #>        [ approx_n_unique ; function ]
+    #>        [ Array ; function ]
     #>        [ Binary ; RPolarsDataType ]
     #>        [ Boolean ; RPolarsDataType ]
     #>        [ Categorical ; RPolarsDataType ]
@@ -46,6 +47,7 @@ pl$show_all_public_functions()
     #>        [ disable_string_cache ; function ]
     #> 
     #>        dtypes ( list ):
+    #>           [ Array ; function ]
     #>           [ Binary ; RPolarsDataType ]
     #>           [ Boolean ; RPolarsDataType ]
     #>           [ Categorical ; RPolarsDataType ]

@@ -7,8 +7,7 @@
 ## Description
 
 Return the number of elements in each list. Null values are counted in
-the total. <code style="white-space: pre;">$list$lengths()</code> is
-deprecated.
+the total.
 
 ## Usage
 
