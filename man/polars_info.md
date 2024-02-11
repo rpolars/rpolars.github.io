@@ -54,7 +54,7 @@ polars_info()
     #> default                    TRUE
     #> full_features              TRUE
     #> disable_limit_max_threads  TRUE
-    #> simd                       TRUE
+    #> nightly                    TRUE
     #> sql                        TRUE
     #> rpolars_debug_print       FALSE
 
@@ -65,7 +65,7 @@ polars_info()$rust_polars
     #> NULL
 
 ``` r
-polars_info()$features$simd
+polars_info()$features$nightly
 ```
 
     #> [1] TRUE

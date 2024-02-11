@@ -15,8 +15,8 @@ Transform to titlecase variant.
 
 ## Details
 
-This method is only available with the "simd" feature. See polars_info
-for more details.
+This method is only available with the "nightly" feature. See
+<code>polars_info()</code> for more details.
 
 ## Value
 

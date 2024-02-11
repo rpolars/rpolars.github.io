@@ -14771,6 +14771,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#other-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other improvements
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -15687,6 +15696,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#other-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other improvements
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -16576,6 +16594,8 @@
 </ul>
 <h3 id="other-breaking-changes">Other breaking changes</h3>
 <ul>
+<li>The <code>simd</code> feature of the Rust library is removed in favor of
+    the new <code>nightly</code> feature (<a href="https://github.com/pola-rs/r-polars/issues/800">#800</a>).</li>
 <li>The following functions were deprecated in 0.13.0 and are now removed (<a href="https://github.com/pola-rs/r-polars/issues/783">#783</a>):<ul>
 <li><code>$list$lengths()</code> -&gt; <code>$list$len()</code></li>
 <li><code>pl$from_arrow()</code> -&gt; <code>as_polars_df()</code> or <code>as_polars_series()</code></li>
@@ -16608,6 +16628,10 @@
 <ul>
 <li><code>pl$threadpool_size()</code> is deprecated and will be removed in 0.15.0. Use
     <code>pl$thread_pool_size()</code> instead (<a href="https://github.com/pola-rs/r-polars/issues/784">#784</a>).</li>
+</ul>
+<h3 id="other-improvements">Other improvements</h3>
+<ul>
+<li>The <code>sql</code> feature is included in the default feature (<a href="https://github.com/pola-rs/r-polars/issues/800">#800</a>).</li>
 </ul>
 <h2 id="polars-r-package-0131">Polars R Package 0.13.1</h2>
 <h3 id="new-features">New features</h3>

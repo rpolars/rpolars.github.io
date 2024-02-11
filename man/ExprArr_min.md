@@ -2,7 +2,7 @@
 
 # Find the minimum value in an array
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__array.R#L50)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__array.R#L47)
 
 ## Description
 
@@ -15,8 +15,8 @@ Find the minimum value in an array
 
 ## Details
 
-This method is only available with the "simd" feature. See polars_info
-for more details.
+This method is only available with the "nightly" feature. See
+<code>polars_info()</code> for more details.
 
 ## Value
 

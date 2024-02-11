@@ -2,7 +2,7 @@
 
 # Evaluate whether all boolean values in an array are true
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__array.R#L207)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__array.R#L203)
 
 ## Description
 

@@ -126,7 +126,7 @@ polars_info()
 #> default                    TRUE
 #> full_features              TRUE
 #> disable_limit_max_threads  TRUE
-#> simd                       TRUE
+#> nightly                    TRUE
 #> sql                        TRUE
 #> rpolars_debug_print       FALSE
 ```
@@ -143,14 +143,15 @@ environment variable as like `LIBR_POLARS_FEATURES="full_features"`.
 Currently `full_features` would work as a combination of the following
 features.
 
+-   The `default` feature
+    -   `sql` for enable `pl$SQLContext()`.
 -   Features for CRAN compatibility
     -   `disable_limit_max_threads`, this feature disables the automatic
         limit of the maximum number of threads to 2 for CRAN
         compatibility, and the maximum number of threads is used by
         default. See `?pl_thread_pool_size` for details.
 -   Features for nightly toolchain
-    -   `simd` for SIMD support.
-    -   `sql` for enable `pl$SQLContext()`.
+    -   `nightly` for nightly toolchain features and SIMD.
 
 Note that nightly features requires the Rust nightly toolchain
 nightly-2024-02-03.

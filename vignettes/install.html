@@ -15052,7 +15052,7 @@ cannot be changed at runtime.</p>
 <a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="c1">#&gt; default                    TRUE</span>
 <a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="c1">#&gt; full_features              TRUE</span>
 <a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c1">#&gt; disable_limit_max_threads  TRUE</span>
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="c1">#&gt; simd                       TRUE</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="c1">#&gt; nightly                    TRUE</span>
 <a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="c1">#&gt; sql                        TRUE</span>
 <a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="c1">#&gt; rpolars_debug_print       FALSE</span>
 </code></pre></div>
@@ -15065,6 +15065,10 @@ environment variable as like <code>LIBR_POLARS_FEATURES="full_features"</code>.<
 <p>Currently <code>full_features</code> would work as a combination of the following
 features.</p>
 <ul>
+<li>The <code>default</code> feature<ul>
+<li><code>sql</code> for enable <code>pl$SQLContext()</code>.</li>
+</ul>
+</li>
 <li>Features for CRAN compatibility<ul>
 <li><code>disable_limit_max_threads</code>, this feature disables the automatic
     limit of the maximum number of threads to 2 for CRAN
@@ -15073,8 +15077,7 @@ features.</p>
 </ul>
 </li>
 <li>Features for nightly toolchain<ul>
-<li><code>simd</code> for SIMD support.</li>
-<li><code>sql</code> for enable <code>pl$SQLContext()</code>.</li>
+<li><code>nightly</code> for nightly toolchain features and SIMD.</li>
 </ul>
 </li>
 </ul>
