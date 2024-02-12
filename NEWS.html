@@ -14735,13 +14735,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#polars-r-package-development-version" class="md-nav__link">
+  <a href="#polars-r-package-0140" class="md-nav__link">
     <span class="md-ellipsis">
-      Polars R Package (development version)
+      Polars R Package 0.14.0
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Polars R Package (development version)">
+    <nav class="md-nav" aria-label="Polars R Package 0.14.0">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -14772,6 +14772,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      New features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#other-improvements" class="md-nav__link">
     <span class="md-ellipsis">
       Other improvements
@@ -14796,7 +14805,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#new-features" class="md-nav__link">
+  <a href="#new-features_1" class="md-nav__link">
     <span class="md-ellipsis">
       New features
     </span>
@@ -14856,7 +14865,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-features_1" class="md-nav__link">
+  <a href="#new-features_2" class="md-nav__link">
     <span class="md-ellipsis">
       New features
     </span>
@@ -15537,7 +15546,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-features_2" class="md-nav__link">
+  <a href="#new-features_3" class="md-nav__link">
     <span class="md-ellipsis">
       New features
     </span>
@@ -15660,13 +15669,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#polars-r-package-development-version" class="md-nav__link">
+  <a href="#polars-r-package-0140" class="md-nav__link">
     <span class="md-ellipsis">
-      Polars R Package (development version)
+      Polars R Package 0.14.0
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Polars R Package (development version)">
+    <nav class="md-nav" aria-label="Polars R Package 0.14.0">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -15697,6 +15706,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      New features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#other-improvements" class="md-nav__link">
     <span class="md-ellipsis">
       Other improvements
@@ -15721,7 +15739,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#new-features" class="md-nav__link">
+  <a href="#new-features_1" class="md-nav__link">
     <span class="md-ellipsis">
       New features
     </span>
@@ -15781,7 +15799,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-features_1" class="md-nav__link">
+  <a href="#new-features_2" class="md-nav__link">
     <span class="md-ellipsis">
       New features
     </span>
@@ -16462,7 +16480,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-features_2" class="md-nav__link">
+  <a href="#new-features_3" class="md-nav__link">
     <span class="md-ellipsis">
       New features
     </span>
@@ -16569,7 +16587,7 @@
 
 
 <h1 id="news">NEWS</h1>
-<h2 id="polars-r-package-development-version">Polars R Package (development version)</h2>
+<h2 id="polars-r-package-0140">Polars R Package 0.14.0</h2>
 <h3 id="breaking-changes-due-to-rust-polars-update">Breaking changes due to Rust-polars update</h3>
 <ul>
 <li>rust-polars is updated to 0.37.0 (<a href="https://github.com/pola-rs/r-polars/issues/776">#776</a>).<ul>
@@ -16595,7 +16613,11 @@
 <h3 id="other-breaking-changes">Other breaking changes</h3>
 <ul>
 <li>The <code>simd</code> feature of the Rust library is removed in favor of
-    the new <code>nightly</code> feature (<a href="https://github.com/pola-rs/r-polars/issues/800">#800</a>).</li>
+    the new <code>nightly</code> feature (<a href="https://github.com/pola-rs/r-polars/issues/800">#800</a>).
+    If you specified <code>simd</code> via the <code>LIBR_POLARS_FEATURES</code> environment variable
+    during source installations, please use <code>nightly</code> instead;
+    there is no change if you specified <code>full_features</code> because
+    it now contains <code>nightly</code> instead of <code>simd</code>.</li>
 <li>The following functions were deprecated in 0.13.0 and are now removed (<a href="https://github.com/pola-rs/r-polars/issues/783">#783</a>):<ul>
 <li><code>$list$lengths()</code> -&gt; <code>$list$len()</code></li>
 <li><code>pl$from_arrow()</code> -&gt; <code>as_polars_df()</code> or <code>as_polars_series()</code></li>
@@ -16629,12 +16651,20 @@
 <li><code>pl$threadpool_size()</code> is deprecated and will be removed in 0.15.0. Use
     <code>pl$thread_pool_size()</code> instead (<a href="https://github.com/pola-rs/r-polars/issues/784">#784</a>).</li>
 </ul>
+<h3 id="new-features">New features</h3>
+<ul>
+<li>Implementation of the subnamespace <code>$arr</code> for expressions on <code>array</code>-type
+    columns. An <code>array</code> column is similar to a <code>list</code> column, but is stricter as
+    each sub-array must have the same number of elements (<a href="https://github.com/pola-rs/r-polars/issues/790">#790</a>).</li>
+</ul>
 <h3 id="other-improvements">Other improvements</h3>
 <ul>
-<li>The <code>sql</code> feature is included in the default feature (<a href="https://github.com/pola-rs/r-polars/issues/800">#800</a>).</li>
+<li>The <code>sql</code> feature is included in the default feature (<a href="https://github.com/pola-rs/r-polars/issues/800">#800</a>).
+    This means that functionality related to the <code>RPolarsSQLContext</code> class
+    is now always included in the binary package.</li>
 </ul>
 <h2 id="polars-r-package-0131">Polars R Package 0.13.1</h2>
-<h3 id="new-features">New features</h3>
+<h3 id="new-features_1">New features</h3>
 <ul>
 <li>New method <code>$write_parquet()</code> for DataFrame (<a href="https://github.com/pola-rs/r-polars/issues/758">#758</a>).</li>
 <li>S3 methods of <code>as.data.frame()</code> for <code>RPolarsDataFrame</code> and <code>RPolarsLazyFrame</code>
@@ -16694,7 +16724,7 @@
 <li><code>pl$set_options()</code> and <code>pl$reset_options()</code> are deprecated and will be
     removed in 0.14.0. See <code>?polars_options</code> for details (<a href="https://github.com/pola-rs/r-polars/issues/726">#726</a>).</li>
 </ul>
-<h3 id="new-features_1">New features</h3>
+<h3 id="new-features_2">New features</h3>
 <ul>
 <li>For compatibility with CRAN, the number of threads used by Polars is automatically set to 2
     if the environment variable <code>POLARS_MAX_THREADS</code> is not set (<a href="https://github.com/pola-rs/r-polars/issues/720">#720</a>).
@@ -17377,7 +17407,7 @@ features. Unrelated breaking changes and new features are put in separate sectio
 <li>Class label "DataType" is now called "RPolarsDataType". Syntax wise 'DataType' can still be used, e.g. <code>.pr$DataType$</code></li>
 <li>try fix name space collision with arrow by <a href="https://github.com/sorhawell">@sorhawell</a> in <a href="https://github.com/pola-rs/r-polars/issues/15">#15</a></li>
 </ul>
-<h3 id="new-features_2">New features</h3>
+<h3 id="new-features_3">New features</h3>
 <ul>
 <li>all list Expr$arr$list functions have been translated:</li>
 <li>Expr list 2.0 by <a href="https://github.com/sorhawell">@sorhawell</a> in <a href="https://github.com/pola-rs/r-polars/issues/10">#10</a></li>

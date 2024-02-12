@@ -1,6 +1,6 @@
 # NEWS
 
-## Polars R Package (development version)
+## Polars R Package 0.14.0
 
 ### Breaking changes due to Rust-polars update
 
@@ -26,6 +26,10 @@
 
 -   The `simd` feature of the Rust library is removed in favor of
     the new `nightly` feature ([#800](https://github.com/pola-rs/r-polars/issues/800)).
+    If you specified `simd` via the `LIBR_POLARS_FEATURES` environment variable
+    during source installations, please use `nightly` instead;
+    there is no change if you specified `full_features` because
+    it now contains `nightly` instead of `simd`.
 -   The following functions were deprecated in 0.13.0 and are now removed ([#783](https://github.com/pola-rs/r-polars/issues/783)):
     -   `$list$lengths()` -> `$list$len()`
     -   `pl$from_arrow()` -> `as_polars_df()` or `as_polars_series()`
@@ -53,9 +57,17 @@
 -   `pl$threadpool_size()` is deprecated and will be removed in 0.15.0. Use
     `pl$thread_pool_size()` instead ([#784](https://github.com/pola-rs/r-polars/issues/784)).
 
+### New features
+
+-   Implementation of the subnamespace `$arr` for expressions on `array`-type
+    columns. An `array` column is similar to a `list` column, but is stricter as
+    each sub-array must have the same number of elements ([#790](https://github.com/pola-rs/r-polars/issues/790)).
+
 ### Other improvements
 
 -   The `sql` feature is included in the default feature ([#800](https://github.com/pola-rs/r-polars/issues/800)).
+    This means that functionality related to the `RPolarsSQLContext` class
+    is now always included in the binary package.
 
 ## Polars R Package 0.13.1
 

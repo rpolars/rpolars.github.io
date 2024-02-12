@@ -2,7 +2,7 @@
 
 # LazyGroupBy_ungroup
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__group_by.R#L94)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/8387e0a88c6889e6449b053999aada405c241066/R/lazyframe__group_by.R#L94)
 
 ## Description
 
