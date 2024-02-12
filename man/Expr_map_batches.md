@@ -2,7 +2,7 @@
 
 # Map an expression with an R function
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/8387e0a88c6889e6449b053999aada405c241066/R/expr__expr.R#L710)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L710)
 
 ## Description
 
@@ -137,7 +137,7 @@ pl$LazyFrame(a = 1, b = 2, c = 3, d = 4)$select(
 ```
 
     #>    user  system elapsed 
-    #>   0.018   0.007   0.426
+    #>   0.023   0.001   0.425
 
 ``` r
 # map in parallel 1: Overhead to start up extra R processes / sessions
@@ -158,7 +158,7 @@ pl$LazyFrame(a = 1, b = 2, c = 3, d = 4)$select(
 ```
 
     #>    user  system elapsed 
-    #>   0.003   0.007   0.779
+    #>   0.010   0.000   0.783
 
 ``` r
 # map in parallel 2: Reuse R processes in "polars global_rpool".
@@ -177,4 +177,4 @@ pl$LazyFrame(a = 1, b = 2, c = 3, d = 4)$select(
 ```
 
     #>    user  system elapsed 
-    #>   0.010   0.000   0.116
+    #>   0.009   0.000   0.125

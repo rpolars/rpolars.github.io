@@ -2,7 +2,7 @@
 
 # Fetch <code>n</code> rows of a LazyFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/8387e0a88c6889e6449b053999aada405c241066/R/lazyframe__lazy.R#L1468)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1468)
 
 ## Description
 

@@ -2,7 +2,7 @@
 
 # Check if string ends with a regex
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/8387e0a88c6889e6449b053999aada405c241066/R/expr__string.R#L459)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L459)
 
 ## Description
 
