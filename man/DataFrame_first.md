@@ -2,7 +2,7 @@
 
 # Get the first row of the DataFrame.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1028)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1057)
 
 ## Description
 

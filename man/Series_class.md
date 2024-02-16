@@ -32,6 +32,39 @@ into pure external functions in after-wrappers.R. In zzz.R (named zzz to
 be last file sourced) the extendr-methods are removed and replaced by
 any function prefixed <code>Series\_</code>.
 
+## Active bindings
+
+<h4>
+flags
+</h4>
+
+<code style="white-space: pre;">$flags</code> returns a named list with
+flag names and their values.
+
+Flags are used internally to avoid doing unnecessary computations, such
+as sorting a variable that we know is already sorted. The number of
+flags varies depending on the column type: columns of type
+<code>array</code> and <code>list</code> have the flags
+<code>SORTED_ASC</code>, <code>SORTED_DESC</code>, and
+<code>FAST_EXPLODE</code>, while other column types only have the former
+two.
+
+<ul>
+<li>
+
+<code>SORTED_ASC</code> is set to <code>TRUE</code> when we sort a
+column in increasing order, so that we can use this information later on
+to avoid re-sorting it.
+
+</li>
+<li>
+
+<code>SORTED_DESC</code> is similar but applies to sort in decreasing
+order.
+
+</li>
+</ul>
+
 ## Examples
 
 ``` r
@@ -108,33 +141,45 @@ ls(.pr$Series)
     #> [11] "clone"                       "compare"                    
     #> [13] "cum_sum"                     "div"                        
     #> [15] "dtype"                       "equals"                     
-    #> [17] "floor"                       "from_arrow_array_robj"      
-    #> [19] "from_arrow_array_stream_str" "get_fmt"                    
-    #> [21] "is_sorted"                   "is_sorted_flag"             
-    #> [23] "is_sorted_reverse_flag"      "len"                        
-    #> [25] "map_elements"                "max"                        
-    #> [27] "mean"                        "median"                     
-    #> [29] "min"                         "mul"                        
-    #> [31] "n_unique"                    "name"                       
-    #> [33] "new"                         "panic"                      
-    #> [35] "print"                       "rem"                        
-    #> [37] "rename_mut"                  "rep"                        
-    #> [39] "set_sorted_mut"              "shape"                      
-    #> [41] "sleep"                       "sort_mut"                   
-    #> [43] "std"                         "sub"                        
-    #> [45] "sum"                         "to_fmt_char"                
-    #> [47] "to_frame"                    "to_r"                       
-    #> [49] "value_counts"                "var"
+    #> [17] "fast_explode_flag"           "floor"                      
+    #> [19] "from_arrow_array_robj"       "from_arrow_array_stream_str"
+    #> [21] "get_fmt"                     "is_sorted"                  
+    #> [23] "is_sorted_flag"              "is_sorted_reverse_flag"     
+    #> [25] "len"                         "map_elements"               
+    #> [27] "max"                         "mean"                       
+    #> [29] "median"                      "min"                        
+    #> [31] "mul"                         "n_unique"                   
+    #> [33] "name"                        "new"                        
+    #> [35] "panic"                       "print"                      
+    #> [37] "rem"                         "rename_mut"                 
+    #> [39] "rep"                         "set_sorted_mut"             
+    #> [41] "shape"                       "sleep"                      
+    #> [43] "sort_mut"                    "std"                        
+    #> [45] "sub"                         "sum"                        
+    #> [47] "to_fmt_char"                 "to_frame"                   
+    #> [49] "to_r"                        "value_counts"               
+    #> [51] "var"
 
 ``` r
 # make an object
-s = pl$Series(1:3)
+s = pl$Series(c(1:3, 1L))
 
 # use a public method/property
 s$shape
 ```
 
-    #> [1] 3 1
+    #> [1] 4 1
+
+``` r
+# show flags
+s$sort()$flags
+```
+
+    #> $SORTED_ASC
+    #> [1] TRUE
+    #> 
+    #> $SORTED_DESC
+    #> [1] FALSE
 
 ``` r
 # use a private method (mutable append not allowed in public api)

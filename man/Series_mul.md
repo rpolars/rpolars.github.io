@@ -2,7 +2,7 @@
 
 # mul Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L160)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L197)
 
 ## Description
 

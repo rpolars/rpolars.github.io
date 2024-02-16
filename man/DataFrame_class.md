@@ -38,9 +38,38 @@ In
 <code>extendr</code>-methods are removed and replaced by any function
 prefixed <code>DataFrame\_</code>.
 
-## Value
+## Active bindings
 
-Not applicable
+<h4>
+flags
+</h4>
+
+<code style="white-space: pre;">$flags</code> returns a nested list with
+column names at the top level and column flags in each sublist.
+
+Flags are used internally to avoid doing unnecessary computations, such
+as sorting a variable that we know is already sorted. The number of
+flags varies depending on the column type: columns of type
+<code>array</code> and <code>list</code> have the flags
+<code>SORTED_ASC</code>, <code>SORTED_DESC</code>, and
+<code>FAST_EXPLODE</code>, while other column types only have the former
+two.
+
+<ul>
+<li>
+
+<code>SORTED_ASC</code> is set to <code>TRUE</code> when we sort a
+column in increasing order, so that we can use this information later on
+to avoid re-sorting it.
+
+</li>
+<li>
+
+<code>SORTED_DESC</code> is similar but applies to sort in decreasing
+order.
+
+</li>
+</ul>
 
 ## Examples
 
@@ -55,20 +84,21 @@ ls(.pr$env$RPolarsDataFrame)
     #>  [1] "clone"            "columns"          "describe"         "drop"            
     #>  [5] "drop_in_place"    "drop_nulls"       "dtype_strings"    "dtypes"          
     #>  [9] "equals"           "estimated_size"   "explode"          "fill_nan"        
-    #> [13] "fill_null"        "filter"           "first"            "get_column"      
-    #> [17] "get_columns"      "glimpse"          "group_by"         "group_by_dynamic"
-    #> [21] "head"             "height"           "join"             "join_asof"       
-    #> [25] "last"             "lazy"             "limit"            "max"             
-    #> [29] "mean"             "median"           "melt"             "min"             
-    #> [33] "n_chunks"         "null_count"       "pivot"            "print"           
-    #> [37] "quantile"         "rechunk"          "rename"           "reverse"         
-    #> [41] "rolling"          "sample"           "schema"           "select"          
-    #> [45] "shape"            "shift"            "shift_and_fill"   "slice"           
-    #> [49] "sort"             "std"              "sum"              "tail"            
-    #> [53] "to_data_frame"    "to_list"          "to_series"        "to_struct"       
-    #> [57] "transpose"        "unique"           "unnest"           "var"             
-    #> [61] "width"            "with_columns"     "with_row_count"   "with_row_index"  
-    #> [65] "write_csv"        "write_json"       "write_ndjson"     "write_parquet"
+    #> [13] "fill_null"        "filter"           "first"            "flags"           
+    #> [17] "get_column"       "get_columns"      "glimpse"          "group_by"        
+    #> [21] "group_by_dynamic" "head"             "height"           "join"            
+    #> [25] "join_asof"        "last"             "lazy"             "limit"           
+    #> [29] "max"              "mean"             "median"           "melt"            
+    #> [33] "min"              "n_chunks"         "null_count"       "pivot"           
+    #> [37] "print"            "quantile"         "rechunk"          "rename"          
+    #> [41] "reverse"          "rolling"          "sample"           "schema"          
+    #> [45] "select"           "shape"            "shift"            "shift_and_fill"  
+    #> [49] "slice"            "sort"             "std"              "sum"             
+    #> [53] "tail"             "to_data_frame"    "to_list"          "to_series"       
+    #> [57] "to_struct"        "transpose"        "unique"           "unnest"          
+    #> [61] "var"              "width"            "with_columns"     "with_row_count"  
+    #> [65] "with_row_index"   "write_csv"        "write_json"       "write_ndjson"    
+    #> [69] "write_parquet"
 
 ``` r
 # see all private methods (not intended for regular use)
@@ -101,7 +131,6 @@ ls(.pr$DataFrame)
 # make an object
 df = pl$DataFrame(iris)
 
-
 # use a public method/property
 df$shape
 ```
@@ -129,6 +158,58 @@ df2$columns
 
     #> [1] "Sepal.Length" "Sepal.Width"  "Petal.Length" "Petal.Width"  "Species"     
     #> [6] "some_ints"
+
+``` r
+# Show flags
+df$sort("Sepal.Length")$flags
+```
+
+    #> $Sepal.Length
+    #> $Sepal.Length$SORTED_ASC
+    #> [1] TRUE
+    #> 
+    #> $Sepal.Length$SORTED_DESC
+    #> [1] FALSE
+    #> 
+    #> 
+    #> $Sepal.Width
+    #> $Sepal.Width$SORTED_ASC
+    #> [1] FALSE
+    #> 
+    #> $Sepal.Width$SORTED_DESC
+    #> [1] FALSE
+    #> 
+    #> 
+    #> $Petal.Length
+    #> $Petal.Length$SORTED_ASC
+    #> [1] FALSE
+    #> 
+    #> $Petal.Length$SORTED_DESC
+    #> [1] FALSE
+    #> 
+    #> 
+    #> $Petal.Width
+    #> $Petal.Width$SORTED_ASC
+    #> [1] FALSE
+    #> 
+    #> $Petal.Width$SORTED_DESC
+    #> [1] FALSE
+    #> 
+    #> 
+    #> $Species
+    #> $Species$SORTED_ASC
+    #> [1] FALSE
+    #> 
+    #> $Species$SORTED_DESC
+    #> [1] FALSE
+    #> 
+    #> 
+    #> $some_ints
+    #> $some_ints$SORTED_ASC
+    #> [1] FALSE
+    #> 
+    #> $some_ints$SORTED_DESC
+    #> [1] FALSE
 
 ``` r
 # set_column_from_robj-method is fallible and returned a result which could

@@ -216,6 +216,7 @@ pl$show_all_public_methods()
     #>           [ fill_null ; function ]
     #>           [ filter ; function ]
     #>           [ first ; function ]
+    #>           [ flags ; property function ]
     #>           [ get_column ; function ]
     #>           [ get_columns ; function ]
     #>           [ glimpse ; function ]

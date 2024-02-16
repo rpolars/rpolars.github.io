@@ -2,7 +2,7 @@
 
 # Add a column for row indices
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L315)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L344)
 
 ## Description
 

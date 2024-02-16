@@ -118,7 +118,6 @@ nav:
         - dtype: man/Series_dtype.md
         - equals: man/Series_equals.md
         - expr: man/Series_expr.md
-        - flags: man/Series_flags.md
         - floor: man/Series_floor.md
         - is_numeric: man/Series_is_numeric.md
         - is_sorted: man/Series_is_sorted.md

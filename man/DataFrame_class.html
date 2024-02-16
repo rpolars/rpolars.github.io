@@ -2158,27 +2158,6 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_flags.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    flags
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="Series_floor.html" class="md-nav__link">
         
   
@@ -2879,9 +2858,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#value" class="md-nav__link">
+  <a href="#active-bindings" class="md-nav__link">
     <span class="md-ellipsis">
-      Value
+      Active bindings
     </span>
   </a>
   
@@ -14832,9 +14811,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#value" class="md-nav__link">
+  <a href="#active-bindings" class="md-nav__link">
     <span class="md-ellipsis">
-      Value
+      Active bindings
     </span>
   </a>
   
@@ -14899,8 +14878,36 @@ In
 (named <code>zzz</code> to be last file sourced) the
 <code>extendr</code>-methods are removed and replaced by any function
 prefixed <code>DataFrame_</code>.</p>
-<h2 id="value">Value</h2>
-<p>Not applicable</p>
+<h2 id="active-bindings">Active bindings</h2>
+<h4>
+flags
+</h4>
+
+<p><code style="white-space: pre;">$flags</code> returns a nested list with
+column names at the top level and column flags in each sublist.</p>
+<p>Flags are used internally to avoid doing unnecessary computations, such
+as sorting a variable that we know is already sorted. The number of
+flags varies depending on the column type: columns of type
+<code>array</code> and <code>list</code> have the flags
+<code>SORTED_ASC</code>, <code>SORTED_DESC</code>, and
+<code>FAST_EXPLODE</code>, while other column types only have the former
+two.</p>
+<ul>
+<li>
+
+<code>SORTED_ASC</code> is set to <code>TRUE</code> when we sort a
+column in increasing order, so that we can use this information later on
+to avoid re-sorting it.
+
+</li>
+<li>
+
+<code>SORTED_DESC</code> is similar but applies to sort in decreasing
+order.
+
+</li>
+</ul>
+
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -14911,20 +14918,21 @@ prefixed <code>DataFrame_</code>.</p>
 <div class="highlight"><pre><span></span><code>#&gt;  [1] &quot;clone&quot;            &quot;columns&quot;          &quot;describe&quot;         &quot;drop&quot;            
 #&gt;  [5] &quot;drop_in_place&quot;    &quot;drop_nulls&quot;       &quot;dtype_strings&quot;    &quot;dtypes&quot;          
 #&gt;  [9] &quot;equals&quot;           &quot;estimated_size&quot;   &quot;explode&quot;          &quot;fill_nan&quot;        
-#&gt; [13] &quot;fill_null&quot;        &quot;filter&quot;           &quot;first&quot;            &quot;get_column&quot;      
-#&gt; [17] &quot;get_columns&quot;      &quot;glimpse&quot;          &quot;group_by&quot;         &quot;group_by_dynamic&quot;
-#&gt; [21] &quot;head&quot;             &quot;height&quot;           &quot;join&quot;             &quot;join_asof&quot;       
-#&gt; [25] &quot;last&quot;             &quot;lazy&quot;             &quot;limit&quot;            &quot;max&quot;             
-#&gt; [29] &quot;mean&quot;             &quot;median&quot;           &quot;melt&quot;             &quot;min&quot;             
-#&gt; [33] &quot;n_chunks&quot;         &quot;null_count&quot;       &quot;pivot&quot;            &quot;print&quot;           
-#&gt; [37] &quot;quantile&quot;         &quot;rechunk&quot;          &quot;rename&quot;           &quot;reverse&quot;         
-#&gt; [41] &quot;rolling&quot;          &quot;sample&quot;           &quot;schema&quot;           &quot;select&quot;          
-#&gt; [45] &quot;shape&quot;            &quot;shift&quot;            &quot;shift_and_fill&quot;   &quot;slice&quot;           
-#&gt; [49] &quot;sort&quot;             &quot;std&quot;              &quot;sum&quot;              &quot;tail&quot;            
-#&gt; [53] &quot;to_data_frame&quot;    &quot;to_list&quot;          &quot;to_series&quot;        &quot;to_struct&quot;       
-#&gt; [57] &quot;transpose&quot;        &quot;unique&quot;           &quot;unnest&quot;           &quot;var&quot;             
-#&gt; [61] &quot;width&quot;            &quot;with_columns&quot;     &quot;with_row_count&quot;   &quot;with_row_index&quot;  
-#&gt; [65] &quot;write_csv&quot;        &quot;write_json&quot;       &quot;write_ndjson&quot;     &quot;write_parquet&quot;
+#&gt; [13] &quot;fill_null&quot;        &quot;filter&quot;           &quot;first&quot;            &quot;flags&quot;           
+#&gt; [17] &quot;get_column&quot;       &quot;get_columns&quot;      &quot;glimpse&quot;          &quot;group_by&quot;        
+#&gt; [21] &quot;group_by_dynamic&quot; &quot;head&quot;             &quot;height&quot;           &quot;join&quot;            
+#&gt; [25] &quot;join_asof&quot;        &quot;last&quot;             &quot;lazy&quot;             &quot;limit&quot;           
+#&gt; [29] &quot;max&quot;              &quot;mean&quot;             &quot;median&quot;           &quot;melt&quot;            
+#&gt; [33] &quot;min&quot;              &quot;n_chunks&quot;         &quot;null_count&quot;       &quot;pivot&quot;           
+#&gt; [37] &quot;print&quot;            &quot;quantile&quot;         &quot;rechunk&quot;          &quot;rename&quot;          
+#&gt; [41] &quot;reverse&quot;          &quot;rolling&quot;          &quot;sample&quot;           &quot;schema&quot;          
+#&gt; [45] &quot;select&quot;           &quot;shape&quot;            &quot;shift&quot;            &quot;shift_and_fill&quot;  
+#&gt; [49] &quot;slice&quot;            &quot;sort&quot;             &quot;std&quot;              &quot;sum&quot;             
+#&gt; [53] &quot;tail&quot;             &quot;to_data_frame&quot;    &quot;to_list&quot;          &quot;to_series&quot;       
+#&gt; [57] &quot;to_struct&quot;        &quot;transpose&quot;        &quot;unique&quot;           &quot;unnest&quot;          
+#&gt; [61] &quot;var&quot;              &quot;width&quot;            &quot;with_columns&quot;     &quot;with_row_count&quot;  
+#&gt; [65] &quot;with_row_index&quot;   &quot;write_csv&quot;        &quot;write_json&quot;       &quot;write_ndjson&quot;    
+#&gt; [69] &quot;write_parquet&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># see all private methods (not intended for regular use)</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nf">ls</span><span class="p">(</span><span class="n">.pr</span><span class="o">$</span><span class="n">DataFrame</span><span class="p">)</span>
@@ -14954,9 +14962,8 @@ prefixed <code>DataFrame_</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># make an object</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># use a public method/property</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">df</span><span class="o">$</span><span class="n">shape</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># use a public method/property</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">df</span><span class="o">$</span><span class="n">shape</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [1] 150   5
 </code></pre></div>
@@ -14978,22 +14985,72 @@ prefixed <code>DataFrame_</code>.</p>
 <div class="highlight"><pre><span></span><code>#&gt; [1] &quot;Sepal.Length&quot; &quot;Sepal.Width&quot;  &quot;Petal.Length&quot; &quot;Petal.Width&quot;  &quot;Species&quot;     
 #&gt; [6] &quot;some_ints&quot;
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># set_column_from_robj-method is fallible and returned a result which could</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># be &quot;ok&quot; or an error.</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># No public method or function will ever return a result.</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># The `result` is very close to the same as output from functions decorated</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># with purrr::safely.</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1"># To use results on the R side, these must be unwrapped first such that</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># potentially errors can be thrown. `unwrap(result)` is a way to communicate</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c1"># errors happening on the Rust side to the R side. `Extendr` default behavior</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1"># is to use `panic!`(s) which would cause some unnecessarily confusing and</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># some very verbose error messages on the inner workings of rust.</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1"># `unwrap(result)` in this case no error, just a NULL because this mutable</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="c1"># method does not return any ok-value.</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="c1"># Try unwrapping an error from polars due to unmatching column lengths</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="n">err_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">.pr</span><span class="o">$</span><span class="n">DataFrame</span><span class="o">$</span><span class="nf">set_column_from_robj</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10000</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;wrong_length&quot;</span><span class="p">)</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="nf">tryCatch</span><span class="p">(</span><span class="nf">unwrap</span><span class="p">(</span><span class="n">err_result</span><span class="p">,</span><span class="w"> </span><span class="n">call</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">),</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>\<span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="nf">cat</span><span class="p">(</span><span class="nf">as.character</span><span class="p">(</span><span class="n">e</span><span class="p">)))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Show flags</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">sort</span><span class="p">(</span><span class="s">&quot;Sepal.Length&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">flags</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; $Sepal.Length
+#&gt; $Sepal.Length$SORTED_ASC
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $Sepal.Length$SORTED_DESC
+#&gt; [1] FALSE
+#&gt; 
+#&gt; 
+#&gt; $Sepal.Width
+#&gt; $Sepal.Width$SORTED_ASC
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $Sepal.Width$SORTED_DESC
+#&gt; [1] FALSE
+#&gt; 
+#&gt; 
+#&gt; $Petal.Length
+#&gt; $Petal.Length$SORTED_ASC
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $Petal.Length$SORTED_DESC
+#&gt; [1] FALSE
+#&gt; 
+#&gt; 
+#&gt; $Petal.Width
+#&gt; $Petal.Width$SORTED_ASC
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $Petal.Width$SORTED_DESC
+#&gt; [1] FALSE
+#&gt; 
+#&gt; 
+#&gt; $Species
+#&gt; $Species$SORTED_ASC
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $Species$SORTED_DESC
+#&gt; [1] FALSE
+#&gt; 
+#&gt; 
+#&gt; $some_ints
+#&gt; $some_ints$SORTED_ASC
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $some_ints$SORTED_DESC
+#&gt; [1] FALSE
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># set_column_from_robj-method is fallible and returned a result which could</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># be &quot;ok&quot; or an error.</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># No public method or function will ever return a result.</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># The `result` is very close to the same as output from functions decorated</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># with purrr::safely.</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1"># To use results on the R side, these must be unwrapped first such that</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># potentially errors can be thrown. `unwrap(result)` is a way to communicate</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="c1"># errors happening on the Rust side to the R side. `Extendr` default behavior</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1"># is to use `panic!`(s) which would cause some unnecessarily confusing and</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="c1"># some very verbose error messages on the inner workings of rust.</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="c1"># `unwrap(result)` in this case no error, just a NULL because this mutable</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="c1"># method does not return any ok-value.</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="c1"># Try unwrapping an error from polars due to unmatching column lengths</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="n">err_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">.pr</span><span class="o">$</span><span class="n">DataFrame</span><span class="o">$</span><span class="nf">set_column_from_robj</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10000</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;wrong_length&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="nf">tryCatch</span><span class="p">(</span><span class="nf">unwrap</span><span class="p">(</span><span class="n">err_result</span><span class="p">,</span><span class="w"> </span><span class="n">call</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">),</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>\<span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="nf">cat</span><span class="p">(</span><span class="nf">as.character</span><span class="p">(</span><span class="n">e</span><span class="p">)))</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; Error in unwrap(err_result, call = NULL): could not find function &quot;unwrap&quot;
 </code></pre></div>

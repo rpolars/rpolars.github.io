@@ -2,7 +2,7 @@
 
 # Create new Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L66)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L103)
 
 ## Description
 
@@ -43,9 +43,7 @@ Series
 ``` r
 library(polars)
 
-{
-  pl$Series(1:4)
-}
+pl$Series(1:4)
 ```
 
     #> polars Series: shape: (4,)

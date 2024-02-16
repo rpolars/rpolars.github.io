@@ -2,7 +2,7 @@
 
 # Select and modify columns of a DataFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L663)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L692)
 
 ## Description
 

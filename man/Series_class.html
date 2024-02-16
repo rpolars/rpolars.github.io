@@ -2056,6 +2056,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#active-bindings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active bindings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -2211,27 +2220,6 @@
   
   <span class="md-ellipsis">
     expr
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Series_flags.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    flags
   </span>
   
 
@@ -14823,6 +14811,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#active-bindings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active bindings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -14876,6 +14873,36 @@ extendr-auto-generated methods. These are moved to .pr and converted
 into pure external functions in after-wrappers.R. In zzz.R (named zzz to
 be last file sourced) the extendr-methods are removed and replaced by
 any function prefixed <code>Series_</code>.</p>
+<h2 id="active-bindings">Active bindings</h2>
+<h4>
+flags
+</h4>
+
+<p><code style="white-space: pre;">$flags</code> returns a named list with
+flag names and their values.</p>
+<p>Flags are used internally to avoid doing unnecessary computations, such
+as sorting a variable that we know is already sorted. The number of
+flags varies depending on the column type: columns of type
+<code>array</code> and <code>list</code> have the flags
+<code>SORTED_ASC</code>, <code>SORTED_DESC</code>, and
+<code>FAST_EXPLODE</code>, while other column types only have the former
+two.</p>
+<ul>
+<li>
+
+<code>SORTED_ASC</code> is set to <code>TRUE</code> when we sort a
+column in increasing order, so that we can use this information later on
+to avoid re-sorting it.
+
+</li>
+<li>
+
+<code>SORTED_DESC</code> is similar but applies to sort in decreasing
+order.
+
+</li>
+</ul>
+
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -14947,35 +14974,45 @@ any function prefixed <code>Series_</code>.</p>
 #&gt; [11] &quot;clone&quot;                       &quot;compare&quot;                    
 #&gt; [13] &quot;cum_sum&quot;                     &quot;div&quot;                        
 #&gt; [15] &quot;dtype&quot;                       &quot;equals&quot;                     
-#&gt; [17] &quot;floor&quot;                       &quot;from_arrow_array_robj&quot;      
-#&gt; [19] &quot;from_arrow_array_stream_str&quot; &quot;get_fmt&quot;                    
-#&gt; [21] &quot;is_sorted&quot;                   &quot;is_sorted_flag&quot;             
-#&gt; [23] &quot;is_sorted_reverse_flag&quot;      &quot;len&quot;                        
-#&gt; [25] &quot;map_elements&quot;                &quot;max&quot;                        
-#&gt; [27] &quot;mean&quot;                        &quot;median&quot;                     
-#&gt; [29] &quot;min&quot;                         &quot;mul&quot;                        
-#&gt; [31] &quot;n_unique&quot;                    &quot;name&quot;                       
-#&gt; [33] &quot;new&quot;                         &quot;panic&quot;                      
-#&gt; [35] &quot;print&quot;                       &quot;rem&quot;                        
-#&gt; [37] &quot;rename_mut&quot;                  &quot;rep&quot;                        
-#&gt; [39] &quot;set_sorted_mut&quot;              &quot;shape&quot;                      
-#&gt; [41] &quot;sleep&quot;                       &quot;sort_mut&quot;                   
-#&gt; [43] &quot;std&quot;                         &quot;sub&quot;                        
-#&gt; [45] &quot;sum&quot;                         &quot;to_fmt_char&quot;                
-#&gt; [47] &quot;to_frame&quot;                    &quot;to_r&quot;                       
-#&gt; [49] &quot;value_counts&quot;                &quot;var&quot;
+#&gt; [17] &quot;fast_explode_flag&quot;           &quot;floor&quot;                      
+#&gt; [19] &quot;from_arrow_array_robj&quot;       &quot;from_arrow_array_stream_str&quot;
+#&gt; [21] &quot;get_fmt&quot;                     &quot;is_sorted&quot;                  
+#&gt; [23] &quot;is_sorted_flag&quot;              &quot;is_sorted_reverse_flag&quot;     
+#&gt; [25] &quot;len&quot;                         &quot;map_elements&quot;               
+#&gt; [27] &quot;max&quot;                         &quot;mean&quot;                       
+#&gt; [29] &quot;median&quot;                      &quot;min&quot;                        
+#&gt; [31] &quot;mul&quot;                         &quot;n_unique&quot;                   
+#&gt; [33] &quot;name&quot;                        &quot;new&quot;                        
+#&gt; [35] &quot;panic&quot;                       &quot;print&quot;                      
+#&gt; [37] &quot;rem&quot;                         &quot;rename_mut&quot;                 
+#&gt; [39] &quot;rep&quot;                         &quot;set_sorted_mut&quot;             
+#&gt; [41] &quot;shape&quot;                       &quot;sleep&quot;                      
+#&gt; [43] &quot;sort_mut&quot;                    &quot;std&quot;                        
+#&gt; [45] &quot;sub&quot;                         &quot;sum&quot;                        
+#&gt; [47] &quot;to_fmt_char&quot;                 &quot;to_frame&quot;                   
+#&gt; [49] &quot;to_r&quot;                        &quot;value_counts&quot;               
+#&gt; [51] &quot;var&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># make an object</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">1L</span><span class="p">))</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># use a public method/property</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">s</span><span class="o">$</span><span class="n">shape</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] 3 1
+<div class="highlight"><pre><span></span><code>#&gt; [1] 4 1
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># use a private method (mutable append not allowed in public api)</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">s_copy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">.pr</span><span class="o">$</span><span class="n">Series</span><span class="o">$</span><span class="nf">append_mut</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">5</span><span class="o">:</span><span class="m">1</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># show flags</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">s</span><span class="o">$</span><span class="nf">sort</span><span class="p">()</span><span class="o">$</span><span class="n">flags</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; $SORTED_ASC
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $SORTED_DESC
+#&gt; [1] FALSE
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># use a private method (mutable append not allowed in public api)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">s_copy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">.pr</span><span class="o">$</span><span class="n">Series</span><span class="o">$</span><span class="nf">append_mut</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">5</span><span class="o">:</span><span class="m">1</span><span class="p">))</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; $ok
 #&gt; NULL
@@ -14986,7 +15023,7 @@ any function prefixed <code>Series_</code>.</p>
 #&gt; attr(,&quot;class&quot;)
 #&gt; [1] &quot;extendr_result&quot;
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nf">identical</span><span class="p">(</span><span class="n">s_copy</span><span class="o">$</span><span class="nf">to_r</span><span class="p">(),</span><span class="w"> </span><span class="n">s</span><span class="o">$</span><span class="nf">to_r</span><span class="p">())</span><span class="w"> </span><span class="c1"># s_copy was modified when s was modified</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nf">identical</span><span class="p">(</span><span class="n">s_copy</span><span class="o">$</span><span class="nf">to_r</span><span class="p">(),</span><span class="w"> </span><span class="n">s</span><span class="o">$</span><span class="nf">to_r</span><span class="p">())</span><span class="w"> </span><span class="c1"># s_copy was modified when s was modified</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [1] TRUE
 </code></pre></div>
