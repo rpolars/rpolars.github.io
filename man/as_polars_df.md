@@ -2,14 +2,12 @@
 
 # To polars DataFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/as_polars.R#L50)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/as_polars.R#L48)
 
 ## Description
 
 <code>as_polars_df()</code> is a generic function that converts an R
-object to a polars DataFrame. It is basically a wrapper for
-pl$DataFrame(), but has special implementations for Apache Arrow-based
-objects such as polars LazyFrame and arrow::Table.
+object to a polars DataFrame.
 
 ## Usage
 
@@ -19,7 +17,14 @@ objects such as polars LazyFrame and arrow::Table.
 as_polars_df(x, ...)
 
 # S3 method for class 'data.frame'
-as_polars_df(x, ..., rownames = NULL, make_names_unique = TRUE)
+as_polars_df(
+  x,
+  ...,
+  rownames = NULL,
+  make_names_unique = TRUE,
+  schema = NULL,
+  schema_overrides = NULL
+)
 
 # S3 method for class 'RPolarsDataFrame'
 as_polars_df(x, ...)
@@ -114,6 +119,25 @@ A string: The name of a new column, which will contain the row names. If
 A logical flag to replace duplicated column names with unique names. If
 <code>FALSE</code> and there are duplicated column names, an error is
 thrown.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="as_polars_df_:_schema">schema</code>
+</td>
+<td>
+named list of DataTypes, or character vector of column names. Should be
+the same length as the number of columns of <code>x</code>. If schema
+names or types do not match <code>x</code>, the columns will be
+renamed/recast. If <code>NULL</code> (default), convert columns as is.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="as_polars_df_:_schema_overrides">schema_overrides</code>
+</td>
+<td>
+named list of DataTypes. Cast some columns to the DataType.
 </td>
 </tr>
 <tr>
@@ -230,25 +254,6 @@ DataFrame. Useful in interactive mode to not lock R session.
 <td>
 A logical flag (default <code>TRUE</code>). Make sure that all data of
 each column is in contiguous memory.
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_df_:_schema">schema</code>
-</td>
-<td>
-named list of DataTypes, or character vector of column names. Should be
-the same length as the number of columns of <code>x</code>. If schema
-names or types do not match <code>x</code>, the columns will be
-renamed/recast. If <code>NULL</code> (default), convert columns as is.
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_df_:_schema_overrides">schema_overrides</code>
-</td>
-<td>
-named list of DataTypes. Cast some columns to the DataType.
 </td>
 </tr>
 </table>
