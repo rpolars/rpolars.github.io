@@ -14696,6 +14696,48 @@
   
   
     <li class="md-nav__item">
+      <a href="SeriesStr_to_lowercase.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SeriesStr_to_lowercase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="SeriesStr_to_uppercase.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SeriesStr_to_uppercase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="show_all_public_functions.html" class="md-nav__link">
         
   
@@ -15005,7 +15047,7 @@ parallel R sessions.</p>
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">)</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nf">system.time</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   0.024   0.001   0.424
+#&gt;   0.018   0.004   0.422
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># map in parallel 1: Overhead to start up extra R processes / sessions</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nf">options</span><span class="p">(</span><span class="n">polars.rpool_cap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="c1"># drop any previous processes, just to show start-up overhead</span>
@@ -15022,7 +15064,7 @@ parallel R sessions.</p>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">)</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nf">system.time</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   0.011   0.000   0.842
+#&gt;   0.011   0.000   0.900
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># map in parallel 2: Reuse R processes in &quot;polars global_rpool&quot;.</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nf">polars_options</span><span class="p">()</span><span class="o">$</span><span class="n">rpool_cap</span>
@@ -15037,7 +15079,7 @@ parallel R sessions.</p>
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">)</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nf">system.time</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   0.008   0.001   0.127
+#&gt;   0.008   0.000   0.111
 </code></pre></div>
 
 

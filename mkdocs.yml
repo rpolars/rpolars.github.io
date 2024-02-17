@@ -683,6 +683,8 @@ nav:
         - polars_envvars: man/polars_envvars.md
         - polars_info: man/polars_info.md
         - polars_options: man/polars_options.md
+        - SeriesStr_to_lowercase: man/SeriesStr_to_lowercase.md
+        - SeriesStr_to_uppercase: man/SeriesStr_to_uppercase.md
         - show_all_public_functions: man/show_all_public_functions.md
         - show_all_public_methods: man/show_all_public_methods.md
   - About: about.md

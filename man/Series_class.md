@@ -117,6 +117,7 @@ pl$show_all_public_methods("RPolarsSeries")
     #>           [ shape ; property function ]
     #>           [ sort ; function ]
     #>           [ std ; function ]
+    #>           [ str ; property function ]
     #>           [ sub ; function ]
     #>           [ sum ; function ]
     #>           [ to_frame ; function ]

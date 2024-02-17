@@ -2,7 +2,7 @@
 
 # append (default immutable)
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L494)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L504)
 
 ## Description
 

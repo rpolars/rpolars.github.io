@@ -2,7 +2,7 @@
 
 # list: list related methods on Series of dtype List
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L938)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L948)
 
 ## Description
 
