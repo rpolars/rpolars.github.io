@@ -263,6 +263,7 @@ nav:
       GroupBy:
         - agg: man/GroupBy_agg.md
         - class: man/GroupBy_class.md
+        - columns: man/GroupBy_columns.md
         - first: man/GroupBy_first.md
         - last: man/GroupBy_last.md
         - max: man/GroupBy_max.md
@@ -280,6 +281,7 @@ nav:
       LazyGroupBy:
         - agg: man/LazyGroupBy_agg.md
         - class: man/LazyGroupBy_class.md
+        - columns: man/LazyGroupBy_columns.md
         - head: man/LazyGroupBy_head.md
         - print: man/LazyGroupBy_print.md
         - tail: man/LazyGroupBy_tail.md
@@ -680,6 +682,7 @@ nav:
         - is_polars_lf: man/is_polars_lf.md
         - is_polars_series: man/is_polars_series.md
         - polars_class_object: man/polars_class_object.md
+        - polars_code_completion_activate: man/polars_code_completion_activate.md
         - polars_envvars: man/polars_envvars.md
         - polars_info: man/polars_info.md
         - polars_options: man/polars_options.md

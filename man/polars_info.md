@@ -2,7 +2,7 @@
 
 # Report information of the package
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/polars_info.R#L15)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/polars_info.R#L17)
 
 ## Description
 
@@ -24,6 +24,13 @@ Number of threads used by Polars
 
 Rust feature flags (See <code>vignette(“install”, “polars”)</code> for
 details)
+
+</li>
+<li>
+
+Code completion mode: either <code>“deactivated”</code>,
+<code>“rstudio”</code>, or <code>“native”</code>. See
+<code>polars_code_completion_activate()</code>.
 
 </li>
 </ul>
@@ -57,6 +64,8 @@ polars_info()
     #> nightly                    TRUE
     #> sql                        TRUE
     #> rpolars_debug_print       FALSE
+    #> 
+    #> Code completion: deactivated
 
 ``` r
 polars_info()$rust_polars

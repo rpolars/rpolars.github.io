@@ -5271,6 +5271,27 @@
   
   
     <li class="md-nav__item">
+      <a href="man/GroupBy_columns.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    columns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="man/GroupBy_first.html" class="md-nav__link">
         
   
@@ -5637,6 +5658,27 @@
   
   <span class="md-ellipsis">
     class
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="man/LazyGroupBy_columns.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    columns
   </span>
   
 
@@ -14528,6 +14570,27 @@
   
   
     <li class="md-nav__item">
+      <a href="man/polars_code_completion_activate.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    polars_code_completion_activate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="man/polars_envvars.html" class="md-nav__link">
         
   
@@ -16659,12 +16722,16 @@
 <h2 id="polars-r-package-development-version">Polars R Package (development version)</h2>
 <h3 id="new-features">New features</h3>
 <ul>
-<li>New active bindings <code>$flags</code> for <code>DataFrame</code> to show the flags used internally for
-    each column. The output of <code>$flags</code> for <code>Series</code> was also improved and now
+<li>New active bindings <code>$flags</code> for <code>DataFrame</code> to show the flags used internally
+    for each column. The output of <code>$flags</code> for <code>Series</code> was also improved and now
     contains <code>FAST_EXPLODE</code> for <code>Series</code> of type <code>list</code> and <code>array</code> (<a href="https://github.com/pola-rs/r-polars/issues/809">#809</a>).</li>
 <li>Add string methods <code>to_lowercase()</code> and <code>to_uppercase()</code> for <code>Series</code> (<a href="https://github.com/pola-rs/r-polars/issues/810">#810</a>).</li>
 <li><code>as_polars_df()</code> for <code>data.frame</code> is more memory-efficient and new arguments
     <code>schema</code> and <code>schema_overrides</code> are added (<a href="https://github.com/pola-rs/r-polars/issues/817">#817</a>).</li>
+<li>Use <code>polars_code_completion_activate()</code> to enable code suggestions and
+    autocompletion after <code>$</code> on polars objects. This is an experimental feature
+    that is disabled by default. For now, it is only supported in the native R
+    terminal and in RStudio (<a href="https://github.com/pola-rs/r-polars/issues/597">#597</a>).</li>
 </ul>
 <h2 id="polars-r-package-0140">Polars R Package 0.14.0</h2>
 <h3 id="breaking-changes-due-to-rust-polars-update">Breaking changes due to Rust-polars update</h3>

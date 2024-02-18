@@ -5278,6 +5278,27 @@
   
   
     <li class="md-nav__item">
+      <a href="GroupBy_columns.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    columns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="GroupBy_first.html" class="md-nav__link">
         
   
@@ -5644,6 +5665,27 @@
   
   <span class="md-ellipsis">
     class
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LazyGroupBy_columns.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    columns
   </span>
   
 
@@ -14615,6 +14657,27 @@
   
   
     <li class="md-nav__item">
+      <a href="polars_code_completion_activate.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    polars_code_completion_activate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="polars_envvars.html" class="md-nav__link">
         
   
@@ -14913,12 +14976,12 @@ are ties.</p>
 #&gt; │ --- │
 #&gt; │ i32 │
 #&gt; ╞═════╡
+#&gt; │ 4   │
+#&gt; │ 2   │
 #&gt; │ 1   │
+#&gt; │ 5   │
 #&gt; │ 6   │
 #&gt; │ 3   │
-#&gt; │ 2   │
-#&gt; │ 4   │
-#&gt; │ 5   │
 #&gt; └─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;b&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">mode</span><span class="p">())</span>
@@ -14941,8 +15004,8 @@ are ties.</p>
 #&gt; │ --- │
 #&gt; │ i32 │
 #&gt; ╞═════╡
-#&gt; │ 3   │
 #&gt; │ 1   │
+#&gt; │ 3   │
 #&gt; │ 2   │
 #&gt; └─────┘
 </code></pre></div>

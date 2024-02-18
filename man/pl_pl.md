@@ -21,7 +21,7 @@ polars api.
 ## Format
 
 An object of class <code>pl_polars_env</code> (inherits from
-<code>environment</code>) of length 96.
+<code>environment</code>) of length 95.
 
 ## Details
 
@@ -105,7 +105,6 @@ pl$show_all_public_functions()
     #>        [ element ; function ]
     #>        [ enable_string_cache ; function ]
     #>        [ expr_to_r ; function ]
-    #>        [ extra_auto_completion ; function ]
     #>        [ Field ; function ]
     #>        [ first ; function ]
     #>        [ Float32 ; RPolarsDataType ]
@@ -531,6 +530,7 @@ pl$show_all_public_methods()
     #> 
     #>        RPolarsLazyGroupBy ( environment ):
     #>           [ agg ; function ]
+    #>           [ columns ; property function ]
     #>           [ head ; function ]
     #>           [ print ; function ]
     #>           [ tail ; function ]

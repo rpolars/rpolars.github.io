@@ -5278,6 +5278,27 @@
   
   
     <li class="md-nav__item">
+      <a href="GroupBy_columns.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    columns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="GroupBy_first.html" class="md-nav__link">
         
   
@@ -5644,6 +5665,27 @@
   
   <span class="md-ellipsis">
     class
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LazyGroupBy_columns.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    columns
   </span>
   
 
@@ -14537,6 +14579,27 @@
   
   
     <li class="md-nav__item">
+      <a href="polars_code_completion_activate.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    polars_code_completion_activate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="polars_envvars.html" class="md-nav__link">
         
   
@@ -14889,7 +14952,7 @@
 
 
 <h1 id="report-information-of-the-package">Report information of the package</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/polars_info.R#L15"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/polars_info.R#L17"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>This function reports the following information:</p>
 <ul>
@@ -14908,6 +14971,13 @@ Number of threads used by Polars
 
 Rust feature flags (See <code>vignette(“install”, “polars”)</code> for
 details)
+
+</li>
+<li>
+
+Code completion mode: either <code>“deactivated”</code>,
+<code>“rstudio”</code>, or <code>“native”</code>. See
+<code>polars_code_completion_activate()</code>.
 
 </li>
 </ul>
@@ -14935,6 +15005,8 @@ details)
 #&gt; nightly                    TRUE
 #&gt; sql                        TRUE
 #&gt; rpolars_debug_print       FALSE
+#&gt; 
+#&gt; Code completion: deactivated
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nf">polars_info</span><span class="p">()</span><span class="o">$</span><span class="n">rust_polars</span>
 </code></pre></div>

@@ -5383,6 +5383,27 @@
   
   
     <li class="md-nav__item">
+      <a href="GroupBy_columns.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    columns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="GroupBy_first.html" class="md-nav__link">
         
   
@@ -5749,6 +5770,27 @@
   
   <span class="md-ellipsis">
     class
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LazyGroupBy_columns.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    columns
   </span>
   
 
@@ -14640,6 +14682,27 @@
   
   
     <li class="md-nav__item">
+      <a href="polars_code_completion_activate.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    polars_code_completion_activate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="polars_envvars.html" class="md-nav__link">
         
   
@@ -15147,8 +15210,8 @@ TRUE)</code>.
 #&gt; │ ---                 ┆ ---   ┆ --- │
 #&gt; │ str                 ┆ u64   ┆ u64 │
 #&gt; ╞═════════════════════╪═══════╪═════╡
-#&gt; │ optimization        ┆ 0     ┆ 13  │
-#&gt; │ projection(literal) ┆ 13    ┆ 70  │
+#&gt; │ optimization        ┆ 0     ┆ 14  │
+#&gt; │ projection(literal) ┆ 14    ┆ 78  │
 #&gt; └─────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Use $profile() to compare two queries</span>
@@ -15179,9 +15242,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ --- │
 #&gt; │ str                ┆ u64   ┆ u64 │
 #&gt; ╞════════════════════╪═══════╪═════╡
-#&gt; │ optimization       ┆ 0     ┆ 15  │
-#&gt; │ sort(Sepal.Length) ┆ 15    ┆ 213 │
-#&gt; │ group_by(Species)  ┆ 216   ┆ 433 │
+#&gt; │ optimization       ┆ 0     ┆ 16  │
+#&gt; │ sort(Sepal.Length) ┆ 16    ┆ 168 │
+#&gt; │ group_by(Species)  ┆ 171   ┆ 314 │
 #&gt; └────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)</span>
@@ -15219,9 +15282,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ ---   │
 #&gt; │ str                ┆ u64   ┆ u64   │
 #&gt; ╞════════════════════╪═══════╪═══════╡
-#&gt; │ optimization       ┆ 0     ┆ 9     │
-#&gt; │ sort(Sepal.Length) ┆ 9     ┆ 166   │
-#&gt; │ group_by(Species)  ┆ 169   ┆ 27542 │
+#&gt; │ optimization       ┆ 0     ┆ 10    │
+#&gt; │ sort(Sepal.Length) ┆ 10    ┆ 564   │
+#&gt; │ group_by(Species)  ┆ 567   ┆ 30631 │
 #&gt; └────────────────────┴───────┴───────┘
 </code></pre></div>
 

@@ -5278,6 +5278,27 @@
   
   
     <li class="md-nav__item">
+      <a href="GroupBy_columns.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    columns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="GroupBy_first.html" class="md-nav__link">
         
   
@@ -5644,6 +5665,27 @@
   
   <span class="md-ellipsis">
     class
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LazyGroupBy_columns.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    columns
   </span>
   
 
@@ -14624,6 +14666,27 @@
   
   
     <li class="md-nav__item">
+      <a href="polars_code_completion_activate.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    polars_code_completion_activate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="polars_envvars.html" class="md-nav__link">
         
   
@@ -14951,16 +15014,16 @@ contention.
 #&gt; │ ---               │
 #&gt; │ struct[2]         │
 #&gt; ╞═══════════════════╡
-#&gt; │ {&quot;setosa&quot;,50}     │
 #&gt; │ {&quot;virginica&quot;,50}  │
+#&gt; │ {&quot;setosa&quot;,50}     │
 #&gt; │ {&quot;versicolor&quot;,50} │
 #&gt; └───────────────────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unnest</span><span class="p">()</span><span class="o">$</span><span class="nf">to_data_frame</span><span class="p">()</span><span class="w"> </span><span class="c1"># recommended to unnest structs before converting to R</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;      Species count
-#&gt; 1     setosa    50
-#&gt; 2  virginica    50
+#&gt; 1  virginica    50
+#&gt; 2     setosa    50
 #&gt; 3 versicolor    50
 </code></pre></div>
 

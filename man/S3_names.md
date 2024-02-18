@@ -13,6 +13,12 @@ names(x)
 
 # S3 method for class 'RPolarsLazyFrame'
 names(x)
+
+# S3 method for class 'RPolarsLazyGroupBy'
+names(x)
+
+# S3 method for class 'RPolarsGroupBy'
+names(x)
 </code></pre>
 
 ## Arguments

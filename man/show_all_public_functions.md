@@ -75,7 +75,6 @@ pl$show_all_public_functions()
     #>        [ element ; function ]
     #>        [ enable_string_cache ; function ]
     #>        [ expr_to_r ; function ]
-    #>        [ extra_auto_completion ; function ]
     #>        [ Field ; function ]
     #>        [ first ; function ]
     #>        [ Float32 ; RPolarsDataType ]

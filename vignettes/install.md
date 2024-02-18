@@ -129,6 +129,8 @@ polars_info()
 #> nightly                    TRUE
 #> sql                        TRUE
 #> rpolars_debug_print       FALSE
+#> 
+#> Code completion: deactivated
 ```
 
 At this time, the following environment variables can be used to change
