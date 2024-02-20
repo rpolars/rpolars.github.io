@@ -35,6 +35,13 @@ any function prefixed <code>Series\_</code>.
 ## Active bindings
 
 <h4>
+dtype
+</h4>
+
+<code style="white-space: pre;">$dtype</code> returns the data type of
+the Series.
+
+<h4>
 flags
 </h4>
 
@@ -64,6 +71,49 @@ order.
 
 </li>
 </ul>
+<h4>
+name
+</h4>
+
+<code style="white-space: pre;">$name</code> returns the name of the
+Series.
+
+<h4>
+shape
+</h4>
+
+<code style="white-space: pre;">$shape</code> returns a numeric vector
+of length two with the number of length of the Series and width of the
+Series (always 1).
+
+## Sub-namespaces
+
+Some functions are stored under active bindings, so it works like a
+sub-namespaces.
+
+<h4>
+expr
+</h4>
+
+<code style="white-space: pre;">$expr</code> works as a workaround for
+applying arbitrary Expr methods to the Series class object, which means
+that this is a shortcut works like
+<code style="white-space: pre;">pl$select(s)$select(pl$col(s$name)$\<Expr
+method\>)$to_series(0)</code>. This subnamespace is experimental.
+
+<h4>
+list
+</h4>
+
+<code style="white-space: pre;">$list</code> calls functions in
+<code style="white-space: pre;">\<Expr\>$list</code>.
+
+<h4>
+str
+</h4>
+
+<code style="white-space: pre;">$str</code> calls functions in
+<code style="white-space: pre;">\<Expr\>$str</code>.
 
 ## Examples
 
@@ -165,7 +215,7 @@ ls(.pr$Series)
 # make an object
 s = pl$Series(c(1:3, 1L))
 
-# use a public method/property
+# call an active binding
 s$shape
 ```
 
@@ -202,3 +252,38 @@ identical(s_copy$to_r(), s$to_r()) # s_copy was modified when s was modified
 ```
 
     #> [1] TRUE
+
+``` r
+# call functions via sub-namespaces
+pl$Series(c(1:3))$expr$add(1)
+```
+
+    #> polars Series: shape: (3,)
+    #> Series: '' [f64]
+    #> [
+    #>  2.0
+    #>  3.0
+    #>  4.0
+    #> ]
+
+``` r
+pl$Series(list(3:1, 1:2, NULL))$list$first()
+```
+
+    #> polars Series: shape: (3,)
+    #> Series: '' [i32]
+    #> [
+    #>  3
+    #>  1
+    #>  null
+    #> ]
+
+``` r
+pl$Series(c(1, NA, 2))$str$concat("-")
+```
+
+    #> polars Series: shape: (1,)
+    #> Series: '' [str]
+    #> [
+    #>  "1.0-2.0"
+    #> ]

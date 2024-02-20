@@ -2,7 +2,7 @@
 
 # Aggregate over a GroupBy
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/group_by.R#L107)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/group_by.R#L109)
 
 ## Description
 
@@ -39,9 +39,7 @@ library(polars)
 pl$DataFrame(
   foo = c("one", "two", "two", "one", "two"),
   bar = c(5, 3, 2, 4, 1)
-)$
-  group_by("foo")$
-  agg(
+)$group_by("foo")$agg(
   pl$col("bar")$sum()$name$suffix("_sum"),
   pl$col("bar")$mean()$alias("bar_tail_sum")
 )

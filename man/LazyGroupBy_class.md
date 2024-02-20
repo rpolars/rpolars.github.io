@@ -4,13 +4,31 @@
 
 ## Description
 
-Operations on Polars grouped LazyFrame
+This class comes from <code>\<LazyFrame\>$group_by()</code>, etc.
 
-## Details
+## Active bindings
 
-The LazyGroupBy class in R, is just another interface on top of the
-LazyFrame (R wrapper class) in rust polars.
+<h4>
+columns
+</h4>
 
-## Value
+<code style="white-space: pre;">$columns</code> returns a character
+vector with the column names.
 
-not applicable
+## Examples
+
+``` r
+library(polars)
+
+as_polars_lf(mtcars)$group_by("cyl")$agg(
+  pl$col("mpg")$sum()
+)
+```
+
+    #> polars LazyFrame
+    #>  $describe_optimized_plan() : Show the optimized query plan.
+    #> 
+    #> Naive plan:
+    #> AGGREGATE
+    #>  [col("mpg").sum()] BY [col("cyl")] FROM
+    #>   DF ["mpg", "cyl", "disp", "hp"]; PROJECT */11 COLUMNS; SELECTION: "None"

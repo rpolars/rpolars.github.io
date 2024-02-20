@@ -2,7 +2,7 @@
 
 # Create rolling groups based on a date/time or integer column
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1997)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1964)
 
 ## Description
 
@@ -225,7 +225,7 @@ defined by:
 
 ## Value
 
-A GroupBy object
+A RollingGroupBy object
 
 ## Examples
 

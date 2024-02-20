@@ -64,6 +64,7 @@ nav:
         - element: man/pl_element.md
         - enable_string_cache: man/pl_enable_string_cache.md
         - expr_to_r: man/pl_expr_to_r.md
+        - Field: man/pl_Field.md
         - first: man/pl_first.md
         - fold: man/pl_fold.md
         - from_epoch: man/pl_from_epoch.md
@@ -115,14 +116,11 @@ nav:
         - compare: man/Series_compare.md
         - cumsum: man/Series_cumsum.md
         - div: man/Series_div.md
-        - dtype: man/Series_dtype.md
         - equals: man/Series_equals.md
-        - expr: man/Series_expr.md
         - floor: man/Series_floor.md
         - is_numeric: man/Series_is_numeric.md
         - is_sorted: man/Series_is_sorted.md
         - len: man/Series_len.md
-        - list: man/Series_list.md
         - map_elements: man/Series_map_elements.md
         - max: man/Series_max.md
         - mean: man/Series_mean.md
@@ -130,13 +128,11 @@ nav:
         - min: man/Series_min.md
         - mul: man/Series_mul.md
         - n_unique: man/Series_n_unique.md
-        - name: man/Series_name.md
         - print: man/Series_print.md
         - rem: man/Series_rem.md
         - rename: man/Series_rename.md
         - rep: man/Series_rep.md
         - set_sorted: man/Series_set_sorted.md
-        - shape: man/Series_shape.md
         - sort: man/Series_sort.md
         - std: man/Series_std.md
         - sub: man/Series_sub.md
@@ -149,13 +145,11 @@ nav:
       DataFrame:
         - class: man/DataFrame_class.md
         - clone: man/DataFrame_clone.md
-        - columns: man/DataFrame_columns.md
         - describe: man/DataFrame_describe.md
         - drop_in_place: man/DataFrame_drop_in_place.md
         - drop_nulls: man/DataFrame_drop_nulls.md
         - drop: man/DataFrame_drop.md
         - dtype_strings: man/DataFrame_dtype_strings.md
-        - dtypes: man/DataFrame_dtypes.md
         - equals: man/DataFrame_equals.md
         - estimated_size: man/DataFrame_estimated_size.md
         - explode: man/DataFrame_explode.md
@@ -169,7 +163,6 @@ nav:
         - group_by_dynamic: man/DataFrame_group_by_dynamic.md
         - group_by: man/DataFrame_group_by.md
         - head: man/DataFrame_head.md
-        - height: man/DataFrame_height.md
         - join_asof: man/DataFrame_join_asof.md
         - join: man/DataFrame_join.md
         - last: man/DataFrame_last.md
@@ -190,7 +183,6 @@ nav:
         - rolling: man/DataFrame_rolling.md
         - sample: man/DataFrame_sample.md
         - select: man/DataFrame_select.md
-        - shape: man/DataFrame_shape.md
         - shift_and_fill: man/DataFrame_shift_and_fill.md
         - shift: man/DataFrame_shift.md
         - slice: man/DataFrame_slice.md
@@ -206,7 +198,6 @@ nav:
         - unique: man/DataFrame_unique.md
         - unnest: man/DataFrame_unnest.md
         - var: man/DataFrame_var.md
-        - width: man/DataFrame_width.md
         - with_columns: man/DataFrame_with_columns.md
         - with_row_index: man/DataFrame_with_row_index.md
       LazyFrame:
@@ -214,11 +205,9 @@ nav:
         - clone: man/LazyFrame_clone.md
         - collect_in_background: man/LazyFrame_collect_in_background.md
         - collect: man/LazyFrame_collect.md
-        - columns: man/LazyFrame_columns.md
         - describe_plan: man/LazyFrame_describe_plan.md
         - drop_nulls: man/LazyFrame_drop_nulls.md
         - drop: man/LazyFrame_drop.md
-        - dtypes: man/LazyFrame_dtypes.md
         - explode: man/LazyFrame_explode.md
         - fetch: man/LazyFrame_fetch.md
         - fill_nan: man/LazyFrame_fill_nan.md
@@ -256,14 +245,12 @@ nav:
         - unique: man/LazyFrame_unique.md
         - unnest: man/LazyFrame_unnest.md
         - var: man/LazyFrame_var.md
-        - width: man/LazyFrame_width.md
         - with_columns: man/LazyFrame_with_columns.md
         - with_context: man/LazyFrame_with_context.md
         - with_row_index: man/LazyFrame_with_row_index.md
       GroupBy:
         - agg: man/GroupBy_agg.md
         - class: man/GroupBy_class.md
-        - columns: man/GroupBy_columns.md
         - first: man/GroupBy_first.md
         - last: man/GroupBy_last.md
         - max: man/GroupBy_max.md
@@ -281,7 +268,6 @@ nav:
       LazyGroupBy:
         - agg: man/LazyGroupBy_agg.md
         - class: man/LazyGroupBy_class.md
-        - columns: man/LazyGroupBy_columns.md
         - head: man/LazyGroupBy_head.md
         - print: man/LazyGroupBy_print.md
         - tail: man/LazyGroupBy_tail.md
@@ -310,10 +296,6 @@ nav:
         - write_json: man/IO_write_json.md
         - write_ndjson: man/IO_write_ndjson.md
         - write_parquet: man/IO_write_parquet.md
-      RField:
-        - class: man/RField_class.md
-        - datatype: man/RField_datatype.md
-        - name: man/RField_name.md
       RThreadHandle:
         - class: man/RThreadHandle_class.md
         - is_finished: man/RThreadHandle_is_finished.md
@@ -686,8 +668,6 @@ nav:
         - polars_envvars: man/polars_envvars.md
         - polars_info: man/polars_info.md
         - polars_options: man/polars_options.md
-        - SeriesStr_to_lowercase: man/SeriesStr_to_lowercase.md
-        - SeriesStr_to_uppercase: man/SeriesStr_to_uppercase.md
         - show_all_public_functions: man/show_all_public_functions.md
         - show_all_public_methods: man/show_all_public_methods.md
   - About: about.md

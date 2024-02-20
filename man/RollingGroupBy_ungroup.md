@@ -2,7 +2,7 @@
 
 # Ungroup a RollingGroupBy object
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/group_by_rolling.R#L124)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/group_by_rolling.R#L121)
 
 ## Description
 

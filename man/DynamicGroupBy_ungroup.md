@@ -2,7 +2,7 @@
 
 # Ungroup a DynamicGroupBy object
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/group_by_dynamic.R#L130)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/group_by_dynamic.R#L126)
 
 ## Description
 

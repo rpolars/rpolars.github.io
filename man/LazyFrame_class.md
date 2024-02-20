@@ -36,9 +36,35 @@ such predicate pushdown and projection pushdown. However polars can
 interact and optimize queries with both SQL DBs and other data sources
 such parquet files simultaneously.
 
-## Value
+## Active bindings
 
-not applicable
+<h4>
+columns
+</h4>
+
+<code style="white-space: pre;">$columns</code> returns a character
+vector with the column names.
+
+<h4>
+dtypes
+</h4>
+
+<code style="white-space: pre;">$dtypes</code> returns a unnamed list
+with the data type of each column.
+
+<h4>
+schema
+</h4>
+
+<code style="white-space: pre;">$schema</code> returns a named list with
+the data type of each column.
+
+<h4>
+width
+</h4>
+
+<code style="white-space: pre;">$width</code> returns the number of
+columns in the LazyFrame.
 
 ## Examples
 
@@ -125,7 +151,7 @@ write.csv(iris, temp_filepath, row.names = FALSE)
 Rdf = read.csv(temp_filepath)
 
 # eager in-mem polars DataFrame
-Pdf = pl$DataFrame(Rdf)
+Pdf = as_polars_df(Rdf)
 
 # lazy frame starting from in-mem DataFrame
 Ldf_okay = Pdf$lazy()
@@ -154,7 +180,7 @@ Ldf_best$describe_plan()
 
     #> FILTER [(col("Species")) == (String(setosa))] FROM
     #> 
-    #>   Csv SCAN /tmp/RtmpDaS2qv/file7398445e7921
+    #>   Csv SCAN /tmp/Rtmp5NETSp/file7552bc6a694
     #>   PROJECT */5 COLUMNS
 
 ``` r
@@ -171,7 +197,7 @@ Ldf_best$describe_optimized_plan()
 ```
 
     #> 
-    #>   Csv SCAN /tmp/RtmpDaS2qv/file7398445e7921
+    #>   Csv SCAN /tmp/Rtmp5NETSp/file7552bc6a694
     #>   PROJECT */5 COLUMNS
     #>   SELECTION: [(col("Species")) == (String(setosa))]
 

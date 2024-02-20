@@ -2,7 +2,7 @@
 
 # Where to inject element(s) to maintain sorting
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1497)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1558)
 
 ## Description
 

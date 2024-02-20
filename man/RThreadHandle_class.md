@@ -14,9 +14,11 @@ query detached from the R session and return an
 <code>RPolarsRThreadHandle</code>-class has the methods
 <code>is_finished()</code> and <code>join()</code>.
 
-NOTICE: The background thread cannot use the main R session, but can
-access the pool of extra R sessions to process R code embedded in polars
-query via <code>$map_batches(…, in_background = TRUE)</code> or
+## NOTICE
+
+The background thread cannot use the main R session, but can access the
+pool of extra R sessions to process R code embedded in polars query via
+<code>$map_batches(…, in_background = TRUE)</code> or
 <code style="white-space: pre;">$map_elements(background=TRUE)</code>.
 Use <code>options(polars.rpool_cap = XX)</code> to limit number of
 parallel R sessions. Starting polars
@@ -25,14 +27,25 @@ parallel R sessions. Starting polars
 as the main R session is not available to process the R part of the
 polars query. Native polars query does not need any R session.
 
-## Value
-
-see methods: <code>is_finished()</code> <code>join()</code>
-
 ## See Also
 
+<ul>
+<li>
+
 <code>\<LazyFrame\>$collect_in_background()</code>
-<code>\<Expr\>$map_batches()</code> <code>\<Expr\>$map_elements()</code>
+
+</li>
+<li>
+
+<code>\<Expr\>$map_batches()</code>
+
+</li>
+<li>
+
+<code>\<Expr\>$map_elements()</code>
+
+</li>
+</ul>
 
 ## Examples
 

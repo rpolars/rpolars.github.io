@@ -41,6 +41,20 @@ prefixed <code>DataFrame\_</code>.
 ## Active bindings
 
 <h4>
+columns
+</h4>
+
+<code style="white-space: pre;">$columns</code> returns a character
+vector with the column names.
+
+<h4>
+dtypes
+</h4>
+
+<code style="white-space: pre;">$dtypes</code> returns a unnamed list
+with the data type of each column.
+
+<h4>
 flags
 </h4>
 
@@ -70,6 +84,33 @@ order.
 
 </li>
 </ul>
+<h4>
+height
+</h4>
+
+<code style="white-space: pre;">$height</code> returns the number of
+rows in the DataFrame.
+
+<h4>
+schema
+</h4>
+
+<code style="white-space: pre;">$schema</code> returns a named list with
+the data type of each column.
+
+<h4>
+shape
+</h4>
+
+<code style="white-space: pre;">$shape</code> returns a numeric vector
+of length two with the number of rows and the number of columns.
+
+<h4>
+width
+</h4>
+
+<code style="white-space: pre;">$width</code> returns the number of
+columns in the DataFrame.
 
 ## Examples
 
@@ -129,23 +170,23 @@ ls(.pr$DataFrame)
 
 ``` r
 # make an object
-df = pl$DataFrame(iris)
+df = as_polars_df(iris)
 
-# use a public method/property
+# call an active binding
 df$shape
 ```
 
     #> [1] 150   5
 
 ``` r
-df2 = df
-
 # use a private method, which has mutability
 result = .pr$DataFrame$set_column_from_robj(df, 150:1, "some_ints")
 
 # Column exists in both dataframes-objects now, as they are just pointers to
 # the same object
 # There are no public methods with mutability.
+df2 = df
+
 df$columns
 ```
 

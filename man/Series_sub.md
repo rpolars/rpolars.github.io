@@ -2,7 +2,7 @@
 
 # sub Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L163)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L261)
 
 ## Description
 

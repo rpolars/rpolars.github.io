@@ -5,69 +5,107 @@
 ## Description
 
 Expressions are all the functions and methods that are applicable to a
-Polars DataFrame or LazyFrame. They can be split into the following
-categories (following the
-<a href="https://pola-rs.github.io/polars/py-polars/html/reference/expressions/">Py-Polars
-classification</a>):
+Polars DataFrame or LazyFrame object. Some methods are under the
+sub-namespaces.
 
-<ul>
-<li>
+## Sub-namespaces
 
-Aggregate
+<h4>
+arr
+</h4>
 
-</li>
-<li>
+<code style="white-space: pre;">$arr</code> stores all array related
+methods.
 
-Binary
+<h4>
+bin
+</h4>
 
-</li>
-<li>
+<code style="white-space: pre;">$bin</code> stores all binary related
+methods.
 
-Categorical
+<h4>
+cat
+</h4>
 
-</li>
-<li>
+<code style="white-space: pre;">$cat</code> stores all categorical
+related methods.
 
-Computation
+<h4>
+list
+</h4>
 
-</li>
-<li>
+<code style="white-space: pre;">$list</code> stores all list related
+methods.
 
-Functions
+<h4>
+meta
+</h4>
 
-</li>
-<li>
+<code style="white-space: pre;">$meta</code> stores all methods for
+working with the meta data.
 
-List
+<h4>
+name
+</h4>
 
-</li>
-<li>
+<code style="white-space: pre;">$name</code> stores all name related
+methods.
 
-Meta
+<h4>
+str
+</h4>
 
-</li>
-<li>
+<code style="white-space: pre;">$str</code> stores all string related
+methods.
 
-Name
+<h4>
+struct
+</h4>
 
-</li>
-<li>
+<code style="white-space: pre;">$struct</code> stores all struct related
+methods.
 
-String
+<h4>
+dt
+</h4>
 
-</li>
-<li>
+<code style="white-space: pre;">$dt</code> stores all temporal related
+methods.
 
-Struct
+## Examples
 
-</li>
-<li>
+``` r
+library(polars)
 
-Temporal
+df = pl$DataFrame(
+  a = 1:2,
+  b = list(1:2, 3:4),
+  schema = list(a = pl$Int64, b = pl$Array(pl$Int64, 2))
+)
 
-</li>
-</ul>
+df$select(pl$col("a")$first())
+```
 
-## Value
+    #> shape: (1, 1)
+    #> ┌─────┐
+    #> │ a   │
+    #> │ --- │
+    #> │ i64 │
+    #> ╞═════╡
+    #> │ 1   │
+    #> └─────┘
 
-not applicable
+``` r
+df$select(pl$col("b")$arr$sum())
+```
+
+    #> shape: (2, 1)
+    #> ┌─────┐
+    #> │ b   │
+    #> │ --- │
+    #> │ i64 │
+    #> ╞═════╡
+    #> │ 3   │
+    #> │ 7   │
+    #> └─────┘
