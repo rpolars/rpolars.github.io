@@ -88,8 +88,33 @@ Series (always 1).
 
 ## Sub-namespaces
 
-Some functions are stored under active bindings, so it works like a
-sub-namespaces.
+<h4>
+arr
+</h4>
+
+<code style="white-space: pre;">$arr</code> stores all array related
+methods.
+
+<h4>
+bin
+</h4>
+
+<code style="white-space: pre;">$bin</code> stores all binary related
+methods.
+
+<h4>
+cat
+</h4>
+
+<code style="white-space: pre;">$cat</code> stores all categorical
+related methods.
+
+<h4>
+dt
+</h4>
+
+<code style="white-space: pre;">$dt</code> stores all temporal related
+methods.
 
 <h4>
 expr
@@ -105,21 +130,109 @@ method\>)$to_series(0)</code>. This subnamespace is experimental.
 list
 </h4>
 
-<code style="white-space: pre;">$list</code> calls functions in
-<code style="white-space: pre;">\<Expr\>$list</code>.
+<code style="white-space: pre;">$list</code> stores all list related
+methods.
 
 <h4>
 str
 </h4>
 
-<code style="white-space: pre;">$str</code> calls functions in
-<code style="white-space: pre;">\<Expr\>$str</code>.
+<code style="white-space: pre;">$str</code> stores all string related
+methods.
+
+<h4>
+struct
+</h4>
+
+<code style="white-space: pre;">$struct</code> stores all struct related
+methods.
 
 ## Examples
 
 ``` r
 library(polars)
 
+# make a Series
+s = pl$Series(c(1:3, 1L))
+
+# call an active binding
+s$shape
+```
+
+    #> [1] 4 1
+
+``` r
+# show flags
+s$sort()$flags
+```
+
+    #> $SORTED_ASC
+    #> [1] TRUE
+    #> 
+    #> $SORTED_DESC
+    #> [1] FALSE
+
+``` r
+# use subnamespaces
+pl$Series(list(3:1, 1:2, NULL))$list$first()
+```
+
+    #> polars Series: shape: (3,)
+    #> Series: '' [i32]
+    #> [
+    #>  3
+    #>  1
+    #>  null
+    #> ]
+
+``` r
+pl$Series(c(1, NA, 2))$str$concat("-")
+```
+
+    #> polars Series: shape: (1,)
+    #> Series: '' [str]
+    #> [
+    #>  "1.0-2.0"
+    #> ]
+
+``` r
+s = pl$date_range(
+  as.Date("2024-02-18"), as.Date("2024-02-24"),
+  interval = "1d"
+)$to_series()
+s
+```
+
+    #> polars Series: shape: (7,)
+    #> Series: '' [date]
+    #> [
+    #>  2024-02-18
+    #>  2024-02-19
+    #>  2024-02-20
+    #>  2024-02-21
+    #>  2024-02-22
+    #>  2024-02-23
+    #>  2024-02-24
+    #> ]
+
+``` r
+s$dt$day()
+```
+
+    #> polars Series: shape: (7,)
+    #> Series: '' [i8]
+    #> [
+    #>  18
+    #>  19
+    #>  20
+    #>  21
+    #>  22
+    #>  23
+    #>  24
+    #> ]
+
+``` r
+# show all available methods for Series
 pl$show_all_public_methods("RPolarsSeries")
 ```
 
@@ -136,12 +249,16 @@ pl$show_all_public_methods("RPolarsSeries")
     #>           [ append ; function ]
     #>           [ arg_max ; function ]
     #>           [ arg_min ; function ]
+    #>           [ arr ; property function ]
+    #>           [ bin ; property function ]
+    #>           [ cat ; property function ]
     #>           [ ceil ; function ]
     #>           [ chunk_lengths ; function ]
     #>           [ clone ; function ]
     #>           [ compare ; function ]
     #>           [ cum_sum ; function ]
     #>           [ div ; function ]
+    #>           [ dt ; property function ]
     #>           [ dtype ; property function ]
     #>           [ equals ; function ]
     #>           [ expr ; property function ]
@@ -168,6 +285,7 @@ pl$show_all_public_methods("RPolarsSeries")
     #>           [ sort ; function ]
     #>           [ std ; function ]
     #>           [ str ; property function ]
+    #>           [ struct ; property function ]
     #>           [ sub ; function ]
     #>           [ sum ; function ]
     #>           [ to_frame ; function ]
@@ -178,112 +296,3 @@ pl$show_all_public_methods("RPolarsSeries")
     #>           [ to_vector ; function ]
     #>           [ value_counts ; function ]
     #>           [ var ; function ]
-
-``` r
-# see all private methods (not intended for regular use)
-ls(.pr$Series)
-```
-
-    #>  [1] "abs"                         "add"                        
-    #>  [3] "alias"                       "all"                        
-    #>  [5] "any"                         "append_mut"                 
-    #>  [7] "arg_max"                     "arg_min"                    
-    #>  [9] "ceil"                        "chunk_lengths"              
-    #> [11] "clone"                       "compare"                    
-    #> [13] "cum_sum"                     "div"                        
-    #> [15] "dtype"                       "equals"                     
-    #> [17] "fast_explode_flag"           "floor"                      
-    #> [19] "from_arrow_array_robj"       "from_arrow_array_stream_str"
-    #> [21] "get_fmt"                     "is_sorted"                  
-    #> [23] "is_sorted_flag"              "is_sorted_reverse_flag"     
-    #> [25] "len"                         "map_elements"               
-    #> [27] "max"                         "mean"                       
-    #> [29] "median"                      "min"                        
-    #> [31] "mul"                         "n_unique"                   
-    #> [33] "name"                        "new"                        
-    #> [35] "panic"                       "print"                      
-    #> [37] "rem"                         "rename_mut"                 
-    #> [39] "rep"                         "set_sorted_mut"             
-    #> [41] "shape"                       "sleep"                      
-    #> [43] "sort_mut"                    "std"                        
-    #> [45] "sub"                         "sum"                        
-    #> [47] "to_fmt_char"                 "to_frame"                   
-    #> [49] "to_r"                        "value_counts"               
-    #> [51] "var"
-
-``` r
-# make an object
-s = pl$Series(c(1:3, 1L))
-
-# call an active binding
-s$shape
-```
-
-    #> [1] 4 1
-
-``` r
-# show flags
-s$sort()$flags
-```
-
-    #> $SORTED_ASC
-    #> [1] TRUE
-    #> 
-    #> $SORTED_DESC
-    #> [1] FALSE
-
-``` r
-# use a private method (mutable append not allowed in public api)
-s_copy = s
-.pr$Series$append_mut(s, pl$Series(5:1))
-```
-
-    #> $ok
-    #> NULL
-    #> 
-    #> $err
-    #> NULL
-    #> 
-    #> attr(,"class")
-    #> [1] "extendr_result"
-
-``` r
-identical(s_copy$to_r(), s$to_r()) # s_copy was modified when s was modified
-```
-
-    #> [1] TRUE
-
-``` r
-# call functions via sub-namespaces
-pl$Series(c(1:3))$expr$add(1)
-```
-
-    #> polars Series: shape: (3,)
-    #> Series: '' [f64]
-    #> [
-    #>  2.0
-    #>  3.0
-    #>  4.0
-    #> ]
-
-``` r
-pl$Series(list(3:1, 1:2, NULL))$list$first()
-```
-
-    #> polars Series: shape: (3,)
-    #> Series: '' [i32]
-    #> [
-    #>  3
-    #>  1
-    #>  null
-    #> ]
-
-``` r
-pl$Series(c(1, NA, 2))$str$concat("-")
-```
-
-    #> polars Series: shape: (1,)
-    #> Series: '' [str]
-    #> [
-    #>  "1.0-2.0"
-    #> ]

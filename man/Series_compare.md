@@ -2,7 +2,7 @@
 
 # Compare Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L339)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L364)
 
 ## Description
 

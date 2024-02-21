@@ -2,7 +2,7 @@
 
 # Add two expressions
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L226)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L228)
 
 ## Description
 

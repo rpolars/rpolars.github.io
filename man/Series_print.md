@@ -2,7 +2,7 @@
 
 # Print Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L221)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L246)
 
 ## Description
 

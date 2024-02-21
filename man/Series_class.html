@@ -14600,8 +14600,30 @@ shape
 of length two with the number of length of the Series and width of the
 Series (always 1).</p>
 <h2 id="sub-namespaces">Sub-namespaces</h2>
-<p>Some functions are stored under active bindings, so it works like a
-sub-namespaces.</p>
+<h4>
+arr
+</h4>
+
+<p><code style="white-space: pre;">$arr</code> stores all array related
+methods.</p>
+<h4>
+bin
+</h4>
+
+<p><code style="white-space: pre;">$bin</code> stores all binary related
+methods.</p>
+<h4>
+cat
+</h4>
+
+<p><code style="white-space: pre;">$cat</code> stores all categorical
+related methods.</p>
+<h4>
+dt
+</h4>
+
+<p><code style="white-space: pre;">$dt</code> stores all temporal related
+methods.</p>
 <h4>
 expr
 </h4>
@@ -14615,18 +14637,93 @@ method&gt;)$to_series(0)</code>. This subnamespace is experimental.</p>
 list
 </h4>
 
-<p><code style="white-space: pre;">$list</code> calls functions in
-<code style="white-space: pre;">\&lt;Expr&gt;$list</code>.</p>
+<p><code style="white-space: pre;">$list</code> stores all list related
+methods.</p>
 <h4>
 str
 </h4>
 
-<p><code style="white-space: pre;">$str</code> calls functions in
-<code style="white-space: pre;">\&lt;Expr&gt;$str</code>.</p>
+<p><code style="white-space: pre;">$str</code> stores all string related
+methods.</p>
+<h4>
+struct
+</h4>
+
+<p><code style="white-space: pre;">$struct</code> stores all struct related
+methods.</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">show_all_public_methods</span><span class="p">(</span><span class="s">&quot;RPolarsSeries&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># make a Series</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">1L</span><span class="p">))</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># call an active binding</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">s</span><span class="o">$</span><span class="n">shape</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; [1] 4 1
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># show flags</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">s</span><span class="o">$</span><span class="nf">sort</span><span class="p">()</span><span class="o">$</span><span class="n">flags</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; $SORTED_ASC
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $SORTED_DESC
+#&gt; [1] FALSE
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># use subnamespaces</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="m">3</span><span class="o">:</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="kc">NULL</span><span class="p">))</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">first</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (3,)
+#&gt; Series: &#39;&#39; [i32]
+#&gt; [
+#&gt;  3
+#&gt;  1
+#&gt;  null
+#&gt; ]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">))</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">concat</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (1,)
+#&gt; Series: &#39;&#39; [str]
+#&gt; [
+#&gt;  &quot;1.0-2.0&quot;
+#&gt; ]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">date_range</span><span class="p">(</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nf">as.Date</span><span class="p">(</span><span class="s">&quot;2024-02-18&quot;</span><span class="p">),</span><span class="w"> </span><span class="nf">as.Date</span><span class="p">(</span><span class="s">&quot;2024-02-24&quot;</span><span class="p">),</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="n">interval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1d&quot;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">)</span><span class="o">$</span><span class="nf">to_series</span><span class="p">()</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">s</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (7,)
+#&gt; Series: &#39;&#39; [date]
+#&gt; [
+#&gt;  2024-02-18
+#&gt;  2024-02-19
+#&gt;  2024-02-20
+#&gt;  2024-02-21
+#&gt;  2024-02-22
+#&gt;  2024-02-23
+#&gt;  2024-02-24
+#&gt; ]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">s</span><span class="o">$</span><span class="n">dt</span><span class="o">$</span><span class="nf">day</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (7,)
+#&gt; Series: &#39;&#39; [i8]
+#&gt; [
+#&gt;  18
+#&gt;  19
+#&gt;  20
+#&gt;  21
+#&gt;  22
+#&gt;  23
+#&gt;  24
+#&gt; ]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># show all available methods for Series</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">pl</span><span class="o">$</span><span class="nf">show_all_public_methods</span><span class="p">(</span><span class="s">&quot;RPolarsSeries&quot;</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; 
 #&gt; 
@@ -14641,12 +14738,16 @@ str
 #&gt;           [ append ; function ]
 #&gt;           [ arg_max ; function ]
 #&gt;           [ arg_min ; function ]
+#&gt;           [ arr ; property function ]
+#&gt;           [ bin ; property function ]
+#&gt;           [ cat ; property function ]
 #&gt;           [ ceil ; function ]
 #&gt;           [ chunk_lengths ; function ]
 #&gt;           [ clone ; function ]
 #&gt;           [ compare ; function ]
 #&gt;           [ cum_sum ; function ]
 #&gt;           [ div ; function ]
+#&gt;           [ dt ; property function ]
 #&gt;           [ dtype ; property function ]
 #&gt;           [ equals ; function ]
 #&gt;           [ expr ; property function ]
@@ -14673,6 +14774,7 @@ str
 #&gt;           [ sort ; function ]
 #&gt;           [ std ; function ]
 #&gt;           [ str ; property function ]
+#&gt;           [ struct ; property function ]
 #&gt;           [ sub ; function ]
 #&gt;           [ sum ; function ]
 #&gt;           [ to_frame ; function ]
@@ -14683,99 +14785,6 @@ str
 #&gt;           [ to_vector ; function ]
 #&gt;           [ value_counts ; function ]
 #&gt;           [ var ; function ]
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># see all private methods (not intended for regular use)</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nf">ls</span><span class="p">(</span><span class="n">.pr</span><span class="o">$</span><span class="n">Series</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt;  [1] &quot;abs&quot;                         &quot;add&quot;                        
-#&gt;  [3] &quot;alias&quot;                       &quot;all&quot;                        
-#&gt;  [5] &quot;any&quot;                         &quot;append_mut&quot;                 
-#&gt;  [7] &quot;arg_max&quot;                     &quot;arg_min&quot;                    
-#&gt;  [9] &quot;ceil&quot;                        &quot;chunk_lengths&quot;              
-#&gt; [11] &quot;clone&quot;                       &quot;compare&quot;                    
-#&gt; [13] &quot;cum_sum&quot;                     &quot;div&quot;                        
-#&gt; [15] &quot;dtype&quot;                       &quot;equals&quot;                     
-#&gt; [17] &quot;fast_explode_flag&quot;           &quot;floor&quot;                      
-#&gt; [19] &quot;from_arrow_array_robj&quot;       &quot;from_arrow_array_stream_str&quot;
-#&gt; [21] &quot;get_fmt&quot;                     &quot;is_sorted&quot;                  
-#&gt; [23] &quot;is_sorted_flag&quot;              &quot;is_sorted_reverse_flag&quot;     
-#&gt; [25] &quot;len&quot;                         &quot;map_elements&quot;               
-#&gt; [27] &quot;max&quot;                         &quot;mean&quot;                       
-#&gt; [29] &quot;median&quot;                      &quot;min&quot;                        
-#&gt; [31] &quot;mul&quot;                         &quot;n_unique&quot;                   
-#&gt; [33] &quot;name&quot;                        &quot;new&quot;                        
-#&gt; [35] &quot;panic&quot;                       &quot;print&quot;                      
-#&gt; [37] &quot;rem&quot;                         &quot;rename_mut&quot;                 
-#&gt; [39] &quot;rep&quot;                         &quot;set_sorted_mut&quot;             
-#&gt; [41] &quot;shape&quot;                       &quot;sleep&quot;                      
-#&gt; [43] &quot;sort_mut&quot;                    &quot;std&quot;                        
-#&gt; [45] &quot;sub&quot;                         &quot;sum&quot;                        
-#&gt; [47] &quot;to_fmt_char&quot;                 &quot;to_frame&quot;                   
-#&gt; [49] &quot;to_r&quot;                        &quot;value_counts&quot;               
-#&gt; [51] &quot;var&quot;
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># make an object</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">1L</span><span class="p">))</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># call an active binding</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">s</span><span class="o">$</span><span class="n">shape</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] 4 1
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># show flags</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">s</span><span class="o">$</span><span class="nf">sort</span><span class="p">()</span><span class="o">$</span><span class="n">flags</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; $SORTED_ASC
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $SORTED_DESC
-#&gt; [1] FALSE
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># use a private method (mutable append not allowed in public api)</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">s_copy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">.pr</span><span class="o">$</span><span class="n">Series</span><span class="o">$</span><span class="nf">append_mut</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">5</span><span class="o">:</span><span class="m">1</span><span class="p">))</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; $ok
-#&gt; NULL
-#&gt; 
-#&gt; $err
-#&gt; NULL
-#&gt; 
-#&gt; attr(,&quot;class&quot;)
-#&gt; [1] &quot;extendr_result&quot;
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nf">identical</span><span class="p">(</span><span class="n">s_copy</span><span class="o">$</span><span class="nf">to_r</span><span class="p">(),</span><span class="w"> </span><span class="n">s</span><span class="o">$</span><span class="nf">to_r</span><span class="p">())</span><span class="w"> </span><span class="c1"># s_copy was modified when s was modified</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] TRUE
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># call functions via sub-namespaces</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">))</span><span class="o">$</span><span class="n">expr</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (3,)
-#&gt; Series: &#39;&#39; [f64]
-#&gt; [
-#&gt;  2.0
-#&gt;  3.0
-#&gt;  4.0
-#&gt; ]
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="m">3</span><span class="o">:</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="kc">NULL</span><span class="p">))</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">first</span><span class="p">()</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (3,)
-#&gt; Series: &#39;&#39; [i32]
-#&gt; [
-#&gt;  3
-#&gt;  1
-#&gt;  null
-#&gt; ]
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">))</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">concat</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (1,)
-#&gt; Series: &#39;&#39; [str]
-#&gt; [
-#&gt;  &quot;1.0-2.0&quot;
-#&gt; ]
 </code></pre></div>
 
 

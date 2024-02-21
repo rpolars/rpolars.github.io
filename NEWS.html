@@ -16298,7 +16298,8 @@
 <li>New active bindings <code>$flags</code> for <code>DataFrame</code> to show the flags used internally
     for each column. The output of <code>$flags</code> for <code>Series</code> was also improved and now
     contains <code>FAST_EXPLODE</code> for <code>Series</code> of type <code>list</code> and <code>array</code> (<a href="https://github.com/pola-rs/r-polars/issues/809">#809</a>).</li>
-<li><code>$str</code> sub namespace is added to <code>Series</code> (<a href="https://github.com/pola-rs/r-polars/issues/819">#819</a>).</li>
+<li>All subnamespaces that can be used on <code>Expr</code> are now available for <code>Series</code> 
+    (<a href="https://github.com/pola-rs/r-polars/issues/819">#819</a>, <a href="https://github.com/pola-rs/r-polars/issues/828">#828</a>).</li>
 <li><code>as_polars_df()</code> for <code>data.frame</code> is more memory-efficient and new arguments
     <code>schema</code> and <code>schema_overrides</code> are added (<a href="https://github.com/pola-rs/r-polars/issues/817">#817</a>).</li>
 <li>Use <code>polars_code_completion_activate()</code> to enable code suggestions and

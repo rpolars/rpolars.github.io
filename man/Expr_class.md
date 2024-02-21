@@ -32,6 +32,13 @@ cat
 related methods.
 
 <h4>
+dt
+</h4>
+
+<code style="white-space: pre;">$dt</code> stores all temporal related
+methods.
+
+<h4>
 list
 </h4>
 
@@ -64,13 +71,6 @@ struct
 </h4>
 
 <code style="white-space: pre;">$struct</code> stores all struct related
-methods.
-
-<h4>
-dt
-</h4>
-
-<code style="white-space: pre;">$dt</code> stores all temporal related
 methods.
 
 ## Examples

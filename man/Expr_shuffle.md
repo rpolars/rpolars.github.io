@@ -2,7 +2,7 @@
 
 # Shuffle values
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2977)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2979)
 
 ## Description
 

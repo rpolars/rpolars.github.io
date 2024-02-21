@@ -2,7 +2,7 @@
 
 # Apply logical AND on a column
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L536)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L538)
 
 ## Description
 

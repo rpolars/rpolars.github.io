@@ -2,7 +2,7 @@
 
 # Exponentially-weighted moving average
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L3100)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L3102)
 
 ## Description
 
