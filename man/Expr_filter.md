@@ -2,7 +2,7 @@
 
 # Filter a single column.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2051)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/5765842071140bd7a822ebb4fd6b0ab652d73f0d/R/expr__expr.R#L2051)
 
 ## Description
 
@@ -68,6 +68,6 @@ df$group_by("group_col")$agg(
     #> │ ---       ┆ ---       ┆ ---       │
     #> │ str       ┆ list[f64] ┆ list[f64] │
     #> ╞═══════════╪═══════════╪═══════════╡
-    #> │ g1        ┆ [1.0]     ┆ [2.0]     │
     #> │ g2        ┆ []        ┆ [3.0]     │
+    #> │ g1        ┆ [1.0]     ┆ [2.0]     │
     #> └───────────┴───────────┴───────────┘

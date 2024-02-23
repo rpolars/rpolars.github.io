@@ -2,7 +2,7 @@
 
 # Collect and profile a lazy query.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1569)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/5765842071140bd7a822ebb4fd6b0ab652d73f0d/R/lazyframe__lazy.R#L1569)
 
 ## Description
 
@@ -219,8 +219,8 @@ pl$LazyFrame()$select(pl$lit(2) + 2)$profile()
     #> │ ---                 ┆ ---   ┆ --- │
     #> │ str                 ┆ u64   ┆ u64 │
     #> ╞═════════════════════╪═══════╪═════╡
-    #> │ optimization        ┆ 0     ┆ 15  │
-    #> │ projection(literal) ┆ 15    ┆ 77  │
+    #> │ optimization        ┆ 0     ┆ 12  │
+    #> │ projection(literal) ┆ 12    ┆ 69  │
     #> └─────────────────────┴───────┴─────┘
 
 ``` r
@@ -253,9 +253,9 @@ pl$LazyFrame(iris)$
     #> │ ---                ┆ ---   ┆ --- │
     #> │ str                ┆ u64   ┆ u64 │
     #> ╞════════════════════╪═══════╪═════╡
-    #> │ optimization       ┆ 0     ┆ 13  │
-    #> │ sort(Sepal.Length) ┆ 13    ┆ 309 │
-    #> │ group_by(Species)  ┆ 311   ┆ 604 │
+    #> │ optimization       ┆ 0     ┆ 12  │
+    #> │ sort(Sepal.Length) ┆ 12    ┆ 455 │
+    #> │ group_by(Species)  ┆ 458   ┆ 625 │
     #> └────────────────────┴───────┴─────┘
 
 ``` r
@@ -295,7 +295,7 @@ pl$LazyFrame(iris)$
     #> │ ---                ┆ ---   ┆ ---   │
     #> │ str                ┆ u64   ┆ u64   │
     #> ╞════════════════════╪═══════╪═══════╡
-    #> │ optimization       ┆ 0     ┆ 12    │
-    #> │ sort(Sepal.Length) ┆ 12    ┆ 983   │
-    #> │ group_by(Species)  ┆ 986   ┆ 68829 │
+    #> │ optimization       ┆ 0     ┆ 14    │
+    #> │ sort(Sepal.Length) ┆ 14    ┆ 433   │
+    #> │ group_by(Species)  ┆ 436   ┆ 64486 │
     #> └────────────────────┴───────┴───────┘

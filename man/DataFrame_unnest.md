@@ -2,7 +2,7 @@
 
 # Unnest the Struct columns of a DataFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1011)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/5765842071140bd7a822ebb4fd6b0ab652d73f0d/R/dataframe__frame.R#L1011)
 
 ## Description
 

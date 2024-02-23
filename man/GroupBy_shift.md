@@ -2,7 +2,7 @@
 
 # Shift
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/group_by.R#L281)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/5765842071140bd7a822ebb4fd6b0ab652d73f0d/R/group_by.R#L281)
 
 ## Description
 
@@ -44,13 +44,13 @@ pl$DataFrame(mtcars)$group_by("cyl")$shift(2)
     #> │ --- ┆ ---        ┆ ---        ┆ ---        ┆   ┆ ---        ┆ ---        ┆ ---       ┆ ---       │
     #> │ f64 ┆ list[f64]  ┆ list[f64]  ┆ list[f64]  ┆   ┆ list[f64]  ┆ list[f64]  ┆ list[f64] ┆ list[f64] │
     #> ╞═════╪════════════╪════════════╪════════════╪═══╪════════════╪════════════╪═══════════╪═══════════╡
+    #> │ 8.0 ┆ [null,     ┆ [null,     ┆ [null,     ┆ … ┆ [null,     ┆ [null,     ┆ [null,    ┆ [null,    │
+    #> │     ┆ null, …    ┆ null, …    ┆ null, …    ┆   ┆ null, …    ┆ null, …    ┆ null, …   ┆ null, …   │
+    #> │     ┆ 19.2]      ┆ 400.0]     ┆ 175.0]     ┆   ┆ 0.0]       ┆ 0.0]       ┆ 3.0]      ┆ 2.0]      │
     #> │ 4.0 ┆ [null,     ┆ [null,     ┆ [null,     ┆ … ┆ [null,     ┆ [null,     ┆ [null,    ┆ [null,    │
     #> │     ┆ null, …    ┆ null, …    ┆ null, …    ┆   ┆ null, …    ┆ null, …    ┆ null, …   ┆ null, …   │
     #> │     ┆ 26.0]      ┆ 120.3]     ┆ 91.0]      ┆   ┆ 0.0]       ┆ 1.0]       ┆ 5.0]      ┆ 2.0]      │
     #> │ 6.0 ┆ [null,     ┆ [null,     ┆ [null,     ┆ … ┆ [null,     ┆ [null,     ┆ [null,    ┆ [null,    │
     #> │     ┆ null, …    ┆ null, …    ┆ null, …    ┆   ┆ null, …    ┆ null, …    ┆ null, …   ┆ null, …   │
     #> │     ┆ 19.2]      ┆ 167.6]     ┆ 123.0]     ┆   ┆ 1.0]       ┆ 0.0]       ┆ 4.0]      ┆ 4.0]      │
-    #> │ 8.0 ┆ [null,     ┆ [null,     ┆ [null,     ┆ … ┆ [null,     ┆ [null,     ┆ [null,    ┆ [null,    │
-    #> │     ┆ null, …    ┆ null, …    ┆ null, …    ┆   ┆ null, …    ┆ null, …    ┆ null, …   ┆ null, …   │
-    #> │     ┆ 19.2]      ┆ 400.0]     ┆ 175.0]     ┆   ┆ 0.0]       ┆ 0.0]       ┆ 3.0]      ┆ 2.0]      │
     #> └─────┴────────────┴────────────┴────────────┴───┴────────────┴────────────┴───────────┴───────────┘
