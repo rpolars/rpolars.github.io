@@ -2,7 +2,7 @@
 
 # rem Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L350)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L372)
 
 ## Description
 

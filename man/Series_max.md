@@ -2,7 +2,7 @@
 
 # max
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L799)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L821)
 
 ## Description
 

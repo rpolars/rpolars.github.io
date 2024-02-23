@@ -2086,9 +2086,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sub-namespaces" class="md-nav__link">
+  <a href="#expression-methods" class="md-nav__link">
     <span class="md-ellipsis">
-      Sub-namespaces
+      Expression methods
     </span>
   </a>
   
@@ -14489,9 +14489,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sub-namespaces" class="md-nav__link">
+  <a href="#expression-methods" class="md-nav__link">
     <span class="md-ellipsis">
-      Sub-namespaces
+      Expression methods
     </span>
   </a>
   
@@ -14599,7 +14599,9 @@ shape
 <p><code style="white-space: pre;">$shape</code> returns a numeric vector
 of length two with the number of length of the Series and width of the
 Series (always 1).</p>
-<h2 id="sub-namespaces">Sub-namespaces</h2>
+<h2 id="expression-methods">Expression methods</h2>
+<p>Series stores most of all Expr methods.</p>
+<p>Some of these are stored in sub-namespaces.</p>
 <h4>
 arr
 </h4>
@@ -14624,15 +14626,6 @@ dt
 
 <p><code style="white-space: pre;">$dt</code> stores all temporal related
 methods.</p>
-<h4>
-expr
-</h4>
-
-<p><code style="white-space: pre;">$expr</code> works as a workaround for
-applying arbitrary Expr methods to the Series class object, which means
-that this is a shortcut works like
-<code style="white-space: pre;">pl$select(s)$select(pl$col(s$name)$\&lt;Expr
-method&gt;)$to_series(0)</code>. This subnamespace is experimental.</p>
 <h4>
 list
 </h4>
@@ -14671,8 +14664,20 @@ methods.</p>
 #&gt; $SORTED_DESC
 #&gt; [1] FALSE
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># use subnamespaces</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="m">3</span><span class="o">:</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="kc">NULL</span><span class="p">))</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">first</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># use Expr method</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">s</span><span class="o">$</span><span class="nf">cos</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (4,)
+#&gt; Series: &#39;&#39; [f64]
+#&gt; [
+#&gt;  0.540302
+#&gt;  -0.416147
+#&gt;  -0.989992
+#&gt;  0.540302
+#&gt; ]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># use Expr method in subnamespaces</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="m">3</span><span class="o">:</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="kc">NULL</span><span class="p">))</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">first</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (3,)
 #&gt; Series: &#39;&#39; [i32]
@@ -14682,7 +14687,7 @@ methods.</p>
 #&gt;  null
 #&gt; ]
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">))</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">concat</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">))</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">concat</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (1,)
 #&gt; Series: &#39;&#39; [str]
@@ -14690,11 +14695,11 @@ methods.</p>
 #&gt;  &quot;1.0-2.0&quot;
 #&gt; ]
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">date_range</span><span class="p">(</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nf">as.Date</span><span class="p">(</span><span class="s">&quot;2024-02-18&quot;</span><span class="p">),</span><span class="w"> </span><span class="nf">as.Date</span><span class="p">(</span><span class="s">&quot;2024-02-24&quot;</span><span class="p">),</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="n">interval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1d&quot;</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">)</span><span class="o">$</span><span class="nf">to_series</span><span class="p">()</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">s</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">date_range</span><span class="p">(</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nf">as.Date</span><span class="p">(</span><span class="s">&quot;2024-02-18&quot;</span><span class="p">),</span><span class="w"> </span><span class="nf">as.Date</span><span class="p">(</span><span class="s">&quot;2024-02-24&quot;</span><span class="p">),</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="n">interval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1d&quot;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">)</span><span class="o">$</span><span class="nf">to_series</span><span class="p">()</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">s</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (7,)
 #&gt; Series: &#39;&#39; [date]
@@ -14708,7 +14713,7 @@ methods.</p>
 #&gt;  2024-02-24
 #&gt; ]
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">s</span><span class="o">$</span><span class="n">dt</span><span class="o">$</span><span class="nf">day</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">s</span><span class="o">$</span><span class="n">dt</span><span class="o">$</span><span class="nf">day</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (7,)
 #&gt; Series: &#39;&#39; [i8]
@@ -14722,8 +14727,8 @@ methods.</p>
 #&gt;  24
 #&gt; ]
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># show all available methods for Series</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">pl</span><span class="o">$</span><span class="nf">show_all_public_methods</span><span class="p">(</span><span class="s">&quot;RPolarsSeries&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># show all available methods for Series</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">pl</span><span class="o">$</span><span class="nf">show_all_public_methods</span><span class="p">(</span><span class="s">&quot;RPolarsSeries&quot;</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; 
 #&gt; 
@@ -14734,57 +14739,193 @@ methods.</p>
 #&gt;           [ add ; function ]
 #&gt;           [ alias ; function ]
 #&gt;           [ all ; function ]
+#&gt;           [ and ; function ]
 #&gt;           [ any ; function ]
 #&gt;           [ append ; function ]
+#&gt;           [ approx_n_unique ; function ]
+#&gt;           [ arccos ; function ]
+#&gt;           [ arccosh ; function ]
+#&gt;           [ arcsin ; function ]
+#&gt;           [ arcsinh ; function ]
+#&gt;           [ arctan ; function ]
+#&gt;           [ arctanh ; function ]
 #&gt;           [ arg_max ; function ]
 #&gt;           [ arg_min ; function ]
+#&gt;           [ arg_sort ; function ]
+#&gt;           [ arg_unique ; function ]
+#&gt;           [ argsort ; function ]
 #&gt;           [ arr ; property function ]
+#&gt;           [ backward_fill ; function ]
 #&gt;           [ bin ; property function ]
+#&gt;           [ bottom_k ; function ]
+#&gt;           [ cast ; function ]
 #&gt;           [ cat ; property function ]
 #&gt;           [ ceil ; function ]
 #&gt;           [ chunk_lengths ; function ]
+#&gt;           [ clip ; function ]
+#&gt;           [ clip_max ; function ]
+#&gt;           [ clip_min ; function ]
 #&gt;           [ clone ; function ]
 #&gt;           [ compare ; function ]
+#&gt;           [ cos ; function ]
+#&gt;           [ cosh ; function ]
+#&gt;           [ count ; function ]
+#&gt;           [ cum_count ; function ]
+#&gt;           [ cum_max ; function ]
+#&gt;           [ cum_min ; function ]
+#&gt;           [ cum_prod ; function ]
 #&gt;           [ cum_sum ; function ]
+#&gt;           [ cumulative_eval ; function ]
+#&gt;           [ diff ; function ]
 #&gt;           [ div ; function ]
+#&gt;           [ dot ; function ]
+#&gt;           [ drop_nans ; function ]
+#&gt;           [ drop_nulls ; function ]
 #&gt;           [ dt ; property function ]
 #&gt;           [ dtype ; property function ]
+#&gt;           [ entropy ; function ]
+#&gt;           [ eq ; function ]
+#&gt;           [ eq_missing ; function ]
 #&gt;           [ equals ; function ]
-#&gt;           [ expr ; property function ]
+#&gt;           [ ewm_mean ; function ]
+#&gt;           [ ewm_std ; function ]
+#&gt;           [ ewm_var ; function ]
+#&gt;           [ exclude ; function ]
+#&gt;           [ exp ; function ]
+#&gt;           [ explode ; function ]
+#&gt;           [ extend_constant ; function ]
+#&gt;           [ fill_nan ; function ]
+#&gt;           [ fill_null ; function ]
+#&gt;           [ filter ; function ]
+#&gt;           [ first ; function ]
 #&gt;           [ flags ; property function ]
+#&gt;           [ flatten ; function ]
 #&gt;           [ floor ; function ]
+#&gt;           [ floor_div ; function ]
+#&gt;           [ forward_fill ; function ]
+#&gt;           [ gather ; function ]
+#&gt;           [ gather_every ; function ]
+#&gt;           [ gt ; function ]
+#&gt;           [ gt_eq ; function ]
+#&gt;           [ hash ; function ]
+#&gt;           [ head ; function ]
+#&gt;           [ implode ; function ]
+#&gt;           [ inspect ; function ]
+#&gt;           [ interpolate ; function ]
+#&gt;           [ is_between ; function ]
+#&gt;           [ is_duplicated ; function ]
+#&gt;           [ is_finite ; function ]
+#&gt;           [ is_first_distinct ; function ]
+#&gt;           [ is_in ; function ]
+#&gt;           [ is_infinite ; function ]
+#&gt;           [ is_last_distinct ; function ]
+#&gt;           [ is_nan ; function ]
+#&gt;           [ is_not_nan ; function ]
+#&gt;           [ is_not_null ; function ]
+#&gt;           [ is_null ; function ]
 #&gt;           [ is_numeric ; function ]
 #&gt;           [ is_sorted ; function ]
+#&gt;           [ is_unique ; function ]
+#&gt;           [ kurtosis ; function ]
+#&gt;           [ last ; function ]
 #&gt;           [ len ; function ]
+#&gt;           [ limit ; function ]
 #&gt;           [ list ; property function ]
+#&gt;           [ lit ; function ]
+#&gt;           [ log ; function ]
+#&gt;           [ log10 ; function ]
+#&gt;           [ lower_bound ; function ]
+#&gt;           [ lt ; function ]
+#&gt;           [ lt_eq ; function ]
+#&gt;           [ map_batches ; function ]
 #&gt;           [ map_elements ; function ]
 #&gt;           [ max ; function ]
 #&gt;           [ mean ; function ]
 #&gt;           [ median ; function ]
 #&gt;           [ min ; function ]
+#&gt;           [ mod ; function ]
+#&gt;           [ mode ; function ]
 #&gt;           [ mul ; function ]
 #&gt;           [ n_unique ; function ]
 #&gt;           [ name ; property function ]
+#&gt;           [ nan_max ; function ]
+#&gt;           [ nan_min ; function ]
+#&gt;           [ neq ; function ]
+#&gt;           [ neq_missing ; function ]
+#&gt;           [ not ; function ]
+#&gt;           [ null_count ; function ]
+#&gt;           [ or ; function ]
+#&gt;           [ over ; function ]
+#&gt;           [ pct_change ; function ]
+#&gt;           [ peak_max ; function ]
+#&gt;           [ peak_min ; function ]
+#&gt;           [ pow ; function ]
 #&gt;           [ print ; function ]
+#&gt;           [ product ; function ]
+#&gt;           [ quantile ; function ]
+#&gt;           [ rank ; function ]
+#&gt;           [ rechunk ; function ]
+#&gt;           [ reinterpret ; function ]
 #&gt;           [ rem ; function ]
 #&gt;           [ rename ; function ]
 #&gt;           [ rep ; function ]
+#&gt;           [ rep_extend ; function ]
+#&gt;           [ repeat_by ; function ]
+#&gt;           [ replace ; function ]
+#&gt;           [ reshape ; function ]
+#&gt;           [ reverse ; function ]
+#&gt;           [ rle ; function ]
+#&gt;           [ rle_id ; function ]
+#&gt;           [ rolling ; function ]
+#&gt;           [ rolling_max ; function ]
+#&gt;           [ rolling_mean ; function ]
+#&gt;           [ rolling_median ; function ]
+#&gt;           [ rolling_min ; function ]
+#&gt;           [ rolling_quantile ; function ]
+#&gt;           [ rolling_skew ; function ]
+#&gt;           [ rolling_std ; function ]
+#&gt;           [ rolling_sum ; function ]
+#&gt;           [ rolling_var ; function ]
+#&gt;           [ round ; function ]
+#&gt;           [ sample ; function ]
+#&gt;           [ search_sorted ; function ]
 #&gt;           [ set_sorted ; function ]
 #&gt;           [ shape ; property function ]
+#&gt;           [ shift ; function ]
+#&gt;           [ shift_and_fill ; function ]
+#&gt;           [ shrink_dtype ; function ]
+#&gt;           [ shuffle ; function ]
+#&gt;           [ sign ; function ]
+#&gt;           [ sin ; function ]
+#&gt;           [ sinh ; function ]
+#&gt;           [ skew ; function ]
+#&gt;           [ slice ; function ]
 #&gt;           [ sort ; function ]
+#&gt;           [ sort_by ; function ]
+#&gt;           [ sqrt ; function ]
 #&gt;           [ std ; function ]
 #&gt;           [ str ; property function ]
 #&gt;           [ struct ; property function ]
 #&gt;           [ sub ; function ]
 #&gt;           [ sum ; function ]
+#&gt;           [ tail ; function ]
+#&gt;           [ tan ; function ]
+#&gt;           [ tanh ; function ]
 #&gt;           [ to_frame ; function ]
 #&gt;           [ to_lit ; function ]
+#&gt;           [ to_physical ; function ]
 #&gt;           [ to_r ; function ]
 #&gt;           [ to_r_list ; function ]
 #&gt;           [ to_r_vector ; function ]
+#&gt;           [ to_struct ; function ]
 #&gt;           [ to_vector ; function ]
+#&gt;           [ top_k ; function ]
+#&gt;           [ unique ; function ]
+#&gt;           [ unique_counts ; function ]
+#&gt;           [ upper_bound ; function ]
 #&gt;           [ value_counts ; function ]
 #&gt;           [ var ; function ]
+#&gt;           [ xor ; function ]
 </code></pre></div>
 
 
