@@ -2,7 +2,7 @@
 
 # Tail of a DataFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/5765842071140bd7a822ebb4fd6b0ab652d73f0d/R/lazyframe__lazy.R#L1048)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1048)
 
 ## Description
 
