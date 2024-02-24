@@ -14900,14 +14900,14 @@ this means. For instance,</p>
 <li>Etc.</li>
 </ul>
 <p>In <strong>polars</strong> our method chaining syntax takes the form
-<code>object$m1()$m2()</code>, where <code>object</code> is our data object, and <code>m1()</code> and
-<code>m2()</code> are appropriate methods, like subsetting or aggregation
+<code>object$m1()$m2()</code>, where <code>object</code> is our data object, and <code>$m1()</code> and
+<code>$m2()</code> are appropriate methods, like subsetting or aggregation
 expressions.</p>
 <p>This might all seem a little abstract, so let’s walk through some quick
 examples to help make things concrete. We continue with the <code>mtcars</code>
 dataset that we coerced to a <code>DataFrame</code> in the introduction.[1]</p>
 <p>To start, say we compute the maximum value in each column. We can use
-the <code>max()</code> method:</p>
+the <code>$max()</code> method:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">dat</span><span class="o">$</span><span class="nf">max</span><span class="p">()</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1">#&gt; shape: (1, 11)</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1">#&gt; ┌──────┬─────┬───────┬───────┬───┬─────┬─────┬──────┬──────┐</span>
@@ -14918,9 +14918,9 @@ the <code>max()</code> method:</p>
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="c1">#&gt; │ 33.9 ┆ 8.0 ┆ 472.0 ┆ 335.0 ┆ … ┆ 1.0 ┆ 1.0 ┆ 5.0  ┆ 8.0  │</span>
 <a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="c1">#&gt; └──────┴─────┴───────┴───────┴───┴─────┴─────┴──────┴──────┘</span>
 </code></pre></div>
-<p>Now, we first use the <code>$tail</code> method to select the last 10 rows of the
-dataset, and then use the <code>$max</code> method to compute the maximums in those
-10 rows:</p>
+<p>Now, we first use the <code>$tail()</code> method to select the last 10 rows of the
+dataset, and then use the <code>$max()</code> method to compute the maximums in
+those 10 rows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">dat</span><span class="o">$</span><span class="nf">tail</span><span class="p">(</span><span class="m">10</span><span class="p">)</span><span class="o">$</span><span class="nf">max</span><span class="p">()</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="c1">#&gt; shape: (1, 11)</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1">#&gt; ┌──────┬─────┬───────┬───────┬───┬─────┬─────┬──────┬──────┐</span>
@@ -14937,8 +14937,8 @@ dataset, and then use the <code>$max</code> method to compute the maximums in th
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1">#&gt;    mpg cyl disp  hp drat    wt qsec vs am gear carb</span>
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1">#&gt; 1 30.4   8  400 335 4.43 3.845 18.9  1  1    5    8</span>
 </code></pre></div>
-<p>Below, we will introduce several other methods, including <code>$select</code>,
-<code>$filter</code>, and <code>$group_by</code> which allow us to do powerful data
+<p>Below, we will introduce several other methods, including <code>$select()</code>,
+<code>$filter()</code>, and <code>$group_by()</code> which allow us to do powerful data
 manipulations easily. To give you a small taste, we now take group-wise
 means:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">dat</span><span class="o">$</span><span class="nf">group_by</span><span class="p">(</span><span class="s">&quot;cyl&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">mean</span><span class="p">()</span>
@@ -14949,16 +14949,17 @@ means:</p>
 <a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="c1">#&gt; │ f64 ┆ f64       ┆ f64        ┆ f64        ┆   ┆ f64      ┆ f64      ┆ f64      ┆ f64      │</span>
 <a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="c1">#&gt; ╞═════╪═══════════╪════════════╪════════════╪═══╪══════════╪══════════╪══════════╪══════════╡</span>
 <a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="c1">#&gt; │ 8.0 ┆ 15.1      ┆ 353.1      ┆ 209.214286 ┆ … ┆ 0.0      ┆ 0.142857 ┆ 3.285714 ┆ 3.5      │</span>
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="c1">#&gt; │ 4.0 ┆ 26.663636 ┆ 105.136364 ┆ 82.636364  ┆ … ┆ 0.909091 ┆ 0.727273 ┆ 4.090909 ┆ 1.545455 │</span>
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="c1">#&gt; │ 6.0 ┆ 19.742857 ┆ 183.314286 ┆ 122.285714 ┆ … ┆ 0.571429 ┆ 0.428571 ┆ 3.857143 ┆ 3.428571 │</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="c1">#&gt; │ 6.0 ┆ 19.742857 ┆ 183.314286 ┆ 122.285714 ┆ … ┆ 0.571429 ┆ 0.428571 ┆ 3.857143 ┆ 3.428571 │</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="c1">#&gt; │ 4.0 ┆ 26.663636 ┆ 105.136364 ┆ 82.636364  ┆ … ┆ 0.909091 ┆ 0.727273 ┆ 4.090909 ┆ 1.545455 │</span>
 <a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="c1">#&gt; └─────┴───────────┴────────────┴────────────┴───┴──────────┴──────────┴──────────┴──────────┘</span>
 </code></pre></div>
 <h2 id="subset">Subset</h2>
 <p>We can now start chaining together various methods (expressions) to
 manipulate it in different ways. For example, we can subset the data by
-rows (<a href="https://rpolars.github.io/man/DataFrame_filter.html"><code>filter()</code></a>)
-and also columns
-(<a href="https://rpolars.github.io/man/DataFrame_select.html"><code>select()</code></a>):</p>
+rows
+(<a href="https://rpolars.github.io/man/DataFrame_filter.html"><code>$filter()</code></a>) and
+also columns
+(<a href="https://rpolars.github.io/man/DataFrame_select.html"><code>$select()</code></a>):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">dat</span><span class="o">$</span><span class="nf">filter</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;cyl&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">6</span><span class="p">)</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="c1">#&gt; shape: (7, 11)</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="c1">#&gt; ┌──────┬─────┬───────┬───────┬───┬─────┬─────┬──────┬──────┐</span>
@@ -15029,15 +15030,15 @@ and also columns
 <a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="c1">#&gt; └──────┴───────┴─────┘</span>
 </code></pre></div>
 <h2 id="aggregate-and-modify">Aggregate and modify</h2>
-<p>The <code>select()</code> method that we introduced above also supports data
+<p>The <code>$select()</code> method that we introduced above also supports data
 modification, so you can simultaneously transform it while you are
 subsetting. However, the result will exclude any columns that weren’t
 specified as part of the expression. To modify or add some
 columns—whilst preserving all others in the dataset—it is therefore
 better to use the
-<a href="https://rpolars.github.io/man/DataFrame_with_columns.html"><code>with_columns()</code></a>
+<a href="https://rpolars.github.io/man/DataFrame_with_columns.html"><code>$with_columns()</code></a>
 method. This next code chunk is equivalent to
-<code>mtcars |&gt; dplyr::mutate(sum_mpg=sum(mpg), sum_hp=sum(hp), .by = cyl)</code>.</p>
+<code>mtcars |&gt; dplyr::mutate(sum_mpg = sum(mpg), sum_hp = sum(hp), .by = cyl)</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Add the grouped sums of some selected columns.</span>
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">dat</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
 <a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;mpg&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">sum</span><span class="p">()</span><span class="o">$</span><span class="nf">over</span><span class="p">(</span><span class="s">&quot;cyl&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;sum_mpg&quot;</span><span class="p">),</span>
@@ -15088,8 +15089,8 @@ concisely as:</p>
 </code></pre></div>
 <p>Similarly, here’s how we could have aggregated (i.e., collapsed) the
 dataset by groups instead of modifying them. We need simply invoke the
-<code>group_by()</code> and
-<a href="https://rpolars.github.io/man/Expr_agg_groups.html"><code>agg()</code></a> methods.</p>
+<code>$group_by()</code> and
+<a href="https://rpolars.github.io/man/Expr_agg_groups.html"><code>$agg()</code></a> methods.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">dat</span><span class="o">$</span><span class="nf">group_by</span><span class="p">(</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="s">&quot;cyl&quot;</span><span class="p">,</span>
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="n">maintain_order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span>
@@ -15114,39 +15115,77 @@ the results of grouped operations by default. This is similar to what
 group by multiple variables and aggregation types.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">dat</span><span class="o">$</span><span class="nf">group_by</span><span class="p">(</span>
 <a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span><span class="s">&quot;cyl&quot;</span><span class="p">,</span>
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;am&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">cast</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="n">Boolean</span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;manual&quot;</span><span class="p">)</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span><span class="n">manual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;am&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">cast</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="n">Boolean</span><span class="p">)</span>
 <a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="p">)</span><span class="o">$</span><span class="nf">agg</span><span class="p">(</span>
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;mpg&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">mean</span><span class="p">()</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;mean_mpg&quot;</span><span class="p">),</span>
-<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;hp&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">median</span><span class="p">()</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;med_hp&quot;</span><span class="p">)</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">  </span><span class="n">mean_mpg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;mpg&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">mean</span><span class="p">(),</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">  </span><span class="n">med_hp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;hp&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">median</span><span class="p">()</span>
 <a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="p">)</span>
 <a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="c1">#&gt; shape: (6, 4)</span>
-<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="c1">#&gt; ┌─────┬────────┬───────────┬────────┐</span>
-<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="c1">#&gt; │ cyl ┆ manual ┆ mean_mpg  ┆ med_hp │</span>
-<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="c1">#&gt; │ --- ┆ ---    ┆ ---       ┆ ---    │</span>
-<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="c1">#&gt; │ f64 ┆ bool   ┆ f64       ┆ f64    │</span>
-<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="c1">#&gt; ╞═════╪════════╪═══════════╪════════╡</span>
-<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="c1">#&gt; │ 8.0 ┆ true   ┆ 15.4      ┆ 299.5  │</span>
-<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="c1">#&gt; │ 6.0 ┆ true   ┆ 20.566667 ┆ 110.0  │</span>
-<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="c1">#&gt; │ 8.0 ┆ false  ┆ 15.05     ┆ 180.0  │</span>
-<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="c1">#&gt; │ 4.0 ┆ true   ┆ 28.075    ┆ 78.5   │</span>
-<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="c1">#&gt; │ 6.0 ┆ false  ┆ 19.125    ┆ 116.5  │</span>
-<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a><span class="c1">#&gt; │ 4.0 ┆ false  ┆ 22.9      ┆ 95.0   │</span>
-<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a><span class="c1">#&gt; └─────┴────────┴───────────┴────────┘</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="c1">#&gt; ┌─────┬───────┬───────────┬────────┐</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="c1">#&gt; │ cyl ┆ am    ┆ mean_mpg  ┆ med_hp │</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="c1">#&gt; │ --- ┆ ---   ┆ ---       ┆ ---    │</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="c1">#&gt; │ f64 ┆ bool  ┆ f64       ┆ f64    │</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="c1">#&gt; ╞═════╪═══════╪═══════════╪════════╡</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="c1">#&gt; │ 8.0 ┆ false ┆ 15.05     ┆ 180.0  │</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="c1">#&gt; │ 8.0 ┆ true  ┆ 15.4      ┆ 299.5  │</span>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="c1">#&gt; │ 6.0 ┆ true  ┆ 20.566667 ┆ 110.0  │</span>
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="c1">#&gt; │ 4.0 ┆ true  ┆ 28.075    ┆ 78.5   │</span>
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="c1">#&gt; │ 6.0 ┆ false ┆ 19.125    ┆ 116.5  │</span>
+<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a><span class="c1">#&gt; │ 4.0 ┆ false ┆ 22.9      ┆ 95.0   │</span>
+<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a><span class="c1">#&gt; └─────┴───────┴───────────┴────────┘</span>
 </code></pre></div>
-<p>Note that we used the <code>cast</code> method to convert the data type of the <code>am</code>
-column. See the section below for more details on data types.</p>
+<p>Note that we used the <code>$cast()</code> method to convert the data type of the
+<code>am</code> column. See the section below for more details on data types.</p>
 <h2 id="reshape">Reshape</h2>
-<p>Polars supports data reshaping, going from both long to wide (“pivot”)
-and wide to long (“melt”). Let’s switch to the <code>Indometh</code> dataset to
-demonstrate some basic examples. Note that the data are currently in
-long format.</p>
+<p>Polars supports data reshaping, going from both long to wide (a.k.a.
+“pivot”, “pivot longer”) , and wide to long (a.k.a. “unpivot”, “pivot
+wider”, “melt”). Let’s switch to the <code>Indometh</code> dataset to demonstrate
+some basic examples. Note that the data are currently in long format.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">indo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as_polars_df</span><span class="p">(</span><span class="n">Indometh</span><span class="p">)</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="n">indo</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="c1">#&gt; shape: (66, 3)</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="c1">#&gt; ┌─────────┬──────┬──────┐</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="c1">#&gt; │ Subject ┆ time ┆ conc │</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="c1">#&gt; │ ---     ┆ ---  ┆ ---  │</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="c1">#&gt; │ cat     ┆ f64  ┆ f64  │</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="c1">#&gt; ╞═════════╪══════╪══════╡</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="c1">#&gt; │ 1       ┆ 0.25 ┆ 1.5  │</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="c1">#&gt; │ 1       ┆ 0.5  ┆ 0.94 │</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="c1">#&gt; │ 1       ┆ 0.75 ┆ 0.78 │</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="c1">#&gt; │ 1       ┆ 1.0  ┆ 0.48 │</span>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="c1">#&gt; │ 1       ┆ 1.25 ┆ 0.37 │</span>
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="c1">#&gt; │ …       ┆ …    ┆ …    │</span>
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="c1">#&gt; │ 6       ┆ 3.0  ┆ 0.24 │</span>
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="c1">#&gt; │ 6       ┆ 4.0  ┆ 0.17 │</span>
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="c1">#&gt; │ 6       ┆ 5.0  ┆ 0.13 │</span>
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a><span class="c1">#&gt; │ 6       ┆ 6.0  ┆ 0.1  │</span>
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a><span class="c1">#&gt; │ 6       ┆ 8.0  ┆ 0.09 │</span>
+<a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a><span class="c1">#&gt; └─────────┴──────┴──────┘</span>
 </code></pre></div>
-<p>To go from long to wide, we use the <code>pivot</code> method. Here we pivot the
+<p>To go from long to wide, we use the <code>$pivot()</code> method. Here we pivot the
 data so that every subject takes its own column.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">indo_wide</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">indo</span><span class="o">$</span><span class="nf">pivot</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;conc&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;time&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">columns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Subject&quot;</span><span class="p">)</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="n">indo_wide</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="c1">#&gt; shape: (11, 7)</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="c1">#&gt; ┌──────┬──────┬──────┬──────┬──────┬──────┬──────┐</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="c1">#&gt; │ time ┆ 1    ┆ 2    ┆ 3    ┆ 4    ┆ 5    ┆ 6    │</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="c1">#&gt; │ ---  ┆ ---  ┆ ---  ┆ ---  ┆ ---  ┆ ---  ┆ ---  │</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="c1">#&gt; │ f64  ┆ f64  ┆ f64  ┆ f64  ┆ f64  ┆ f64  ┆ f64  │</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="c1">#&gt; ╞══════╪══════╪══════╪══════╪══════╪══════╪══════╡</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="c1">#&gt; │ 0.25 ┆ 1.5  ┆ 2.03 ┆ 2.72 ┆ 1.85 ┆ 2.05 ┆ 2.31 │</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="c1">#&gt; │ 0.5  ┆ 0.94 ┆ 1.63 ┆ 1.49 ┆ 1.39 ┆ 1.04 ┆ 1.44 │</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="c1">#&gt; │ 0.75 ┆ 0.78 ┆ 0.71 ┆ 1.16 ┆ 1.02 ┆ 0.81 ┆ 1.03 │</span>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="c1">#&gt; │ 1.0  ┆ 0.48 ┆ 0.7  ┆ 0.8  ┆ 0.89 ┆ 0.39 ┆ 0.84 │</span>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="c1">#&gt; │ 1.25 ┆ 0.37 ┆ 0.64 ┆ 0.8  ┆ 0.59 ┆ 0.3  ┆ 0.64 │</span>
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="c1">#&gt; │ 2.0  ┆ 0.19 ┆ 0.36 ┆ 0.39 ┆ 0.4  ┆ 0.23 ┆ 0.42 │</span>
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="c1">#&gt; │ 3.0  ┆ 0.12 ┆ 0.32 ┆ 0.22 ┆ 0.16 ┆ 0.13 ┆ 0.24 │</span>
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="c1">#&gt; │ 4.0  ┆ 0.11 ┆ 0.2  ┆ 0.12 ┆ 0.11 ┆ 0.11 ┆ 0.17 │</span>
+<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="c1">#&gt; │ 5.0  ┆ 0.08 ┆ 0.25 ┆ 0.11 ┆ 0.1  ┆ 0.08 ┆ 0.13 │</span>
+<a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="c1">#&gt; │ 6.0  ┆ 0.07 ┆ 0.12 ┆ 0.08 ┆ 0.07 ┆ 0.1  ┆ 0.1  │</span>
+<a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a><span class="c1">#&gt; │ 8.0  ┆ 0.05 ┆ 0.08 ┆ 0.08 ┆ 0.07 ┆ 0.06 ┆ 0.09 │</span>
+<a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a><span class="c1">#&gt; └──────┴──────┴──────┴──────┴──────┴──────┴──────┘</span>
 </code></pre></div>
-<p>To go from wide to long, we use the <code>melt</code> method.</p>
+<p>To go from wide to long, we use the <code>$melt()</code> method.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># indo_wide$melt(id_vars = &quot;time&quot;) # default column names are &quot;variable&quot; and &quot;value&quot;</span>
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="n">indo_wide</span><span class="o">$</span><span class="nf">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;time&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">variable_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;subject&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">value_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;conc&quot;</span><span class="p">)</span>
 <a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="c1">#&gt; shape: (66, 3)</span>
@@ -15168,14 +15207,14 @@ data so that every subject takes its own column.</p>
 <a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a><span class="c1">#&gt; │ 8.0  ┆ 6       ┆ 0.09 │</span>
 <a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a><span class="c1">#&gt; └──────┴─────────┴──────┘</span>
 </code></pre></div>
-<p>Basic functionality aside, it should be noted that <code>pivot</code> can perform
-aggregations as part of the reshaping operation. This is useful when you
-have multiple observations per ID variable that need to be collapsed
-into unique values. The aggregating functions can be arbitrarily
-complex, but let’s consider a relatively simple example using our <code>dat</code>
-(“mtcars”) DataFrame from earlier: what is the median MPG value (<code>mpg</code>)
-across cylinders (<code>cyl</code>), cut by different combinations of transmission
-type (<code>am</code>) and engine shape (<code>vs</code>)?</p>
+<p>Basic functionality aside, it should be noted that <code>$pivot()</code> can
+perform aggregations as part of the reshaping operation. This is useful
+when you have multiple observations per ID variable that need to be
+collapsed into unique values. The aggregating functions can be
+arbitrarily complex, but let’s consider a relatively simple example
+using our <code>dat</code> (“mtcars”) DataFrame from earlier: what is the median
+MPG value (<code>mpg</code>) across cylinders (<code>cyl</code>), cut by different
+combinations of transmission type (<code>am</code>) and engine shape (<code>vs</code>)?</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">dat</span><span class="o">$</span><span class="nf">pivot</span><span class="p">(</span>
 <a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mpg&quot;</span><span class="p">,</span>
 <a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">  </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;am&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;vs&quot;</span><span class="p">),</span>
@@ -15196,7 +15235,7 @@ type (<code>am</code>) and engine shape (<code>vs</code>)?</p>
 </code></pre></div>
 <p>Here, <code>"median"</code> is a convenience string that is equivalent to the more
 verbose <code>pl$element()$median()</code>. Other convenience strings include
-“first”, “last”, “min”, “max”, “mean”, “sum”, and “count”.</p>
+<code>"first"</code>, <code>"last"</code>, <code>"min"</code>, <code>"max"</code>, <code>"mean"</code>, <code>"sum"</code>, and <code>"count"</code>.</p>
 <h2 id="join">Join</h2>
 <p>As a final example of how <strong>polars</strong> can be used for standard data
 wrangling tasks, let’s implement a (left) join. For this example, we’ll
@@ -15244,7 +15283,7 @@ execution until the last possible moment allows Polars to apply
 automatic optimization to every query. Let’s take a quick look.</p>
 <p>To create a so-called
 “<a href="https://rpolars.github.io/man/LazyFrame_class.html">LazyFrame</a>” from
-an existing object in memory, we can invoke the <code>lazy()</code> constructor.</p>
+an existing object in memory, we can invoke the <code>$lazy()</code> method.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">ldat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dat</span><span class="o">$</span><span class="nf">lazy</span><span class="p">()</span>
 <a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="n">ldat</span>
 <a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="c1">#&gt; polars LazyFrame</span>
@@ -15293,7 +15332,7 @@ memory overhead of the overall query and leads to a downstream speedup.
 Of course, you would hardly notice a difference for this small dataset.
 But the same principles carry over to much bigger datasets and more
 complex queries.</p>
-<p>To actually execute the plan, we just need to invoke the <code>collect()</code>
+<p>To actually execute the plan, we just need to invoke the <code>$collect()</code>
 method. This should feel very familiar if you have previously used other
 lazy execution engines like those provided by <strong>arrow</strong> or <strong>dbplyr</strong>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">subset_query</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span>
@@ -15387,8 +15426,8 @@ pattern globbing.</p>
 <a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="c1"># Use pattern globbing to scan all parquet files in the folder</span>
 <a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="n">aq2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">scan_parquet</span><span class="p">(</span><span class="s">&quot;airquality-ds/**/*.parquet&quot;</span><span class="p">)</span>
 <a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>
-<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="c1"># Just print the first two rows.</span>
-<a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="n">aq2</span><span class="o">$</span><span class="nf">limit</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span>
+<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="c1"># Scan the first two rows</span>
+<a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="n">aq2</span><span class="o">$</span><span class="nf">fetch</span><span class="p">(</span><span class="m">2</span><span class="p">)</span>
 <a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="c1">#&gt; shape: (2, 6)</span>
 <a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a><span class="c1">#&gt; ┌───────┬─────────┬──────┬──────┬─────┬───────┐</span>
 <a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a><span class="c1">#&gt; │ Ozone ┆ Solar.R ┆ Wind ┆ Temp ┆ Day ┆ Month │</span>
@@ -15412,7 +15451,7 @@ inhibit performance. R functions are typically slower, so we recommend
 using native Polars functions and expressions wherever possible.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="nf">as_polars_df</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span>
 <a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;Sepal.Length&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">map_batches</span><span class="p">(</span>\<span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1"># map with a R function</span>
-<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="o">$</span><span class="nf">to_vector</span><span class="p">()</span><span class="w"> </span><span class="c1"># convert from Polars Series to a native R vector</span>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.vector</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="c1"># convert from Polars Series to a native R vector</span>
 <a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">5</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span>
 <a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">]</span><span class="w"> </span><span class="c1"># if return is R vector, it will automatically be converted to Polars Series again</span>
 <a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="w">  </span><span class="p">})</span>
