@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.10">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.11">
     
     
       
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#make-a-then-when-otherwise-expression" class="md-skip">
+        <a href="#make-a-when-then-otherwise-expression" class="md-skip">
           Skip to content
         </a>
       
@@ -14544,32 +14544,14 @@
   
 
 
-<h1 id="make-a-then-when-otherwise-expression">Make a then-when-otherwise expression</h1>
+<h1 id="make-a-when-then-otherwise-expression">Make a when-then-otherwise expression</h1>
 <h2 id="description">Description</h2>
 <p><code>when-then-otherwise</code> is similar to R <code>ifelse()</code>.
-This has to start with
+Always initiated by a
 <code style="white-space: pre;">pl$when(&lt;condition&gt;)$then(&lt;value if
-condition&gt;)</code>. From there, it can:</p>
-<ul>
-<li>
-
-be chained to an <code style="white-space: pre;">$otherwise()</code>
-statement that specifies the Expr to apply to the rows where the
-condition is <code>FALSE</code>;
-
-</li>
-<li>
-
-or be chained to other
-<code style="white-space: pre;">$when()$then()</code> to specify more
-cases, and then use <code style="white-space: pre;">$otherwise()</code>
-when you arrive at the end of your chain. Note that one difference with
-the Python implementation is that we <em>must</em> end the chain with an
-<code style="white-space: pre;">$otherwise()</code> statement.
-
-</li>
-</ul>
-
+condition&gt;)</code>, and optionally followed by chaining one or more
+<code style="white-space: pre;">$when(&lt;condition&gt;)$then(&lt;value if
+condition&gt;)</code> statements.</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>pl_when(...)
 
@@ -14593,7 +14575,7 @@ ChainedThen_otherwise(statement)
 <code id="Expr_when_then_otherwise_:_...">…</code>
 </td>
 <td>
-Expr or something coercible to an Expr into a boolean mask to branch by.
+Expr or something coercible to an Expr that returns a boolian each row.
 </td>
 </tr>
 <tr>
@@ -14601,55 +14583,60 @@ Expr or something coercible to an Expr into a boolean mask to branch by.
 <code id="Expr_when_then_otherwise_:_statement">statement</code>
 </td>
 <td>
-Expr or something coercible to an Expr value to insert in when() or
-otherwise(). Strings interpreted as column.
+Expr or something coercible to an Expr value to insert in
+<code style="white-space: pre;">$then()</code> or
+<code style="white-space: pre;">$otherwise()</code>. A character vector
+is parsed as column names.
 </td>
 </tr>
 </table>
 
 <h2 id="details">Details</h2>
-<p>If you want to use the class of those <code>when-then-otherwise</code>
-statement, note that there are 6 different classes corresponding to the
-different steps:</p>
+<p>Chained when-then operations should be read like
+<code style="white-space: pre;">if, else if, else if, …</code> in R, not
+as <code style="white-space: pre;">if, if, if, …</code>, i.e. the first
+condition that evaluates to <code>true</code> will be picked.</p>
+<p>If none of the conditions are <code>true</code>, an optional
+<code style="white-space: pre;">$otherwise(&lt;value if all statements are
+false&gt;)</code> can be appended at the end. If not appended, and none of
+the conditions are <code>true</code>, <code>null</code> will be
+returned.</p>
+<p><code>RPolarsThen</code> objects and <code>RPolarsChainedThen</code>
+objects (returned by <code style="white-space: pre;">$then()</code>)
+stores the same methods as Expr.</p>
+<h2 id="value">Value</h2>
 <ul>
 <li>
 
-<code>pl$when()</code>returns a <code>When</code> object,
+<code>pl$when()</code> returns a <code>When</code> object
 
 </li>
 <li>
 
-<code>pl$then()</code>returns a <code>Then</code> object,
+<code style="white-space: pre;">\<When\>$then()</code> returns a
+<code>Then</code> object
 
 </li>
 <li>
 
-<code style="white-space: pre;">\<Then\>$otherwise()</code>returns an
-Expression object,
+<code style="white-space: pre;">\<Then\>$when()</code> returns a
+<code>ChainedWhen</code> object
 
 </li>
 <li>
 
-<code style="white-space: pre;">\<Then\>$when()</code>returns a
-<code>ChainedWhen</code> object,
+<code style="white-space: pre;">\<ChainedWhen\>$then()</code> returns a
+<code>ChainedThen</code> object
 
 </li>
 <li>
 
-<code style="white-space: pre;">\<ChainedWhen\>$then()</code>returns a
-<code>ChainedThen</code> object,
-
-</li>
-<li>
-
-<code style="white-space: pre;">\<ChainedThen\>$otherwise()</code>returns
-an Expression object.
+<code style="white-space: pre;">$otherwise()</code> returns an Expr
+object.
 
 </li>
 </ul>
 
-<h2 id="value">Value</h2>
-<p>an polars object, see details.</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -14692,15 +14679,33 @@ an Expression object.
 #&gt; │ 4.0 ┆ 0.0 ┆ 1.0 │
 #&gt; └─────┴─────┴─────┘
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Pass multiple predicates, each of which must be met:</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">when</span><span class="p">(</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="p">,</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%%</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="m">0</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="p">)</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="o">$</span><span class="nf">then</span><span class="p">(</span><span class="m">99</span><span class="p">)</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="o">$</span><span class="nf">otherwise</span><span class="p">(</span><span class="m">-1</span><span class="p">)</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># The `$otherwise` at the end is optional.</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># If left out, any rows where none of the `$when()` expressions are evaluated to `true`,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># are set to `null`</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">when</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="o">$</span><span class="nf">then</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; shape: (3, 3)
+#&gt; ┌─────┬─────┬──────┐
+#&gt; │ foo ┆ bar ┆ val  │
+#&gt; │ --- ┆ --- ┆ ---  │
+#&gt; │ f64 ┆ f64 ┆ f64  │
+#&gt; ╞═════╪═════╪══════╡
+#&gt; │ 1.0 ┆ 3.0 ┆ null │
+#&gt; │ 3.0 ┆ 4.0 ┆ 1.0  │
+#&gt; │ 4.0 ┆ 0.0 ┆ 1.0  │
+#&gt; └─────┴─────┴──────┘
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Pass multiple predicates, each of which must be met:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">when</span><span class="p">(</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%%</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="m">0</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="p">)</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="o">$</span><span class="nf">then</span><span class="p">(</span><span class="m">99</span><span class="p">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="o">$</span><span class="nf">otherwise</span><span class="p">(</span><span class="m">-1</span><span class="p">)</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; shape: (3, 3)
 #&gt; ┌─────┬─────┬──────┐
@@ -14711,6 +14716,34 @@ an Expression object.
 #&gt; │ 1.0 ┆ 3.0 ┆ 99.0 │
 #&gt; │ 3.0 ┆ 4.0 ┆ 99.0 │
 #&gt; │ 4.0 ┆ 0.0 ┆ -1.0 │
+#&gt; └─────┴─────┴──────┘
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># In `$then()`, a character vector is parsed as column names</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span><span class="n">baz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">when</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%%</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="o">$</span><span class="nf">then</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; shape: (3, 3)
+#&gt; ┌─────┬─────┬──────┐
+#&gt; │ foo ┆ bar ┆ baz  │
+#&gt; │ --- ┆ --- ┆ ---  │
+#&gt; │ f64 ┆ f64 ┆ f64  │
+#&gt; ╞═════╪═════╪══════╡
+#&gt; │ 1.0 ┆ 3.0 ┆ 3.0  │
+#&gt; │ 3.0 ┆ 4.0 ┆ 4.0  │
+#&gt; │ 4.0 ┆ 0.0 ┆ null │
+#&gt; └─────┴─────┴──────┘
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># So use `pl$lit()` to insert a string</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span><span class="n">baz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">when</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%%</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="o">$</span><span class="nf">then</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">)))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; shape: (3, 3)
+#&gt; ┌─────┬─────┬──────┐
+#&gt; │ foo ┆ bar ┆ baz  │
+#&gt; │ --- ┆ --- ┆ ---  │
+#&gt; │ f64 ┆ f64 ┆ str  │
+#&gt; ╞═════╪═════╪══════╡
+#&gt; │ 1.0 ┆ 3.0 ┆ bar  │
+#&gt; │ 3.0 ┆ 4.0 ┆ bar  │
+#&gt; │ 4.0 ┆ 0.0 ┆ null │
 #&gt; └─────┴─────┴──────┘
 </code></pre></div>
 

@@ -2,7 +2,7 @@
 
 # Apply logical XOR on two expressions
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1027)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1137)
 
 ## Description
 

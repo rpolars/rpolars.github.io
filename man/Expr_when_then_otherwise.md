@@ -1,33 +1,15 @@
 
 
-# Make a then-when-otherwise expression
+# Make a when-then-otherwise expression
 
 ## Description
 
 <code>when-then-otherwise</code> is similar to R <code>ifelse()</code>.
-This has to start with
+Always initiated by a
 <code style="white-space: pre;">pl$when(\<condition\>)$then(\<value if
-condition\>)</code>. From there, it can:
-
-<ul>
-<li>
-
-be chained to an <code style="white-space: pre;">$otherwise()</code>
-statement that specifies the Expr to apply to the rows where the
-condition is <code>FALSE</code>;
-
-</li>
-<li>
-
-or be chained to other
-<code style="white-space: pre;">$when()$then()</code> to specify more
-cases, and then use <code style="white-space: pre;">$otherwise()</code>
-when you arrive at the end of your chain. Note that one difference with
-the Python implementation is that we <em>must</em> end the chain with an
-<code style="white-space: pre;">$otherwise()</code> statement.
-
-</li>
-</ul>
+condition\>)</code>, and optionally followed by chaining one or more
+<code style="white-space: pre;">$when(\<condition\>)$then(\<value if
+condition\>)</code> statements.
 
 ## Usage
 
@@ -54,7 +36,7 @@ ChainedThen_otherwise(statement)
 <code id="Expr_when_then_otherwise_:_...">…</code>
 </td>
 <td>
-Expr or something coercible to an Expr into a boolean mask to branch by.
+Expr or something coercible to an Expr that returns a boolian each row.
 </td>
 </tr>
 <tr>
@@ -62,58 +44,64 @@ Expr or something coercible to an Expr into a boolean mask to branch by.
 <code id="Expr_when_then_otherwise_:_statement">statement</code>
 </td>
 <td>
-Expr or something coercible to an Expr value to insert in when() or
-otherwise(). Strings interpreted as column.
+Expr or something coercible to an Expr value to insert in
+<code style="white-space: pre;">$then()</code> or
+<code style="white-space: pre;">$otherwise()</code>. A character vector
+is parsed as column names.
 </td>
 </tr>
 </table>
 
 ## Details
 
-If you want to use the class of those <code>when-then-otherwise</code>
-statement, note that there are 6 different classes corresponding to the
-different steps:
+Chained when-then operations should be read like
+<code style="white-space: pre;">if, else if, else if, …</code> in R, not
+as <code style="white-space: pre;">if, if, if, …</code>, i.e. the first
+condition that evaluates to <code>true</code> will be picked.
+
+If none of the conditions are <code>true</code>, an optional
+<code style="white-space: pre;">$otherwise(\<value if all statements are
+false\>)</code> can be appended at the end. If not appended, and none of
+the conditions are <code>true</code>, <code>null</code> will be
+returned.
+
+<code>RPolarsThen</code> objects and <code>RPolarsChainedThen</code>
+objects (returned by <code style="white-space: pre;">$then()</code>)
+stores the same methods as Expr.
+
+## Value
 
 <ul>
 <li>
 
-<code>pl$when()</code>returns a <code>When</code> object,
+<code>pl$when()</code> returns a <code>When</code> object
 
 </li>
 <li>
 
-<code>pl$then()</code>returns a <code>Then</code> object,
+<code style="white-space: pre;">\<When\>$then()</code> returns a
+<code>Then</code> object
 
 </li>
 <li>
 
-<code style="white-space: pre;">\<Then\>$otherwise()</code>returns an
-Expression object,
+<code style="white-space: pre;">\<Then\>$when()</code> returns a
+<code>ChainedWhen</code> object
 
 </li>
 <li>
 
-<code style="white-space: pre;">\<Then\>$when()</code>returns a
-<code>ChainedWhen</code> object,
+<code style="white-space: pre;">\<ChainedWhen\>$then()</code> returns a
+<code>ChainedThen</code> object
 
 </li>
 <li>
 
-<code style="white-space: pre;">\<ChainedWhen\>$then()</code>returns a
-<code>ChainedThen</code> object,
-
-</li>
-<li>
-
-<code style="white-space: pre;">\<ChainedThen\>$otherwise()</code>returns
-an Expression object.
+<code style="white-space: pre;">$otherwise()</code> returns an Expr
+object.
 
 </li>
 </ul>
-
-## Value
-
-an polars object, see details.
 
 ## Examples
 
@@ -163,6 +151,26 @@ df$with_columns(
     #> └─────┴─────┴─────┘
 
 ``` r
+# The `$otherwise` at the end is optional.
+# If left out, any rows where none of the `$when()` expressions are evaluated to `true`,
+# are set to `null`
+df$with_columns(
+  val = pl$when(pl$col("foo") > 2)$then(1)
+)
+```
+
+    #> shape: (3, 3)
+    #> ┌─────┬─────┬──────┐
+    #> │ foo ┆ bar ┆ val  │
+    #> │ --- ┆ --- ┆ ---  │
+    #> │ f64 ┆ f64 ┆ f64  │
+    #> ╞═════╪═════╪══════╡
+    #> │ 1.0 ┆ 3.0 ┆ null │
+    #> │ 3.0 ┆ 4.0 ┆ 1.0  │
+    #> │ 4.0 ┆ 0.0 ┆ 1.0  │
+    #> └─────┴─────┴──────┘
+
+``` r
 # Pass multiple predicates, each of which must be met:
 df$with_columns(
   val = pl$when(
@@ -183,4 +191,36 @@ df$with_columns(
     #> │ 1.0 ┆ 3.0 ┆ 99.0 │
     #> │ 3.0 ┆ 4.0 ┆ 99.0 │
     #> │ 4.0 ┆ 0.0 ┆ -1.0 │
+    #> └─────┴─────┴──────┘
+
+``` r
+# In `$then()`, a character vector is parsed as column names
+df$with_columns(baz = pl$when(pl$col("foo") %% 2 == 1)$then("bar"))
+```
+
+    #> shape: (3, 3)
+    #> ┌─────┬─────┬──────┐
+    #> │ foo ┆ bar ┆ baz  │
+    #> │ --- ┆ --- ┆ ---  │
+    #> │ f64 ┆ f64 ┆ f64  │
+    #> ╞═════╪═════╪══════╡
+    #> │ 1.0 ┆ 3.0 ┆ 3.0  │
+    #> │ 3.0 ┆ 4.0 ┆ 4.0  │
+    #> │ 4.0 ┆ 0.0 ┆ null │
+    #> └─────┴─────┴──────┘
+
+``` r
+# So use `pl$lit()` to insert a string
+df$with_columns(baz = pl$when(pl$col("foo") %% 2 == 1)$then(pl$lit("bar")))
+```
+
+    #> shape: (3, 3)
+    #> ┌─────┬─────┬──────┐
+    #> │ foo ┆ bar ┆ baz  │
+    #> │ --- ┆ --- ┆ ---  │
+    #> │ f64 ┆ f64 ┆ str  │
+    #> ╞═════╪═════╪══════╡
+    #> │ 1.0 ┆ 3.0 ┆ bar  │
+    #> │ 3.0 ┆ 4.0 ┆ bar  │
+    #> │ 4.0 ┆ 0.0 ┆ null │
     #> └─────┴─────┴──────┘

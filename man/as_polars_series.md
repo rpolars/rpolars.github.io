@@ -22,6 +22,12 @@ as_polars_series(x, name = NULL, ...)
 # S3 method for class 'RPolarsExpr'
 as_polars_series(x, name = NULL, ...)
 
+# S3 method for class 'RPolarsThen'
+as_polars_series(x, name = NULL, ...)
+
+# S3 method for class 'RPolarsChainedThen'
+as_polars_series(x, name = NULL, ...)
+
 # S3 method for class 'POSIXlt'
 as_polars_series(x, name = NULL, ...)
 
