@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tail-of-a-dataframe" class="md-skip">
+        <a href="#get-the-last-n-rows" class="md-skip">
           Skip to content
         </a>
       
@@ -1801,27 +1801,6 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_abs.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    abs
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="Series_add.html" class="md-nav__link">
         
   
@@ -1969,27 +1948,6 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_ceil.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    ceil
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="Series_chunk_lengths.html" class="md-nav__link">
         
   
@@ -2074,27 +2032,6 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_cumsum.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    cumsum
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="Series_div.html" class="md-nav__link">
         
   
@@ -2121,27 +2058,6 @@
   
   <span class="md-ellipsis">
     equals
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Series_floor.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    floor
   </span>
   
 
@@ -3196,27 +3112,6 @@
   
   <span class="md-ellipsis">
     lazy
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="DataFrame_limit.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    limit
   </span>
   
 
@@ -4373,27 +4268,6 @@
   
   
     <li class="md-nav__item">
-      <a href="LazyFrame_limit.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    limit
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="LazyFrame_max.html" class="md-nav__link">
         
   
@@ -4866,18 +4740,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#details" class="md-nav__link">
+  <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
-      Details
+      Value
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#value" class="md-nav__link">
+  <a href="#see-also" class="md-nav__link">
     <span class="md-ellipsis">
-      Value
+      See Also
     </span>
   </a>
   
@@ -6982,27 +6856,6 @@
   
   <span class="md-ellipsis">
     sum
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="S3_tail.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    tail
   </span>
   
 
@@ -14498,18 +14351,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#details" class="md-nav__link">
+  <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
-      Details
+      Value
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#value" class="md-nav__link">
+  <a href="#see-also" class="md-nav__link">
     <span class="md-ellipsis">
-      Value
+      See Also
     </span>
   </a>
   
@@ -14542,12 +14395,12 @@
   
 
 
-<h1 id="tail-of-a-dataframe">Tail of a DataFrame</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1048"><strong>Source code</strong></a></p>
+<h1 id="get-the-last-n-rows">Get the last <code>n</code> rows.</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1063"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Get the last <code>n</code> rows.</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>&lt;LazyFrame&gt;$tail(n)
+<pre><code class='language-R'>&lt;LazyFrame&gt;$tail(n = 5L)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
@@ -14557,29 +14410,46 @@
 <code id="LazyFrame_tail_:_n">n</code>
 </td>
 <td>
-Positive number not larger than 2^32.
+Number of rows to return.
 </td>
 </tr>
 </table>
 
-<h2 id="details">Details</h2>
-<p>Any number will converted to u32. Negative raises error.</p>
 <h2 id="value">Value</h2>
-<p>A LazyFrame</p>
+<p>A new <code>LazyFrame</code> object with applied filter.</p>
+<h2 id="see-also">See Also</h2>
+<p><code>&lt;LazyFrame&gt;$head()</code></p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">LazyFrame</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span><span class="o">$</span><span class="nf">tail</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">lf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">LazyFrame</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">7</span><span class="o">:</span><span class="m">12</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">lf</span><span class="o">$</span><span class="nf">tail</span><span class="p">()</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (2, 11)
-#&gt; ┌──────┬─────┬───────┬───────┬───┬─────┬─────┬──────┬──────┐
-#&gt; │ mpg  ┆ cyl ┆ disp  ┆ hp    ┆ … ┆ vs  ┆ am  ┆ gear ┆ carb │
-#&gt; │ ---  ┆ --- ┆ ---   ┆ ---   ┆   ┆ --- ┆ --- ┆ ---  ┆ ---  │
-#&gt; │ f64  ┆ f64 ┆ f64   ┆ f64   ┆   ┆ f64 ┆ f64 ┆ f64  ┆ f64  │
-#&gt; ╞══════╪═════╪═══════╪═══════╪═══╪═════╪═════╪══════╪══════╡
-#&gt; │ 15.0 ┆ 8.0 ┆ 301.0 ┆ 335.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 5.0  ┆ 8.0  │
-#&gt; │ 21.4 ┆ 4.0 ┆ 121.0 ┆ 109.0 ┆ … ┆ 1.0 ┆ 1.0 ┆ 4.0  ┆ 2.0  │
-#&gt; └──────┴─────┴───────┴───────┴───┴─────┴─────┴──────┴──────┘
+<div class="highlight"><pre><span></span><code>#&gt; shape: (5, 2)
+#&gt; ┌─────┬─────┐
+#&gt; │ a   ┆ b   │
+#&gt; │ --- ┆ --- │
+#&gt; │ i32 ┆ i32 │
+#&gt; ╞═════╪═════╡
+#&gt; │ 2   ┆ 8   │
+#&gt; │ 3   ┆ 9   │
+#&gt; │ 4   ┆ 10  │
+#&gt; │ 5   ┆ 11  │
+#&gt; │ 6   ┆ 12  │
+#&gt; └─────┴─────┘
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">lf</span><span class="o">$</span><span class="nf">tail</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; shape: (2, 2)
+#&gt; ┌─────┬─────┐
+#&gt; │ a   ┆ b   │
+#&gt; │ --- ┆ --- │
+#&gt; │ i32 ┆ i32 │
+#&gt; ╞═════╪═════╡
+#&gt; │ 5   ┆ 11  │
+#&gt; │ 6   ┆ 12  │
+#&gt; └─────┴─────┘
 </code></pre></div>
 
 

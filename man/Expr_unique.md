@@ -2,7 +2,7 @@
 
 # Get unique values
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2016)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2001)
 
 ## Description
 

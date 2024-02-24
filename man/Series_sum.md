@@ -2,7 +2,7 @@
 
 # Sum
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L776)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L718)
 
 ## Description
 

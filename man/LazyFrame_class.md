@@ -119,23 +119,22 @@ ls(.pr$LazyFrame)
     #> [15] "get_optimization_toggle" "group_by"               
     #> [17] "group_by_dynamic"        "join"                   
     #> [19] "join_asof"               "last"                   
-    #> [21] "limit"                   "max"                    
-    #> [23] "mean"                    "median"                 
-    #> [25] "melt"                    "min"                    
-    #> [27] "print"                   "profile"                
-    #> [29] "quantile"                "rename"                 
-    #> [31] "reverse"                 "rolling"                
-    #> [33] "schema"                  "select"                 
-    #> [35] "select_str_as_lit"       "set_optimization_toggle"
-    #> [37] "shift"                   "shift_and_fill"         
-    #> [39] "sink_csv"                "sink_ipc"               
-    #> [41] "sink_json"               "sink_parquet"           
-    #> [43] "slice"                   "sort_by_exprs"          
-    #> [45] "std"                     "sum"                    
-    #> [47] "tail"                    "unique"                 
-    #> [49] "unnest"                  "var"                    
-    #> [51] "with_columns"            "with_context"           
-    #> [53] "with_row_index"
+    #> [21] "max"                     "mean"                   
+    #> [23] "median"                  "melt"                   
+    #> [25] "min"                     "print"                  
+    #> [27] "profile"                 "quantile"               
+    #> [29] "rename"                  "reverse"                
+    #> [31] "rolling"                 "schema"                 
+    #> [33] "select"                  "select_str_as_lit"      
+    #> [35] "set_optimization_toggle" "shift"                  
+    #> [37] "shift_and_fill"          "sink_csv"               
+    #> [39] "sink_ipc"                "sink_json"              
+    #> [41] "sink_parquet"            "slice"                  
+    #> [43] "sort_by_exprs"           "std"                    
+    #> [45] "sum"                     "tail"                   
+    #> [47] "unique"                  "unnest"                 
+    #> [49] "var"                     "with_columns"           
+    #> [51] "with_context"            "with_row_index"
 
 ``` r
 # Practical example ##
@@ -180,7 +179,7 @@ Ldf_best$describe_plan()
 
     #> FILTER [(col("Species")) == (String(setosa))] FROM
     #> 
-    #>   Csv SCAN /tmp/RtmpUlkyzd/filea1793b368507
+    #>   Csv SCAN /tmp/Rtmp4ayDTs/filea38c8cb6813
     #>   PROJECT */5 COLUMNS
 
 ``` r
@@ -197,7 +196,7 @@ Ldf_best$describe_optimized_plan()
 ```
 
     #> 
-    #>   Csv SCAN /tmp/RtmpUlkyzd/filea1793b368507
+    #>   Csv SCAN /tmp/Rtmp4ayDTs/filea38c8cb6813
     #>   PROJECT */5 COLUMNS
     #>   SELECTION: [(col("Species")) == (String(setosa))]
 

@@ -1801,27 +1801,6 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_abs.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    abs
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="Series_add.html" class="md-nav__link">
         
   
@@ -1969,27 +1948,6 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_ceil.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    ceil
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="Series_chunk_lengths.html" class="md-nav__link">
         
   
@@ -2074,27 +2032,6 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_cumsum.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    cumsum
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="Series_div.html" class="md-nav__link">
         
   
@@ -2121,27 +2058,6 @@
   
   <span class="md-ellipsis">
     equals
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Series_floor.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    floor
   </span>
   
 
@@ -3196,27 +3112,6 @@
   
   <span class="md-ellipsis">
     lazy
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="DataFrame_limit.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    limit
   </span>
   
 
@@ -4357,27 +4252,6 @@
   
   <span class="md-ellipsis">
     last
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="LazyFrame_limit.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    limit
   </span>
   
 
@@ -6991,27 +6865,6 @@
   
   <span class="md-ellipsis">
     sum
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="S3_tail.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    tail
   </span>
   
 
@@ -14561,7 +14414,7 @@
 
 
 <h1 id="collect-and-profile-a-lazy-query">Collect and profile a lazy query.</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1569"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1584"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>This will run the query and return a list containing the materialized
 DataFrame and a DataFrame that contains profiling information of each
@@ -14792,15 +14645,15 @@ TRUE)</code>.
 #&gt; 
 #&gt; $profile
 #&gt; shape: (3, 3)
-#&gt; ┌────────────────────┬───────┬──────┐
-#&gt; │ node               ┆ start ┆ end  │
-#&gt; │ ---                ┆ ---   ┆ ---  │
-#&gt; │ str                ┆ u64   ┆ u64  │
-#&gt; ╞════════════════════╪═══════╪══════╡
-#&gt; │ optimization       ┆ 0     ┆ 19   │
-#&gt; │ sort(Sepal.Length) ┆ 19    ┆ 749  │
-#&gt; │ group_by(Species)  ┆ 753   ┆ 1161 │
-#&gt; └────────────────────┴───────┴──────┘
+#&gt; ┌────────────────────┬───────┬─────┐
+#&gt; │ node               ┆ start ┆ end │
+#&gt; │ ---                ┆ ---   ┆ --- │
+#&gt; │ str                ┆ u64   ┆ u64 │
+#&gt; ╞════════════════════╪═══════╪═════╡
+#&gt; │ optimization       ┆ 0     ┆ 10  │
+#&gt; │ sort(Sepal.Length) ┆ 10    ┆ 163 │
+#&gt; │ group_by(Species)  ┆ 166   ┆ 323 │
+#&gt; └────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
@@ -14837,9 +14690,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ ---   │
 #&gt; │ str                ┆ u64   ┆ u64   │
 #&gt; ╞════════════════════╪═══════╪═══════╡
-#&gt; │ optimization       ┆ 0     ┆ 12    │
-#&gt; │ sort(Sepal.Length) ┆ 12    ┆ 631   │
-#&gt; │ group_by(Species)  ┆ 635   ┆ 68740 │
+#&gt; │ optimization       ┆ 0     ┆ 8     │
+#&gt; │ sort(Sepal.Length) ┆ 8     ┆ 170   │
+#&gt; │ group_by(Species)  ┆ 173   ┆ 67616 │
 #&gt; └────────────────────┴───────┴───────┘
 </code></pre></div>
 

@@ -2,11 +2,18 @@
 
 ## Polars R Package (development version)
 
+### Breaking changes
+
+-   Removed `as.list()` for class `RPolarsExpr` as it is a simple wrapper around
+    `list()` ([#843](https://github.com/pola-rs/r-polars/issues/843)).
+
 ### New features
 
 -   In the when-then-otherwise expressions, the last `$otherwise()` is now optional,
     as in Python Polars. If `$otherwise()` is not specified, rows that don't respect
     the condition set in `$when()` will be filled with `null` ([#836](https://github.com/pola-rs/r-polars/issues/836)).
+-   `<DataFrame>$head()` and `<DataFrame>$tail()` methods now support negative
+    row numbers ([#840](https://github.com/pola-rs/r-polars/issues/840)).
 
 ## Polars R Package 0.14.1
 

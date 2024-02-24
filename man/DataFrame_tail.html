@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tail-of-a-dataframe" class="md-skip">
+        <a href="#get-the-last-n-rows" class="md-skip">
           Skip to content
         </a>
       
@@ -1801,27 +1801,6 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_abs.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    abs
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="Series_add.html" class="md-nav__link">
         
   
@@ -1969,27 +1948,6 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_ceil.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    ceil
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="Series_chunk_lengths.html" class="md-nav__link">
         
   
@@ -2074,27 +2032,6 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_cumsum.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    cumsum
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="Series_div.html" class="md-nav__link">
         
   
@@ -2121,27 +2058,6 @@
   
   <span class="md-ellipsis">
     equals
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Series_floor.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    floor
   </span>
   
 
@@ -3214,27 +3130,6 @@
   
   
     <li class="md-nav__item">
-      <a href="DataFrame_limit.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    limit
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="DataFrame_max.html" class="md-nav__link">
         
   
@@ -3749,18 +3644,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#details" class="md-nav__link">
+  <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
-      Details
+      Value
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#value" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
-      Value
+      Examples
     </span>
   </a>
   
@@ -4442,27 +4337,6 @@
   
   <span class="md-ellipsis">
     last
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="LazyFrame_limit.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    limit
   </span>
   
 
@@ -6973,27 +6847,6 @@
   
   <span class="md-ellipsis">
     sum
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="S3_tail.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    tail
   </span>
   
 
@@ -14489,18 +14342,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#details" class="md-nav__link">
+  <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
-      Details
+      Value
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#value" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
-      Value
+      Examples
     </span>
   </a>
   
@@ -14524,12 +14377,12 @@
   
 
 
-<h1 id="tail-of-a-dataframe">Tail of a DataFrame</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L809"><strong>Source code</strong></a></p>
+<h1 id="get-the-last-n-rows">Get the last <code>n</code> rows.</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L803"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Get the last <code>n</code> rows.</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>&lt;DataFrame&gt;$tail(n)
+<pre><code class='language-R'>&lt;DataFrame&gt;$tail(n = 5L)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
@@ -14539,15 +14392,45 @@
 <code id="DataFrame_tail_:_n">n</code>
 </td>
 <td>
-Positive number not larger than 2^32.
+Number of rows to return. If a negative value is passed, return all rows
+except the first <code>abs(n)</code>.
 </td>
 </tr>
 </table>
 
-<h2 id="details">Details</h2>
-<p>Any number will converted to u32. Negative raises error.</p>
 <h2 id="value">Value</h2>
-<p>DataFrame</p>
+<p>A DataFrame</p>
+<h2 id="examples">Examples</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="n">bar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="o">:</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">ham</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">letters</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">])</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">df</span><span class="o">$</span><span class="nf">tail</span><span class="p">(</span><span class="m">3</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; shape: (3, 3)
+#&gt; ┌─────┬─────┬─────┐
+#&gt; │ foo ┆ bar ┆ ham │
+#&gt; │ --- ┆ --- ┆ --- │
+#&gt; │ i32 ┆ i32 ┆ str │
+#&gt; ╞═════╪═════╪═════╡
+#&gt; │ 3   ┆ 8   ┆ c   │
+#&gt; │ 4   ┆ 9   ┆ d   │
+#&gt; │ 5   ┆ 10  ┆ e   │
+#&gt; └─────┴─────┴─────┘
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Pass a negative value to get all rows except the first `abs(n)`.</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">tail</span><span class="p">(</span><span class="m">-3</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; shape: (2, 3)
+#&gt; ┌─────┬─────┬─────┐
+#&gt; │ foo ┆ bar ┆ ham │
+#&gt; │ --- ┆ --- ┆ --- │
+#&gt; │ i32 ┆ i32 ┆ str │
+#&gt; ╞═════╪═════╪═════╡
+#&gt; │ 4   ┆ 9   ┆ d   │
+#&gt; │ 5   ┆ 10  ┆ e   │
+#&gt; └─────┴─────┴─────┘
+</code></pre></div>
 
 
 

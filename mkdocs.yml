@@ -101,7 +101,6 @@ nav:
         - var: man/pl_var.md
         - with_string_cache: man/pl_with_string_cache.md
       Series:
-        - abs: man/Series_abs.md
         - add: man/Series_add.md
         - alias: man/Series_alias.md
         - all: man/Series_all.md
@@ -109,15 +108,12 @@ nav:
         - append: man/Series_append.md
         - arg_max: man/Series_arg_max.md
         - arg_min: man/Series_arg_min.md
-        - ceil: man/Series_ceil.md
         - chunk_lengths: man/Series_chunk_lengths.md
         - class: man/Series_class.md
         - clone: man/Series_clone.md
         - compare: man/Series_compare.md
-        - cumsum: man/Series_cumsum.md
         - div: man/Series_div.md
         - equals: man/Series_equals.md
-        - floor: man/Series_floor.md
         - is_numeric: man/Series_is_numeric.md
         - is_sorted: man/Series_is_sorted.md
         - len: man/Series_len.md
@@ -167,7 +163,6 @@ nav:
         - join: man/DataFrame_join.md
         - last: man/DataFrame_last.md
         - lazy: man/DataFrame_lazy.md
-        - limit: man/DataFrame_limit.md
         - max: man/DataFrame_max.md
         - mean: man/DataFrame_mean.md
         - median: man/DataFrame_median.md
@@ -221,7 +216,6 @@ nav:
         - join_asof: man/LazyFrame_join_asof.md
         - join: man/LazyFrame_join.md
         - last: man/LazyFrame_last.md
-        - limit: man/LazyFrame_limit.md
         - max: man/LazyFrame_max.md
         - mean: man/LazyFrame_mean.md
         - median: man/LazyFrame_median.md
@@ -332,7 +326,6 @@ nav:
         - print: man/S3_print.md
         - rownames: man/S3_rownames.md
         - sum: man/S3_sum.md
-        - tail: man/S3_tail.md
         - unique: man/S3_unique.md
       Expressions:
         - All others:

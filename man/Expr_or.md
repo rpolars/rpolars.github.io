@@ -2,7 +2,7 @@
 
 # Apply logical OR on two expressions
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1115)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1100)
 
 ## Description
 

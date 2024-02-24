@@ -2,7 +2,7 @@
 
 # duplicate and concatenate a series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L1018)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L960)
 
 ## Description
 

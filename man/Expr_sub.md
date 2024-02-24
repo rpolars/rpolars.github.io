@@ -2,7 +2,7 @@
 
 # Substract two expressions
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L344)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L329)
 
 ## Description
 

@@ -68,10 +68,14 @@ polars_info()
     #> Code completion: deactivated
 
 ``` r
-polars_info()$rust_polars
+polars_info()$versions
 ```
 
-    #> NULL
+    #> $r_package
+    #> [1] "0.14.1.9000"
+    #> 
+    #> $rust_crate
+    #> [1] "0.37.0"
 
 ``` r
 polars_info()$features$nightly

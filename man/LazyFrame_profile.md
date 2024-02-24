@@ -2,7 +2,7 @@
 
 # Collect and profile a lazy query.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1569)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1584)
 
 ## Description
 
@@ -248,15 +248,15 @@ pl$LazyFrame(iris)$
     #> 
     #> $profile
     #> shape: (3, 3)
-    #> ┌────────────────────┬───────┬──────┐
-    #> │ node               ┆ start ┆ end  │
-    #> │ ---                ┆ ---   ┆ ---  │
-    #> │ str                ┆ u64   ┆ u64  │
-    #> ╞════════════════════╪═══════╪══════╡
-    #> │ optimization       ┆ 0     ┆ 19   │
-    #> │ sort(Sepal.Length) ┆ 19    ┆ 749  │
-    #> │ group_by(Species)  ┆ 753   ┆ 1161 │
-    #> └────────────────────┴───────┴──────┘
+    #> ┌────────────────────┬───────┬─────┐
+    #> │ node               ┆ start ┆ end │
+    #> │ ---                ┆ ---   ┆ --- │
+    #> │ str                ┆ u64   ┆ u64 │
+    #> ╞════════════════════╪═══════╪═════╡
+    #> │ optimization       ┆ 0     ┆ 10  │
+    #> │ sort(Sepal.Length) ┆ 10    ┆ 163 │
+    #> │ group_by(Species)  ┆ 166   ┆ 323 │
+    #> └────────────────────┴───────┴─────┘
 
 ``` r
 # -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)
@@ -295,7 +295,7 @@ pl$LazyFrame(iris)$
     #> │ ---                ┆ ---   ┆ ---   │
     #> │ str                ┆ u64   ┆ u64   │
     #> ╞════════════════════╪═══════╪═══════╡
-    #> │ optimization       ┆ 0     ┆ 12    │
-    #> │ sort(Sepal.Length) ┆ 12    ┆ 631   │
-    #> │ group_by(Species)  ┆ 635   ┆ 68740 │
+    #> │ optimization       ┆ 0     ┆ 8     │
+    #> │ sort(Sepal.Length) ┆ 8     ┆ 170   │
+    #> │ group_by(Species)  ┆ 173   ┆ 67616 │
     #> └────────────────────┴───────┴───────┘

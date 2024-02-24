@@ -2,7 +2,7 @@
 
 # Slice
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1040)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1048)
 
 ## Description
 
@@ -35,6 +35,10 @@ at the offset will be selected.
 </td>
 </tr>
 </table>
+
+## Value
+
+A LazyFrame
 
 ## Examples
 
