@@ -2,7 +2,7 @@
 
 # Group a DataFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L852)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L866)
 
 ## Description
 
@@ -24,7 +24,8 @@ structure. This structure can then be used by several functions
 <code id="DataFrame_group_by_:_...">…</code>
 </td>
 <td>
-Any Expr(s) or string(s) naming a column.
+Column(s) to group by. Accepts expression input. Characters are parsed
+as column names.
 </td>
 </tr>
 <tr>
@@ -32,14 +33,19 @@ Any Expr(s) or string(s) naming a column.
 <code id="DataFrame_group_by_:_maintain_order">maintain_order</code>
 </td>
 <td>
-Keep the same group order as in the original data. Within each group,
-the order of rows is always preserved, regardless of this argument.
-Setting this to <code>TRUE</code> makes it more expensive to compute and
-blocks the possibility to run on the streaming engine. The default value
-can be changed with <code>options(polars.maintain_order = TRUE)</code>.
+Ensure that the order of the groups is consistent with the input data.
+This is slower than a default group by. Setting this to
+<code>TRUE</code> blocks the possibility to run on the streaming engine.
+The default value can be changed with
+<code>options(polars.maintain_order = TRUE)</code>.
 </td>
 </tr>
 </table>
+
+## Details
+
+Within each group, the order of the rows is always preserved, regardless
+of the <code>maintain_order</code> argument.
 
 ## Value
 
@@ -51,42 +57,92 @@ GroupBy (a DataFrame with special groupby methods like
 ``` r
 library(polars)
 
-gb = pl$DataFrame(
-  foo = c("one", "two", "two", "one", "two"),
-  bar = c(5, 3, 2, 4, 1)
-)$group_by("foo", maintain_order = TRUE)
+df = pl$DataFrame(
+  a = c("a", "b", "a", "b", "c"),
+  b = c(1, 2, 1, 3, 3),
+  c = c(5, 4, 3, 2, 1)
+)
 
-gb
+df$group_by("a")$agg(pl$col("b")$sum())
 ```
 
-    #> shape: (5, 2)
+    #> shape: (3, 2)
     #> ┌─────┬─────┐
-    #> │ foo ┆ bar │
+    #> │ a   ┆ b   │
     #> │ --- ┆ --- │
     #> │ str ┆ f64 │
     #> ╞═════╪═════╡
-    #> │ one ┆ 5.0 │
-    #> │ two ┆ 3.0 │
-    #> │ two ┆ 2.0 │
-    #> │ one ┆ 4.0 │
-    #> │ two ┆ 1.0 │
+    #> │ b   ┆ 5.0 │
+    #> │ a   ┆ 2.0 │
+    #> │ c   ┆ 3.0 │
     #> └─────┴─────┘
-    #> groups: foo
-    #> maintain order: TRUE
 
 ``` r
-gb$agg(
-  pl$col("bar")$sum()$name$suffix("_sum"),
-  pl$col("bar")$mean()$alias("bar_tail_sum")
+# Set `maintain_order = TRUE` to ensure the order of the groups is consistent with the input.
+df$group_by("a", maintain_order = TRUE)$agg(pl$col("c"))
+```
+
+    #> shape: (3, 2)
+    #> ┌─────┬────────────┐
+    #> │ a   ┆ c          │
+    #> │ --- ┆ ---        │
+    #> │ str ┆ list[f64]  │
+    #> ╞═════╪════════════╡
+    #> │ a   ┆ [5.0, 3.0] │
+    #> │ b   ┆ [4.0, 2.0] │
+    #> │ c   ┆ [1.0]      │
+    #> └─────┴────────────┘
+
+``` r
+# Group by multiple columns by passing a list of column names.
+df$group_by(c("a", "b"))$agg(pl$max("c"))
+```
+
+    #> shape: (4, 3)
+    #> ┌─────┬─────┬─────┐
+    #> │ a   ┆ b   ┆ c   │
+    #> │ --- ┆ --- ┆ --- │
+    #> │ str ┆ f64 ┆ f64 │
+    #> ╞═════╪═════╪═════╡
+    #> │ a   ┆ 1.0 ┆ 5.0 │
+    #> │ b   ┆ 3.0 ┆ 2.0 │
+    #> │ b   ┆ 2.0 ┆ 4.0 │
+    #> │ c   ┆ 3.0 ┆ 1.0 │
+    #> └─────┴─────┴─────┘
+
+``` r
+# Or pass some arguments to group by multiple columns in the same way.
+# Expressions are also accepted.
+df$group_by("a", pl$col("b") %/% 2)$agg(
+  pl$col("c")$mean()
 )
 ```
 
-    #> shape: (2, 3)
-    #> ┌─────┬─────────┬──────────────┐
-    #> │ foo ┆ bar_sum ┆ bar_tail_sum │
-    #> │ --- ┆ ---     ┆ ---          │
-    #> │ str ┆ f64     ┆ f64          │
-    #> ╞═════╪═════════╪══════════════╡
-    #> │ one ┆ 9.0     ┆ 4.5          │
-    #> │ two ┆ 6.0     ┆ 2.0          │
-    #> └─────┴─────────┴──────────────┘
+    #> shape: (3, 3)
+    #> ┌─────┬─────┬─────┐
+    #> │ a   ┆ b   ┆ c   │
+    #> │ --- ┆ --- ┆ --- │
+    #> │ str ┆ f64 ┆ f64 │
+    #> ╞═════╪═════╪═════╡
+    #> │ c   ┆ 1.0 ┆ 1.0 │
+    #> │ a   ┆ 0.0 ┆ 4.0 │
+    #> │ b   ┆ 1.0 ┆ 3.0 │
+    #> └─────┴─────┴─────┘
+
+``` r
+# The columns will be renamed to the argument names.
+df$group_by(d = "a", e = pl$col("b") %/% 2)$agg(
+  pl$col("c")$mean()
+)
+```
+
+    #> shape: (3, 3)
+    #> ┌─────┬─────┬─────┐
+    #> │ d   ┆ e   ┆ c   │
+    #> │ --- ┆ --- ┆ --- │
+    #> │ str ┆ f64 ┆ f64 │
+    #> ╞═════╪═════╪═════╡
+    #> │ c   ┆ 1.0 ┆ 1.0 │
+    #> │ a   ┆ 0.0 ┆ 4.0 │
+    #> │ b   ┆ 1.0 ┆ 3.0 │
+    #> └─────┴─────┴─────┘

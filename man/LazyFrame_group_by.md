@@ -2,7 +2,7 @@
 
 # Group a LazyFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1134)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1148)
 
 ## Description
 
@@ -24,7 +24,8 @@ structure. This structure can then be used by several functions
 <code id="LazyFrame_group_by_:_...">…</code>
 </td>
 <td>
-Any Expr(s) or string(s) naming a column.
+Column(s) to group by. Accepts expression input. Characters are parsed
+as column names.
 </td>
 </tr>
 <tr>
@@ -32,11 +33,11 @@ Any Expr(s) or string(s) naming a column.
 <code id="LazyFrame_group_by_:_maintain_order">maintain_order</code>
 </td>
 <td>
-Keep the same group order as in the original data. Within each group,
-the order of rows is always preserved, regardless of this argument.
-Setting this to <code>TRUE</code> makes it more expensive to compute and
-blocks the possibility to run on the streaming engine. The default value
-can be changed with <code>options(polars.maintain_order = TRUE)</code>.
+Ensure that the order of the groups is consistent with the input data.
+This is slower than a default group by. Setting this to
+<code>TRUE</code> blocks the possibility to run on the streaming engine.
+The default value can be changed with
+<code>options(polars.maintain_order = TRUE)</code>.
 </td>
 </tr>
 </table>
@@ -51,24 +52,92 @@ LazyGroupBy (a LazyFrame with special groupby methods like
 ``` r
 library(polars)
 
-pl$LazyFrame(
-  foo = c("one", "two", "two", "one", "two"),
-  bar = c(5, 3, 2, 4, 1)
-)$
-  group_by("foo")$
-  agg(
-  pl$col("bar")$sum()$name$suffix("_sum"),
-  pl$col("bar")$mean()$alias("bar_tail_sum")
-)$
-  collect()
+lf = pl$LazyFrame(
+  a = c("a", "b", "a", "b", "c"),
+  b = c(1, 2, 1, 3, 3),
+  c = c(5, 4, 3, 2, 1)
+)
+
+lf$group_by("a")$agg(pl$col("b")$sum())$collect()
 ```
 
-    #> shape: (2, 3)
-    #> ┌─────┬─────────┬──────────────┐
-    #> │ foo ┆ bar_sum ┆ bar_tail_sum │
-    #> │ --- ┆ ---     ┆ ---          │
-    #> │ str ┆ f64     ┆ f64          │
-    #> ╞═════╪═════════╪══════════════╡
-    #> │ one ┆ 9.0     ┆ 4.5          │
-    #> │ two ┆ 6.0     ┆ 2.0          │
-    #> └─────┴─────────┴──────────────┘
+    #> shape: (3, 2)
+    #> ┌─────┬─────┐
+    #> │ a   ┆ b   │
+    #> │ --- ┆ --- │
+    #> │ str ┆ f64 │
+    #> ╞═════╪═════╡
+    #> │ c   ┆ 3.0 │
+    #> │ a   ┆ 2.0 │
+    #> │ b   ┆ 5.0 │
+    #> └─────┴─────┘
+
+``` r
+# Set `maintain_order = TRUE` to ensure the order of the groups is consistent with the input.
+lf$group_by("a", maintain_order = TRUE)$agg(pl$col("c"))$collect()
+```
+
+    #> shape: (3, 2)
+    #> ┌─────┬────────────┐
+    #> │ a   ┆ c          │
+    #> │ --- ┆ ---        │
+    #> │ str ┆ list[f64]  │
+    #> ╞═════╪════════════╡
+    #> │ a   ┆ [5.0, 3.0] │
+    #> │ b   ┆ [4.0, 2.0] │
+    #> │ c   ┆ [1.0]      │
+    #> └─────┴────────────┘
+
+``` r
+# Group by multiple columns by passing a list of column names.
+lf$group_by(c("a", "b"))$agg(pl$max("c"))$collect()
+```
+
+    #> shape: (4, 3)
+    #> ┌─────┬─────┬─────┐
+    #> │ a   ┆ b   ┆ c   │
+    #> │ --- ┆ --- ┆ --- │
+    #> │ str ┆ f64 ┆ f64 │
+    #> ╞═════╪═════╪═════╡
+    #> │ b   ┆ 2.0 ┆ 4.0 │
+    #> │ b   ┆ 3.0 ┆ 2.0 │
+    #> │ a   ┆ 1.0 ┆ 5.0 │
+    #> │ c   ┆ 3.0 ┆ 1.0 │
+    #> └─────┴─────┴─────┘
+
+``` r
+# Or pass some arguments to group by multiple columns in the same way.
+# Expressions are also accepted.
+lf$group_by("a", pl$col("b") %/% 2)$agg(
+  pl$col("c")$mean()
+)$collect()
+```
+
+    #> shape: (3, 3)
+    #> ┌─────┬─────┬─────┐
+    #> │ a   ┆ b   ┆ c   │
+    #> │ --- ┆ --- ┆ --- │
+    #> │ str ┆ f64 ┆ f64 │
+    #> ╞═════╪═════╪═════╡
+    #> │ a   ┆ 0.0 ┆ 4.0 │
+    #> │ b   ┆ 1.0 ┆ 3.0 │
+    #> │ c   ┆ 1.0 ┆ 1.0 │
+    #> └─────┴─────┴─────┘
+
+``` r
+# The columns will be renamed to the argument names.
+lf$group_by(d = "a", e = pl$col("b") %/% 2)$agg(
+  pl$col("c")$mean()
+)$collect()
+```
+
+    #> shape: (3, 3)
+    #> ┌─────┬─────┬─────┐
+    #> │ d   ┆ e   ┆ c   │
+    #> │ --- ┆ --- ┆ --- │
+    #> │ str ┆ f64 ┆ f64 │
+    #> ╞═════╪═════╪═════╡
+    #> │ a   ┆ 0.0 ┆ 4.0 │
+    #> │ c   ┆ 1.0 ┆ 1.0 │
+    #> │ b   ┆ 1.0 ┆ 3.0 │
+    #> └─────┴─────┴─────┘

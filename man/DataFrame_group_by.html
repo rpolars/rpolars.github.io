@@ -3077,6 +3077,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -14342,6 +14351,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -14378,7 +14396,7 @@
 
 
 <h1 id="group-a-dataframe">Group a DataFrame</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L852"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L866"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>This doesn’t modify the data but only stores information about the group
 structure. This structure can then be used by several functions
@@ -14395,7 +14413,8 @@ structure. This structure can then be used by several functions
 <code id="DataFrame_group_by_:_...">…</code>
 </td>
 <td>
-Any Expr(s) or string(s) naming a column.
+Column(s) to group by. Accepts expression input. Characters are parsed
+as column names.
 </td>
 </tr>
 <tr>
@@ -14403,57 +14422,104 @@ Any Expr(s) or string(s) naming a column.
 <code id="DataFrame_group_by_:_maintain_order">maintain_order</code>
 </td>
 <td>
-Keep the same group order as in the original data. Within each group,
-the order of rows is always preserved, regardless of this argument.
-Setting this to <code>TRUE</code> makes it more expensive to compute and
-blocks the possibility to run on the streaming engine. The default value
-can be changed with <code>options(polars.maintain_order = TRUE)</code>.
+Ensure that the order of the groups is consistent with the input data.
+This is slower than a default group by. Setting this to
+<code>TRUE</code> blocks the possibility to run on the streaming engine.
+The default value can be changed with
+<code>options(polars.maintain_order = TRUE)</code>.
 </td>
 </tr>
 </table>
 
+<h2 id="details">Details</h2>
+<p>Within each group, the order of the rows is always preserved, regardless
+of the <code>maintain_order</code> argument.</p>
 <h2 id="value">Value</h2>
 <p>GroupBy (a DataFrame with special groupby methods like
 <code style="white-space: pre;">$agg()</code>)</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">gb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;one&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;two&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;two&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;one&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;two&quot;</span><span class="p">),</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="n">bar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">)</span><span class="o">$</span><span class="nf">group_by</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">maintain_order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">gb</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">),</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">df</span><span class="o">$</span><span class="nf">group_by</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">agg</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;b&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">sum</span><span class="p">())</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (5, 2)
+<div class="highlight"><pre><span></span><code>#&gt; shape: (3, 2)
 #&gt; ┌─────┬─────┐
-#&gt; │ foo ┆ bar │
+#&gt; │ a   ┆ b   │
 #&gt; │ --- ┆ --- │
 #&gt; │ str ┆ f64 │
 #&gt; ╞═════╪═════╡
-#&gt; │ one ┆ 5.0 │
-#&gt; │ two ┆ 3.0 │
-#&gt; │ two ┆ 2.0 │
-#&gt; │ one ┆ 4.0 │
-#&gt; │ two ┆ 1.0 │
+#&gt; │ b   ┆ 5.0 │
+#&gt; │ a   ┆ 2.0 │
+#&gt; │ c   ┆ 3.0 │
 #&gt; └─────┴─────┘
-#&gt; groups: foo
-#&gt; maintain order: TRUE
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">gb</span><span class="o">$</span><span class="nf">agg</span><span class="p">(</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">sum</span><span class="p">()</span><span class="o">$</span><span class="n">name</span><span class="o">$</span><span class="nf">suffix</span><span class="p">(</span><span class="s">&quot;_sum&quot;</span><span class="p">),</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">mean</span><span class="p">()</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;bar_tail_sum&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Set `maintain_order = TRUE` to ensure the order of the groups is consistent with the input.</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">group_by</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">maintain_order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="o">$</span><span class="nf">agg</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">))</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (2, 3)
-#&gt; ┌─────┬─────────┬──────────────┐
-#&gt; │ foo ┆ bar_sum ┆ bar_tail_sum │
-#&gt; │ --- ┆ ---     ┆ ---          │
-#&gt; │ str ┆ f64     ┆ f64          │
-#&gt; ╞═════╪═════════╪══════════════╡
-#&gt; │ one ┆ 9.0     ┆ 4.5          │
-#&gt; │ two ┆ 6.0     ┆ 2.0          │
-#&gt; └─────┴─────────┴──────────────┘
+<div class="highlight"><pre><span></span><code>#&gt; shape: (3, 2)
+#&gt; ┌─────┬────────────┐
+#&gt; │ a   ┆ c          │
+#&gt; │ --- ┆ ---        │
+#&gt; │ str ┆ list[f64]  │
+#&gt; ╞═════╪════════════╡
+#&gt; │ a   ┆ [5.0, 3.0] │
+#&gt; │ b   ┆ [4.0, 2.0] │
+#&gt; │ c   ┆ [1.0]      │
+#&gt; └─────┴────────────┘
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Group by multiple columns by passing a list of column names.</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">group_by</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">))</span><span class="o">$</span><span class="nf">agg</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">max</span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; shape: (4, 3)
+#&gt; ┌─────┬─────┬─────┐
+#&gt; │ a   ┆ b   ┆ c   │
+#&gt; │ --- ┆ --- ┆ --- │
+#&gt; │ str ┆ f64 ┆ f64 │
+#&gt; ╞═════╪═════╪═════╡
+#&gt; │ a   ┆ 1.0 ┆ 5.0 │
+#&gt; │ b   ┆ 3.0 ┆ 2.0 │
+#&gt; │ b   ┆ 2.0 ┆ 4.0 │
+#&gt; │ c   ┆ 3.0 ┆ 1.0 │
+#&gt; └─────┴─────┴─────┘
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Or pass some arguments to group by multiple columns in the same way.</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># Expressions are also accepted.</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">df</span><span class="o">$</span><span class="nf">group_by</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;b&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%/%</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="o">$</span><span class="nf">agg</span><span class="p">(</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">mean</span><span class="p">()</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; shape: (3, 3)
+#&gt; ┌─────┬─────┬─────┐
+#&gt; │ a   ┆ b   ┆ c   │
+#&gt; │ --- ┆ --- ┆ --- │
+#&gt; │ str ┆ f64 ┆ f64 │
+#&gt; ╞═════╪═════╪═════╡
+#&gt; │ c   ┆ 1.0 ┆ 1.0 │
+#&gt; │ a   ┆ 0.0 ┆ 4.0 │
+#&gt; │ b   ┆ 1.0 ┆ 3.0 │
+#&gt; └─────┴─────┴─────┘
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># The columns will be renamed to the argument names.</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">group_by</span><span class="p">(</span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;b&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%/%</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="o">$</span><span class="nf">agg</span><span class="p">(</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">mean</span><span class="p">()</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; shape: (3, 3)
+#&gt; ┌─────┬─────┬─────┐
+#&gt; │ d   ┆ e   ┆ c   │
+#&gt; │ --- ┆ --- ┆ --- │
+#&gt; │ str ┆ f64 ┆ f64 │
+#&gt; ╞═════╪═════╪═════╡
+#&gt; │ c   ┆ 1.0 ┆ 1.0 │
+#&gt; │ a   ┆ 0.0 ┆ 4.0 │
+#&gt; │ b   ┆ 1.0 ┆ 3.0 │
+#&gt; └─────┴─────┴─────┘
 </code></pre></div>
 
 
