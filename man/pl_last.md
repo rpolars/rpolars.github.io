@@ -1,16 +1,29 @@
 
 
-# pl$last
+# Get the last value.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L200)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L240)
 
 ## Description
 
-Depending on the input type this function does different things:
+This function has different behavior depending on the input type:
+
+<ul>
+<li>
+
+Missing -\> Takes last column of a context.
+
+</li>
+<li>
+
+Character vectors -\> Syntactic sugar for <code>pl$col(…)$last()</code>.
+
+</li>
+</ul>
 
 ## Usage
 
-<pre><code class='language-R'>pl_last(column = NULL)
+<pre><code class='language-R'>pl_last(...)
 </code></pre>
 
 ## Arguments
@@ -18,49 +31,41 @@ Depending on the input type this function does different things:
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_last_:_column">column</code>
+<code id="pl_last_:_...">…</code>
 </td>
 <td>
-
-if dtype is:
-
-<ul>
-<li>
-
-Series: Take last value in <code>Series</code>
-
-</li>
-<li>
-
-str: syntactic sugar for
-<code style="white-space: pre;">pl.col(..).last()</code>
-
-</li>
-<li>
-
-NULL: expression to take last column of a context.
-
-</li>
-</ul>
+Characters indicating the column names (passed to <code>pl$col()</code>,
+see <code>?pl_col</code> for details), or empty. If empty (default),
+returns an expression to take the last column of the context instead.
 </td>
 </tr>
 </table>
 
 ## Value
 
-Expr or last value of input Series
+Expr
+
+## See Also
+
+<ul>
+<li>
+
+<code>\<Expr\>$last()</code>
+
+</li>
+</ul>
 
 ## Examples
 
 ``` r
 library(polars)
 
-
 df = pl$DataFrame(
   a = c(1, 8, 3),
   b = c(4, 5, 2),
-  c = c("foo", "bar", "foo")
+  c = c("foo", "bar", "baz")
 )
+
 df$select(pl$last())
 ```
 
@@ -72,7 +77,7 @@ df$select(pl$last())
     #> ╞═════╡
     #> │ foo │
     #> │ bar │
-    #> │ foo │
+    #> │ baz │
     #> └─────┘
 
 ``` r
@@ -89,7 +94,14 @@ df$select(pl$last("a"))
     #> └─────┘
 
 ``` r
-pl$last(df$get_column("a"))
+df$select(pl$last(c("b", "c")))
 ```
 
-    #> [1] 3
+    #> shape: (1, 2)
+    #> ┌─────┬─────┐
+    #> │ b   ┆ c   │
+    #> │ --- ┆ --- │
+    #> │ f64 ┆ str │
+    #> ╞═════╪═════╡
+    #> │ 2.0 ┆ baz │
+    #> └─────┴─────┘

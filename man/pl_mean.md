@@ -1,12 +1,12 @@
 
 
-# pl$mean
+# Get the mean value.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L308)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L316)
 
 ## Description
 
-Depending on the input type this function does different things:
+This function is syntactic sugar for <code>pl$col(…)$mean()</code>.
 
 ## Usage
 
@@ -21,50 +21,37 @@ Depending on the input type this function does different things:
 <code id="pl_mean_:_...">…</code>
 </td>
 <td>
-
-One or several elements:
-
-<ul>
-<li>
-
-Series: Take mean value in <code>Series</code>
-
-</li>
-<li>
-
-DataFrame or LazyFrame: Take mean value of each column
-
-</li>
-<li>
-
-character vector: parsed as column names
-
-</li>
-<li>
-
-NULL: expression to take mean column of a context.
-
-</li>
-</ul>
+Characters indicating the column names, passed to <code>pl$col()</code>.
+See <code>?pl_col</code> for details.
 </td>
 </tr>
 </table>
 
 ## Value
 
-Expr or mean value of input Series
+Expr
+
+## See Also
+
+<ul>
+<li>
+
+<code>\<Expr\>$mean()</code>
+
+</li>
+</ul>
 
 ## Examples
 
 ``` r
 library(polars)
 
-
 df = pl$DataFrame(
   a = c(1, 8, 3),
   b = c(4, 5, 2),
   c = c("foo", "bar", "foo")
 )
+
 df$select(pl$mean("a"))
 ```
 

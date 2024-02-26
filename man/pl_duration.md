@@ -2,7 +2,7 @@
 
 # Create polars Duration from distinct time components
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L1076)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L993)
 
 ## Description
 

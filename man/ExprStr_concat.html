@@ -810,6 +810,27 @@
   
   
     <li class="md-nav__item">
+      <a href="pl_count.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    count
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="pl_cov.html" class="md-nav__link">
         
   
@@ -1193,6 +1214,27 @@
   
   <span class="md-ellipsis">
     len
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_lit.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lit
   </span>
   
 
@@ -8647,27 +8689,6 @@
   
   
     <li class="md-nav__item">
-      <a href="Expr_lit.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    lit
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="Expr_log.html" class="md-nav__link">
         
   
@@ -14440,7 +14461,7 @@ propagated: if the column contains any null values, the output is null.
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Series list of strings to Series of concatenated strings</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">bar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">),</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">))))</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">eval</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">()</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">concat</span><span class="p">())</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">first</span><span class="p">())</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">eval</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">concat</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="p">))</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">first</span><span class="p">())</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; shape: (2, 1)
 #&gt; ┌───────┐

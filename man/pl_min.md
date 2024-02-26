@@ -1,12 +1,12 @@
 
 
-# Find minimum value in one or several columns
+# Get the minimum value.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L499)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L432)
 
 ## Description
 
-This is syntactic sugar for <code>pl$col(…)$min()</code>.
+Syntactic sugar for <code>pl$col(…)$min()</code>.
 
 ## Usage
 
@@ -21,33 +21,8 @@ This is syntactic sugar for <code>pl$col(…)$min()</code>.
 <code id="pl_min_:_...">…</code>
 </td>
 <td>
-
-is a: If one arg:
-
-<ul>
-<li>
-
-Series or Expr, same as <code>column$sum()</code>
-
-</li>
-<li>
-
-string, same as <code>pl$col(column)$sum()</code>
-
-</li>
-<li>
-
-numeric, same as <code>pl$lit(column)$sum()</code>
-
-</li>
-<li>
-
-list of strings(column names) or expressions to add up as expr1 +
-expr2 + expr3 + … If several args, then wrapped in a list and handled as
-above.
-
-</li>
-</ul>
+Characters indicating the column names, passed to <code>pl$col()</code>.
+See <code>?pl_col</code> for details.
 </td>
 </tr>
 </table>
@@ -56,27 +31,67 @@ above.
 
 Expr
 
+## See Also
+
+<ul>
+<li>
+
+<code>\<Expr\>$min()</code>
+
+</li>
+<li>
+
+<code>pl$min_horizontal()</code>
+
+</li>
+</ul>
+
 ## Examples
 
 ``` r
 library(polars)
 
 df = pl$DataFrame(
-  a = NA_real_,
-  b = c(1:2, NA_real_, NA_real_),
-  c = c(1:4)
+  num_1 = c(1, 8, 3),
+  num_2 = c(4, 5, 2),
+  chr_1 = c("foo", "bar", "foo")
 )
-df
+
+df$select(pl$min("num_1"))
 ```
 
-    #> shape: (4, 3)
-    #> ┌──────┬──────┬─────┐
-    #> │ a    ┆ b    ┆ c   │
-    #> │ ---  ┆ ---  ┆ --- │
-    #> │ f64  ┆ f64  ┆ i32 │
-    #> ╞══════╪══════╪═════╡
-    #> │ null ┆ 1.0  ┆ 1   │
-    #> │ null ┆ 2.0  ┆ 2   │
-    #> │ null ┆ null ┆ 3   │
-    #> │ null ┆ null ┆ 4   │
-    #> └──────┴──────┴─────┘
+    #> shape: (1, 1)
+    #> ┌───────┐
+    #> │ num_1 │
+    #> │ ---   │
+    #> │ f64   │
+    #> ╞═══════╡
+    #> │ 1.0   │
+    #> └───────┘
+
+``` r
+# Get the minimum value of multiple columns.
+df$select(pl$min(r"(^num_\d+$)"))
+```
+
+    #> shape: (1, 2)
+    #> ┌───────┬───────┐
+    #> │ num_1 ┆ num_2 │
+    #> │ ---   ┆ ---   │
+    #> │ f64   ┆ f64   │
+    #> ╞═══════╪═══════╡
+    #> │ 1.0   ┆ 2.0   │
+    #> └───────┴───────┘
+
+``` r
+df$select(pl$min("num_1", "num_2"))
+```
+
+    #> shape: (1, 2)
+    #> ┌───────┬───────┐
+    #> │ num_1 ┆ num_2 │
+    #> │ ---   ┆ ---   │
+    #> │ f64   ┆ f64   │
+    #> ╞═══════╪═══════╡
+    #> │ 1.0   ┆ 2.0   │
+    #> └───────┴───────┘

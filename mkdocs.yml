@@ -55,6 +55,7 @@ nav:
         - concat_str: man/pl_concat_str.md
         - concat: man/pl_concat.md
         - corr: man/pl_corr.md
+        - count: man/pl_count.md
         - cov: man/pl_cov.md
         - DataFrame: man/pl_DataFrame.md
         - date_range: man/pl_date_range.md
@@ -74,6 +75,7 @@ nav:
         - last: man/pl_last.md
         - LazyFrame: man/pl_LazyFrame.md
         - len: man/pl_len.md
+        - lit: man/pl_lit.md
         - max_horizontal: man/pl_max_horizontal.md
         - max: man/pl_max.md
         - mean: man/pl_mean.md
@@ -413,7 +415,6 @@ nav:
             - kurtosis: man/Expr_kurtosis.md
             - last: man/Expr_last.md
             - limit: man/Expr_limit.md
-            - lit: man/Expr_lit.md
             - log: man/Expr_log.md
             - log10: man/Expr_log10.md
             - lower_bound: man/Expr_lower_bound.md

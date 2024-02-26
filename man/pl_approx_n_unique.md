@@ -1,17 +1,18 @@
 
 
-# Approximate count of unique values.
+# Approximate count of unique values
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L428)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L383)
 
 ## Description
 
-This is done using the HyperLogLog++ algorithm for cardinality
-estimation.
+This function is syntactic sugar for
+<code>pl$col(…)$approx_n_unique()</code>, and uses the HyperLogLog++
+algorithm for cardinality estimation.
 
 ## Usage
 
-<pre><code class='language-R'>pl_approx_n_unique(column)
+<pre><code class='language-R'>pl_approx_n_unique(...)
 </code></pre>
 
 ## Arguments
@@ -19,110 +20,61 @@ estimation.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_approx_n_unique_:_column">column</code>
+<code id="pl_approx_n_unique_:_...">…</code>
 </td>
 <td>
-
-if dtype is:
-
-<ul>
-<li>
-
-String: syntactic sugar for
-<code>pl$col(column)$approx_n_unique()</code>, returns Expr
-
-</li>
-<li>
-
-Expr: syntactic sugar for <code>column$approx_n_unique()</code>, returns
-Expr
-
-</li>
-</ul>
+Characters indicating the column names, passed to <code>pl$col()</code>.
+See <code>?pl_col</code> for details.
 </td>
 </tr>
 </table>
 
-## Details
-
-The approx_n_unique is likely only warranted for large columns. See
-example. It appears approx_n_unique scales better than n_unique, such
-that the relative performance difference increases with column size.
-
 ## Value
 
 Expr
+
+## See Also
+
+<ul>
+<li>
+
+<code>\<Expr\>$approx_n_unique()</code>
+
+</li>
+</ul>
 
 ## Examples
 
 ``` r
 library(polars)
 
-# column as Series
-pl$approx_n_unique(pl$lit(1:4)) == 4
-```
+df = pl$DataFrame(
+  a = c(1, 8, 1),
+  b = c(4, 5, 2),
+  c = c("foo", "bar", "foo")
+)
 
-    #> polars Expr: [(Series.approx_n_unique()) == (4.0)]
-
-``` r
-# column as String
-expr = pl$approx_n_unique("bob")
-print(expr)
-```
-
-    #> polars Expr: col("bob").approx_n_unique()
-
-``` r
-pl$DataFrame(bob = 1:80)$select(expr)
+df$select(pl$approx_n_unique("a"))
 ```
 
     #> shape: (1, 1)
     #> ┌─────┐
-    #> │ bob │
+    #> │ a   │
     #> │ --- │
     #> │ u32 │
     #> ╞═════╡
-    #> │ 79  │
+    #> │ 2   │
     #> └─────┘
 
 ``` r
-# colum as Expr
-pl$DataFrame(bob = 1:4)$select(pl$approx_n_unique(pl$col("bob")))
+df$select(pl$approx_n_unique("b", "c"))
 ```
 
-    #> shape: (1, 1)
-    #> ┌─────┐
-    #> │ bob │
-    #> │ --- │
-    #> │ u32 │
-    #> ╞═════╡
-    #> │ 4   │
-    #> └─────┘
-
-``` r
-# comparison with n_unique for 2 million integers. (try change example to 20 million ints)
-lit_series = pl$lit(c(1:1E6, 1E6:1, 1:1E6))
-system.time(pl$approx_n_unique(lit_series)$to_series()$print())
-```
-
-    #> shape: (1,)
-    #> Series: '' [u32]
-    #> [
-    #>  1014256
-    #> ]
-
-    #>    user  system elapsed 
-    #>   0.056   0.003   0.061
-
-``` r
-system.time(pl$n_unique(lit_series)$to_series()$print())
-```
-
-    #> shape: (1,)
-    #> Series: '' [u32]
-    #> [
-    #>  1000000
-    #> ]
-
-    #>    user  system elapsed 
-    #>   0.124   0.000   0.100
+    #> shape: (1, 2)
+    #> ┌─────┬─────┐
+    #> │ b   ┆ c   │
+    #> │ --- ┆ --- │
+    #> │ u32 ┆ u32 │
+    #> ╞═════╪═════╡
+    #> │ 3   ┆ 2   │
+    #> └─────┴─────┘

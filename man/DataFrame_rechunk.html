@@ -810,6 +810,27 @@
   
   
     <li class="md-nav__item">
+      <a href="pl_count.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    count
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="pl_cov.html" class="md-nav__link">
         
   
@@ -1193,6 +1214,27 @@
   
   <span class="md-ellipsis">
     len
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_lit.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lit
   </span>
   
 
@@ -8741,27 +8783,6 @@
   
   
     <li class="md-nav__item">
-      <a href="Expr_lit.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    lit
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="Expr_log.html" class="md-nav__link">
         
   
@@ -14490,10 +14511,10 @@ FALSE</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nf">lapply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">tracemem</span><span class="p">)</span><span class="w"> </span><span class="c1"># trace chunks to verify no re-allocation</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [[1]]
-#&gt; [1] &quot;&lt;0x557377de3040&gt;&quot;
+#&gt; [1] &quot;&lt;0x55a152a61008&gt;&quot;
 #&gt; 
 #&gt; [[2]]
-#&gt; [1] &quot;&lt;0x557374de26f8&gt;&quot;
+#&gt; [1] &quot;&lt;0x55a14fb344c8&gt;&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">z</span><span class="w"> </span><span class="c1"># looks like a plain vector</span>
@@ -14503,16 +14524,16 @@ FALSE</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nf">lapply</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="w"> </span><span class="n">tracemem</span><span class="p">)</span><span class="w"> </span><span class="c1"># mem allocation  in z are the same from x</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [[1]]
-#&gt; [1] &quot;&lt;0x557377de3040&gt;&quot;
+#&gt; [1] &quot;&lt;0x55a152a61008&gt;&quot;
 #&gt; 
 #&gt; [[2]]
-#&gt; [1] &quot;&lt;0x557374de26f8&gt;&quot;
+#&gt; [1] &quot;&lt;0x55a14fb344c8&gt;&quot;
 #&gt; 
 #&gt; [[3]]
-#&gt; [1] &quot;&lt;0x557377de3040&gt;&quot;
+#&gt; [1] &quot;&lt;0x55a152a61008&gt;&quot;
 #&gt; 
 #&gt; [[4]]
-#&gt; [1] &quot;&lt;0x557374de26f8&gt;&quot;
+#&gt; [1] &quot;&lt;0x55a14fb344c8&gt;&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nf">str</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 </code></pre></div>

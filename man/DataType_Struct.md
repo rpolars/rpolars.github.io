@@ -141,7 +141,7 @@ print(pl$dtypes)
     #>   }
     #>   unwrap(.pr$DataType$new_datetime(tu, tz))
     #> }
-    #> <bytecode: 0x5600e9b5f888>
+    #> <bytecode: 0x55a4c32f4040>
     #> <environment: namespace:polars>
     #> 
     #> $Array
@@ -158,7 +158,7 @@ print(pl$dtypes)
     #>   .pr$DataType$new_array(datatype, width) |>
     #>     unwrap("in pl$Array():")
     #> }
-    #> <bytecode: 0x5600e9b535b0>
+    #> <bytecode: 0x55a4c32e87e8>
     #> <environment: namespace:polars>
     #> 
     #> $List
@@ -174,7 +174,7 @@ print(pl$dtypes)
     #>   }
     #>   .pr$DataType$new_list(datatype)
     #> }
-    #> <bytecode: 0x5600e9b41ff8>
+    #> <bytecode: 0x55a4c32dadc0>
     #> <environment: namespace:polars>
     #> 
     #> $Struct
@@ -208,7 +208,7 @@ print(pl$dtypes)
     #>     and_then(DataType$new_struct) |>
     #>     unwrap("in pl$Struct:")
     #> }
-    #> <bytecode: 0x5600ed3bef98>
+    #> <bytecode: 0x55a4c6b59568>
     #> <environment: namespace:polars>
 
 ``` r

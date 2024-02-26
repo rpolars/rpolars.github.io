@@ -2,15 +2,15 @@
 
 # Get the last <code>n</code> rows.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L272)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L293)
 
 ## Description
 
-Get the last <code>n</code> rows.
+This function is syntactic sugar for <code>pl$col(…)$tail(n)</code>.
 
 ## Usage
 
-<pre><code class='language-R'>pl_tail(column, n = 10)
+<pre><code class='language-R'>pl_tail(..., n = 10)
 </code></pre>
 
 ## Arguments
@@ -18,25 +18,11 @@ Get the last <code>n</code> rows.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_tail_:_column">column</code>
+<code id="pl_tail_:_...">…</code>
 </td>
 <td>
-
-if dtype is:
-
-<ul>
-<li>
-
-Series: Take tail value in <code>Series</code>
-
-</li>
-<li>
-
-str or in: syntactic sugar for
-<code style="white-space: pre;">pl.col(..).tail()</code>
-
-</li>
-</ul>
+Characters indicating the column names, passed to <code>pl$col()</code>.
+See <code>?pl_col</code> for details.
 </td>
 </tr>
 <tr>
@@ -44,14 +30,24 @@ str or in: syntactic sugar for
 <code id="pl_tail_:_n">n</code>
 </td>
 <td>
-Number of rows to take
+Number of rows to return.
 </td>
 </tr>
 </table>
 
 ## Value
 
-Expr or tail value of input Series
+Expr
+
+## See Also
+
+<ul>
+<li>
+
+<code>\<Expr\>$tail()</code>
+
+</li>
+</ul>
 
 ## Examples
 
@@ -64,14 +60,7 @@ df = pl$DataFrame(
   c = c("foo", "bar", "foo")
 )
 
-expr_tail = pl$head("a")
-print(expr_tail)
-```
-
-    #> polars Expr: col("a").slice(offset=0, length=10)
-
-``` r
-df$select(expr_tail)
+df$select(pl$tail("a"))
 ```
 
     #> shape: (3, 1)
@@ -86,26 +75,15 @@ df$select(expr_tail)
     #> └─────┘
 
 ``` r
-df$select(pl$tail("a", 2))
+df$select(pl$tail("a", "b", n = 2))
 ```
 
-    #> shape: (2, 1)
-    #> ┌─────┐
-    #> │ a   │
-    #> │ --- │
-    #> │ f64 │
-    #> ╞═════╡
-    #> │ 8.0 │
-    #> │ 3.0 │
-    #> └─────┘
-
-``` r
-pl$tail(df$get_column("a"), 2)
-```
-
-    #> polars Series: shape: (2,)
-    #> Series: 'a' [f64]
-    #> [
-    #>  8.0
-    #>  3.0
-    #> ]
+    #> shape: (2, 2)
+    #> ┌─────┬─────┐
+    #> │ a   ┆ b   │
+    #> │ --- ┆ --- │
+    #> │ f64 ┆ f64 │
+    #> ╞═════╪═════╡
+    #> │ 8.0 ┆ 5.0 │
+    #> │ 3.0 ┆ 2.0 │
+    #> └─────┴─────┘

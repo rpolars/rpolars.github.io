@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#find-minimum-value-in-one-or-several-columns" class="md-skip">
+        <a href="#get-the-minimum-value" class="md-skip">
           Skip to content
         </a>
       
@@ -812,6 +812,27 @@
   
   
     <li class="md-nav__item">
+      <a href="pl_count.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    count
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="pl_cov.html" class="md-nav__link">
         
   
@@ -1211,6 +1232,27 @@
   
   
     <li class="md-nav__item">
+      <a href="pl_lit.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="pl_max_horizontal.html" class="md-nav__link">
         
   
@@ -1413,6 +1455,15 @@
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
     </span>
   </a>
   
@@ -8732,27 +8783,6 @@
   
   
     <li class="md-nav__item">
-      <a href="Expr_lit.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    lit
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="Expr_log.html" class="md-nav__link">
         
   
@@ -14351,6 +14381,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -14377,10 +14416,10 @@
   
 
 
-<h1 id="find-minimum-value-in-one-or-several-columns">Find minimum value in one or several columns</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L499"><strong>Source code</strong></a></p>
+<h1 id="get-the-minimum-value">Get the minimum value.</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L432"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>This is syntactic sugar for <code>pl$col(…)$min()</code>.</p>
+<p>Syntactic sugar for <code>pl$col(…)$min()</code>.</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>pl$min(...)
 </code></pre>
@@ -14392,60 +14431,70 @@
 <code id="pl_min_:_...">…</code>
 </td>
 <td>
-
-is a: If one arg:
-
-<ul>
-<li>
-
-Series or Expr, same as <code>column$sum()</code>
-
-</li>
-<li>
-
-string, same as <code>pl$col(column)$sum()</code>
-
-</li>
-<li>
-
-numeric, same as <code>pl$lit(column)$sum()</code>
-
-</li>
-<li>
-
-list of strings(column names) or expressions to add up as expr1 +
-expr2 + expr3 + … If several args, then wrapped in a list and handled as
-above.
-
-</li>
-</ul>
+Characters indicating the column names, passed to <code>pl$col()</code>.
+See <code>?pl_col</code> for details.
 </td>
 </tr>
 </table>
 
 <h2 id="value">Value</h2>
 <p>Expr</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li>
+
+<code>\<Expr\>$min()</code>
+
+</li>
+<li>
+
+<code>pl$min_horizontal()</code>
+
+</li>
+</ul>
+
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NA_real_</span><span class="p">,</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="kc">NA_real_</span><span class="p">,</span><span class="w"> </span><span class="kc">NA_real_</span><span class="p">),</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="n">num_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">),</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="n">num_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">),</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="n">chr_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">)</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">)</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">df</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">min</span><span class="p">(</span><span class="s">&quot;num_1&quot;</span><span class="p">))</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (4, 3)
-#&gt; ┌──────┬──────┬─────┐
-#&gt; │ a    ┆ b    ┆ c   │
-#&gt; │ ---  ┆ ---  ┆ --- │
-#&gt; │ f64  ┆ f64  ┆ i32 │
-#&gt; ╞══════╪══════╪═════╡
-#&gt; │ null ┆ 1.0  ┆ 1   │
-#&gt; │ null ┆ 2.0  ┆ 2   │
-#&gt; │ null ┆ null ┆ 3   │
-#&gt; │ null ┆ null ┆ 4   │
-#&gt; └──────┴──────┴─────┘
+<div class="highlight"><pre><span></span><code>#&gt; shape: (1, 1)
+#&gt; ┌───────┐
+#&gt; │ num_1 │
+#&gt; │ ---   │
+#&gt; │ f64   │
+#&gt; ╞═══════╡
+#&gt; │ 1.0   │
+#&gt; └───────┘
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Get the minimum value of multiple columns.</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">min</span><span class="p">(</span><span class="n">r</span><span class="s">&quot;(^num_\d+$)&quot;</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; shape: (1, 2)
+#&gt; ┌───────┬───────┐
+#&gt; │ num_1 ┆ num_2 │
+#&gt; │ ---   ┆ ---   │
+#&gt; │ f64   ┆ f64   │
+#&gt; ╞═══════╪═══════╡
+#&gt; │ 1.0   ┆ 2.0   │
+#&gt; └───────┴───────┘
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">min</span><span class="p">(</span><span class="s">&quot;num_1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;num_2&quot;</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; shape: (1, 2)
+#&gt; ┌───────┬───────┐
+#&gt; │ num_1 ┆ num_2 │
+#&gt; │ ---   ┆ ---   │
+#&gt; │ f64   ┆ f64   │
+#&gt; ╞═══════╪═══════╡
+#&gt; │ 1.0   ┆ 2.0   │
+#&gt; └───────┴───────┘
 </code></pre></div>
 
 

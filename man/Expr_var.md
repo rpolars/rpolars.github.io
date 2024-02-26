@@ -2,7 +2,7 @@
 
 # Get variance
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1855)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1823)
 
 ## Description
 
@@ -21,7 +21,9 @@ Get variance
 <code id="Expr_var_:_ddof">ddof</code>
 </td>
 <td>
-Degrees of freedom, must be an integer between 0 and 255
+An integer representing "Delta Degrees of Freedom": the divisor used in
+the calculation is <code>N - ddof</code>, where <code>N</code>
+represents the number of elements. By default ddof is <code>1</code>.
 </td>
 </tr>
 </table>

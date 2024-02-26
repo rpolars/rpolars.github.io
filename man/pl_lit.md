@@ -2,7 +2,7 @@
 
 # Create a literal value
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1051)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L30)
 
 ## Description
 
@@ -10,7 +10,7 @@ Create a literal value
 
 ## Usage
 
-<pre><code class='language-R'>Expr_lit(x)
+<pre><code class='language-R'>pl_lit(x)
 </code></pre>
 
 ## Arguments
@@ -18,7 +18,7 @@ Create a literal value
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_lit_:_x">x</code>
+<code id="pl_lit_:_x">x</code>
 </td>
 <td>
 A vector of any length

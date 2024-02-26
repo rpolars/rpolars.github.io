@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#variance" class="md-skip">
+        <a href="#get-the-variance" class="md-skip">
           Skip to content
         </a>
       
@@ -812,6 +812,27 @@
   
   
     <li class="md-nav__item">
+      <a href="pl_count.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    count
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="pl_cov.html" class="md-nav__link">
         
   
@@ -1195,6 +1216,27 @@
   
   <span class="md-ellipsis">
     len
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_lit.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lit
   </span>
   
 
@@ -1791,6 +1833,24 @@
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
     </span>
   </a>
   
@@ -8723,27 +8783,6 @@
   
   
     <li class="md-nav__item">
-      <a href="Expr_lit.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    lit
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="Expr_log.html" class="md-nav__link">
         
   
@@ -14341,6 +14380,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -14359,22 +14416,23 @@
   
 
 
-<h1 id="variance">Variance</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L611"><strong>Source code</strong></a></p>
+<h1 id="get-the-variance">Get the variance.</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L536"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>syntactic sugar for starting a expression with var</p>
+<p>This function is syntactic sugar for <code>pl$col(…)$var(ddof)</code>.</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>pl$var(column, ddof = 1)
+<pre><code class='language-R'>pl$var(..., ddof = 1)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_var_:_column">column</code>
+<code id="pl_var_:_...">…</code>
 </td>
 <td>
-Column name.
+Characters indicating the column names, passed to <code>pl$col()</code>.
+See <code>?pl_col</code> for details.
 </td>
 </tr>
 <tr>
@@ -14382,14 +14440,55 @@ Column name.
 <code id="pl_var_:_ddof">ddof</code>
 </td>
 <td>
-Delta Degrees of Freedom: the divisor used in the calculation is N -
-ddof, where N represents the number of elements. By default ddof is 1.
+An integer representing "Delta Degrees of Freedom": the divisor used in
+the calculation is <code>N - ddof</code>, where <code>N</code>
+represents the number of elements. By default ddof is <code>1</code>.
 </td>
 </tr>
 </table>
 
 <h2 id="value">Value</h2>
-<p>Expr or Series matching type of input column</p>
+<p>Expr</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li>
+
+<code>\<Expr\>$var()</code>
+
+</li>
+</ul>
+
+<h2 id="examples">Examples</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">),</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">),</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">var</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; shape: (1, 1)
+#&gt; ┌──────┐
+#&gt; │ a    │
+#&gt; │ ---  │
+#&gt; │ f64  │
+#&gt; ╞══════╡
+#&gt; │ 13.0 │
+#&gt; └──────┘
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">var</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; shape: (1, 2)
+#&gt; ┌──────┬──────────┐
+#&gt; │ a    ┆ b        │
+#&gt; │ ---  ┆ ---      │
+#&gt; │ f64  ┆ f64      │
+#&gt; ╞══════╪══════════╡
+#&gt; │ 13.0 ┆ 2.333333 │
+#&gt; └──────┴──────────┘
+</code></pre></div>
 
 
 

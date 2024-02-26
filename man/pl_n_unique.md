@@ -1,16 +1,16 @@
 
 
-# Count <code>n</code> unique values
+# Count unique values.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L389)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L360)
 
 ## Description
 
-Depending on the input type this function does different things:
+This function is syntactic sugar for <code>pl$col(…)$n_unique()</code>.
 
 ## Usage
 
-<pre><code class='language-R'>pl_n_unique(column)
+<pre><code class='language-R'>pl_n_unique(...)
 </code></pre>
 
 ## Arguments
@@ -18,80 +18,61 @@ Depending on the input type this function does different things:
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_n_unique_:_column">column</code>
+<code id="pl_n_unique_:_...">…</code>
 </td>
 <td>
-
-if dtype is:
-
-<ul>
-<li>
-
-Series: call method n_unique() to return value of unique values.
-
-</li>
-<li>
-
-String: syntactic sugar for <code>pl$col(column)$n_unique()</code>,
-returns Expr
-
-</li>
-<li>
-
-Expr: syntactic sugar for <code>column$n_unique()</code>, returns Expr
-
-</li>
-</ul>
+Characters indicating the column names, passed to <code>pl$col()</code>.
+See <code>?pl_col</code> for details.
 </td>
 </tr>
 </table>
 
 ## Value
 
-Expr or value
+Expr
+
+## See Also
+
+<ul>
+<li>
+
+<code>\<Expr\>$n_unique()</code>
+
+</li>
+</ul>
 
 ## Examples
 
 ``` r
 library(polars)
 
-# column as Series
-pl$n_unique(pl$Series(1:4)) == 4
-```
+df = pl$DataFrame(
+  a = c(1, 8, 1),
+  b = c(4, 5, 2),
+  c = c("foo", "bar", "foo")
+)
 
-    #> [1] TRUE
-
-``` r
-# column as String
-expr = pl$n_unique("bob")
-print(expr)
-```
-
-    #> polars Expr: col("bob").n_unique()
-
-``` r
-pl$DataFrame(bob = 1:4)$select(expr)
+df$select(pl$n_unique("a"))
 ```
 
     #> shape: (1, 1)
     #> ┌─────┐
-    #> │ bob │
+    #> │ a   │
     #> │ --- │
     #> │ u32 │
     #> ╞═════╡
-    #> │ 4   │
+    #> │ 2   │
     #> └─────┘
 
 ``` r
-# colum as Expr
-pl$DataFrame(bob = 1:4)$select(pl$n_unique(pl$col("bob")))
+df$select(pl$n_unique("b", "c"))
 ```
 
-    #> shape: (1, 1)
-    #> ┌─────┐
-    #> │ bob │
-    #> │ --- │
-    #> │ u32 │
-    #> ╞═════╡
-    #> │ 4   │
-    #> └─────┘
+    #> shape: (1, 2)
+    #> ┌─────┬─────┐
+    #> │ b   ┆ c   │
+    #> │ --- ┆ --- │
+    #> │ u32 ┆ u32 │
+    #> ╞═════╪═════╡
+    #> │ 3   ┆ 2   │
+    #> └─────┴─────┘

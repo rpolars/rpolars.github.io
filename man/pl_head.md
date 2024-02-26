@@ -2,15 +2,15 @@
 
 # Get the first <code>n</code> rows.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L237)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L270)
 
 ## Description
 
-Get the first <code>n</code> rows.
+This function is syntactic sugar for <code>pl$col(…)$head(n)</code>.
 
 ## Usage
 
-<pre><code class='language-R'>pl_head(column, n = 10)
+<pre><code class='language-R'>pl_head(..., n = 10)
 </code></pre>
 
 ## Arguments
@@ -18,25 +18,11 @@ Get the first <code>n</code> rows.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_head_:_column">column</code>
+<code id="pl_head_:_...">…</code>
 </td>
 <td>
-
-if dtype is:
-
-<ul>
-<li>
-
-Series: Take head value in <code>Series</code>
-
-</li>
-<li>
-
-str or int: syntactic sugar for
-<code style="white-space: pre;">pl.col(..).head()</code>
-
-</li>
-</ul>
+Characters indicating the column names, passed to <code>pl$col()</code>.
+See <code>?pl_col</code> for details.
 </td>
 </tr>
 <tr>
@@ -44,14 +30,24 @@ str or int: syntactic sugar for
 <code id="pl_head_:_n">n</code>
 </td>
 <td>
-Number of rows to take
+Number of rows to return.
 </td>
 </tr>
 </table>
 
 ## Value
 
-Expr or head value of input Series
+Expr
+
+## See Also
+
+<ul>
+<li>
+
+<code>\<Expr\>$head()</code>
+
+</li>
+</ul>
 
 ## Examples
 
@@ -64,14 +60,7 @@ df = pl$DataFrame(
   c = c("foo", "bar", "foo")
 )
 
-expr_head = pl$head("a")
-print(expr_head)
-```
-
-    #> polars Expr: col("a").slice(offset=0, length=10)
-
-``` r
-df$select(expr_head)
+df$select(pl$head("a"))
 ```
 
     #> shape: (3, 1)
@@ -86,26 +75,15 @@ df$select(expr_head)
     #> └─────┘
 
 ``` r
-df$select(pl$head("a", 2))
+df$select(pl$head("a", "b", n = 2))
 ```
 
-    #> shape: (2, 1)
-    #> ┌─────┐
-    #> │ a   │
-    #> │ --- │
-    #> │ f64 │
-    #> ╞═════╡
-    #> │ 1.0 │
-    #> │ 8.0 │
-    #> └─────┘
-
-``` r
-pl$head(df$get_column("a"), 2)
-```
-
-    #> polars Series: shape: (2,)
-    #> Series: 'a' [f64]
-    #> [
-    #>  1.0
-    #>  8.0
-    #> ]
+    #> shape: (2, 2)
+    #> ┌─────┬─────┐
+    #> │ a   ┆ b   │
+    #> │ --- ┆ --- │
+    #> │ f64 ┆ f64 │
+    #> ╞═════╪═════╡
+    #> │ 1.0 ┆ 4.0 │
+    #> │ 8.0 ┆ 5.0 │
+    #> └─────┴─────┘

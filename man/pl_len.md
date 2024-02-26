@@ -1,65 +1,44 @@
 
 
-# pl$count
+# Return the number of rows in the context.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L107)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L138)
 
 ## Description
 
-Count the number of values in this column/context.
+This is similar to <code style="white-space: pre;">COUNT(\*)</code> in
+SQL.
 
 ## Usage
 
-<pre><code class='language-R'>pl_len(column = NULL)
+<pre><code class='language-R'>pl_len()
 </code></pre>
 
-## Arguments
+## Value
 
-<table>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_len_:_column">column</code>
-</td>
-<td>
+Expression of data type UInt32
 
-if dtype is:
+## See Also
 
 <ul>
 <li>
 
-Series: count length of Series
-
-</li>
-<li>
-
-str: count values of this column
-
-</li>
-<li>
-
-NULL: count the number of value in this context.
+<code>\<Expr\>$count()</code>
 
 </li>
 </ul>
-</td>
-</tr>
-</table>
-
-## Value
-
-Expr or value-count in case Series
 
 ## Examples
 
 ``` r
 library(polars)
 
-
 df = pl$DataFrame(
-  a = c(1, 8, 3),
-  b = c(4, 5, 2),
+  a = c(1, 2, NA),
+  b = c(3, NA, NA),
   c = c("foo", "bar", "foo")
 )
+
 df$select(pl$len())
 ```
 
@@ -71,17 +50,3 @@ df$select(pl$len())
     #> ╞═════╡
     #> │ 3   │
     #> └─────┘
-
-``` r
-df$group_by("c", maintain_order = TRUE)$agg(pl$len())
-```
-
-    #> shape: (2, 2)
-    #> ┌─────┬─────┐
-    #> │ c   ┆ len │
-    #> │ --- ┆ --- │
-    #> │ str ┆ u32 │
-    #> ╞═════╪═════╡
-    #> │ foo ┆ 2   │
-    #> │ bar ┆ 1   │
-    #> └─────┴─────┘

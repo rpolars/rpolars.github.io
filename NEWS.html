@@ -803,6 +803,27 @@
   
   
     <li class="md-nav__item">
+      <a href="man/pl_count.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    count
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="man/pl_cov.html" class="md-nav__link">
         
   
@@ -1186,6 +1207,27 @@
   
   <span class="md-ellipsis">
     len
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="man/pl_lit.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lit
   </span>
   
 
@@ -8622,27 +8664,6 @@
   
   <span class="md-ellipsis">
     limit
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="man/Expr_lit.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    lit
   </span>
   
 
@@ -16234,6 +16255,17 @@
 <ul>
 <li>Removed <code>as.list()</code> for class <code>RPolarsExpr</code> as it is a simple wrapper around
     <code>list()</code> (<a href="https://github.com/pola-rs/r-polars/issues/843">#843</a>).</li>
+<li>Several functions have been rewritten to match the behavior of Python Polars.<ul>
+<li><code>pl$col(...)</code> requires at least one argument. (<a href="https://github.com/pola-rs/r-polars/issues/852">#852</a>)</li>
+<li><code>pl$head()</code>, <code>pl$tail()</code>, <code>pl$count()</code>, <code>pl$first()</code>, <code>pl$last()</code>, <code>pl$max()</code>,
+    <code>pl$min()</code>, <code>pl$mean()</code>, <code>pl$media()</code>, <code>pl$std()</code>, <code>pl$sum()</code>, <code>pl$var()</code>,
+    <code>pl$n_unique()</code>, and <code>pl$approx_n_unique()</code> are syntactic sugar for
+    <code>pl$col(...)$&lt;method()&gt;</code>. The argument <code>...</code> now only accepts characters,
+    that are either column names or regular expressions (<a href="https://github.com/pola-rs/r-polars/issues/852">#852</a>).</li>
+<li>There is no argument for <code>pl$len()</code>. If you want to measure the length of
+    specific columns, you should use <code>pl$count(...)</code> (<a href="https://github.com/pola-rs/r-polars/issues/852">#852</a>).</li>
+</ul>
+</li>
 </ul>
 <h3 id="new-features">New features</h3>
 <ul>

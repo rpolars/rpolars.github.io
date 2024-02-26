@@ -738,18 +738,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#details" class="md-nav__link">
+  <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
-      Details
+      Value
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#value" class="md-nav__link">
+  <a href="#see-also" class="md-nav__link">
     <span class="md-ellipsis">
-      Value
+      See Also
     </span>
   </a>
   
@@ -890,6 +890,27 @@
   
   <span class="md-ellipsis">
     corr
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_count.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    count
   </span>
   
 
@@ -1289,6 +1310,27 @@
   
   <span class="md-ellipsis">
     len
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_lit.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lit
   </span>
   
 
@@ -8741,27 +8783,6 @@
   
   
     <li class="md-nav__item">
-      <a href="Expr_lit.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    lit
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="Expr_log.html" class="md-nav__link">
         
   
@@ -14351,18 +14372,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#details" class="md-nav__link">
+  <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
-      Details
+      Value
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#value" class="md-nav__link">
+  <a href="#see-also" class="md-nav__link">
     <span class="md-ellipsis">
-      Value
+      See Also
     </span>
   </a>
   
@@ -14395,109 +14416,70 @@
   
 
 
-<h1 id="approximate-count-of-unique-values">Approximate count of unique values.</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L428"><strong>Source code</strong></a></p>
+<h1 id="approximate-count-of-unique-values">Approximate count of unique values</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L383"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>This is done using the HyperLogLog++ algorithm for cardinality
-estimation.</p>
+<p>This function is syntactic sugar for
+<code>pl$col(…)$approx_n_unique()</code>, and uses the HyperLogLog++
+algorithm for cardinality estimation.</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>pl$approx_n_unique(column)
+<pre><code class='language-R'>pl$approx_n_unique(...)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_approx_n_unique_:_column">column</code>
+<code id="pl_approx_n_unique_:_...">…</code>
 </td>
 <td>
-
-if dtype is:
-
-<ul>
-<li>
-
-String: syntactic sugar for
-<code>pl$col(column)$approx_n_unique()</code>, returns Expr
-
-</li>
-<li>
-
-Expr: syntactic sugar for <code>column$approx_n_unique()</code>, returns
-Expr
-
-</li>
-</ul>
+Characters indicating the column names, passed to <code>pl$col()</code>.
+See <code>?pl_col</code> for details.
 </td>
 </tr>
 </table>
 
-<h2 id="details">Details</h2>
-<p>The approx_n_unique is likely only warranted for large columns. See
-example. It appears approx_n_unique scales better than n_unique, such
-that the relative performance difference increases with column size.</p>
 <h2 id="value">Value</h2>
 <p>Expr</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li>
+
+<code>\<Expr\>$approx_n_unique()</code>
+
+</li>
+</ul>
+
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># column as Series</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">pl</span><span class="o">$</span><span class="nf">approx_n_unique</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">4</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; polars Expr: [(Series.approx_n_unique()) == (4.0)]
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># column as String</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">expr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">approx_n_unique</span><span class="p">(</span><span class="s">&quot;bob&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nf">print</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; polars Expr: col(&quot;bob&quot;).approx_n_unique()
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">bob</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">80</span><span class="p">)</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">),</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">),</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">approx_n_unique</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">))</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; shape: (1, 1)
 #&gt; ┌─────┐
-#&gt; │ bob │
+#&gt; │ a   │
 #&gt; │ --- │
 #&gt; │ u32 │
 #&gt; ╞═════╡
-#&gt; │ 79  │
+#&gt; │ 2   │
 #&gt; └─────┘
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># colum as Expr</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">bob</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">)</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">approx_n_unique</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;bob&quot;</span><span class="p">)))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">approx_n_unique</span><span class="p">(</span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">))</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (1, 1)
-#&gt; ┌─────┐
-#&gt; │ bob │
-#&gt; │ --- │
-#&gt; │ u32 │
-#&gt; ╞═════╡
-#&gt; │ 4   │
-#&gt; └─────┘
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># comparison with n_unique for 2 million integers. (try change example to 20 million ints)</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">lit_series</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">1E6</span><span class="p">,</span><span class="w"> </span><span class="m">1E6</span><span class="o">:</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1E6</span><span class="p">))</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nf">system.time</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">approx_n_unique</span><span class="p">(</span><span class="n">lit_series</span><span class="p">)</span><span class="o">$</span><span class="nf">to_series</span><span class="p">()</span><span class="o">$</span><span class="nf">print</span><span class="p">())</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (1,)
-#&gt; Series: &#39;&#39; [u32]
-#&gt; [
-#&gt;  1014256
-#&gt; ]
-
-#&gt;    user  system elapsed 
-#&gt;   0.056   0.003   0.061
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nf">system.time</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">n_unique</span><span class="p">(</span><span class="n">lit_series</span><span class="p">)</span><span class="o">$</span><span class="nf">to_series</span><span class="p">()</span><span class="o">$</span><span class="nf">print</span><span class="p">())</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (1,)
-#&gt; Series: &#39;&#39; [u32]
-#&gt; [
-#&gt;  1000000
-#&gt; ]
-
-#&gt;    user  system elapsed 
-#&gt;   0.124   0.000   0.100
+<div class="highlight"><pre><span></span><code>#&gt; shape: (1, 2)
+#&gt; ┌─────┬─────┐
+#&gt; │ b   ┆ c   │
+#&gt; │ --- ┆ --- │
+#&gt; │ u32 ┆ u32 │
+#&gt; ╞═════╪═════╡
+#&gt; │ 3   ┆ 2   │
+#&gt; └─────┴─────┘
 </code></pre></div>
 
 

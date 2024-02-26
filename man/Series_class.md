@@ -345,7 +345,6 @@ pl$show_all_public_methods("RPolarsSeries")
     #>           [ len ; function ]
     #>           [ limit ; function ]
     #>           [ list ; property function ]
-    #>           [ lit ; function ]
     #>           [ log ; function ]
     #>           [ log10 ; function ]
     #>           [ lower_bound ; function ]

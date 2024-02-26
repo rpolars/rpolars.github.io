@@ -1,12 +1,12 @@
 
 
-# Compute sum in one or several columns
+# Sum all values.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L459)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L405)
 
 ## Description
 
-This is syntactic sugar for <code>pl$col(…)$sum()</code>.
+Syntactic sugar for <code>pl$col(…)$sum()</code>.
 
 ## Usage
 
@@ -21,26 +21,8 @@ This is syntactic sugar for <code>pl$col(…)$sum()</code>.
 <code id="pl_sum_:_...">…</code>
 </td>
 <td>
-
-One or several elements. Each element can be:
-
-<ul>
-<li>
-
-Series or Expr
-
-</li>
-<li>
-
-string, that is parsed as columns
-
-</li>
-<li>
-
-numeric, that is parsed as literal
-
-</li>
-</ul>
+Characters indicating the column names, passed to <code>pl$col()</code>.
+See <code>?pl_col</code> for details.
 </td>
 </tr>
 </table>
@@ -49,51 +31,63 @@ numeric, that is parsed as literal
 
 Expr
 
+## See Also
+
+<ul>
+<li>
+
+<code>\<Expr\>$sum()</code>
+
+</li>
+<li>
+
+<code>pl$sum_horizontal()</code>
+
+</li>
+</ul>
+
 ## Examples
 
 ``` r
 library(polars)
 
-# column as string
-pl$DataFrame(iris)$select(pl$sum("Petal.Width"))
+df = pl$DataFrame(col_a = 1:2, col_b = 3:4, c = 5:6)
+
+df$select(pl$sum("col_a"))
 ```
 
     #> shape: (1, 1)
-    #> ┌─────────────┐
-    #> │ Petal.Width │
-    #> │ ---         │
-    #> │ f64         │
-    #> ╞═════════════╡
-    #> │ 179.9       │
-    #> └─────────────┘
+    #> ┌───────┐
+    #> │ col_a │
+    #> │ ---   │
+    #> │ i32   │
+    #> ╞═══════╡
+    #> │ 3     │
+    #> └───────┘
 
 ``` r
-# column as Expr (prefer pl$col("Petal.Width")$sum())
-pl$DataFrame(iris)$select(pl$sum(pl$col("Petal.Width")))
+# Sum multiple columns
+df$select(pl$sum("col_a", "col_b"))
 ```
 
-    #> shape: (1, 1)
-    #> ┌─────────────┐
-    #> │ Petal.Width │
-    #> │ ---         │
-    #> │ f64         │
-    #> ╞═════════════╡
-    #> │ 179.9       │
-    #> └─────────────┘
+    #> shape: (1, 2)
+    #> ┌───────┬───────┐
+    #> │ col_a ┆ col_b │
+    #> │ ---   ┆ ---   │
+    #> │ i32   ┆ i32   │
+    #> ╞═══════╪═══════╡
+    #> │ 3     ┆ 7     │
+    #> └───────┴───────┘
 
 ``` r
-df = pl$DataFrame(a = 1:2, b = 3:4, c = 5:6)
-
-# Compute sum in several columns
-df$with_columns(pl$sum("*"))
+df$select(pl$sum("^col_.*$"))
 ```
 
-    #> shape: (2, 3)
-    #> ┌─────┬─────┬─────┐
-    #> │ a   ┆ b   ┆ c   │
-    #> │ --- ┆ --- ┆ --- │
-    #> │ i32 ┆ i32 ┆ i32 │
-    #> ╞═════╪═════╪═════╡
-    #> │ 3   ┆ 7   ┆ 11  │
-    #> │ 3   ┆ 7   ┆ 11  │
-    #> └─────┴─────┴─────┘
+    #> shape: (1, 2)
+    #> ┌───────┬───────┐
+    #> │ col_a ┆ col_b │
+    #> │ ---   ┆ ---   │
+    #> │ i32   ┆ i32   │
+    #> ╞═══════╪═══════╡
+    #> │ 3     ┆ 7     │
+    #> └───────┴───────┘

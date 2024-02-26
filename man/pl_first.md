@@ -1,16 +1,30 @@
 
 
-# pl$first
+# Get the first value.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L160)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L205)
 
 ## Description
 
-Depending on the input type this function does different things:
+This function has different behavior depending on arguments:
+
+<ul>
+<li>
+
+Missing -\> Takes first column of a context.
+
+</li>
+<li>
+
+Character vectors -\> Syntactic sugar for
+<code>pl$col(…)$first()</code>.
+
+</li>
+</ul>
 
 ## Usage
 
-<pre><code class='language-R'>pl_first(column = NULL)
+<pre><code class='language-R'>pl_first(...)
 </code></pre>
 
 ## Arguments
@@ -18,49 +32,41 @@ Depending on the input type this function does different things:
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_first_:_column">column</code>
+<code id="pl_first_:_...">…</code>
 </td>
 <td>
-
-if dtype is:
-
-<ul>
-<li>
-
-Series: Take first value in <code>Series</code>
-
-</li>
-<li>
-
-str: syntactic sugar for
-<code style="white-space: pre;">pl.col(..).first()</code>
-
-</li>
-<li>
-
-NULL: expression to take first column of a context.
-
-</li>
-</ul>
+Characters indicating the column names (passed to <code>pl$col()</code>,
+see <code>?pl_col</code> for details), or empty. If empty (default),
+returns an expression to take the first column of the context instead.
 </td>
 </tr>
 </table>
 
 ## Value
 
-Expr or first value of input Series
+Expr
+
+## See Also
+
+<ul>
+<li>
+
+<code>\<Expr\>$first()</code>
+
+</li>
+</ul>
 
 ## Examples
 
 ``` r
 library(polars)
 
-
 df = pl$DataFrame(
   a = c(1, 8, 3),
   b = c(4, 5, 2),
   c = c("foo", "bar", "foo")
 )
+
 df$select(pl$first())
 ```
 
@@ -76,20 +82,27 @@ df$select(pl$first())
     #> └─────┘
 
 ``` r
-df$select(pl$first("a"))
+df$select(pl$first("b"))
 ```
 
     #> shape: (1, 1)
     #> ┌─────┐
-    #> │ a   │
+    #> │ b   │
     #> │ --- │
     #> │ f64 │
     #> ╞═════╡
-    #> │ 1.0 │
+    #> │ 4.0 │
     #> └─────┘
 
 ``` r
-pl$first(df$get_column("a"))
+df$select(pl$first(c("a", "c")))
 ```
 
-    #> [1] 1
+    #> shape: (1, 2)
+    #> ┌─────┬─────┐
+    #> │ a   ┆ c   │
+    #> │ --- ┆ --- │
+    #> │ f64 ┆ str │
+    #> ╞═════╪═════╡
+    #> │ 1.0 ┆ foo │
+    #> └─────┴─────┘
