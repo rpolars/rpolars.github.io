@@ -2,7 +2,7 @@
 
 # Inspect evaluated Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2357)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2251)
 
 ## Description
 

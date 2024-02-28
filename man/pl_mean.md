@@ -2,7 +2,7 @@
 
 # Get the mean value.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L316)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L318)
 
 ## Description
 

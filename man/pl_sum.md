@@ -2,7 +2,7 @@
 
 # Sum all values.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L405)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L407)
 
 ## Description
 

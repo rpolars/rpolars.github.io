@@ -2,7 +2,7 @@
 
 # Compute difference between list values
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L264)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L265)
 
 ## Description
 
@@ -25,7 +25,7 @@ etc.
 <code id="ExprList_diff_:_n">n</code>
 </td>
 <td>
-Number of slots to shift.
+Number of slots to shift. If negative, then it starts from the end.
 </td>
 </tr>
 <tr>
@@ -61,3 +61,18 @@ df$with_columns(diff = pl$col("s")$list$diff(2))
     #> │ [1, 2, … 4] ┆ [null, null, … 2] │
     #> │ [10, 2, 1]  ┆ [null, null, -9]  │
     #> └─────────────┴───────────────────┘
+
+``` r
+# negative value starts shifting from the end
+df$with_columns(diff = pl$col("s")$list$diff(-2))
+```
+
+    #> shape: (2, 2)
+    #> ┌─────────────┬──────────────────┐
+    #> │ s           ┆ diff             │
+    #> │ ---         ┆ ---              │
+    #> │ list[i32]   ┆ list[i32]        │
+    #> ╞═════════════╪══════════════════╡
+    #> │ [1, 2, … 4] ┆ [-2, -2, … null] │
+    #> │ [10, 2, 1]  ┆ [9, null, null]  │
+    #> └─────────────┴──────────────────┘

@@ -2,7 +2,7 @@
 
 # Get the first value.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L205)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L207)
 
 ## Description
 

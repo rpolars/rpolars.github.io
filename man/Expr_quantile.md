@@ -2,7 +2,7 @@
 
 # Get quantile value.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2090)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1986)
 
 ## Description
 
@@ -50,12 +50,13 @@ Expr
 ``` r
 library(polars)
 
-pl$select(pl$lit(-5:5)$quantile(.5))
+pl$DataFrame(x = -5:5)$
+  select(pl$col("x")$quantile(0.5))
 ```
 
     #> shape: (1, 1)
     #> ┌─────┐
-    #> │     │
+    #> │ x   │
     #> │ --- │
     #> │ f64 │
     #> ╞═════╡

@@ -2,7 +2,7 @@
 
 # Apply window function over a subgroup
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2021)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1927)
 
 ## Description
 

@@ -2,7 +2,7 @@
 
 # New Expr referring to all columns
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L51)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L53)
 
 ## Description
 
@@ -28,12 +28,6 @@ applied.
 </tr>
 </table>
 
-## Details
-
-last <code>all()</code> in example is this Expr method, the first
-<code>pl$all()</code> refers to "all-columns" and is an expression
-constructor
-
 ## Value
 
 Boolean literal
@@ -43,15 +37,32 @@ Boolean literal
 ``` r
 library(polars)
 
-pl$DataFrame(all = c(TRUE, TRUE), some = c(TRUE, FALSE))$
-  select(pl$all()$all())
+test = pl$DataFrame(col_1 = c(TRUE, TRUE), col_2 = c(TRUE, FALSE))
+test
 ```
 
-    #> shape: (1, 2)
-    #> ┌──────┬───────┐
-    #> │ all  ┆ some  │
-    #> │ ---  ┆ ---   │
-    #> │ bool ┆ bool  │
-    #> ╞══════╪═══════╡
-    #> │ true ┆ false │
-    #> └──────┴───────┘
+    #> shape: (2, 2)
+    #> ┌───────┬───────┐
+    #> │ col_1 ┆ col_2 │
+    #> │ ---   ┆ ---   │
+    #> │ bool  ┆ bool  │
+    #> ╞═══════╪═══════╡
+    #> │ true  ┆ true  │
+    #> │ true  ┆ false │
+    #> └───────┴───────┘
+
+``` r
+# here, the first `$all()` selects all columns, and the second `$all()` checks
+# whether all values are true in each column
+test$with_columns(pl$all()$all())
+```
+
+    #> shape: (2, 2)
+    #> ┌───────┬───────┐
+    #> │ col_1 ┆ col_2 │
+    #> │ ---   ┆ ---   │
+    #> │ bool  ┆ bool  │
+    #> ╞═══════╪═══════╡
+    #> │ true  ┆ false │
+    #> │ true  ┆ false │
+    #> └───────┴───────┘

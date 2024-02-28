@@ -14440,7 +14440,7 @@
 
 
 <h1 id="get-quantile-value">Get quantile value.</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2090"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1986"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Get quantile value.</p>
 <h2 id="usage">Usage</h2>
@@ -14477,11 +14477,12 @@ value. For linear interpolation <code>NaN</code> poisons
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">-5</span><span class="o">:</span><span class="m">5</span><span class="p">)</span><span class="o">$</span><span class="nf">quantile</span><span class="p">(</span><span class="n">.</span><span class="m">5</span><span class="p">))</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">-5</span><span class="o">:</span><span class="m">5</span><span class="p">)</span><span class="o">$</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">quantile</span><span class="p">(</span><span class="m">0.5</span><span class="p">))</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; shape: (1, 1)
 #&gt; ┌─────┐
-#&gt; │     │
+#&gt; │ x   │
 #&gt; │ --- │
 #&gt; │ f64 │
 #&gt; ╞═════╡

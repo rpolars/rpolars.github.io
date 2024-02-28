@@ -14422,7 +14422,7 @@
 
 
 <h1 id="compute-difference-between-list-values">Compute difference between list values</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L264"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L265"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>This computes the first discrete difference between shifted items of
 every list. The parameter <code>n</code> gives the interval between
@@ -14440,7 +14440,7 @@ etc.</p>
 <code id="ExprList_diff_:_n">n</code>
 </td>
 <td>
-Number of slots to shift.
+Number of slots to shift. If negative, then it starts from the end.
 </td>
 </tr>
 <tr>
@@ -14471,6 +14471,19 @@ How to handle <code>null</code> values. Either <code>“ignore”</code>
 #&gt; │ [1, 2, … 4] ┆ [null, null, … 2] │
 #&gt; │ [10, 2, 1]  ┆ [null, null, -9]  │
 #&gt; └─────────────┴───────────────────┘
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># negative value starts shifting from the end</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span><span class="n">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;s&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">diff</span><span class="p">(</span><span class="m">-2</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; shape: (2, 2)
+#&gt; ┌─────────────┬──────────────────┐
+#&gt; │ s           ┆ diff             │
+#&gt; │ ---         ┆ ---              │
+#&gt; │ list[i32]   ┆ list[i32]        │
+#&gt; ╞═════════════╪══════════════════╡
+#&gt; │ [1, 2, … 4] ┆ [-2, -2, … null] │
+#&gt; │ [10, 2, 1]  ┆ [9, null, null]  │
+#&gt; └─────────────┴──────────────────┘
 </code></pre></div>
 
 

@@ -2,7 +2,7 @@
 
 # Gather every nth element
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2160)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2054)
 
 ## Description
 
