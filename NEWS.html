@@ -16264,6 +16264,10 @@
     that are either column names or regular expressions (<a href="https://github.com/pola-rs/r-polars/issues/852">#852</a>).</li>
 <li>There is no argument for <code>pl$len()</code>. If you want to measure the length of
     specific columns, you should use <code>pl$count(...)</code> (<a href="https://github.com/pola-rs/r-polars/issues/852">#852</a>).</li>
+<li><code>&lt;Expr&gt;$str$concat()</code> method's <code>delimiter</code> argument's default value is
+    changed from <code>"-"</code> to <code>""</code> (<a href="https://github.com/pola-rs/r-polars/issues/853">#853</a>).</li>
+<li><code>&lt;Expr&gt;$str$concat()</code> method's <code>ignore_nulls</code> argument must be a
+    named argument (<a href="https://github.com/pola-rs/r-polars/issues/853">#853</a>).</li>
 </ul>
 </li>
 </ul>

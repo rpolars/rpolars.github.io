@@ -1,17 +1,17 @@
 
 
-# Vertically concatenate values of a Series
+# Vertically concatenate the string values in the column to a single string value.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L236)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L232)
 
 ## Description
 
-Vertically concatenate the values in the Series to a single string
-value.
+Vertically concatenate the string values in the column to a single
+string value.
 
 ## Usage
 
-<pre><code class='language-R'>ExprStr_concat(delimiter = "-", ignore_nulls = TRUE)
+<pre><code class='language-R'>ExprStr_concat(delimiter = "", ..., ignore_nulls = TRUE)
 </code></pre>
 
 ## Arguments
@@ -27,10 +27,18 @@ The delimiter to insert between consecutive string values.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="ExprStr_concat_:_...">…</code>
+</td>
+<td>
+Ignored.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
 <code id="ExprStr_concat_:_ignore_nulls">ignore_nulls</code>
 </td>
 <td>
-Ignore null values. If <code>FALSE</code>, null values will be
+Ignore null values (default). If <code>FALSE</code>, null values will be
 propagated: if the column contains any null values, the output is null.
 </td>
 </tr>
@@ -46,18 +54,19 @@ Expr of String concatenated
 library(polars)
 
 # concatenate a Series of strings to a single string
-df = pl$DataFrame(foo = c("1", NA, 2))
+df = pl$DataFrame(foo = c(1, NA, 2))
+
 df$select(pl$col("foo")$str$concat("-"))
 ```
 
     #> shape: (1, 1)
-    #> ┌─────┐
-    #> │ foo │
-    #> │ --- │
-    #> │ str │
-    #> ╞═════╡
-    #> │ 1-2 │
-    #> └─────┘
+    #> ┌─────────┐
+    #> │ foo     │
+    #> │ ---     │
+    #> │ str     │
+    #> ╞═════════╡
+    #> │ 1.0-2.0 │
+    #> └─────────┘
 
 ``` r
 df$select(pl$col("foo")$str$concat("-", ignore_nulls = FALSE))
@@ -71,19 +80,3 @@ df$select(pl$col("foo")$str$concat("-", ignore_nulls = FALSE))
     #> ╞══════╡
     #> │ null │
     #> └──────┘
-
-``` r
-# Series list of strings to Series of concatenated strings
-df = pl$DataFrame(list(bar = list(c("a", "b", "c"), c("1", "2", NA))))
-df$select(pl$col("bar")$list$eval(pl$col("")$str$concat("-"))$list$first())
-```
-
-    #> shape: (2, 1)
-    #> ┌───────┐
-    #> │ bar   │
-    #> │ ---   │
-    #> │ str   │
-    #> ╞═══════╡
-    #> │ a-b-c │
-    #> │ 1-2   │
-    #> └───────┘

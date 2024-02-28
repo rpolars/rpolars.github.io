@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vertically-concatenate-values-of-a-series" class="md-skip">
+        <a href="#vertically-concatenate-the-string-values-in-the-column-to-a-single-string-value" class="md-skip">
           Skip to content
         </a>
       
@@ -14400,13 +14400,13 @@
   
 
 
-<h1 id="vertically-concatenate-values-of-a-series">Vertically concatenate values of a Series</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L236"><strong>Source code</strong></a></p>
+<h1 id="vertically-concatenate-the-string-values-in-the-column-to-a-single-string-value">Vertically concatenate the string values in the column to a single string value.</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L232"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>Vertically concatenate the values in the Series to a single string
-value.</p>
+<p>Vertically concatenate the string values in the column to a single
+string value.</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>&lt;Expr&gt;$str$concat(delimiter = "-", ignore_nulls = TRUE)
+<pre><code class='language-R'>&lt;Expr&gt;$str$concat(delimiter = "", ..., ignore_nulls = TRUE)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
@@ -14421,10 +14421,18 @@ The delimiter to insert between consecutive string values.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="ExprStr_concat_:_...">…</code>
+</td>
+<td>
+Ignored.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
 <code id="ExprStr_concat_:_ignore_nulls">ignore_nulls</code>
 </td>
 <td>
-Ignore null values. If <code>FALSE</code>, null values will be
+Ignore null values (default). If <code>FALSE</code>, null values will be
 propagated: if the column contains any null values, the output is null.
 </td>
 </tr>
@@ -14436,17 +14444,18 @@ propagated: if the column contains any null values, the output is null.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># concatenate a Series of strings to a single string</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">))</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">concat</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="p">))</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">))</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">concat</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="p">))</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; shape: (1, 1)
-#&gt; ┌─────┐
-#&gt; │ foo │
-#&gt; │ --- │
-#&gt; │ str │
-#&gt; ╞═════╡
-#&gt; │ 1-2 │
-#&gt; └─────┘
+#&gt; ┌─────────┐
+#&gt; │ foo     │
+#&gt; │ ---     │
+#&gt; │ str     │
+#&gt; ╞═════════╡
+#&gt; │ 1.0-2.0 │
+#&gt; └─────────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">concat</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ignore_nulls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">))</span>
 </code></pre></div>
@@ -14458,20 +14467,6 @@ propagated: if the column contains any null values, the output is null.
 #&gt; ╞══════╡
 #&gt; │ null │
 #&gt; └──────┘
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Series list of strings to Series of concatenated strings</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">bar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">),</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">))))</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">eval</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">concat</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="p">))</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">first</span><span class="p">())</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (2, 1)
-#&gt; ┌───────┐
-#&gt; │ bar   │
-#&gt; │ ---   │
-#&gt; │ str   │
-#&gt; ╞═══════╡
-#&gt; │ a-b-c │
-#&gt; │ 1-2   │
-#&gt; └───────┘
 </code></pre></div>
 
 

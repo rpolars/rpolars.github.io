@@ -15,6 +15,10 @@
         that are either column names or regular expressions ([#852](https://github.com/pola-rs/r-polars/issues/852)).
     -   There is no argument for `pl$len()`. If you want to measure the length of
         specific columns, you should use `pl$count(...)` ([#852](https://github.com/pola-rs/r-polars/issues/852)).
+    -   `<Expr>$str$concat()` method's `delimiter` argument's default value is
+        changed from `"-"` to `""` ([#853](https://github.com/pola-rs/r-polars/issues/853)).
+    -   `<Expr>$str$concat()` method's `ignore_nulls` argument must be a
+        named argument ([#853](https://github.com/pola-rs/r-polars/issues/853)).
 
 ### New features
 

@@ -2,7 +2,7 @@
 
 # Strip trailing characters
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L351)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L350)
 
 ## Description
 

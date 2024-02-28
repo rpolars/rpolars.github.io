@@ -2,7 +2,7 @@
 
 # Convert a string to titlecase
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L273)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L272)
 
 ## Description
 
