@@ -89,7 +89,7 @@ df$select(pl$all()$exclude("Species"))
 
 ``` r
 # by type
-df$select(pl$all()$exclude(pl$Categorical))
+df$select(pl$all()$exclude(pl$Categorical()))
 ```
 
     #> shape: (150, 4)
@@ -112,7 +112,7 @@ df$select(pl$all()$exclude(pl$Categorical))
     #> └──────────────┴─────────────┴──────────────┴─────────────┘
 
 ``` r
-df$select(pl$all()$exclude(list(pl$Categorical, pl$Float64)))
+df$select(pl$all()$exclude(list(pl$Categorical(), pl$Float64)))
 ```
 
     #> shape: (0, 0)

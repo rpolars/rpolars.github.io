@@ -2,7 +2,7 @@
 
 # check if schema
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L9)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L8)
 
 ## Description
 
@@ -25,10 +25,6 @@ object to test if schema
 </td>
 </tr>
 </table>
-
-## Format
-
-function
 
 ## Value
 

@@ -2,7 +2,7 @@
 
 # Create Datetime DataType
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L176)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L172)
 
 ## Description
 
@@ -33,10 +33,6 @@ string the Time Zone, see details
 </td>
 </tr>
 </table>
-
-## Format
-
-function
 
 ## Details
 

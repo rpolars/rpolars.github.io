@@ -13882,6 +13882,27 @@
   
   
     <li class="md-nav__item">
+      <a href="DataType_Categorical.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataType_Categorical
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="DataType_Datetime.html" class="md-nav__link">
         
   
@@ -13991,15 +14012,6 @@
   <a href="#arguments" class="md-nav__link">
     <span class="md-ellipsis">
       Arguments
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Format
     </span>
   </a>
   
@@ -14372,15 +14384,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Format
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -14417,7 +14420,7 @@
 
 
 <h1 id="create-struct-datatype">Create Struct DataType</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L203"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L198"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Struct DataType Constructor</p>
 <h2 id="usage">Usage</h2>
@@ -14436,8 +14439,6 @@ RPolarsDataType objects
 </tr>
 </table>
 
-<h2 id="format">Format</h2>
-<p>function</p>
 <h2 id="value">Value</h2>
 <p>a list DataType with an inner DataType</p>
 <h2 id="examples">Examples</h2>
@@ -14521,27 +14522,11 @@ RPolarsDataType objects
 #&gt; $Null
 #&gt; DataType: Null
 #&gt; 
-#&gt; $Categorical
-#&gt; DataType: Categorical(
-#&gt;     None,
-#&gt;     Physical,
-#&gt; )
-#&gt; 
 #&gt; $Unknown
 #&gt; DataType: Unknown
 #&gt; 
 #&gt; $Utf8
 #&gt; DataType: String
-#&gt; 
-#&gt; $Datetime
-#&gt; function(tu = &quot;us&quot;, tz = NULL) {
-#&gt;   if (!is.null(tz) &amp;&amp; (!is_string(tz) || !tz %in% base::OlsonNames())) {
-#&gt;     stop(&quot;Datetime: the tz &#39;%s&#39; is not a valid timezone string, see base::OlsonNames()&quot;, tz)
-#&gt;   }
-#&gt;   unwrap(.pr$DataType$new_datetime(tu, tz))
-#&gt; }
-#&gt; &lt;bytecode: 0x55980b1cdbd8&gt;
-#&gt; &lt;environment: namespace:polars&gt;
 #&gt; 
 #&gt; $Array
 #&gt; function(datatype = &quot;unknown&quot;, width) {
@@ -14557,7 +14542,24 @@ RPolarsDataType objects
 #&gt;   .pr$DataType$new_array(datatype, width) |&gt;
 #&gt;     unwrap(&quot;in pl$Array():&quot;)
 #&gt; }
-#&gt; &lt;bytecode: 0x55980b1bf7b0&gt;
+#&gt; &lt;bytecode: 0x564ddab6d0d8&gt;
+#&gt; &lt;environment: namespace:polars&gt;
+#&gt; 
+#&gt; $Categorical
+#&gt; function(ordering = &quot;physical&quot;) {
+#&gt;   .pr$DataType$new_categorical(ordering) |&gt; unwrap()
+#&gt; }
+#&gt; &lt;bytecode: 0x564ddab5dcf8&gt;
+#&gt; &lt;environment: namespace:polars&gt;
+#&gt; 
+#&gt; $Datetime
+#&gt; function(tu = &quot;us&quot;, tz = NULL) {
+#&gt;   if (!is.null(tz) &amp;&amp; (!is_string(tz) || !tz %in% base::OlsonNames())) {
+#&gt;     stop(&quot;Datetime: the tz &#39;%s&#39; is not a valid timezone string, see base::OlsonNames()&quot;, tz)
+#&gt;   }
+#&gt;   unwrap(.pr$DataType$new_datetime(tu, tz))
+#&gt; }
+#&gt; &lt;bytecode: 0x564ddab57d68&gt;
 #&gt; &lt;environment: namespace:polars&gt;
 #&gt; 
 #&gt; $List
@@ -14573,7 +14575,7 @@ RPolarsDataType objects
 #&gt;   }
 #&gt;   .pr$DataType$new_list(datatype)
 #&gt; }
-#&gt; &lt;bytecode: 0x55980b1b1880&gt;
+#&gt; &lt;bytecode: 0x564ddab4bb70&gt;
 #&gt; &lt;environment: namespace:polars&gt;
 #&gt; 
 #&gt; $Struct
@@ -14607,7 +14609,7 @@ RPolarsDataType objects
 #&gt;     and_then(DataType$new_struct) |&gt;
 #&gt;     unwrap(&quot;in pl$Struct:&quot;)
 #&gt; }
-#&gt; &lt;bytecode: 0x55980ea1cb20&gt;
+#&gt; &lt;bytecode: 0x564ddab41060&gt;
 #&gt; &lt;environment: namespace:polars&gt;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># check if an element is any kind of Struct()</span>

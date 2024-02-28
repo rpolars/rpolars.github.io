@@ -13969,6 +13969,27 @@
   
   
     <li class="md-nav__item">
+      <a href="DataType_Categorical.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataType_Categorical
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="DataType_Datetime.html" class="md-nav__link">
         
   
@@ -14477,7 +14498,7 @@ List(DataType): Exclude any of these DataType(s)
 #&gt; └──────────────┴─────────────┴──────────────┴─────────────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># by type</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">all</span><span class="p">()</span><span class="o">$</span><span class="nf">exclude</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="n">Categorical</span><span class="p">))</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">all</span><span class="p">()</span><span class="o">$</span><span class="nf">exclude</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">Categorical</span><span class="p">()))</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; shape: (150, 4)
 #&gt; ┌──────────────┬─────────────┬──────────────┬─────────────┐
@@ -14498,7 +14519,7 @@ List(DataType): Exclude any of these DataType(s)
 #&gt; │ 5.9          ┆ 3.0         ┆ 5.1          ┆ 1.8         │
 #&gt; └──────────────┴─────────────┴──────────────┴─────────────┘
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">all</span><span class="p">()</span><span class="o">$</span><span class="nf">exclude</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="n">Categorical</span><span class="p">,</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="n">Float64</span><span class="p">)))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">all</span><span class="p">()</span><span class="o">$</span><span class="nf">exclude</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">Categorical</span><span class="p">(),</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="n">Float64</span><span class="p">)))</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; shape: (0, 0)
 #&gt; ┌┐

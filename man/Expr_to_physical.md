@@ -59,9 +59,9 @@ library(polars)
 pl$DataFrame(
   list(vals = c("a", "x", NA, "a", "b"))
 )$with_columns(
-  pl$col("vals")$cast(pl$Categorical),
+  pl$col("vals")$cast(pl$Categorical()),
   pl$col("vals")
-  $cast(pl$Categorical)
+  $cast(pl$Categorical())
   $to_physical()
   $alias("vals_physical")
 )

@@ -302,6 +302,7 @@ pl$show_all_public_methods()
     #>           [ ne ; function ]
     #>           [ new ; function ]
     #>           [ new_array ; function ]
+    #>           [ new_categorical ; function ]
     #>           [ new_datetime ; function ]
     #>           [ new_duration ; function ]
     #>           [ new_list ; function ]

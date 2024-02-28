@@ -2,7 +2,7 @@
 
 # Create Struct DataType
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L203)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L198)
 
 ## Description
 
@@ -25,10 +25,6 @@ RPolarsDataType objects
 </td>
 </tr>
 </table>
-
-## Format
-
-function
 
 ## Value
 
@@ -122,27 +118,11 @@ print(pl$dtypes)
     #> $Null
     #> DataType: Null
     #> 
-    #> $Categorical
-    #> DataType: Categorical(
-    #>     None,
-    #>     Physical,
-    #> )
-    #> 
     #> $Unknown
     #> DataType: Unknown
     #> 
     #> $Utf8
     #> DataType: String
-    #> 
-    #> $Datetime
-    #> function(tu = "us", tz = NULL) {
-    #>   if (!is.null(tz) && (!is_string(tz) || !tz %in% base::OlsonNames())) {
-    #>     stop("Datetime: the tz '%s' is not a valid timezone string, see base::OlsonNames()", tz)
-    #>   }
-    #>   unwrap(.pr$DataType$new_datetime(tu, tz))
-    #> }
-    #> <bytecode: 0x55980b1cdbd8>
-    #> <environment: namespace:polars>
     #> 
     #> $Array
     #> function(datatype = "unknown", width) {
@@ -158,7 +138,24 @@ print(pl$dtypes)
     #>   .pr$DataType$new_array(datatype, width) |>
     #>     unwrap("in pl$Array():")
     #> }
-    #> <bytecode: 0x55980b1bf7b0>
+    #> <bytecode: 0x564ddab6d0d8>
+    #> <environment: namespace:polars>
+    #> 
+    #> $Categorical
+    #> function(ordering = "physical") {
+    #>   .pr$DataType$new_categorical(ordering) |> unwrap()
+    #> }
+    #> <bytecode: 0x564ddab5dcf8>
+    #> <environment: namespace:polars>
+    #> 
+    #> $Datetime
+    #> function(tu = "us", tz = NULL) {
+    #>   if (!is.null(tz) && (!is_string(tz) || !tz %in% base::OlsonNames())) {
+    #>     stop("Datetime: the tz '%s' is not a valid timezone string, see base::OlsonNames()", tz)
+    #>   }
+    #>   unwrap(.pr$DataType$new_datetime(tu, tz))
+    #> }
+    #> <bytecode: 0x564ddab57d68>
     #> <environment: namespace:polars>
     #> 
     #> $List
@@ -174,7 +171,7 @@ print(pl$dtypes)
     #>   }
     #>   .pr$DataType$new_list(datatype)
     #> }
-    #> <bytecode: 0x55980b1b1880>
+    #> <bytecode: 0x564ddab4bb70>
     #> <environment: namespace:polars>
     #> 
     #> $Struct
@@ -208,7 +205,7 @@ print(pl$dtypes)
     #>     and_then(DataType$new_struct) |>
     #>     unwrap("in pl$Struct:")
     #> }
-    #> <bytecode: 0x55980ea1cb20>
+    #> <bytecode: 0x564ddab41060>
     #> <environment: namespace:polars>
 
 ``` r

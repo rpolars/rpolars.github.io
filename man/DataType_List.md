@@ -2,7 +2,7 @@
 
 # Create List DataType
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L276)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L270)
 
 ## Description
 
@@ -26,10 +26,6 @@ DataType does not matter, e.g. as used in example)
 </td>
 </tr>
 </table>
-
-## Format
-
-function
 
 ## Value
 

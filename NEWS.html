@@ -13873,6 +13873,27 @@
   
   
     <li class="md-nav__item">
+      <a href="man/DataType_Categorical.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataType_Categorical
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="man/DataType_Datetime.html" class="md-nav__link">
         
   
@@ -16270,6 +16291,10 @@
     named argument (<a href="https://github.com/pola-rs/r-polars/issues/853">#853</a>).</li>
 </ul>
 </li>
+<li><code>pl$Categorical()</code> has been improved to allow specifying the <code>ordering</code> type
+    (either lexical or physical). This also means that calling <code>pl$Categorical</code>
+    doesn't create a <code>DataType</code> anymore. All calls to <code>pl$Categorical</code> must be
+    replaced by <code>pl$Categorical()</code> (<a href="https://github.com/pola-rs/r-polars/issues/860">#860</a>).</li>
 </ul>
 <h3 id="new-features">New features</h3>
 <ul>

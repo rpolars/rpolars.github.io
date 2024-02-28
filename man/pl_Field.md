@@ -91,7 +91,7 @@ field$name
 
 ``` r
 # Set the new data type
-field$datatype = pl$Categorical
+field$datatype = pl$Categorical()
 field$datatype
 ```
 

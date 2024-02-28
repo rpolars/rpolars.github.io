@@ -650,6 +650,7 @@ nav:
         - as_polars_lf: man/as_polars_lf.md
         - as_polars_series: man/as_polars_series.md
         - DataType_Array: man/DataType_Array.md
+        - DataType_Categorical: man/DataType_Categorical.md
         - DataType_Datetime: man/DataType_Datetime.md
         - DataType_List: man/DataType_List.md
         - DataType_Struct: man/DataType_Struct.md
