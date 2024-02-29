@@ -508,11 +508,16 @@ nav:
             - get: man/ExprArr_get.md
             - join: man/ExprArr_join.md
             - max: man/ExprArr_max.md
+            - median: man/ExprArr_median.md
             - min: man/ExprArr_min.md
             - reverse: man/ExprArr_reverse.md
+            - shift: man/ExprArr_shift.md
             - sort: man/ExprArr_sort.md
+            - std: man/ExprArr_std.md
             - sum: man/ExprArr_sum.md
+            - to_struct: man/ExprArr_to_struct.md
             - unique: man/ExprArr_unique.md
+            - var: man/ExprArr_var.md
         - List:
             - all: man/ExprList_all.md
             - any: man/ExprList_any.md

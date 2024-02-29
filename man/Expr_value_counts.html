@@ -10754,6 +10754,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ExprArr_median.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    median
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ExprArr_min.html" class="md-nav__link">
         
   
@@ -10796,11 +10817,53 @@
   
   
     <li class="md-nav__item">
+      <a href="ExprArr_shift.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    shift
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ExprArr_sort.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     sort
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ExprArr_std.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    std
   </span>
   
 
@@ -10838,11 +10901,53 @@
   
   
     <li class="md-nav__item">
+      <a href="ExprArr_to_struct.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    to_struct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ExprArr_unique.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     unique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ExprArr_var.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    var
   </span>
   
 
@@ -14464,17 +14569,17 @@ contention.
 #&gt; │ ---               │
 #&gt; │ struct[2]         │
 #&gt; ╞═══════════════════╡
+#&gt; │ {&quot;versicolor&quot;,50} │
 #&gt; │ {&quot;virginica&quot;,50}  │
 #&gt; │ {&quot;setosa&quot;,50}     │
-#&gt; │ {&quot;versicolor&quot;,50} │
 #&gt; └───────────────────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unnest</span><span class="p">()</span><span class="o">$</span><span class="nf">to_data_frame</span><span class="p">()</span><span class="w"> </span><span class="c1"># recommended to unnest structs before converting to R</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;      Species count
-#&gt; 1  virginica    50
-#&gt; 2     setosa    50
-#&gt; 3 versicolor    50
+#&gt; 1 versicolor    50
+#&gt; 2  virginica    50
+#&gt; 3     setosa    50
 </code></pre></div>
 
 
