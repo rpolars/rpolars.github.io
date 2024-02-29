@@ -43,6 +43,7 @@
 -   `$group_by()` now works with named expressions ([#846](https://github.com/pola-rs/r-polars/issues/846)).
 -   New methods for the `arr` subnamespace: `$median()`, `$var()`, `$std()`, 
     `$shift()`, `$to_struct()` ([#867](https://github.com/pola-rs/r-polars/issues/867)).
+-   `$min()` and `max()` now work on categorical variables ([#868](https://github.com/pola-rs/r-polars/issues/868)).
 
 ## Polars R Package 0.14.1
 
