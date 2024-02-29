@@ -22,7 +22,7 @@ Expr
 ``` r
 library(polars)
 
-df = pl$DataFrame(list(values = list(c(1, 2, 3, NA), c(2, 3), NA_real_)))
+df = pl$DataFrame(values = list(c(1, 2, 3, NA), c(2, 3), NA_real_))
 df$with_columns(max = pl$col("values")$list$max())
 ```
 

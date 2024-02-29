@@ -2,7 +2,7 @@
 
 # Get several values by index in a list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L151)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L164)
 
 ## Description
 
@@ -48,50 +48,57 @@ Expr
 ``` r
 library(polars)
 
-df = pl$DataFrame(list(a = list(c(3, 2, 1), 1, c(1, 2)))) #
-idx = pl$Series(list(0:1, integer(), c(1L, 999L)))
-df$select(pl$col("a")$list$gather(pl$lit(idx), null_on_oob = TRUE))
+df = pl$DataFrame(
+  a = list(c(3, 2, 1), 1, c(1, 2)),
+  idx = list(0:1, integer(), c(1L, 999L))
+)
+df$with_columns(
+  gathered = pl$col("a")$list$gather("idx", null_on_oob = TRUE)
+)
 ```
 
-    #> shape: (3, 1)
-    #> ┌─────────────┐
-    #> │ a           │
-    #> │ ---         │
-    #> │ list[f64]   │
-    #> ╞═════════════╡
-    #> │ [3.0, 2.0]  │
-    #> │ []          │
-    #> │ [2.0, null] │
-    #> └─────────────┘
+    #> shape: (3, 3)
+    #> ┌─────────────────┬───────────┬─────────────┐
+    #> │ a               ┆ idx       ┆ gathered    │
+    #> │ ---             ┆ ---       ┆ ---         │
+    #> │ list[f64]       ┆ list[i32] ┆ list[f64]   │
+    #> ╞═════════════════╪═══════════╪═════════════╡
+    #> │ [3.0, 2.0, 1.0] ┆ [0, 1]    ┆ [3.0, 2.0]  │
+    #> │ [1.0]           ┆ []        ┆ []          │
+    #> │ [1.0, 2.0]      ┆ [1, 999]  ┆ [2.0, null] │
+    #> └─────────────────┴───────────┴─────────────┘
 
 ``` r
-# with implicit conversion to Expr
-df$select(pl$col("a")$list$gather(list(0:1, integer(), c(1L, 999L)), null_on_oob = TRUE))
+df$with_columns(
+  gathered = pl$col("a")$list$gather(2, null_on_oob = TRUE)
+)
 ```
 
-    #> shape: (3, 1)
-    #> ┌─────────────┐
-    #> │ a           │
-    #> │ ---         │
-    #> │ list[f64]   │
-    #> ╞═════════════╡
-    #> │ [3.0, 2.0]  │
-    #> │ []          │
-    #> │ [2.0, null] │
-    #> └─────────────┘
+    #> shape: (3, 3)
+    #> ┌─────────────────┬───────────┬───────────┐
+    #> │ a               ┆ idx       ┆ gathered  │
+    #> │ ---             ┆ ---       ┆ ---       │
+    #> │ list[f64]       ┆ list[i32] ┆ list[f64] │
+    #> ╞═════════════════╪═══════════╪═══════════╡
+    #> │ [3.0, 2.0, 1.0] ┆ [0, 1]    ┆ [1.0]     │
+    #> │ [1.0]           ┆ []        ┆ [null]    │
+    #> │ [1.0, 2.0]      ┆ [1, 999]  ┆ [null]    │
+    #> └─────────────────┴───────────┴───────────┘
 
 ``` r
 # by some column name, must cast to an Int/Uint type to work
-df$select(pl$col("a")$list$gather(pl$col("a")$cast(pl$List(pl$UInt64)), null_on_oob = TRUE))
+df$with_columns(
+  gathered = pl$col("a")$list$gather(pl$col("a")$cast(pl$List(pl$UInt64)), null_on_oob = TRUE)
+)
 ```
 
-    #> shape: (3, 1)
-    #> ┌──────────────────┐
-    #> │ a                │
-    #> │ ---              │
-    #> │ list[f64]        │
-    #> ╞══════════════════╡
-    #> │ [null, 1.0, 2.0] │
-    #> │ [null]           │
-    #> │ [2.0, null]      │
-    #> └──────────────────┘
+    #> shape: (3, 3)
+    #> ┌─────────────────┬───────────┬──────────────────┐
+    #> │ a               ┆ idx       ┆ gathered         │
+    #> │ ---             ┆ ---       ┆ ---              │
+    #> │ list[f64]       ┆ list[i32] ┆ list[f64]        │
+    #> ╞═════════════════╪═══════════╪══════════════════╡
+    #> │ [3.0, 2.0, 1.0] ┆ [0, 1]    ┆ [null, 1.0, 2.0] │
+    #> │ [1.0]           ┆ []        ┆ [null]           │
+    #> │ [1.0, 2.0]      ┆ [1, 999]  ┆ [2.0, null]      │
+    #> └─────────────────┴───────────┴──────────────────┘

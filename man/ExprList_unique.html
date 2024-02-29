@@ -11114,6 +11114,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ExprList_gather_every.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    gather_every
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ExprList_gather.html" class="md-nav__link">
         
   
@@ -11287,6 +11308,27 @@
   
   <span class="md-ellipsis">
     min
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ExprList_n_unique.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    n_unique
   </span>
   
 
@@ -14509,9 +14551,9 @@
 
 
 <h1 id="get-unique-values-in-a-list">Get unique values in a list</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L78"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L75"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>Get the unique/distinct values in the list.</p>
+<p>Get unique values in a list</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Expr&gt;$list$unique()
 </code></pre>
@@ -14521,7 +14563,7 @@
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">),</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">),</span><span class="w"> </span><span class="kc">NA_real_</span><span class="p">)))</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">),</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">),</span><span class="w"> </span><span class="kc">NA_real_</span><span class="p">))</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span><span class="n">unique</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;values&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">list</span><span class="o">$</span><span class="nf">unique</span><span class="p">())</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; shape: (3, 2)

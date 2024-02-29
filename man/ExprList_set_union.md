@@ -2,7 +2,7 @@
 
 # Get the union of two list variables
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L497)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L530)
 
 ## Description
 

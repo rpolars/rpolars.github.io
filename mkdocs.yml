@@ -528,6 +528,7 @@ nav:
             - diff: man/ExprList_diff.md
             - eval: man/ExprList_eval.md
             - first: man/ExprList_first.md
+            - gather_every: man/ExprList_gather_every.md
             - gather: man/ExprList_gather.md
             - get: man/ExprList_get.md
             - head: man/ExprList_head.md
@@ -537,6 +538,7 @@ nav:
             - max: man/ExprList_max.md
             - mean: man/ExprList_mean.md
             - min: man/ExprList_min.md
+            - n_unique: man/ExprList_n_unique.md
             - reverse: man/ExprList_reverse.md
             - set_difference: man/ExprList_set_difference.md
             - set_intersection: man/ExprList_set_intersection.md

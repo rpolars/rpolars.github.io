@@ -2,11 +2,11 @@
 
 # Get unique values in a list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L78)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L75)
 
 ## Description
 
-Get the unique/distinct values in the list.
+Get unique values in a list
 
 ## Usage
 
@@ -22,7 +22,7 @@ Expr
 ``` r
 library(polars)
 
-df = pl$DataFrame(list(values = list(c(2, 2, NA), c(1, 2, 3), NA_real_)))
+df = pl$DataFrame(values = list(c(2, 2, NA), c(1, 2, 3), NA_real_))
 df$with_columns(unique = pl$col("values")$list$unique())
 ```
 

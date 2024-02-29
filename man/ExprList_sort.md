@@ -35,7 +35,7 @@ Expr
 ``` r
 library(polars)
 
-df = pl$DataFrame(list(values = list(c(1, 2, 3, NA), c(2, 3), NA_real_)))
+df = pl$DataFrame(values = list(c(NA, 2, 1, 3), c(Inf, 2, 3, NaN), NA_real_))
 df$with_columns(sort = pl$col("values")$list$sort())
 ```
 
@@ -45,7 +45,7 @@ df$with_columns(sort = pl$col("values")$list$sort())
     #> │ ---                ┆ ---                │
     #> │ list[f64]          ┆ list[f64]          │
     #> ╞════════════════════╪════════════════════╡
-    #> │ [1.0, 2.0, … null] ┆ [null, 1.0, … 3.0] │
-    #> │ [2.0, 3.0]         ┆ [2.0, 3.0]         │
+    #> │ [null, 2.0, … 3.0] ┆ [null, 1.0, … 3.0] │
+    #> │ [inf, 2.0, … NaN]  ┆ [2.0, 3.0, … NaN]  │
     #> │ [null]             ┆ [null]             │
     #> └────────────────────┴────────────────────┘
