@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.11">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.12">
     
     
       
@@ -14453,37 +14453,36 @@ in the console but doesn’t return any value.</p>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">my_expr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">))</span><span class="o">$</span><span class="nf">sum</span><span class="p">()</span><span class="o">$</span><span class="nf">over</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;ham&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">2</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">my_expr</span><span class="o">$</span><span class="n">meta</span><span class="o">$</span><span class="nf">tree_format</span><span class="p">()</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; 
-#&gt;            0               1                2               3        
-#&gt;    ┌─────────────────────────────────────────────────────────────────
+<div class="highlight"><pre><span></span><code>#&gt;             0              1              2             3
+#&gt;    ┌───────────────────────────────────────────────────────────
 #&gt;    │
-#&gt;    │ ╭────────────╮ 
-#&gt;  0 │ │ binary: // │ 
-#&gt;    │ ╰────────────╯ 
-#&gt;    │        │ ╰─────────────╮       
-#&gt;    │        │               │       
-#&gt;    │        │               │       
-#&gt;    │  ╭──────────╮     ╭────────╮   
-#&gt;  1 │  │ lit(2.0) │     │ window │   
-#&gt;    │  ╰──────────╯     ╰────────╯   
-#&gt;    │                        │ ╰─────────────╮        
-#&gt;    │                        │               │        
-#&gt;    │                        │               │        
-#&gt;    │                  ╭──────────╮       ╭─────╮     
-#&gt;  2 │                  │ col(ham) │       │ sum │     
-#&gt;    │                  ╰──────────╯       ╰─────╯     
-#&gt;    │                                        │        
-#&gt;    │                                        │        
-#&gt;    │                                        │        
-#&gt;    │                                  ╭───────────╮  
-#&gt;  3 │                                  │ binary: * │  
-#&gt;    │                                  ╰───────────╯  
-#&gt;    │                                        │ ╰──────────────╮       
-#&gt;    │                                        │                │       
-#&gt;    │                                        │                │       
-#&gt;    │                                  ╭──────────╮     ╭──────────╮  
-#&gt;  4 │                                  │ col(bar) │     │ col(foo) │  
-#&gt;    │                                  ╰──────────╯     ╰──────────╯
+#&gt;    │  ╭────────────╮
+#&gt;  0 │  │ binary: // │
+#&gt;    │  ╰─────┬┬─────╯
+#&gt;    │        ││
+#&gt;    │        │╰─────────────╮
+#&gt;    │        │              │
+#&gt;    │   ╭────┴─────╮    ╭───┴────╮
+#&gt;  1 │   │ lit(2.0) │    │ window │
+#&gt;    │   ╰──────────╯    ╰───┬┬───╯
+#&gt;    │                       ││
+#&gt;    │                       │╰─────────────╮
+#&gt;    │                       │              │
+#&gt;    │                  ╭────┴─────╮     ╭──┴──╮
+#&gt;  2 │                  │ col(ham) │     │ sum │
+#&gt;    │                  ╰──────────╯     ╰──┬──╯
+#&gt;    │                                      │
+#&gt;    │                                      │
+#&gt;    │                                      │
+#&gt;    │                                ╭─────┴─────╮
+#&gt;  3 │                                │ binary: * │
+#&gt;    │                                ╰─────┬┬────╯
+#&gt;    │                                      ││
+#&gt;    │                                      │╰────────────╮
+#&gt;    │                                      │             │
+#&gt;    │                                 ╭────┴─────╮  ╭────┴─────╮
+#&gt;  4 │                                 │ col(bar) │  │ col(foo) │
+#&gt;    │                                 ╰──────────╯  ╰──────────╯
 </code></pre></div>
 
 
@@ -14540,7 +14539,7 @@ in the console but doesn’t return any value.</p>
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      <script src="../assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
     
   </body>

@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.11">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.12">
     
     
       
@@ -14496,7 +14496,7 @@ possibility to run on the streaming engine.
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">()</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span><span class="o">$</span><span class="n">height</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] 63
+<div class="highlight"><pre><span></span><code>#&gt; [1] 60
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">subset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span><span class="o">$</span><span class="n">height</span>
 </code></pre></div>
@@ -14508,7 +14508,7 @@ possibility to run on the streaming engine.
 #&gt;  $describe_optimized_plan() : Show the optimized query plan.
 #&gt; 
 #&gt; Naive plan:
-#&gt; UNIQUE BY None
+#&gt; UNIQUE[maintain_order: false, keep_strategy: Last] BY None
 #&gt;   DF [&quot;x&quot;, &quot;y&quot;]; PROJECT */2 COLUMNS; SELECTION: &quot;None&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># only keep unique rows</span>
@@ -14518,7 +14518,7 @@ possibility to run on the streaming engine.
 #&gt;  $describe_optimized_plan() : Show the optimized query plan.
 #&gt; 
 #&gt; Naive plan:
-#&gt; UNIQUE BY None
+#&gt; UNIQUE[maintain_order: false, keep_strategy: None] BY None
 #&gt;   DF [&quot;x&quot;, &quot;y&quot;]; PROJECT */2 COLUMNS; SELECTION: &quot;None&quot;
 </code></pre></div>
 
@@ -14576,7 +14576,7 @@ possibility to run on the streaming engine.
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      <script src="../assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
     
   </body>

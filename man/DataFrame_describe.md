@@ -2,7 +2,7 @@
 
 # Summary statistics for a DataFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1518)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1520)
 
 ## Description
 
@@ -53,7 +53,7 @@ pl$DataFrame(iris)$describe()
 
     #> shape: (9, 6)
     #> ┌────────────┬──────────────┬─────────────┬──────────────┬─────────────┬─────────┐
-    #> │ describe   ┆ Sepal.Length ┆ Sepal.Width ┆ Petal.Length ┆ Petal.Width ┆ Species │
+    #> │ statistic  ┆ Sepal.Length ┆ Sepal.Width ┆ Petal.Length ┆ Petal.Width ┆ Species │
     #> │ ---        ┆ ---          ┆ ---         ┆ ---          ┆ ---         ┆ ---     │
     #> │ str        ┆ f64          ┆ f64         ┆ f64          ┆ f64         ┆ f64     │
     #> ╞════════════╪══════════════╪═════════════╪══════════════╪═════════════╪═════════╡
@@ -97,7 +97,7 @@ df$describe()
 
     #> shape: (9, 6)
     #> ┌────────────┬─────┬────────┬────────────┬──────┬───────┐
-    #> │ describe   ┆ int ┆ string ┆ date       ┆ cat  ┆ bool  │
+    #> │ statistic  ┆ int ┆ string ┆ date       ┆ cat  ┆ bool  │
     #> │ ---        ┆ --- ┆ ---    ┆ ---        ┆ ---  ┆ ---   │
     #> │ str        ┆ str ┆ str    ┆ str        ┆ str  ┆ str   │
     #> ╞════════════╪═════╪════════╪════════════╪══════╪═══════╡

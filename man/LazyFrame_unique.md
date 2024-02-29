@@ -90,7 +90,7 @@ df$collect()$height
 df$unique()$collect()$height
 ```
 
-    #> [1] 63
+    #> [1] 60
 
 ``` r
 df$unique(subset = "x")$collect()$height
@@ -106,7 +106,7 @@ df$unique(keep = "last")
     #>  $describe_optimized_plan() : Show the optimized query plan.
     #> 
     #> Naive plan:
-    #> UNIQUE BY None
+    #> UNIQUE[maintain_order: false, keep_strategy: Last] BY None
     #>   DF ["x", "y"]; PROJECT */2 COLUMNS; SELECTION: "None"
 
 ``` r
@@ -118,5 +118,5 @@ df$unique(keep = "none")
     #>  $describe_optimized_plan() : Show the optimized query plan.
     #> 
     #> Naive plan:
-    #> UNIQUE BY None
+    #> UNIQUE[maintain_order: false, keep_strategy: None] BY None
     #>   DF ["x", "y"]; PROJECT */2 COLUMNS; SELECTION: "None"

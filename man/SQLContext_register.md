@@ -2,7 +2,7 @@
 
 # Register a single data as a table
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/sql.R#L92)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/sql.R#L84)
 
 ## Description
 

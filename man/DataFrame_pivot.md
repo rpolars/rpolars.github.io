@@ -2,7 +2,7 @@
 
 # Pivot data from long to wide
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1445)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1446)
 
 ## Description
 
@@ -14,6 +14,7 @@ Pivot data from long to wide
   values,
   index,
   columns,
+  ...,
   aggregate_function = NULL,
   maintain_order = TRUE,
   sort_columns = FALSE,
@@ -48,6 +49,14 @@ One or multiple keys to group by.
 <td>
 Name of the column(s) whose values will be used as the header of the
 output DataFrame.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="DataFrame_pivot_:_...">…</code>
+</td>
+<td>
+Not used.
 </td>
 </tr>
 <tr>

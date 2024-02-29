@@ -2,7 +2,7 @@
 
 # Transpose a DataFrame over the diagonal.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1791)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1793)
 
 ## Description
 
@@ -87,7 +87,7 @@ pl$DataFrame(mtcars)$transpose(include_header = TRUE, column_names = rownames(mt
     #> │ disp   ┆ 160.0     ┆ 160.0       ┆ 108.0  ┆ … ┆ 351.0       ┆ 145.0   ┆ 301.0       ┆ 121.0      │
     #> │ hp     ┆ 110.0     ┆ 110.0       ┆ 93.0   ┆ … ┆ 264.0       ┆ 175.0   ┆ 335.0       ┆ 109.0      │
     #> │ drat   ┆ 3.9       ┆ 3.9         ┆ 3.85   ┆ … ┆ 4.22        ┆ 3.62    ┆ 3.54        ┆ 4.11       │
-    #> │ wt     ┆ 2.62      ┆ 2.875       ┆ 2.32   ┆ … ┆ 3.17        ┆ 2.77    ┆ 3.57        ┆ 2.78       │
+    #> │ …      ┆ …         ┆ …           ┆ …      ┆ … ┆ …           ┆ …       ┆ …           ┆ …          │
     #> │ qsec   ┆ 16.46     ┆ 17.02       ┆ 18.61  ┆ … ┆ 14.5        ┆ 15.5    ┆ 14.6        ┆ 18.6       │
     #> │ vs     ┆ 0.0       ┆ 0.0         ┆ 1.0    ┆ … ┆ 0.0         ┆ 0.0     ┆ 0.0         ┆ 1.0        │
     #> │ am     ┆ 1.0       ┆ 1.0         ┆ 1.0    ┆ … ┆ 1.0         ┆ 1.0     ┆ 1.0         ┆ 1.0        │

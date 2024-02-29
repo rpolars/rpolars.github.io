@@ -63,7 +63,7 @@ library(polars)
 pl$select(pl$lit(-1:12) %% 3)$to_series()$to_vector()
 ```
 
-    #>  [1] -1  0  1  2  0  1  2  0  1  2  0  1  2  0
+    #>  [1] 2 0 1 2 0 1 2 0 1 2 0 1 2 0
 
 ``` r
 # The example is **NOT** equivalent to the followings:
@@ -86,20 +86,20 @@ pl$select(x == (x %% y) + y * (x %/% y))
 ```
 
     #> shape: (14, 1)
-    #> ┌───────┐
-    #> │       │
-    #> │ ---   │
-    #> │ bool  │
-    #> ╞═══════╡
-    #> │ false │
-    #> │ true  │
-    #> │ true  │
-    #> │ true  │
-    #> │ true  │
-    #> │ …     │
-    #> │ true  │
-    #> │ true  │
-    #> │ true  │
-    #> │ true  │
-    #> │ true  │
-    #> └───────┘
+    #> ┌──────┐
+    #> │      │
+    #> │ ---  │
+    #> │ bool │
+    #> ╞══════╡
+    #> │ true │
+    #> │ true │
+    #> │ true │
+    #> │ true │
+    #> │ true │
+    #> │ …    │
+    #> │ true │
+    #> │ true │
+    #> │ true │
+    #> │ true │
+    #> │ true │
+    #> └──────┘
