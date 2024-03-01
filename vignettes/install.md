@@ -156,7 +156,7 @@ features.
     -   `nightly` for nightly toolchain features and SIMD.
 
 Note that nightly features requires the Rust nightly toolchain
-nightly-2024-02-03.
+nightly-2024-02-23.
 
 #### Profile
 
