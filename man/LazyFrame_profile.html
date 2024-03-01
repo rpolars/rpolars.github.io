@@ -12999,11 +12999,53 @@
   
   
     <li class="md-nav__item">
+      <a href="ExprName_prefix_fields.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    prefix_fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ExprName_prefix.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     prefix
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ExprName_suffix_fields.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    suffix_fields
   </span>
   
 
@@ -14807,8 +14849,8 @@ TRUE)</code>.
 #&gt; │ ---                 ┆ ---   ┆ --- │
 #&gt; │ str                 ┆ u64   ┆ u64 │
 #&gt; ╞═════════════════════╪═══════╪═════╡
-#&gt; │ optimization        ┆ 0     ┆ 19  │
-#&gt; │ projection(literal) ┆ 19    ┆ 91  │
+#&gt; │ optimization        ┆ 0     ┆ 17  │
+#&gt; │ projection(literal) ┆ 17    ┆ 82  │
 #&gt; └─────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Use $profile() to compare two queries</span>
@@ -14839,9 +14881,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ --- │
 #&gt; │ str                ┆ u64   ┆ u64 │
 #&gt; ╞════════════════════╪═══════╪═════╡
-#&gt; │ optimization       ┆ 0     ┆ 22  │
-#&gt; │ sort(Sepal.Length) ┆ 22    ┆ 472 │
-#&gt; │ group_by(Species)  ┆ 474   ┆ 799 │
+#&gt; │ optimization       ┆ 0     ┆ 21  │
+#&gt; │ sort(Sepal.Length) ┆ 21    ┆ 508 │
+#&gt; │ group_by(Species)  ┆ 511   ┆ 868 │
 #&gt; └────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)</span>
@@ -14879,9 +14921,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ ---   │
 #&gt; │ str                ┆ u64   ┆ u64   │
 #&gt; ╞════════════════════╪═══════╪═══════╡
-#&gt; │ optimization       ┆ 0     ┆ 12    │
-#&gt; │ sort(Sepal.Length) ┆ 12    ┆ 407   │
-#&gt; │ group_by(Species)  ┆ 410   ┆ 61256 │
+#&gt; │ optimization       ┆ 0     ┆ 9     │
+#&gt; │ sort(Sepal.Length) ┆ 9     ┆ 809   │
+#&gt; │ group_by(Species)  ┆ 812   ┆ 68507 │
 #&gt; └────────────────────┴───────┴───────┘
 </code></pre></div>
 

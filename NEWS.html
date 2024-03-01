@@ -12887,11 +12887,53 @@
   
   
     <li class="md-nav__item">
+      <a href="man/ExprName_prefix_fields.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    prefix_fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="man/ExprName_prefix.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     prefix
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="man/ExprName_suffix_fields.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    suffix_fields
   </span>
   
 
@@ -14452,6 +14494,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug fixes
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -14486,7 +14537,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bug-fixes" class="md-nav__link">
+  <a href="#bug-fixes_1" class="md-nav__link">
     <span class="md-ellipsis">
       Bug fixes
     </span>
@@ -14579,7 +14630,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bug-fixes_1" class="md-nav__link">
+  <a href="#bug-fixes_2" class="md-nav__link">
     <span class="md-ellipsis">
       Bug fixes
     </span>
@@ -15470,6 +15521,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug fixes
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -15504,7 +15564,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bug-fixes" class="md-nav__link">
+  <a href="#bug-fixes_1" class="md-nav__link">
     <span class="md-ellipsis">
       Bug fixes
     </span>
@@ -15597,7 +15657,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bug-fixes_1" class="md-nav__link">
+  <a href="#bug-fixes_2" class="md-nav__link">
     <span class="md-ellipsis">
       Bug fixes
     </span>
@@ -16487,6 +16547,14 @@
     (<a href="https://github.com/pola-rs/r-polars/issues/869">#869</a>).</li>
 <li>Converts <code>clock_time_point</code> and <code>clock_zoned_time</code> objects from
     the <code>{clock}</code> package to Polars datetime type (<a href="https://github.com/pola-rs/r-polars/issues/861">#861</a>).</li>
+<li>New methods for the <code>name</code> subnamespace: <code>$prefix_fields()</code> and
+    <code>suffix_fields()</code> (<a href="https://github.com/pola-rs/r-polars/issues/873">#873</a>).</li>
+</ul>
+<h3 id="bug-fixes">Bug fixes</h3>
+<ul>
+<li>R no longer crashes when calling an invalid Polars object that points
+    to a null pointer (<a href="https://github.com/pola-rs/r-polars/issues/874">#874</a>). This was occurring, such as when a Polars object
+    was saved in an RDS file and loaded from another session.</li>
 </ul>
 <h2 id="polars-r-package-0141">Polars R Package 0.14.1</h2>
 <h3 id="breaking-changes">Breaking changes</h3>
@@ -16508,7 +16576,7 @@
     that is disabled by default. For now, it is only supported in the native R
     terminal and in RStudio (<a href="https://github.com/pola-rs/r-polars/issues/597">#597</a>).</li>
 </ul>
-<h3 id="bug-fixes">Bug fixes</h3>
+<h3 id="bug-fixes_1">Bug fixes</h3>
 <ul>
 <li><code>&lt;Series&gt;$list</code> sub namespace methods returns <code>Series</code> class object correctly (<a href="https://github.com/pola-rs/r-polars/issues/819">#819</a>).</li>
 </ul>
@@ -16603,7 +16671,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="bug-fixes_1">Bug fixes</h3>
+<h3 id="bug-fixes_2">Bug fixes</h3>
 <ul>
 <li><code>$sort()</code> no longer panicks when <code>descending = NULL</code> (<a href="https://github.com/pola-rs/r-polars/issues/748">#748</a>).</li>
 </ul>

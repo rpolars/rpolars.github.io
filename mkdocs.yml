@@ -607,7 +607,9 @@ nav:
         - Name:
             - keep: man/ExprName_keep.md
             - map: man/ExprName_map.md
+            - prefix_fields: man/ExprName_prefix_fields.md
             - prefix: man/ExprName_prefix.md
+            - suffix_fields: man/ExprName_suffix_fields.md
             - suffix: man/ExprName_suffix.md
             - to_lowercase: man/ExprName_to_lowercase.md
             - to_uppercase: man/ExprName_to_uppercase.md
