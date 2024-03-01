@@ -2,7 +2,7 @@
 
 # Create Struct DataType
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L198)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L204)
 
 ## Description
 
@@ -138,24 +138,29 @@ print(pl$dtypes)
     #>   .pr$DataType$new_array(datatype, width) |>
     #>     unwrap("in pl$Array():")
     #> }
-    #> <bytecode: 0x562f1f95f188>
+    #> <bytecode: 0x5572ec4ecd60>
     #> <environment: namespace:polars>
     #> 
     #> $Categorical
     #> function(ordering = "physical") {
     #>   .pr$DataType$new_categorical(ordering) |> unwrap()
     #> }
-    #> <bytecode: 0x562f1f951380>
+    #> <bytecode: 0x5572ec4df290>
     #> <environment: namespace:polars>
     #> 
     #> $Datetime
     #> function(tu = "us", tz = NULL) {
-    #>   if (!is.null(tz) && (!is_string(tz) || !tz %in% base::OlsonNames())) {
-    #>     stop("Datetime: the tz '%s' is not a valid timezone string, see base::OlsonNames()", tz)
+    #>   if (!is.null(tz) && !isTRUE(tz %in% base::OlsonNames())) {
+    #>     sprintf(
+    #>       "The time zone '%s' is not supported in polars. See `base::OlsonNames()` for supported time zones.",
+    #>       tz
+    #>     ) |>
+    #>       Err_plain() |>
+    #>       unwrap("in $Datetime():")
     #>   }
     #>   unwrap(.pr$DataType$new_datetime(tu, tz))
     #> }
-    #> <bytecode: 0x562f1f94b2a0>
+    #> <bytecode: 0x5572ec4d60a0>
     #> <environment: namespace:polars>
     #> 
     #> $List
@@ -171,7 +176,7 @@ print(pl$dtypes)
     #>   }
     #>   .pr$DataType$new_list(datatype)
     #> }
-    #> <bytecode: 0x562f1f93fbf8>
+    #> <bytecode: 0x5572efd6bef8>
     #> <environment: namespace:polars>
     #> 
     #> $Struct
@@ -205,7 +210,7 @@ print(pl$dtypes)
     #>     and_then(DataType$new_struct) |>
     #>     unwrap("in pl$Struct:")
     #> }
-    #> <bytecode: 0x562f231ce4f0>
+    #> <bytecode: 0x5572efd764a0>
     #> <environment: namespace:polars>
 
 ``` r
