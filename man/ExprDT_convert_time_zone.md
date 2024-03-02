@@ -2,7 +2,7 @@
 
 # With Time Zone
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L668)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L701)
 
 ## Description
 
@@ -42,27 +42,104 @@ Expr of i64
 library(polars)
 
 df = pl$DataFrame(
-  date = pl$date_range(
-    start = as.Date("2001-3-1"),
-    end = as.Date("2001-5-1"),
-    interval = "1mo12m34s"
-  )
+  london_timezone = pl$date_range(
+    as.POSIXct("2020-03-01", tz = "UTC"),
+    as.POSIXct("2020-07-01", tz = "UTC"),
+    "1mo",
+    time_zone = "UTC"
+  )$dt$convert_time_zone("Europe/London")
 )
+
 df$select(
-  pl$col("date"),
-  pl$col("date")
-  $dt$replace_time_zone("Europe/Amsterdam")
-  $dt$convert_time_zone("Europe/London")
-  $alias("London_with")
+  "london_timezone",
+  London_to_Amsterdam = pl$col(
+    "london_timezone"
+  )$dt$replace_time_zone("Europe/Amsterdam")
 )
 ```
 
-    #> shape: (2, 2)
-    #> ┌─────────────────────┬─────────────────────────────┐
-    #> │ date                ┆ London_with                 │
-    #> │ ---                 ┆ ---                         │
-    #> │ datetime[μs]        ┆ datetime[μs, Europe/London] │
-    #> ╞═════════════════════╪═════════════════════════════╡
-    #> │ 2001-03-01 00:00:00 ┆ 2001-02-28 23:00:00 GMT     │
-    #> │ 2001-04-01 00:12:34 ┆ 2001-03-31 23:12:34 BST     │
-    #> └─────────────────────┴─────────────────────────────┘
+    #> shape: (5, 2)
+    #> ┌─────────────────────────────┬────────────────────────────────┐
+    #> │ london_timezone             ┆ London_to_Amsterdam            │
+    #> │ ---                         ┆ ---                            │
+    #> │ datetime[μs, Europe/London] ┆ datetime[μs, Europe/Amsterdam] │
+    #> ╞═════════════════════════════╪════════════════════════════════╡
+    #> │ 2020-03-01 00:00:00 GMT     ┆ 2020-03-01 00:00:00 CET        │
+    #> │ 2020-04-01 01:00:00 BST     ┆ 2020-04-01 01:00:00 CEST       │
+    #> │ 2020-05-01 01:00:00 BST     ┆ 2020-05-01 01:00:00 CEST       │
+    #> │ 2020-06-01 01:00:00 BST     ┆ 2020-06-01 01:00:00 CEST       │
+    #> │ 2020-07-01 01:00:00 BST     ┆ 2020-07-01 01:00:00 CEST       │
+    #> └─────────────────────────────┴────────────────────────────────┘
+
+``` r
+# You can use `ambiguous` to deal with ambiguous datetimes:
+dates = c(
+  "2018-10-28 01:30",
+  "2018-10-28 02:00",
+  "2018-10-28 02:30",
+  "2018-10-28 02:00"
+)
+
+df = pl$DataFrame(
+  ts = pl$Series(dates)$str$strptime(pl$Datetime("us"), "%F %H:%M"),
+  ambiguous = c("earliest", "earliest", "latest", "latest")
+)
+
+df$with_columns(
+  ts_localized = pl$col("ts")$dt$replace_time_zone(
+    "Europe/Brussels",
+    ambiguous = pl$col("ambiguous")
+  )
+)
+```
+
+    #> shape: (4, 3)
+    #> ┌─────────────────────┬───────────┬───────────────────────────────┐
+    #> │ ts                  ┆ ambiguous ┆ ts_localized                  │
+    #> │ ---                 ┆ ---       ┆ ---                           │
+    #> │ datetime[μs]        ┆ str       ┆ datetime[μs, Europe/Brussels] │
+    #> ╞═════════════════════╪═══════════╪═══════════════════════════════╡
+    #> │ 2018-10-28 01:30:00 ┆ earliest  ┆ 2018-10-28 01:30:00 CEST      │
+    #> │ 2018-10-28 02:00:00 ┆ earliest  ┆ 2018-10-28 02:00:00 CEST      │
+    #> │ 2018-10-28 02:30:00 ┆ latest    ┆ 2018-10-28 02:30:00 CET       │
+    #> │ 2018-10-28 02:00:00 ┆ latest    ┆ 2018-10-28 02:00:00 CET       │
+    #> └─────────────────────┴───────────┴───────────────────────────────┘
+
+``` r
+# Polars Datetime type without a time zone will be converted to R
+# with respect to the session time zone. If ambiguous times are present
+# an error will be raised. It is recommended to add a time zone before
+# converting to R.
+s_without_tz = pl$Series(dates)$str$strptime(pl$Datetime("us"), "%F %H:%M")
+s_without_tz
+```
+
+    #> polars Series: shape: (4,)
+    #> Series: '' [datetime[μs]]
+    #> [
+    #>  2018-10-28 01:30:00
+    #>  2018-10-28 02:00:00
+    #>  2018-10-28 02:30:00
+    #>  2018-10-28 02:00:00
+    #> ]
+
+``` r
+s_with_tz = s_without_tz$dt$replace_time_zone("UTC")
+s_with_tz
+```
+
+    #> polars Series: shape: (4,)
+    #> Series: '' [datetime[μs, UTC]]
+    #> [
+    #>  2018-10-28 01:30:00 UTC
+    #>  2018-10-28 02:00:00 UTC
+    #>  2018-10-28 02:30:00 UTC
+    #>  2018-10-28 02:00:00 UTC
+    #> ]
+
+``` r
+as.vector(s_with_tz)
+```
+
+    #> [1] "2018-10-28 01:30:00 UTC" "2018-10-28 02:00:00 UTC"
+    #> [3] "2018-10-28 02:30:00 UTC" "2018-10-28 02:00:00 UTC"

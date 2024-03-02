@@ -2,7 +2,7 @@
 
 # Drop nulls (missing values)
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L444)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L484)
 
 ## Description
 
