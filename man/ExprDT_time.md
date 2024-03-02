@@ -2,7 +2,7 @@
 
 # Extract time from a Datetime Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L962)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L935)
 
 ## Description
 
@@ -25,8 +25,7 @@ library(polars)
 df = pl$DataFrame(dates = pl$date_range(
   as.Date("2000-1-1"),
   as.Date("2000-1-2"),
-  "1h",
-  eager = TRUE
+  "1h"
 ))
 
 df$with_columns(times = pl$col("dates")$dt$time())

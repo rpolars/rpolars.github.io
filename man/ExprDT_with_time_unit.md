@@ -2,7 +2,7 @@
 
 # with_time_unit
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L624)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L608)
 
 ## Description
 
@@ -41,8 +41,7 @@ df = pl$DataFrame(
   date = pl$date_range(
     start = as.Date("2001-1-1"),
     end = as.Date("2001-1-3"),
-    interval = "1d1s",
-    eager = TRUE
+    interval = "1d1s"
   )
 )
 df$select(

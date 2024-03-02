@@ -2,7 +2,7 @@
 
 # Aggregate over a DynamicGroupBy
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/group_by_dynamic.R#L87)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/group_by_dynamic.R#L86)
 
 ## Description
 
@@ -41,8 +41,7 @@ df = pl$DataFrame(
   time = pl$date_range(
     start = strptime("2021-12-16 00:00:00", format = "%Y-%m-%d %H:%M:%S", tz = "UTC"),
     end = strptime("2021-12-16 03:00:00", format = "%Y-%m-%d %H:%M:%S", tz = "UTC"),
-    interval = "30m",
-    eager = TRUE,
+    interval = "30m"
   ),
   n = 0:6
 )

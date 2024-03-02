@@ -2,7 +2,7 @@
 
 # Hour
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L397)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L388)
 
 ## Description
 
@@ -28,8 +28,7 @@ df = pl$DataFrame(
     as.Date("2020-12-25"),
     as.Date("2021-1-05"),
     interval = "1d2h",
-    time_zone = "GMT",
-    eager = TRUE
+    time_zone = "GMT"
   )
 )
 df$with_columns(

@@ -16531,6 +16531,9 @@
     (either lexical or physical). This also means that calling <code>pl$Categorical</code>
     doesn't create a <code>DataType</code> anymore. All calls to <code>pl$Categorical</code> must be
     replaced by <code>pl$Categorical()</code> (<a href="https://github.com/pola-rs/r-polars/issues/860">#860</a>).</li>
+<li>Removed argument <code>eager</code> in <code>pl$date_range()</code> and <code>pl$struct()</code> for more
+    consistency of output. It is possible to replace <code>eager = TRUE</code> by calling
+    <code>$to_series()</code> (<a href="https://github.com/pola-rs/r-polars/issues/882">#882</a>).</li>
 </ul>
 <h3 id="new-features">New features</h3>
 <ul>

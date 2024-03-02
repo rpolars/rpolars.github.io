@@ -1,16 +1,16 @@
 
 
-# struct
+# Collect columns into a struct column
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L638)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L635)
 
 ## Description
 
-Collect several columns into a Series of dtype Struct.
+Collect columns into a struct column
 
 ## Usage
 
-<pre><code class='language-R'>pl_struct(exprs, eager = FALSE, schema = NULL)
+<pre><code class='language-R'>pl_struct(exprs, schema = NULL)
 </code></pre>
 
 ## Arguments
@@ -26,22 +26,14 @@ Columns/Expressions to collect into a Struct.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_struct_:_eager">eager</code>
-</td>
-<td>
-Evaluate immediately.
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
 <code id="pl_struct_:_schema">schema</code>
 </td>
 <td>
 Optional schema named list that explicitly defines the struct field
 dtypes. Each name must match a column name wrapped in the struct. Can
-only be used to cast some or all dtypes, not to change the names. NULL
-means to include keep columns into the struct by their current DataType.
-If a column is not included in the schema it is removed from the final
+only be used to cast some or all dtypes, not to change the names. If
+<code>NULL</code> (default), columns datatype are not modified. Columns
+that do not exist are silently ignored and not included in the final
 struct.
 </td>
 </tr>
@@ -49,20 +41,16 @@ struct.
 
 ## Details
 
-pl$struct creates Expr or Series of DataType Struct() pl$Struct creates
-the DataType Struct() In polars a schema is a named list of DataTypes.
-#’ A schema describes e.g. a DataFrame. More formally schemas consist of
-Fields. A Field is an object describing the name and DataType of a
-column/Series, but same same. A struct is a DataFrame wrapped into a
-Series, the DataType is Struct, and each sub-datatype within are Fields.
-In a dynamic language schema and a Struct (the DataType) are quite the
-same, except schemas describe DataFrame and Struct’s describe some
-Series.
+<code>pl$struct()</code> creates an Expr of DataType
+<code>Struct()</code>.
+
+Compared to the Python implementation, <code>pl$struct()</code> doesn’t
+have the argument <code>eager</code> and always returns an Expr. Use
+<code style="white-space: pre;">$to_series()</code> to return a Series.
 
 ## Value
 
-Eager=FALSE: Expr of Series with dtype Struct | Eager=TRUE: Series with
-dtype Struct
+Expr with dtype Struct
 
 ## Examples
 

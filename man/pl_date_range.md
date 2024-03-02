@@ -2,7 +2,7 @@
 
 # New date range
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__eager.R#L217)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__eager.R#L220)
 
 ## Description
 
@@ -14,7 +14,6 @@ New date range
   start,
   end,
   interval,
-  eager = FALSE,
   closed = "both",
   time_unit = "us",
   time_zone = NULL,
@@ -50,15 +49,6 @@ datetime is constructed.
 <td>
 String, a Polars <code>duration</code> or R <code>difftime()</code>. Can
 be missing if <code>end</code> is missing also.
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_date_range_:_eager">eager</code>
-</td>
-<td>
-If <code>FALSE</code> (default), return an <code>Expr</code>. Otherwise,
-returns a <code>Series</code>.
 </td>
 </tr>
 <tr>
@@ -111,6 +101,11 @@ machine timezone, R and polars.
 
 In R/r-polars it is perfectly fine to mix timezones of params
 <code>time_zone</code>, <code>start</code> and <code>end</code>.
+
+Compared to the Python implementation, <code>pl$date_range()</code>
+doesn’t have the argument <code>eager</code> and always returns an Expr.
+Use <code style="white-space: pre;">$to_series()</code> to return a
+Series.
 
 ## Value
 

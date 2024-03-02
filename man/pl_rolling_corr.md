@@ -2,7 +2,7 @@
 
 # Rolling correlation
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L763)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L750)
 
 ## Description
 

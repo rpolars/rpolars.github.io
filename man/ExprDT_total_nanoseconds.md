@@ -2,7 +2,7 @@
 
 # nanoseconds
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L878)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L853)
 
 ## Description
 
@@ -25,8 +25,7 @@ library(polars)
 df = pl$DataFrame(date = pl$date_range(
   start = as.POSIXct("2020-1-1", tz = "GMT"),
   end = as.POSIXct("2020-1-1 00:00:01", tz = "GMT"),
-  interval = "1ms",
-  eager = TRUE
+  interval = "1ms"
 ))
 df$select(
   pl$col("date"),

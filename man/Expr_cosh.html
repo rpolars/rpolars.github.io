@@ -14605,21 +14605,21 @@
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">-1</span><span class="p">,</span><span class="w"> </span><span class="nf">acosh</span><span class="p">(</span><span class="m">0.5</span><span class="p">),</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="kc">NA_real_</span><span class="p">))</span><span class="o">$</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">-1</span><span class="p">,</span><span class="w"> </span><span class="nf">acosh</span><span class="p">(</span><span class="m">2</span><span class="p">),</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="kc">NA_real_</span><span class="p">))</span><span class="o">$</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nf">with_columns</span><span class="p">(</span><span class="n">cosh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">cosh</span><span class="p">())</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; shape: (5, 2)
-#&gt; ┌──────┬──────────┐
-#&gt; │ a    ┆ cosh     │
-#&gt; │ ---  ┆ ---      │
-#&gt; │ f64  ┆ f64      │
-#&gt; ╞══════╪══════════╡
-#&gt; │ -1.0 ┆ 1.543081 │
-#&gt; │ NaN  ┆ NaN      │
-#&gt; │ 0.0  ┆ 1.0      │
-#&gt; │ 1.0  ┆ 1.543081 │
-#&gt; │ null ┆ null     │
-#&gt; └──────┴──────────┘
+#&gt; ┌──────────┬──────────┐
+#&gt; │ a        ┆ cosh     │
+#&gt; │ ---      ┆ ---      │
+#&gt; │ f64      ┆ f64      │
+#&gt; ╞══════════╪══════════╡
+#&gt; │ -1.0     ┆ 1.543081 │
+#&gt; │ 1.316958 ┆ 2.0      │
+#&gt; │ 0.0      ┆ 1.0      │
+#&gt; │ 1.0      ┆ 1.543081 │
+#&gt; │ null     ┆ null     │
+#&gt; └──────────┴──────────┘
 </code></pre></div>
 
 

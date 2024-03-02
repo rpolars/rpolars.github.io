@@ -2,7 +2,7 @@
 
 # Hours
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L776)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L756)
 
 ## Description
 
@@ -26,8 +26,7 @@ df = pl$DataFrame(
   date = pl$date_range(
     start = as.Date("2020-1-1"),
     end = as.Date("2020-1-4"),
-    interval = "1d",
-    eager = TRUE
+    interval = "1d"
   )
 )
 df$select(

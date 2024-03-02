@@ -2,7 +2,7 @@
 
 # Offset By
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L940)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L914)
 
 ## Description
 
@@ -114,8 +114,7 @@ df = pl$DataFrame(
   dates = pl$date_range(
     as.Date("2000-1-1"),
     as.Date("2005-1-1"),
-    "1y",
-    eager = TRUE
+    "1y"
   )
 )
 df$select(

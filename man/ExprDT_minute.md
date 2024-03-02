@@ -2,7 +2,7 @@
 
 # Minute
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L423)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L413)
 
 ## Description
 
@@ -28,8 +28,7 @@ df = pl$DataFrame(
     as.Date("2020-12-25"),
     as.Date("2021-1-05"),
     interval = "1d5s",
-    time_zone = "GMT",
-    eager = TRUE
+    time_zone = "GMT"
   )
 )
 df$with_columns(

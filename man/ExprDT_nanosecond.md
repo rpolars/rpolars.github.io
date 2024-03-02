@@ -2,7 +2,7 @@
 
 # Nanosecond
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L532)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L518)
 
 ## Description
 
@@ -29,8 +29,7 @@ pl$DataFrame(date = pl$date_range(
   as.numeric(as.POSIXct("2001-1-1")) * 1E9 + 123456789, # manually convert to us
   as.numeric(as.POSIXct("2001-1-1 00:00:6")) * 1E9,
   interval = "1s987654321ns",
-  time_unit = "ns", # instruct polars input is us, and store as us
-  eager = TRUE
+  time_unit = "ns" # instruct polars input is us, and store as us
 ))$with_columns(
   pl$col("date")$cast(pl$Int64)$alias("datetime int64"),
   pl$col("date")$dt$nanosecond()$alias("nanosecond")

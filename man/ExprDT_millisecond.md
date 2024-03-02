@@ -2,7 +2,7 @@
 
 # Millisecond
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L479)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L467)
 
 ## Description
 
@@ -28,7 +28,6 @@ pl$DataFrame(date = pl$date_range(
   as.numeric(as.POSIXct("2001-1-1 00:00:6")) * 1E6,
   interval = "2s654321us",
   time_unit = "us", # instruct polars input is us, and store as us
-  eager = TRUE
 ))$with_columns(
   pl$col("date")$cast(pl$Int64)$alias("datetime int64"),
   pl$col("date")$dt$millisecond()$alias("millisecond")

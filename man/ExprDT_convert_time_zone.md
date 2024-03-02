@@ -2,7 +2,7 @@
 
 # With Time Zone
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L686)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L668)
 
 ## Description
 
@@ -45,8 +45,7 @@ df = pl$DataFrame(
   date = pl$date_range(
     start = as.Date("2001-3-1"),
     end = as.Date("2001-5-1"),
-    interval = "1mo12m34s",
-    eager = TRUE
+    interval = "1mo12m34s"
   )
 )
 df$select(
