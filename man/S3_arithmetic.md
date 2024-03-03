@@ -12,22 +12,22 @@ Arithmetic operators for RPolars objects
 x + y
 
 # S3 method for class 'RPolarsExpr'
-x / y
-
-# S3 method for class 'RPolarsExpr'
-x %/% y
-
-# S3 method for class 'RPolarsExpr'
-x %% y
-
-# S3 method for class 'RPolarsExpr'
 x - y
 
 # S3 method for class 'RPolarsExpr'
 x * y
 
 # S3 method for class 'RPolarsExpr'
+x / y
+
+# S3 method for class 'RPolarsExpr'
 x ^ y
+
+# S3 method for class 'RPolarsExpr'
+x %% y
+
+# S3 method for class 'RPolarsExpr'
+x %/% y
 
 # S3 method for class 'RPolarsSeries'
 x + y
@@ -36,19 +36,19 @@ x + y
 x - y
 
 # S3 method for class 'RPolarsSeries'
+x * y
+
+# S3 method for class 'RPolarsSeries'
 x / y
 
 # S3 method for class 'RPolarsSeries'
-x %/% y
-
-# S3 method for class 'RPolarsSeries'
-x * y
+x ^ y
 
 # S3 method for class 'RPolarsSeries'
 x %% y
 
 # S3 method for class 'RPolarsSeries'
-x ^ y
+x %/% y
 </code></pre>
 
 ## Arguments
@@ -80,21 +80,6 @@ A Polars object the same type as the input.
 </li>
 <li>
 
-<code>\<Expr\>$div()</code>
-
-</li>
-<li>
-
-<code>\<Expr\>$floor_div()</code>
-
-</li>
-<li>
-
-<code>\<Expr\>$mod()</code>
-
-</li>
-<li>
-
 <code>\<Expr\>$sub()</code>
 
 </li>
@@ -105,42 +90,57 @@ A Polars object the same type as the input.
 </li>
 <li>
 
+<code>\<Expr\>$div()</code>
+
+</li>
+<li>
+
 <code>\<Expr\>$pow()</code>
 
 </li>
 <li>
 
-<code>\<Series$add()</code>
+<code>\<Expr\>$mod()</code>
 
 </li>
 <li>
 
-<code>\<Series$div()</code>
+<code>\<Expr\>$floor_div()</code>
 
 </li>
 <li>
 
-<code>\<Series$floor_div()</code>
+<code>\<Series\>$add()</code>
 
 </li>
 <li>
 
-<code>\<Series$mod()</code>
+<code>\<Series\>$sub()</code>
 
 </li>
 <li>
 
-<code>\<Series$sub()</code>
+<code>\<Series\>$mul()</code>
 
 </li>
 <li>
 
-<code>\<Series$mul()</code>
+<code>\<Series\>$div()</code>
 
 </li>
 <li>
 
-<code>\<Series$pow()</code>
+<code>\<Series\>$pow()</code>
+
+</li>
+<li>
+
+<code>\<Series\>$mod()</code>
+
+</li>
+<li>
+
+<code>\<Series\>$floor_div()</code>
 
 </li>
 </ul>
