@@ -2,7 +2,7 @@
 
 # Aggregate over a DynamicGroupBy
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/group_by_dynamic.R#L86)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/97c09bc0a6fc3d166744dbddd037b49e8d8fc6c2/R/group_by_dynamic.R#L86)
 
 ## Description
 

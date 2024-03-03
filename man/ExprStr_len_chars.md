@@ -2,7 +2,7 @@
 
 # Get the number of characters in strings
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L214)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/97c09bc0a6fc3d166744dbddd037b49e8d8fc6c2/R/expr__string.R#L214)
 
 ## Description
 
