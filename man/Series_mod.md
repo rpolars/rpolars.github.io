@@ -1,16 +1,16 @@
 
 
-# rem Series
+# Modulo Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L373)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L359)
 
 ## Description
 
-Series arithmetics, remainder
+Method equivalent of modulo operator <code>series %% other</code>.
 
 ## Usage
 
-<pre><code class='language-R'>Series_rem(other)
+<pre><code class='language-R'>Series_mod(other)
 </code></pre>
 
 ## Arguments
@@ -18,10 +18,11 @@ Series arithmetics, remainder
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_rem_:_other">other</code>
+<code id="Series_mod_:_other">other</code>
 </td>
 <td>
-Series or into Series
+Series like object of numeric. Converted to Series by
+<code>as_polars_series()</code> in this method.
 </td>
 </tr>
 </table>
@@ -30,12 +31,22 @@ Series or into Series
 
 Series
 
+## See Also
+
+<ul>
+<li>
+
+Arithmetic operators
+
+</li>
+</ul>
+
 ## Examples
 
 ``` r
 library(polars)
 
-pl$Series(1:4)$rem(2L)
+pl$Series(1:4)$mod(2L)
 ```
 
     #> polars Series: shape: (4,)
@@ -48,7 +59,7 @@ pl$Series(1:4)$rem(2L)
     #> ]
 
 ``` r
-pl$Series(1:3)$rem(pl$Series(11:13))
+pl$Series(1:3)$mod(pl$Series(11:13))
 ```
 
     #> polars Series: shape: (3,)
@@ -60,7 +71,7 @@ pl$Series(1:3)$rem(pl$Series(11:13))
     #> ]
 
 ``` r
-pl$Series(1:3)$rem(1L)
+pl$Series(1:3)$mod(1L)
 ```
 
     #> polars Series: shape: (3,)

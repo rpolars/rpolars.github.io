@@ -2,7 +2,7 @@
 
 # is_numeric
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L977)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L984)
 
 ## Description
 

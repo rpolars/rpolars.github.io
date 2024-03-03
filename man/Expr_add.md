@@ -2,19 +2,15 @@
 
 # Add two expressions
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L216)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L228)
 
 ## Description
 
-The RHS can either be an Expr or an object that can be converted to a
-literal (e.g an integer).
+Method equivalent of addition operator <code>expr + other</code>.
 
 ## Usage
 
 <pre><code class='language-R'>Expr_add(other)
-
-# S3 method for class 'RPolarsExpr'
-e1 + e2
 </code></pre>
 
 ## Arguments
@@ -25,23 +21,7 @@ e1 + e2
 <code id="Expr_add_:_other">other</code>
 </td>
 <td>
-Literal or object that can be converted to a literal
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_add_:_e1">e1</code>
-</td>
-<td>
-Expr only
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_add_:_e2">e2</code>
-</td>
-<td>
-Expr or anything that can be converted to a literal
+numeric or string value; accepts expression input.
 </td>
 </tr>
 </table>
@@ -50,30 +30,61 @@ Expr or anything that can be converted to a literal
 
 Expr
 
+## See Also
+
+<ul>
+<li>
+
+Arithmetic operators
+
+</li>
+</ul>
+
 ## Examples
 
 ``` r
 library(polars)
 
-pl$lit(5) + 10
+df = pl$DataFrame(x = 1:5)
+
+df$with_columns(
+  `x+int` = pl$col("x")$add(2L),
+  `x+expr` = pl$col("x")$add(pl$col("x")$cum_prod())
+)
 ```
 
-    #> polars Expr: [(5.0) + (10.0)]
+    #> shape: (5, 3)
+    #> ┌─────┬───────┬────────┐
+    #> │ x   ┆ x+int ┆ x+expr │
+    #> │ --- ┆ ---   ┆ ---    │
+    #> │ i32 ┆ i32   ┆ i64    │
+    #> ╞═════╪═══════╪════════╡
+    #> │ 1   ┆ 3     ┆ 2      │
+    #> │ 2   ┆ 4     ┆ 4      │
+    #> │ 3   ┆ 5     ┆ 9      │
+    #> │ 4   ┆ 6     ┆ 28     │
+    #> │ 5   ┆ 7     ┆ 125    │
+    #> └─────┴───────┴────────┘
 
 ``` r
-pl$lit(5) + pl$lit(10)
+df = pl$DataFrame(
+  x = c("a", "d", "g"),
+  y = c("b", "e", "h"),
+  z = c("c", "f", "i")
+)
+
+df$with_columns(
+  pl$col("x")$add(pl$col("y"))$add(pl$col("z"))$alias("xyz")
+)
 ```
 
-    #> polars Expr: [(5.0) + (10.0)]
-
-``` r
-pl$lit(5)$add(pl$lit(10))
-```
-
-    #> polars Expr: [(5.0) + (10.0)]
-
-``` r
-+pl$lit(5) # unary use resolves to same as pl$lit(5)
-```
-
-    #> polars Expr: 5.0
+    #> shape: (3, 4)
+    #> ┌─────┬─────┬─────┬─────┐
+    #> │ x   ┆ y   ┆ z   ┆ xyz │
+    #> │ --- ┆ --- ┆ --- ┆ --- │
+    #> │ str ┆ str ┆ str ┆ str │
+    #> ╞═════╪═════╪═════╪═════╡
+    #> │ a   ┆ b   ┆ c   ┆ abc │
+    #> │ d   ┆ e   ┆ f   ┆ def │
+    #> │ g   ┆ h   ┆ i   ┆ ghi │
+    #> └─────┴─────┴─────┴─────┘

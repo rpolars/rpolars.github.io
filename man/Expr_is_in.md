@@ -2,7 +2,7 @@
 
 # Check whether a value is in a vector
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2144)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2088)
 
 ## Description
 
@@ -24,7 +24,7 @@ you need to use the string cache, either with
 <code id="Expr_is_in_:_other">other</code>
 </td>
 <td>
-Literal or object that can be converted to a literal
+numeric or string value; accepts expression input.
 </td>
 </tr>
 </table>

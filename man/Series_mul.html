@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="Series_min.html">
+        <link rel="prev" href="Series_mod.html">
       
       
         <link rel="next" href="Series_n_unique.html">
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mul-series" class="md-skip">
+        <a href="#multiply-series" class="md-skip">
           Skip to content
         </a>
       
@@ -2118,6 +2118,27 @@
   
   
     <li class="md-nav__item">
+      <a href="Series_floor_div.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    floor_div
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Series_is_numeric.html" class="md-nav__link">
         
   
@@ -2283,6 +2304,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="Series_mod.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mod
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -2368,6 +2410,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -2413,11 +2464,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_print.html" class="md-nav__link">
+      <a href="Series_pow.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    print
+    pow
   </span>
   
 
@@ -2434,11 +2485,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_rem.html" class="md-nav__link">
+      <a href="Series_print.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    rem
+    print
   </span>
   
 
@@ -6393,6 +6444,27 @@
             S3 Methods
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="S3_arithmetic.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    arithmetic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -14582,6 +14654,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -14608,15 +14689,13 @@
   
 
 
-<h1 id="mul-series">mul Series</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L353"><strong>Source code</strong></a></p>
+<h1 id="multiply-series">Multiply Series</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L344"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>Series arithmetics</p>
+<p>Method equivalent of multiplication operator <code>series *
+other</code>.</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Series&gt;$mul(other)
-
-# S3 method for class 'RPolarsSeries'
-s1 * s2
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
@@ -14626,29 +14705,23 @@ s1 * s2
 <code id="Series_mul_:_other">other</code>
 </td>
 <td>
-Series or into Series
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_mul_:_s1">s1</code>
-</td>
-<td>
-lhs Series
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_mul_:_s2">s2</code>
-</td>
-<td>
-rhs Series or any into Series
+Series like object of numeric. Converted to Series by
+<code>as_polars_series()</code> in this method.
 </td>
 </tr>
 </table>
 
 <h2 id="value">Value</h2>
 <p>Series</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li>
+
+Arithmetic operators
+
+</li>
+</ul>
+
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -14680,26 +14753,6 @@ rhs Series or any into Series
 #&gt;  1
 #&gt;  2
 #&gt;  3
-#&gt; ]
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="m">2L</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (3,)
-#&gt; Series: &#39;&#39; [i32]
-#&gt; [
-#&gt;  2
-#&gt;  4
-#&gt;  6
-#&gt; ]
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2L</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (3,)
-#&gt; Series: &#39;&#39; [i32]
-#&gt; [
-#&gt;  2
-#&gt;  4
-#&gt;  6
 #&gt; ]
 </code></pre></div>
 

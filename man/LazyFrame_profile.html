@@ -2116,6 +2116,27 @@
   
   
     <li class="md-nav__item">
+      <a href="Series_floor_div.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    floor_div
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Series_is_numeric.html" class="md-nav__link">
         
   
@@ -2284,6 +2305,27 @@
   
   
     <li class="md-nav__item">
+      <a href="Series_mod.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mod
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Series_mul.html" class="md-nav__link">
         
   
@@ -2326,11 +2368,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_print.html" class="md-nav__link">
+      <a href="Series_pow.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    print
+    pow
   </span>
   
 
@@ -2347,11 +2389,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_rem.html" class="md-nav__link">
+      <a href="Series_print.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    rem
+    print
   </span>
   
 
@@ -6411,6 +6453,27 @@
             S3 Methods
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="S3_arithmetic.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    arithmetic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -14850,7 +14913,7 @@ TRUE)</code>.
 #&gt; │ str                 ┆ u64   ┆ u64 │
 #&gt; ╞═════════════════════╪═══════╪═════╡
 #&gt; │ optimization        ┆ 0     ┆ 28  │
-#&gt; │ projection(literal) ┆ 28    ┆ 97  │
+#&gt; │ projection(literal) ┆ 28    ┆ 104 │
 #&gt; └─────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Use $profile() to compare two queries</span>
@@ -14876,15 +14939,15 @@ TRUE)</code>.
 #&gt; 
 #&gt; $profile
 #&gt; shape: (3, 3)
-#&gt; ┌────────────────────┬───────┬──────┐
-#&gt; │ node               ┆ start ┆ end  │
-#&gt; │ ---                ┆ ---   ┆ ---  │
-#&gt; │ str                ┆ u64   ┆ u64  │
-#&gt; ╞════════════════════╪═══════╪══════╡
-#&gt; │ optimization       ┆ 0     ┆ 21   │
-#&gt; │ sort(Sepal.Length) ┆ 21    ┆ 596  │
-#&gt; │ group_by(Species)  ┆ 599   ┆ 1019 │
-#&gt; └────────────────────┴───────┴──────┘
+#&gt; ┌────────────────────┬───────┬─────┐
+#&gt; │ node               ┆ start ┆ end │
+#&gt; │ ---                ┆ ---   ┆ --- │
+#&gt; │ str                ┆ u64   ┆ u64 │
+#&gt; ╞════════════════════╪═══════╪═════╡
+#&gt; │ optimization       ┆ 0     ┆ 43  │
+#&gt; │ sort(Sepal.Length) ┆ 43    ┆ 239 │
+#&gt; │ group_by(Species)  ┆ 242   ┆ 479 │
+#&gt; └────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
@@ -14921,9 +14984,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ ---   │
 #&gt; │ str                ┆ u64   ┆ u64   │
 #&gt; ╞════════════════════╪═══════╪═══════╡
-#&gt; │ optimization       ┆ 0     ┆ 7     │
-#&gt; │ sort(Sepal.Length) ┆ 7     ┆ 377   │
-#&gt; │ group_by(Species)  ┆ 380   ┆ 62159 │
+#&gt; │ optimization       ┆ 0     ┆ 9     │
+#&gt; │ sort(Sepal.Length) ┆ 9     ┆ 601   │
+#&gt; │ group_by(Species)  ┆ 603   ┆ 61775 │
 #&gt; └────────────────────┴───────┴───────┘
 </code></pre></div>
 

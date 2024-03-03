@@ -2116,6 +2116,27 @@
   
   
     <li class="md-nav__item">
+      <a href="Series_floor_div.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    floor_div
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Series_is_numeric.html" class="md-nav__link">
         
   
@@ -2284,6 +2305,27 @@
   
   
     <li class="md-nav__item">
+      <a href="Series_mod.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mod
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Series_mul.html" class="md-nav__link">
         
   
@@ -2326,11 +2368,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_print.html" class="md-nav__link">
+      <a href="Series_pow.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    print
+    pow
   </span>
   
 
@@ -2347,11 +2389,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_rem.html" class="md-nav__link">
+      <a href="Series_print.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    rem
+    print
   </span>
   
 
@@ -6314,6 +6356,27 @@
   
   
     <li class="md-nav__item">
+      <a href="S3_arithmetic.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    arithmetic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="S3_as_arrow_table.html" class="md-nav__link">
         
   
@@ -9040,6 +9103,15 @@
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
     </span>
   </a>
   
@@ -14584,6 +14656,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -14611,15 +14692,11 @@
 
 
 <h1 id="multiply-two-expressions">Multiply two expressions</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L357"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L329"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>The RHS can either be an Expr or an object that can be converted to a
-literal (e.g an integer).</p>
+<p>Method equivalent of multiplication operator <code>expr * other</code>.</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Expr&gt;$mul(other)
-
-# S3 method for class 'RPolarsExpr'
-e1 * e2
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
@@ -14629,43 +14706,44 @@ e1 * e2
 <code id="Expr_mul_:_other">other</code>
 </td>
 <td>
-Literal or object that can be converted to a literal
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_mul_:_e1">e1</code>
-</td>
-<td>
-Expr only
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_mul_:_e2">e2</code>
-</td>
-<td>
-Expr or anything that can be converted to a literal
+Numeric literal or expression value.
 </td>
 </tr>
 </table>
 
 <h2 id="value">Value</h2>
 <p>Expr</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li>
+
+Arithmetic operators
+
+</li>
+</ul>
+
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">10</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="m">16</span><span class="p">))</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="n">`x*2`</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">mul</span><span class="p">(</span><span class="m">2</span><span class="p">),</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="n">`x * xlog2`</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">mul</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">log</span><span class="p">(</span><span class="m">2</span><span class="p">))</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; polars Expr: [(5.0) * (10.0)]
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; polars Expr: [(5.0) * (10.0)]
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">5</span><span class="p">)</span><span class="o">$</span><span class="nf">mul</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">10</span><span class="p">))</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; polars Expr: [(5.0) * (10.0)]
+<div class="highlight"><pre><span></span><code>#&gt; shape: (5, 3)
+#&gt; ┌──────┬──────┬───────────┐
+#&gt; │ x    ┆ x*2  ┆ x * xlog2 │
+#&gt; │ ---  ┆ ---  ┆ ---       │
+#&gt; │ f64  ┆ f64  ┆ f64       │
+#&gt; ╞══════╪══════╪═══════════╡
+#&gt; │ 1.0  ┆ 2.0  ┆ 0.0       │
+#&gt; │ 2.0  ┆ 4.0  ┆ 2.0       │
+#&gt; │ 4.0  ┆ 8.0  ┆ 8.0       │
+#&gt; │ 8.0  ┆ 16.0 ┆ 24.0      │
+#&gt; │ 16.0 ┆ 32.0 ┆ 64.0      │
+#&gt; └──────┴──────┴───────────┘
 </code></pre></div>
 
 

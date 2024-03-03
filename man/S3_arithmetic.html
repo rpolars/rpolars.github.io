@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="Series_print.html">
+        <link rel="prev" href="SQLContext_unregister.html">
       
       
-        <link rel="next" href="Series_rename.html">
+        <link rel="next" href="S3_as_arrow_table.html">
       
       
       <link rel="icon" href="../polars-logo.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>rem - Polars R Package</title>
+        <title>arithmetic - Polars R Package</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rem-series" class="md-skip">
+        <a href="#arithmetic-operators-for-rpolars-objects" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              rem
+              arithmetic
             
           </span>
         </div>
@@ -1802,8 +1802,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1813,11 +1811,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -1831,7 +1829,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             Series
@@ -2118,6 +2116,27 @@
   
   
     <li class="md-nav__item">
+      <a href="Series_floor_div.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    floor_div
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Series_is_numeric.html" class="md-nav__link">
         
   
@@ -2286,6 +2305,27 @@
   
   
     <li class="md-nav__item">
+      <a href="Series_mod.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mod
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Series_mul.html" class="md-nav__link">
         
   
@@ -2328,11 +2368,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_print.html" class="md-nav__link">
+      <a href="Series_pow.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    print
+    pow
   </span>
   
 
@@ -2346,103 +2386,18 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    rem
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="Series_rem.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="Series_print.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    rem
+    print
   </span>
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    <span class="md-ellipsis">
-      Description
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Usage
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#arguments" class="md-nav__link">
-    <span class="md-ellipsis">
-      Arguments
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#value" class="md-nav__link">
-    <span class="md-ellipsis">
-      Value
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      Examples
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -6360,6 +6315,8 @@
                 
   
   
+    
+  
   
   
     
@@ -6369,11 +6326,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_13" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_13" checked>
         
           
           <label class="md-nav__link" for="__nav_3_13" id="__nav_3_13_label" tabindex="0">
@@ -6387,12 +6344,127 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_13_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_13_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_13">
             <span class="md-nav__icon md-icon"></span>
             S3 Methods
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    arithmetic
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="S3_arithmetic.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    arithmetic
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Value
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
             
               
                 
@@ -14582,6 +14654,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -14608,60 +14689,203 @@
   
 
 
-<h1 id="rem-series">rem Series</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L373"><strong>Source code</strong></a></p>
+<h1 id="arithmetic-operators-for-rpolars-objects">Arithmetic operators for RPolars objects</h1>
 <h2 id="description">Description</h2>
-<p>Series arithmetics, remainder</p>
+<p>Arithmetic operators for RPolars objects</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>&lt;Series&gt;$rem(other)
+<pre><code class='language-R'>## S3 method for class 'RPolarsExpr'
+x + y
+
+# S3 method for class 'RPolarsExpr'
+x / y
+
+# S3 method for class 'RPolarsExpr'
+x %/% y
+
+# S3 method for class 'RPolarsExpr'
+x %% y
+
+# S3 method for class 'RPolarsExpr'
+x - y
+
+# S3 method for class 'RPolarsExpr'
+x * y
+
+# S3 method for class 'RPolarsExpr'
+x ^ y
+
+# S3 method for class 'RPolarsSeries'
+x + y
+
+# S3 method for class 'RPolarsSeries'
+x - y
+
+# S3 method for class 'RPolarsSeries'
+x / y
+
+# S3 method for class 'RPolarsSeries'
+x %/% y
+
+# S3 method for class 'RPolarsSeries'
+x * y
+
+# S3 method for class 'RPolarsSeries'
+x %% y
+
+# S3 method for class 'RPolarsSeries'
+x ^ y
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_rem_:_other">other</code>
+<code id="S3_arithmetic_:_x">x</code>,
+<code id="S3_arithmetic_:_y">y</code>
 </td>
 <td>
-Series or into Series
+numeric type of RPolars objects or objects that can be coerced such.
+Only <code>+</code> can take strings.
 </td>
 </tr>
 </table>
 
 <h2 id="value">Value</h2>
-<p>Series</p>
+<p>A Polars object the same type as the input.</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li>
+
+<code>\<Expr\>$add()</code>
+
+</li>
+<li>
+
+<code>\<Expr\>$div()</code>
+
+</li>
+<li>
+
+<code>\<Expr\>$floor_div()</code>
+
+</li>
+<li>
+
+<code>\<Expr\>$mod()</code>
+
+</li>
+<li>
+
+<code>\<Expr\>$sub()</code>
+
+</li>
+<li>
+
+<code>\<Expr\>$mul()</code>
+
+</li>
+<li>
+
+<code>\<Expr\>$pow()</code>
+
+</li>
+<li>
+
+<code>\<Series$add()</code>
+
+</li>
+<li>
+
+<code>\<Series$div()</code>
+
+</li>
+<li>
+
+<code>\<Series$floor_div()</code>
+
+</li>
+<li>
+
+<code>\<Series$mod()</code>
+
+</li>
+<li>
+
+<code>\<Series$sub()</code>
+
+</li>
+<li>
+
+<code>\<Series$mul()</code>
+
+</li>
+<li>
+
+<code>\<Series$pow()</code>
+
+</li>
+</ul>
+
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">)</span><span class="o">$</span><span class="nf">rem</span><span class="p">(</span><span class="m">2L</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">10</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (4,)
-#&gt; Series: &#39;&#39; [i32]
+<div class="highlight"><pre><span></span><code>#&gt; polars Expr: [(5.0) + (10.0)]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="m">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; polars Expr: [(5.0) + (10.0)]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; polars Expr: [(5.0) + (10.0)]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">+</span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; polars Expr: 1.0
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># This will not raise an error as it is not actually evaluated.</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">expr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;10&quot;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">expr</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; polars Expr: [(5.0) + (String(10))]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Will raise an error as it is evaluated.</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nf">tryCatch</span><span class="p">(</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="n">expr</span><span class="o">$</span><span class="nf">to_series</span><span class="p">(),</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="n">e</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; &lt;RPolarsErr_error: Execution halted with the following contexts
+#&gt;    0: In R: in $select()
+#&gt;    0: During function call [.main()]
+#&gt;    1: Encountered the following error in Rust-Polars:
+#&gt;          arithmetic on string and numeric not allowed, try an explicit cast first
+#&gt; &gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">10</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (1,)
+#&gt; Series: &#39;&#39; [f64]
 #&gt; [
-#&gt;  1
-#&gt;  0
-#&gt;  1
-#&gt;  0
+#&gt;  15.0
 #&gt; ]
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span><span class="o">$</span><span class="nf">rem</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">11</span><span class="o">:</span><span class="m">13</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="o">+</span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">5</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (3,)
-#&gt; Series: &#39;&#39; [i32]
+<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (1,)
+#&gt; Series: &#39;&#39; [f64]
 #&gt; [
-#&gt;  1
-#&gt;  2
-#&gt;  3
+#&gt;  5.0
 #&gt; ]
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span><span class="o">$</span><span class="nf">rem</span><span class="p">(</span><span class="m">1L</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="o">-</span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">5</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (3,)
-#&gt; Series: &#39;&#39; [i32]
+<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (1,)
+#&gt; Series: &#39;&#39; [f64]
 #&gt; [
-#&gt;  0
-#&gt;  0
-#&gt;  0
+#&gt;  -5.0
 #&gt; ]
 </code></pre></div>
 

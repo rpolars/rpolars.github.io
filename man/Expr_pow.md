@@ -1,12 +1,13 @@
 
 
-# Exponentiation
+# Exponentiation two expressions
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2106)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L349)
 
 ## Description
 
-Raise expression to the power of exponent.
+Method equivalent of exponentiation operator <code>expr ^
+exponent</code>.
 
 ## Usage
 
@@ -21,7 +22,7 @@ Raise expression to the power of exponent.
 <code id="Expr_pow_:_exponent">exponent</code>
 </td>
 <td>
-Exponent value.
+Numeric literal or expression value.
 </td>
 </tr>
 </table>
@@ -30,27 +31,37 @@ Exponent value.
 
 Expr
 
+## See Also
+
+<ul>
+<li>
+
+Arithmetic operators
+
+</li>
+</ul>
+
 ## Examples
 
 ``` r
 library(polars)
 
-# use via `pow`-method and the `^`-operator
-pl$DataFrame(a = -1:3, b = 2:6)$with_columns(
-  x = pl$col("a")$pow(2),
-  y = pl$col("a")^3
+df = pl$DataFrame(x = c(1, 2, 4, 8))
+
+df$with_columns(
+  cube = pl$col("x")$pow(3),
+  `x^xlog2` = pl$col("x")$pow(pl$col("x")$log(2))
 )
 ```
 
-    #> shape: (5, 4)
-    #> ┌─────┬─────┬─────┬──────┐
-    #> │ a   ┆ b   ┆ x   ┆ y    │
-    #> │ --- ┆ --- ┆ --- ┆ ---  │
-    #> │ i32 ┆ i32 ┆ f64 ┆ f64  │
-    #> ╞═════╪═════╪═════╪══════╡
-    #> │ -1  ┆ 2   ┆ 1.0 ┆ -1.0 │
-    #> │ 0   ┆ 3   ┆ 0.0 ┆ 0.0  │
-    #> │ 1   ┆ 4   ┆ 1.0 ┆ 1.0  │
-    #> │ 2   ┆ 5   ┆ 4.0 ┆ 8.0  │
-    #> │ 3   ┆ 6   ┆ 9.0 ┆ 27.0 │
-    #> └─────┴─────┴─────┴──────┘
+    #> shape: (4, 3)
+    #> ┌─────┬───────┬─────────┐
+    #> │ x   ┆ cube  ┆ x^xlog2 │
+    #> │ --- ┆ ---   ┆ ---     │
+    #> │ f64 ┆ f64   ┆ f64     │
+    #> ╞═════╪═══════╪═════════╡
+    #> │ 1.0 ┆ 1.0   ┆ 1.0     │
+    #> │ 2.0 ┆ 8.0   ┆ 2.0     │
+    #> │ 4.0 ┆ 64.0  ┆ 16.0    │
+    #> │ 8.0 ┆ 512.0 ┆ 512.0   │
+    #> └─────┴───────┴─────────┘

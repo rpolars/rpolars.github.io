@@ -2116,6 +2116,27 @@
   
   
     <li class="md-nav__item">
+      <a href="Series_floor_div.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    floor_div
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Series_is_numeric.html" class="md-nav__link">
         
   
@@ -2284,6 +2305,27 @@
   
   
     <li class="md-nav__item">
+      <a href="Series_mod.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mod
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Series_mul.html" class="md-nav__link">
         
   
@@ -2326,11 +2368,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_print.html" class="md-nav__link">
+      <a href="Series_pow.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    print
+    pow
   </span>
   
 
@@ -2347,11 +2389,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_rem.html" class="md-nav__link">
+      <a href="Series_print.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    rem
+    print
   </span>
   
 
@@ -6306,6 +6348,27 @@
             S3 Methods
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="S3_arithmetic.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    arithmetic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -14616,11 +14679,11 @@ are ties.</p>
 #&gt; │ i32 │
 #&gt; ╞═════╡
 #&gt; │ 5   │
-#&gt; │ 2   │
-#&gt; │ 3   │
 #&gt; │ 1   │
 #&gt; │ 6   │
 #&gt; │ 4   │
+#&gt; │ 3   │
+#&gt; │ 2   │
 #&gt; └─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;b&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">mode</span><span class="p">())</span>
@@ -14631,8 +14694,8 @@ are ties.</p>
 #&gt; │ --- │
 #&gt; │ i32 │
 #&gt; ╞═════╡
-#&gt; │ 1   │
 #&gt; │ 3   │
+#&gt; │ 1   │
 #&gt; └─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">mode</span><span class="p">())</span>
@@ -14643,9 +14706,9 @@ are ties.</p>
 #&gt; │ --- │
 #&gt; │ i32 │
 #&gt; ╞═════╡
+#&gt; │ 2   │
 #&gt; │ 1   │
 #&gt; │ 3   │
-#&gt; │ 2   │
 #&gt; └─────┘
 </code></pre></div>
 

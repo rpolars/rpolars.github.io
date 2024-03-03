@@ -1927,6 +1927,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -2203,6 +2212,27 @@
   
   
     <li class="md-nav__item">
+      <a href="Series_floor_div.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    floor_div
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Series_is_numeric.html" class="md-nav__link">
         
   
@@ -2371,6 +2401,27 @@
   
   
     <li class="md-nav__item">
+      <a href="Series_mod.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mod
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Series_mul.html" class="md-nav__link">
         
   
@@ -2413,11 +2464,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_print.html" class="md-nav__link">
+      <a href="Series_pow.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    print
+    pow
   </span>
   
 
@@ -2434,11 +2485,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_rem.html" class="md-nav__link">
+      <a href="Series_print.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    rem
+    print
   </span>
   
 
@@ -6393,6 +6444,27 @@
             S3 Methods
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="S3_arithmetic.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    arithmetic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -14582,6 +14654,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -14608,15 +14689,12 @@
   
 
 
-<h1 id="add-series">add Series</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L287"><strong>Source code</strong></a></p>
+<h1 id="add-series">Add Series</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L280"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>Series arithmetics</p>
+<p>Method equivalent of addition operator <code>series + other</code>.</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Series&gt;$add(other)
-
-# S3 method for class 'RPolarsSeries'
-s1 + s2
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
@@ -14626,33 +14704,27 @@ s1 + s2
 <code id="Series_add_:_other">other</code>
 </td>
 <td>
-Series or into Series
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_add_:_s1">s1</code>
-</td>
-<td>
-lhs Series
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_add_:_s2">s2</code>
-</td>
-<td>
-rhs Series or any into Series
+Series like object of numeric or string values. Converted to Series by
+<code>as_polars_series()</code> in this method.
 </td>
 </tr>
 </table>
 
 <h2 id="value">Value</h2>
 <p>Series</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li>
+
+Arithmetic operators
+
+</li>
+</ul>
+
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="m">11</span><span class="o">:</span><span class="m">13</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">11</span><span class="o">:</span><span class="m">13</span><span class="p">))</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (3,)
 #&gt; Series: &#39;&#39; [i32]
@@ -14662,7 +14734,7 @@ rhs Series or any into Series
 #&gt;  16
 #&gt; ]
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">11</span><span class="o">:</span><span class="m">13</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="m">11</span><span class="o">:</span><span class="m">13</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (3,)
 #&gt; Series: &#39;&#39; [i32]
@@ -14682,24 +14754,12 @@ rhs Series or any into Series
 #&gt;  4
 #&gt; ]
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="m">1L</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="s">&quot;-z&quot;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (3,)
-#&gt; Series: &#39;&#39; [i32]
+<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (1,)
+#&gt; Series: &#39;&#39; [str]
 #&gt; [
-#&gt;  2
-#&gt;  3
-#&gt;  4
-#&gt; ]
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1L</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (3,)
-#&gt; Series: &#39;&#39; [i32]
-#&gt; [
-#&gt;  2
-#&gt;  3
-#&gt;  4
+#&gt;  &quot;a-z&quot;
 #&gt; ]
 </code></pre></div>
 

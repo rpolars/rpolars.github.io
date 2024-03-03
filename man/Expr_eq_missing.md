@@ -2,12 +2,11 @@
 
 # Check equality without <code>null</code> propagation
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L476)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L452)
 
 ## Description
 
-The RHS can either be an Expr or an object that can be converted to a
-literal (e.g an integer).
+Method equivalent of addition operator <code>expr + other</code>.
 
 ## Usage
 
@@ -22,7 +21,7 @@ literal (e.g an integer).
 <code id="Expr_eq_missing_:_other">other</code>
 </td>
 <td>
-Literal or object that can be converted to a literal
+numeric or string value; accepts expression input.
 </td>
 </tr>
 </table>

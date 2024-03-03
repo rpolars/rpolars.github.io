@@ -116,6 +116,7 @@ nav:
         - compare: man/Series_compare.md
         - div: man/Series_div.md
         - equals: man/Series_equals.md
+        - floor_div: man/Series_floor_div.md
         - is_numeric: man/Series_is_numeric.md
         - is_sorted: man/Series_is_sorted.md
         - len: man/Series_len.md
@@ -124,10 +125,11 @@ nav:
         - mean: man/Series_mean.md
         - median: man/Series_median.md
         - min: man/Series_min.md
+        - mod: man/Series_mod.md
         - mul: man/Series_mul.md
         - n_unique: man/Series_n_unique.md
+        - pow: man/Series_pow.md
         - print: man/Series_print.md
-        - rem: man/Series_rem.md
         - rename: man/Series_rename.md
         - rep: man/Series_rep.md
         - set_sorted: man/Series_set_sorted.md
@@ -304,6 +306,7 @@ nav:
         - tables: man/SQLContext_tables.md
         - unregister: man/SQLContext_unregister.md
       S3 Methods:
+        - arithmetic: man/S3_arithmetic.md
         - as_arrow_table: man/S3_as_arrow_table.md
         - as_nanoarrow_array_stream: man/S3_as_nanoarrow_array_stream.md
         - as_record_batch_reader: man/S3_as_record_batch_reader.md

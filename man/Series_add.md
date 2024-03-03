@@ -1,19 +1,16 @@
 
 
-# add Series
+# Add Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L287)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L280)
 
 ## Description
 
-Series arithmetics
+Method equivalent of addition operator <code>series + other</code>.
 
 ## Usage
 
 <pre><code class='language-R'>Series_add(other)
-
-# S3 method for class 'RPolarsSeries'
-s1 + s2
 </code></pre>
 
 ## Arguments
@@ -24,23 +21,8 @@ s1 + s2
 <code id="Series_add_:_other">other</code>
 </td>
 <td>
-Series or into Series
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_add_:_s1">s1</code>
-</td>
-<td>
-lhs Series
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_add_:_s2">s2</code>
-</td>
-<td>
-rhs Series or any into Series
+Series like object of numeric or string values. Converted to Series by
+<code>as_polars_series()</code> in this method.
 </td>
 </tr>
 </table>
@@ -49,12 +31,22 @@ rhs Series or any into Series
 
 Series
 
+## See Also
+
+<ul>
+<li>
+
+Arithmetic operators
+
+</li>
+</ul>
+
 ## Examples
 
 ``` r
 library(polars)
 
-pl$Series(1:3)$add(11:13)
+pl$Series(1:3)$add(pl$Series(11:13))
 ```
 
     #> polars Series: shape: (3,)
@@ -66,7 +58,7 @@ pl$Series(1:3)$add(11:13)
     #> ]
 
 ``` r
-pl$Series(1:3)$add(pl$Series(11:13))
+pl$Series(1:3)$add(11:13)
 ```
 
     #> polars Series: shape: (3,)
@@ -90,25 +82,11 @@ pl$Series(1:3)$add(1L)
     #> ]
 
 ``` r
-1L + pl$Series(1:3)
+pl$Series("a")$add("-z")
 ```
 
-    #> polars Series: shape: (3,)
-    #> Series: '' [i32]
+    #> polars Series: shape: (1,)
+    #> Series: '' [str]
     #> [
-    #>  2
-    #>  3
-    #>  4
-    #> ]
-
-``` r
-pl$Series(1:3) + 1L
-```
-
-    #> polars Series: shape: (3,)
-    #> Series: '' [i32]
-    #> [
-    #>  2
-    #>  3
-    #>  4
+    #>  "a-z"
     #> ]

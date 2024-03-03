@@ -2116,6 +2116,27 @@
   
   
     <li class="md-nav__item">
+      <a href="Series_floor_div.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    floor_div
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Series_is_numeric.html" class="md-nav__link">
         
   
@@ -2284,6 +2305,27 @@
   
   
     <li class="md-nav__item">
+      <a href="Series_mod.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mod
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Series_mul.html" class="md-nav__link">
         
   
@@ -2326,11 +2368,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_print.html" class="md-nav__link">
+      <a href="Series_pow.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    print
+    pow
   </span>
   
 
@@ -2347,11 +2389,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_rem.html" class="md-nav__link">
+      <a href="Series_print.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    rem
+    print
   </span>
   
 
@@ -6314,6 +6356,27 @@
   
   
     <li class="md-nav__item">
+      <a href="S3_arithmetic.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    arithmetic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="S3_as_arrow_table.html" class="md-nav__link">
         
   
@@ -8995,18 +9058,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#details" class="md-nav__link">
+  <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
-      Details
+      Value
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#value" class="md-nav__link">
+  <a href="#see-also" class="md-nav__link">
     <span class="md-ellipsis">
-      Value
+      See Also
     </span>
   </a>
   
@@ -14584,18 +14647,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#details" class="md-nav__link">
+  <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
-      Details
+      Value
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#value" class="md-nav__link">
+  <a href="#see-also" class="md-nav__link">
     <span class="md-ellipsis">
-      Value
+      See Also
     </span>
   </a>
   
@@ -14629,15 +14692,11 @@
 
 
 <h1 id="modulo-two-expressions">Modulo two expressions</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L304"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L293"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>The RHS can either be an Expr or an object that can be converted to a
-literal (e.g an integer).</p>
+<p>Method equivalent of modulus operator <code>expr %% other</code>.</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Expr&gt;$mod(other)
-
-# S3 method for class 'RPolarsExpr'
-e1 %% e2
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
@@ -14647,71 +14706,54 @@ e1 %% e2
 <code id="Expr_mod_:_other">other</code>
 </td>
 <td>
-Literal or object that can be converted to a literal
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_mod_:_e1">e1</code>
-</td>
-<td>
-Expr only
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_mod_:_e2">e2</code>
-</td>
-<td>
-Expr or anything that can be converted to a literal
+Numeric literal or expression value.
 </td>
 </tr>
 </table>
 
-<h2 id="details">Details</h2>
-<p>Currently, the modulo operator behaves differently than in R, and not
-guaranteed <code>x == (x %% y) + y * (x %/% y)</code>.</p>
 <h2 id="value">Value</h2>
 <p>Expr</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li>
+
+Arithmetic operators
+
+</li>
+<li>
+
+<code>\<Expr\>$floor_div()</code>
+
+</li>
+</ul>
+
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">-1</span><span class="o">:</span><span class="m">12</span><span class="p">)</span><span class="w"> </span><span class="o">%%</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="o">$</span><span class="nf">to_series</span><span class="p">()</span><span class="o">$</span><span class="nf">to_vector</span><span class="p">()</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">-5L</span><span class="o">:</span><span class="m">5L</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="n">`x%%2`</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">mod</span><span class="p">(</span><span class="m">2</span><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt;  [1] 2 0 1 2 0 1 2 0 1 2 0 1 2 0
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># The example is **NOT** equivalent to the followings:</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="m">-1</span><span class="o">:</span><span class="m">12</span><span class="w"> </span><span class="o">%%</span><span class="w"> </span><span class="m">3</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt;  [1] 2 0 1 2 0 1 2 0 1 2 0 1 2 0
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="m">-1</span><span class="o">:</span><span class="m">12</span><span class="w"> </span><span class="o">%%</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="o">$</span><span class="nf">to_series</span><span class="p">()</span><span class="o">$</span><span class="nf">to_vector</span><span class="p">()</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt;  [1] 2 0 1 2 0 1 2 0 1 2 0 1 2 0
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Not guaranteed `x == (x %% y) + y * (x %/% y)`</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">-1</span><span class="o">:</span><span class="m">12</span><span class="p">)</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">3</span><span class="p">)</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">pl</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">%%</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">%/%</span><span class="w"> </span><span class="n">y</span><span class="p">))</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (14, 1)
-#&gt; ┌──────┐
-#&gt; │      │
-#&gt; │ ---  │
-#&gt; │ bool │
-#&gt; ╞══════╡
-#&gt; │ true │
-#&gt; │ true │
-#&gt; │ true │
-#&gt; │ true │
-#&gt; │ true │
-#&gt; │ …    │
-#&gt; │ true │
-#&gt; │ true │
-#&gt; │ true │
-#&gt; │ true │
-#&gt; │ true │
-#&gt; └──────┘
+<div class="highlight"><pre><span></span><code>#&gt; shape: (11, 2)
+#&gt; ┌─────┬──────┐
+#&gt; │ x   ┆ x%%2 │
+#&gt; │ --- ┆ ---  │
+#&gt; │ i32 ┆ f64  │
+#&gt; ╞═════╪══════╡
+#&gt; │ -5  ┆ 1.0  │
+#&gt; │ -4  ┆ 0.0  │
+#&gt; │ -3  ┆ 1.0  │
+#&gt; │ -2  ┆ 0.0  │
+#&gt; │ -1  ┆ 1.0  │
+#&gt; │ …   ┆ …    │
+#&gt; │ 1   ┆ 1.0  │
+#&gt; │ 2   ┆ 0.0  │
+#&gt; │ 3   ┆ 1.0  │
+#&gt; │ 4   ┆ 0.0  │
+#&gt; │ 5   ┆ 1.0  │
+#&gt; └─────┴──────┘
 </code></pre></div>
 
 

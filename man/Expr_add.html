@@ -2116,6 +2116,27 @@
   
   
     <li class="md-nav__item">
+      <a href="Series_floor_div.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    floor_div
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Series_is_numeric.html" class="md-nav__link">
         
   
@@ -2284,6 +2305,27 @@
   
   
     <li class="md-nav__item">
+      <a href="Series_mod.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mod
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Series_mul.html" class="md-nav__link">
         
   
@@ -2326,11 +2368,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_print.html" class="md-nav__link">
+      <a href="Series_pow.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    print
+    pow
   </span>
   
 
@@ -2347,11 +2389,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_rem.html" class="md-nav__link">
+      <a href="Series_print.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    rem
+    print
   </span>
   
 
@@ -6314,6 +6356,27 @@
   
   
     <li class="md-nav__item">
+      <a href="S3_arithmetic.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    arithmetic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="S3_as_arrow_table.html" class="md-nav__link">
         
   
@@ -7024,6 +7087,15 @@
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
     </span>
   </a>
   
@@ -14584,6 +14656,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -14611,15 +14692,11 @@
 
 
 <h1 id="add-two-expressions">Add two expressions</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L216"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L228"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>The RHS can either be an Expr or an object that can be converted to a
-literal (e.g an integer).</p>
+<p>Method equivalent of addition operator <code>expr + other</code>.</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Expr&gt;$add(other)
-
-# S3 method for class 'RPolarsExpr'
-e1 + e2
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
@@ -14629,47 +14706,65 @@ e1 + e2
 <code id="Expr_add_:_other">other</code>
 </td>
 <td>
-Literal or object that can be converted to a literal
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_add_:_e1">e1</code>
-</td>
-<td>
-Expr only
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_add_:_e2">e2</code>
-</td>
-<td>
-Expr or anything that can be converted to a literal
+numeric or string value; accepts expression input.
 </td>
 </tr>
 </table>
 
 <h2 id="value">Value</h2>
 <p>Expr</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li>
+
+Arithmetic operators
+
+</li>
+</ul>
+
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">10</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="n">`x+int`</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="m">2L</span><span class="p">),</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="n">`x+expr`</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">cum_prod</span><span class="p">())</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; polars Expr: [(5.0) + (10.0)]
+<div class="highlight"><pre><span></span><code>#&gt; shape: (5, 3)
+#&gt; ┌─────┬───────┬────────┐
+#&gt; │ x   ┆ x+int ┆ x+expr │
+#&gt; │ --- ┆ ---   ┆ ---    │
+#&gt; │ i32 ┆ i32   ┆ i64    │
+#&gt; ╞═════╪═══════╪════════╡
+#&gt; │ 1   ┆ 3     ┆ 2      │
+#&gt; │ 2   ┆ 4     ┆ 4      │
+#&gt; │ 3   ┆ 5     ┆ 9      │
+#&gt; │ 4   ┆ 6     ┆ 28     │
+#&gt; │ 5   ┆ 7     ┆ 125    │
+#&gt; └─────┴───────┴────────┘
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;d&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;g&quot;</span><span class="p">),</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;e&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;h&quot;</span><span class="p">),</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;f&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;i&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">)</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">))</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;z&quot;</span><span class="p">))</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;xyz&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; polars Expr: [(5.0) + (10.0)]
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">5</span><span class="p">)</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">10</span><span class="p">))</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; polars Expr: [(5.0) + (10.0)]
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">+</span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="c1"># unary use resolves to same as pl$lit(5)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; polars Expr: 5.0
+<div class="highlight"><pre><span></span><code>#&gt; shape: (3, 4)
+#&gt; ┌─────┬─────┬─────┬─────┐
+#&gt; │ x   ┆ y   ┆ z   ┆ xyz │
+#&gt; │ --- ┆ --- ┆ --- ┆ --- │
+#&gt; │ str ┆ str ┆ str ┆ str │
+#&gt; ╞═════╪═════╪═════╪═════╡
+#&gt; │ a   ┆ b   ┆ c   ┆ abc │
+#&gt; │ d   ┆ e   ┆ f   ┆ def │
+#&gt; │ g   ┆ h   ┆ i   ┆ ghi │
+#&gt; └─────┴─────┴─────┴─────┘
 </code></pre></div>
 
 

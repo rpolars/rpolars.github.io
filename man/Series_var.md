@@ -2,7 +2,7 @@
 
 # Var
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L789)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L796)
 
 ## Description
 

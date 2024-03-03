@@ -1,19 +1,16 @@
 
 
-# div Series
+# Divide Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L331)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L314)
 
 ## Description
 
-Series arithmetics
+Method equivalent of division operator <code>series / other</code>.
 
 ## Usage
 
 <pre><code class='language-R'>Series_div(other)
-
-# S3 method for class 'RPolarsSeries'
-s1 / s2
 </code></pre>
 
 ## Arguments
@@ -24,23 +21,8 @@ s1 / s2
 <code id="Series_div_:_other">other</code>
 </td>
 <td>
-Series or into Series
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_div_:_s1">s1</code>
-</td>
-<td>
-lhs Series
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_div_:_s2">s2</code>
-</td>
-<td>
-rhs Series or any into Series
+Series like object of numeric. Converted to Series by
+<code>as_polars_series()</code> in this method.
 </td>
 </tr>
 </table>
@@ -48,6 +30,16 @@ rhs Series or any into Series
 ## Value
 
 Series
+
+## See Also
+
+<ul>
+<li>
+
+Arithmetic operators
+
+</li>
+</ul>
 
 ## Examples
 
@@ -87,28 +79,4 @@ pl$Series(1:3)$div(1L)
     #>  1
     #>  2
     #>  3
-    #> ]
-
-``` r
-2L / pl$Series(1:3)
-```
-
-    #> polars Series: shape: (3,)
-    #> Series: '' [i32]
-    #> [
-    #>  2
-    #>  1
-    #>  0
-    #> ]
-
-``` r
-pl$Series(1:3) / 2L
-```
-
-    #> polars Series: shape: (3,)
-    #> Series: '' [i32]
-    #> [
-    #>  0
-    #>  1
-    #>  1
     #> ]

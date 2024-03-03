@@ -2,7 +2,7 @@
 
 # Apply logical XOR on two expressions
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1064)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1034)
 
 ## Description
 
@@ -21,7 +21,7 @@ Combine two boolean expressions with XOR.
 <code id="Expr_xor_:_other">other</code>
 </td>
 <td>
-Literal or object that can be converted to a literal
+numeric or string value; accepts expression input.
 </td>
 </tr>
 </table>

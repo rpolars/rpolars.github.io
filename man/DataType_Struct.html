@@ -2116,6 +2116,27 @@
   
   
     <li class="md-nav__item">
+      <a href="Series_floor_div.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    floor_div
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Series_is_numeric.html" class="md-nav__link">
         
   
@@ -2284,6 +2305,27 @@
   
   
     <li class="md-nav__item">
+      <a href="Series_mod.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mod
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Series_mul.html" class="md-nav__link">
         
   
@@ -2326,11 +2368,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_print.html" class="md-nav__link">
+      <a href="Series_pow.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    print
+    pow
   </span>
   
 
@@ -2347,11 +2389,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_rem.html" class="md-nav__link">
+      <a href="Series_print.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    rem
+    print
   </span>
   
 
@@ -6306,6 +6348,27 @@
             S3 Methods
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="S3_arithmetic.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    arithmetic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -14609,7 +14672,7 @@
 
 
 <h1 id="create-struct-datatype">Create Struct DataType</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L204"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L215"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Struct DataType Constructor</p>
 <h2 id="usage">Usage</h2>
@@ -14731,29 +14794,29 @@ RPolarsDataType objects
 #&gt;   .pr$DataType$new_array(datatype, width) |&gt;
 #&gt;     unwrap(&quot;in pl$Array():&quot;)
 #&gt; }
-#&gt; &lt;bytecode: 0x560228738380&gt;
+#&gt; &lt;bytecode: 0x55c9627419c8&gt;
 #&gt; &lt;environment: namespace:polars&gt;
 #&gt; 
 #&gt; $Categorical
 #&gt; function(ordering = &quot;physical&quot;) {
 #&gt;   .pr$DataType$new_categorical(ordering) |&gt; unwrap()
 #&gt; }
-#&gt; &lt;bytecode: 0x56022873ecf8&gt;
+#&gt; &lt;bytecode: 0x55c9627517f0&gt;
 #&gt; &lt;environment: namespace:polars&gt;
 #&gt; 
 #&gt; $Datetime
-#&gt; function(tu = &quot;us&quot;, tz = NULL) {
-#&gt;   if (!is.null(tz) &amp;&amp; !isTRUE(tz %in% base::OlsonNames())) {
+#&gt; function(time_unit = &quot;us&quot;, time_zone = NULL) {
+#&gt;   if (!is.null(time_zone) &amp;&amp; !isTRUE(time_zone %in% c(base::OlsonNames(), &quot;*&quot;))) {
 #&gt;     sprintf(
 #&gt;       &quot;The time zone &#39;%s&#39; is not supported in polars. See `base::OlsonNames()` for supported time zones.&quot;,
-#&gt;       tz
+#&gt;       time_zone
 #&gt;     ) |&gt;
 #&gt;       Err_plain() |&gt;
 #&gt;       unwrap(&quot;in $Datetime():&quot;)
 #&gt;   }
-#&gt;   unwrap(.pr$DataType$new_datetime(tu, tz))
+#&gt;   unwrap(.pr$DataType$new_datetime(time_unit, time_zone))
 #&gt; }
-#&gt; &lt;bytecode: 0x5602287438c8&gt;
+#&gt; &lt;bytecode: 0x55c962752590&gt;
 #&gt; &lt;environment: namespace:polars&gt;
 #&gt; 
 #&gt; $List
@@ -14769,7 +14832,7 @@ RPolarsDataType objects
 #&gt;   }
 #&gt;   .pr$DataType$new_list(datatype)
 #&gt; }
-#&gt; &lt;bytecode: 0x560228752608&gt;
+#&gt; &lt;bytecode: 0x55c96275d5a8&gt;
 #&gt; &lt;environment: namespace:polars&gt;
 #&gt; 
 #&gt; $Struct
@@ -14803,7 +14866,7 @@ RPolarsDataType objects
 #&gt;     and_then(DataType$new_struct) |&gt;
 #&gt;     unwrap(&quot;in pl$Struct:&quot;)
 #&gt; }
-#&gt; &lt;bytecode: 0x56022875cbb0&gt;
+#&gt; &lt;bytecode: 0x55c96276d8b0&gt;
 #&gt; &lt;environment: namespace:polars&gt;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># check if an element is any kind of Struct()</span>

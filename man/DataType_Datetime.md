@@ -1,16 +1,19 @@
 
 
-# Create Datetime DataType
+# Data type representing a calendar date and time of day.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L173)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L184)
 
 ## Description
 
-Datetime DataType constructor
+The underlying representation of this type is a 64-bit signed integer.
+The integer indicates the number of time units since the Unix epoch
+(1970-01-01 00:00:00). The number can be negative to indicate datetimes
+before the epoch.
 
 ## Usage
 
-<pre><code class='language-R'>DataType_Datetime(tu = "us", tz = NULL)
+<pre><code class='language-R'>DataType_Datetime(time_unit = "us", time_zone = NULL)
 </code></pre>
 
 ## Arguments
@@ -18,26 +21,24 @@ Datetime DataType constructor
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataType_Datetime_:_tu">tu</code>
+<code id="DataType_Datetime_:_time_unit">time_unit</code>
 </td>
 <td>
-string option either "ms", "us" or "ns"
+Unit of time. One of <code>“ms”</code>, <code>“us”</code> (default) or
+<code>“ns”</code>.
 </td>
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataType_Datetime_:_tz">tz</code>
+<code id="DataType_Datetime_:_time_zone">time_zone</code>
 </td>
 <td>
-string the Time Zone, see details
+Time zone string, as defined in <code>OlsonNames()</code>. Setting
+<code>timezone = “\*“</code> will match any timezone, which can be
+useful to select all Datetime columns containing a timezone.
 </td>
 </tr>
 </table>
-
-## Details
-
-all allowed TimeZone designations can be found in
-<code>base::OlsonNames()</code>
 
 ## Value
 
@@ -57,3 +58,29 @@ pl$Datetime("ns", "Pacific/Samoa")
     #>         "Pacific/Samoa",
     #>     ),
     #> )
+
+``` r
+df = pl$DataFrame(
+  naive_time = as.POSIXct("1900-01-01"),
+  zoned_time = as.POSIXct("1900-01-01", "UTC")
+)
+df
+```
+
+    #> shape: (1, 2)
+    #> ┌─────────────────────┬─────────────────────────┐
+    #> │ naive_time          ┆ zoned_time              │
+    #> │ ---                 ┆ ---                     │
+    #> │ datetime[ms]        ┆ datetime[ms, UTC]       │
+    #> ╞═════════════════════╪═════════════════════════╡
+    #> │ 1900-01-01 00:00:00 ┆ 1900-01-01 00:00:00 UTC │
+    #> └─────────────────────┴─────────────────────────┘
+
+``` r
+df$select(pl$col(pl$Datetime("us", "*")))
+```
+
+    #> shape: (0, 0)
+    #> ┌┐
+    #> ╞╡
+    #> └┘

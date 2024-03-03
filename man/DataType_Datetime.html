@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#create-datetime-datatype" class="md-skip">
+        <a href="#data-type-representing-a-calendar-date-and-time-of-day" class="md-skip">
           Skip to content
         </a>
       
@@ -2116,6 +2116,27 @@
   
   
     <li class="md-nav__item">
+      <a href="Series_floor_div.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    floor_div
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Series_is_numeric.html" class="md-nav__link">
         
   
@@ -2284,6 +2305,27 @@
   
   
     <li class="md-nav__item">
+      <a href="Series_mod.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mod
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Series_mul.html" class="md-nav__link">
         
   
@@ -2326,11 +2368,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_print.html" class="md-nav__link">
+      <a href="Series_pow.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    print
+    pow
   </span>
   
 
@@ -2347,11 +2389,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_rem.html" class="md-nav__link">
+      <a href="Series_print.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    rem
+    print
   </span>
   
 
@@ -6306,6 +6348,27 @@
             S3 Methods
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="S3_arithmetic.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    arithmetic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -14165,15 +14228,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#details" class="md-nav__link">
-    <span class="md-ellipsis">
-      Details
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -14582,15 +14636,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#details" class="md-nav__link">
-    <span class="md-ellipsis">
-      Details
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -14626,37 +14671,40 @@
   
 
 
-<h1 id="create-datetime-datatype">Create Datetime DataType</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L173"><strong>Source code</strong></a></p>
+<h1 id="data-type-representing-a-calendar-date-and-time-of-day">Data type representing a calendar date and time of day.</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L184"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>Datetime DataType constructor</p>
+<p>The underlying representation of this type is a 64-bit signed integer.
+The integer indicates the number of time units since the Unix epoch
+(1970-01-01 00:00:00). The number can be negative to indicate datetimes
+before the epoch.</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>DataType_Datetime(tu = "us", tz = NULL)
+<pre><code class='language-R'>DataType_Datetime(time_unit = "us", time_zone = NULL)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataType_Datetime_:_tu">tu</code>
+<code id="DataType_Datetime_:_time_unit">time_unit</code>
 </td>
 <td>
-string option either "ms", "us" or "ns"
+Unit of time. One of <code>“ms”</code>, <code>“us”</code> (default) or
+<code>“ns”</code>.
 </td>
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataType_Datetime_:_tz">tz</code>
+<code id="DataType_Datetime_:_time_zone">time_zone</code>
 </td>
 <td>
-string the Time Zone, see details
+Time zone string, as defined in <code>OlsonNames()</code>. Setting
+<code>timezone = “\*“</code> will match any timezone, which can be
+useful to select all Datetime columns containing a timezone.
 </td>
 </tr>
 </table>
 
-<h2 id="details">Details</h2>
-<p>all allowed TimeZone designations can be found in
-<code>base::OlsonNames()</code></p>
 <h2 id="value">Value</h2>
 <p>Datetime DataType</p>
 <h2 id="examples">Examples</h2>
@@ -14670,6 +14718,28 @@ string the Time Zone, see details
 #&gt;         &quot;Pacific/Samoa&quot;,
 #&gt;     ),
 #&gt; )
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="n">naive_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.POSIXct</span><span class="p">(</span><span class="s">&quot;1900-01-01&quot;</span><span class="p">),</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="n">zoned_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.POSIXct</span><span class="p">(</span><span class="s">&quot;1900-01-01&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;UTC&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">df</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; shape: (1, 2)
+#&gt; ┌─────────────────────┬─────────────────────────┐
+#&gt; │ naive_time          ┆ zoned_time              │
+#&gt; │ ---                 ┆ ---                     │
+#&gt; │ datetime[ms]        ┆ datetime[ms, UTC]       │
+#&gt; ╞═════════════════════╪═════════════════════════╡
+#&gt; │ 1900-01-01 00:00:00 ┆ 1900-01-01 00:00:00 UTC │
+#&gt; └─────────────────────┴─────────────────────────┘
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">Datetime</span><span class="p">(</span><span class="s">&quot;us&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;*&quot;</span><span class="p">)))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; shape: (0, 0)
+#&gt; ┌┐
+#&gt; ╞╡
+#&gt; └┘
 </code></pre></div>
 
 

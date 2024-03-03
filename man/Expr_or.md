@@ -2,7 +2,7 @@
 
 # Apply logical OR on two expressions
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1044)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1014)
 
 ## Description
 
@@ -21,7 +21,7 @@ Combine two boolean expressions with OR.
 <code id="Expr_or_:_other">other</code>
 </td>
 <td>
-Literal or object that can be converted to a literal
+numeric or string value; accepts expression input.
 </td>
 </tr>
 </table>

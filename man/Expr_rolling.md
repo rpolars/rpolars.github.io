@@ -2,7 +2,7 @@
 
 # Create rolling groups based on a time or numeric column
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L3428)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L3372)
 
 ## Description
 
@@ -239,7 +239,7 @@ dates = c(
 
 df = pl$DataFrame(dt = dates, a = c(3, 7, 5, 9, 2, 1))$
   with_columns(
-  pl$col("dt")$str$strptime(pl$Datetime(tu = "us"), format = "%Y-%m-%d %H:%M:%S")$set_sorted()
+  pl$col("dt")$str$strptime(pl$Datetime("us"), format = "%Y-%m-%d %H:%M:%S")$set_sorted()
 )
 
 df$with_columns(

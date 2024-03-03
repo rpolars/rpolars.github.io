@@ -2,7 +2,7 @@
 
 # Dot product
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1448)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1418)
 
 ## Description
 
@@ -21,7 +21,7 @@ Compute the dot/inner product between two Expressions.
 <code id="Expr_dot_:_other">other</code>
 </td>
 <td>
-Literal or object that can be converted to a literal
+numeric or string value; accepts expression input.
 </td>
 </tr>
 </table>

@@ -2,7 +2,7 @@
 
 # Sort an Expr
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1478)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1448)
 
 ## Description
 

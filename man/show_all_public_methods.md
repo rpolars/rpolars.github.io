@@ -691,7 +691,6 @@ pl$show_all_public_methods()
     #>           [ rank ; function ]
     #>           [ rechunk ; function ]
     #>           [ reinterpret ; function ]
-    #>           [ rem ; function ]
     #>           [ rename ; function ]
     #>           [ rep ; function ]
     #>           [ rep_extend ; function ]
