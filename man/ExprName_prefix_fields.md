@@ -2,7 +2,7 @@
 
 # Add a prefix to all fields name of a struct
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/97c09bc0a6fc3d166744dbddd037b49e8d8fc6c2/R/expr__name.R#L119)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__name.R#L119)
 
 ## Description
 

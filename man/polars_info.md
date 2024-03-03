@@ -2,7 +2,7 @@
 
 # Report information of the package
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/97c09bc0a6fc3d166744dbddd037b49e8d8fc6c2/R/polars_info.R#L17)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/polars_info.R#L17)
 
 ## Description
 
@@ -52,7 +52,7 @@ library(polars)
 polars_info()
 ```
 
-    #> Polars R package version : 0.15.0
+    #> Polars R package version : 0.15.0.9000
     #> Rust Polars crate version: 0.38.1
     #> 
     #> Thread pool size: 4 
@@ -72,7 +72,7 @@ polars_info()$versions
 ```
 
     #> $r_package
-    #> [1] "0.15.0"
+    #> [1] "0.15.0.9000"
     #> 
     #> $rust_crate
     #> [1] "0.38.1"

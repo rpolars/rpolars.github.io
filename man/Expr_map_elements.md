@@ -2,7 +2,7 @@
 
 # Map a custom/user-defined function (UDF) to each element of a column
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/97c09bc0a6fc3d166744dbddd037b49e8d8fc6c2/R/expr__expr.R#L958)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L958)
 
 ## Description
 
@@ -170,12 +170,12 @@ pl$DataFrame(iris)$group_by("Species")$agg(e_sum, e_head)
     #> │           ┆ f64       ┆ f64       ┆ f64       ┆   ┆ list[f64] ┆ list[f64] ┆ list[f64] ┆ list[f64 │
     #> │           ┆           ┆           ┆           ┆   ┆           ┆           ┆           ┆ ]        │
     #> ╞═══════════╪═══════════╪═══════════╪═══════════╪═══╪═══════════╪═══════════╪═══════════╪══════════╡
-    #> │ setosa    ┆ 250.3     ┆ 171.4     ┆ 73.1      ┆ … ┆ [5.1,     ┆ [3.5,     ┆ [1.4,     ┆ [0.2,    │
-    #> │           ┆           ┆           ┆           ┆   ┆ 4.9]      ┆ 3.0]      ┆ 1.4]      ┆ 0.2]     │
-    #> │ virginica ┆ 329.4     ┆ 148.7     ┆ 277.6     ┆ … ┆ [6.3,     ┆ [3.3,     ┆ [6.0,     ┆ [2.5,    │
-    #> │           ┆           ┆           ┆           ┆   ┆ 5.8]      ┆ 2.7]      ┆ 5.1]      ┆ 1.9]     │
     #> │ versicolo ┆ 296.8     ┆ 138.5     ┆ 213.0     ┆ … ┆ [7.0,     ┆ [3.2,     ┆ [4.7,     ┆ [1.4,    │
     #> │ r         ┆           ┆           ┆           ┆   ┆ 6.4]      ┆ 3.2]      ┆ 4.5]      ┆ 1.5]     │
+    #> │ virginica ┆ 329.4     ┆ 148.7     ┆ 277.6     ┆ … ┆ [6.3,     ┆ [3.3,     ┆ [6.0,     ┆ [2.5,    │
+    #> │           ┆           ┆           ┆           ┆   ┆ 5.8]      ┆ 2.7]      ┆ 5.1]      ┆ 1.9]     │
+    #> │ setosa    ┆ 250.3     ┆ 171.4     ┆ 73.1      ┆ … ┆ [5.1,     ┆ [3.5,     ┆ [1.4,     ┆ [0.2,    │
+    #> │           ┆           ┆           ┆           ┆   ┆ 4.9]      ┆ 3.0]      ┆ 1.4]      ┆ 0.2]     │
     #> └───────────┴───────────┴───────────┴───────────┴───┴───────────┴───────────┴───────────┴──────────┘
 
 ``` r
@@ -239,7 +239,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   2.236   0.012   2.516
+    #>   2.302   0.010   2.608
 
 ``` r
 # Comparing this to the standard polars syntax:
@@ -271,7 +271,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.034   0.000   1.236
+    #>   0.035   0.000   1.236
 
 ``` r
 # first run in parallel: there is some overhead to start up extra R processes
@@ -296,7 +296,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.018   0.001   1.108
+    #>   0.019   0.000   1.232
 
 ``` r
 # second run in parallel: this reuses R processes in "polars global_rpool".
@@ -317,4 +317,4 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.011   0.004   0.333
+    #>   0.017   0.000   0.336
