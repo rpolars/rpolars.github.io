@@ -39,8 +39,8 @@ Zero-division behaviour follows IEEE-754:
 </li>
 <li>
 
-<code>n/0</code>: On finite operands gives an exact infinite result, eg:
-±infinity.
+<code>n/0</code>: On finite operands gives an exact infinite result,
+e.g.: ±infinity.
 
 </li>
 </ul>

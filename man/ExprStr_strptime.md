@@ -2,17 +2,17 @@
 
 # Convert a String column into a Date/Datetime/Time column.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L61)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L87)
 
 ## Description
 
-Convert a String column into a Date/Datetime/Time column.
+Similar to the <code>strptime()</code> function.
 
 ## Usage
 
 <pre><code class='language-R'>ExprStr_strptime(
   datatype,
-  format,
+  format = NULL,
   strict = TRUE,
   exact = TRUE,
   cache = TRUE,
@@ -36,9 +36,11 @@ The data type to convert into. Can be either Date, Datetime, or Time.
 <code id="ExprStr_strptime_:_format">format</code>
 </td>
 <td>
-Format to use for conversion. See <code>?strptime</code> for possible
-values. Example: "%Y-%m-%d %H:%M:%S". If <code>NULL</code> (default),
-the format is inferred from the data. Notice that time zone
+Format to use for conversion. Refer to
+<a href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">the
+chrono crate documentation</a> for the full specification. Example:
+<code>“%Y-%m-%d %H:%M:%S”</code>. If <code>NULL</code> (default), the
+format is inferred from the data. Notice that time zone
 <code style="white-space: pre;">%Z</code> is not supported and will just
 ignore timezones. Numeric time zones like
 <code style="white-space: pre;">%z</code> or
@@ -51,7 +53,7 @@ ignore timezones. Numeric time zones like
 </td>
 <td>
 If <code>TRUE</code> (default), raise an error if a single string cannot
-be parsed. Otherwise, produce a polars <code>null</code>.
+be parsed. If <code>FALSE</code>, produce a polars <code>null</code>.
 </td>
 </tr>
 <tr>
@@ -59,8 +61,11 @@ be parsed. Otherwise, produce a polars <code>null</code>.
 <code id="ExprStr_strptime_:_exact">exact</code>
 </td>
 <td>
-If <code>TRUE</code> (default), require an exact format match.
-Otherwise, allow the format to match anywhere in the target string.
+If <code>TRUE</code> (default), require an exact format match. If
+<code>FALSE</code>, allow the format to match anywhere in the target
+string. Conversion to the Time type is always exact. Note that using
+<code>exact = FALSE</code> introduces a performance penalty - cleaning
+your data beforehand will almost certainly be more performant.
 </td>
 </tr>
 <tr>
@@ -103,19 +108,77 @@ Determine how to deal with ambiguous datetimes:
 ## Details
 
 When parsing a Datetime the column precision will be inferred from the
-format string, if given, eg: “%F %T%.3f” =\> Datetime("ms"). If no
-fractional second component is found then the default is "us"
-(microsecond).
+format string, if given, e.g.: <code>“%F %T%.3f”</code> =\>
+<code>pl$Datetime("ms")</code>. If no fractional second component is
+found then the default is <code>“us”</code> (microsecond).
 
 ## Value
 
-Expr of a Date, Datetime or Time Series
+Expr of Date, Datetime or Time type
+
+## See Also
+
+<ul>
+<li>
+
+<code>\<Expr\>$str$to_date()</code>
+
+</li>
+<li>
+
+<code>\<Expr\>$str$to_datetime()</code>
+
+</li>
+<li>
+
+<code>\<Expr\>$str$to_time()</code>
+
+</li>
+</ul>
 
 ## Examples
 
 ``` r
 library(polars)
 
+# Dealing with a consistent format
+s = pl$Series(c("2020-01-01 01:00Z", "2020-01-01 02:00Z"))
+
+s$str$strptime(pl$Datetime(), "%Y-%m-%d %H:%M%#z")
+```
+
+    #> polars Series: shape: (2,)
+    #> Series: '' [datetime[μs, UTC]]
+    #> [
+    #>  2020-01-01 01:00:00 UTC
+    #>  2020-01-01 02:00:00 UTC
+    #> ]
+
+``` r
+# Auto infer format
+s$str$strptime(pl$Datetime())
+```
+
+    #> polars Series: shape: (2,)
+    #> Series: '' [datetime[μs, UTC]]
+    #> [
+    #>  2020-01-01 01:00:00 UTC
+    #>  2020-01-01 02:00:00 UTC
+    #> ]
+
+``` r
+# Datetime with timezone is interpreted as UTC timezone
+pl$Series("2020-01-01T01:00:00+09:00")$str$strptime(pl$Datetime())
+```
+
+    #> polars Series: shape: (1,)
+    #> Series: '' [datetime[μs, UTC]]
+    #> [
+    #>  2019-12-31 16:00:00 UTC
+    #> ]
+
+``` r
+# Dealing with different formats.
 s = pl$Series(
   c(
     "2021-04-22",
@@ -125,13 +188,14 @@ s = pl$Series(
   ),
   "date"
 )
-#' #join multiple passes with different format
-s$to_frame()$with_columns(
-  pl$col("date")
-  $str$strptime(pl$Date, "%F", strict = FALSE)
-  $fill_null(pl$col("date")$str$strptime(pl$Date, "%F %T", strict = FALSE))
-  $fill_null(pl$col("date")$str$strptime(pl$Date, "%D", strict = FALSE))
-  $fill_null(pl$col("date")$str$strptime(pl$Date, "%c", strict = FALSE))
+
+s$to_frame()$select(
+  pl$coalesce(
+    pl$col("date")$str$strptime(pl$Date, "%F", strict = FALSE),
+    pl$col("date")$str$strptime(pl$Date, "%F %T", strict = FALSE),
+    pl$col("date")$str$strptime(pl$Date, "%D", strict = FALSE),
+    pl$col("date")$str$strptime(pl$Date, "%c", strict = FALSE)
+  )
 )
 ```
 
@@ -148,16 +212,20 @@ s$to_frame()$with_columns(
     #> └────────────┘
 
 ``` r
-txt_datetimes = c(
-  "2023-01-01 11:22:33 -0100",
-  "2023-01-01 11:22:33 +0300",
-  "invalid time"
+# Ignore invalid time
+s = pl$Series(
+  c(
+    "2023-01-01 11:22:33 -0100",
+    "2023-01-01 11:22:33 +0300",
+    "invalid time"
+  )
 )
 
-pl$lit(txt_datetimes)$str$strptime(
+s$str$strptime(
   pl$Datetime("ns"),
-  format = "%Y-%m-%d %H:%M:%S %z", strict = FALSE,
-)$to_series()
+  format = "%Y-%m-%d %H:%M:%S %z",
+  strict = FALSE,
+)
 ```
 
     #> polars Series: shape: (3,)

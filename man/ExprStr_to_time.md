@@ -2,7 +2,7 @@
 
 # Convert a String column into a Time column
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L140)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L155)
 
 ## Description
 
@@ -21,9 +21,11 @@ Convert a String column into a Time column
 <code id="ExprStr_to_time_:_format">format</code>
 </td>
 <td>
-Format to use for conversion. See <code>?strptime</code> for possible
-values. Example: "%H:%M:%S". If <code>NULL</code> (default), the format
-is inferred from the data. Notice that time zone
+Format to use for conversion. Refer to
+<a href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">the
+chrono crate documentation</a> for the full specification. Example:
+<code>“%Y-%m-%d %H:%M:%S”</code>. If <code>NULL</code> (default), the
+format is inferred from the data. Notice that time zone
 <code style="white-space: pre;">%Z</code> is not supported and will just
 ignore timezones. Numeric time zones like
 <code style="white-space: pre;">%z</code> or
@@ -36,8 +38,7 @@ ignore timezones. Numeric time zones like
 </td>
 <td>
 If <code>TRUE</code> (default), raise an error if a single string cannot
-be parsed. If <code>FALSE</code>, parsing failure will produce a polars
-<code>null</code>.
+be parsed. If <code>FALSE</code>, produce a polars <code>null</code>.
 </td>
 </tr>
 <tr>
@@ -50,26 +51,42 @@ Use a cache of unique, converted dates to apply the datetime conversion.
 </tr>
 </table>
 
+## Format
+
+Format to use for conversion. Refer to
+<a href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">the
+chrono crate documentation</a> for the full specification. Example:
+<code>“%H:%M:%S”</code>. If <code>NULL</code> (default), the format is
+inferred from the data.
+
 ## Value
 
-Expr
+Expr of Time type
+
+## See Also
+
+<ul>
+<li>
+
+<code>\<Expr\>$str$strptime()</code>
+
+</li>
+</ul>
 
 ## Examples
 
 ``` r
 library(polars)
 
-pl$DataFrame(str_time = c("01:20:01", "28:00:02", "03:00:02"))$
-  with_columns(time = pl$col("str_time")$str$to_time(strict = FALSE))
+s = pl$Series(c("01:00", "02:00", "03:00"))
+
+s$str$to_time("%H:%M")
 ```
 
-    #> shape: (3, 2)
-    #> ┌──────────┬──────────┐
-    #> │ str_time ┆ time     │
-    #> │ ---      ┆ ---      │
-    #> │ str      ┆ time     │
-    #> ╞══════════╪══════════╡
-    #> │ 01:20:01 ┆ 01:20:01 │
-    #> │ 28:00:02 ┆ null     │
-    #> │ 03:00:02 ┆ 03:00:02 │
-    #> └──────────┴──────────┘
+    #> polars Series: shape: (3,)
+    #> Series: '' [time]
+    #> [
+    #>  01:00:00
+    #>  02:00:00
+    #>  03:00:00
+    #> ]

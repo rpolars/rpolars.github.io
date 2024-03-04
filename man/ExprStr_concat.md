@@ -2,7 +2,7 @@
 
 # Vertically concatenate the string values in the column to a single string value.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L232)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L241)
 
 ## Description
 

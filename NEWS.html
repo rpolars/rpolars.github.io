@@ -14527,6 +14527,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Polars R Package (development version)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug fixes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -14567,7 +14582,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bug-fixes" class="md-nav__link">
+  <a href="#bug-fixes_1" class="md-nav__link">
     <span class="md-ellipsis">
       Bug fixes
     </span>
@@ -14609,7 +14624,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bug-fixes_1" class="md-nav__link">
+  <a href="#bug-fixes_2" class="md-nav__link">
     <span class="md-ellipsis">
       Bug fixes
     </span>
@@ -14702,7 +14717,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bug-fixes_2" class="md-nav__link">
+  <a href="#bug-fixes_3" class="md-nav__link">
     <span class="md-ellipsis">
       Bug fixes
     </span>
@@ -15257,6 +15272,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Polars R Package (development version)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug fixes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -15297,7 +15327,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bug-fixes" class="md-nav__link">
+  <a href="#bug-fixes_1" class="md-nav__link">
     <span class="md-ellipsis">
       Bug fixes
     </span>
@@ -15339,7 +15369,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bug-fixes_1" class="md-nav__link">
+  <a href="#bug-fixes_2" class="md-nav__link">
     <span class="md-ellipsis">
       Bug fixes
     </span>
@@ -15432,7 +15462,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bug-fixes_2" class="md-nav__link">
+  <a href="#bug-fixes_3" class="md-nav__link">
     <span class="md-ellipsis">
       Bug fixes
     </span>
@@ -15966,6 +15996,10 @@
 
 <h1 id="news">NEWS</h1>
 <h2 id="polars-r-package-development-version">Polars R Package (development version)</h2>
+<h3 id="bug-fixes">Bug fixes</h3>
+<ul>
+<li>The default value of the <code>format</code> of <code>$str$strptime()</code> is now correctly set (<a href="https://github.com/pola-rs/r-polars/issues/892">#892</a>).</li>
+</ul>
 <h2 id="polars-r-package-0150">Polars R Package 0.15.0</h2>
 <h3 id="breaking-changes-due-to-rust-polars-update">Breaking changes due to Rust-polars update</h3>
 <ul>
@@ -16097,7 +16131,7 @@ from Polars to R.</p>
 <li><code>pl$Datetime()</code>'s <code>time_zone</code> argument now accepts <code>"*"</code> to match
     any time zone (<a href="https://github.com/pola-rs/r-polars/issues/887">#887</a>).</li>
 </ul>
-<h3 id="bug-fixes">Bug fixes</h3>
+<h3 id="bug-fixes_1">Bug fixes</h3>
 <ul>
 <li>R no longer crashes when calling an invalid Polars object that points
     to a null pointer (<a href="https://github.com/pola-rs/r-polars/issues/874">#874</a>). This was occurring, such as when a Polars object
@@ -16123,7 +16157,7 @@ from Polars to R.</p>
     that is disabled by default. For now, it is only supported in the native R
     terminal and in RStudio (<a href="https://github.com/pola-rs/r-polars/issues/597">#597</a>).</li>
 </ul>
-<h3 id="bug-fixes_1">Bug fixes</h3>
+<h3 id="bug-fixes_2">Bug fixes</h3>
 <ul>
 <li><code>&lt;Series&gt;$list</code> sub namespace methods returns <code>Series</code> class object correctly (<a href="https://github.com/pola-rs/r-polars/issues/819">#819</a>).</li>
 </ul>
@@ -16218,7 +16252,7 @@ from Polars to R.</p>
 </ul>
 </li>
 </ul>
-<h3 id="bug-fixes_2">Bug fixes</h3>
+<h3 id="bug-fixes_3">Bug fixes</h3>
 <ul>
 <li><code>$sort()</code> no longer panicks when <code>descending = NULL</code> (<a href="https://github.com/pola-rs/r-polars/issues/748">#748</a>).</li>
 </ul>

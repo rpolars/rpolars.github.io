@@ -2,7 +2,7 @@
 
 # Convert a String column into a Date column
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L118)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L135)
 
 ## Description
 
@@ -21,9 +21,11 @@ Convert a String column into a Date column
 <code id="ExprStr_to_date_:_format">format</code>
 </td>
 <td>
-Format to use for conversion. See <code>?strptime</code> for possible
-values. Example: "%Y-%m-%d". If <code>NULL</code> (default), the format
-is inferred from the data. Notice that time zone
+Format to use for conversion. Refer to
+<a href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">the
+chrono crate documentation</a> for the full specification. Example:
+<code>“%Y-%m-%d %H:%M:%S”</code>. If <code>NULL</code> (default), the
+format is inferred from the data. Notice that time zone
 <code style="white-space: pre;">%Z</code> is not supported and will just
 ignore timezones. Numeric time zones like
 <code style="white-space: pre;">%z</code> or
@@ -36,8 +38,7 @@ ignore timezones. Numeric time zones like
 </td>
 <td>
 If <code>TRUE</code> (default), raise an error if a single string cannot
-be parsed. If <code>FALSE</code>, parsing failure will produce a polars
-<code>null</code>.
+be parsed. If <code>FALSE</code>, produce a polars <code>null</code>.
 </td>
 </tr>
 <tr>
@@ -45,8 +46,11 @@ be parsed. If <code>FALSE</code>, parsing failure will produce a polars
 <code id="ExprStr_to_date_:_exact">exact</code>
 </td>
 <td>
-If <code>TRUE</code> (default), require an exact format match.
-Otherwise, allow the format to match anywhere in the target string.
+If <code>TRUE</code> (default), require an exact format match. If
+<code>FALSE</code>, allow the format to match anywhere in the target
+string. Conversion to the Time type is always exact. Note that using
+<code>exact = FALSE</code> introduces a performance penalty - cleaning
+your data beforehand will almost certainly be more performant.
 </td>
 </tr>
 <tr>
@@ -59,27 +63,42 @@ Use a cache of unique, converted dates to apply the datetime conversion.
 </tr>
 </table>
 
+## Format
+
+Format to use for conversion. Refer to
+<a href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">the
+chrono crate documentation</a> for the full specification. Example:
+<code>“%Y-%m-%d”</code>. If <code>NULL</code> (default), the format is
+inferred from the data.
+
 ## Value
 
-Expr
+Expr of Date type
+
+## See Also
+
+<ul>
+<li>
+
+<code>\<Expr\>$str$strptime()</code>
+
+</li>
+</ul>
 
 ## Examples
 
 ``` r
 library(polars)
 
-pl$DataFrame(str_date = c("2009-01-02", "2009-01-03", "2009-1-4", "2009 05 01"))$
-  with_columns(date = pl$col("str_date")$str$to_date(strict = FALSE))
+s = pl$Series(c("2020/01/01", "2020/02/01", "2020/03/01"))
+
+s$str$to_date()
 ```
 
-    #> shape: (4, 2)
-    #> ┌────────────┬────────────┐
-    #> │ str_date   ┆ date       │
-    #> │ ---        ┆ ---        │
-    #> │ str        ┆ date       │
-    #> ╞════════════╪════════════╡
-    #> │ 2009-01-02 ┆ 2009-01-02 │
-    #> │ 2009-01-03 ┆ 2009-01-03 │
-    #> │ 2009-1-4   ┆ 2009-01-04 │
-    #> │ 2009 05 01 ┆ null       │
-    #> └────────────┴────────────┘
+    #> polars Series: shape: (3,)
+    #> Series: '' [date]
+    #> [
+    #>  2020-01-01
+    #>  2020-02-01
+    #>  2020-03-01
+    #> ]

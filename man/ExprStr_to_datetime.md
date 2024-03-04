@@ -2,7 +2,7 @@
 
 # Convert a String column into a Datetime column
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L171)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L180)
 
 ## Description
 
@@ -29,9 +29,11 @@ Convert a String column into a Datetime column
 <code id="ExprStr_to_datetime_:_format">format</code>
 </td>
 <td>
-Format to use for conversion. See <code>?strptime</code> for possible
-values. Example: "%Y-%m-%d %H:%M:%S". If <code>NULL</code> (default),
-the format is inferred from the data. Notice that time zone
+Format to use for conversion. Refer to
+<a href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">the
+chrono crate documentation</a> for the full specification. Example:
+<code>“%Y-%m-%d %H:%M:%S”</code>. If <code>NULL</code> (default), the
+format is inferred from the data. Notice that time zone
 <code style="white-space: pre;">%Z</code> is not supported and will just
 ignore timezones. Numeric time zones like
 <code style="white-space: pre;">%z</code> or
@@ -43,8 +45,11 @@ ignore timezones. Numeric time zones like
 <code id="ExprStr_to_datetime_:_time_unit">time_unit</code>
 </td>
 <td>
-String (<code>“ns”</code>, <code>“us”</code>, <code>“ms”</code>) or
-integer.
+Unit of time for the resulting Datetime column. If <code>NULL</code>
+(default), the time unit is inferred from the format string if given,
+e.g.: <code>“%F %T%.3f”</code> =\> <code>pl$Datetime("ms")</code>. If no
+fractional second component is found, the default is <code>“us”</code>
+(microsecond).
 </td>
 </tr>
 <tr>
@@ -52,8 +57,7 @@ integer.
 <code id="ExprStr_to_datetime_:_time_zone">time_zone</code>
 </td>
 <td>
-String describing a timezone. If <code>NULL</code> (default),
-<code style="white-space: pre;">“GMT</code> is used.
+for the resulting Datetime column.
 </td>
 </tr>
 <tr>
@@ -62,8 +66,7 @@ String describing a timezone. If <code>NULL</code> (default),
 </td>
 <td>
 If <code>TRUE</code> (default), raise an error if a single string cannot
-be parsed. If <code>FALSE</code>, parsing failure will produce a polars
-<code>null</code>.
+be parsed. If <code>FALSE</code>, produce a polars <code>null</code>.
 </td>
 </tr>
 <tr>
@@ -71,8 +74,11 @@ be parsed. If <code>FALSE</code>, parsing failure will produce a polars
 <code id="ExprStr_to_datetime_:_exact">exact</code>
 </td>
 <td>
-If <code>TRUE</code> (default), require an exact format match.
-Otherwise, allow the format to match anywhere in the target string.
+If <code>TRUE</code> (default), require an exact format match. If
+<code>FALSE</code>, allow the format to match anywhere in the target
+string. Note that using <code>exact = FALSE</code> introduces a
+performance penalty - cleaning your data beforehand will almost
+certainly be more performant.
 </td>
 </tr>
 <tr>
@@ -114,24 +120,42 @@ Determine how to deal with ambiguous datetimes:
 
 ## Value
 
-Expr
+Expr of Datetime type
+
+## See Also
+
+<ul>
+<li>
+
+<code>\<Expr\>$str$strptime()</code>
+
+</li>
+</ul>
 
 ## Examples
 
 ``` r
 library(polars)
 
-pl$DataFrame(str_date = c("2009-01-02 01:00", "2009-01-03 02:00", "2009-1-4 3:00"))$
-  with_columns(datetime = pl$col("str_date")$str$to_datetime(strict = FALSE))
+s = pl$Series(c("2020-01-01 01:00Z", "2020-01-01 02:00Z"))
+
+s$str$to_datetime("%Y-%m-%d %H:%M%#z")
 ```
 
-    #> shape: (3, 2)
-    #> ┌──────────────────┬─────────────────────┐
-    #> │ str_date         ┆ datetime            │
-    #> │ ---              ┆ ---                 │
-    #> │ str              ┆ datetime[μs]        │
-    #> ╞══════════════════╪═════════════════════╡
-    #> │ 2009-01-02 01:00 ┆ 2009-01-02 01:00:00 │
-    #> │ 2009-01-03 02:00 ┆ 2009-01-03 02:00:00 │
-    #> │ 2009-1-4 3:00    ┆ 2009-01-04 03:00:00 │
-    #> └──────────────────┴─────────────────────┘
+    #> polars Series: shape: (2,)
+    #> Series: '' [datetime[μs, UTC]]
+    #> [
+    #>  2020-01-01 01:00:00 UTC
+    #>  2020-01-01 02:00:00 UTC
+    #> ]
+
+``` r
+s$str$to_datetime(time_unit = "ms")
+```
+
+    #> polars Series: shape: (2,)
+    #> Series: '' [datetime[ms, UTC]]
+    #> [
+    #>  2020-01-01 01:00:00 UTC
+    #>  2020-01-01 02:00:00 UTC
+    #> ]

@@ -13836,9 +13836,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
     </span>
   </a>
   
@@ -14638,9 +14656,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
     </span>
   </a>
   
@@ -14674,7 +14710,7 @@
 
 
 <h1 id="convert-a-string-column-into-a-date-column">Convert a String column into a Date column</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L118"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L135"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Convert a String column into a Date column</p>
 <h2 id="usage">Usage</h2>
@@ -14688,9 +14724,11 @@
 <code id="ExprStr_to_date_:_format">format</code>
 </td>
 <td>
-Format to use for conversion. See <code>?strptime</code> for possible
-values. Example: "%Y-%m-%d". If <code>NULL</code> (default), the format
-is inferred from the data. Notice that time zone
+Format to use for conversion. Refer to
+<a href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">the
+chrono crate documentation</a> for the full specification. Example:
+<code>“%Y-%m-%d %H:%M:%S”</code>. If <code>NULL</code> (default), the
+format is inferred from the data. Notice that time zone
 <code style="white-space: pre;">%Z</code> is not supported and will just
 ignore timezones. Numeric time zones like
 <code style="white-space: pre;">%z</code> or
@@ -14703,8 +14741,7 @@ ignore timezones. Numeric time zones like
 </td>
 <td>
 If <code>TRUE</code> (default), raise an error if a single string cannot
-be parsed. If <code>FALSE</code>, parsing failure will produce a polars
-<code>null</code>.
+be parsed. If <code>FALSE</code>, produce a polars <code>null</code>.
 </td>
 </tr>
 <tr>
@@ -14712,8 +14749,11 @@ be parsed. If <code>FALSE</code>, parsing failure will produce a polars
 <code id="ExprStr_to_date_:_exact">exact</code>
 </td>
 <td>
-If <code>TRUE</code> (default), require an exact format match.
-Otherwise, allow the format to match anywhere in the target string.
+If <code>TRUE</code> (default), require an exact format match. If
+<code>FALSE</code>, allow the format to match anywhere in the target
+string. Conversion to the Time type is always exact. Note that using
+<code>exact = FALSE</code> introduces a performance penalty - cleaning
+your data beforehand will almost certainly be more performant.
 </td>
 </tr>
 <tr>
@@ -14726,25 +14766,37 @@ Use a cache of unique, converted dates to apply the datetime conversion.
 </tr>
 </table>
 
+<h2 id="format">Format</h2>
+<p>Format to use for conversion. Refer to
+<a href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">the
+chrono crate documentation</a> for the full specification. Example:
+<code>“%Y-%m-%d”</code>. If <code>NULL</code> (default), the format is
+inferred from the data.</p>
 <h2 id="value">Value</h2>
-<p>Expr</p>
+<p>Expr of Date type</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li>
+
+<code>\<Expr\>$str$strptime()</code>
+
+</li>
+</ul>
+
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">str_date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;2009-01-02&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2009-01-03&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2009-1-4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2009 05 01&quot;</span><span class="p">))</span><span class="o">$</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nf">with_columns</span><span class="p">(</span><span class="n">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;str_date&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">to_date</span><span class="p">(</span><span class="n">strict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">))</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;2020/01/01&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2020/02/01&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2020/03/01&quot;</span><span class="p">))</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">s</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">to_date</span><span class="p">()</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (4, 2)
-#&gt; ┌────────────┬────────────┐
-#&gt; │ str_date   ┆ date       │
-#&gt; │ ---        ┆ ---        │
-#&gt; │ str        ┆ date       │
-#&gt; ╞════════════╪════════════╡
-#&gt; │ 2009-01-02 ┆ 2009-01-02 │
-#&gt; │ 2009-01-03 ┆ 2009-01-03 │
-#&gt; │ 2009-1-4   ┆ 2009-01-04 │
-#&gt; │ 2009 05 01 ┆ null       │
-#&gt; └────────────┴────────────┘
+<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (3,)
+#&gt; Series: &#39;&#39; [date]
+#&gt; [
+#&gt;  2020-01-01
+#&gt;  2020-02-01
+#&gt;  2020-03-01
+#&gt; ]
 </code></pre></div>
 
 
