@@ -65,6 +65,9 @@ as_polars_df(x, ...)
 # S3 method for class 'ArrowTabular'
 as_polars_df(x, ..., rechunk = TRUE, schema = NULL, schema_overrides = NULL)
 
+# S3 method for class 'nanoarrow_array'
+as_polars_df(x, ...)
+
 # S3 method for class 'nanoarrow_array_stream'
 as_polars_df(x, ...)
 </code></pre>
@@ -126,9 +129,10 @@ thrown.
 <code id="as_polars_df_:_schema">schema</code>
 </td>
 <td>
-named list of DataTypes, or character vector of column names. Should be
-the same length as the number of columns of <code>x</code>. If schema
-names or types do not match <code>x</code>, the columns will be
+named list of DataTypes, or character vector of column names. Should
+match the number of columns in <code>x</code> and correspond to each
+column in <code>x</code> by position. If a column in <code>x</code> does
+not match the name or type at the same position, it will be
 renamed/recast. If <code>NULL</code> (default), convert columns as is.
 </td>
 </tr>
@@ -341,13 +345,13 @@ as_polars_df(
 # Convert an arrow Table, with renaming and casting all columns
 as_polars_df(
   at,
-  schema = list(a = pl$Int64, b = pl$String)
+  schema = list(b = pl$Int64, a = pl$String)
 )
 ```
 
     #> shape: (5, 2)
     #> ┌─────┬─────┐
-    #> │ a   ┆ b   │
+    #> │ b   ┆ a   │
     #> │ --- ┆ --- │
     #> │ i64 ┆ str │
     #> ╞═════╪═════╡
@@ -359,7 +363,7 @@ as_polars_df(
     #> └─────┴─────┘
 
 ``` r
-# Convert an arrow Table, with renaming and casting some columns
+# Convert an arrow Table, with casting some columns
 as_polars_df(
   at,
   schema_overrides = list(y = pl$String) # cast some columns
