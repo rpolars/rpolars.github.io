@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.12">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
     
     
       
@@ -14913,7 +14913,7 @@ TRUE)</code>.
 #&gt; │ str                 ┆ u64   ┆ u64 │
 #&gt; ╞═════════════════════╪═══════╪═════╡
 #&gt; │ optimization        ┆ 0     ┆ 17  │
-#&gt; │ projection(literal) ┆ 17    ┆ 82  │
+#&gt; │ projection(literal) ┆ 17    ┆ 84  │
 #&gt; └─────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Use $profile() to compare two queries</span>
@@ -14944,9 +14944,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ --- │
 #&gt; │ str                ┆ u64   ┆ u64 │
 #&gt; ╞════════════════════╪═══════╪═════╡
-#&gt; │ optimization       ┆ 0     ┆ 21  │
-#&gt; │ sort(Sepal.Length) ┆ 21    ┆ 305 │
-#&gt; │ group_by(Species)  ┆ 307   ┆ 593 │
+#&gt; │ optimization       ┆ 0     ┆ 19  │
+#&gt; │ sort(Sepal.Length) ┆ 19    ┆ 274 │
+#&gt; │ group_by(Species)  ┆ 277   ┆ 514 │
 #&gt; └────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)</span>
@@ -14984,9 +14984,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ ---   │
 #&gt; │ str                ┆ u64   ┆ u64   │
 #&gt; ╞════════════════════╪═══════╪═══════╡
-#&gt; │ optimization       ┆ 0     ┆ 10    │
-#&gt; │ sort(Sepal.Length) ┆ 10    ┆ 189   │
-#&gt; │ group_by(Species)  ┆ 191   ┆ 60891 │
+#&gt; │ optimization       ┆ 0     ┆ 14    │
+#&gt; │ sort(Sepal.Length) ┆ 14    ┆ 1633  │
+#&gt; │ group_by(Species)  ┆ 1637  ┆ 66645 │
 #&gt; └────────────────────┴───────┴───────┘
 </code></pre></div>
 
