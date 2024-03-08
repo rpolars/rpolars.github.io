@@ -2,7 +2,7 @@
 
 # Get column by index
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L654)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L652)
 
 ## Description
 
