@@ -2,7 +2,7 @@
 
 # To polars DataFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/as_polars.R#L48)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/as_polars.R#L48)
 
 ## Description
 

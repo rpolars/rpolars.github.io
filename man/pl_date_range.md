@@ -2,7 +2,7 @@
 
 # New date range
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__eager.R#L220)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/functions__eager.R#L220)
 
 ## Description
 

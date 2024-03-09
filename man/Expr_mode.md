@@ -2,7 +2,7 @@
 
 # Mode
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/after-wrappers.R#L20)
 
 ## Description
 
@@ -33,11 +33,11 @@ df$select(pl$col("a")$mode())
     #> │ --- │
     #> │ i32 │
     #> ╞═════╡
-    #> │ 6   │
-    #> │ 4   │
     #> │ 2   │
-    #> │ 3   │
+    #> │ 6   │
     #> │ 5   │
+    #> │ 3   │
+    #> │ 4   │
     #> │ 1   │
     #> └─────┘
 
@@ -65,7 +65,7 @@ df$select(pl$col("c")$mode())
     #> │ --- │
     #> │ i32 │
     #> ╞═════╡
-    #> │ 1   │
     #> │ 3   │
+    #> │ 1   │
     #> │ 2   │
     #> └─────┘

@@ -2,7 +2,7 @@
 
 # Join a RThreadHandle
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/rbackground.R#L83)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/rbackground.R#L83)
 
 ## Description
 

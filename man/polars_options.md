@@ -2,7 +2,7 @@
 
 # Get and reset polars options
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/polars_options.R#L78)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/polars_options.R#L78)
 
 ## Description
 

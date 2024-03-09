@@ -2,7 +2,7 @@
 
 # Get the minimum value rowwise
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L823)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/functions__lazy.R#L823)
 
 ## Description
 

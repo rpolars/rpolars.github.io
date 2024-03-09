@@ -2,7 +2,7 @@
 
 # Slice list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L344)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/expr__list.R#L344)
 
 ## Description
 

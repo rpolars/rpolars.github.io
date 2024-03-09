@@ -2,7 +2,7 @@
 
 # Aggregate over a DynamicGroupBy
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/group_by_dynamic.R#L86)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/group_by_dynamic.R#L86)
 
 ## Description
 

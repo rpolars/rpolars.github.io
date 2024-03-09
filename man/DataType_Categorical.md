@@ -2,7 +2,7 @@
 
 # Create Categorical DataType
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L325)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/datatype.R#L325)
 
 ## Description
 

@@ -2,7 +2,7 @@
 
 # Enable the global string cache
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/polars_options.R#L252)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/polars_options.R#L252)
 
 ## Description
 

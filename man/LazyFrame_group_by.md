@@ -2,7 +2,7 @@
 
 # Group a LazyFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1149)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/lazyframe__lazy.R#L1149)
 
 ## Description
 
@@ -99,10 +99,10 @@ lf$group_by(c("a", "b"))$agg(pl$max("c"))$collect()
     #> │ --- ┆ --- ┆ --- │
     #> │ str ┆ f64 ┆ f64 │
     #> ╞═════╪═════╪═════╡
-    #> │ a   ┆ 1.0 ┆ 5.0 │
-    #> │ b   ┆ 2.0 ┆ 4.0 │
-    #> │ b   ┆ 3.0 ┆ 2.0 │
     #> │ c   ┆ 3.0 ┆ 1.0 │
+    #> │ b   ┆ 2.0 ┆ 4.0 │
+    #> │ a   ┆ 1.0 ┆ 5.0 │
+    #> │ b   ┆ 3.0 ┆ 2.0 │
     #> └─────┴─────┴─────┘
 
 ``` r
@@ -119,8 +119,8 @@ lf$group_by("a", pl$col("b") %/% 2)$agg(
     #> │ --- ┆ --- ┆ --- │
     #> │ str ┆ f64 ┆ f64 │
     #> ╞═════╪═════╪═════╡
-    #> │ a   ┆ 0.0 ┆ 4.0 │
     #> │ b   ┆ 1.0 ┆ 3.0 │
+    #> │ a   ┆ 0.0 ┆ 4.0 │
     #> │ c   ┆ 1.0 ┆ 1.0 │
     #> └─────┴─────┴─────┘
 

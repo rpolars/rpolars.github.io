@@ -2,7 +2,7 @@
 
 # Return the number of rows in the context.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L140)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/functions__lazy.R#L140)
 
 ## Description
 

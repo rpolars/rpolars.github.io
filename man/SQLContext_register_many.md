@@ -2,7 +2,7 @@
 
 # Register multiple data as tables
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/sql.R#L110)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/sql.R#L110)
 
 ## Description
 

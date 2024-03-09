@@ -2,7 +2,7 @@
 
 # Extract the first match of JSON string with the provided JSONPath expression
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L528)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/expr__string.R#L528)
 
 ## Description
 

@@ -2,7 +2,7 @@
 
 # GroupBy Median
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/group_by.R#L196)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/group_by.R#L196)
 
 ## Description
 
