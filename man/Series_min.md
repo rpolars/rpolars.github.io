@@ -2,7 +2,7 @@
 
 # min
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L786)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L827)
 
 ## Description
 

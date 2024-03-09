@@ -2,7 +2,7 @@
 
 # Reduce Boolean Series with ALL
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L652)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L693)
 
 ## Description
 

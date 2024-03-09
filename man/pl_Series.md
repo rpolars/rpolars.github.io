@@ -2,15 +2,17 @@
 
 # Create new Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L250)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L267)
 
 ## Description
 
-found in api as pl$Series named Series_constructor internally
+This function is a simple way to convert basic types of vectors provided
+by base R to the Series class object. For converting more types
+properly, use the generic function <code>as_polars_series()</code>.
 
 ## Usage
 
-<pre><code class='language-R'>pl_Series(x, name = NULL)
+<pre><code class='language-R'>pl_Series(x, name = NULL, dtype = NULL, ..., nan_to_null = FALSE)
 </code></pre>
 
 ## Arguments
@@ -29,7 +31,35 @@ any vector
 <code id="pl_Series_:_name">name</code>
 </td>
 <td>
-string
+Name of the Series. If <code>NULL</code>, an empty string is used.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_Series_:_dtype">dtype</code>
+</td>
+<td>
+One of polars data type or <code>NULL</code>. If not <code>NULL</code>,
+that data type is used to cast the Series created from the vector to a
+specific data type internally.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_Series_:_...">…</code>
+</td>
+<td>
+Ignored.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_Series_:_nan_to_null">nan_to_null</code>
+</td>
+<td>
+If <code>TRUE</code>, <code>NaN</code> values contained in the Series
+are replaced to <code>null</code>. Using the <code>$fill_nan()</code>
+method internally.
 </td>
 </tr>
 </table>
@@ -38,19 +68,51 @@ string
 
 Series
 
+## See Also
+
+<ul>
+<li>
+
+<code>as_polars_series()</code>
+
+</li>
+</ul>
+
 ## Examples
 
 ``` r
 library(polars)
 
-pl$Series(1:4)
+# Constructing a Series by specifying name and values positionally:
+s = pl$Series(1:3, "a")
+s
 ```
 
-    #> polars Series: shape: (4,)
-    #> Series: '' [i32]
+    #> polars Series: shape: (3,)
+    #> Series: 'a' [i32]
     #> [
     #>  1
     #>  2
     #>  3
-    #>  4
+    #> ]
+
+``` r
+# Notice that the dtype is automatically inferred as a polars Int32:
+s$dtype
+```
+
+    #> DataType: Int32
+
+``` r
+# Constructing a Series with a specific dtype:
+s2 = pl$Series(1:3, "a", dtype = pl$Float32)
+s2
+```
+
+    #> polars Series: shape: (3,)
+    #> Series: 'a' [f32]
+    #> [
+    #>  1.0
+    #>  2.0
+    #>  3.0
     #> ]

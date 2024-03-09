@@ -2,7 +2,7 @@
 
 # Multiply Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L344)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L385)
 
 ## Description
 

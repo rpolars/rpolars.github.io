@@ -1650,6 +1650,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -14645,6 +14654,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -14672,11 +14690,13 @@
 
 
 <h1 id="create-new-series">Create new Series</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L250"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L267"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>found in api as pl$Series named Series_constructor internally</p>
+<p>This function is a simple way to convert basic types of vectors provided
+by base R to the Series class object. For converting more types
+properly, use the generic function <code>as_polars_series()</code>.</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>pl$Series(x, name = NULL)
+<pre><code class='language-R'>pl$Series(x, name = NULL, dtype = NULL, ..., nan_to_null = FALSE)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
@@ -14694,25 +14714,80 @@ any vector
 <code id="pl_Series_:_name">name</code>
 </td>
 <td>
-string
+Name of the Series. If <code>NULL</code>, an empty string is used.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_Series_:_dtype">dtype</code>
+</td>
+<td>
+One of polars data type or <code>NULL</code>. If not <code>NULL</code>,
+that data type is used to cast the Series created from the vector to a
+specific data type internally.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_Series_:_...">…</code>
+</td>
+<td>
+Ignored.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_Series_:_nan_to_null">nan_to_null</code>
+</td>
+<td>
+If <code>TRUE</code>, <code>NaN</code> values contained in the Series
+are replaced to <code>null</code>. Using the <code>$fill_nan()</code>
+method internally.
 </td>
 </tr>
 </table>
 
 <h2 id="value">Value</h2>
 <p>Series</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li>
+
+<code>as_polars_series()</code>
+
+</li>
+</ul>
+
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Constructing a Series by specifying name and values positionally:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">s</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (4,)
-#&gt; Series: &#39;&#39; [i32]
+<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (3,)
+#&gt; Series: &#39;a&#39; [i32]
 #&gt; [
 #&gt;  1
 #&gt;  2
 #&gt;  3
-#&gt;  4
+#&gt; ]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Notice that the dtype is automatically inferred as a polars Int32:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">s</span><span class="o">$</span><span class="n">dtype</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; DataType: Int32
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Constructing a Series with a specific dtype:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">dtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="n">Float32</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">s2</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (3,)
+#&gt; Series: &#39;a&#39; [f32]
+#&gt; [
+#&gt;  1.0
+#&gt;  2.0
+#&gt;  3.0
 #&gt; ]
 </code></pre></div>
 
