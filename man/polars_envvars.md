@@ -2,7 +2,7 @@
 
 # Get polars environment variables
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/c47431ca69622f79ed7a3f1d7bfee6075ffabfee/R/polars_envvars.R#L84)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/polars_envvars.R#L84)
 
 ## Description
 

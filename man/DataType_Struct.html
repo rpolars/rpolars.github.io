@@ -14693,7 +14693,7 @@
 
 
 <h1 id="create-struct-datatype">Create Struct DataType</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/c47431ca69622f79ed7a3f1d7bfee6075ffabfee/R/datatype.R#L217"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L217"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Struct DataType Constructor</p>
 <h2 id="usage">Usage</h2>
@@ -14815,14 +14815,14 @@ RPolarsDataType objects
 #&gt;   .pr$DataType$new_array(datatype, width) |&gt;
 #&gt;     unwrap(&quot;in pl$Array():&quot;)
 #&gt; }
-#&gt; &lt;bytecode: 0x560143f2da68&gt;
+#&gt; &lt;bytecode: 0x55a59252edb8&gt;
 #&gt; &lt;environment: namespace:polars&gt;
 #&gt; 
 #&gt; $Categorical
 #&gt; function(ordering = &quot;physical&quot;) {
 #&gt;   .pr$DataType$new_categorical(ordering) |&gt; unwrap()
 #&gt; }
-#&gt; &lt;bytecode: 0x560143f3b970&gt;
+#&gt; &lt;bytecode: 0x55a59253ccc0&gt;
 #&gt; &lt;environment: namespace:polars&gt;
 #&gt; 
 #&gt; $Datetime
@@ -14837,7 +14837,7 @@ RPolarsDataType objects
 #&gt;   }
 #&gt;   unwrap(.pr$DataType$new_datetime(time_unit, time_zone))
 #&gt; }
-#&gt; &lt;bytecode: 0x560143f3c710&gt;
+#&gt; &lt;bytecode: 0x55a59253da60&gt;
 #&gt; &lt;environment: namespace:polars&gt;
 #&gt; 
 #&gt; $List
@@ -14853,7 +14853,7 @@ RPolarsDataType objects
 #&gt;   }
 #&gt;   .pr$DataType$new_list(datatype)
 #&gt; }
-#&gt; &lt;bytecode: 0x560143f4b548&gt;
+#&gt; &lt;bytecode: 0x55a59254c8b8&gt;
 #&gt; &lt;environment: namespace:polars&gt;
 #&gt; 
 #&gt; $Struct
@@ -14887,7 +14887,7 @@ RPolarsDataType objects
 #&gt;     and_then(DataType$new_struct) |&gt;
 #&gt;     unwrap(&quot;in pl$Struct:&quot;)
 #&gt; }
-#&gt; &lt;bytecode: 0x560143f654f0&gt;
+#&gt; &lt;bytecode: 0x55a592566870&gt;
 #&gt; &lt;environment: namespace:polars&gt;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># check if an element is any kind of Struct()</span>

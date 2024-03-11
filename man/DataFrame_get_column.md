@@ -2,7 +2,7 @@
 
 # Get column (as one Series)
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/c47431ca69622f79ed7a3f1d7bfee6075ffabfee/R/dataframe__frame.R#L624)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L624)
 
 ## Description
 

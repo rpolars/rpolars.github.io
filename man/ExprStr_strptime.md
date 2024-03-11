@@ -2,7 +2,7 @@
 
 # Convert a String column into a Date/Datetime/Time column.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/c47431ca69622f79ed7a3f1d7bfee6075ffabfee/R/expr__string.R#L87)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L87)
 
 ## Description
 

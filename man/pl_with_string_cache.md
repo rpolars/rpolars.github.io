@@ -2,7 +2,7 @@
 
 # Evaluate one or several expressions with global string cache
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/c47431ca69622f79ed7a3f1d7bfee6075ffabfee/R/polars_options.R#L320)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/polars_options.R#L320)
 
 ## Description
 

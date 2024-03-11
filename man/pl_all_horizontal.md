@@ -2,7 +2,7 @@
 
 # Apply the AND logical rowwise
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/c47431ca69622f79ed7a3f1d7bfee6075ffabfee/R/functions__lazy.R#L873)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L873)
 
 ## Description
 
