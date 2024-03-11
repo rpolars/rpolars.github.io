@@ -25,6 +25,7 @@ theme:
     - content.code.copy
     - toc.follow
 markdown_extensions:
+  - mdx_truly_sane_lists
   - footnotes
   - toc:
       baselevel: 1

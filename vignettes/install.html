@@ -14874,21 +14874,15 @@ environment variable as like <code>LIBR_POLARS_FEATURES="full_features"</code>.<
 <p>Currently <code>full_features</code> would work as a combination of the following
 features.</p>
 <ul>
-<li>The <code>default</code> feature<ul>
-<li><code>sql</code> for enable <code>pl$SQLContext()</code>.</li>
-</ul>
-</li>
-<li>Features for CRAN compatibility<ul>
-<li><code>disable_limit_max_threads</code>, this feature disables the automatic
-    limit of the maximum number of threads to 2 for CRAN
-    compatibility, and the maximum number of threads is used by
-    default. See <code>?pl_thread_pool_size</code> for details.</li>
-</ul>
-</li>
-<li>Features for nightly toolchain<ul>
-<li><code>nightly</code> for nightly toolchain features and SIMD.</li>
-</ul>
-</li>
+<li>The <code>default</code> feature
+    -   <code>sql</code> for enable <code>pl$SQLContext()</code>.</li>
+<li>Features for CRAN compatibility
+    -   <code>disable_limit_max_threads</code>, this feature disables the automatic
+        limit of the maximum number of threads to 2 for CRAN
+        compatibility, and the maximum number of threads is used by
+        default. See <code>?pl_thread_pool_size</code> for details.</li>
+<li>Features for nightly toolchain
+    -   <code>nightly</code> for nightly toolchain features and SIMD.</li>
 </ul>
 <p>Note that nightly features requires the Rust nightly toolchain
 nightly-2024-02-23.</p>

@@ -16061,7 +16061,7 @@
 </li>
 <li><code>as_polars_df(&lt;nanoarrow_array&gt;)</code> is added (<a href="https://github.com/pola-rs/r-polars/issues/893">#893</a>).</li>
 <li>It is now possible to create an empty <code>DataFrame</code> with a specific schema
-    with <code>pl$DataFrame(schema = my_schema)</code> (<a href="https://github.com/pola-rs/r-polars/issues/901">#901</a>).</li>
+  with <code>pl$DataFrame(schema = my_schema)</code> (<a href="https://github.com/pola-rs/r-polars/issues/901">#901</a>).</li>
 <li>New arguments <code>dtype</code> and <code>nan_to_null</code> for <code>pl$Series()</code> (<a href="https://github.com/pola-rs/r-polars/issues/902">#902</a>).</li>
 <li>New method <code>&lt;DataFrame&gt;$partition_by()</code> (<a href="https://github.com/pola-rs/r-polars/issues/898">#898</a>).</li>
 </ul>
@@ -16078,48 +16078,48 @@
 <ul>
 <li>rust-polars is updated to 0.38.1 (<a href="https://github.com/pola-rs/r-polars/issues/865">#865</a>, <a href="https://github.com/pola-rs/r-polars/issues/872">#872</a>).<ul>
 <li>in <code>$pivot()</code>, arguments <code>aggregate_function</code>, <code>maintain_order</code>,
-    <code>sort_columns</code> and <code>separator</code> must be named. Values that are passed
-    by position are ignored.</li>
+  <code>sort_columns</code> and <code>separator</code> must be named. Values that are passed
+  by position are ignored.</li>
 <li>in <code>$describe()</code>, the name of the first column changed from <code>"describe"</code>
-    to <code>"statistic"</code>.</li>
+  to <code>"statistic"</code>.</li>
 <li><code>$mod()</code> methods and <code>%%</code> works correctly to guarantee
-    <code>x == (x %% y) + y * (x %/% y)</code>.</li>
+  <code>x == (x %% y) + y * (x %/% y)</code>.</li>
 </ul>
 </li>
 </ul>
 <h3 id="other-breaking-changes">Other breaking changes</h3>
 <ul>
 <li>Removed <code>as.list()</code> for class <code>RPolarsExpr</code> as it is a simple wrapper around
-    <code>list()</code> (<a href="https://github.com/pola-rs/r-polars/issues/843">#843</a>).</li>
+  <code>list()</code> (<a href="https://github.com/pola-rs/r-polars/issues/843">#843</a>).</li>
 <li>Several functions have been rewritten to match the behavior of Python Polars.<ul>
 <li><code>pl$col(...)</code> requires at least one argument. (<a href="https://github.com/pola-rs/r-polars/issues/852">#852</a>)</li>
 <li><code>pl$head()</code>, <code>pl$tail()</code>, <code>pl$count()</code>, <code>pl$first()</code>, <code>pl$last()</code>, <code>pl$max()</code>,
-    <code>pl$min()</code>, <code>pl$mean()</code>, <code>pl$media()</code>, <code>pl$std()</code>, <code>pl$sum()</code>, <code>pl$var()</code>,
-    <code>pl$n_unique()</code>, and <code>pl$approx_n_unique()</code> are syntactic sugar for
-    <code>pl$col(...)$&lt;method()&gt;</code>. The argument <code>...</code> now only accepts characters,
-    that are either column names or regular expressions (<a href="https://github.com/pola-rs/r-polars/issues/852">#852</a>).</li>
+  <code>pl$min()</code>, <code>pl$mean()</code>, <code>pl$media()</code>, <code>pl$std()</code>, <code>pl$sum()</code>, <code>pl$var()</code>,
+  <code>pl$n_unique()</code>, and <code>pl$approx_n_unique()</code> are syntactic sugar for
+  <code>pl$col(...)$&lt;method()&gt;</code>. The argument <code>...</code> now only accepts characters,
+  that are either column names or regular expressions (<a href="https://github.com/pola-rs/r-polars/issues/852">#852</a>).</li>
 <li>There is no argument for <code>pl$len()</code>. If you want to measure the length of
-    specific columns, you should use <code>pl$count(...)</code> (<a href="https://github.com/pola-rs/r-polars/issues/852">#852</a>).</li>
+  specific columns, you should use <code>pl$count(...)</code> (<a href="https://github.com/pola-rs/r-polars/issues/852">#852</a>).</li>
 <li><code>&lt;Expr&gt;$str$concat()</code> method's <code>delimiter</code> argument's default value is
-    changed from <code>"-"</code> to <code>""</code> (<a href="https://github.com/pola-rs/r-polars/issues/853">#853</a>).</li>
+  changed from <code>"-"</code> to <code>""</code> (<a href="https://github.com/pola-rs/r-polars/issues/853">#853</a>).</li>
 <li><code>&lt;Expr&gt;$str$concat()</code> method's <code>ignore_nulls</code> argument must be a
-    named argument (<a href="https://github.com/pola-rs/r-polars/issues/853">#853</a>).</li>
+  named argument (<a href="https://github.com/pola-rs/r-polars/issues/853">#853</a>).</li>
 <li><code>pl$Datetime()</code>'s arguments are renamed: <code>tu</code> to <code>time_unit</code>,
-    and <code>tz</code> to <code>time_zone</code> (<a href="https://github.com/pola-rs/r-polars/issues/887">#887</a>).</li>
+  and <code>tz</code> to <code>time_zone</code> (<a href="https://github.com/pola-rs/r-polars/issues/887">#887</a>).</li>
 </ul>
 </li>
 <li><code>pl$Categorical()</code> has been improved to allow specifying the <code>ordering</code> type
-    (either lexical or physical). This also means that calling <code>pl$Categorical</code>
-    doesn't create a <code>DataType</code> anymore. All calls to <code>pl$Categorical</code> must be
-    replaced by <code>pl$Categorical()</code> (<a href="https://github.com/pola-rs/r-polars/issues/860">#860</a>).</li>
+  (either lexical or physical). This also means that calling <code>pl$Categorical</code>
+  doesn't create a <code>DataType</code> anymore. All calls to <code>pl$Categorical</code> must be
+  replaced by <code>pl$Categorical()</code> (<a href="https://github.com/pola-rs/r-polars/issues/860">#860</a>).</li>
 <li><code>&lt;Series&gt;$rem()</code> is removed. Use <code>&lt;Series&gt;$mod()</code> instead (<a href="https://github.com/pola-rs/r-polars/issues/886">#886</a>).</li>
 <li>
 <p>The conversion strategy between the POSIXct type without time zone attribute
-    and Polars datetime has been changed (<a href="https://github.com/pola-rs/r-polars/issues/878">#878</a>).
-    <code>POSIXct</code> class vectors without a time zone attribute have UTC time internally
-    and is displayed based on the system's time zone. Previous versions of <code>polars</code>
-    only considered the internal value and interpreted it as UTC time, so the
-    time displayed as <code>POSIXct</code> and in Polars was different.</p>
+  and Polars datetime has been changed (<a href="https://github.com/pola-rs/r-polars/issues/878">#878</a>).
+  <code>POSIXct</code> class vectors without a time zone attribute have UTC time internally
+  and is displayed based on the system's time zone. Previous versions of <code>polars</code>
+  only considered the internal value and interpreted it as UTC time, so the
+  time displayed as <code>POSIXct</code> and in Polars was different.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># polars 0.14.1</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">TZ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Europe/Paris&quot;</span><span class="p">)</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">datetime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.POSIXct</span><span class="p">(</span><span class="s">&quot;1900-01-01&quot;</span><span class="p">)</span>
@@ -16178,57 +16178,57 @@ from Polars to R.</p>
 <a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="c1">#&gt; [1] &quot;2020-11-01 01:00:00 UTC&quot;</span>
 </code></pre></div>
 </li>
-<li>
-<p>Removed argument <code>eager</code> in <code>pl$date_range()</code> and <code>pl$struct()</code> for more
-    consistency of output. It is possible to replace <code>eager = TRUE</code> by calling
-    <code>$to_series()</code> (<a href="https://github.com/pola-rs/r-polars/issues/882">#882</a>).</p>
-</li>
+</ul>
+<ul>
+<li>Removed argument <code>eager</code> in <code>pl$date_range()</code> and <code>pl$struct()</code> for more
+  consistency of output. It is possible to replace <code>eager = TRUE</code> by calling
+  <code>$to_series()</code> (<a href="https://github.com/pola-rs/r-polars/issues/882">#882</a>).</li>
 </ul>
 <h3 id="new-features_1">New features</h3>
 <ul>
 <li>In the when-then-otherwise expressions, the last <code>$otherwise()</code> is now optional,
-    as in Python Polars. If <code>$otherwise()</code> is not specified, rows that don't respect
-    the condition set in <code>$when()</code> will be filled with <code>null</code> (<a href="https://github.com/pola-rs/r-polars/issues/836">#836</a>).</li>
+  as in Python Polars. If <code>$otherwise()</code> is not specified, rows that don't respect
+  the condition set in <code>$when()</code> will be filled with <code>null</code> (<a href="https://github.com/pola-rs/r-polars/issues/836">#836</a>).</li>
 <li><code>&lt;DataFrame&gt;$head()</code> and <code>&lt;DataFrame&gt;$tail()</code> methods now support negative
-    row numbers (<a href="https://github.com/pola-rs/r-polars/issues/840">#840</a>).</li>
+  row numbers (<a href="https://github.com/pola-rs/r-polars/issues/840">#840</a>).</li>
 <li><code>$group_by()</code> now works with named expressions (<a href="https://github.com/pola-rs/r-polars/issues/846">#846</a>).</li>
 <li>New methods for the <code>arr</code> subnamespace: <code>$median()</code>, <code>$var()</code>, <code>$std()</code>,
-    <code>$shift()</code>, <code>$to_struct()</code> (<a href="https://github.com/pola-rs/r-polars/issues/867">#867</a>).</li>
+  <code>$shift()</code>, <code>$to_struct()</code> (<a href="https://github.com/pola-rs/r-polars/issues/867">#867</a>).</li>
 <li><code>$min()</code> and <code>max()</code> now work on categorical variables (<a href="https://github.com/pola-rs/r-polars/issues/868">#868</a>).</li>
 <li>New methods for the <code>list</code> subnamespace: <code>$n_unique()</code>, <code>$gather_every()</code>
-    (<a href="https://github.com/pola-rs/r-polars/issues/869">#869</a>).</li>
+  (<a href="https://github.com/pola-rs/r-polars/issues/869">#869</a>).</li>
 <li>Converts <code>clock_time_point</code> and <code>clock_zoned_time</code> objects from
-    the <code>{clock}</code> package to Polars datetime type (<a href="https://github.com/pola-rs/r-polars/issues/861">#861</a>).</li>
+  the <code>{clock}</code> package to Polars datetime type (<a href="https://github.com/pola-rs/r-polars/issues/861">#861</a>).</li>
 <li>New methods for the <code>name</code> subnamespace: <code>$prefix_fields()</code> and
-    <code>suffix_fields()</code> (<a href="https://github.com/pola-rs/r-polars/issues/873">#873</a>).</li>
+  <code>suffix_fields()</code> (<a href="https://github.com/pola-rs/r-polars/issues/873">#873</a>).</li>
 <li><code>pl$Datetime()</code>'s <code>time_zone</code> argument now accepts <code>"*"</code> to match
-    any time zone (<a href="https://github.com/pola-rs/r-polars/issues/887">#887</a>).</li>
+  any time zone (<a href="https://github.com/pola-rs/r-polars/issues/887">#887</a>).</li>
 </ul>
 <h3 id="bug-fixes_1">Bug fixes</h3>
 <ul>
 <li>R no longer crashes when calling an invalid Polars object that points
-    to a null pointer (<a href="https://github.com/pola-rs/r-polars/issues/874">#874</a>). This was occurring, such as when a Polars object
-    was saved in an RDS file and loaded from another session.</li>
+  to a null pointer (<a href="https://github.com/pola-rs/r-polars/issues/874">#874</a>). This was occurring, such as when a Polars object
+  was saved in an RDS file and loaded from another session.</li>
 </ul>
 <h2 id="polars-r-package-0141">Polars R Package 0.14.1</h2>
 <h3 id="breaking-changes">Breaking changes</h3>
 <ul>
 <li>Since most of the methods of <code>Expr</code> are now available for <code>Series</code>, the
-    experimental <code>&lt;Series&gt;$expr</code> subnamespace is removed (<a href="https://github.com/pola-rs/r-polars/issues/831">#831</a>).
-    Use <code>&lt;Series&gt;$&lt;method&gt;</code> instead of <code>&lt;Series&gt;$expr$&lt;method&gt;</code>.</li>
+  experimental <code>&lt;Series&gt;$expr</code> subnamespace is removed (<a href="https://github.com/pola-rs/r-polars/issues/831">#831</a>).
+  Use <code>&lt;Series&gt;$&lt;method&gt;</code> instead of <code>&lt;Series&gt;$expr$&lt;method&gt;</code>.</li>
 </ul>
 <h3 id="new-features_2">New features</h3>
 <ul>
 <li>New active bindings <code>$flags</code> for <code>DataFrame</code> to show the flags used internally
-    for each column. The output of <code>$flags</code> for <code>Series</code> was also improved and now
-    contains <code>FAST_EXPLODE</code> for <code>Series</code> of type <code>list</code> and <code>array</code> (<a href="https://github.com/pola-rs/r-polars/issues/809">#809</a>).</li>
+  for each column. The output of <code>$flags</code> for <code>Series</code> was also improved and now
+  contains <code>FAST_EXPLODE</code> for <code>Series</code> of type <code>list</code> and <code>array</code> (<a href="https://github.com/pola-rs/r-polars/issues/809">#809</a>).</li>
 <li>Most of <code>Expr</code> methods are also available for <code>Series</code> (<a href="https://github.com/pola-rs/r-polars/issues/819">#819</a>, <a href="https://github.com/pola-rs/r-polars/issues/828">#828</a>, <a href="https://github.com/pola-rs/r-polars/issues/831">#831</a>).</li>
 <li><code>as_polars_df()</code> for <code>data.frame</code> is more memory-efficient and new arguments
-    <code>schema</code> and <code>schema_overrides</code> are added (<a href="https://github.com/pola-rs/r-polars/issues/817">#817</a>).</li>
+  <code>schema</code> and <code>schema_overrides</code> are added (<a href="https://github.com/pola-rs/r-polars/issues/817">#817</a>).</li>
 <li>Use <code>polars_code_completion_activate()</code> to enable code suggestions and
-    autocompletion after <code>$</code> on polars objects. This is an experimental feature
-    that is disabled by default. For now, it is only supported in the native R
-    terminal and in RStudio (<a href="https://github.com/pola-rs/r-polars/issues/597">#597</a>).</li>
+  autocompletion after <code>$</code> on polars objects. This is an experimental feature
+  that is disabled by default. For now, it is only supported in the native R
+  terminal and in RStudio (<a href="https://github.com/pola-rs/r-polars/issues/597">#597</a>).</li>
 </ul>
 <h3 id="bug-fixes_2">Bug fixes</h3>
 <ul>
@@ -16240,19 +16240,19 @@ from Polars to R.</p>
 <li>rust-polars is updated to 0.37.0 (<a href="https://github.com/pola-rs/r-polars/issues/776">#776</a>).<ul>
 <li>Minimum supported Rust version (MSRV) is now 1.74.1.</li>
 <li><code>$with_row_count()</code> for <code>DataFrame</code> and <code>LazyFrame</code> is deprecated and
-    will be removed in 0.15.0. It is replaced by <code>$with_row_index()</code>.</li>
+  will be removed in 0.15.0. It is replaced by <code>$with_row_index()</code>.</li>
 <li><code>pl$count()</code> is deprecated and will be removed in 0.15.0. It is replaced
-    by <code>pl$len()</code>.</li>
+  by <code>pl$len()</code>.</li>
 <li><code>$explode()</code> for <code>DataFrame</code> and <code>LazyFrame</code> doesn't work anymore on
-    string columns.</li>
+  string columns.</li>
 <li><code>$list$join()</code> and <code>pl$concat_str()</code> gain an argument <code>ignore_nulls</code>.
-    The current behavior is to return a <code>null</code> if the row contains any <code>null</code>.
-    Setting <code>ignore_nulls = TRUE</code> changes that.</li>
+  The current behavior is to return a <code>null</code> if the row contains any <code>null</code>.
+  Setting <code>ignore_nulls = TRUE</code> changes that.</li>
 <li>All <code>row_count_*</code> args in reading/scanning functions are renamed
-    <code>row_index_*</code>.</li>
+  <code>row_index_*</code>.</li>
 <li><code>$sort()</code> for <code>Series</code> gains an argument <code>nulls_last</code>.</li>
 <li><code>$str$extract()</code> and <code>$str$zfill()</code> now accept an <code>Expr</code> and parse
-    strings as column names. Use <code>pl$lit()</code> to recover the old behavior.</li>
+  strings as column names. Use <code>pl$lit()</code> to recover the old behavior.</li>
 <li><code>$cum_count()</code> now starts from 1 instead of 0.</li>
 </ul>
 </li>
@@ -16260,11 +16260,11 @@ from Polars to R.</p>
 <h3 id="other-breaking-changes_1">Other breaking changes</h3>
 <ul>
 <li>The <code>simd</code> feature of the Rust library is removed in favor of
-    the new <code>nightly</code> feature (<a href="https://github.com/pola-rs/r-polars/issues/800">#800</a>).
-    If you specified <code>simd</code> via the <code>LIBR_POLARS_FEATURES</code> environment variable
-    during source installations, please use <code>nightly</code> instead;
-    there is no change if you specified <code>full_features</code> because
-    it now contains <code>nightly</code> instead of <code>simd</code>.</li>
+  the new <code>nightly</code> feature (<a href="https://github.com/pola-rs/r-polars/issues/800">#800</a>).
+  If you specified <code>simd</code> via the <code>LIBR_POLARS_FEATURES</code> environment variable
+  during source installations, please use <code>nightly</code> instead;
+  there is no change if you specified <code>full_features</code> because
+  it now contains <code>nightly</code> instead of <code>simd</code>.</li>
 <li>The following functions were deprecated in 0.13.0 and are now removed (<a href="https://github.com/pola-rs/r-polars/issues/783">#783</a>):<ul>
 <li><code>$list$lengths()</code> -&gt; <code>$list$len()</code></li>
 <li><code>pl$from_arrow()</code> -&gt; <code>as_polars_df()</code> or <code>as_polars_series()</code></li>
@@ -16273,51 +16273,51 @@ from Polars to R.</p>
 </li>
 <li><code>$is_between()</code> had several changes (<a href="https://github.com/pola-rs/r-polars/issues/788">#788</a>):<ul>
 <li>arguments <code>start</code> and <code>end</code> are renamed <code>lower_bound</code> and <code>upper_bound</code>.
-    Their behaviour doesn't change.</li>
+  Their behaviour doesn't change.</li>
 <li><code>include_bounds</code> is renamed <code>closed</code> and must be one of <code>"left"</code>,
-    <code>"right"</code>, <code>"both"</code>, or <code>"none"</code>.</li>
+  <code>"right"</code>, <code>"both"</code>, or <code>"none"</code>.</li>
 </ul>
 </li>
 <li><code>polars_info()</code> returns a slightly changed list.<ul>
 <li><code>$threadpool_size</code>, which means the number of threads used by Polars,
-    is changed to <code>$thread_pool_size</code> (<a href="https://github.com/pola-rs/r-polars/issues/784">#784</a>)</li>
+  is changed to <code>$thread_pool_size</code> (<a href="https://github.com/pola-rs/r-polars/issues/784">#784</a>)</li>
 <li><code>$version</code>, which indicates the version of this package,
-    is changed to <code>$versions$r_package</code> (<a href="https://github.com/pola-rs/r-polars/issues/791">#791</a>).</li>
+  is changed to <code>$versions$r_package</code> (<a href="https://github.com/pola-rs/r-polars/issues/791">#791</a>).</li>
 <li><code>$rust_polars</code>, which indicates the version of the dependent Rust Polars,
-    is changed to <code>$versions$rust_crate</code> (<a href="https://github.com/pola-rs/r-polars/issues/791">#791</a>).</li>
+  is changed to <code>$versions$rust_crate</code> (<a href="https://github.com/pola-rs/r-polars/issues/791">#791</a>).</li>
 </ul>
 </li>
 <li>New behavior when creating a <code>DataFrame</code> with a single list-variable.
-    <code>pl$DataFrame(x = list(1:2, 3:4))</code> used to create a <code>DataFrame</code> with two
-    columns named "new_column" and "new_column_1", which was unexpected. It now
-    produces a <code>DataFrame</code> with a single <code>list</code> variable. This also applies to
-    list-column created in <code>$with_columns()</code> and <code>$select()</code> (<a href="https://github.com/pola-rs/r-polars/issues/794">#794</a>).</li>
+  <code>pl$DataFrame(x = list(1:2, 3:4))</code> used to create a <code>DataFrame</code> with two
+  columns named "new_column" and "new_column_1", which was unexpected. It now
+  produces a <code>DataFrame</code> with a single <code>list</code> variable. This also applies to
+  list-column created in <code>$with_columns()</code> and <code>$select()</code> (<a href="https://github.com/pola-rs/r-polars/issues/794">#794</a>).</li>
 </ul>
 <h3 id="deprecations">Deprecations</h3>
 <ul>
 <li><code>pl$threadpool_size()</code> is deprecated and will be removed in 0.15.0. Use
-    <code>pl$thread_pool_size()</code> instead (<a href="https://github.com/pola-rs/r-polars/issues/784">#784</a>).</li>
+  <code>pl$thread_pool_size()</code> instead (<a href="https://github.com/pola-rs/r-polars/issues/784">#784</a>).</li>
 </ul>
 <h3 id="new-features_3">New features</h3>
 <ul>
 <li>Implementation of the subnamespace <code>$arr</code> for expressions on <code>array</code>-type
-    columns. An <code>array</code> column is similar to a <code>list</code> column, but is stricter as
-    each sub-array must have the same number of elements (<a href="https://github.com/pola-rs/r-polars/issues/790">#790</a>).</li>
+  columns. An <code>array</code> column is similar to a <code>list</code> column, but is stricter as
+  each sub-array must have the same number of elements (<a href="https://github.com/pola-rs/r-polars/issues/790">#790</a>).</li>
 </ul>
 <h3 id="other-improvements_1">Other improvements</h3>
 <ul>
 <li>The <code>sql</code> feature is included in the default feature (<a href="https://github.com/pola-rs/r-polars/issues/800">#800</a>).
-    This means that functionality related to the <code>RPolarsSQLContext</code> class
-    is now always included in the binary package.</li>
+  This means that functionality related to the <code>RPolarsSQLContext</code> class
+  is now always included in the binary package.</li>
 </ul>
 <h2 id="polars-r-package-0131">Polars R Package 0.13.1</h2>
 <h3 id="new-features_4">New features</h3>
 <ul>
 <li>New method <code>$write_parquet()</code> for DataFrame (<a href="https://github.com/pola-rs/r-polars/issues/758">#758</a>).</li>
 <li>S3 methods of <code>as.data.frame()</code> for <code>RPolarsDataFrame</code> and <code>RPolarsLazyFrame</code>
-    accepts more arguments of <code>as_polars_df()</code> and <code>&lt;DataFrame&gt;$to_data_frame()</code> (<a href="https://github.com/pola-rs/r-polars/issues/762">#762</a>).</li>
+  accepts more arguments of <code>as_polars_df()</code> and <code>&lt;DataFrame&gt;$to_data_frame()</code> (<a href="https://github.com/pola-rs/r-polars/issues/762">#762</a>).</li>
 <li>S3 methods of <code>arrow::as_arrow_table()</code> and <code>arrow::as_record_batch_reader()</code> for
-    <code>RPolarsDataFrame</code> no longer need the <code>{nanoarrow}</code> package (<a href="https://github.com/pola-rs/r-polars/issues/754">#754</a>).</li>
+  <code>RPolarsDataFrame</code> no longer need the <code>{nanoarrow}</code> package (<a href="https://github.com/pola-rs/r-polars/issues/754">#754</a>).</li>
 <li>Some S3 methods for the <code>{nanoarrow}</code> package are added (<a href="https://github.com/pola-rs/r-polars/issues/730">#730</a>).<ul>
 <li><code>as_polars_df(&lt;nanoarrow_array_stream&gt;)</code></li>
 <li><code>as_polars_series(&lt;nanoarrow_array&gt;)</code></li>
@@ -16339,94 +16339,94 @@ from Polars to R.</p>
 <li><code>&lt;Expr&gt;$where()</code> is removed. Use <code>&lt;Expr&gt;$filter()</code> instead (<a href="https://github.com/pola-rs/r-polars/issues/718">#718</a>).</li>
 <li>Deprecated functions from 0.12.x are removed (<a href="https://github.com/pola-rs/r-polars/issues/714">#714</a>).<ul>
 <li><code>&lt;Expr&gt;$apply()</code> and <code>&lt;Expr&gt;$map()</code>, use <code>$map_elements()</code> and
-    <code>$map_batches()</code> instead.</li>
+  <code>$map_batches()</code> instead.</li>
 <li><code>pl$polars_info()</code>, use <code>polars_info()</code> instead.</li>
 </ul>
 </li>
 <li>The environment variables used when building the library have been changed
-    (<a href="https://github.com/pola-rs/r-polars/issues/693">#693</a>). This only affects selecting the feature flag and selecting profiles
-    during source installation.<ul>
+  (<a href="https://github.com/pola-rs/r-polars/issues/693">#693</a>). This only affects selecting the feature flag and selecting profiles
+  during source installation.<ul>
 <li><code>RPOLARS_PROFILE</code> is renamed to <code>LIBR_POLARS_PROFILE</code></li>
 <li><code>RPOLARS_FULL_FEATURES</code> is removed and <code>LIBR_POLARS_FEATURES</code> is added.
-    To select the <code>full_features</code>, set <code>LIBR_POLARS_FEATURES="full_features"</code>.</li>
+  To select the <code>full_features</code>, set <code>LIBR_POLARS_FEATURES="full_features"</code>.</li>
 <li><code>RPOLARS_RUST_SOURCE</code>, which was used for development, has been removed.
-    If you want to use library binaries located elsewhere, use <code>LIBR_POLARS_PATH</code>
-    instead.</li>
+  If you want to use library binaries located elsewhere, use <code>LIBR_POLARS_PATH</code>
+  instead.</li>
 </ul>
 </li>
 <li>Remove the <code>eager</code> argument of <code>&lt;SQLContext&gt;$execute()</code>.
-    Use the <code>$collect()</code> method after <code>$execute()</code> or <code>as_polars_df</code> to get the
-    result as a <code>DataFrame</code>. (<a href="https://github.com/pola-rs/r-polars/issues/719">#719</a>)</li>
+  Use the <code>$collect()</code> method after <code>$execute()</code> or <code>as_polars_df</code> to get the
+  result as a <code>DataFrame</code>. (<a href="https://github.com/pola-rs/r-polars/issues/719">#719</a>)</li>
 <li>The argument <code>name_generator</code> of <code>$list$to_struct()</code> is renamed <code>fields</code>
-    (<a href="https://github.com/pola-rs/r-polars/issues/724">#724</a>).</li>
+  (<a href="https://github.com/pola-rs/r-polars/issues/724">#724</a>).</li>
 <li>The S3 method <code>[</code> for the <code>$list</code> subnamespace is removed (<a href="https://github.com/pola-rs/r-polars/issues/724">#724</a>).</li>
 <li>The option <code>polars.df_print</code> has been renamed <code>polars.df_knitr_print</code> (<a href="https://github.com/pola-rs/r-polars/issues/726">#726</a>).</li>
 </ul>
 <h3 id="deprecations_1">Deprecations</h3>
 <ul>
 <li><code>$list$lengths()</code> is deprecated and will be removed in 0.14.0. Use
-    <code>$list$len()</code> instead (<a href="https://github.com/pola-rs/r-polars/issues/724">#724</a>).</li>
+  <code>$list$len()</code> instead (<a href="https://github.com/pola-rs/r-polars/issues/724">#724</a>).</li>
 <li><code>pl$from_arrow()</code> is deprecated and will be removed in 0.14.0.
-    Use <code>as_polars_df()</code> or <code>as_polars_series()</code> instead (<a href="https://github.com/pola-rs/r-polars/issues/728">#728</a>).</li>
+  Use <code>as_polars_df()</code> or <code>as_polars_series()</code> instead (<a href="https://github.com/pola-rs/r-polars/issues/728">#728</a>).</li>
 <li><code>pl$set_options()</code> and <code>pl$reset_options()</code> are deprecated and will be
-    removed in 0.14.0. See <code>?polars_options</code> for details (<a href="https://github.com/pola-rs/r-polars/issues/726">#726</a>).</li>
+  removed in 0.14.0. See <code>?polars_options</code> for details (<a href="https://github.com/pola-rs/r-polars/issues/726">#726</a>).</li>
 </ul>
 <h3 id="new-features_5">New features</h3>
 <ul>
 <li>For compatibility with CRAN, the number of threads used by Polars is automatically set to 2
-    if the environment variable <code>POLARS_MAX_THREADS</code> is not set (<a href="https://github.com/pola-rs/r-polars/issues/720">#720</a>).
-    To disable this behavior and have the maximum number of threads used automatically,
-    one of the following ways can be used:<ul>
+  if the environment variable <code>POLARS_MAX_THREADS</code> is not set (<a href="https://github.com/pola-rs/r-polars/issues/720">#720</a>).
+  To disable this behavior and have the maximum number of threads used automatically,
+  one of the following ways can be used:<ul>
 <li>Build the Rust library with the <code>disable_limit_max_threads</code> feature.</li>
 <li>Set the <code>polars.limit_max_threads</code> option to <code>FALSE</code> with the <code>options()</code> function
-    before loading the package.</li>
+  before loading the package.</li>
 </ul>
 </li>
 <li>New method <code>$rolling()</code> for <code>DataFrame</code> and <code>LazyFrame</code>. When this is
-    applied, it creates an object of class <code>RPolarsRollingGroupBy</code> (<a href="https://github.com/pola-rs/r-polars/issues/682">#682</a>, <a href="https://github.com/pola-rs/r-polars/issues/694">#694</a>).</li>
+  applied, it creates an object of class <code>RPolarsRollingGroupBy</code> (<a href="https://github.com/pola-rs/r-polars/issues/682">#682</a>, <a href="https://github.com/pola-rs/r-polars/issues/694">#694</a>).</li>
 <li>New method <code>$group_by_dynamic()</code> for <code>DataFrame</code> and <code>LazyFrame</code>. When this
-    is applied, it creates an object of class <code>RPolarsDynamicGroupBy</code> (<a href="https://github.com/pola-rs/r-polars/issues/691">#691</a>).</li>
+  is applied, it creates an object of class <code>RPolarsDynamicGroupBy</code> (<a href="https://github.com/pola-rs/r-polars/issues/691">#691</a>).</li>
 <li>New method <code>$sink_ndjson()</code> for LazyFrame (<a href="https://github.com/pola-rs/r-polars/issues/681">#681</a>).</li>
 <li>New function <code>pl$duration()</code> to create a duration by components (week, day,
-    hour, etc.), and use them with date(time) variables (<a href="https://github.com/pola-rs/r-polars/issues/692">#692</a>).</li>
+  hour, etc.), and use them with date(time) variables (<a href="https://github.com/pola-rs/r-polars/issues/692">#692</a>).</li>
 <li>New methods <code>$list$any()</code> and <code>$list$all()</code> (<a href="https://github.com/pola-rs/r-polars/issues/709">#709</a>).</li>
 <li>New function <code>pl$from_epoch()</code> to convert a Unix timestamp to a date(time)
-    variable (<a href="https://github.com/pola-rs/r-polars/issues/708">#708</a>).</li>
+  variable (<a href="https://github.com/pola-rs/r-polars/issues/708">#708</a>).</li>
 <li>New methods for the <code>list</code> subnamespace: <code>$set_union()</code>, <code>$set_intersection()</code>,
-    <code>$set_difference()</code>, <code>$set_symmetric_difference()</code> (<a href="https://github.com/pola-rs/r-polars/issues/712">#712</a>).</li>
+  <code>$set_difference()</code>, <code>$set_symmetric_difference()</code> (<a href="https://github.com/pola-rs/r-polars/issues/712">#712</a>).</li>
 <li>New option <code>int64_conversion</code> to specify how Int64 columns (that don't have
-    equivalent in base R) should be converted. This option can either be set
-    globally with <code>pl$set_options()</code> or on a case-by-case basis, e.g with
-    <code>$to_data_frame(int64_conversion =)</code> (<a href="https://github.com/pola-rs/r-polars/issues/706">#706</a>).</li>
+  equivalent in base R) should be converted. This option can either be set
+  globally with <code>pl$set_options()</code> or on a case-by-case basis, e.g with
+  <code>$to_data_frame(int64_conversion =)</code> (<a href="https://github.com/pola-rs/r-polars/issues/706">#706</a>).</li>
 <li>Several changes in <code>$join()</code> for <code>DataFrame</code> and <code>LazyFrame</code> (<a href="https://github.com/pola-rs/r-polars/issues/716">#716</a>):<ul>
 <li><code>&lt;LazyFrame&gt;$join()</code> now errors if <code>other</code> is not a <code>LazyFrame</code> and
-    <code>&lt;DataFrame&gt;$join()</code> errors if <code>other</code> is not a <code>DataFrame</code>.</li>
+  <code>&lt;DataFrame&gt;$join()</code> errors if <code>other</code> is not a <code>DataFrame</code>.</li>
 <li>Some arguments have been reordered (e.g <code>how</code> now comes before <code>left_on</code>).
-    This can lead to bugs if the user didn't use argument names.</li>
+  This can lead to bugs if the user didn't use argument names.</li>
 <li>Argument <code>how</code> now accepts <code>"outer_coalesce"</code> to coalesce the join keys
-    automatically after joining.</li>
+  automatically after joining.</li>
 <li>New argument <code>validate</code> to perform some checks on join keys (e.g ensure
-    that there is a one-to-one matching between join keys).</li>
+  that there is a one-to-one matching between join keys).</li>
 <li>New argument <code>join_nulls</code> to consider <code>null</code> values as a valid key.</li>
 </ul>
 </li>
 <li><code>&lt;DataFrame&gt;$describe()</code> now works with all datatypes. It also gains an
-    <code>interpolation</code> argument that is used for quantiles computation (<a href="https://github.com/pola-rs/r-polars/issues/717">#717</a>).</li>
+  <code>interpolation</code> argument that is used for quantiles computation (<a href="https://github.com/pola-rs/r-polars/issues/717">#717</a>).</li>
 <li><code>as_polars_df()</code> and <code>as_polars_series()</code> for the <code>arrow</code> package classes have been
-    rewritten and work better (<a href="https://github.com/pola-rs/r-polars/issues/727">#727</a>).</li>
+  rewritten and work better (<a href="https://github.com/pola-rs/r-polars/issues/727">#727</a>).</li>
 <li>Options handling has been rewritten to match the standard option handling in
-    R (<a href="https://github.com/pola-rs/r-polars/issues/726">#726</a>):<ul>
+  R (<a href="https://github.com/pola-rs/r-polars/issues/726">#726</a>):<ul>
 <li>Options are now passed via <code>options()</code>. The option names don't change but
-    they must be prefixed with <code>"polars."</code>. For example, we can now pass
-    <code>options(polars.strictly_immutable = FALSE)</code>.</li>
+  they must be prefixed with <code>"polars."</code>. For example, we can now pass
+  <code>options(polars.strictly_immutable = FALSE)</code>.</li>
 <li>Options can be accessed with <code>polars_options()</code>, which returns a named
-    list (this is the replacement of <code>pl$options</code>).</li>
+  list (this is the replacement of <code>pl$options</code>).</li>
 <li>Options can be reset with <code>polars_options_reset()</code> (this is the
-    replacement of <code>pl$reset_options()</code>).</li>
+  replacement of <code>pl$reset_options()</code>).</li>
 </ul>
 </li>
 <li>New function <code>polars_envvars()</code> to print the list of environment variables
-    related to polars (<a href="https://github.com/pola-rs/r-polars/issues/735">#735</a>).</li>
+  related to polars (<a href="https://github.com/pola-rs/r-polars/issues/735">#735</a>).</li>
 </ul>
 <h2 id="polars-r-package-0122">Polars R Package 0.12.2</h2>
 <p>This is a small release including a few documentation improvements and internal updates.</p>
@@ -16436,20 +16436,20 @@ a large amount of documentation improvements.</p>
 <h3 id="deprecations_2">Deprecations</h3>
 <ul>
 <li><code>pl$polars_info()</code> is moved to <code>polars_info()</code>. <code>pl$polars_info()</code> is deprecated
-    and will be removed in 0.13.0 (<a href="https://github.com/pola-rs/r-polars/issues/662">#662</a>).</li>
+  and will be removed in 0.13.0 (<a href="https://github.com/pola-rs/r-polars/issues/662">#662</a>).</li>
 </ul>
 <h3 id="rust-polars-update">Rust-polars update</h3>
 <ul>
 <li>rust-polars is updated to 0.36.2 (<a href="https://github.com/pola-rs/r-polars/issues/659">#659</a>). Most of the changes from 0.35.x to 0.36.2
-    were covered in R polars 0.12.0.
-    The main change is that <code>pl$Utf8</code> is replaced by <code>pl$String</code>.
-    <code>pl$Utf8</code> is an alias and will keep working, but <code>pl$String</code> is now preferred
-    in the documentation and in new code.</li>
+  were covered in R polars 0.12.0.
+  The main change is that <code>pl$Utf8</code> is replaced by <code>pl$String</code>.
+  <code>pl$Utf8</code> is an alias and will keep working, but <code>pl$String</code> is now preferred
+  in the documentation and in new code.</li>
 </ul>
 <h3 id="whats-changed">What's changed</h3>
 <ul>
 <li>New methods <code>$str$reverse()</code>, <code>$str$contains_any()</code>, and <code>$str$replace_many()</code>
-    (<a href="https://github.com/pola-rs/r-polars/issues/641">#641</a>).</li>
+  (<a href="https://github.com/pola-rs/r-polars/issues/641">#641</a>).</li>
 <li>New methods <code>$rle()</code> and <code>$rle_id()</code> (<a href="https://github.com/pola-rs/r-polars/issues/648">#648</a>).</li>
 <li>New functions <code>is_polars_df()</code>, <code>is_polars_lf()</code>, <code>is_polars_series()</code> (<a href="https://github.com/pola-rs/r-polars/issues/658">#658</a>).</li>
 <li><code>$gather()</code> now accepts negative indexing (<a href="https://github.com/pola-rs/r-polars/issues/659">#659</a>).</li>
@@ -16457,17 +16457,17 @@ a large amount of documentation improvements.</p>
 <h3 id="miscellaneous">Miscellaneous</h3>
 <ul>
 <li>Remove the <code>Makefile</code> in favor of <code>Taskfile.yml</code>.
-    Please use <code>task</code> instead of <code>make</code> as a task runner in the development (<a href="https://github.com/pola-rs/r-polars/issues/654">#654</a>).</li>
+  Please use <code>task</code> instead of <code>make</code> as a task runner in the development (<a href="https://github.com/pola-rs/r-polars/issues/654">#654</a>).</li>
 </ul>
 <h2 id="polars-r-package-0120">Polars R Package 0.12.0</h2>
 <h3 id="breaking-changes-due-to-rust-polars-update_2">BREAKING CHANGES DUE TO RUST-POLARS UPDATE</h3>
 <ul>
 <li>rust-polars is updated to 2023-12-25 unreleased version (<a href="https://github.com/pola-rs/r-polars/issues/601">#601</a>, <a href="https://github.com/pola-rs/r-polars/issues/622">#622</a>).
-    This is the same version of Python Polars package 0.20.2, so please check
-    the <a href="https://pola-rs.github.io/polars/releases/upgrade/0.20/">upgrade guide</a> for details too.<ul>
+  This is the same version of Python Polars package 0.20.2, so please check
+  the <a href="https://pola-rs.github.io/polars/releases/upgrade/0.20/">upgrade guide</a> for details too.<ul>
 <li><code>pl$scan_csv()</code> and <code>pl$read_csv()</code>'s <code>comment_char</code> argument is renamed <code>comment_prefix</code>.</li>
 <li><code>&lt;DataFrame&gt;$frame_equal()</code> and <code>&lt;Series&gt;$series_equal()</code> are renamed
-    to <code>&lt;DataFrame&gt;$equals()</code> and <code>&lt;Series&gt;$equals()</code>.</li>
+  to <code>&lt;DataFrame&gt;$equals()</code> and <code>&lt;Series&gt;$equals()</code>.</li>
 <li><code>&lt;Expr&gt;$rolling_*</code> functions gained an argument <code>warn_if_unsorted</code>.</li>
 <li><code>&lt;Expr&gt;$str$json_extract()</code> is renamed to <code>&lt;Expr&gt;$str$json_decode()</code>.</li>
 <li>Change default join behavior with regard to <code>null</code> values.</li>
@@ -16481,18 +16481,18 @@ a large amount of documentation improvements.</p>
 <h3 id="breaking-changes-and-deprecations">Breaking changes and deprecations</h3>
 <ul>
 <li><code>$apply()</code> on an Expr or a Series is renamed <code>$map_elements()</code>, and <code>$map()</code>
-    is renamed <code>$map_batches()</code>. <code>$map()</code> and <code>$apply()</code> will be removed in 0.13.0 (<a href="https://github.com/pola-rs/r-polars/issues/534">#534</a>).</li>
+  is renamed <code>$map_batches()</code>. <code>$map()</code> and <code>$apply()</code> will be removed in 0.13.0 (<a href="https://github.com/pola-rs/r-polars/issues/534">#534</a>).</li>
 <li>Removed <code>$days()</code>, <code>$hours()</code>, <code>$minutes()</code>, <code>$seconds()</code>, <code>$milliseconds()</code>,
-    <code>$microseconds()</code>, <code>$nanoseconds()</code>. Those were deprecated in 0.11.0 (<a href="https://github.com/pola-rs/r-polars/issues/550">#550</a>).</li>
+  <code>$microseconds()</code>, <code>$nanoseconds()</code>. Those were deprecated in 0.11.0 (<a href="https://github.com/pola-rs/r-polars/issues/550">#550</a>).</li>
 <li><code>pl$concat_list()</code>: elements being strings are now interpreted as column names.
-    Use <code>pl$lit</code> to concat with a string.</li>
+  Use <code>pl$lit</code> to concat with a string.</li>
 <li><code>&lt;RPolarsExpr&gt;$lit_to_s()</code> is renamed to <code>&lt;RPolarsExpr&gt;$to_series()</code> (<a href="https://github.com/pola-rs/r-polars/issues/582">#582</a>).</li>
 <li><code>&lt;RPolarsExpr&gt;$lit_to_df()</code> is removed (<a href="https://github.com/pola-rs/r-polars/issues/582">#582</a>).</li>
 <li>Change class names and function names associated with class names.<ul>
 <li>The class name of all objects created by polars (<code>DataFrame</code>, <code>LazyFrame</code>,
-    <code>Expr</code>, <code>Series</code>, etc.) has changed. They now start with <code>RPolars</code>, for example
-    <code>RPolarsDataFrame</code>. This will only break your code if you directly use those
-    class names, such as in S3 methods (<a href="https://github.com/pola-rs/r-polars/issues/554">#554</a>, <a href="https://github.com/pola-rs/r-polars/issues/585">#585</a>).</li>
+  <code>Expr</code>, <code>Series</code>, etc.) has changed. They now start with <code>RPolars</code>, for example
+  <code>RPolarsDataFrame</code>. This will only break your code if you directly use those
+  class names, such as in S3 methods (<a href="https://github.com/pola-rs/r-polars/issues/554">#554</a>, <a href="https://github.com/pola-rs/r-polars/issues/585">#585</a>).</li>
 <li>Private methods have been unified so that they do not have the <code>RPolars</code> prefix (<a href="https://github.com/pola-rs/r-polars/issues/584">#584</a>).</li>
 </ul>
 </li>
@@ -16500,39 +16500,39 @@ a large amount of documentation improvements.</p>
 <h3 id="whats-changed_1">What's changed</h3>
 <ul>
 <li>The Extract function (<code>[</code>) for DataFrame can use columns not included in the
-    result for filtering (<a href="https://github.com/pola-rs/r-polars/issues/547">#547</a>).</li>
+  result for filtering (<a href="https://github.com/pola-rs/r-polars/issues/547">#547</a>).</li>
 <li>The Extract function (<code>[</code>) for LazyFrame can filter rows with Expressions (<a href="https://github.com/pola-rs/r-polars/issues/547">#547</a>).</li>
 <li><code>as_polars_df()</code> for <code>data.frame</code> has a new argument <code>rownames</code> for to convert
-    the row.names attribute to a column.
-    This option is inspired by the <code>tibble::as_tibble()</code> function (<a href="https://github.com/pola-rs/r-polars/issues/561">#561</a>).</li>
+  the row.names attribute to a column.
+  This option is inspired by the <code>tibble::as_tibble()</code> function (<a href="https://github.com/pola-rs/r-polars/issues/561">#561</a>).</li>
 <li><code>as_polars_df()</code> for <code>data.frame</code> has a new argument <code>make_names_unique</code> (<a href="https://github.com/pola-rs/r-polars/issues/561">#561</a>).</li>
 <li>New methods <code>$str$to_date()</code>, <code>$str$to_time()</code>, <code>$str$to_datetime()</code> as
-    alternatives to <code>$str$strptime()</code> (<a href="https://github.com/pola-rs/r-polars/issues/558">#558</a>).</li>
+  alternatives to <code>$str$strptime()</code> (<a href="https://github.com/pola-rs/r-polars/issues/558">#558</a>).</li>
 <li>The <code>dim()</code> function for DataFrame and LazyFrame correctly returns integer instead of
-    double (<a href="https://github.com/pola-rs/r-polars/issues/577">#577</a>).</li>
+  double (<a href="https://github.com/pola-rs/r-polars/issues/577">#577</a>).</li>
 <li>The conversion of R's <code>POSIXct</code> class to Polars datetime now works correctly with millisecond
-    precision (<a href="https://github.com/pola-rs/r-polars/issues/589">#589</a>).</li>
+  precision (<a href="https://github.com/pola-rs/r-polars/issues/589">#589</a>).</li>
 <li><code>&lt;LazyFrame&gt;$filter()</code>, <code>&lt;DataFrame&gt;$filter()</code>, and <code>pl$when()</code> now allow multiple conditions
-    to be separated by commas, like <code>lf$filter(pl$col("foo") == 1, pl$col("bar") != 2)</code> (<a href="https://github.com/pola-rs/r-polars/issues/598">#598</a>).</li>
+  to be separated by commas, like <code>lf$filter(pl$col("foo") == 1, pl$col("bar") != 2)</code> (<a href="https://github.com/pola-rs/r-polars/issues/598">#598</a>).</li>
 <li>New method <code>$replace()</code> for expressions (<a href="https://github.com/pola-rs/r-polars/issues/601">#601</a>).</li>
 <li>Better error messages for trailing argument commas such as <code>pl$DataFrame()$select("a",)</code> (<a href="https://github.com/pola-rs/r-polars/issues/607">#607</a>).</li>
 <li>New function <code>pl$threadpool_size()</code> to get the number of threads used by Polars (<a href="https://github.com/pola-rs/r-polars/issues/620">#620</a>).
-    Thread pool size is also included in the output of <code>pl$polars_info()</code>.</li>
+  Thread pool size is also included in the output of <code>pl$polars_info()</code>.</li>
 </ul>
 <h2 id="polars-r-package-0110">Polars R Package 0.11.0</h2>
 <h3 id="breaking-changes-due-to-rust-polars-update_3">BREAKING CHANGES DUE TO RUST-POLARS UPDATE</h3>
 <ul>
 <li>rust-polars is updated to 0.35.0 (2023-11-17) (<a href="https://github.com/pola-rs/r-polars/issues/515">#515</a>)<ul>
 <li>changes in <code>$write_csv()</code> and <code>sink_csv()</code>: <code>has_header</code> is renamed
-    <code>include_header</code> and there's a new argument <code>include_bom</code>.</li>
+  <code>include_header</code> and there's a new argument <code>include_bom</code>.</li>
 <li><code>pl$cov()</code> gains a <code>ddof</code> argument.</li>
 <li><code>$cumsum()</code>, <code>$cumprod()</code>, <code>$cummin()</code>, <code>$cummax()</code>, <code>$cumcount()</code> are
-    renamed <code>$cum_sum()</code>, <code>$cum_prod()</code>, <code>$cum_min()</code>, <code>$cum_max()</code>,
-    <code>$cum_count()</code>.</li>
+  renamed <code>$cum_sum()</code>, <code>$cum_prod()</code>, <code>$cum_min()</code>, <code>$cum_max()</code>,
+  <code>$cum_count()</code>.</li>
 <li><code>take()</code> and <code>take_every()</code> are renamed <code>$gather()</code> and <code>gather_every()</code>.</li>
 <li><code>$shift()</code> and <code>$shift_and_fill()</code> now accept Expr as input.</li>
 <li>when <code>reverse = TRUE</code>, <code>$arg_sort()</code> now places null values in the first
-    positions.</li>
+  positions.</li>
 <li>Removed argument <code>ambiguous</code> in <code>$dt$truncate()</code> and <code>$dt$round()</code>.</li>
 <li><code>$str$concat()</code> gains an argument <code>ignore_nulls</code>.</li>
 </ul>
@@ -16541,53 +16541,53 @@ a large amount of documentation improvements.</p>
 <h3 id="breaking-changes-and-deprecations_1">Breaking changes and deprecations</h3>
 <ul>
 <li>The rowwise computation when several columns are passed to <code>pl$min()</code>, <code>pl$max()</code>,
-    and <code>pl$sum()</code> is deprecated and will be removed in 0.12.0. Passing several
-    columns to these functions will now compute the min/max/sum in each column
-    separately. Use <code>pl$min_horizontal()</code> <code>pl$max_horizontal()</code>, and
-    <code>pl$sum_horizontal()</code> instead for rowwise computation (<a href="https://github.com/pola-rs/r-polars/issues/508">#508</a>).</li>
+  and <code>pl$sum()</code> is deprecated and will be removed in 0.12.0. Passing several
+  columns to these functions will now compute the min/max/sum in each column
+  separately. Use <code>pl$min_horizontal()</code> <code>pl$max_horizontal()</code>, and
+  <code>pl$sum_horizontal()</code> instead for rowwise computation (<a href="https://github.com/pola-rs/r-polars/issues/508">#508</a>).</li>
 <li><code>$is_not()</code> is deprecated and will be removed in 0.12.0. Use <code>$not()</code> instead
-    (<a href="https://github.com/pola-rs/r-polars/issues/511">#511</a>, <a href="https://github.com/pola-rs/r-polars/issues/531">#531</a>).</li>
+  (<a href="https://github.com/pola-rs/r-polars/issues/511">#511</a>, <a href="https://github.com/pola-rs/r-polars/issues/531">#531</a>).</li>
 <li><code>$is_first()</code> is deprecated and will be removed in 0.12.0. Use <code>$is_first_distinct()</code>
-    instead (<a href="https://github.com/pola-rs/r-polars/issues/531">#531</a>).</li>
+  instead (<a href="https://github.com/pola-rs/r-polars/issues/531">#531</a>).</li>
 <li>In <code>pl$concat()</code>, the argument <code>to_supertypes</code> is removed. Use the suffix
-    <code>"_relaxed"</code> in the <code>how</code> argument to cast columns to their shared supertypes
-    (<a href="https://github.com/pola-rs/r-polars/issues/523">#523</a>).</li>
+  <code>"_relaxed"</code> in the <code>how</code> argument to cast columns to their shared supertypes
+  (<a href="https://github.com/pola-rs/r-polars/issues/523">#523</a>).</li>
 <li>All duration methods (<code>days()</code>, <code>hours()</code>, <code>minutes()</code>, <code>seconds()</code>,
-    <code>milliseconds()</code>, <code>microseconds()</code>, <code>nanoseconds()</code>) are renamed, for example
-    from <code>$dt$days()</code> to <code>$dt$total_days()</code>. The old usage is deprecated and will
-    be removed in 0.12.0 (<a href="https://github.com/pola-rs/r-polars/issues/530">#530</a>).</li>
+  <code>milliseconds()</code>, <code>microseconds()</code>, <code>nanoseconds()</code>) are renamed, for example
+  from <code>$dt$days()</code> to <code>$dt$total_days()</code>. The old usage is deprecated and will
+  be removed in 0.12.0 (<a href="https://github.com/pola-rs/r-polars/issues/530">#530</a>).</li>
 <li>DataFrame methods <code>$as_data_frame()</code> is removed in favor of <code>$to_data_frame()</code> (<a href="https://github.com/pola-rs/r-polars/issues/533">#533</a>).</li>
 <li>GroupBy methods <code>$as_data_frame()</code> and <code>$to_data_frame()</code> which were used to
-    convert GroupBy objects to R data frames are removed.
-    Use <code>$ungroup()</code> method and the <code>as.data.frame()</code> function instead (<a href="https://github.com/pola-rs/r-polars/issues/533">#533</a>).</li>
+  convert GroupBy objects to R data frames are removed.
+  Use <code>$ungroup()</code> method and the <code>as.data.frame()</code> function instead (<a href="https://github.com/pola-rs/r-polars/issues/533">#533</a>).</li>
 </ul>
 <h3 id="whats-changed_2">What's changed</h3>
 <ul>
 <li>Fix the installation issue on Ubuntu 20.04 (<a href="https://github.com/pola-rs/r-polars/issues/528">#528</a>, thanks <a href="https://github.com/brownag">@brownag</a>).</li>
 <li>New methods <code>$write_json()</code> and <code>$write_ndjson()</code> for DataFrame (<a href="https://github.com/pola-rs/r-polars/issues/502">#502</a>).</li>
 <li>Removed argument <code>name</code> in <code>pl$date_range()</code>, which was deprecated for a while
-    (<a href="https://github.com/pola-rs/r-polars/issues/503">#503</a>).</li>
+  (<a href="https://github.com/pola-rs/r-polars/issues/503">#503</a>).</li>
 <li>New private method <code>.pr$DataFrame$drop_all_in_place(df)</code> to drop <code>DataFrame</code>
-    in-place, to release memory without invoking gc(). However, if there are other
-    strong references to any of the underlying Series or arrow arrays, that memory
-    will specifically not be released. This method is aimed for r-polars extensions,
-    and will be kept stable as much as possible (<a href="https://github.com/pola-rs/r-polars/issues/504">#504</a>).</li>
+  in-place, to release memory without invoking gc(). However, if there are other
+  strong references to any of the underlying Series or arrow arrays, that memory
+  will specifically not be released. This method is aimed for r-polars extensions,
+  and will be kept stable as much as possible (<a href="https://github.com/pola-rs/r-polars/issues/504">#504</a>).</li>
 <li>New functions <code>pl$min_horizontal()</code>, <code>pl$max_horizontal()</code>, <code>pl$sum_horizontal()</code>,
-    <code>pl$all_horizontal()</code>, <code>pl$any_horizontal()</code> (<a href="https://github.com/pola-rs/r-polars/issues/508">#508</a>).</li>
+  <code>pl$all_horizontal()</code>, <code>pl$any_horizontal()</code> (<a href="https://github.com/pola-rs/r-polars/issues/508">#508</a>).</li>
 <li>New generic functions <code>as_polars_df()</code> and <code>as_polars_lf()</code> to create polars
-    DataFrames and LazyFrames (<a href="https://github.com/pola-rs/r-polars/issues/519">#519</a>).</li>
+  DataFrames and LazyFrames (<a href="https://github.com/pola-rs/r-polars/issues/519">#519</a>).</li>
 <li>New method <code>$ungroup()</code> for <code>GroupBy</code> and <code>LazyGroupBy</code> (<a href="https://github.com/pola-rs/r-polars/issues/522">#522</a>).</li>
 <li>New method <code>$rolling()</code> to apply an Expr over a rolling window based on
-    date/datetime/numeric indices (<a href="https://github.com/pola-rs/r-polars/issues/470">#470</a>).</li>
+  date/datetime/numeric indices (<a href="https://github.com/pola-rs/r-polars/issues/470">#470</a>).</li>
 <li>New methods <code>$name$to_lowercase()</code> and <code>$name$to_uppercase()</code> to transform
-    variable names (<a href="https://github.com/pola-rs/r-polars/issues/529">#529</a>).</li>
+  variable names (<a href="https://github.com/pola-rs/r-polars/issues/529">#529</a>).</li>
 <li>New method <code>$is_last_distinct()</code> (<a href="https://github.com/pola-rs/r-polars/issues/531">#531</a>).</li>
 <li>New methods of the Expressions class, <code>$floor_div()</code>, <code>$mod()</code>, <code>$eq_missing()</code>
-    and <code>$neq_missing()</code>. The base R operators <code>%/%</code> and <code>%%</code> for Expressions are
-    now translated to <code>$floor_div()</code> and <code>$mod()</code> (<a href="https://github.com/pola-rs/r-polars/issues/523">#523</a>).<ul>
+  and <code>$neq_missing()</code>. The base R operators <code>%/%</code> and <code>%%</code> for Expressions are
+  now translated to <code>$floor_div()</code> and <code>$mod()</code> (<a href="https://github.com/pola-rs/r-polars/issues/523">#523</a>).<ul>
 <li>Note that <code>$mod()</code> of Polars is different from the R operator <code>%%</code>, which is
-    not guaranteed <code>x == (x %% y) + y * (x %/% y)</code>.
-    Please check the upstream issue <a href="https://github.com/pola-rs/polars/issues/10570">pola-rs/polars#10570</a>.</li>
+  not guaranteed <code>x == (x %% y) + y * (x %/% y)</code>.
+  Please check the upstream issue <a href="https://github.com/pola-rs/polars/issues/10570">pola-rs/polars#10570</a>.</li>
 </ul>
 </li>
 <li>The extract function (<code>[</code>) for polars objects now behave more like for base R objects (#543).</li>
@@ -16596,9 +16596,9 @@ a large amount of documentation improvements.</p>
 <h3 id="whats-changed_3">What's changed</h3>
 <ul>
 <li>The argument <code>quote_style</code> in <code>$write_csv()</code> and <code>$sink_csv()</code> can now take
-    the value <code>"never"</code> (<a href="https://github.com/pola-rs/r-polars/issues/483">#483</a>).</li>
+  the value <code>"never"</code> (<a href="https://github.com/pola-rs/r-polars/issues/483">#483</a>).</li>
 <li><code>pl$DataFrame()</code> now errors if the variables specified in <code>schema</code> do not exist
-    in the data (<a href="https://github.com/pola-rs/r-polars/issues/486">#486</a>).</li>
+  in the data (<a href="https://github.com/pola-rs/r-polars/issues/486">#486</a>).</li>
 <li>S3 methods for base R functions are well documented (<a href="https://github.com/pola-rs/r-polars/issues/494">#494</a>).</li>
 <li>A bug that failing <code>pl$SQLContext()$register()</code> without load the package was fixed (<a href="https://github.com/pola-rs/r-polars/issues/496">#496</a>).</li>
 </ul>
@@ -16608,11 +16608,11 @@ a large amount of documentation improvements.</p>
 <li>rust-polars is updated to 2023-10-25 unreleased version (<a href="https://github.com/pola-rs/r-polars/issues/442">#442</a>)<ul>
 <li>Minimum supported Rust version (MSRV) is now 1.73.</li>
 <li>New subnamespace <code>"name"</code> that contains methods <code>$prefix()</code>, <code>$suffix()</code>
-    <code>keep()</code> (renamed from <code>keep_name()</code>) and <code>map()</code> (renamed from <code>map_alias()</code>).</li>
+  <code>keep()</code> (renamed from <code>keep_name()</code>) and <code>map()</code> (renamed from <code>map_alias()</code>).</li>
 <li><code>$dt$round()</code> gains an argument <code>ambiguous</code>.</li>
 <li>The following methods now accept an <code>Expr</code> as input: <code>$top_k()</code>, <code>$bottom_k()</code>,
-    <code>$list$join()</code>, <code>$str$strip_chars()</code>, <code>$str$strip_chars_start()</code>,
-    <code>$str$strip_chars_end()</code>, <code>$str$split_exact()</code>.</li>
+  <code>$list$join()</code>, <code>$str$strip_chars()</code>, <code>$str$strip_chars_start()</code>,
+  <code>$str$strip_chars_end()</code>, <code>$str$split_exact()</code>.</li>
 <li>The following methods were renamed:<ul>
 <li><code>$str$n_chars()</code> -&gt; <code>$str$len_chars()</code></li>
 <li><code>$str$lengths()</code> -&gt; <code>$str$len_bytes()</code></li>
@@ -16621,9 +16621,9 @@ a large amount of documentation improvements.</p>
 </ul>
 </li>
 <li><code>$concat()</code> with <code>how = "diagonal"</code> now accepts an argument <code>to_supertypes</code>
-    to automatically convert concatenated columns to the same type.</li>
+  to automatically convert concatenated columns to the same type.</li>
 <li><code>pl$enable_string_cache()</code> doesn't take any argument anymore. The string cache
-    can now be disabled with <code>pl$disable_string_cache()</code>.</li>
+  can now be disabled with <code>pl$disable_string_cache()</code>.</li>
 <li><code>$scan_parquet()</code> gains an argument <code>hive_partitioning</code>.</li>
 <li><code>$meta$tree_format()</code> has a better formatted output.</li>
 </ul>
@@ -16633,23 +16633,23 @@ a large amount of documentation improvements.</p>
 <ul>
 <li><code>$scan_csv()</code> and <code>$read_csv()</code> now match more closely the Python-Polars API (<a href="https://github.com/pola-rs/r-polars/issues/455">#455</a>):<ul>
 <li><code>sep</code> is renamed <code>separator</code>, <code>overwrite_dtypes</code> is renamed <code>dtypes</code>,
-    <code>parse_dates</code> is renamed <code>try_parse_dates</code>.</li>
+  <code>parse_dates</code> is renamed <code>try_parse_dates</code>.</li>
 <li>new arguments <code>rechunk</code>, <code>eol_char</code>, <code>raise_if_empty</code>, <code>truncate_ragged_lines</code></li>
 <li><code>path</code> can now be a vector of characters indicating several paths to CSV files.
-    This only works if all CSV files have the same schema.</li>
+  This only works if all CSV files have the same schema.</li>
 </ul>
 </li>
 </ul>
 <h3 id="whats-changed_4">What's changed</h3>
 <ul>
 <li>New class <code>RPolarsSQLContext</code> and its methods to perform SQL queries on DataFrame-
-    like objects. To use this feature, needs to build Rust library with full features
-    (<a href="https://github.com/pola-rs/r-polars/issues/457">#457</a>).</li>
+  like objects. To use this feature, needs to build Rust library with full features
+  (<a href="https://github.com/pola-rs/r-polars/issues/457">#457</a>).</li>
 <li>New methods <code>$peak_min()</code> and <code>$peak_max()</code> to find local minima and maxima in
-    an Expr (<a href="https://github.com/pola-rs/r-polars/issues/462">#462</a>).</li>
+  an Expr (<a href="https://github.com/pola-rs/r-polars/issues/462">#462</a>).</li>
 <li>New methods <code>$read_ndjson()</code> and <code>$scan_ndjson()</code> (<a href="https://github.com/pola-rs/r-polars/issues/471">#471</a>).</li>
 <li>New method <code>$with_context()</code> for <code>LazyFrame</code> to have access to columns from
-    other Data/LazyFrames during the computation (<a href="https://github.com/pola-rs/r-polars/issues/475">#475</a>).</li>
+  other Data/LazyFrames during the computation (<a href="https://github.com/pola-rs/r-polars/issues/475">#475</a>).</li>
 </ul>
 <h2 id="polars-r-package-090">Polars R Package 0.9.0</h2>
 <h3 id="breaking-changes-due-to-rust-polars-update_5">BREAKING CHANGES DUE TO RUST-POLARS UPDATE</h3>
@@ -16658,7 +16658,7 @@ a large amount of documentation improvements.</p>
 <li>In all date-time related methods, the argument <code>use_earliest</code> is replaced by <code>ambiguous</code>.</li>
 <li>In <code>$sample()</code> and <code>$shuffle()</code>, the argument <code>fixed_seed</code> is removed.</li>
 <li>In <code>$value_counts()</code>, the arguments <code>multithreaded</code> and <code>sort</code>
-    (sometimes called <code>sorted</code>) have been swapped and renamed <code>sort</code> and <code>parallel</code>.</li>
+  (sometimes called <code>sorted</code>) have been swapped and renamed <code>sort</code> and <code>parallel</code>.</li>
 <li><code>$str$count_match()</code> gains a <code>literal</code> argument.</li>
 <li><code>$arg_min()</code> doesn't consider <code>NA</code> as the minimum anymore (this was already the behavior of <code>$min()</code>).</li>
 <li>Using <code>$is_in()</code> with <code>NA</code> on both sides now returns <code>NA</code> and not <code>TRUE</code> anymore.</li>
@@ -16679,13 +16679,13 @@ a large amount of documentation improvements.</p>
 <ul>
 <li>Remove some deprecated methods.<ul>
 <li>Method <code>$with_column()</code> has been removed (it was deprecated since 0.8.0).
-    Use <code>$with_columns()</code> instead (<a href="https://github.com/pola-rs/r-polars/issues/402">#402</a>).</li>
+  Use <code>$with_columns()</code> instead (<a href="https://github.com/pola-rs/r-polars/issues/402">#402</a>).</li>
 <li>Subnamespace <code>$arr</code> has been removed (it was deprecated since 0.8.1).
-    Use <code>$list</code> instead (<a href="https://github.com/pola-rs/r-polars/issues/402">#402</a>).</li>
+  Use <code>$list</code> instead (<a href="https://github.com/pola-rs/r-polars/issues/402">#402</a>).</li>
 </ul>
 </li>
 <li>Setting and getting polars options is now made with <code>pl$options</code>,
-    <code>pl$set_options()</code> and <code>pl$reset_options()</code> (<a href="https://github.com/pola-rs/r-polars/issues/384">#384</a>).</li>
+  <code>pl$set_options()</code> and <code>pl$reset_options()</code> (<a href="https://github.com/pola-rs/r-polars/issues/384">#384</a>).</li>
 </ul>
 <h3 id="whats-changed_5">What's changed</h3>
 <ul>
@@ -16695,15 +16695,15 @@ a large amount of documentation improvements.</p>
 <li>New method <code>$sample()</code> for <code>DataFrame</code> (<a href="https://github.com/pola-rs/r-polars/issues/399">#399</a>).</li>
 <li>New method <code>$meta$tree_format()</code> to display an <code>Expr</code> as a tree (<a href="https://github.com/pola-rs/r-polars/issues/401">#401</a>).</li>
 <li>New argument <code>schema</code> in <code>pl$DataFrame()</code> and <code>pl$LazyFrame()</code> to override the
-    automatic type detection (<a href="https://github.com/pola-rs/r-polars/issues/385">#385</a>).</li>
+  automatic type detection (<a href="https://github.com/pola-rs/r-polars/issues/385">#385</a>).</li>
 <li>Fix bug when calling R from polars via e.g. <code>$map()</code> where query would not
-    complete in one edge case (<a href="https://github.com/pola-rs/r-polars/issues/409">#409</a>).</li>
+  complete in one edge case (<a href="https://github.com/pola-rs/r-polars/issues/409">#409</a>).</li>
 <li>New method <code>$cat$get_categories()</code> to list unique values of categorical
-    variables (<a href="https://github.com/pola-rs/r-polars/issues/412">#412</a>).</li>
+  variables (<a href="https://github.com/pola-rs/r-polars/issues/412">#412</a>).</li>
 <li>New methods <code>$fold()</code> and <code>$reduce()</code> to apply an R function rowwise (<a href="https://github.com/pola-rs/r-polars/issues/403">#403</a>).</li>
 <li>New function <code>pl$raw_list</code> and class <code>rpolars_raw_list</code> a list of R Raw's, where missing is
-    encoded as <code>NULL</code> to aid conversion to polars binary Series. Support back and forth conversion
-    from polars binary literal and Series to R raw (<a href="https://github.com/pola-rs/r-polars/issues/417">#417</a>).</li>
+  encoded as <code>NULL</code> to aid conversion to polars binary Series. Support back and forth conversion
+  from polars binary literal and Series to R raw (<a href="https://github.com/pola-rs/r-polars/issues/417">#417</a>).</li>
 <li>New method <code>$write_csv()</code> for <code>DataFrame</code> (<a href="https://github.com/pola-rs/r-polars/issues/414">#414</a>).</li>
 <li>New method <code>$sink_csv()</code> for <code>LazyFrame</code> (<a href="https://github.com/pola-rs/r-polars/issues/432">#432</a>).</li>
 <li>New method <code>$dt$time()</code> to extract the time from a <code>datetime</code> variable (<a href="https://github.com/pola-rs/r-polars/issues/428">#428</a>).</li>
@@ -16714,7 +16714,7 @@ a large amount of documentation improvements.</p>
 <li>New argument <code>eager</code> of <code>LazyFrame$set_optimization_toggle()</code> (<a href="https://github.com/pola-rs/r-polars/issues/439">#439</a>).</li>
 <li>
 <p><code>{polars}</code> can now be installed with "R source package with Rust library binary",
-    by a mechanism copied from <a href="https://CRAN.R-project.org/package=prqlr">the prqlr package</a>.</p>
+  by a mechanism copied from <a href="https://CRAN.R-project.org/package=prqlr">the prqlr package</a>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">NOT_CRAN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">)</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;polars&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">repos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://rpolars.r-universe.dev&quot;</span><span class="p">)</span>
 </code></pre></div>
@@ -16727,10 +16727,10 @@ a large amount of documentation improvements.</p>
 <ul>
 <li>New string method <code>to_titlecase()</code> (<a href="https://github.com/pola-rs/r-polars/issues/371">#371</a>).</li>
 <li>Although stated in news for PR (<a href="https://github.com/pola-rs/r-polars/issues/334">#334</a>) <code>strip = true</code> was not actually set for the
-    "release-optimized" compilation profile. Now it is, but the binary sizes seems unchanged (<a href="https://github.com/pola-rs/r-polars/issues/377">#377</a>).</li>
+  "release-optimized" compilation profile. Now it is, but the binary sizes seems unchanged (<a href="https://github.com/pola-rs/r-polars/issues/377">#377</a>).</li>
 <li>New vignette on best practices to improve <code>polars</code> performance (<a href="https://github.com/pola-rs/r-polars/issues/188">#188</a>).</li>
 <li>Subnamespace name "arr" as in <code>&lt;Expr&gt;$arr$</code> &amp; <code>&lt;Series&gt;$arr$</code> is deprecated
-    in favor of "list". The subnamespace "arr" will be removed in polars 0.9.0 (<a href="https://github.com/pola-rs/r-polars/issues/375">#375</a>).</li>
+  in favor of "list". The subnamespace "arr" will be removed in polars 0.9.0 (<a href="https://github.com/pola-rs/r-polars/issues/375">#375</a>).</li>
 </ul>
 <h2 id="polars-r-package-080">Polars R Package 0.8.0</h2>
 <h3 id="breaking-changes-due-to-rust-polars-update_6">BREAKING CHANGES DUE TO RUST-POLARS UPDATE</h3>
@@ -16739,49 +16739,49 @@ features. Unrelated breaking changes and new features are put in separate sectio
 (<a href="https://github.com/pola-rs/r-polars/issues/334">#334</a>):</p>
 <ul>
 <li>update of rust toolchain: nightly bumped to nightly-2023-07-27 and MSRV is
-    now &gt;=1.70.</li>
+  now &gt;=1.70.</li>
 <li>param <code>common_subplan_elimination = TRUE</code> in <code>&lt;LazyFrame&gt;</code> methods <code>$collect()</code>,
-    <code>$sink_ipc()</code> and <code>$sink_parquet()</code> is renamed and split into
-    <code>comm_subplan_elim = TRUE</code> and <code>comm_subexpr_elim = TRUE</code>.</li>
+  <code>$sink_ipc()</code> and <code>$sink_parquet()</code> is renamed and split into
+  <code>comm_subplan_elim = TRUE</code> and <code>comm_subexpr_elim = TRUE</code>.</li>
 <li>Series_is_sorted: nulls_last argument is dropped.</li>
 <li><code>when-then-otherwise</code> classes are renamed to <code>When</code>, <code>Then</code>, <code>ChainedWhen</code>
-    and <code>ChainedThen</code>. The syntactically illegal methods have been removed, e.g.
-    chaining <code>$when()</code> twice.</li>
+  and <code>ChainedThen</code>. The syntactically illegal methods have been removed, e.g.
+  chaining <code>$when()</code> twice.</li>
 <li>Github release + R-universe is compiled with <code>profile=release-optimized</code>,
-    which now includes <code>strip=false</code>, <code>lto=fat</code> &amp; <code>codegen-units=1</code>. This should
-    make the binary a bit smaller and faster. See also FULL_FEATURES=<code>true</code> env
-    flag to enable simd with nightly rust. For development or faster compilation,
-    use instead <code>profile=release</code>.</li>
+  which now includes <code>strip=false</code>, <code>lto=fat</code> &amp; <code>codegen-units=1</code>. This should
+  make the binary a bit smaller and faster. See also FULL_FEATURES=<code>true</code> env
+  flag to enable simd with nightly rust. For development or faster compilation,
+  use instead <code>profile=release</code>.</li>
 <li><code>fmt</code> arg is renamed <code>format</code> in <code>pl$Ptimes</code> and <code>&lt;Expr&gt;$str$strptime</code>.</li>
 <li><code>&lt;Expr&gt;$approx_unique()</code> changed name to <code>&lt;Expr&gt;$approx_n_unique()</code>.</li>
 <li><code>&lt;Expr&gt;$str$json_extract</code> arg <code>pat</code> changed to <code>dtype</code> and has a new argument
-    <code>infer_schema_length = 100</code>.</li>
-<li>Some arguments in <code>pl$date_range()</code> have changed: <code>low</code> -&gt; <code>start</code>,<br />
-<code>high</code> -&gt; <code>end</code>, <code>lazy = TRUE</code> -&gt; <code>eager = FALSE</code>. Args <code>time_zone</code> and <code>time_unit</code>
-    can no longer be used to implicitly cast time types. These two args can only
-    be used to annotate a naive time unit. Mixing <code>time_zone</code> and <code>time_unit</code> for
-    <code>start</code> and <code>end</code> is not allowed anymore.</li>
+  <code>infer_schema_length = 100</code>.</li>
+<li>Some arguments in <code>pl$date_range()</code> have changed: <code>low</code> -&gt; <code>start</code>,
+  <code>high</code> -&gt; <code>end</code>, <code>lazy = TRUE</code> -&gt; <code>eager = FALSE</code>. Args <code>time_zone</code> and <code>time_unit</code>
+  can no longer be used to implicitly cast time types. These two args can only
+  be used to annotate a naive time unit. Mixing <code>time_zone</code> and <code>time_unit</code> for
+  <code>start</code> and <code>end</code> is not allowed anymore.</li>
 <li><code>&lt;Expr&gt;$is_in()</code> operation no longer supported for dtype <code>null</code>.</li>
 <li>Various subtle changes:<ul>
 <li><code>(pl$lit(NA_real_) == pl$lit(NA_real_))$lit_to_s()</code> renders now to <code>null</code>
-    not <code>true</code>.</li>
+  not <code>true</code>.</li>
 <li><code>pl$lit(NA_real_)$is_in(pl$lit(NULL))$lit_to_s()</code> renders now to <code>false</code>
-    and before <code>true</code></li>
+  and before <code>true</code></li>
 <li><code>pl$lit(numeric(0))$sum()$lit_to_s()</code> now yields <code>0f64</code> and not <code>null</code>.</li>
 </ul>
 </li>
 <li><code>&lt;Expr&gt;$all()</code> and <code>&lt;Expr&gt;$any()</code> have a new arg <code>drop_nulls = TRUE</code>.</li>
 <li><code>&lt;Expr&gt;$sample()</code> and <code>&lt;Expr&gt;$shuffle()</code> have a new arg <code>fix_seed</code>.</li>
 <li><code>&lt;DataFrame&gt;$sort()</code> and <code>&lt;LazyFrame&gt;$sort()</code> have a new arg
-    <code>maintain_order = FALSE</code>.</li>
+  <code>maintain_order = FALSE</code>.</li>
 </ul>
 <h3 id="other-breaking-changes_2">OTHER BREAKING CHANGES</h3>
 <ul>
 <li><code>$rpow()</code> is removed. It should never have been translated. Use <code>^</code> and <code>$pow()</code>
-    instead (<a href="https://github.com/pola-rs/r-polars/issues/346">#346</a>).</li>
+  instead (<a href="https://github.com/pola-rs/r-polars/issues/346">#346</a>).</li>
 <li><code>&lt;LazyFrame&gt;$collect_background()</code> renamed <code>&lt;LazyFrame&gt;$collect_in_background()</code>
-    and reworked. Likewise <code>PolarsBackgroundHandle</code> reworked and renamed to
-    <code>RThreadHandle</code> (<a href="https://github.com/pola-rs/r-polars/issues/311">#311</a>).</li>
+  and reworked. Likewise <code>PolarsBackgroundHandle</code> reworked and renamed to
+  <code>RThreadHandle</code> (<a href="https://github.com/pola-rs/r-polars/issues/311">#311</a>).</li>
 <li><code>pl$scan_arrow_ipc</code> is now called <code>pl$scan_ipc</code> (<a href="https://github.com/pola-rs/r-polars/issues/343">#343</a>).</li>
 </ul>
 <h3 id="other-changes">Other changes</h3>
@@ -16792,38 +16792,38 @@ features. Unrelated breaking changes and new features are put in separate sectio
 <li>New method <code>$fetch()</code> for <code>LazyFrame</code> (<a href="https://github.com/pola-rs/r-polars/issues/319">#319</a>).</li>
 <li>New methods <code>$optimization_toggle()</code> and <code>$profile()</code> for <code>LazyFrame</code> (<a href="https://github.com/pola-rs/r-polars/issues/323">#323</a>).</li>
 <li><code>$with_column()</code> is now deprecated (following upstream <code>polars</code>). It will be
-    removed in 0.9.0. It should be replaced with <code>$with_columns()</code> (<a href="https://github.com/pola-rs/r-polars/issues/313">#313</a>).</li>
+  removed in 0.9.0. It should be replaced with <code>$with_columns()</code> (<a href="https://github.com/pola-rs/r-polars/issues/313">#313</a>).</li>
 <li>New lazy function translated: <code>concat_str()</code> to concatenate several columns
-    into one (<a href="https://github.com/pola-rs/r-polars/issues/349">#349</a>).</li>
+  into one (<a href="https://github.com/pola-rs/r-polars/issues/349">#349</a>).</li>
 <li>New stat functions <code>pl$cov()</code>, <code>pl$rolling_cov()</code> <code>pl$corr()</code>, <code>pl$rolling_corr()</code> (<a href="https://github.com/pola-rs/r-polars/issues/351">#351</a>).</li>
 <li>Add functions <code>pl$set_global_rpool_cap()</code>, <code>pl$get_global_rpool_cap()</code>, class <code>RThreadHandle</code> and
-    <code>in_background = FALSE</code> param to <code>&lt;Expr&gt;$map()</code> and <code>$apply()</code>. It is now possible to run R code
-    with <code>&lt;LazyFrame&gt;collect_in_background()</code> and/or let polars parallize R code in an R processes
-    pool. See <code>RThreadHandle-class</code> in reference docs for more info. (<a href="https://github.com/pola-rs/r-polars/issues/311">#311</a>)</li>
+  <code>in_background = FALSE</code> param to <code>&lt;Expr&gt;$map()</code> and <code>$apply()</code>. It is now possible to run R code
+  with <code>&lt;LazyFrame&gt;collect_in_background()</code> and/or let polars parallize R code in an R processes
+  pool. See <code>RThreadHandle-class</code> in reference docs for more info. (<a href="https://github.com/pola-rs/r-polars/issues/311">#311</a>)</li>
 <li>Internal IPC/shared-mem channel to serialize and send R objects / polars DataFrame across
-    R processes. (<a href="https://github.com/pola-rs/r-polars/issues/311">#311</a>)</li>
+  R processes. (<a href="https://github.com/pola-rs/r-polars/issues/311">#311</a>)</li>
 <li>Compile environment flag RPOLARS_ALL_FEATURES changes name to RPOLARS_FULL_FEATURES. If 'true'
-    will trigger something like <code>Cargo build --features "full_features"</code> which is not exactly the same
-    as <code>Cargo build --all-features</code>. Some dev features are not included in "full_features" (<a href="https://github.com/pola-rs/r-polars/issues/311">#311</a>).</li>
+  will trigger something like <code>Cargo build --features "full_features"</code> which is not exactly the same
+  as <code>Cargo build --all-features</code>. Some dev features are not included in "full_features" (<a href="https://github.com/pola-rs/r-polars/issues/311">#311</a>).</li>
 <li>Fix bug to allow using polars without library(polars) (<a href="https://github.com/pola-rs/r-polars/issues/355">#355</a>).</li>
 <li>New methods <code>&lt;LazyFrame&gt;$optimization_toggle()</code> + <code>$profile()</code> and enable rust-polars feature
-    CSE: "Activate common subplan elimination optimization" (<a href="https://github.com/pola-rs/r-polars/issues/323">#323</a>)</li>
+  CSE: "Activate common subplan elimination optimization" (<a href="https://github.com/pola-rs/r-polars/issues/323">#323</a>)</li>
 <li>Named expression e.g. <code>pl$select(newname = pl$lit(2))</code> are no longer experimental
-    and allowed as default (<a href="https://github.com/pola-rs/r-polars/issues/357">#357</a>).</li>
+  and allowed as default (<a href="https://github.com/pola-rs/r-polars/issues/357">#357</a>).</li>
 <li>Added methods <code>pl$enable_string_cache()</code>, <code>pl$with_string_cache()</code> and <code>pl$using_string_cache()</code>
-    for joining/comparing Categorical series/columns (<a href="https://github.com/pola-rs/r-polars/issues/361">#361</a>).</li>
+  for joining/comparing Categorical series/columns (<a href="https://github.com/pola-rs/r-polars/issues/361">#361</a>).</li>
 <li>Added an S3 generic <code>as_polars_series()</code> where users or developers of extensions
-    can define a custom way to convert their format to Polars format. This generic
-    must return a Polars series. See <a href="https://github.com/pola-rs/r-polars/issues/368">#368</a> for an example (<a href="https://github.com/pola-rs/r-polars/issues/369">#369</a>).</li>
+  can define a custom way to convert their format to Polars format. This generic
+  must return a Polars series. See <a href="https://github.com/pola-rs/r-polars/issues/368">#368</a> for an example (<a href="https://github.com/pola-rs/r-polars/issues/369">#369</a>).</li>
 <li>Private API Support for Arrow Stream import/export of DataFrame between two R packages that uses
-    rust-polars. <a href="https://github.com/rpolars/extendrpolarsexamples">See R package example here</a>
-    (<a href="https://github.com/pola-rs/r-polars/issues/326">#326</a>).</li>
+  rust-polars. <a href="https://github.com/rpolars/extendrpolarsexamples">See R package example here</a>
+  (<a href="https://github.com/pola-rs/r-polars/issues/326">#326</a>).</li>
 </ul>
 <h2 id="polars-r-package-070">Polars R Package 0.7.0</h2>
 <h3 id="breaking-changes_4">BREAKING CHANGES</h3>
 <ul>
 <li>Replace the argument <code>reverse</code> by <code>descending</code> in all sorting functions. This
-    is for consistency with the upstream Polars (<a href="https://github.com/pola-rs/r-polars/issues/291">#291</a>, <a href="https://github.com/pola-rs/r-polars/issues/293">#293</a>).</li>
+  is for consistency with the upstream Polars (<a href="https://github.com/pola-rs/r-polars/issues/291">#291</a>, <a href="https://github.com/pola-rs/r-polars/issues/293">#293</a>).</li>
 <li>Bump rust-polars from 2023-04-20 unreleased version to version 0.30.0 released in 2023-05-30 (<a href="https://github.com/pola-rs/r-polars/issues/289">#289</a>).<ul>
 <li>Rename <code>concat_lst</code> to <code>concat_list</code>.</li>
 <li>Rename <code>$str$explode</code> to <code>$str$str_explode</code>.</li>
@@ -16832,15 +16832,15 @@ features. Unrelated breaking changes and new features are put in separate sectio
 </ul>
 </li>
 <li>The functions to read CSV have been renamed <code>scan_csv</code> and <code>read_csv</code> for
-    consistency with the upstream Polars. <code>scan_xxx</code> and <code>read_xxx</code> functions are now accessed via <code>pl</code>,
-    e.g. <code>pl$scan_csv()</code> (<a href="https://github.com/pola-rs/r-polars/issues/305">#305</a>).</li>
+  consistency with the upstream Polars. <code>scan_xxx</code> and <code>read_xxx</code> functions are now accessed via <code>pl</code>,
+  e.g. <code>pl$scan_csv()</code> (<a href="https://github.com/pola-rs/r-polars/issues/305">#305</a>).</li>
 </ul>
 <h3 id="whats-changed_7">What's changed</h3>
 <ul>
 <li>New method <code>$rename()</code> for <code>LazyFrame</code> and <code>DataFrame</code> (<a href="https://github.com/pola-rs/r-polars/issues/239">#239</a>)</li>
 <li><code>&lt;DataFrame&gt;$unique()</code> and <code>&lt;LazyFrame&gt;$unique()</code> gain a <code>maintain_order</code> argument (<a href="https://github.com/pola-rs/r-polars/issues/238">#238</a>).</li>
 <li>New <code>pl$LazyFrame()</code> to quickly create a <code>LazyFrame</code>, mostly in examples or
-    for demonstration purposes (<a href="https://github.com/pola-rs/r-polars/issues/240">#240</a>).</li>
+  for demonstration purposes (<a href="https://github.com/pola-rs/r-polars/issues/240">#240</a>).</li>
 <li>Polars is internally moving away from string errors to a new error-type called <code>RPolarsErr</code> both on rust- and R-side. Final error messages should look very similar (<a href="https://github.com/pola-rs/r-polars/issues/233">#233</a>).</li>
 <li><code>$columns()</code>, <code>$schema()</code>, <code>$dtypes()</code> for <code>LazyFrame</code> implemented (<a href="https://github.com/pola-rs/r-polars/issues/250">#250</a>).</li>
 <li>Improvements to internal <code>RPolarsErr</code>. Also <code>RPolarsErr</code> will now print each context of the error on a separate line (<a href="https://github.com/pola-rs/r-polars/issues/250">#250</a>).</li>
@@ -16848,15 +16848,15 @@ features. Unrelated breaking changes and new features are put in separate sectio
 <li>Add helpful reference landing page at <code>polars.github.io/reference_home</code> (<a href="https://github.com/pola-rs/r-polars/issues/223">#223</a>, <a href="https://github.com/pola-rs/r-polars/issues/264">#264</a>).</li>
 <li>Supports Rust 1.65 (<a href="https://github.com/pola-rs/r-polars/issues/262">#262</a>, <a href="https://github.com/pola-rs/r-polars/issues/280">#280</a>)<ul>
 <li>rust-polars' <code>simd</code> feature is now disabled by default. To enable it, set the environment variable
-    <code>RPOLARS_ALL_FEATURES</code> to <code>true</code> when build r-polars (<a href="https://github.com/pola-rs/r-polars/issues/262">#262</a>).</li>
+  <code>RPOLARS_ALL_FEATURES</code> to <code>true</code> when build r-polars (<a href="https://github.com/pola-rs/r-polars/issues/262">#262</a>).</li>
 <li><code>opt-level</code> of <code>argminmax</code> is now set to <code>1</code> in the <code>release</code> profile to support Rust &lt; 1.66.
-    The profile can be changed by setting the environment variable <code>RPOLARS_PROFILE</code> (when set to <code>release-optimized</code>,
-    <code>opt-level</code> of <code>argminmax</code> is set to <code>3</code>).</li>
+  The profile can be changed by setting the environment variable <code>RPOLARS_PROFILE</code> (when set to <code>release-optimized</code>,
+  <code>opt-level</code> of <code>argminmax</code> is set to <code>3</code>).</li>
 </ul>
 </li>
 <li>A new function <code>pl$polars_info()</code> will tell which features enabled (<a href="https://github.com/pola-rs/r-polars/issues/271">#271</a>, <a href="https://github.com/pola-rs/r-polars/issues/285">#285</a>, <a href="https://github.com/pola-rs/r-polars/issues/305">#305</a>).</li>
 <li><code>select()</code> now accepts lists of expressions. For example, <code>&lt;DataFrame&gt;$select(l_expr)</code>
-    works with <code>l_expr = list(pl$col("a"))</code> (<a href="https://github.com/pola-rs/r-polars/issues/265">#265</a>).</li>
+  works with <code>l_expr = list(pl$col("a"))</code> (<a href="https://github.com/pola-rs/r-polars/issues/265">#265</a>).</li>
 <li>LazyFrame gets some new S3 methods: <code>[</code>, <code>dim()</code>, <code>dimnames()</code>, <code>length()</code>, <code>names()</code> (#301)</li>
 <li><code>&lt;DataFrame&gt;$glimpse()</code> is a fast <code>str()</code>-like view of a <code>DataFrame</code> (<a href="https://github.com/pola-rs/r-polars/issues/277">#277</a>).</li>
 <li><code>$over()</code> now accepts a vector of column names (<a href="https://github.com/pola-rs/r-polars/issues/287">#287</a>).</li>
@@ -16892,7 +16892,7 @@ features. Unrelated breaking changes and new features are put in separate sectio
 <ul>
 <li><code>DataFrame</code> objects can be subsetted using brackets like standard R data frames: <code>pl$DataFrame(mtcars)[2:4, c("mpg", "hp")]</code> (#140 <a href="https://github.com/vincentarelbundock">@vincentarelbundock</a>)</li>
 <li>An experimental <code>knit_print()</code> method has been added to DataFrame that outputs HTML tables
-    (similar to py-polars' HTML output) (<a href="https://github.com/pola-rs/r-polars/issues/125">#125</a> <a href="https://github.com/eitsupi">@eitsupi</a>)</li>
+  (similar to py-polars' HTML output) (<a href="https://github.com/pola-rs/r-polars/issues/125">#125</a> <a href="https://github.com/eitsupi">@eitsupi</a>)</li>
 <li><code>Series</code> gains new methods: <code>$mean</code>, <code>$median</code>, <code>$std</code>, <code>$var</code> (<a href="https://github.com/pola-rs/r-polars/issues/170">#170</a> <a href="https://github.com/vincentarelbundock">@vincentarelbundock</a>)</li>
 <li>A new option <code>use_earliest</code> of <code>replace_time_zone</code>. (<a href="https://github.com/pola-rs/r-polars/issues/183">#183</a>)</li>
 <li>A new option <code>strict</code> of <code>parse_int</code>. (<a href="https://github.com/pola-rs/r-polars/issues/183">#183</a>)</li>

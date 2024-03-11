@@ -220,7 +220,7 @@ bench::mark(
       grepl("na", s)
     })
   ),
-  grepl_nv = df_test$limit(1e6)$with_columns( 
+  grepl_nv = df_test$limit(1e6)$with_columns(
     pl$col("country")$apply(\(str) {
       grepl("na", str)
     }, return_type = pl$Boolean)
@@ -234,7 +234,7 @@ bench::mark(
 #> # A tibble: 3 × 6
 #>   expression      min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 contains   387.02ms 432.12ms     2.27   401.86KB    0    
+#> 1 contains   387.02ms 432.12ms     2.27   401.86KB    0
 #> 2 grepl         2.06s    2.11s     0.466  114.79MB    0.512
 #> 3 grepl_nv      6.42s    6.52s     0.153    7.65MB   10.3
 ```
