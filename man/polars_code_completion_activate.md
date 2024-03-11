@@ -2,7 +2,7 @@
 
 # Polars code completion
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/autocompletion.R#L47)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/c47431ca69622f79ed7a3f1d7bfee6075ffabfee/R/autocompletion.R#L47)
 
 ## Description
 
