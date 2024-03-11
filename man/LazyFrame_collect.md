@@ -2,7 +2,7 @@
 
 # Collect a query into a DataFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/lazyframe__lazy.R#L438)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L438)
 
 ## Description
 

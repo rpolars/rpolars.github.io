@@ -2,7 +2,7 @@
 
 # Add a column for row indices
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/lazyframe__lazy.R#L313)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L313)
 
 ## Description
 

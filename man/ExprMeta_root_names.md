@@ -2,7 +2,7 @@
 
 # Get the root column names
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/expr__meta.R#L83)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__meta.R#L83)
 
 ## Description
 

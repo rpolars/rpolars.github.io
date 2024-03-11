@@ -2,7 +2,7 @@
 
 # Combine Data and Time
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/expr__datetime.R#L126)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L126)
 
 ## Description
 

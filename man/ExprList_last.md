@@ -2,7 +2,7 @@
 
 # Get the last value in a list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/expr__list.R#L210)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L210)
 
 ## Description
 

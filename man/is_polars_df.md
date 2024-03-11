@@ -2,7 +2,7 @@
 
 # Test if the object is a polars DataFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/is_polars.R#L11)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/is_polars.R#L11)
 
 ## Description
 

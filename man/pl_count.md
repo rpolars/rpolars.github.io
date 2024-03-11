@@ -2,7 +2,7 @@
 
 # Return the number of non-null values in the column.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/functions__lazy.R#L166)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L166)
 
 ## Description
 

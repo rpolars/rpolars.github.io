@@ -2,7 +2,7 @@
 
 # Add a prefix to a column name
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/expr__name.R#L36)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__name.R#L36)
 
 ## Description
 

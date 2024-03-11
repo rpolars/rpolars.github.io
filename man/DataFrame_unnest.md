@@ -2,7 +2,7 @@
 
 # Unnest the Struct columns of a DataFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/dataframe__frame.R#L1068)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1070)
 
 ## Description
 

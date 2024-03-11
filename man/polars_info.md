@@ -2,7 +2,7 @@
 
 # Report information of the package
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/polars_info.R#L17)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/polars_info.R#L17)
 
 ## Description
 
@@ -53,7 +53,7 @@ polars_info()
 ```
 
     #> Polars R package version : 0.15.0.9000
-    #> Rust Polars crate version: 0.38.1
+    #> Rust Polars crate version: 0.38.2
     #> 
     #> Thread pool size: 4 
     #> 
@@ -75,7 +75,7 @@ polars_info()$versions
     #> [1] "0.15.0.9000"
     #> 
     #> $rust_crate
-    #> [1] "0.38.1"
+    #> [1] "0.38.2"
 
 ``` r
 polars_info()$features$nightly

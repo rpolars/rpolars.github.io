@@ -2,7 +2,7 @@
 
 # an element in ‘eval’-expr
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/functions__lazy.R#L124)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L124)
 
 ## Description
 

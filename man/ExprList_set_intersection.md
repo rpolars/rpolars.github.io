@@ -2,7 +2,7 @@
 
 # Get the intersection of two list variables
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/expr__list.R#L546)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L546)
 
 ## Description
 

@@ -2,7 +2,7 @@
 
 # Polars code completion
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/autocompletion.R#L47)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/autocompletion.R#L47)
 
 ## Description
 

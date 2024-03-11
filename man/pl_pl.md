@@ -412,6 +412,7 @@ pl$show_all_public_methods()
     #>           [ min ; function ]
     #>           [ n_chunks ; function ]
     #>           [ null_count ; function ]
+    #>           [ partition_by ; function ]
     #>           [ pivot ; function ]
     #>           [ print ; function ]
     #>           [ quantile ; function ]

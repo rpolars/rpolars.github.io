@@ -2,7 +2,7 @@
 
 # Strip leading characters
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/expr__string.R#L334)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L334)
 
 ## Description
 

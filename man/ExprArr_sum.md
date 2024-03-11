@@ -2,7 +2,7 @@
 
 # Sum all elements in an array
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/expr__array.R#L11)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__array.R#L11)
 
 ## Description
 

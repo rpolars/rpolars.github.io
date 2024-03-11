@@ -2,7 +2,7 @@
 
 # Perform joins on nearest keys
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/dataframe__frame.R#L1382)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1384)
 
 ## Description
 

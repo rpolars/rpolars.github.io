@@ -2,7 +2,7 @@
 
 # Returns string values in reversed order
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/expr__string.R#L849)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L849)
 
 ## Description
 

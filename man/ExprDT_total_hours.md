@@ -2,7 +2,7 @@
 
 # Hours
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/mkdocs-matrial-search-preview/R/expr__datetime.R#L789)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L789)
 
 ## Description
 
