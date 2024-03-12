@@ -2,7 +2,7 @@
 
 # Join DataFrames
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1001)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1006)
 
 ## Description
 
