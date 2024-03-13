@@ -887,6 +887,48 @@
   
   
     <li class="md-nav__item">
+      <a href="man/pl_date.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    date
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="man/pl_datetime.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    datetime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="man/pl_disable_string_cache.html" class="md-nav__link">
         
   
@@ -1711,6 +1753,27 @@
   
   <span class="md-ellipsis">
     thread_pool_size
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="man/pl_time.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    time
   </span>
   
 
@@ -14560,6 +14623,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      New features
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -14576,7 +14648,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#new-features" class="md-nav__link">
+  <a href="#new-features_1" class="md-nav__link">
     <span class="md-ellipsis">
       New features
     </span>
@@ -14636,7 +14708,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-features_1" class="md-nav__link">
+  <a href="#new-features_2" class="md-nav__link">
     <span class="md-ellipsis">
       New features
     </span>
@@ -14678,7 +14750,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-features_2" class="md-nav__link">
+  <a href="#new-features_3" class="md-nav__link">
     <span class="md-ellipsis">
       New features
     </span>
@@ -14738,7 +14810,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-features_3" class="md-nav__link">
+  <a href="#new-features_4" class="md-nav__link">
     <span class="md-ellipsis">
       New features
     </span>
@@ -14771,7 +14843,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#new-features_4" class="md-nav__link">
+  <a href="#new-features_5" class="md-nav__link">
     <span class="md-ellipsis">
       New features
     </span>
@@ -14831,7 +14903,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-features_5" class="md-nav__link">
+  <a href="#new-features_6" class="md-nav__link">
     <span class="md-ellipsis">
       New features
     </span>
@@ -15347,6 +15419,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      New features
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -15363,7 +15444,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#new-features" class="md-nav__link">
+  <a href="#new-features_1" class="md-nav__link">
     <span class="md-ellipsis">
       New features
     </span>
@@ -15423,7 +15504,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-features_1" class="md-nav__link">
+  <a href="#new-features_2" class="md-nav__link">
     <span class="md-ellipsis">
       New features
     </span>
@@ -15465,7 +15546,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-features_2" class="md-nav__link">
+  <a href="#new-features_3" class="md-nav__link">
     <span class="md-ellipsis">
       New features
     </span>
@@ -15525,7 +15606,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-features_3" class="md-nav__link">
+  <a href="#new-features_4" class="md-nav__link">
     <span class="md-ellipsis">
       New features
     </span>
@@ -15558,7 +15639,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#new-features_4" class="md-nav__link">
+  <a href="#new-features_5" class="md-nav__link">
     <span class="md-ellipsis">
       New features
     </span>
@@ -15618,7 +15699,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-features_5" class="md-nav__link">
+  <a href="#new-features_6" class="md-nav__link">
     <span class="md-ellipsis">
       New features
     </span>
@@ -16103,12 +16184,17 @@
 <h2 id="polars-r-package-development-version">Polars R Package (development version)</h2>
 <h3 id="breaking-changes">Breaking changes</h3>
 <ul>
-<li>The argument <code>columns</code> in <code>$drop()</code> is removed. <code>$drop()</code> now accepts several 
-  character scalars, such as <code>$drop("a", "b", "c")</code>. Explicitly using the 
+<li>The argument <code>columns</code> in <code>$drop()</code> is removed. <code>$drop()</code> now accepts several
+  character scalars, such as <code>$drop("a", "b", "c")</code>. Explicitly using the
   <code>columns</code> argument now errors (<a href="https://github.com/pola-rs/r-polars/issues/912">#912</a>).</li>
 </ul>
-<h2 id="polars-r-package-0151">Polars R Package 0.15.1</h2>
 <h3 id="new-features">New features</h3>
+<ul>
+<li>New functions <code>pl$datetime()</code>, <code>pl$date()</code>, and <code>pl$time()</code> to easily create
+  Expr of class datetime, date, and time via columns and literals (<a href="https://github.com/pola-rs/r-polars/issues/918">#918</a>).</li>
+</ul>
+<h2 id="polars-r-package-0151">Polars R Package 0.15.1</h2>
+<h3 id="new-features_1">New features</h3>
 <ul>
 <li>rust-polars is updated to 0.38.2 (<a href="https://github.com/pola-rs/r-polars/issues/907">#907</a>).<ul>
 <li>Minimum supported Rust version (MSRV) is now 1.76.0.</li>
@@ -16239,7 +16325,7 @@ from Polars to R.</p>
   consistency of output. It is possible to replace <code>eager = TRUE</code> by calling
   <code>$to_series()</code> (<a href="https://github.com/pola-rs/r-polars/issues/882">#882</a>).</li>
 </ul>
-<h3 id="new-features_1">New features</h3>
+<h3 id="new-features_2">New features</h3>
 <ul>
 <li>In the when-then-otherwise expressions, the last <code>$otherwise()</code> is now optional,
   as in Python Polars. If <code>$otherwise()</code> is not specified, rows that don't respect
@@ -16272,7 +16358,7 @@ from Polars to R.</p>
   experimental <code>&lt;Series&gt;$expr</code> subnamespace is removed (<a href="https://github.com/pola-rs/r-polars/issues/831">#831</a>).
   Use <code>&lt;Series&gt;$&lt;method&gt;</code> instead of <code>&lt;Series&gt;$expr$&lt;method&gt;</code>.</li>
 </ul>
-<h3 id="new-features_2">New features</h3>
+<h3 id="new-features_3">New features</h3>
 <ul>
 <li>New active bindings <code>$flags</code> for <code>DataFrame</code> to show the flags used internally
   for each column. The output of <code>$flags</code> for <code>Series</code> was also improved and now
@@ -16353,7 +16439,7 @@ from Polars to R.</p>
 <li><code>pl$threadpool_size()</code> is deprecated and will be removed in 0.15.0. Use
   <code>pl$thread_pool_size()</code> instead (<a href="https://github.com/pola-rs/r-polars/issues/784">#784</a>).</li>
 </ul>
-<h3 id="new-features_3">New features</h3>
+<h3 id="new-features_4">New features</h3>
 <ul>
 <li>Implementation of the subnamespace <code>$arr</code> for expressions on <code>array</code>-type
   columns. An <code>array</code> column is similar to a <code>list</code> column, but is stricter as
@@ -16366,7 +16452,7 @@ from Polars to R.</p>
   is now always included in the binary package.</li>
 </ul>
 <h2 id="polars-r-package-0131">Polars R Package 0.13.1</h2>
-<h3 id="new-features_4">New features</h3>
+<h3 id="new-features_5">New features</h3>
 <ul>
 <li>New method <code>$write_parquet()</code> for DataFrame (<a href="https://github.com/pola-rs/r-polars/issues/758">#758</a>).</li>
 <li>S3 methods of <code>as.data.frame()</code> for <code>RPolarsDataFrame</code> and <code>RPolarsLazyFrame</code>
@@ -16426,7 +16512,7 @@ from Polars to R.</p>
 <li><code>pl$set_options()</code> and <code>pl$reset_options()</code> are deprecated and will be
   removed in 0.14.0. See <code>?polars_options</code> for details (<a href="https://github.com/pola-rs/r-polars/issues/726">#726</a>).</li>
 </ul>
-<h3 id="new-features_5">New features</h3>
+<h3 id="new-features_6">New features</h3>
 <ul>
 <li>For compatibility with CRAN, the number of threads used by Polars is automatically set to 2
   if the environment variable <code>POLARS_MAX_THREADS</code> is not set (<a href="https://github.com/pola-rs/r-polars/issues/720">#720</a>).

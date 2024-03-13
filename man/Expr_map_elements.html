@@ -894,6 +894,48 @@
   
   
     <li class="md-nav__item">
+      <a href="pl_date.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    date
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_datetime.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    datetime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="pl_disable_string_cache.html" class="md-nav__link">
         
   
@@ -1718,6 +1760,27 @@
   
   <span class="md-ellipsis">
     thread_pool_size
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_time.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    time
   </span>
   
 
@@ -14867,10 +14930,10 @@ to achieve the best performance and avoid using
 #&gt; │           ┆ f64       ┆ f64       ┆ f64       ┆   ┆ list[f64] ┆ list[f64] ┆ list[f64] ┆ list[f64 │
 #&gt; │           ┆           ┆           ┆           ┆   ┆           ┆           ┆           ┆ ]        │
 #&gt; ╞═══════════╪═══════════╪═══════════╪═══════════╪═══╪═══════════╪═══════════╪═══════════╪══════════╡
-#&gt; │ versicolo ┆ 296.8     ┆ 138.5     ┆ 213.0     ┆ … ┆ [7.0,     ┆ [3.2,     ┆ [4.7,     ┆ [1.4,    │
-#&gt; │ r         ┆           ┆           ┆           ┆   ┆ 6.4]      ┆ 3.2]      ┆ 4.5]      ┆ 1.5]     │
 #&gt; │ virginica ┆ 329.4     ┆ 148.7     ┆ 277.6     ┆ … ┆ [6.3,     ┆ [3.3,     ┆ [6.0,     ┆ [2.5,    │
 #&gt; │           ┆           ┆           ┆           ┆   ┆ 5.8]      ┆ 2.7]      ┆ 5.1]      ┆ 1.9]     │
+#&gt; │ versicolo ┆ 296.8     ┆ 138.5     ┆ 213.0     ┆ … ┆ [7.0,     ┆ [3.2,     ┆ [4.7,     ┆ [1.4,    │
+#&gt; │ r         ┆           ┆           ┆           ┆   ┆ 6.4]      ┆ 3.2]      ┆ 4.5]      ┆ 1.5]     │
 #&gt; │ setosa    ┆ 250.3     ┆ 171.4     ┆ 73.1      ┆ … ┆ [5.1,     ┆ [3.5,     ┆ [1.4,     ┆ [0.2,    │
 #&gt; │           ┆           ┆           ┆           ┆   ┆ 4.9]      ┆ 3.0]      ┆ 1.4]      ┆ 0.2]     │
 #&gt; └───────────┴───────────┴───────────┴───────────┴───┴───────────┴───────────┴───────────┴──────────┘
@@ -14932,7 +14995,7 @@ to achieve the best performance and avoid using
 <a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="p">})</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   2.350   0.013   2.666
+#&gt;   2.174   0.004   2.362
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Comparing this to the standard polars syntax:</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nf">system.time</span><span class="p">({</span>
@@ -14942,7 +15005,7 @@ to achieve the best performance and avoid using
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">})</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   0.004   0.000   0.004
+#&gt;   0.002   0.000   0.003
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Running in parallel --------------------------------</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
@@ -14960,7 +15023,7 @@ to achieve the best performance and avoid using
 <a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="p">})</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   0.030   0.004   1.239
+#&gt;   0.032   0.000   1.235
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># first run in parallel: there is some overhead to start up extra R processes</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># drop any previous processes, just to show start-up overhead here</span>
@@ -14981,7 +15044,7 @@ to achieve the best performance and avoid using
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">})</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   0.019   0.000   1.306
+#&gt;   0.015   0.004   1.085
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># second run in parallel: this reuses R processes in &quot;polars global_rpool&quot;.</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nf">polars_options</span><span class="p">()</span><span class="o">$</span><span class="n">rpool_cap</span>
@@ -14998,7 +15061,7 @@ to achieve the best performance and avoid using
 <a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="p">})</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   0.007   0.010   0.341
+#&gt;   0.016   0.000   0.329
 </code></pre></div>
 
 

@@ -894,6 +894,48 @@
   
   
     <li class="md-nav__item">
+      <a href="pl_date.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    date
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_datetime.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    datetime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="pl_disable_string_cache.html" class="md-nav__link">
         
   
@@ -1718,6 +1760,27 @@
   
   <span class="md-ellipsis">
     thread_pool_size
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_time.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    time
   </span>
   
 
@@ -14815,14 +14878,14 @@ RPolarsDataType objects
 #&gt;   .pr$DataType$new_array(datatype, width) |&gt;
 #&gt;     unwrap(&quot;in pl$Array():&quot;)
 #&gt; }
-#&gt; &lt;bytecode: 0x55e7262dc548&gt;
+#&gt; &lt;bytecode: 0x55db3c415c98&gt;
 #&gt; &lt;environment: namespace:polars&gt;
 #&gt; 
 #&gt; $Categorical
 #&gt; function(ordering = &quot;physical&quot;) {
 #&gt;   .pr$DataType$new_categorical(ordering) |&gt; unwrap()
 #&gt; }
-#&gt; &lt;bytecode: 0x55e7262ea450&gt;
+#&gt; &lt;bytecode: 0x55db3c41c610&gt;
 #&gt; &lt;environment: namespace:polars&gt;
 #&gt; 
 #&gt; $Datetime
@@ -14837,7 +14900,7 @@ RPolarsDataType objects
 #&gt;   }
 #&gt;   unwrap(.pr$DataType$new_datetime(time_unit, time_zone))
 #&gt; }
-#&gt; &lt;bytecode: 0x55e7262eb1f0&gt;
+#&gt; &lt;bytecode: 0x55db3c423100&gt;
 #&gt; &lt;environment: namespace:polars&gt;
 #&gt; 
 #&gt; $List
@@ -14853,7 +14916,7 @@ RPolarsDataType objects
 #&gt;   }
 #&gt;   .pr$DataType$new_list(datatype)
 #&gt; }
-#&gt; &lt;bytecode: 0x55e7262fa048&gt;
+#&gt; &lt;bytecode: 0x55db3c431f58&gt;
 #&gt; &lt;environment: namespace:polars&gt;
 #&gt; 
 #&gt; $Struct
@@ -14887,7 +14950,7 @@ RPolarsDataType objects
 #&gt;     and_then(DataType$new_struct) |&gt;
 #&gt;     unwrap(&quot;in pl$Struct:&quot;)
 #&gt; }
-#&gt; &lt;bytecode: 0x55e726314000&gt;
+#&gt; &lt;bytecode: 0x55db3c43c500&gt;
 #&gt; &lt;environment: namespace:polars&gt;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># check if an element is any kind of Struct()</span>

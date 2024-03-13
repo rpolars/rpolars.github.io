@@ -60,6 +60,8 @@ nav:
         - cov: man/pl_cov.md
         - DataFrame: man/pl_DataFrame.md
         - date_range: man/pl_date_range.md
+        - date: man/pl_date.md
+        - datetime: man/pl_datetime.md
         - disable_string_cache: man/pl_disable_string_cache.md
         - dtypes: man/pl_dtypes.md
         - duration: man/pl_duration.md
@@ -100,6 +102,7 @@ nav:
         - sum: man/pl_sum.md
         - tail: man/pl_tail.md
         - thread_pool_size: man/pl_thread_pool_size.md
+        - time: man/pl_time.md
         - using_string_cache: man/pl_using_string_cache.md
         - var: man/pl_var.md
         - with_string_cache: man/pl_with_string_cache.md

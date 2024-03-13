@@ -41,8 +41,10 @@ pl$show_all_public_functions()
     #>        [ count ; function ]
     #>        [ cov ; function ]
     #>        [ DataFrame ; function ]
+    #>        [ date ; function ]
     #>        [ Date ; RPolarsDataType ]
     #>        [ date_range ; function ]
+    #>        [ datetime ; function ]
     #>        [ Datetime ; function ]
     #>        [ disable_string_cache ; function ]
     #> 
@@ -140,6 +142,7 @@ pl$show_all_public_functions()
     #>        [ tail ; function ]
     #>        [ thread_pool_size ; function ]
     #>        [ threadpool_size ; function ]
+    #>        [ time ; function ]
     #>        [ Time ; RPolarsDataType ]
     #>        [ UInt16 ; RPolarsDataType ]
     #>        [ UInt32 ; RPolarsDataType ]
