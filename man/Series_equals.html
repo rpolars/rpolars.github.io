@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#are-seriess-equal" class="md-skip">
+        <a href="#are-two-series-equal" class="md-skip">
           Skip to content
         </a>
       
@@ -668,6 +668,27 @@
   
   <span class="md-ellipsis">
     approx_n_unique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_arg_where.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    arg_where
   </span>
   
 
@@ -2233,15 +2254,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Format
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -2716,11 +2728,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_to_frames.html" class="md-nav__link">
+      <a href="Series_to_frame.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    to_frames
+    to_frame
   </span>
   
 
@@ -2779,11 +2791,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_value_count.html" class="md-nav__link">
+      <a href="Series_value_counts.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    value_count
+    value_counts
   </span>
   
 
@@ -14729,15 +14741,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Format
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -14773,10 +14776,10 @@
   
 
 
-<h1 id="are-seriess-equal">Are Series’s equal?</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L951"><strong>Source code</strong></a></p>
+<h1 id="are-two-series-equal">Are two Series equal?</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L898"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>Check if series is equal with another Series.</p>
+<p>This checks whether two Series are equal in values and in their name.</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Series&gt;$equals(other, null_equal = FALSE, strict = FALSE)
 </code></pre>
@@ -14788,7 +14791,7 @@
 <code id="Series_equals_:_other">other</code>
 </td>
 <td>
-Series to compare with
+Series to compare with.
 </td>
 </tr>
 <tr>
@@ -14796,8 +14799,8 @@ Series to compare with
 <code id="Series_equals_:_null_equal">null_equal</code>
 </td>
 <td>
-bool if TRUE, (Null==Null) is true and not Null/NA. Overridden by
-strict.
+If <code>TRUE</code>, consider that null values are equal. Overridden by
+<code>strict</code>.
 </td>
 </tr>
 <tr>
@@ -14805,20 +14808,41 @@ strict.
 <code id="Series_equals_:_strict">strict</code>
 </td>
 <td>
-bool if TRUE, do not allow similar DataType comparison. Overrides
-null_equal.
+If <code>TRUE</code>, do not allow similar DataType comparison.
+Overrides <code>null_equal</code>.
 </td>
 </tr>
 </table>
 
-<h2 id="format">Format</h2>
-<p>method</p>
 <h2 id="value">Value</h2>
-<p>bool</p>
+<p>A boolean scalar</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bob&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">equals</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">))</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">)</span><span class="o">$</span><span class="nf">equals</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; [1] TRUE
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># names are different</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bob&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">equals</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; [1] FALSE
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># nulls are different by default</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">))</span><span class="o">$</span><span class="nf">equals</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">)))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; [1] FALSE
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">))</span><span class="o">$</span><span class="nf">equals</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">)),</span><span class="w"> </span><span class="n">null_equal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; [1] TRUE
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># datatypes are ignored by default</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">)</span><span class="o">$</span><span class="nf">cast</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="n">Int16</span><span class="p">)</span><span class="o">$</span><span class="nf">equals</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; [1] FALSE
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">)</span><span class="o">$</span><span class="nf">cast</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="n">Int16</span><span class="p">)</span><span class="o">$</span><span class="nf">equals</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">),</span><span class="w"> </span><span class="n">strict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [1] FALSE
 </code></pre></div>

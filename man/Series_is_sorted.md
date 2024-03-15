@@ -1,12 +1,12 @@
 
 
-# is_sorted
+# Check if the Series is sorted
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L862)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L801)
 
 ## Description
 
-is_sorted
+Check if the Series is sorted
 
 ## Usage
 
@@ -26,13 +26,14 @@ Check if the Series is sorted in descending order.
 </tr>
 </table>
 
-## Details
-
-property sorted flags are not settable, use set_sorted
-
 ## Value
 
-DataType
+A boolean scalar
+
+## See Also
+
+Use <code>$set_sorted()</code> to add a "sorted" flag to the Series that
+could be used for faster operations later on.
 
 ## Examples
 

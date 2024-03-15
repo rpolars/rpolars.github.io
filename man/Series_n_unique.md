@@ -2,11 +2,11 @@
 
 # Count unique values in Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L1054)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L987)
 
 ## Description
 
-Return count of unique values in Series
+Count unique values in Series
 
 ## Usage
 
@@ -15,14 +15,14 @@ Return count of unique values in Series
 
 ## Value
 
-Expr
+A numeric scalar
 
 ## Examples
 
 ``` r
 library(polars)
 
-pl$Series(1:4)$n_unique()
+pl$Series(c(1, 2, 1, 4, 4, 1, 5))$n_unique()
 ```
 
     #> [1] 4

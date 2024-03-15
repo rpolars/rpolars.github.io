@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="Series_value_count.html">
+        <link rel="prev" href="Series_value_counts.html">
       
       
         <link rel="next" href="DataFrame_class.html">
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#var" class="md-skip">
+        <a href="#compute-the-variance-of-a-series" class="md-skip">
           Skip to content
         </a>
       
@@ -668,6 +668,27 @@
   
   <span class="md-ellipsis">
     approx_n_unique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_arg_where.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    arg_where
   </span>
   
 
@@ -2622,11 +2643,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_to_frames.html" class="md-nav__link">
+      <a href="Series_to_frame.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    to_frames
+    to_frame
   </span>
   
 
@@ -2685,11 +2706,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_value_count.html" class="md-nav__link">
+      <a href="Series_value_counts.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    value_count
+    value_counts
   </span>
   
 
@@ -14755,10 +14776,10 @@
   
 
 
-<h1 id="var">Var</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L837"><strong>Source code</strong></a></p>
+<h1 id="compute-the-variance-of-a-series">Compute the variance of a Series</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L779"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>Aggregate the columns of this Series to their variance values.</p>
+<p>Compute the variance of a Series</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Series&gt;$var(ddof = 1)
 </code></pre>
@@ -14770,15 +14791,14 @@
 <code id="Series_var_:_ddof">ddof</code>
 </td>
 <td>
-integer Delta Degrees of Freedom: the divisor used in the calculation is
-N - ddof, where N represents the number of elements. By default ddof is
-1.
+Delta Degrees of Freedom: the divisor used in the calculation is N -
+ddof, where N represents the number of elements. By default ddof is 1.
 </td>
 </tr>
 </table>
 
 <h2 id="value">Value</h2>
-<p>A new <code>Series</code> object with applied aggregation.</p>
+<p>A numeric scalar</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>

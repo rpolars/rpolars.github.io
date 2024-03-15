@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#set-sorted" class="md-skip">
+        <a href="#set-a-sorted-flag-on-a-series" class="md-skip">
           Skip to content
         </a>
       
@@ -668,6 +668,27 @@
   
   <span class="md-ellipsis">
     approx_n_unique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_arg_where.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    arg_where
   </span>
   
 
@@ -2590,6 +2611,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -2707,11 +2737,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_to_frames.html" class="md-nav__link">
+      <a href="Series_to_frame.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    to_frames
+    to_frame
   </span>
   
 
@@ -2770,11 +2800,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_value_count.html" class="md-nav__link">
+      <a href="Series_value_counts.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    value_count
+    value_counts
   </span>
   
 
@@ -14720,6 +14750,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -14755,10 +14794,10 @@
   
 
 
-<h1 id="set-sorted">Set sorted</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L878"><strong>Source code</strong></a></p>
+<h1 id="set-a-sorted-flag-on-a-series">Set a sorted flag on a Series</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L821"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>Set sorted</p>
+<p>Set a sorted flag on a Series</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Series&gt;$set_sorted(descending = FALSE, in_place = FALSE)
 </code></pre>
@@ -14778,16 +14817,19 @@ Sort the columns in descending order.
 <code id="Series_set_sorted_:_in_place">in_place</code>
 </td>
 <td>
-if TRUE, will set flag mutably and return NULL. Remember to use
-options(polars.strictly_immutable = FALSE) otherwise an error will be
-thrown. If FALSE will return a cloned Series with set_flag which in the
-very most cases should be just fine.
+If <code>TRUE</code>, this will set the flag mutably and return NULL.
+Remember to use <code>options(polars.strictly_immutable = FALSE)</code>
+before using this parameter, otherwise an error will occur. If
+<code>FALSE</code> (default), it will return a cloned Series with the
+flag.
 </td>
 </tr>
 </table>
 
+<h2 id="details">Details</h2>
+<p>Use <code>$flags</code> to see the values of the sorted flags.</p>
 <h2 id="value">Value</h2>
-<p>Series invisible</p>
+<p>A Series with a flag</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>

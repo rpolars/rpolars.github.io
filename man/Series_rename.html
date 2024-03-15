@@ -684,6 +684,27 @@
   
   
     <li class="md-nav__item">
+      <a href="pl_arg_where.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    arg_where
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="pl_coalesce.html" class="md-nav__link">
         
   
@@ -2548,15 +2569,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Format
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -2716,11 +2728,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_to_frames.html" class="md-nav__link">
+      <a href="Series_to_frame.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    to_frames
+    to_frame
   </span>
   
 
@@ -2779,11 +2791,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_value_count.html" class="md-nav__link">
+      <a href="Series_value_counts.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    value_count
+    value_counts
   </span>
   
 
@@ -14729,15 +14741,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Format
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -14774,7 +14777,7 @@
 
 
 <h1 id="rename-a-series">Rename a series</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L970"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L912"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Rename a series</p>
 <h2 id="usage">Usage</h2>
@@ -14788,7 +14791,7 @@
 <code id="Series_rename_:_name">name</code>
 </td>
 <td>
-string the new name
+New name.
 </td>
 </tr>
 <tr>
@@ -14796,17 +14799,15 @@ string the new name
 <code id="Series_rename_:_in_place">in_place</code>
 </td>
 <td>
-bool rename in-place, breaks immutability If true will throw an error
-unless this option has been set: <code>options(polars.strictly_immutable
-= FALSE)</code>
+Rename in-place, which breaks immutability. If <code>TRUE</code>, you
+need to run <code>options(polars.strictly_immutable = FALSE)</code>
+before, otherwise it will throw an error.
 </td>
 </tr>
 </table>
 
-<h2 id="format">Format</h2>
-<p>method</p>
 <h2 id="value">Value</h2>
-<p>bool</p>
+<p>Series</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>

@@ -1,12 +1,12 @@
 
 
-# Reduce Boolean Series with ANY
+# Reduce boolean Series with ANY
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L681)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L648)
 
 ## Description
 
-Reduce Boolean Series with ANY
+Reduce boolean Series with ANY
 
 ## Usage
 
@@ -15,7 +15,7 @@ Reduce Boolean Series with ANY
 
 ## Value
 
-bool
+A boolean scalar
 
 ## Examples
 

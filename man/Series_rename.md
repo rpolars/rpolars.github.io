@@ -2,7 +2,7 @@
 
 # Rename a series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L970)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L912)
 
 ## Description
 
@@ -21,7 +21,7 @@ Rename a series
 <code id="Series_rename_:_name">name</code>
 </td>
 <td>
-string the new name
+New name.
 </td>
 </tr>
 <tr>
@@ -29,20 +29,16 @@ string the new name
 <code id="Series_rename_:_in_place">in_place</code>
 </td>
 <td>
-bool rename in-place, breaks immutability If true will throw an error
-unless this option has been set: <code>options(polars.strictly_immutable
-= FALSE)</code>
+Rename in-place, which breaks immutability. If <code>TRUE</code>, you
+need to run <code>options(polars.strictly_immutable = FALSE)</code>
+before, otherwise it will throw an error.
 </td>
 </tr>
 </table>
 
-## Format
-
-method
-
 ## Value
 
-bool
+Series
 
 ## Examples
 

@@ -1,12 +1,12 @@
 
 
-# Sort this Series
+# Sort a Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L907)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L848)
 
 ## Description
 
-Sort this Series
+Sort a Series
 
 ## Usage
 
@@ -29,7 +29,7 @@ Sort in descending order.
 <code id="Series_sort_:_nulls_last">nulls_last</code>
 </td>
 <td>
-Place null values last instead of first.
+If <code>TRUE</code>, place nulls values last.
 </td>
 </tr>
 <tr>
@@ -37,9 +37,11 @@ Place null values last instead of first.
 <code id="Series_sort_:_in_place">in_place</code>
 </td>
 <td>
-bool sort mutable in-place, breaks immutability If true will throw an
-error unless this option has been set:
-<code>options(polars.strictly_immutable = FALSE)</code>
+If <code>TRUE</code>, this will set the flag mutably and return NULL.
+Remember to use <code>options(polars.strictly_immutable = FALSE)</code>
+before using this parameter, otherwise an error will occur. If
+<code>FALSE</code> (default), it will return a cloned Series with the
+flag.
 </td>
 </tr>
 </table>
@@ -53,15 +55,31 @@ Series
 ``` r
 library(polars)
 
-pl$Series(c(1, NA, NaN, Inf, -Inf))$sort()
+pl$Series(c(1.5, NA, 1, NaN, Inf, -Inf))$sort()
 ```
 
-    #> polars Series: shape: (5,)
+    #> polars Series: shape: (6,)
     #> Series: '' [f64]
     #> [
     #>  null
     #>  -inf
     #>  1.0
+    #>  1.5
     #>  inf
     #>  NaN
+    #> ]
+
+``` r
+pl$Series(c(1.5, NA, 1, NaN, Inf, -Inf))$sort(nulls_last = TRUE)
+```
+
+    #> polars Series: shape: (6,)
+    #> Series: '' [f64]
+    #> [
+    #>  -inf
+    #>  1.0
+    #>  1.5
+    #>  inf
+    #>  NaN
+    #>  null
     #> ]

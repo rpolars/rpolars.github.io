@@ -2,11 +2,11 @@
 
 # Compare Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L432)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L436)
 
 ## Description
 
-compare two Series
+Check the (in)equality of two Series.
 
 ## Usage
 
@@ -47,8 +47,9 @@ A Series or something a Series can be created from
 <code id="Series_compare_:_op">op</code>
 </td>
 <td>
-the chosen operator a String either: ‘equal’, ‘not_equal’, ‘lt’, ‘gt’,
-‘lt_eq’ or ‘gt_eq’
+The chosen operator, must be one of <code>“equal”</code>,
+<code>“not_equal”</code>, <code>“lt”</code>, <code>“gt”</code>,
+<code>“lt_eq”</code> or <code>“gt_eq”</code>
 </td>
 </tr>
 <tr>
@@ -78,6 +79,22 @@ Series
 ``` r
 library(polars)
 
+# We can either use `compare()`...
+pl$Series(1:5)$compare(pl$Series(c(1:3, NA_integer_, 10L)), op = "equal")
+```
+
+    #> polars Series: shape: (5,)
+    #> Series: '' [bool]
+    #> [
+    #>  true
+    #>  true
+    #>  true
+    #>  null
+    #>  false
+    #> ]
+
+``` r
+# ... or the more classic way
 pl$Series(1:5) == pl$Series(c(1:3, NA_integer_, 10L))
 ```
 

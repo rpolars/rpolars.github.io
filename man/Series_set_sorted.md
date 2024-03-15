@@ -1,12 +1,12 @@
 
 
-# Set sorted
+# Set a sorted flag on a Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L878)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L821)
 
 ## Description
 
-Set sorted
+Set a sorted flag on a Series
 
 ## Usage
 
@@ -29,17 +29,22 @@ Sort the columns in descending order.
 <code id="Series_set_sorted_:_in_place">in_place</code>
 </td>
 <td>
-if TRUE, will set flag mutably and return NULL. Remember to use
-options(polars.strictly_immutable = FALSE) otherwise an error will be
-thrown. If FALSE will return a cloned Series with set_flag which in the
-very most cases should be just fine.
+If <code>TRUE</code>, this will set the flag mutably and return NULL.
+Remember to use <code>options(polars.strictly_immutable = FALSE)</code>
+before using this parameter, otherwise an error will occur. If
+<code>FALSE</code> (default), it will return a cloned Series with the
+flag.
 </td>
 </tr>
 </table>
 
+## Details
+
+Use <code>$flags</code> to see the values of the sorted flags.
+
 ## Value
 
-Series invisible
+A Series with a flag
 
 ## Examples
 

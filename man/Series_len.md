@@ -1,12 +1,12 @@
 
 
-# Series_len
+# Length of a Series
 
 [**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
-Length of this Series.
+Length of a Series
 
 ## Usage
 
@@ -15,7 +15,7 @@ Length of this Series.
 
 ## Value
 
-numeric
+A numeric value
 
 ## Examples
 

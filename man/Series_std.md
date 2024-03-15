@@ -1,12 +1,12 @@
 
 
-# Std
+# Compute the standard deviation of a Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L847)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L789)
 
 ## Description
 
-Aggregate the columns of this Series to their standard deviation.
+Compute the standard deviation of a Series
 
 ## Usage
 
@@ -21,16 +21,15 @@ Aggregate the columns of this Series to their standard deviation.
 <code id="Series_std_:_ddof">ddof</code>
 </td>
 <td>
-integer Delta Degrees of Freedom: the divisor used in the calculation is
-N - ddof, where N represents the number of elements. By default ddof is
-1.
+Delta Degrees of Freedom: the divisor used in the calculation is N -
+ddof, where N represents the number of elements. By default ddof is 1.
 </td>
 </tr>
 </table>
 
 ## Value
 
-A new <code>Series</code> object with applied aggregation.
+A numeric scalar
 
 ## Examples
 

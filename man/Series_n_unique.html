@@ -684,6 +684,27 @@
   
   
     <li class="md-nav__item">
+      <a href="pl_arg_where.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    arg_where
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="pl_coalesce.html" class="md-nav__link">
         
   
@@ -2698,11 +2719,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_to_frames.html" class="md-nav__link">
+      <a href="Series_to_frame.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    to_frames
+    to_frame
   </span>
   
 
@@ -2761,11 +2782,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_value_count.html" class="md-nav__link">
+      <a href="Series_value_counts.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    value_count
+    value_counts
   </span>
   
 
@@ -14738,19 +14759,19 @@
 
 
 <h1 id="count-unique-values-in-series">Count unique values in Series</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L1054"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L987"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>Return count of unique values in Series</p>
+<p>Count unique values in Series</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Series&gt;$n_unique()
 </code></pre>
 
 <h2 id="value">Value</h2>
-<p>Expr</p>
+<p>A numeric scalar</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">)</span><span class="o">$</span><span class="nf">n_unique</span><span class="p">()</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">))</span><span class="o">$</span><span class="nf">n_unique</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [1] 4
 </code></pre></div>

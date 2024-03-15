@@ -6,7 +6,7 @@
 
 ## Description
 
-Get the Lengths of Series memory chunks as vector.
+Lengths of Series memory chunks
 
 ## Usage
 
@@ -15,8 +15,8 @@ Get the Lengths of Series memory chunks as vector.
 
 ## Value
 
-numeric vector. Length is number of chunks. Sum of lengths is equal to
-size of Series.
+Numeric vector. Output length is the number of chunks, and the sum of
+the output is equal to the length of the full Series.
 
 ## Examples
 

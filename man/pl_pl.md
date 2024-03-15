@@ -21,7 +21,7 @@ polars api.
 ## Format
 
 An object of class <code>pl_polars_env</code> (inherits from
-<code>environment</code>) of length 98.
+<code>environment</code>) of length 99.
 
 ## Details
 
@@ -57,6 +57,7 @@ pl$show_all_public_functions()
     #>        [ all_horizontal ; function ]
     #>        [ any_horizontal ; function ]
     #>        [ approx_n_unique ; function ]
+    #>        [ arg_where ; function ]
     #>        [ Array ; function ]
     #>        [ Binary ; RPolarsDataType ]
     #>        [ Boolean ; RPolarsDataType ]

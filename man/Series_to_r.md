@@ -1,17 +1,16 @@
 
 
-# Get r vector/list
+# Convert Series to R vector or list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L507)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L506)
 
 ## Description
 
-return R list (if polars Series is list) or vector (any other polars
-Series type)
-
-return R vector (implicit unlist)
-
-return R list (implicit as.list)
+<code style="white-space: pre;">$to_r()</code> automatically returns an
+R vector or list based on the Polars DataType. It is possible to force
+the output type by using
+<code style="white-space: pre;">$to_vector()</code> or
+<code style="white-space: pre;">$to_r_list()</code>.
 
 ## Usage
 
@@ -55,19 +54,9 @@ conversion (requires the package <code>bit64</code> to be attached).
 </tr>
 </table>
 
-## Details
-
-Fun fact: Nested polars Series list must have same inner type,
-e.g. List(List(Int32)) Thus every leaf(non list type) will be placed on
-the same depth of the tree, and be the same type.
-
 ## Value
 
 R list or vector
-
-R vector
-
-R list
 
 ## Conversion to R data types considerations
 
@@ -117,10 +106,9 @@ withr::with_envvar(
 ``` r
 library(polars)
 
-
+# Series with non-list type
 series_vec = pl$Series(letters[1:3])
 
-# Series_non_list
 series_vec$to_r() # as vector because Series DataType is not list (is String)
 ```
 
@@ -146,19 +134,24 @@ series_vec$to_vector() # implicit call unlist(), same as to_r() as already vecto
     #> [1] "a" "b" "c"
 
 ``` r
-# make nested Series_list of Series_list of Series_Int32
-# using Expr syntax because currently more complete translated
-series_list = pl$DataFrame(list(a = c(1:5, NA_integer_)))$select(
-  pl$col("a")$implode()$implode()$append(
-    (
-      pl$col("a")$head(2)$implode()$append(
-        pl$col("a")$tail(1)$implode()
-      )
-    )$implode()
+# make a Series with nested lists
+series_list = pl$Series(
+  list(
+    list(c(1:5, NA_integer_)),
+    list(1:2, NA_integer_)
   )
-)$get_column("a") # get series from DataFrame
+)
+series_list
+```
 
-# Series_list
+    #> polars Series: shape: (2,)
+    #> Series: '' [list[list[i32]]]
+    #> [
+    #>  [[1, 2, … null]]
+    #>  [[1, 2], [null]]
+    #> ]
+
+``` r
 series_list$to_r() # as list because Series DataType is list
 ```
 
@@ -195,7 +188,3 @@ series_list$to_vector() # implicit call unlist(), append into a vector
 ```
 
     #> [1]  1  2  3  4  5 NA  1  2 NA
-
-``` r
-#
-```

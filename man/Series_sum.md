@@ -1,12 +1,12 @@
 
 
-# Sum
+# Compute the sum of a Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L767)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L725)
 
 ## Description
 
-Reduce Series with sum
+Compute the sum of a Series
 
 ## Usage
 
@@ -20,7 +20,7 @@ summing to prevent overflow issues.
 
 ## Value
 
-R scalar value
+A numeric scalar
 
 ## Examples
 
@@ -33,7 +33,7 @@ pl$Series(c(1:2, NA, 3, 5))$sum() # a NA is dropped always
     #> [1] 11
 
 ``` r
-pl$Series(c(1:2, NA, 3, NaN, 4, Inf))$sum() # NaN carries / poisons
+pl$Series(c(1:2, NA, 3, NaN, 4, Inf))$sum() # NaN poisons the result
 ```
 
     #> [1] NaN

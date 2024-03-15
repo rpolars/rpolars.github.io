@@ -20,7 +20,7 @@
     
     
       
-        <title>to_frames - Polars R Package</title>
+        <title>to_frame - Polars R Package</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#series-to-dataframe" class="md-skip">
+        <a href="#convert-series-to-dataframe" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              to_frames
+              to_frame
             
           </span>
         </div>
@@ -668,6 +668,27 @@
   
   <span class="md-ellipsis">
     approx_n_unique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_arg_where.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    arg_where
   </span>
   
 
@@ -2635,18 +2656,18 @@
           
   
   <span class="md-ellipsis">
-    to_frames
+    to_frame
   </span>
   
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="Series_to_frames.html" class="md-nav__link md-nav__link--active">
+      <a href="Series_to_frame.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    to_frames
+    to_frame
   </span>
   
 
@@ -2680,15 +2701,6 @@
   <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
       Usage
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Format
     </span>
   </a>
   
@@ -2770,11 +2782,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_value_count.html" class="md-nav__link">
+      <a href="Series_value_counts.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    value_count
+    value_counts
   </span>
   
 
@@ -14711,15 +14723,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Format
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -14755,21 +14758,35 @@
   
 
 
-<h1 id="series-to-dataframe">Series to DataFrame</h1>
+<h1 id="convert-series-to-dataframe">Convert Series to DataFrame</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L870"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>Series to DataFrame</p>
+<p>Convert Series to DataFrame</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Series&gt;$to_frame()
 </code></pre>
 
-<h2 id="format">Format</h2>
-<p>method</p>
 <h2 id="value">Value</h2>
-<p>Series</p>
+<p>DataFrame</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bob&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">to_frame</span><span class="p">()</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># default will be a DataFrame with empty name</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">)</span><span class="o">$</span><span class="nf">to_frame</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; shape: (4, 1)
+#&gt; ┌─────┐
+#&gt; │     │
+#&gt; │ --- │
+#&gt; │ i32 │
+#&gt; ╞═════╡
+#&gt; │ 1   │
+#&gt; │ 2   │
+#&gt; │ 3   │
+#&gt; │ 4   │
+#&gt; └─────┘
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bob&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">to_frame</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; shape: (4, 1)
 #&gt; ┌─────┐

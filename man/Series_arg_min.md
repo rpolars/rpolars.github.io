@@ -1,12 +1,12 @@
 
 
-# idx to min value
+# Index of min value
 
 [**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
-idx to min value
+Note that this is 0-indexed.
 
 ## Usage
 
@@ -15,7 +15,7 @@ idx to min value
 
 ## Value
 
-bool
+A numeric scalar
 
 ## Examples
 

@@ -12,7 +12,7 @@
         <link rel="prev" href="Series_to_lit.html">
       
       
-        <link rel="next" href="Series_value_count.html">
+        <link rel="next" href="Series_value_counts.html">
       
       
       <link rel="icon" href="../polars-logo.png">
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#get-r-vectorlist" class="md-skip">
+        <a href="#convert-series-to-r-vector-or-list" class="md-skip">
           Skip to content
         </a>
       
@@ -668,6 +668,27 @@
   
   <span class="md-ellipsis">
     approx_n_unique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_arg_where.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    arg_where
   </span>
   
 
@@ -2622,11 +2643,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_to_frames.html" class="md-nav__link">
+      <a href="Series_to_frame.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    to_frames
+    to_frame
   </span>
   
 
@@ -2737,15 +2758,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#details" class="md-nav__link">
-    <span class="md-ellipsis">
-      Details
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -2788,11 +2800,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_value_count.html" class="md-nav__link">
+      <a href="Series_value_counts.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    value_count
+    value_counts
   </span>
   
 
@@ -14738,15 +14750,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#details" class="md-nav__link">
-    <span class="md-ellipsis">
-      Details
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -14791,13 +14794,14 @@
   
 
 
-<h1 id="get-r-vectorlist">Get r vector/list</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L507"><strong>Source code</strong></a></p>
+<h1 id="convert-series-to-r-vector-or-list">Convert Series to R vector or list</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L506"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>return R list (if polars Series is list) or vector (any other polars
-Series type)</p>
-<p>return R vector (implicit unlist)</p>
-<p>return R list (implicit as.list)</p>
+<p><code style="white-space: pre;">$to_r()</code> automatically returns an
+R vector or list based on the Polars DataType. It is possible to force
+the output type by using
+<code style="white-space: pre;">$to_vector()</code> or
+<code style="white-space: pre;">$to_r_list()</code>.</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Series&gt;$to_r(int64_conversion = polars_options()\$int64_conversion)
 
@@ -14838,14 +14842,8 @@ conversion (requires the package <code>bit64</code> to be attached).
 </tr>
 </table>
 
-<h2 id="details">Details</h2>
-<p>Fun fact: Nested polars Series list must have same inner type,
-e.g. List(List(Int32)) Thus every leaf(non list type) will be placed on
-the same depth of the tree, and be the same type.</p>
 <h2 id="value">Value</h2>
 <p>R list or vector</p>
-<p>R vector</p>
-<p>R list</p>
 <h2 id="conversion-to-r-data-types-considerations">Conversion to R data types considerations</h2>
 <p>When converting Polars objects, such as DataFrames to R objects, for
 example via the <code>as.data.frame()</code> generic function, each type
@@ -14890,11 +14888,10 @@ withr::with_envvar(
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Series with non-list type</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">series_vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="kc">letters</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">])</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># Series_non_list</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">series_vec</span><span class="o">$</span><span class="nf">to_r</span><span class="p">()</span><span class="w"> </span><span class="c1"># as vector because Series DataType is not list (is String)</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">series_vec</span><span class="o">$</span><span class="nf">to_r</span><span class="p">()</span><span class="w"> </span><span class="c1"># as vector because Series DataType is not list (is String)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;
 </code></pre></div>
@@ -14913,20 +14910,23 @@ withr::with_envvar(
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># make nested Series_list of Series_list of Series_Int32</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># using Expr syntax because currently more complete translated</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">series_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="kc">NA_integer_</span><span class="p">)))</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">implode</span><span class="p">()</span><span class="o">$</span><span class="nf">implode</span><span class="p">()</span><span class="o">$</span><span class="nf">append</span><span class="p">(</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="p">(</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">      </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">head</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="o">$</span><span class="nf">implode</span><span class="p">()</span><span class="o">$</span><span class="nf">append</span><span class="p">(</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">tail</span><span class="p">(</span><span class="m">1</span><span class="p">)</span><span class="o">$</span><span class="nf">implode</span><span class="p">()</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">      </span><span class="p">)</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="p">)</span><span class="o">$</span><span class="nf">implode</span><span class="p">()</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="p">)</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">)</span><span class="o">$</span><span class="nf">get_column</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1"># get series from DataFrame</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c1"># Series_list</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="n">series_list</span><span class="o">$</span><span class="nf">to_r</span><span class="p">()</span><span class="w"> </span><span class="c1"># as list because Series DataType is list</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># make a Series with nested lists</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">series_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nf">list</span><span class="p">(</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nf">list</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="kc">NA_integer_</span><span class="p">)),</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nf">list</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="kc">NA_integer_</span><span class="p">)</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="p">)</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">series_list</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (2,)
+#&gt; Series: &#39;&#39; [list[list[i32]]]
+#&gt; [
+#&gt;  [[1, 2, … null]]
+#&gt;  [[1, 2], [null]]
+#&gt; ]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">series_list</span><span class="o">$</span><span class="nf">to_r</span><span class="p">()</span><span class="w"> </span><span class="c1"># as list because Series DataType is list</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [[1]]
 #&gt; [[1]][[1]]
@@ -14940,7 +14940,7 @@ withr::with_envvar(
 #&gt; [[2]][[2]]
 #&gt; [1] NA
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">series_list</span><span class="o">$</span><span class="nf">to_r_list</span><span class="p">()</span><span class="w"> </span><span class="c1"># implicit call as.list(), same as to_r() as already list</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">series_list</span><span class="o">$</span><span class="nf">to_r_list</span><span class="p">()</span><span class="w"> </span><span class="c1"># implicit call as.list(), same as to_r() as already list</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [[1]]
 #&gt; [[1]][[1]]
@@ -14954,11 +14954,9 @@ withr::with_envvar(
 #&gt; [[2]][[2]]
 #&gt; [1] NA
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">series_list</span><span class="o">$</span><span class="nf">to_vector</span><span class="p">()</span><span class="w"> </span><span class="c1"># implicit call unlist(), append into a vector</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">series_list</span><span class="o">$</span><span class="nf">to_vector</span><span class="p">()</span><span class="w"> </span><span class="c1"># implicit call unlist(), append into a vector</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [1]  1  2  3  4  5 NA  1  2 NA
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">#</span>
 </code></pre></div>
 
 

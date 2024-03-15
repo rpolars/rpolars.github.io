@@ -1,6 +1,6 @@
 
 
-# Alias
+# Change name of Series
 
 [**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
@@ -21,7 +21,7 @@ Change name of Series
 <code id="Series_alias_:_name">name</code>
 </td>
 <td>
-a String as the new name
+New name.
 </td>
 </tr>
 </table>

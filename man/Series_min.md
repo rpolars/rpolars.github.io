@@ -1,12 +1,12 @@
 
 
-# min
+# Find the min of a Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L827)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L769)
 
 ## Description
 
-Reduce Series with min
+Find the min of a Series
 
 ## Usage
 
@@ -15,12 +15,12 @@ Reduce Series with min
 
 ## Details
 
-The Dtypes Int8, UInt8, Int16 and UInt16 are cast to Int64 before taking
-the min to prevent overflow issues.
+The Dtypes Int8, UInt8, Int16 and UInt16 are cast to Int64 before
+summing to prevent overflow issues.
 
 ## Value
 
-R scalar value
+A numeric scalar
 
 ## Examples
 

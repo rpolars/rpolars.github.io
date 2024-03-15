@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#is_sorted" class="md-skip">
+        <a href="#check-if-the-series-is-sorted" class="md-skip">
           Skip to content
         </a>
       
@@ -668,6 +668,27 @@
   
   <span class="md-ellipsis">
     approx_n_unique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_arg_where.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    arg_where
   </span>
   
 
@@ -2296,18 +2317,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#details" class="md-nav__link">
+  <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
-      Details
+      Value
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#value" class="md-nav__link">
+  <a href="#see-also" class="md-nav__link">
     <span class="md-ellipsis">
-      Value
+      See Also
     </span>
   </a>
   
@@ -2716,11 +2737,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_to_frames.html" class="md-nav__link">
+      <a href="Series_to_frame.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    to_frames
+    to_frame
   </span>
   
 
@@ -2779,11 +2800,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_value_count.html" class="md-nav__link">
+      <a href="Series_value_counts.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    value_count
+    value_counts
   </span>
   
 
@@ -14729,18 +14750,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#details" class="md-nav__link">
+  <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
-      Details
+      Value
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#value" class="md-nav__link">
+  <a href="#see-also" class="md-nav__link">
     <span class="md-ellipsis">
-      Value
+      See Also
     </span>
   </a>
   
@@ -14773,10 +14794,10 @@
   
 
 
-<h1 id="is_sorted">is_sorted</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L862"><strong>Source code</strong></a></p>
+<h1 id="check-if-the-series-is-sorted">Check if the Series is sorted</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L801"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>is_sorted</p>
+<p>Check if the Series is sorted</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Series&gt;$is_sorted(descending = FALSE)
 </code></pre>
@@ -14793,10 +14814,11 @@ Check if the Series is sorted in descending order.
 </tr>
 </table>
 
-<h2 id="details">Details</h2>
-<p>property sorted flags are not settable, use set_sorted</p>
 <h2 id="value">Value</h2>
-<p>DataType</p>
+<p>A boolean scalar</p>
+<h2 id="see-also">See Also</h2>
+<p>Use <code>$set_sorted()</code> to add a "sorted" flag to the Series that
+could be used for faster operations later on.</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>

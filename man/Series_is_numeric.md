@@ -1,29 +1,22 @@
 
 
-# is_numeric
+# Check if the Series is numeric
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L1025)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L962)
 
 ## Description
 
-return bool whether series is numeric
+This checks whether the Series DataType is in
+<code>pl$numeric_dtypes</code>.
 
 ## Usage
 
 <pre><code class='language-R'>Series_is_numeric()
 </code></pre>
 
-## Format
-
-method
-
-## Details
-
-true of series dtype is member of pl$numeric_dtypes
-
 ## Value
 
-bool
+A boolean scalar
 
 ## Examples
 

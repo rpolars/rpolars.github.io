@@ -50,6 +50,7 @@ nav:
         - all: man/pl_all.md
         - any_horizontal: man/pl_any_horizontal.md
         - approx_n_unique: man/pl_approx_n_unique.md
+        - arg_where: man/pl_arg_where.md
         - coalesce: man/pl_coalesce.md
         - col: man/pl_col.md
         - concat_list: man/pl_concat_list.md
@@ -141,10 +142,10 @@ nav:
         - std: man/Series_std.md
         - sub: man/Series_sub.md
         - sum: man/Series_sum.md
-        - to_frames: man/Series_to_frames.md
+        - to_frame: man/Series_to_frame.md
         - to_lit: man/Series_to_lit.md
         - to_r: man/Series_to_r.md
-        - value_count: man/Series_value_count.md
+        - value_counts: man/Series_value_counts.md
         - var: man/Series_var.md
       DataFrame:
         - class: man/DataFrame_class.md

@@ -684,6 +684,27 @@
   
   
     <li class="md-nav__item">
+      <a href="pl_arg_where.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    arg_where
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="pl_coalesce.html" class="md-nav__link">
         
   
@@ -2698,11 +2719,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_to_frames.html" class="md-nav__link">
+      <a href="Series_to_frame.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    to_frames
+    to_frame
   </span>
   
 
@@ -2761,11 +2782,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_value_count.html" class="md-nav__link">
+      <a href="Series_value_counts.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    value_count
+    value_counts
   </span>
   
 
@@ -14740,14 +14761,14 @@
 <h1 id="lengths-of-series-memory-chunks">Lengths of Series memory chunks</h1>
 <p><a href="https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>Get the Lengths of Series memory chunks as vector.</p>
+<p>Lengths of Series memory chunks</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Series&gt;$chunk_lengths()
 </code></pre>
 
 <h2 id="value">Value</h2>
-<p>numeric vector. Length is number of chunks. Sum of lengths is equal to
-size of Series.</p>
+<p>Numeric vector. Output length is the number of chunks, and the sum of
+the output is equal to the length of the full Series.</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>

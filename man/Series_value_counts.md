@@ -1,10 +1,12 @@
 
 
-# Value Counts as DataFrame
+# Count the occurrences of unique values
+
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L534)
 
 ## Description
 
-Value Counts as DataFrame
+Count the occurrences of unique values
 
 ## Usage
 
@@ -16,21 +18,19 @@ Value Counts as DataFrame
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_value_count_:_sort">sort</code>
+<code id="Series_value_counts_:_sort">sort</code>
 </td>
 <td>
-bool, default TRUE: sort table by value; FALSE: random
+Ensure the output is sorted from most values to least.
 </td>
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_value_count_:_parallel">parallel</code>
+<code id="Series_value_counts_:_parallel">parallel</code>
 </td>
 <td>
-bool, default FALSE, process multithreaded. Likely faster to have TRUE
-for a big Series. If called within an already multithreaded context such
-calling apply on a GroupBy with many groups, then likely slightly faster
-to leave FALSE.
+Better to turn this off in the aggregation context, as it can lead to
+contention.
 </td>
 </tr>
 </table>
@@ -44,7 +44,7 @@ DataFrame
 ``` r
 library(polars)
 
-pl$Series(iris$Species, "flower species")$value_counts()
+pl$Series(iris$Species, name = "flower species")$value_counts()
 ```
 
     #> shape: (3, 2)

@@ -12,7 +12,7 @@
         <link rel="prev" href="Series_sub.html">
       
       
-        <link rel="next" href="Series_to_frames.html">
+        <link rel="next" href="Series_to_frame.html">
       
       
       <link rel="icon" href="../polars-logo.png">
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sum" class="md-skip">
+        <a href="#compute-the-sum-of-a-series" class="md-skip">
           Skip to content
         </a>
       
@@ -668,6 +668,27 @@
   
   <span class="md-ellipsis">
     approx_n_unique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_arg_where.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    arg_where
   </span>
   
 
@@ -2707,11 +2728,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_to_frames.html" class="md-nav__link">
+      <a href="Series_to_frame.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    to_frames
+    to_frame
   </span>
   
 
@@ -2770,11 +2791,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_value_count.html" class="md-nav__link">
+      <a href="Series_value_counts.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    value_count
+    value_counts
   </span>
   
 
@@ -14755,10 +14776,10 @@
   
 
 
-<h1 id="sum">Sum</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L767"><strong>Source code</strong></a></p>
+<h1 id="compute-the-sum-of-a-series">Compute the sum of a Series</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L725"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>Reduce Series with sum</p>
+<p>Compute the sum of a Series</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Series&gt;$sum()
 </code></pre>
@@ -14767,7 +14788,7 @@
 <p>The Dtypes Int8, UInt8, Int16 and UInt16 are cast to Int64 before
 summing to prevent overflow issues.</p>
 <h2 id="value">Value</h2>
-<p>R scalar value</p>
+<p>A numeric scalar</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -14775,7 +14796,7 @@ summing to prevent overflow issues.</p>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [1] 11
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="kc">NaN</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="kc">Inf</span><span class="p">))</span><span class="o">$</span><span class="nf">sum</span><span class="p">()</span><span class="w"> </span><span class="c1"># NaN carries / poisons</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="kc">NaN</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="kc">Inf</span><span class="p">))</span><span class="o">$</span><span class="nf">sum</span><span class="p">()</span><span class="w"> </span><span class="c1"># NaN poisons the result</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [1] NaN
 </code></pre></div>

@@ -1,12 +1,12 @@
 
 
-# Series to Literal
+# Convert a Series to literal
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L1044)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L978)
 
 ## Description
 
-convert Series to literal to perform modification and return
+Convert a Series to literal
 
 ## Usage
 

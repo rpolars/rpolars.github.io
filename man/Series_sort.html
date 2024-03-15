@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sort-this-series" class="md-skip">
+        <a href="#sort-a-series" class="md-skip">
           Skip to content
         </a>
       
@@ -668,6 +668,27 @@
   
   <span class="md-ellipsis">
     approx_n_unique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_arg_where.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    arg_where
   </span>
   
 
@@ -2707,11 +2728,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_to_frames.html" class="md-nav__link">
+      <a href="Series_to_frame.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    to_frames
+    to_frame
   </span>
   
 
@@ -2770,11 +2791,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Series_value_count.html" class="md-nav__link">
+      <a href="Series_value_counts.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    value_count
+    value_counts
   </span>
   
 
@@ -14755,10 +14776,10 @@
   
 
 
-<h1 id="sort-this-series">Sort this Series</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L907"><strong>Source code</strong></a></p>
+<h1 id="sort-a-series">Sort a Series</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L848"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>Sort this Series</p>
+<p>Sort a Series</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Series&gt;$sort(descending = FALSE, nulls_last = FALSE, in_place = FALSE)
 </code></pre>
@@ -14778,7 +14799,7 @@ Sort in descending order.
 <code id="Series_sort_:_nulls_last">nulls_last</code>
 </td>
 <td>
-Place null values last instead of first.
+If <code>TRUE</code>, place nulls values last.
 </td>
 </tr>
 <tr>
@@ -14786,9 +14807,11 @@ Place null values last instead of first.
 <code id="Series_sort_:_in_place">in_place</code>
 </td>
 <td>
-bool sort mutable in-place, breaks immutability If true will throw an
-error unless this option has been set:
-<code>options(polars.strictly_immutable = FALSE)</code>
+If <code>TRUE</code>, this will set the flag mutably and return NULL.
+Remember to use <code>options(polars.strictly_immutable = FALSE)</code>
+before using this parameter, otherwise an error will occur. If
+<code>FALSE</code> (default), it will return a cloned Series with the
+flag.
 </td>
 </tr>
 </table>
@@ -14798,16 +14821,30 @@ error unless this option has been set:
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="kc">NaN</span><span class="p">,</span><span class="w"> </span><span class="kc">Inf</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="kc">Inf</span><span class="p">))</span><span class="o">$</span><span class="nf">sort</span><span class="p">()</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1.5</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="kc">NaN</span><span class="p">,</span><span class="w"> </span><span class="kc">Inf</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="kc">Inf</span><span class="p">))</span><span class="o">$</span><span class="nf">sort</span><span class="p">()</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (5,)
+<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (6,)
 #&gt; Series: &#39;&#39; [f64]
 #&gt; [
 #&gt;  null
 #&gt;  -inf
 #&gt;  1.0
+#&gt;  1.5
 #&gt;  inf
 #&gt;  NaN
+#&gt; ]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1.5</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="kc">NaN</span><span class="p">,</span><span class="w"> </span><span class="kc">Inf</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="kc">Inf</span><span class="p">))</span><span class="o">$</span><span class="nf">sort</span><span class="p">(</span><span class="n">nulls_last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (6,)
+#&gt; Series: &#39;&#39; [f64]
+#&gt; [
+#&gt;  -inf
+#&gt;  1.0
+#&gt;  1.5
+#&gt;  inf
+#&gt;  NaN
+#&gt;  null
 #&gt; ]
 </code></pre></div>
 

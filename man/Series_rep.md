@@ -1,12 +1,12 @@
 
 
-# duplicate and concatenate a series
+# Duplicate and concatenate a series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L1004)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L944)
 
 ## Description
 
-duplicate and concatenate a series
+Note that this function doesn’t exist in Python Polars.
 
 ## Usage
 
@@ -21,7 +21,7 @@ duplicate and concatenate a series
 <code id="Series_rep_:_n">n</code>
 </td>
 <td>
-number of times to repeat
+Number of times to repeat
 </td>
 </tr>
 <tr>
@@ -29,23 +29,16 @@ number of times to repeat
 <code id="Series_rep_:_rechunk">rechunk</code>
 </td>
 <td>
-bool default true, reallocate object in memory. If FALSE the Series will
-take up less space, If TRUE calculations might be faster.
+If <code>TRUE</code> (default), reallocate object in memory which can
+speed up some calculations. If <code>FALSE</code>, the Series will take
+less space in memory.
 </td>
 </tr>
 </table>
 
-## Format
-
-method
-
-## Details
-
-This function in not implemented in pypolars
-
 ## Value
 
-bool
+Series
 
 ## Examples
 
