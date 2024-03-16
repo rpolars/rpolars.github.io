@@ -2,7 +2,7 @@
 
 # Get the last <code>n</code> rows.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L854)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L856)
 
 ## Description
 

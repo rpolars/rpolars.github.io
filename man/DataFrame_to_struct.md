@@ -2,7 +2,7 @@
 
 # Convert DataFrame to a Series of type "struct"
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1046)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1048)
 
 ## Description
 

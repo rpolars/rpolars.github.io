@@ -2,7 +2,7 @@
 
 # Modify/append column(s)
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L817)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L819)
 
 ## Description
 
