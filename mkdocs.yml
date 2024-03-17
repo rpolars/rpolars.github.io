@@ -2,7 +2,8 @@ site_name: Polars R Package
 repo_url: $ALTDOC_PACKAGE_URL_GITHUB
 repo_name: $ALTDOC_PACKAGE_NAME
 plugins:
-  - search
+  search:
+    separator: '[\s\-\$]+|(pl_|Series_|DataFrame_|LazyFrame_|GroupBy_|LazyGroupBy_|RollingGroupBy_|DynamicGroupBy_|ExprList_|ExprBin_|ExprCat_|ExprDT_|ExprMeta_|ExprName_|ExprStr_|ExprStruct_|ExprArr_|Expr_|IO_|RThreadHandle_|SQLContext_|S3_)'
 theme:
   name: material
   logo: polars-logo.png
