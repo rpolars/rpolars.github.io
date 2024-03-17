@@ -1,16 +1,16 @@
 
 
-# Start Expression with a column
+# Create an expression representing column(s) in a dataframe
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L108)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L100)
 
 ## Description
 
-Return an expression representing a column in a DataFrame.
+Create an expression representing column(s) in a dataframe
 
 ## Usage
 
-<pre><code class='language-R'>pl_col(name = "", ...)
+<pre><code class='language-R'>pl_col(...)
 </code></pre>
 
 ## Arguments
@@ -18,188 +18,128 @@ Return an expression representing a column in a DataFrame.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_col_:_name">name</code>
-</td>
-<td>
-<ul>
-<li>
-
-a single column by a string
-
-</li>
-<li>
-
-all columns by using a wildcard <code>“\*“</code>
-
-</li>
-<li>
-
-multiple columns as vector of strings
-
-</li>
-<li>
-
-column by regular expression if the regex starts with <code>^</code> and
-ends with <code>$</code>
-e.g. pl$DataFrame(iris)$select(pl$col(c("^Sepal.\*$")))
-
-</li>
-<li>
-
-a single DataType or an R list of DataTypes, select any column of any
-such DataType
-
-</li>
-<li>
-
-Series of utf8 strings abiding to above options
-
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
 <code id="pl_col_:_...">…</code>
 </td>
 <td>
-Additional column names can be passed as strings, separated by commas.
+
+One of the following:
+
+<ul>
+<li>
+
+character vectors
+
+<ul>
+<li>
+
+Single wildcard <code>“\*“</code> has a special meaning: check the
+examples.
+
+</li>
+</ul>
+</li>
+<li>
+
+RPolarsDataTypes
+
+</li>
+<li>
+
+a list of RPolarsDataTypes
+
+</li>
+</ul>
 </td>
 </tr>
 </table>
 
 ## Value
 
-Column Expression
+Expr of a column or columns
 
 ## Examples
 
 ``` r
 library(polars)
 
-
-df = pl$DataFrame(list(foo = 1, bar = 2L, foobar = "3"))
-
-# a single column by a string
-df$select(pl$col("foo"))
+# a single column by a character
+pl$col("foo")
 ```
 
-    #> shape: (1, 1)
-    #> ┌─────┐
-    #> │ foo │
-    #> │ --- │
-    #> │ f64 │
-    #> ╞═════╡
-    #> │ 1.0 │
-    #> └─────┘
+    #> polars Expr: col("foo")
 
 ``` r
-# two columns as strings separated by commas
-df$select(pl$col("foo", "bar"))
+# multiple columns by characters
+pl$col("foo", "bar")
 ```
 
-    #> shape: (1, 2)
-    #> ┌─────┬─────┐
-    #> │ foo ┆ bar │
-    #> │ --- ┆ --- │
-    #> │ f64 ┆ i32 │
-    #> ╞═════╪═════╡
-    #> │ 1.0 ┆ 2   │
-    #> └─────┴─────┘
+    #> polars Expr: cols(["foo", "bar"])
 
 ``` r
-# all columns by wildcard
+# multiple columns by RPolarsDataTypes
+pl$col(pl$Float64, pl$String)
+```
+
+    #> polars Expr: dtype_columns([Float64, String])
+
+``` r
+# Single `"*"` is converted to a wildcard expression
+pl$col("*")
+```
+
+    #> polars Expr: *
+
+``` r
+# multiple character vectors and a list of RPolarsDataTypes are also allowed
+pl$col(c("foo", "bar"), "baz")
+```
+
+    #> polars Expr: cols(["foo", "bar", "baz"])
+
+``` r
+pl$col("foo", c("bar", "baz"))
+```
+
+    #> polars Expr: cols(["foo", "bar", "baz"])
+
+``` r
+pl$col(list(pl$Float64, pl$String))
+```
+
+    #> polars Expr: dtype_columns([Float64, String])
+
+``` r
+# there are some special notations for selecting columns
+df = pl$DataFrame(foo = 1:3, bar = 4:6, baz = 7:9)
+
+# select all columns with a wildcard `"*"`
 df$select(pl$col("*"))
 ```
 
-    #> shape: (1, 3)
-    #> ┌─────┬─────┬────────┐
-    #> │ foo ┆ bar ┆ foobar │
-    #> │ --- ┆ --- ┆ ---    │
-    #> │ f64 ┆ i32 ┆ str    │
-    #> ╞═════╪═════╪════════╡
-    #> │ 1.0 ┆ 2   ┆ 3      │
-    #> └─────┴─────┴────────┘
+    #> shape: (3, 3)
+    #> ┌─────┬─────┬─────┐
+    #> │ foo ┆ bar ┆ baz │
+    #> │ --- ┆ --- ┆ --- │
+    #> │ i32 ┆ i32 ┆ i32 │
+    #> ╞═════╪═════╪═════╡
+    #> │ 1   ┆ 4   ┆ 7   │
+    #> │ 2   ┆ 5   ┆ 8   │
+    #> │ 3   ┆ 6   ┆ 9   │
+    #> └─────┴─────┴─────┘
 
 ``` r
-df$select(pl$all())
+# select multiple columns by a regular expression
+# starts with `^` and ends with `$`
+df$select(pl$col(c("^ba.*$")))
 ```
 
-    #> shape: (1, 3)
-    #> ┌─────┬─────┬────────┐
-    #> │ foo ┆ bar ┆ foobar │
-    #> │ --- ┆ --- ┆ ---    │
-    #> │ f64 ┆ i32 ┆ str    │
-    #> ╞═════╪═════╪════════╡
-    #> │ 1.0 ┆ 2   ┆ 3      │
-    #> └─────┴─────┴────────┘
-
-``` r
-# multiple columns as vector of strings
-df$select(pl$col(c("foo", "bar")))
-```
-
-    #> shape: (1, 2)
+    #> shape: (3, 2)
     #> ┌─────┬─────┐
-    #> │ foo ┆ bar │
+    #> │ bar ┆ baz │
     #> │ --- ┆ --- │
-    #> │ f64 ┆ i32 │
+    #> │ i32 ┆ i32 │
     #> ╞═════╪═════╡
-    #> │ 1.0 ┆ 2   │
+    #> │ 4   ┆ 7   │
+    #> │ 5   ┆ 8   │
+    #> │ 6   ┆ 9   │
     #> └─────┴─────┘
-
-``` r
-# column by regular expression if the regex starts with `^` and ends with `$`
-df$select(pl$col("^foo.*$"))
-```
-
-    #> shape: (1, 2)
-    #> ┌─────┬────────┐
-    #> │ foo ┆ foobar │
-    #> │ --- ┆ ---    │
-    #> │ f64 ┆ str    │
-    #> ╞═════╪════════╡
-    #> │ 1.0 ┆ 3      │
-    #> └─────┴────────┘
-
-``` r
-# a single DataType
-df$select(pl$col(pl$dtypes$Float64))
-```
-
-    #> shape: (1, 1)
-    #> ┌─────┐
-    #> │ foo │
-    #> │ --- │
-    #> │ f64 │
-    #> ╞═════╡
-    #> │ 1.0 │
-    #> └─────┘
-
-``` r
-# ... or an R list of DataTypes, select any column of any such DataType
-df$select(pl$col(list(pl$dtypes$Float64, pl$dtypes$String)))
-```
-
-    #> shape: (1, 2)
-    #> ┌─────┬────────┐
-    #> │ foo ┆ foobar │
-    #> │ --- ┆ ---    │
-    #> │ f64 ┆ str    │
-    #> ╞═════╪════════╡
-    #> │ 1.0 ┆ 3      │
-    #> └─────┴────────┘
-
-``` r
-# from Series of names
-df$select(pl$col(pl$Series(c("bar", "foobar"))))
-```
-
-    #> shape: (1, 2)
-    #> ┌─────┬────────┐
-    #> │ bar ┆ foobar │
-    #> │ --- ┆ ---    │
-    #> │ i32 ┆ str    │
-    #> ╞═════╪════════╡
-    #> │ 2   ┆ 3      │
-    #> └─────┴────────┘

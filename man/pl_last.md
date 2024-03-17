@@ -2,7 +2,7 @@
 
 # Get the last value.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L242)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L265)
 
 ## Description
 

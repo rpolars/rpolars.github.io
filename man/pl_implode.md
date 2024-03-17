@@ -2,15 +2,15 @@
 
 # Aggregate all column values into a list.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L177)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L200)
 
 ## Description
 
-Aggregate all column values into a list.
+This function is syntactic sugar for <code>pl$col(…)$implode()</code>.
 
 ## Usage
 
-<pre><code class='language-R'>pl_implode(name)
+<pre><code class='language-R'>pl_implode(...)
 </code></pre>
 
 ## Arguments
@@ -18,10 +18,11 @@ Aggregate all column values into a list.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_implode_:_name">name</code>
+<code id="pl_implode_:_...">…</code>
 </td>
 <td>
-Name of the column(s) that should be imploded, passed to pl$col()
+Characters indicating the column names, passed to <code>pl$col()</code>.
+See <code>?pl_col</code> for details.
 </td>
 </tr>
 </table>
