@@ -2,7 +2,7 @@
 
 # Rolling sum
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2389)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2385)
 
 ## Description
 

@@ -359,7 +359,6 @@ nav:
             - arg_min: man/Expr_arg_min.md
             - arg_sort: man/Expr_arg_sort.md
             - arg_unique: man/Expr_arg_unique.md
-            - argsort: man/Expr_argsort.md
             - backward_fill: man/Expr_backward_fill.md
             - bottom_k: man/Expr_bottom_k.md
             - cast: man/Expr_cast.md

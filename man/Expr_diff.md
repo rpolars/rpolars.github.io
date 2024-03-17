@@ -2,7 +2,7 @@
 
 # Difference
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2599)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2595)
 
 ## Description
 

@@ -310,7 +310,6 @@ pl$show_all_public_methods("RPolarsSeries")
     #>           [ arg_min ; function ]
     #>           [ arg_sort ; function ]
     #>           [ arg_unique ; function ]
-    #>           [ argsort ; function ]
     #>           [ arr ; property function ]
     #>           [ backward_fill ; function ]
     #>           [ bin ; property function ]
