@@ -28,7 +28,7 @@ DataFrame to compare with.
 
 ## Value
 
-A boolean.
+A logical value
 
 ## Examples
 

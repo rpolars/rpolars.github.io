@@ -25,7 +25,7 @@ Return Polars DataFrame as a list of vectors
 <code id="DataFrame_to_list_:_unnest_structs">unnest_structs</code>
 </td>
 <td>
-Boolean. If <code>TRUE</code> (default), then
+Logical. If <code>TRUE</code> (default), then
 <code style="white-space: pre;">$unnest()</code> is applied on any
 struct column.
 </td>

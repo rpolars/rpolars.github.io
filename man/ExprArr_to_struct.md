@@ -24,9 +24,9 @@ Convert array to struct
 If the name and number of the desired fields is known in advance, a list
 of field names can be given, which will be assigned by index. Otherwise,
 to dynamically assign field names, a custom R function that takes an R
-scalar double and outputs a string value can be used. If
-<code>NULL</code> (default), fields will be <code>field_0</code>,
-<code>field_1</code> … <code>field_n</code>.
+double and outputs a string value can be used. If <code>NULL</code>
+(default), fields will be <code>field_0</code>, <code>field_1</code> …
+<code>field_n</code>.
 </td>
 </tr>
 </table>

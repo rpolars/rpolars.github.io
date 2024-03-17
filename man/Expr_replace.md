@@ -51,8 +51,8 @@ an Expr
 <code id="Expr_replace_:_new">new</code>
 </td>
 <td>
-Either a scalar, a vector of same length as <code>old</code> or an Expr.
-If missing, <code>old</code> must be a named list.
+Either a vector of length 1, a vector of same length as <code>old</code>
+or an Expr. If missing, <code>old</code> must be a named list.
 </td>
 </tr>
 <tr>
@@ -87,7 +87,7 @@ library(polars)
 
 df = pl$DataFrame(a = c(1, 2, 2, 3))
 
-# "old" and "new" can take either scalars or vectors of same length
+# "old" and "new" can take vectors of length 1 or of same length
 df$with_columns(replaced = pl$col("a")$replace(2, 100))
 ```
 

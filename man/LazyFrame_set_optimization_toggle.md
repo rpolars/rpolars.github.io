@@ -31,7 +31,7 @@ Configure the optimization toggles for the lazy query
 <code id="LazyFrame_set_optimization_toggle_:_type_coercion">type_coercion</code>
 </td>
 <td>
-Boolean. Coerce types such that operations succeed and run on minimal
+Logical. Coerce types such that operations succeed and run on minimal
 required memory.
 </td>
 </tr>
@@ -40,7 +40,7 @@ required memory.
 <code id="LazyFrame_set_optimization_toggle_:_predicate_pushdown">predicate_pushdown</code>
 </td>
 <td>
-Boolean. Applies filters as early as possible at scan level.
+Logical. Applies filters as early as possible at scan level.
 </td>
 </tr>
 <tr>
@@ -48,7 +48,7 @@ Boolean. Applies filters as early as possible at scan level.
 <code id="LazyFrame_set_optimization_toggle_:_projection_pushdown">projection_pushdown</code>
 </td>
 <td>
-Boolean. Select only the columns that are needed at the scan level.
+Logical. Select only the columns that are needed at the scan level.
 </td>
 </tr>
 <tr>
@@ -56,7 +56,7 @@ Boolean. Select only the columns that are needed at the scan level.
 <code id="LazyFrame_set_optimization_toggle_:_simplify_expression">simplify_expression</code>
 </td>
 <td>
-Boolean. Various optimizations, such as constant folding and replacing
+Logical. Various optimizations, such as constant folding and replacing
 expensive operations with faster alternatives.
 </td>
 </tr>
@@ -65,7 +65,7 @@ expensive operations with faster alternatives.
 <code id="LazyFrame_set_optimization_toggle_:_slice_pushdown">slice_pushdown</code>
 </td>
 <td>
-Boolean. Only load the required slice from the scan level. Don’t
+Logical. Only load the required slice from the scan level. Don’t
 materialize sliced outputs (e.g. <code>join$head(10)</code>).
 </td>
 </tr>
@@ -74,7 +74,7 @@ materialize sliced outputs (e.g. <code>join$head(10)</code>).
 <code id="LazyFrame_set_optimization_toggle_:_comm_subplan_elim">comm_subplan_elim</code>
 </td>
 <td>
-Boolean. Will try to cache branching subplans that occur on self-joins
+Logical. Will try to cache branching subplans that occur on self-joins
 or unions.
 </td>
 </tr>
@@ -83,7 +83,7 @@ or unions.
 <code id="LazyFrame_set_optimization_toggle_:_comm_subexpr_elim">comm_subexpr_elim</code>
 </td>
 <td>
-Boolean. Common subexpressions will be cached and reused.
+Logical. Common subexpressions will be cached and reused.
 </td>
 </tr>
 <tr>
@@ -91,7 +91,7 @@ Boolean. Common subexpressions will be cached and reused.
 <code id="LazyFrame_set_optimization_toggle_:_streaming">streaming</code>
 </td>
 <td>
-Boolean. Run parts of the query in a streaming fashion (this is in an
+Logical. Run parts of the query in a streaming fashion (this is in an
 alpha state).
 </td>
 </tr>
@@ -100,7 +100,7 @@ alpha state).
 <code id="LazyFrame_set_optimization_toggle_:_eager">eager</code>
 </td>
 <td>
-Boolean. Run the query eagerly.
+Logical. Run the query eagerly.
 </td>
 </tr>
 </table>

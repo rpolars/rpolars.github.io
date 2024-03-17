@@ -673,6 +673,7 @@ nav:
         - DataType_Struct: man/DataType_Struct.md
         - global_rpool_cap: man/global_rpool_cap.md
         - is_polars_df: man/is_polars_df.md
+        - is_polars_dtype: man/is_polars_dtype.md
         - is_polars_lf: man/is_polars_lf.md
         - is_polars_series: man/is_polars_series.md
         - polars_class_object: man/polars_class_object.md

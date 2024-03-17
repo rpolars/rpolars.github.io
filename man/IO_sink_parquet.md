@@ -122,7 +122,7 @@ means smaller files on disk:
 <code id="LazyFrame_sink_parquet_:_statistics">statistics</code>
 </td>
 <td>
-Boolean. Whether compute and write column statistics. This requires
+Logical. Whether compute and write column statistics. This requires
 extra compute.
 </td>
 </tr>
@@ -160,7 +160,7 @@ Maintain the order in which data is processed. Setting this to
 <code id="LazyFrame_sink_parquet_:_type_coercion">type_coercion</code>
 </td>
 <td>
-Boolean. Coerce types such that operations succeed and run on minimal
+Logical. Coerce types such that operations succeed and run on minimal
 required memory.
 </td>
 </tr>
@@ -169,7 +169,7 @@ required memory.
 <code id="LazyFrame_sink_parquet_:_predicate_pushdown">predicate_pushdown</code>
 </td>
 <td>
-Boolean. Applies filters as early as possible at scan level.
+Logical. Applies filters as early as possible at scan level.
 </td>
 </tr>
 <tr>
@@ -177,7 +177,7 @@ Boolean. Applies filters as early as possible at scan level.
 <code id="LazyFrame_sink_parquet_:_projection_pushdown">projection_pushdown</code>
 </td>
 <td>
-Boolean. Select only the columns that are needed at the scan level.
+Logical. Select only the columns that are needed at the scan level.
 </td>
 </tr>
 <tr>
@@ -185,7 +185,7 @@ Boolean. Select only the columns that are needed at the scan level.
 <code id="LazyFrame_sink_parquet_:_simplify_expression">simplify_expression</code>
 </td>
 <td>
-Boolean. Various optimizations, such as constant folding and replacing
+Logical. Various optimizations, such as constant folding and replacing
 expensive operations with faster alternatives.
 </td>
 </tr>
@@ -194,7 +194,7 @@ expensive operations with faster alternatives.
 <code id="LazyFrame_sink_parquet_:_slice_pushdown">slice_pushdown</code>
 </td>
 <td>
-Boolean. Only load the required slice from the scan level. Don’t
+Logical. Only load the required slice from the scan level. Don’t
 materialize sliced outputs (e.g. <code>join$head(10)</code>).
 </td>
 </tr>
@@ -203,7 +203,7 @@ materialize sliced outputs (e.g. <code>join$head(10)</code>).
 <code id="LazyFrame_sink_parquet_:_no_optimization">no_optimization</code>
 </td>
 <td>
-Boolean. Sets the following parameters to <code>FALSE</code>:
+Logical. Sets the following parameters to <code>FALSE</code>:
 <code>predicate_pushdown</code>, <code>projection_pushdown</code>,
 <code>slice_pushdown</code>, <code>comm_subplan_elim</code>,
 <code>comm_subexpr_elim</code>.
@@ -214,7 +214,7 @@ Boolean. Sets the following parameters to <code>FALSE</code>:
 <code id="LazyFrame_sink_parquet_:_inherit_optimization">inherit_optimization</code>
 </td>
 <td>
-Boolean. Use existing optimization settings regardless the settings
+Logical. Use existing optimization settings regardless the settings
 specified in this function call.
 </td>
 </tr>

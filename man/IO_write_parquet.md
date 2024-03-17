@@ -111,7 +111,7 @@ means smaller files on disk:
 <code id="DataFrame_write_parquet_:_statistics">statistics</code>
 </td>
 <td>
-Boolean. Whether compute and write column statistics. This requires
+Logical. Whether compute and write column statistics. This requires
 extra compute.
 </td>
 </tr>

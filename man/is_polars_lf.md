@@ -6,7 +6,7 @@
 
 ## Description
 
-These functions test if the object is a polars LazyFrame.
+This function tests if the object is a polars LazyFrame.
 
 ## Usage
 

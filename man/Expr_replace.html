@@ -14431,6 +14431,27 @@
   
   
     <li class="md-nav__item">
+      <a href="is_polars_dtype.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    is_polars_dtype
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="is_polars_lf.html" class="md-nav__link">
         
   
@@ -14802,8 +14823,8 @@ an Expr
 <code id="Expr_replace_:_new">new</code>
 </td>
 <td>
-Either a scalar, a vector of same length as <code>old</code> or an Expr.
-If missing, <code>old</code> must be a named list.
+Either a vector of length 1, a vector of same length as <code>old</code>
+or an Expr. If missing, <code>old</code> must be a named list.
 </td>
 </tr>
 <tr>
@@ -14834,7 +14855,7 @@ inputs.
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">))</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># &quot;old&quot; and &quot;new&quot; can take either scalars or vectors of same length</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># &quot;old&quot; and &quot;new&quot; can take vectors of length 1 or of same length</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span><span class="n">replaced</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">replace</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">100</span><span class="p">))</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; shape: (4, 2)

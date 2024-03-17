@@ -29,7 +29,7 @@ ddof, where N represents the number of elements. By default ddof is 1.
 
 ## Value
 
-A numeric scalar
+A numeric value
 
 ## Examples
 

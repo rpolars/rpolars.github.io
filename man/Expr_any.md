@@ -21,7 +21,7 @@ Check if any boolean value in a Boolean column is <code>TRUE</code>.
 <code id="Expr_any_:_drop_nulls">drop_nulls</code>
 </td>
 <td>
-Boolean. Default TRUE, as name says.
+Logical. Default TRUE, as name says.
 </td>
 </tr>
 </table>

@@ -20,7 +20,7 @@ summing to prevent overflow issues.
 
 ## Value
 
-A numeric scalar
+A numeric value
 
 ## Examples
 

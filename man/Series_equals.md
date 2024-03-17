@@ -46,7 +46,7 @@ Overrides <code>null_equal</code>.
 
 ## Value
 
-A boolean scalar
+A logical value
 
 ## Examples
 

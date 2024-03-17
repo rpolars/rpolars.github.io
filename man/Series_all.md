@@ -15,7 +15,7 @@ Reduce Boolean Series with ALL
 
 ## Value
 
-A boolean scalar
+A logical value
 
 ## Examples
 

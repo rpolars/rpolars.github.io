@@ -27,7 +27,7 @@ a vector.
 <code id="Series_map_elements_:_fun">fun</code>
 </td>
 <td>
-r function, should take a scalar value as input and return one.
+r function, should take a single value as input and return one.
 </td>
 </tr>
 <tr>

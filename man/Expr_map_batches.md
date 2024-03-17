@@ -54,7 +54,7 @@ Aggregate list. Map from vector to group in group_by context.
 <code id="Expr_map_batches_:_in_background">in_background</code>
 </td>
 <td>
-Boolean. Whether to execute the map in a background R process. Combined
+Logical. Whether to execute the map in a background R process. Combined
 with setting e.g. <code>options(polars.rpool_cap = 4)</code> it can
 speed up some slow R functions as they can run in parallel R sessions.
 The communication speed between processes is quite slower than between
@@ -137,7 +137,7 @@ pl$LazyFrame(a = 1, b = 2, c = 3, d = 4)$select(
 ```
 
     #>    user  system elapsed 
-    #>   0.023   0.003   0.432
+    #>   0.027   0.000   0.436
 
 ``` r
 # map in parallel 1: Overhead to start up extra R processes / sessions
@@ -158,7 +158,7 @@ pl$LazyFrame(a = 1, b = 2, c = 3, d = 4)$select(
 ```
 
     #>    user  system elapsed 
-    #>   0.005   0.006   0.981
+    #>   0.009   0.004   0.869
 
 ``` r
 # map in parallel 2: Reuse R processes in "polars global_rpool".
@@ -177,4 +177,4 @@ pl$LazyFrame(a = 1, b = 2, c = 3, d = 4)$select(
 ```
 
     #>    user  system elapsed 
-    #>   0.006   0.003   0.123
+    #>   0.007   0.004   0.118

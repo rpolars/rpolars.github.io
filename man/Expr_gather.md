@@ -21,8 +21,8 @@ Gather values by index
 <code id="Expr_gather_:_indices">indices</code>
 </td>
 <td>
-R scalar/vector or Series, or Expr that leads to a Series of dtype
-Int64. (0-indexed)
+R vector or Series, or Expr that leads to a Series of dtype Int64.
+(0-indexed)
 </td>
 </tr>
 </table>

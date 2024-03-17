@@ -15,7 +15,7 @@ This function simply checks if the global string cache is active.
 
 ## Value
 
-A boolean
+A logical value
 
 ## See Also
 

@@ -90,7 +90,7 @@ Number of rows to fetch. Defaults to <code>Inf</code>, meaning all rows.
 <code id="as.data.frame.RPolarsDataFrame_:_type_coercion">type_coercion</code>
 </td>
 <td>
-Boolean. Coerce types such that operations succeed and run on minimal
+Logical. Coerce types such that operations succeed and run on minimal
 required memory.
 </td>
 </tr>
@@ -99,7 +99,7 @@ required memory.
 <code id="as.data.frame.RPolarsDataFrame_:_predicate_pushdown">predicate_pushdown</code>
 </td>
 <td>
-Boolean. Applies filters as early as possible at scan level.
+Logical. Applies filters as early as possible at scan level.
 </td>
 </tr>
 <tr>
@@ -107,7 +107,7 @@ Boolean. Applies filters as early as possible at scan level.
 <code id="as.data.frame.RPolarsDataFrame_:_projection_pushdown">projection_pushdown</code>
 </td>
 <td>
-Boolean. Select only the columns that are needed at the scan level.
+Logical. Select only the columns that are needed at the scan level.
 </td>
 </tr>
 <tr>
@@ -115,7 +115,7 @@ Boolean. Select only the columns that are needed at the scan level.
 <code id="as.data.frame.RPolarsDataFrame_:_simplify_expression">simplify_expression</code>
 </td>
 <td>
-Boolean. Various optimizations, such as constant folding and replacing
+Logical. Various optimizations, such as constant folding and replacing
 expensive operations with faster alternatives.
 </td>
 </tr>
@@ -124,7 +124,7 @@ expensive operations with faster alternatives.
 <code id="as.data.frame.RPolarsDataFrame_:_slice_pushdown">slice_pushdown</code>
 </td>
 <td>
-Boolean. Only load the required slice from the scan level. Don’t
+Logical. Only load the required slice from the scan level. Don’t
 materialize sliced outputs (e.g. <code>join$head(10)</code>).
 </td>
 </tr>
@@ -133,7 +133,7 @@ materialize sliced outputs (e.g. <code>join$head(10)</code>).
 <code id="as.data.frame.RPolarsDataFrame_:_comm_subplan_elim">comm_subplan_elim</code>
 </td>
 <td>
-Boolean. Will try to cache branching subplans that occur on self-joins
+Logical. Will try to cache branching subplans that occur on self-joins
 or unions.
 </td>
 </tr>
@@ -142,7 +142,7 @@ or unions.
 <code id="as.data.frame.RPolarsDataFrame_:_comm_subexpr_elim">comm_subexpr_elim</code>
 </td>
 <td>
-Boolean. Common subexpressions will be cached and reused.
+Logical. Common subexpressions will be cached and reused.
 </td>
 </tr>
 <tr>
@@ -150,7 +150,7 @@ Boolean. Common subexpressions will be cached and reused.
 <code id="as.data.frame.RPolarsDataFrame_:_streaming">streaming</code>
 </td>
 <td>
-Boolean. Run parts of the query in a streaming fashion (this is in an
+Logical. Run parts of the query in a streaming fashion (this is in an
 alpha state).
 </td>
 </tr>
@@ -159,7 +159,7 @@ alpha state).
 <code id="as.data.frame.RPolarsDataFrame_:_no_optimization">no_optimization</code>
 </td>
 <td>
-Boolean. Sets the following parameters to <code>FALSE</code>:
+Logical. Sets the following parameters to <code>FALSE</code>:
 <code>predicate_pushdown</code>, <code>projection_pushdown</code>,
 <code>slice_pushdown</code>, <code>comm_subplan_elim</code>,
 <code>comm_subexpr_elim</code>.
@@ -170,7 +170,7 @@ Boolean. Sets the following parameters to <code>FALSE</code>:
 <code id="as.data.frame.RPolarsDataFrame_:_inherit_optimization">inherit_optimization</code>
 </td>
 <td>
-Boolean. Use existing optimization settings regardless the settings
+Logical. Use existing optimization settings regardless the settings
 specified in this function call.
 </td>
 </tr>
@@ -179,7 +179,7 @@ specified in this function call.
 <code id="as.data.frame.RPolarsDataFrame_:_collect_in_background">collect_in_background</code>
 </td>
 <td>
-Boolean. Detach this query from R session. Computation will start in
+Logical. Detach this query from R session. Computation will start in
 background. Get a handle which later can be converted into the resulting
 DataFrame. Useful in interactive mode to not lock R session.
 </td>

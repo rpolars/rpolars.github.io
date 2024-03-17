@@ -29,7 +29,7 @@ Expr to compare with
 
 ## Value
 
-A boolean: <code>TRUE</code> if equal, <code>FALSE</code> otherwise
+A logical value
 
 ## Examples
 

@@ -15,7 +15,7 @@ Count unique values in Series
 
 ## Value
 
-A numeric scalar
+A numeric value
 
 ## Examples
 

@@ -16,7 +16,7 @@ This checks whether the Series DataType is in
 
 ## Value
 
-A boolean scalar
+A logical value
 
 ## Examples
 

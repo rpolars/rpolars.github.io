@@ -15,7 +15,7 @@ Note that this is 0-indexed.
 
 ## Value
 
-A numeric scalar
+A numeric value
 
 ## Examples
 

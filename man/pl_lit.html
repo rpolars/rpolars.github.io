@@ -14438,6 +14438,27 @@
   
   
     <li class="md-nav__item">
+      <a href="is_polars_dtype.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    is_polars_dtype
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="is_polars_lf.html" class="md-nav__link">
         
   
@@ -14800,7 +14821,7 @@ A vector of any length
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># scalars to literal, explicit `pl$lit(42)` implicit `+ 2`</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># values to literal, explicit `pl$lit(42)` implicit `+ 2`</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;some_column&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="m">42</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; polars Expr: [([(col(&quot;some_column&quot;)) // (42.0)]) + (2.0)]

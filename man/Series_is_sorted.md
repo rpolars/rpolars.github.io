@@ -28,7 +28,7 @@ Check if the Series is sorted in descending order.
 
 ## Value
 
-A boolean scalar
+A logical value
 
 ## See Also
 

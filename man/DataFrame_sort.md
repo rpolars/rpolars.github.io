@@ -44,7 +44,7 @@ More columns to sort by as above but provided one Expr per argument.
 <code id="DataFrame_sort_:_descending">descending</code>
 </td>
 <td>
-Boolean. Sort in descending order (default is <code>FALSE</code>). This
+Logical. Sort in descending order (default is <code>FALSE</code>). This
 must be either of length 1 or a logical vector of the same length as the
 number of Expr(s) specified in <code>by</code> and <code>…</code>.
 </td>
@@ -54,7 +54,7 @@ number of Expr(s) specified in <code>by</code> and <code>…</code>.
 <code id="DataFrame_sort_:_nulls_last">nulls_last</code>
 </td>
 <td>
-Boolean. Place <code>NULL</code>s at the end? Default is
+Logical. Place <code>NULL</code>s at the end? Default is
 <code>FALSE</code>.
 </td>
 </tr>

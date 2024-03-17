@@ -29,7 +29,7 @@ not used
 <code id="DataFrame_glimpse_:_return_as_string">return_as_string</code>
 </td>
 <td>
-Boolean (default <code>FALSE</code>). If <code>TRUE</code>, return the
+Logical (default <code>FALSE</code>). If <code>TRUE</code>, return the
 output as a string.
 </td>
 </tr>

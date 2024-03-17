@@ -89,7 +89,7 @@ depending on the context, requirements for function differ:
 
 in <code style="white-space: pre;">$select()</code> or
 <code style="white-space: pre;">$with_columns()</code> (selection
-context), the function must operate on R scalar values. Polars will
+context), the function must operate on R values of length 1. Polars will
 convert each element into an R value and pass it to the function. The
 output of the user function will be converted back into a polars type
 (the return type must match, see argument <code>return_type</code>).
@@ -180,7 +180,7 @@ pl$DataFrame(iris)$group_by("Species")$agg(e_sum, e_head)
 
 ``` r
 # apply a function on each value (should be avoided): here the input is an R
-# scalar
+# value of length 1
 # select only Float64 columns
 my_selection = pl$col(pl$dtypes$Float64)
 
@@ -239,7 +239,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   2.498   0.000   2.699
+    #>   2.437   0.015   2.648
 
 ``` r
 # Comparing this to the standard polars syntax:
@@ -251,7 +251,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.001   0.002   0.004
+    #>   0.004   0.000   0.004
 
 ``` r
 # Running in parallel --------------------------------
@@ -271,7 +271,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.036   0.000   1.237
+    #>   0.038   0.000   1.240
 
 ``` r
 # first run in parallel: there is some overhead to start up extra R processes
@@ -296,7 +296,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.021   0.000   1.227
+    #>   0.014   0.003   1.178
 
 ``` r
 # second run in parallel: this reuses R processes in "polars global_rpool".
@@ -317,4 +317,4 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.017   0.000   0.340
+    #>   0.017   0.001   0.333

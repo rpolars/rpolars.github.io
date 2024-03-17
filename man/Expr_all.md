@@ -6,9 +6,9 @@
 
 ## Description
 
-Check if all boolean values in a Boolean column are <code>TRUE</code>.
-This method is an expression - not to be confused with
-<code>pl$all()</code> which is a function to select all columns.
+Check if all values in a Boolean column are <code>TRUE</code>. This
+method is an expression - not to be confused with <code>pl$all()</code>
+which is a function to select all columns.
 
 ## Usage
 
@@ -23,7 +23,7 @@ This method is an expression - not to be confused with
 <code id="Expr_all_:_drop_nulls">drop_nulls</code>
 </td>
 <td>
-Boolean. Default TRUE, as name says.
+Logical. Default TRUE, as name says.
 </td>
 </tr>
 </table>
