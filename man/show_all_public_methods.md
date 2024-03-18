@@ -540,6 +540,7 @@ pl$show_all_public_methods()
     #>           [ std ; function ]
     #>           [ sum ; function ]
     #>           [ tail ; function ]
+    #>           [ to_dot ; function ]
     #>           [ unique ; function ]
     #>           [ unnest ; function ]
     #>           [ var ; function ]

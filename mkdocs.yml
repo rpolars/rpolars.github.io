@@ -247,6 +247,7 @@ nav:
         - std: man/LazyFrame_std.md
         - sum: man/LazyFrame_sum.md
         - tail: man/LazyFrame_tail.md
+        - to_dot: man/LazyFrame_to_dot.md
         - unique: man/LazyFrame_unique.md
         - unnest: man/LazyFrame_unnest.md
         - var: man/LazyFrame_var.md

@@ -142,10 +142,11 @@ ls(.pr$env$RPolarsLazyFrame)
     #> [43] "sink_parquet"            "slice"                  
     #> [45] "sort"                    "std"                    
     #> [47] "sum"                     "tail"                   
-    #> [49] "unique"                  "unnest"                 
-    #> [51] "var"                     "width"                  
-    #> [53] "with_columns"            "with_context"           
-    #> [55] "with_row_count"          "with_row_index"
+    #> [49] "to_dot"                  "unique"                 
+    #> [51] "unnest"                  "var"                    
+    #> [53] "width"                   "with_columns"           
+    #> [55] "with_context"            "with_row_count"         
+    #> [57] "with_row_index"
 
 ``` r
 # see all private methods (not intended for regular use)
@@ -175,9 +176,10 @@ ls(.pr$LazyFrame)
     #> [41] "sink_parquet"            "slice"                  
     #> [43] "sort_by_exprs"           "std"                    
     #> [45] "sum"                     "tail"                   
-    #> [47] "unique"                  "unnest"                 
-    #> [49] "var"                     "with_columns"           
-    #> [51] "with_context"            "with_row_index"
+    #> [47] "to_dot"                  "unique"                 
+    #> [49] "unnest"                  "var"                    
+    #> [51] "with_columns"            "with_context"           
+    #> [53] "with_row_index"
 
 ``` r
 # Practical example ##
@@ -222,7 +224,7 @@ Ldf_best$describe_plan()
 
     #> FILTER [(col("Species")) == (String(setosa))] FROM
     #> 
-    #>   Csv SCAN /tmp/Rtmplwfwk9/file7d4b740d232c
+    #>   Csv SCAN /tmp/RtmpKpDmrD/file7db356c39eda
     #>   PROJECT */5 COLUMNS
 
 ``` r
@@ -239,7 +241,7 @@ Ldf_best$describe_optimized_plan()
 ```
 
     #> 
-    #>   Csv SCAN /tmp/Rtmplwfwk9/file7d4b740d232c
+    #>   Csv SCAN /tmp/RtmpKpDmrD/file7db356c39eda
     #>   PROJECT */5 COLUMNS
     #>   SELECTION: [(col("Species")) == (String(setosa))]
 

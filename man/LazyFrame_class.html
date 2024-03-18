@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.10ba22f1.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -4937,6 +4937,27 @@
   
   <span class="md-ellipsis">
     tail
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LazyFrame_to_dot.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    to_dot
   </span>
   
 
@@ -14885,10 +14906,11 @@ withr::with_envvar(
 #&gt; [43] &quot;sink_parquet&quot;            &quot;slice&quot;                  
 #&gt; [45] &quot;sort&quot;                    &quot;std&quot;                    
 #&gt; [47] &quot;sum&quot;                     &quot;tail&quot;                   
-#&gt; [49] &quot;unique&quot;                  &quot;unnest&quot;                 
-#&gt; [51] &quot;var&quot;                     &quot;width&quot;                  
-#&gt; [53] &quot;with_columns&quot;            &quot;with_context&quot;           
-#&gt; [55] &quot;with_row_count&quot;          &quot;with_row_index&quot;
+#&gt; [49] &quot;to_dot&quot;                  &quot;unique&quot;                 
+#&gt; [51] &quot;unnest&quot;                  &quot;var&quot;                    
+#&gt; [53] &quot;width&quot;                   &quot;with_columns&quot;           
+#&gt; [55] &quot;with_context&quot;            &quot;with_row_count&quot;         
+#&gt; [57] &quot;with_row_index&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># see all private methods (not intended for regular use)</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nf">ls</span><span class="p">(</span><span class="n">.pr</span><span class="o">$</span><span class="n">LazyFrame</span><span class="p">)</span>
@@ -14916,9 +14938,10 @@ withr::with_envvar(
 #&gt; [41] &quot;sink_parquet&quot;            &quot;slice&quot;                  
 #&gt; [43] &quot;sort_by_exprs&quot;           &quot;std&quot;                    
 #&gt; [45] &quot;sum&quot;                     &quot;tail&quot;                   
-#&gt; [47] &quot;unique&quot;                  &quot;unnest&quot;                 
-#&gt; [49] &quot;var&quot;                     &quot;with_columns&quot;           
-#&gt; [51] &quot;with_context&quot;            &quot;with_row_index&quot;
+#&gt; [47] &quot;to_dot&quot;                  &quot;unique&quot;                 
+#&gt; [49] &quot;unnest&quot;                  &quot;var&quot;                    
+#&gt; [51] &quot;with_columns&quot;            &quot;with_context&quot;           
+#&gt; [53] &quot;with_row_index&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Practical example ##</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># First writing R iris dataset to disk, to illustrte a difference</span>
@@ -14959,7 +14982,7 @@ withr::with_envvar(
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; FILTER [(col(&quot;Species&quot;)) == (String(setosa))] FROM
 #&gt; 
-#&gt;   Csv SCAN /tmp/Rtmplwfwk9/file7d4b740d232c
+#&gt;   Csv SCAN /tmp/RtmpKpDmrD/file7db356c39eda
 #&gt;   PROJECT */5 COLUMNS
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># NOTE For Ldf_okay, the full time to load csv alrady paid when creating Rdf and Pdf</span>
@@ -14972,7 +14995,7 @@ withr::with_envvar(
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Ldf_best</span><span class="o">$</span><span class="nf">describe_optimized_plan</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; 
-#&gt;   Csv SCAN /tmp/Rtmplwfwk9/file7d4b740d232c
+#&gt;   Csv SCAN /tmp/RtmpKpDmrD/file7db356c39eda
 #&gt;   PROJECT */5 COLUMNS
 #&gt;   SELECTION: [(col(&quot;Species&quot;)) == (String(setosa))]
 </code></pre></div>
@@ -15047,7 +15070,7 @@ withr::with_envvar(
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+      <script src="../assets/javascripts/bundle.bd41221c.min.js"></script>
       
     
   </body>

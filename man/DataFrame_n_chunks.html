@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.10ba22f1.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -4964,6 +4964,27 @@
   
   <span class="md-ellipsis">
     tail
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LazyFrame_to_dot.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    to_dot
   </span>
   
 
@@ -14920,10 +14941,10 @@ FALSE</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nf">lapply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">tracemem</span><span class="p">)</span><span class="w"> </span><span class="c1"># trace chunks to verify no re-allocation</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [[1]]
-#&gt; [1] &quot;&lt;0x5651e158dee0&gt;&quot;
+#&gt; [1] &quot;&lt;0x5aa51c3b5310&gt;&quot;
 #&gt; 
 #&gt; [[2]]
-#&gt; [1] &quot;&lt;0x5651de4d5be0&gt;&quot;
+#&gt; [1] &quot;&lt;0x5aa5192f6660&gt;&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">z</span><span class="w"> </span><span class="c1"># looks like a plain vector</span>
@@ -14933,16 +14954,16 @@ FALSE</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nf">lapply</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="w"> </span><span class="n">tracemem</span><span class="p">)</span><span class="w"> </span><span class="c1"># mem allocation  in z are the same from x</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [[1]]
-#&gt; [1] &quot;&lt;0x5651e158dee0&gt;&quot;
+#&gt; [1] &quot;&lt;0x5aa51c3b5310&gt;&quot;
 #&gt; 
 #&gt; [[2]]
-#&gt; [1] &quot;&lt;0x5651de4d5be0&gt;&quot;
+#&gt; [1] &quot;&lt;0x5aa5192f6660&gt;&quot;
 #&gt; 
 #&gt; [[3]]
-#&gt; [1] &quot;&lt;0x5651e158dee0&gt;&quot;
+#&gt; [1] &quot;&lt;0x5aa51c3b5310&gt;&quot;
 #&gt; 
 #&gt; [[4]]
-#&gt; [1] &quot;&lt;0x5651de4d5be0&gt;&quot;
+#&gt; [1] &quot;&lt;0x5aa5192f6660&gt;&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nf">str</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 </code></pre></div>
@@ -15013,7 +15034,7 @@ FALSE</code>.</p>
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+      <script src="../assets/javascripts/bundle.bd41221c.min.js"></script>
       
     
   </body>
