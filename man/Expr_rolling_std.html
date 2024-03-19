@@ -14818,7 +14818,7 @@
 
 
 <h1 id="rolling-standard-deviation">Rolling standard deviation</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2413"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2416"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Compute the rolling (= moving) standard deviation over the values in
 this array. A window of length <code>window_size</code> will traverse
@@ -14831,7 +14831,7 @@ multiplied with the weights given by the <code>weight</code> vector.</p>
   min_periods = NULL,
   center = FALSE,
   by = NULL,
-  closed = c("left", "right", "both", "none"),
+  closed = NULL,
   warn_if_unsorted = TRUE
 )
 </code></pre>
@@ -14950,9 +14950,10 @@ Date or DateTime.
 <code id="Expr_rolling_std_:_closed">closed</code>
 </td>
 <td>
-String, one of <code>“left”</code>, <code>“right”</code>,
-<code>“both”</code>, <code>“none”</code>. Defines whether the temporal
-window interval is closed or not.
+Defines whether the temporal window interval is closed or not. Only
+applicable if <code>by</code> is not <code>NULL</code> (in which case,
+its possible values are <code>“left”</code>, <code>“right”</code>
+(default), <code>“both”</code>, <code>“none”</code>).
 </td>
 </tr>
 <tr>
@@ -14961,7 +14962,7 @@ window interval is closed or not.
 </td>
 <td>
 Warn if data is not known to be sorted by <code>by</code> column (if
-passed). Experimental.
+passed).
 </td>
 </tr>
 </table>

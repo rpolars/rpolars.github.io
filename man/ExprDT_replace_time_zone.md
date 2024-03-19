@@ -1,19 +1,19 @@
 
 
-# replace_time_zone
+# Replace time zone
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L744)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L749)
 
 ## Description
 
-Cast time zone for a Series of type Datetime. Different from
-<code>convert_time_zone</code>, this will also modify the underlying
+Cast time zone for a Series of type Datetime. This is different from
+<code>$convert_time_zone()</code> as it will also modify the underlying
 timestamp. Use to correct a wrong time zone annotation. This will change
 the corresponding global timepoint.
 
 ## Usage
 
-<pre><code class='language-R'>ExprDT_replace_time_zone(tz, ambiguous = "raise")
+<pre><code class='language-R'>ExprDT_replace_time_zone(tz, ambiguous = "raise", non_existent = "raise")
 </code></pre>
 
 ## Arguments
@@ -38,7 +38,7 @@ Determine how to deal with ambiguous datetimes:
 <ul>
 <li>
 
-<code>“raise”</code> (default): raise
+<code>“raise”</code> (default): throw an error
 
 </li>
 <li>
@@ -49,6 +49,33 @@ Determine how to deal with ambiguous datetimes:
 <li>
 
 <code>“latest”</code>: use the latest datetime
+
+</li>
+<li>
+
+<code>“null”</code>: return a null value
+
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="ExprDT_replace_time_zone_:_non_existent">non_existent</code>
+</td>
+<td>
+
+Determine how to deal with non-existent datetimes:
+
+<ul>
+<li>
+
+<code>“raise”</code> (default): throw an error
+
+</li>
+<li>
+
+<code>“null”</code>: return a null value
 
 </li>
 </ul>
@@ -94,17 +121,22 @@ df_2 = pl$DataFrame(
 
 df_2$with_columns(
   pl$col("x")$dt$replace_time_zone("Europe/Brussels", "earliest")$alias("earliest"),
-  pl$col("x")$dt$replace_time_zone("Europe/Brussels", "latest")$alias("latest")
+  pl$col("x")$dt$replace_time_zone("Europe/Brussels", "latest")$alias("latest"),
+  pl$col("x")$dt$replace_time_zone("Europe/Brussels", "null")$alias("null")
 )
 ```
 
-    #> shape: (3, 3)
-    #> ┌─────────────────────────┬───────────────────────────────┬───────────────────────────────┐
-    #> │ x                       ┆ earliest                      ┆ latest                        │
-    #> │ ---                     ┆ ---                           ┆ ---                           │
-    #> │ datetime[ms, UTC]       ┆ datetime[ms, Europe/Brussels] ┆ datetime[ms, Europe/Brussels] │
-    #> ╞═════════════════════════╪═══════════════════════════════╪═══════════════════════════════╡
-    #> │ 2018-10-28 01:30:00 UTC ┆ 2018-10-28 01:30:00 CEST      ┆ 2018-10-28 01:30:00 CEST      │
-    #> │ 2018-10-28 02:00:00 UTC ┆ 2018-10-28 02:00:00 CEST      ┆ 2018-10-28 02:00:00 CET       │
-    #> │ 2018-10-28 02:30:00 UTC ┆ 2018-10-28 02:30:00 CEST      ┆ 2018-10-28 02:30:00 CET       │
-    #> └─────────────────────────┴───────────────────────────────┴───────────────────────────────┘
+    #> shape: (3, 4)
+    #> ┌────────────────────────┬────────────────────────┬────────────────────────┬───────────────────────┐
+    #> │ x                      ┆ earliest               ┆ latest                 ┆ null                  │
+    #> │ ---                    ┆ ---                    ┆ ---                    ┆ ---                   │
+    #> │ datetime[ms, UTC]      ┆ datetime[ms,           ┆ datetime[ms,           ┆ datetime[ms,          │
+    #> │                        ┆ Europe/Brussels]       ┆ Europe/Brussels]       ┆ Europe/Brussels]      │
+    #> ╞════════════════════════╪════════════════════════╪════════════════════════╪═══════════════════════╡
+    #> │ 2018-10-28 01:30:00    ┆ 2018-10-28 01:30:00    ┆ 2018-10-28 01:30:00    ┆ 2018-10-28 01:30:00   │
+    #> │ UTC                    ┆ CEST                   ┆ CEST                   ┆ CEST                  │
+    #> │ 2018-10-28 02:00:00    ┆ 2018-10-28 02:00:00    ┆ 2018-10-28 02:00:00    ┆ null                  │
+    #> │ UTC                    ┆ CEST                   ┆ CET                    ┆                       │
+    #> │ 2018-10-28 02:30:00    ┆ 2018-10-28 02:30:00    ┆ 2018-10-28 02:30:00    ┆ null                  │
+    #> │ UTC                    ┆ CEST                   ┆ CET                    ┆                       │
+    #> └────────────────────────┴────────────────────────┴────────────────────────┴───────────────────────┘

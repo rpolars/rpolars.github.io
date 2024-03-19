@@ -2,7 +2,7 @@
 
 # Convert a string to lowercase
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L267)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L264)
 
 ## Description
 

@@ -2,7 +2,7 @@
 
 # Convert a String column into a Datetime column
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L180)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L177)
 
 ## Description
 
@@ -100,7 +100,7 @@ Determine how to deal with ambiguous datetimes:
 <ul>
 <li>
 
-<code>“raise”</code> (default): raise
+<code>“raise”</code> (default): throw an error
 
 </li>
 <li>
@@ -111,6 +111,11 @@ Determine how to deal with ambiguous datetimes:
 <li>
 
 <code>“latest”</code>: use the latest datetime
+
+</li>
+<li>
+
+<code>“null”</code>: return a null value
 
 </li>
 </ul>

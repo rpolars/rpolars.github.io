@@ -135,7 +135,7 @@ Determine how to deal with ambiguous datetimes:
 <ul>
 <li>
 
-<code>“raise”</code> (default): raise
+<code>“raise”</code> (default): throw an error
 
 </li>
 <li>
@@ -146,6 +146,11 @@ Determine how to deal with ambiguous datetimes:
 <li>
 
 <code>“latest”</code>: use the latest datetime
+
+</li>
+<li>
+
+<code>“null”</code>: return a null value
 
 </li>
 </ul>

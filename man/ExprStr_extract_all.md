@@ -2,7 +2,7 @@
 
 # Extract all matches for the given regex pattern
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L637)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L634)
 
 ## Description
 

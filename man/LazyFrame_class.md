@@ -97,7 +97,7 @@ withr::with_envvar(
     )
   }
 )
-#&gt; &lt;error: in to_r: ComputeError(ErrString("datetime '2020-03-08 02:00:00' is non-existent in time zone 'America/New_York'. Non-existent datetimes are not yet supported")) When calling: devtools::document()&gt;
+#&gt; &lt;error: in to_r: ComputeError(ErrString("datetime '2020-03-08 02:00:00' is non-existent in time zone 'America/New_York'. You may be able to use `non_existent='null'` to return `null` in this case.")) When calling: devtools::document()&gt;
 
 withr::with_envvar(
   new = c(TZ = "America/New_York"),
@@ -224,7 +224,7 @@ Ldf_best$describe_plan()
 
     #> FILTER [(col("Species")) == (String(setosa))] FROM
     #> 
-    #>   Csv SCAN /tmp/RtmpKpDmrD/file7db356c39eda
+    #>   Csv SCAN /tmp/Rtmplf5pkh/file7f2d44e88bd7
     #>   PROJECT */5 COLUMNS
 
 ``` r
@@ -241,7 +241,7 @@ Ldf_best$describe_optimized_plan()
 ```
 
     #> 
-    #>   Csv SCAN /tmp/RtmpKpDmrD/file7db356c39eda
+    #>   Csv SCAN /tmp/Rtmplf5pkh/file7f2d44e88bd7
     #>   PROJECT */5 COLUMNS
     #>   SELECTION: [(col("Species")) == (String(setosa))]
 

@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#replace_time_zone" class="md-skip">
+        <a href="#replace-time-zone" class="md-skip">
           Skip to content
         </a>
       
@@ -14799,15 +14799,15 @@
   
 
 
-<h1 id="replace_time_zone">replace_time_zone</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L744"><strong>Source code</strong></a></p>
+<h1 id="replace-time-zone">Replace time zone</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L749"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>Cast time zone for a Series of type Datetime. Different from
-<code>convert_time_zone</code>, this will also modify the underlying
+<p>Cast time zone for a Series of type Datetime. This is different from
+<code>$convert_time_zone()</code> as it will also modify the underlying
 timestamp. Use to correct a wrong time zone annotation. This will change
 the corresponding global timepoint.</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>&lt;Expr&gt;$dt$replace_time_zone(tz, ambiguous = "raise")
+<pre><code class='language-R'>&lt;Expr&gt;$dt$replace_time_zone(tz, ambiguous = "raise", non_existent = "raise")
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
@@ -14831,7 +14831,7 @@ Determine how to deal with ambiguous datetimes:
 <ul>
 <li>
 
-<code>“raise”</code> (default): raise
+<code>“raise”</code> (default): throw an error
 
 </li>
 <li>
@@ -14842,6 +14842,33 @@ Determine how to deal with ambiguous datetimes:
 <li>
 
 <code>“latest”</code>: use the latest datetime
+
+</li>
+<li>
+
+<code>“null”</code>: return a null value
+
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="ExprDT_replace_time_zone_:_non_existent">non_existent</code>
+</td>
+<td>
+
+Determine how to deal with non-existent datetimes:
+
+<ul>
+<li>
+
+<code>“raise”</code> (default): throw an error
+
+</li>
+<li>
+
+<code>“null”</code>: return a null value
 
 </li>
 </ul>
@@ -14881,19 +14908,24 @@ Determine how to deal with ambiguous datetimes:
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">df_2</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
 <a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">dt</span><span class="o">$</span><span class="nf">replace_time_zone</span><span class="p">(</span><span class="s">&quot;Europe/Brussels&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;earliest&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;earliest&quot;</span><span class="p">),</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">dt</span><span class="o">$</span><span class="nf">replace_time_zone</span><span class="p">(</span><span class="s">&quot;Europe/Brussels&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;latest&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;latest&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">)</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">dt</span><span class="o">$</span><span class="nf">replace_time_zone</span><span class="p">(</span><span class="s">&quot;Europe/Brussels&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;latest&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;latest&quot;</span><span class="p">),</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">dt</span><span class="o">$</span><span class="nf">replace_time_zone</span><span class="p">(</span><span class="s">&quot;Europe/Brussels&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;null&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;null&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (3, 3)
-#&gt; ┌─────────────────────────┬───────────────────────────────┬───────────────────────────────┐
-#&gt; │ x                       ┆ earliest                      ┆ latest                        │
-#&gt; │ ---                     ┆ ---                           ┆ ---                           │
-#&gt; │ datetime[ms, UTC]       ┆ datetime[ms, Europe/Brussels] ┆ datetime[ms, Europe/Brussels] │
-#&gt; ╞═════════════════════════╪═══════════════════════════════╪═══════════════════════════════╡
-#&gt; │ 2018-10-28 01:30:00 UTC ┆ 2018-10-28 01:30:00 CEST      ┆ 2018-10-28 01:30:00 CEST      │
-#&gt; │ 2018-10-28 02:00:00 UTC ┆ 2018-10-28 02:00:00 CEST      ┆ 2018-10-28 02:00:00 CET       │
-#&gt; │ 2018-10-28 02:30:00 UTC ┆ 2018-10-28 02:30:00 CEST      ┆ 2018-10-28 02:30:00 CET       │
-#&gt; └─────────────────────────┴───────────────────────────────┴───────────────────────────────┘
+<div class="highlight"><pre><span></span><code>#&gt; shape: (3, 4)
+#&gt; ┌────────────────────────┬────────────────────────┬────────────────────────┬───────────────────────┐
+#&gt; │ x                      ┆ earliest               ┆ latest                 ┆ null                  │
+#&gt; │ ---                    ┆ ---                    ┆ ---                    ┆ ---                   │
+#&gt; │ datetime[ms, UTC]      ┆ datetime[ms,           ┆ datetime[ms,           ┆ datetime[ms,          │
+#&gt; │                        ┆ Europe/Brussels]       ┆ Europe/Brussels]       ┆ Europe/Brussels]      │
+#&gt; ╞════════════════════════╪════════════════════════╪════════════════════════╪═══════════════════════╡
+#&gt; │ 2018-10-28 01:30:00    ┆ 2018-10-28 01:30:00    ┆ 2018-10-28 01:30:00    ┆ 2018-10-28 01:30:00   │
+#&gt; │ UTC                    ┆ CEST                   ┆ CEST                   ┆ CEST                  │
+#&gt; │ 2018-10-28 02:00:00    ┆ 2018-10-28 02:00:00    ┆ 2018-10-28 02:00:00    ┆ null                  │
+#&gt; │ UTC                    ┆ CEST                   ┆ CET                    ┆                       │
+#&gt; │ 2018-10-28 02:30:00    ┆ 2018-10-28 02:30:00    ┆ 2018-10-28 02:30:00    ┆ null                  │
+#&gt; │ UTC                    ┆ CEST                   ┆ CET                    ┆                       │
+#&gt; └────────────────────────┴────────────────────────┴────────────────────────┴───────────────────────┘
 </code></pre></div>
 
 

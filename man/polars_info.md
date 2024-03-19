@@ -53,7 +53,7 @@ polars_info()
 ```
 
     #> Polars R package version : 0.15.1.9000
-    #> Rust Polars crate version: 0.38.2
+    #> Rust Polars crate version: 0.38.3
     #> 
     #> Thread pool size: 4 
     #> 
@@ -75,7 +75,7 @@ polars_info()$versions
     #> [1] "0.15.1.9000"
     #> 
     #> $rust_crate
-    #> [1] "0.38.2"
+    #> [1] "0.38.3"
 
 ``` r
 polars_info()$features$nightly

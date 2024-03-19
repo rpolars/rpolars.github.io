@@ -2,7 +2,7 @@
 
 # Rolling minimum
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2307)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2310)
 
 ## Description
 
@@ -19,7 +19,7 @@ weights given by the <code>weight</code> vector.
   min_periods = NULL,
   center = FALSE,
   by = NULL,
-  closed = c("left", "right", "both", "none"),
+  closed = NULL,
   warn_if_unsorted = TRUE
 )
 </code></pre>
@@ -139,9 +139,10 @@ Date or DateTime.
 <code id="Expr_rolling_min_:_closed">closed</code>
 </td>
 <td>
-String, one of <code>“left”</code>, <code>“right”</code>,
-<code>“both”</code>, <code>“none”</code>. Defines whether the temporal
-window interval is closed or not.
+Defines whether the temporal window interval is closed or not. Only
+applicable if <code>by</code> is not <code>NULL</code> (in which case,
+its possible values are <code>“left”</code>, <code>“right”</code>
+(default), <code>“both”</code>, <code>“none”</code>).
 </td>
 </tr>
 <tr>
@@ -150,7 +151,7 @@ window interval is closed or not.
 </td>
 <td>
 Warn if data is not known to be sorted by <code>by</code> column (if
-passed). Experimental.
+passed).
 </td>
 </tr>
 </table>
