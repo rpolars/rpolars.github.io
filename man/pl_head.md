@@ -2,7 +2,7 @@
 
 # Get the first <code>n</code> rows.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L295)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L294)
 
 ## Description
 

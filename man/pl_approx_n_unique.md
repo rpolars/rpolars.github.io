@@ -2,7 +2,7 @@
 
 # Approximate count of unique values
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L408)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L407)
 
 ## Description
 

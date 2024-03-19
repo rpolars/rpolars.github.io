@@ -2,7 +2,7 @@
 
 # Get the maximum value.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L483)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L482)
 
 ## Description
 

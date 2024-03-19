@@ -2,7 +2,7 @@
 
 # Get the last <code>n</code> rows.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L318)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L317)
 
 ## Description
 
