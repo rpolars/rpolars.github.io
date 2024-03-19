@@ -2,7 +2,7 @@
 
 # Seconds
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L834)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L812)
 
 ## Description
 

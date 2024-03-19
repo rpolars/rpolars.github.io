@@ -2,7 +2,7 @@
 
 # nanoseconds
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L891)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L869)
 
 ## Description
 

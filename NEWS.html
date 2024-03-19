@@ -16224,10 +16224,10 @@
 <h3 id="breaking-changes-due-to-rust-polars-update">Breaking changes due to Rust-polars update</h3>
 <ul>
 <li>rust-polars is updated to 0.38.3 (<a href="https://github.com/pola-rs/r-polars/issues/937">#937</a>).<ul>
-<li>New argument <code>non_existent</code> in <code>$replace_time_zone()</code> to specify what should
+<li>New argument <code>non_existent</code> in <code>$dt$replace_time_zone()</code> to specify what should
   happen when a datetime doesn't exist.</li>
-<li>In rolling aggregation functions (such as <code>$rolling_mean()</code>), the default 
-  value of argument <code>closed</code> now is <code>NULL</code>. Using <code>closed</code> with a fixed 
+<li>In rolling aggregation functions (such as <code>$rolling_mean()</code>), the default
+  value of argument <code>closed</code> now is <code>NULL</code>. Using <code>closed</code> with a fixed
   <code>window_size</code> now throws an error.</li>
 </ul>
 </li>
@@ -16243,6 +16243,10 @@
 <li>In <code>&lt;LazyFrame&gt;$sink_*</code> functions, the first argument is now <code>path</code>.</li>
 </ul>
 </li>
+<li>In <code>$dt$convert_time_zone()</code> and <code>$dt$replace_time_zone()</code>, the <code>tz</code> argument
+  is renamed to <code>time_zone</code> (<a href="https://github.com/pola-rs/r-polars/issues/944">#944</a>).</li>
+<li>In <code>$dt$replace_time_zone()</code>, all arguments except <code>time_zone</code> must be named
+  arguments (<a href="https://github.com/pola-rs/r-polars/issues/944">#944</a>).</li>
 </ul>
 </li>
 <li>The argument <code>columns</code> in <code>$drop()</code> is removed. <code>$drop()</code> now accepts several
@@ -16252,7 +16256,7 @@
 <li>Removed <code>$argsort()</code> which was an old alias for <code>$arg_sort()</code> (<a href="https://github.com/pola-rs/r-polars/issues/930">#930</a>).</li>
 <li>Removed <code>pl$expr_to_r()</code> which was an alias for <code>$to_r()</code> (<a href="https://github.com/pola-rs/r-polars/issues/938">#938</a>).</li>
 <li><code>&lt;Series&gt;$to_r_list()</code> is renamed <code>&lt;Series&gt;$to_list()</code> (<a href="https://github.com/pola-rs/r-polars/issues/938">#938</a>).</li>
-<li>Removed <code>&lt;Series&gt;$to_r_vector()</code> which was an old alias for 
+<li>Removed <code>&lt;Series&gt;$to_r_vector()</code> which was an old alias for
   <code>&lt;Series&gt;$to_vector()</code> (<a href="https://github.com/pola-rs/r-polars/issues/938">#938</a>).</li>
 </ul>
 <h3 id="new-features">New features</h3>
@@ -16263,7 +16267,7 @@
 <li>New function <code>is_polars_dtype()</code> (<a href="https://github.com/pola-rs/r-polars/issues/927">#927</a>).</li>
 <li>New method <code>&lt;LazyFrame&gt;to_dot()</code> to print the query plan of a LazyFrame with
   graphviz dot syntax (<a href="https://github.com/pola-rs/r-polars/issues/928">#928</a>).</li>
-<li>Argument <code>ambiguous</code> can now take the value <code>"null"</code> to convert ambigous 
+<li>Argument <code>ambiguous</code> can now take the value <code>"null"</code> to convert ambigous
   datetimes to null values (<a href="https://github.com/pola-rs/r-polars/issues/937">#937</a>).</li>
 </ul>
 <h2 id="polars-r-package-0151">Polars R Package 0.15.1</h2>

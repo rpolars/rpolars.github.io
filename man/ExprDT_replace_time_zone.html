@@ -14779,24 +14779,38 @@
 
 
 <h1 id="replace-time-zone">Replace time zone</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L749"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L723"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Cast time zone for a Series of type Datetime. This is different from
 <code>$convert_time_zone()</code> as it will also modify the underlying
 timestamp. Use to correct a wrong time zone annotation. This will change
 the corresponding global timepoint.</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>&lt;Expr&gt;$dt$replace_time_zone(tz, ambiguous = "raise", non_existent = "raise")
+<pre><code class='language-R'>&lt;Expr&gt;$dt$replace_time_zone(
+  time_zone,
+  ...,
+  ambiguous = "raise",
+  non_existent = "raise"
+)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprDT_replace_time_zone_:_tz">tz</code>
+<code id="ExprDT_replace_time_zone_:_time_zone">time_zone</code>
 </td>
 <td>
-NULL or string time zone from <code>base::OlsonNames()</code>
+<code>NULL</code> or string time zone from
+<code>base::OlsonNames()</code>
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="ExprDT_replace_time_zone_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>
@@ -14860,51 +14874,62 @@ Determine how to deal with non-existent datetimes:
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.POSIXct</span><span class="p">(</span><span class="s">&quot;2009-08-07 00:00:01&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">tz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;America/New_York&quot;</span><span class="p">))</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">df_1</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">dt</span><span class="o">$</span><span class="nf">replace_time_zone</span><span class="p">(</span><span class="s">&quot;UTC&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;utc&quot;</span><span class="p">),</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">dt</span><span class="o">$</span><span class="nf">replace_time_zone</span><span class="p">(</span><span class="s">&quot;Europe/Amsterdam&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;cest&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="n">london_timezone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">date_range</span><span class="p">(</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nf">as.POSIXct</span><span class="p">(</span><span class="s">&quot;2020-03-01&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">tz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;UTC&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nf">as.POSIXct</span><span class="p">(</span><span class="s">&quot;2020-07-01&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">tz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;UTC&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="s">&quot;1mo&quot;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="p">)</span><span class="o">$</span><span class="n">dt</span><span class="o">$</span><span class="nf">convert_time_zone</span><span class="p">(</span><span class="s">&quot;Europe/London&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">df1</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="s">&quot;london_timezone&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="n">London_to_Amsterdam</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;london_timezone&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">dt</span><span class="o">$</span><span class="nf">replace_time_zone</span><span class="p">(</span><span class="s">&quot;Europe/Amsterdam&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (1, 3)
-#&gt; ┌────────────────────────────────┬─────────────────────────┬────────────────────────────────┐
-#&gt; │ x                              ┆ utc                     ┆ cest                           │
-#&gt; │ ---                            ┆ ---                     ┆ ---                            │
-#&gt; │ datetime[ms, America/New_York] ┆ datetime[ms, UTC]       ┆ datetime[ms, Europe/Amsterdam] │
-#&gt; ╞════════════════════════════════╪═════════════════════════╪════════════════════════════════╡
-#&gt; │ 2009-08-07 00:00:01 EDT        ┆ 2009-08-07 00:00:01 UTC ┆ 2009-08-07 00:00:01 CEST       │
-#&gt; └────────────────────────────────┴─────────────────────────┴────────────────────────────────┘
+<div class="highlight"><pre><span></span><code>#&gt; shape: (5, 2)
+#&gt; ┌─────────────────────────────┬────────────────────────────────┐
+#&gt; │ london_timezone             ┆ London_to_Amsterdam            │
+#&gt; │ ---                         ┆ ---                            │
+#&gt; │ datetime[μs, Europe/London] ┆ datetime[μs, Europe/Amsterdam] │
+#&gt; ╞═════════════════════════════╪════════════════════════════════╡
+#&gt; │ 2020-03-01 00:00:00 GMT     ┆ 2020-03-01 00:00:00 CET        │
+#&gt; │ 2020-04-01 01:00:00 BST     ┆ 2020-04-01 01:00:00 CEST       │
+#&gt; │ 2020-05-01 01:00:00 BST     ┆ 2020-05-01 01:00:00 CEST       │
+#&gt; │ 2020-06-01 01:00:00 BST     ┆ 2020-06-01 01:00:00 CEST       │
+#&gt; │ 2020-07-01 01:00:00 BST     ┆ 2020-07-01 01:00:00 CEST       │
+#&gt; └─────────────────────────────┴────────────────────────────────┘
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># You can use ambiguous to deal with ambiguous datetimes</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">df_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nf">as.POSIXct</span><span class="p">(</span><span class="s">&quot;2018-10-28 01:30&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">tz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;UTC&quot;</span><span class="p">),</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nf">as.POSIXct</span><span class="p">(</span><span class="s">&quot;2018-10-28 02:30&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">tz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;UTC&quot;</span><span class="p">),</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;30 min&quot;</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="p">)</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">)</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">df_2</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">dt</span><span class="o">$</span><span class="nf">replace_time_zone</span><span class="p">(</span><span class="s">&quot;Europe/Brussels&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;earliest&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;earliest&quot;</span><span class="p">),</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">dt</span><span class="o">$</span><span class="nf">replace_time_zone</span><span class="p">(</span><span class="s">&quot;Europe/Brussels&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;latest&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;latest&quot;</span><span class="p">),</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">dt</span><span class="o">$</span><span class="nf">replace_time_zone</span><span class="p">(</span><span class="s">&quot;Europe/Brussels&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;null&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;null&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># You can use `ambiguous` to deal with ambiguous datetimes:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">dates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="s">&quot;2018-10-28 01:30&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="s">&quot;2018-10-28 02:00&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="s">&quot;2018-10-28 02:30&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="s">&quot;2018-10-28 02:00&quot;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">)</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">df2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="n">ts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as_polars_series</span><span class="p">(</span><span class="n">dates</span><span class="p">)</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">strptime</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">Datetime</span><span class="p">(</span><span class="s">&quot;us&quot;</span><span class="p">)),</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="n">ambiguous</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;earliest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;earliest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;latest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;latest&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">)</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">df2</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="n">ts_localized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;ts&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">dt</span><span class="o">$</span><span class="nf">replace_time_zone</span><span class="p">(</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="s">&quot;Europe/Brussels&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="n">ambiguous</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;ambiguous&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">  </span><span class="p">)</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (3, 4)
-#&gt; ┌────────────────────────┬────────────────────────┬────────────────────────┬───────────────────────┐
-#&gt; │ x                      ┆ earliest               ┆ latest                 ┆ null                  │
-#&gt; │ ---                    ┆ ---                    ┆ ---                    ┆ ---                   │
-#&gt; │ datetime[ms, UTC]      ┆ datetime[ms,           ┆ datetime[ms,           ┆ datetime[ms,          │
-#&gt; │                        ┆ Europe/Brussels]       ┆ Europe/Brussels]       ┆ Europe/Brussels]      │
-#&gt; ╞════════════════════════╪════════════════════════╪════════════════════════╪═══════════════════════╡
-#&gt; │ 2018-10-28 01:30:00    ┆ 2018-10-28 01:30:00    ┆ 2018-10-28 01:30:00    ┆ 2018-10-28 01:30:00   │
-#&gt; │ UTC                    ┆ CEST                   ┆ CEST                   ┆ CEST                  │
-#&gt; │ 2018-10-28 02:00:00    ┆ 2018-10-28 02:00:00    ┆ 2018-10-28 02:00:00    ┆ null                  │
-#&gt; │ UTC                    ┆ CEST                   ┆ CET                    ┆                       │
-#&gt; │ 2018-10-28 02:30:00    ┆ 2018-10-28 02:30:00    ┆ 2018-10-28 02:30:00    ┆ null                  │
-#&gt; │ UTC                    ┆ CEST                   ┆ CET                    ┆                       │
-#&gt; └────────────────────────┴────────────────────────┴────────────────────────┴───────────────────────┘
+<div class="highlight"><pre><span></span><code>#&gt; shape: (4, 3)
+#&gt; ┌─────────────────────┬───────────┬───────────────────────────────┐
+#&gt; │ ts                  ┆ ambiguous ┆ ts_localized                  │
+#&gt; │ ---                 ┆ ---       ┆ ---                           │
+#&gt; │ datetime[μs]        ┆ str       ┆ datetime[μs, Europe/Brussels] │
+#&gt; ╞═════════════════════╪═══════════╪═══════════════════════════════╡
+#&gt; │ 2018-10-28 01:30:00 ┆ earliest  ┆ 2018-10-28 01:30:00 CEST      │
+#&gt; │ 2018-10-28 02:00:00 ┆ earliest  ┆ 2018-10-28 02:00:00 CEST      │
+#&gt; │ 2018-10-28 02:30:00 ┆ latest    ┆ 2018-10-28 02:30:00 CET       │
+#&gt; │ 2018-10-28 02:00:00 ┆ latest    ┆ 2018-10-28 02:00:00 CET       │
+#&gt; └─────────────────────┴───────────┴───────────────────────────────┘
 </code></pre></div>
 
 

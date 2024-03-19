@@ -2,7 +2,7 @@
 
 # Replace time zone
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L749)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L723)
 
 ## Description
 
@@ -13,7 +13,12 @@ the corresponding global timepoint.
 
 ## Usage
 
-<pre><code class='language-R'>ExprDT_replace_time_zone(tz, ambiguous = "raise", non_existent = "raise")
+<pre><code class='language-R'>ExprDT_replace_time_zone(
+  time_zone,
+  ...,
+  ambiguous = "raise",
+  non_existent = "raise"
+)
 </code></pre>
 
 ## Arguments
@@ -21,10 +26,19 @@ the corresponding global timepoint.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprDT_replace_time_zone_:_tz">tz</code>
+<code id="ExprDT_replace_time_zone_:_time_zone">time_zone</code>
 </td>
 <td>
-NULL or string time zone from <code>base::OlsonNames()</code>
+<code>NULL</code> or string time zone from
+<code>base::OlsonNames()</code>
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="ExprDT_replace_time_zone_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>
@@ -92,51 +106,62 @@ Expr of i64
 ``` r
 library(polars)
 
-df_1 = pl$DataFrame(x = as.POSIXct("2009-08-07 00:00:01", tz = "America/New_York"))
+df1 = pl$DataFrame(
+  london_timezone = pl$date_range(
+    as.POSIXct("2020-03-01", tz = "UTC"),
+    as.POSIXct("2020-07-01", tz = "UTC"),
+    "1mo"
+  )$dt$convert_time_zone("Europe/London")
+)
 
-df_1$with_columns(
-  pl$col("x")$dt$replace_time_zone("UTC")$alias("utc"),
-  pl$col("x")$dt$replace_time_zone("Europe/Amsterdam")$alias("cest")
+df1$select(
+  "london_timezone",
+  London_to_Amsterdam = pl$col("london_timezone")$dt$replace_time_zone("Europe/Amsterdam")
 )
 ```
 
-    #> shape: (1, 3)
-    #> ┌────────────────────────────────┬─────────────────────────┬────────────────────────────────┐
-    #> │ x                              ┆ utc                     ┆ cest                           │
-    #> │ ---                            ┆ ---                     ┆ ---                            │
-    #> │ datetime[ms, America/New_York] ┆ datetime[ms, UTC]       ┆ datetime[ms, Europe/Amsterdam] │
-    #> ╞════════════════════════════════╪═════════════════════════╪════════════════════════════════╡
-    #> │ 2009-08-07 00:00:01 EDT        ┆ 2009-08-07 00:00:01 UTC ┆ 2009-08-07 00:00:01 CEST       │
-    #> └────────────────────────────────┴─────────────────────────┴────────────────────────────────┘
+    #> shape: (5, 2)
+    #> ┌─────────────────────────────┬────────────────────────────────┐
+    #> │ london_timezone             ┆ London_to_Amsterdam            │
+    #> │ ---                         ┆ ---                            │
+    #> │ datetime[μs, Europe/London] ┆ datetime[μs, Europe/Amsterdam] │
+    #> ╞═════════════════════════════╪════════════════════════════════╡
+    #> │ 2020-03-01 00:00:00 GMT     ┆ 2020-03-01 00:00:00 CET        │
+    #> │ 2020-04-01 01:00:00 BST     ┆ 2020-04-01 01:00:00 CEST       │
+    #> │ 2020-05-01 01:00:00 BST     ┆ 2020-05-01 01:00:00 CEST       │
+    #> │ 2020-06-01 01:00:00 BST     ┆ 2020-06-01 01:00:00 CEST       │
+    #> │ 2020-07-01 01:00:00 BST     ┆ 2020-07-01 01:00:00 CEST       │
+    #> └─────────────────────────────┴────────────────────────────────┘
 
 ``` r
-# You can use ambiguous to deal with ambiguous datetimes
-df_2 = pl$DataFrame(
-  x = seq(
-    as.POSIXct("2018-10-28 01:30", tz = "UTC"),
-    as.POSIXct("2018-10-28 02:30", tz = "UTC"),
-    by = "30 min"
-  )
+# You can use `ambiguous` to deal with ambiguous datetimes:
+dates = c(
+  "2018-10-28 01:30",
+  "2018-10-28 02:00",
+  "2018-10-28 02:30",
+  "2018-10-28 02:00"
+)
+df2 = pl$DataFrame(
+  ts = as_polars_series(dates)$str$strptime(pl$Datetime("us")),
+  ambiguous = c("earliest", "earliest", "latest", "latest")
 )
 
-df_2$with_columns(
-  pl$col("x")$dt$replace_time_zone("Europe/Brussels", "earliest")$alias("earliest"),
-  pl$col("x")$dt$replace_time_zone("Europe/Brussels", "latest")$alias("latest"),
-  pl$col("x")$dt$replace_time_zone("Europe/Brussels", "null")$alias("null")
+df2$with_columns(
+  ts_localized = pl$col("ts")$dt$replace_time_zone(
+    "Europe/Brussels",
+    ambiguous = pl$col("ambiguous")
+  )
 )
 ```
 
-    #> shape: (3, 4)
-    #> ┌────────────────────────┬────────────────────────┬────────────────────────┬───────────────────────┐
-    #> │ x                      ┆ earliest               ┆ latest                 ┆ null                  │
-    #> │ ---                    ┆ ---                    ┆ ---                    ┆ ---                   │
-    #> │ datetime[ms, UTC]      ┆ datetime[ms,           ┆ datetime[ms,           ┆ datetime[ms,          │
-    #> │                        ┆ Europe/Brussels]       ┆ Europe/Brussels]       ┆ Europe/Brussels]      │
-    #> ╞════════════════════════╪════════════════════════╪════════════════════════╪═══════════════════════╡
-    #> │ 2018-10-28 01:30:00    ┆ 2018-10-28 01:30:00    ┆ 2018-10-28 01:30:00    ┆ 2018-10-28 01:30:00   │
-    #> │ UTC                    ┆ CEST                   ┆ CEST                   ┆ CEST                  │
-    #> │ 2018-10-28 02:00:00    ┆ 2018-10-28 02:00:00    ┆ 2018-10-28 02:00:00    ┆ null                  │
-    #> │ UTC                    ┆ CEST                   ┆ CET                    ┆                       │
-    #> │ 2018-10-28 02:30:00    ┆ 2018-10-28 02:30:00    ┆ 2018-10-28 02:30:00    ┆ null                  │
-    #> │ UTC                    ┆ CEST                   ┆ CET                    ┆                       │
-    #> └────────────────────────┴────────────────────────┴────────────────────────┴───────────────────────┘
+    #> shape: (4, 3)
+    #> ┌─────────────────────┬───────────┬───────────────────────────────┐
+    #> │ ts                  ┆ ambiguous ┆ ts_localized                  │
+    #> │ ---                 ┆ ---       ┆ ---                           │
+    #> │ datetime[μs]        ┆ str       ┆ datetime[μs, Europe/Brussels] │
+    #> ╞═════════════════════╪═══════════╪═══════════════════════════════╡
+    #> │ 2018-10-28 01:30:00 ┆ earliest  ┆ 2018-10-28 01:30:00 CEST      │
+    #> │ 2018-10-28 02:00:00 ┆ earliest  ┆ 2018-10-28 02:00:00 CEST      │
+    #> │ 2018-10-28 02:30:00 ┆ latest    ┆ 2018-10-28 02:30:00 CET       │
+    #> │ 2018-10-28 02:00:00 ┆ latest    ┆ 2018-10-28 02:00:00 CET       │
+    #> └─────────────────────┴───────────┴───────────────────────────────┘
