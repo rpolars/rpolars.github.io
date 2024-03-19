@@ -14802,7 +14802,8 @@
 <p>Read a file from path into a polars LazyFrame.</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>pl_scan_csv(
-  path,
+  source,
+  ...,
   has_header = TRUE,
   separator = ",",
   comment_prefix = NULL,
@@ -14832,12 +14833,20 @@
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_scan_csv_:_path">path</code>
+<code id="pl_scan_csv_:_source">source</code>
 </td>
 <td>
 Path to a file or URL. It is possible to provide multiple paths provided
 that all CSV files have the same schema. It is not possible to provide
 several URLs.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_scan_csv_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>
@@ -15102,7 +15111,7 @@ downloaded files in session for an easy reuse.
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">my_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">tempfile</span><span class="p">()</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nf">write.csv</span><span class="p">(</span><span class="n">iris</span><span class="p">,</span><span class="w"> </span><span class="n">my_file</span><span class="p">)</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">lazy_frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">scan_csv</span><span class="p">(</span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">my_file</span><span class="p">)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">lazy_frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">scan_csv</span><span class="p">(</span><span class="n">my_file</span><span class="p">)</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">lazy_frame</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; shape: (150, 6)

@@ -9,7 +9,8 @@ Scan a parquet file
 ## Usage
 
 <pre><code class='language-R'>pl_scan_parquet(
-  file,
+  source,
+  ...,
   n_rows = NULL,
   cache = TRUE,
   parallel = c("Auto", "None", "Columns", "RowGroups"),
@@ -27,11 +28,19 @@ Scan a parquet file
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="scan_parquet_:_file">file</code>
+<code id="scan_parquet_:_source">source</code>
 </td>
 <td>
 Path to a file. You can use globbing with <code>\*</code> to scan/read
 multiple files in the same directory (see examples).
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="scan_parquet_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>

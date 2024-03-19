@@ -9,7 +9,8 @@ Read a file from path into a polars LazyFrame.
 ## Usage
 
 <pre><code class='language-R'>pl_scan_csv(
-  path,
+  source,
+  ...,
   has_header = TRUE,
   separator = ",",
   comment_prefix = NULL,
@@ -40,12 +41,20 @@ Read a file from path into a polars LazyFrame.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_scan_csv_:_path">path</code>
+<code id="pl_scan_csv_:_source">source</code>
 </td>
 <td>
 Path to a file or URL. It is possible to provide multiple paths provided
 that all CSV files have the same schema. It is not possible to provide
 several URLs.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_scan_csv_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>
@@ -314,7 +323,7 @@ library(polars)
 
 my_file = tempfile()
 write.csv(iris, my_file)
-lazy_frame = pl$scan_csv(path = my_file)
+lazy_frame = pl$scan_csv(my_file)
 lazy_frame$collect()
 ```
 

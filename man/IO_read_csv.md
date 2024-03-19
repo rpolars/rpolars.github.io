@@ -9,7 +9,8 @@ New DataFrame from CSV
 ## Usage
 
 <pre><code class='language-R'>pl_read_csv(
-  path,
+  source,
+  ...,
   has_header = TRUE,
   separator = ",",
   comment_prefix = NULL,
@@ -40,12 +41,20 @@ New DataFrame from CSV
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_path">path</code>
+<code id="pl_read_csv_:_source">source</code>
 </td>
 <td>
 Path to a file or URL. It is possible to provide multiple paths provided
 that all CSV files have the same schema. It is not possible to provide
 several URLs.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_read_csv_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>

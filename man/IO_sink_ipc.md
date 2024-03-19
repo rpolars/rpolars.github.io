@@ -13,6 +13,7 @@ was collected into R.
 
 <pre><code class='language-R'>LazyFrame_sink_ipc(
   path,
+  ...,
   compression = "zstd",
   maintain_order = TRUE,
   type_coercion = TRUE,
@@ -33,7 +34,15 @@ was collected into R.
 <code id="LazyFrame_sink_ipc_:_path">path</code>
 </td>
 <td>
-String. The path to the Arrow IPC file
+A character. File path to which the file should be written.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="LazyFrame_sink_ipc_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>

@@ -9,7 +9,8 @@ Read a file from path into a polars DataFrame.
 ## Usage
 
 <pre><code class='language-R'>pl_read_ndjson(
-  path,
+  source,
+  ...,
   infer_schema_length = 100,
   batch_size = NULL,
   n_rows = NULL,
@@ -26,12 +27,20 @@ Read a file from path into a polars DataFrame.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_ndjson_:_path">path</code>
+<code id="pl_read_ndjson_:_source">source</code>
 </td>
 <td>
 Path to a file or URL. It is possible to provide multiple paths provided
 that all NDJSON files have the same schema. It is not possible to
 provide several URLs.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_read_ndjson_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>

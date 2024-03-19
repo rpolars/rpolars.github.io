@@ -14802,7 +14802,8 @@
 <p>Write to comma-separated values (CSV) file</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;DataFrame&gt;$write_csv(
-  path,
+  file,
+  ...,
   include_bom = FALSE,
   include_header = TRUE,
   separator = ",",
@@ -14822,10 +14823,18 @@
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_csv_:_path">path</code>
+<code id="DataFrame_write_csv_:_file">file</code>
 </td>
 <td>
 File path to which the result should be written.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="DataFrame_write_csv_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>

@@ -8,7 +8,7 @@ Write to JSON file
 
 ## Usage
 
-<pre><code class='language-R'>DataFrame_write_json(file, pretty = FALSE, row_oriented = FALSE)
+<pre><code class='language-R'>DataFrame_write_json(file, ..., pretty = FALSE, row_oriented = FALSE)
 </code></pre>
 
 ## Arguments
@@ -20,6 +20,14 @@ Write to JSON file
 </td>
 <td>
 File path to which the result should be written.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="DataFrame_write_json_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>

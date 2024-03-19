@@ -13,6 +13,7 @@ was collected into R.
 
 <pre><code class='language-R'>LazyFrame_sink_csv(
   path,
+  ...,
   include_bom = FALSE,
   include_header = TRUE,
   separator = ",",
@@ -44,7 +45,15 @@ was collected into R.
 <code id="LazyFrame_sink_csv_:_path">path</code>
 </td>
 <td>
-File path to which the result should be written.
+A character. File path to which the file should be written.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="LazyFrame_sink_csv_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>

@@ -16255,11 +16255,21 @@
 </ul>
 <h3 id="other-breaking-changes">Other breaking changes</h3>
 <ul>
+<li>Several functions have been rewritten to match the behavior of Python Polars.<ul>
+<li><code>pl$implode(...)</code> is rewritten to be a syntactic sugar for <code>pl$col(...)$implode()</code> (<a href="https://github.com/pola-rs/r-polars/issues/923">#923</a>).</li>
+<li>Unify names of input/output function arguments (935).<ul>
+<li>All arguments except the first argument must be named arguments.</li>
+<li>In <code>pl$read_*</code> and <code>pl$scan_*</code> functions, the first argument is now <code>source</code>.</li>
+<li>In <code>&lt;DataFrame&gt;$write_*</code> functions, the first argument is now <code>file</code>.</li>
+<li>In <code>&lt;LazyFrame&gt;$sink_*</code> functions, the first argument is now <code>path</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>The argument <code>columns</code> in <code>$drop()</code> is removed. <code>$drop()</code> now accepts several
   character scalars, such as <code>$drop("a", "b", "c")</code> (<a href="https://github.com/pola-rs/r-polars/issues/912">#912</a>).</li>
 <li>In <code>pl$col()</code>, the <code>name</code> argument is removed, and the <code>...</code> argument no longer
   accepts a list of characters and <code>RPolarsSeries</code> class objects (<a href="https://github.com/pola-rs/r-polars/issues/923">#923</a>).</li>
-<li><code>pl$implode(...)</code> is rewritten to be a syntactic sugar for <code>pl$col(...)$implode()</code> (<a href="https://github.com/pola-rs/r-polars/issues/923">#923</a>).</li>
 <li>Removed <code>$argsort()</code> which was an old alias for <code>$arg_sort()</code> (<a href="https://github.com/pola-rs/r-polars/issues/930">#930</a>).</li>
 </ul>
 <h3 id="new-features">New features</h3>

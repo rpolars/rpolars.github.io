@@ -9,7 +9,8 @@ Write to parquet file
 ## Usage
 
 <pre><code class='language-R'>DataFrame_write_parquet(
-  path,
+  file,
+  ...,
   compression = "zstd",
   compression_level = 3,
   statistics = FALSE,
@@ -23,10 +24,18 @@ Write to parquet file
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_parquet_:_path">path</code>
+<code id="DataFrame_write_parquet_:_file">file</code>
 </td>
 <td>
-String. The path of the parquet file
+File path to which the result should be written.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="DataFrame_write_parquet_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>

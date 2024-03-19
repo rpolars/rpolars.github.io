@@ -9,7 +9,8 @@ Import data in Apache Arrow IPC format
 ## Usage
 
 <pre><code class='language-R'>pl_scan_ipc(
-  path,
+  source,
+  ...,
   n_rows = NULL,
   cache = TRUE,
   rechunk = TRUE,
@@ -24,12 +25,20 @@ Import data in Apache Arrow IPC format
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_scan_ipc_:_path">path</code>
+<code id="pl_scan_ipc_:_source">source</code>
 </td>
 <td>
 Path to a file or URL. It is possible to provide multiple paths provided
 that all CSV files have the same schema. It is not possible to provide
 several URLs.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_scan_ipc_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>

@@ -13,6 +13,7 @@ was collected into R.
 
 <pre><code class='language-R'>LazyFrame_sink_parquet(
   path,
+  ...,
   compression = "zstd",
   compression_level = 3,
   statistics = FALSE,
@@ -37,7 +38,15 @@ was collected into R.
 <code id="LazyFrame_sink_parquet_:_path">path</code>
 </td>
 <td>
-String. The path of the parquet file
+A character. File path to which the file should be written.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="LazyFrame_sink_parquet_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>

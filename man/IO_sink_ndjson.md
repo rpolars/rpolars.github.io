@@ -13,6 +13,7 @@ was collected into R.
 
 <pre><code class='language-R'>LazyFrame_sink_ndjson(
   path,
+  ...,
   maintain_order = TRUE,
   type_coercion = TRUE,
   predicate_pushdown = TRUE,
@@ -32,7 +33,15 @@ was collected into R.
 <code id="LazyFrame_sink_ndjson_:_path">path</code>
 </td>
 <td>
-File path to which the result should be written.
+A character. File path to which the file should be written.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="LazyFrame_sink_ndjson_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>

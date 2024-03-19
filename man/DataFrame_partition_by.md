@@ -2,7 +2,7 @@
 
 # Split a DataFrame into multiple DataFrames
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L2161)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L2166)
 
 ## Description
 
@@ -336,7 +336,25 @@ df$partition_by("a", "b", maintain_order = FALSE, as_nested_list = TRUE) |>
 ```
 
     #> 
-    #> The key value of `a` is b and the key value of `b` is 3
+    #> The key value of `a` is a and the key value of `b` is 1
+    #> shape: (9, 2)
+    #> ┌────────────┬──────────┐
+    #> │ statistic  ┆ c        │
+    #> │ ---        ┆ ---      │
+    #> │ str        ┆ f64      │
+    #> ╞════════════╪══════════╡
+    #> │ count      ┆ 2.0      │
+    #> │ null_count ┆ 0.0      │
+    #> │ mean       ┆ 4.0      │
+    #> │ std        ┆ 1.414214 │
+    #> │ min        ┆ 3.0      │
+    #> │ 25%        ┆ 3.0      │
+    #> │ 50%        ┆ 5.0      │
+    #> │ 75%        ┆ 5.0      │
+    #> │ max        ┆ 5.0      │
+    #> └────────────┴──────────┘
+    #> 
+    #> The key value of `a` is c and the key value of `b` is 3
     #> shape: (9, 2)
     #> ┌────────────┬──────┐
     #> │ statistic  ┆ c    │
@@ -345,13 +363,13 @@ df$partition_by("a", "b", maintain_order = FALSE, as_nested_list = TRUE) |>
     #> ╞════════════╪══════╡
     #> │ count      ┆ 1.0  │
     #> │ null_count ┆ 0.0  │
-    #> │ mean       ┆ 2.0  │
+    #> │ mean       ┆ 1.0  │
     #> │ std        ┆ null │
-    #> │ min        ┆ 2.0  │
-    #> │ 25%        ┆ 2.0  │
-    #> │ 50%        ┆ 2.0  │
-    #> │ 75%        ┆ 2.0  │
-    #> │ max        ┆ 2.0  │
+    #> │ min        ┆ 1.0  │
+    #> │ 25%        ┆ 1.0  │
+    #> │ 50%        ┆ 1.0  │
+    #> │ 75%        ┆ 1.0  │
+    #> │ max        ┆ 1.0  │
     #> └────────────┴──────┘
     #> 
     #> The key value of `a` is b and the key value of `b` is 2
@@ -372,7 +390,7 @@ df$partition_by("a", "b", maintain_order = FALSE, as_nested_list = TRUE) |>
     #> │ max        ┆ 4.0  │
     #> └────────────┴──────┘
     #> 
-    #> The key value of `a` is c and the key value of `b` is 3
+    #> The key value of `a` is b and the key value of `b` is 3
     #> shape: (9, 2)
     #> ┌────────────┬──────┐
     #> │ statistic  ┆ c    │
@@ -381,29 +399,11 @@ df$partition_by("a", "b", maintain_order = FALSE, as_nested_list = TRUE) |>
     #> ╞════════════╪══════╡
     #> │ count      ┆ 1.0  │
     #> │ null_count ┆ 0.0  │
-    #> │ mean       ┆ 1.0  │
+    #> │ mean       ┆ 2.0  │
     #> │ std        ┆ null │
-    #> │ min        ┆ 1.0  │
-    #> │ 25%        ┆ 1.0  │
-    #> │ 50%        ┆ 1.0  │
-    #> │ 75%        ┆ 1.0  │
-    #> │ max        ┆ 1.0  │
+    #> │ min        ┆ 2.0  │
+    #> │ 25%        ┆ 2.0  │
+    #> │ 50%        ┆ 2.0  │
+    #> │ 75%        ┆ 2.0  │
+    #> │ max        ┆ 2.0  │
     #> └────────────┴──────┘
-    #> 
-    #> The key value of `a` is a and the key value of `b` is 1
-    #> shape: (9, 2)
-    #> ┌────────────┬──────────┐
-    #> │ statistic  ┆ c        │
-    #> │ ---        ┆ ---      │
-    #> │ str        ┆ f64      │
-    #> ╞════════════╪══════════╡
-    #> │ count      ┆ 2.0      │
-    #> │ null_count ┆ 0.0      │
-    #> │ mean       ┆ 4.0      │
-    #> │ std        ┆ 1.414214 │
-    #> │ min        ┆ 3.0      │
-    #> │ 25%        ┆ 3.0      │
-    #> │ 50%        ┆ 5.0      │
-    #> │ 75%        ┆ 5.0      │
-    #> │ max        ┆ 5.0      │
-    #> └────────────┴──────────┘

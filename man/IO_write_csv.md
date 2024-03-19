@@ -9,7 +9,8 @@ Write to comma-separated values (CSV) file
 ## Usage
 
 <pre><code class='language-R'>DataFrame_write_csv(
-  path,
+  file,
+  ...,
   include_bom = FALSE,
   include_header = TRUE,
   separator = ",",
@@ -30,10 +31,18 @@ Write to comma-separated values (CSV) file
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_csv_:_path">path</code>
+<code id="DataFrame_write_csv_:_file">file</code>
 </td>
 <td>
 File path to which the result should be written.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="DataFrame_write_csv_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>
