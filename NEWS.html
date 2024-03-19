@@ -1055,27 +1055,6 @@
   
   
     <li class="md-nav__item">
-      <a href="man/pl_expr_to_r.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    expr_to_r
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="man/pl_Field.html" class="md-nav__link">
         
   
@@ -16271,6 +16250,10 @@
 <li>In <code>pl$col()</code>, the <code>name</code> argument is removed, and the <code>...</code> argument no longer
   accepts a list of characters and <code>RPolarsSeries</code> class objects (<a href="https://github.com/pola-rs/r-polars/issues/923">#923</a>).</li>
 <li>Removed <code>$argsort()</code> which was an old alias for <code>$arg_sort()</code> (<a href="https://github.com/pola-rs/r-polars/issues/930">#930</a>).</li>
+<li>Removed <code>pl$expr_to_r()</code> which was an alias for <code>$to_r()</code> (<a href="https://github.com/pola-rs/r-polars/issues/938">#938</a>).</li>
+<li><code>&lt;Series&gt;$to_r_list()</code> is renamed <code>&lt;Series&gt;$to_list()</code> (<a href="https://github.com/pola-rs/r-polars/issues/938">#938</a>).</li>
+<li>Removed <code>&lt;Series&gt;$to_r_vector()</code> which was an old alias for 
+  <code>&lt;Series&gt;$to_vector()</code> (<a href="https://github.com/pola-rs/r-polars/issues/938">#938</a>).</li>
 </ul>
 <h3 id="new-features">New features</h3>
 <ul>

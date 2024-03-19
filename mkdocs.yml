@@ -69,7 +69,6 @@ nav:
         - duration: man/pl_duration.md
         - element: man/pl_element.md
         - enable_string_cache: man/pl_enable_string_cache.md
-        - expr_to_r: man/pl_expr_to_r.md
         - Field: man/pl_Field.md
         - first: man/pl_first.md
         - fold: man/pl_fold.md

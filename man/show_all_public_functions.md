@@ -77,7 +77,6 @@ pl$show_all_public_functions()
     #>        [ duration ; function ]
     #>        [ element ; function ]
     #>        [ enable_string_cache ; function ]
-    #>        [ expr_to_r ; function ]
     #>        [ Field ; function ]
     #>        [ first ; function ]
     #>        [ Float32 ; RPolarsDataType ]

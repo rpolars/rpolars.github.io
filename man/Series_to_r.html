@@ -1062,27 +1062,6 @@
   
   
     <li class="md-nav__item">
-      <a href="pl_expr_to_r.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    expr_to_r
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="pl_Field.html" class="md-nav__link">
         
   
@@ -14822,13 +14801,13 @@
 R vector or list based on the Polars DataType. It is possible to force
 the output type by using
 <code style="white-space: pre;">$to_vector()</code> or
-<code style="white-space: pre;">$to_r_list()</code>.</p>
+<code style="white-space: pre;">$to_list()</code>.</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Series&gt;$to_r(int64_conversion = polars_options()\$int64_conversion)
 
 Series_to_vector(int64_conversion = polars_options()\$int64_conversion)
 
-Series_to_r_list(int64_conversion = polars_options()\$int64_conversion)
+Series_to_list(int64_conversion = polars_options()\$int64_conversion)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
@@ -14916,7 +14895,7 @@ withr::with_envvar(
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">series_vec</span><span class="o">$</span><span class="nf">to_r_list</span><span class="p">()</span><span class="w"> </span><span class="c1"># implicit call as.list(), convert to list</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">series_vec</span><span class="o">$</span><span class="nf">to_list</span><span class="p">()</span><span class="w"> </span><span class="c1"># implicit call as.list(), convert to list</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [[1]]
 #&gt; [1] &quot;a&quot;
@@ -14961,7 +14940,7 @@ withr::with_envvar(
 #&gt; [[2]][[2]]
 #&gt; [1] NA
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">series_list</span><span class="o">$</span><span class="nf">to_r_list</span><span class="p">()</span><span class="w"> </span><span class="c1"># implicit call as.list(), same as to_r() as already list</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">series_list</span><span class="o">$</span><span class="nf">to_list</span><span class="p">()</span><span class="w"> </span><span class="c1"># implicit call as.list(), same as to_r() as already list</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [[1]]
 #&gt; [[1]][[1]]

@@ -2,7 +2,7 @@
 
 # Append two Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L619)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L614)
 
 ## Description
 

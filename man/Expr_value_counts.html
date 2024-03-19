@@ -1062,27 +1062,6 @@
   
   
     <li class="md-nav__item">
-      <a href="pl_expr_to_r.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    expr_to_r
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="pl_Field.html" class="md-nav__link">
         
   
@@ -14800,7 +14779,7 @@
 
 
 <h1 id="value-counts">Value counts</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L3109"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L3092"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Count all unique values and create a struct mapping value to count.</p>
 <h2 id="usage">Usage</h2>
@@ -14842,16 +14821,16 @@ contention.
 #&gt; │ ---               │
 #&gt; │ struct[2]         │
 #&gt; ╞═══════════════════╡
-#&gt; │ {&quot;setosa&quot;,50}     │
 #&gt; │ {&quot;virginica&quot;,50}  │
+#&gt; │ {&quot;setosa&quot;,50}     │
 #&gt; │ {&quot;versicolor&quot;,50} │
 #&gt; └───────────────────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unnest</span><span class="p">()</span><span class="o">$</span><span class="nf">to_data_frame</span><span class="p">()</span><span class="w"> </span><span class="c1"># recommended to unnest structs before converting to R</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;      Species count
-#&gt; 1     setosa    50
-#&gt; 2  virginica    50
+#&gt; 1  virginica    50
+#&gt; 2     setosa    50
 #&gt; 3 versicolor    50
 </code></pre></div>
 
