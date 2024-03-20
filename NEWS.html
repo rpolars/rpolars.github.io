@@ -16235,6 +16235,7 @@
 <h3 id="other-breaking-changes">Other breaking changes</h3>
 <ul>
 <li>Several functions have been rewritten to match the behavior of Python Polars.<ul>
+<li>In <code>pl$Series()</code>, the first argument <code>x</code> is renamed to <code>values</code> (<a href="https://github.com/pola-rs/r-polars/issues/933">#933</a>).</li>
 <li><code>pl$implode(...)</code> is rewritten to be a syntactic sugar for <code>pl$col(...)$implode()</code> (<a href="https://github.com/pola-rs/r-polars/issues/923">#923</a>).</li>
 <li>Unify names of input/output function arguments (935).<ul>
 <li>All arguments except the first argument must be named arguments.</li>

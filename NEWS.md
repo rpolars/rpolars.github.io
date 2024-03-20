@@ -14,6 +14,7 @@
 ### Other breaking changes
 
 - Several functions have been rewritten to match the behavior of Python Polars.
+  - In `pl$Series()`, the first argument `x` is renamed to `values` ([#933](https://github.com/pola-rs/r-polars/issues/933)).
   - `pl$implode(...)` is rewritten to be a syntactic sugar for `pl$col(...)$implode()` ([#923](https://github.com/pola-rs/r-polars/issues/923)).
   - Unify names of input/output function arguments (935).
     - All arguments except the first argument must be named arguments.

@@ -12,7 +12,7 @@ properly, use the generic function <code>as_polars_series()</code>.
 
 ## Usage
 
-<pre><code class='language-R'>pl_Series(x, name = NULL, dtype = NULL, ..., nan_to_null = FALSE)
+<pre><code class='language-R'>pl_Series(values, name = NULL, dtype = NULL, ..., nan_to_null = FALSE)
 </code></pre>
 
 ## Arguments
@@ -20,7 +20,7 @@ properly, use the generic function <code>as_polars_series()</code>.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_Series_:_x">x</code>
+<code id="pl_Series_:_values">values</code>
 </td>
 <td>
 any vector
