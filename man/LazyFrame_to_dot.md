@@ -149,7 +149,6 @@ query$to_dot() |> cat()
     #> π 3/3;
     #> σ - [(0, 2)]"
     #> 
-    #> "SORT BY [col(\"a\")] [(0, 0)]"[label="SORT BY [col(\"a\")]"]
     #> "TABLE
     #> π 3/3;
     #> σ - [(0, 2)]"[label="TABLE
@@ -160,6 +159,7 @@ query$to_dot() |> cat()
     #> [col(\"a\")] [(0, 1)] [(0, 1)]"[label="AGG [col(\"b\").sum(), col(\"c\").sum()]
     #> BY
     #> [col(\"a\")] [(0, 1)]"]
+    #> "SORT BY [col(\"a\")] [(0, 0)]"[label="SORT BY [col(\"a\")]"]
     #> 
     #> }
 
