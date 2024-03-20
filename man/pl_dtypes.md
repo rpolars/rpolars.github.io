@@ -19,10 +19,10 @@ print(ls(pl$dtypes))
 ```
 
     #>  [1] "Array"       "Binary"      "Boolean"     "Categorical" "Date"       
-    #>  [6] "Datetime"    "Float32"     "Float64"     "Int16"       "Int32"      
-    #> [11] "Int64"       "Int8"        "List"        "Null"        "String"     
-    #> [16] "Struct"      "Time"        "UInt16"      "UInt32"      "UInt64"     
-    #> [21] "UInt8"       "Unknown"     "Utf8"
+    #>  [6] "Datetime"    "Duration"    "Float32"     "Float64"     "Int16"      
+    #> [11] "Int32"       "Int64"       "Int8"        "List"        "Null"       
+    #> [16] "String"      "Struct"      "Time"        "UInt16"      "UInt32"     
+    #> [21] "UInt64"      "UInt8"       "Unknown"     "Utf8"
 
 ``` r
 pl$dtypes$Float64

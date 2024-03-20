@@ -45,6 +45,7 @@
   graphviz dot syntax ([#928](https://github.com/pola-rs/r-polars/issues/928)).
 - Argument `ambiguous` can now take the value `"null"` to convert ambigous
   datetimes to null values ([#937](https://github.com/pola-rs/r-polars/issues/937)).
+- Export the `Duration` datatype ([#955](https://github.com/pola-rs/r-polars/issues/955)).
 
 ## Polars R Package 0.15.1
 

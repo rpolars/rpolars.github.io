@@ -2,7 +2,7 @@
 
 # Create Struct DataType
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L207)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L227)
 
 ## Description
 
@@ -138,14 +138,14 @@ print(pl$dtypes)
     #>   .pr$DataType$new_array(datatype, width) |>
     #>     unwrap("in pl$Array():")
     #> }
-    #> <bytecode: 0x559a2b7e34b0>
+    #> <bytecode: 0x55f3a9cfd2a8>
     #> <environment: namespace:polars>
     #> 
     #> $Categorical
     #> function(ordering = "physical") {
     #>   .pr$DataType$new_categorical(ordering) |> unwrap()
     #> }
-    #> <bytecode: 0x559a2b7f32d8>
+    #> <bytecode: 0x55f3a9d0d0d0>
     #> <environment: namespace:polars>
     #> 
     #> $Datetime
@@ -160,7 +160,14 @@ print(pl$dtypes)
     #>   }
     #>   unwrap(.pr$DataType$new_datetime(time_unit, time_zone))
     #> }
-    #> <bytecode: 0x559a2b7f5f98>
+    #> <bytecode: 0x55f3a9d17380>
+    #> <environment: namespace:polars>
+    #> 
+    #> $Duration
+    #> function(time_unit = "us") {
+    #>   unwrap(.pr$DataType$new_duration(time_unit))
+    #> }
+    #> <bytecode: 0x55f3a9d22a18>
     #> <environment: namespace:polars>
     #> 
     #> $List
@@ -176,7 +183,7 @@ print(pl$dtypes)
     #>   }
     #>   .pr$DataType$new_list(datatype)
     #> }
-    #> <bytecode: 0x559a2b802ed0>
+    #> <bytecode: 0x55f3a9d25710>
     #> <environment: namespace:polars>
     #> 
     #> $Struct
@@ -210,7 +217,7 @@ print(pl$dtypes)
     #>     and_then(DataType$new_struct) |>
     #>     unwrap("in pl$Struct:")
     #> }
-    #> <bytecode: 0x559a2b81eda8>
+    #> <bytecode: 0x55f3a9d3d798>
     #> <environment: namespace:polars>
 
 ``` r

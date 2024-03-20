@@ -56,6 +56,7 @@ pl$show_all_public_functions()
     #>           [ Categorical ; function ]
     #>           [ Date ; RPolarsDataType ]
     #>           [ Datetime ; function ]
+    #>           [ Duration ; function ]
     #>           [ Float32 ; RPolarsDataType ]
     #>           [ Float64 ; RPolarsDataType ]
     #>           [ Int16 ; RPolarsDataType ]
@@ -75,6 +76,7 @@ pl$show_all_public_functions()
     #>           [ Utf8 ; RPolarsDataType ]
     #> 
     #>        [ duration ; function ]
+    #>        [ Duration ; function ]
     #>        [ element ; function ]
     #>        [ enable_string_cache ; function ]
     #>        [ Field ; function ]
