@@ -21,7 +21,7 @@ polars api.
 ## Format
 
 An object of class <code>pl_polars_env</code> (inherits from
-<code>environment</code>) of length 99.
+<code>environment</code>) of length 100.
 
 ## Details
 
@@ -77,6 +77,7 @@ pl$show_all_public_functions()
     #>        [ date_range ; function ]
     #>        [ datetime ; function ]
     #>        [ Datetime ; function ]
+    #>        [ datetime_range ; function ]
     #>        [ disable_string_cache ; function ]
     #> 
     #>        dtypes ( list ):

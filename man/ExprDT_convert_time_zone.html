@@ -936,6 +936,27 @@
   
   
     <li class="md-nav__item">
+      <a href="pl_datetime_range.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    datetime_range
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="pl_datetime.html" class="md-nav__link">
         
   
@@ -14800,7 +14821,7 @@
 
 
 <h1 id="convert-to-given-time-zone-for-an-expression-of-type-datetime">Convert to given time zone for an expression of type Datetime.</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L664"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L661"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>If converting from a time-zone-naive datetime, then conversion will
 happen as if converting from UTC, regardless of your system’s time zone.</p>
@@ -14842,7 +14863,7 @@ String time zone from <code>base::OlsonNames()</code>
 #&gt; ┌─────────────────────────┬─────────────────────────────┐
 #&gt; │ date                    ┆ London                      │
 #&gt; │ ---                     ┆ ---                         │
-#&gt; │ datetime[μs, UTC]       ┆ datetime[μs, Europe/London] │
+#&gt; │ datetime[ms, UTC]       ┆ datetime[ms, Europe/London] │
 #&gt; ╞═════════════════════════╪═════════════════════════════╡
 #&gt; │ 2020-03-01 00:00:00 UTC ┆ 2020-03-01 00:00:00 GMT     │
 #&gt; │ 2020-04-01 00:00:00 UTC ┆ 2020-04-01 01:00:00 BST     │

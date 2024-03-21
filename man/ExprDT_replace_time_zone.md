@@ -2,7 +2,7 @@
 
 # Replace time zone
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L723)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L720)
 
 ## Description
 
@@ -124,7 +124,7 @@ df1$select(
     #> ┌─────────────────────────────┬────────────────────────────────┐
     #> │ london_timezone             ┆ London_to_Amsterdam            │
     #> │ ---                         ┆ ---                            │
-    #> │ datetime[μs, Europe/London] ┆ datetime[μs, Europe/Amsterdam] │
+    #> │ datetime[ms, Europe/London] ┆ datetime[ms, Europe/Amsterdam] │
     #> ╞═════════════════════════════╪════════════════════════════════╡
     #> │ 2020-03-01 00:00:00 GMT     ┆ 2020-03-01 00:00:00 CET        │
     #> │ 2020-04-01 01:00:00 BST     ┆ 2020-04-01 01:00:00 CEST       │

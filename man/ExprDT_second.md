@@ -1,15 +1,15 @@
 
 
-# Second
+# Extract seconds from underlying Datetime representation
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L440)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L442)
 
 ## Description
 
-Extract seconds from underlying Datetime representation. Applies to
-Datetime columns. Returns the integer second number from 0 to 59, or a
-floating point number from 0 \< 60 if <code>fractional=True</code> that
-includes any milli/micro/nanosecond component.
+Applies to Datetime columns. Returns the integer second number from 0 to
+59, or a floating point number from 0 \< 60 if
+<code>fractional=TRUE</code> that includes any milli/micro/nanosecond
+component.
 
 ## Usage
 
@@ -24,46 +24,44 @@ includes any milli/micro/nanosecond component.
 <code id="ExprDT_second_:_fractional">fractional</code>
 </td>
 <td>
-Whether to include the fractional component of the second.
+A logical. Whether to include the fractional component of the second.
 </td>
 </tr>
 </table>
 
 ## Value
 
-Expr of second as UInt32
+Expr of data type Int8 or Float64
 
 ## Examples
 
 ``` r
 library(polars)
 
-pl$DataFrame(date = pl$date_range(
-  as.numeric(as.POSIXct("2001-1-1")) * 1E6 + 456789, # manually convert to us
-  as.numeric(as.POSIXct("2001-1-1 00:00:6")) * 1E6,
-  interval = "2s654321us",
-  time_unit = "us", # instruct polars input is us, and store as us
-))$with_columns(
-  pl$col("date")$dt$second()$alias("second"),
-  pl$col("date")$dt$second(fractional = TRUE)$alias("second_frac")
+df = pl$DataFrame(
+  datetime = as.POSIXct(
+    c(
+      "1978-01-01 01:01:01",
+      "2024-10-13 05:30:14.500",
+      "2065-01-01 10:20:30.06"
+    ),
+    "UTC"
+  )
+)
+
+df$with_columns(
+  second = pl$col("datetime")$dt$second(),
+  second_fractional = pl$col("datetime")$dt$second(fractional = TRUE)
 )
 ```
 
-    #> shape: (2_089, 3)
-    #> ┌──────────────────────────────┬────────┬─────────────┐
-    #> │ date                         ┆ second ┆ second_frac │
-    #> │ ---                          ┆ ---    ┆ ---         │
-    #> │ datetime[μs]                 ┆ i8     ┆ f64         │
-    #> ╞══════════════════════════════╪════════╪═════════════╡
-    #> │ +32971-04-28 00:07:36.789    ┆ 36     ┆ 36.789      │
-    #> │ +32971-04-28 00:07:39.443321 ┆ 39     ┆ 39.443321   │
-    #> │ +32971-04-28 00:07:42.097642 ┆ 42     ┆ 42.097642   │
-    #> │ +32971-04-28 00:07:44.751963 ┆ 44     ┆ 44.751963   │
-    #> │ +32971-04-28 00:07:47.406284 ┆ 47     ┆ 47.406284   │
-    #> │ …                            ┆ …      ┆ …           │
-    #> │ +32971-04-28 01:39:48.393964 ┆ 48     ┆ 48.393964   │
-    #> │ +32971-04-28 01:39:51.048285 ┆ 51     ┆ 51.048285   │
-    #> │ +32971-04-28 01:39:53.702606 ┆ 53     ┆ 53.702606   │
-    #> │ +32971-04-28 01:39:56.356927 ┆ 56     ┆ 56.356927   │
-    #> │ +32971-04-28 01:39:59.011248 ┆ 59     ┆ 59.011248   │
-    #> └──────────────────────────────┴────────┴─────────────┘
+    #> shape: (3, 3)
+    #> ┌─────────────────────────────┬────────┬───────────────────┐
+    #> │ datetime                    ┆ second ┆ second_fractional │
+    #> │ ---                         ┆ ---    ┆ ---               │
+    #> │ datetime[ms, UTC]           ┆ i8     ┆ f64               │
+    #> ╞═════════════════════════════╪════════╪═══════════════════╡
+    #> │ 1978-01-01 01:01:01 UTC     ┆ 1      ┆ 1.0               │
+    #> │ 2024-10-13 05:30:14.500 UTC ┆ 14     ┆ 14.5              │
+    #> │ 2065-01-01 10:20:30.060 UTC ┆ 30     ┆ 30.06             │
+    #> └─────────────────────────────┴────────┴───────────────────┘

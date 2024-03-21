@@ -929,6 +929,27 @@
   
   
     <li class="md-nav__item">
+      <a href="man/pl_datetime_range.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    datetime_range
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="man/pl_datetime.html" class="md-nav__link">
         
   
@@ -16287,6 +16308,17 @@
   is renamed to <code>time_zone</code> (<a href="https://github.com/pola-rs/r-polars/issues/944">#944</a>).</li>
 <li>In <code>$dt$replace_time_zone()</code>, all arguments except <code>time_zone</code> must be named
   arguments (<a href="https://github.com/pola-rs/r-polars/issues/944">#944</a>).</li>
+<li><code>pl$date_range()</code> is completely rewritten (<a href="https://github.com/pola-rs/r-polars/issues/950">#950</a>).<ul>
+<li>The argument <code>end</code> must be specified.</li>
+<li>The default value of <code>interval</code> is changed to <code>"1d"</code>.</li>
+<li>The unused argument (not working in recent versions) <code>explode</code> is removed.</li>
+<li>The arguments <code>closed</code>, <code>time_unit</code>, and <code>time_zone</code> must be named arguments.</li>
+<li>No longer accepts numeric values to <code>start</code> and <code>end</code>.</li>
+<li>The usage of <code>pl$date_range()</code> to create a range of <code>Datetime</code> data type is deprecated.
+  <code>pl$date_range()</code> will always create a range of <code>Date</code> data type in the future.
+  Please use <code>pl$datetime_range()</code> if you want to create a range of <code>Datetime</code> instead.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>The argument <code>columns</code> in <code>$drop()</code> is removed. <code>$drop()</code> now accepts several
@@ -16313,6 +16345,7 @@
   Expr of class datetime, date, and time via columns and literals (<a href="https://github.com/pola-rs/r-polars/issues/918">#918</a>).</li>
 <li>New function <code>pl$arg_where()</code> to get the indices that match a condition (<a href="https://github.com/pola-rs/r-polars/issues/922">#922</a>).</li>
 <li>New function <code>is_polars_dtype()</code> (<a href="https://github.com/pola-rs/r-polars/issues/927">#927</a>).</li>
+<li>New function <code>pl$datetime_range()</code> (<a href="https://github.com/pola-rs/r-polars/issues/950">#950</a>).</li>
 <li>New method <code>&lt;LazyFrame&gt;$to_dot()</code> to print the query plan of a LazyFrame with
   graphviz dot syntax (<a href="https://github.com/pola-rs/r-polars/issues/928">#928</a>).</li>
 <li>Argument <code>ambiguous</code> can now take the value <code>"null"</code> to convert ambigous

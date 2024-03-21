@@ -1,23 +1,28 @@
 
 
-# New date range
+# Generate a date range
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__eager.R#L220)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__eager.R#L224)
 
 ## Description
 
-New date range
+If both <code>start</code> and <code>end</code> are passed as the Date
+types (not Datetime), and the <code>interval</code> granularity is no
+finer than <code>“1d”</code>, the returned range is also of type Date.
+All other permutations return a Datetime. Note that in a future version
+of Polars, <code>pl$date_range()</code> will always return Date. Please
+use <code>pl$datetime_range()</code> if you want Datetime instead.
 
 ## Usage
 
 <pre><code class='language-R'>pl_date_range(
   start,
   end,
-  interval,
+  interval = "1d",
+  ...,
   closed = "both",
-  time_unit = "us",
-  time_zone = NULL,
-  explode = TRUE
+  time_unit = NULL,
+  time_zone = NULL
 )
 </code></pre>
 
@@ -29,7 +34,8 @@ New date range
 <code id="pl_date_range_:_start">start</code>
 </td>
 <td>
-POSIXt or Date preferably with time_zone or double or integer
+Lower bound of the date range. Something that can be coerced to a Date
+or a Datetime expression. See examples for details.
 </td>
 </tr>
 <tr>
@@ -37,9 +43,8 @@ POSIXt or Date preferably with time_zone or double or integer
 <code id="pl_date_range_:_end">end</code>
 </td>
 <td>
-POSIXt or Date preferably with time_zone or double or integer. If
-<code>end</code> and <code>interval</code> are missing, then a single
-datetime is constructed.
+Upper bound of the date range. Something that can be coerced to a Date
+or a Datetime expression. See examples for details.
 </td>
 </tr>
 <tr>
@@ -47,8 +52,17 @@ datetime is constructed.
 <code id="pl_date_range_:_interval">interval</code>
 </td>
 <td>
-String, a Polars <code>duration</code> or R <code>difftime()</code>. Can
-be missing if <code>end</code> is missing also.
+Interval of the range periods, specified as a difftime object or using
+the Polars duration string language. See the <code>Interval</code>
+section for details.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_date_range_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>
@@ -56,8 +70,9 @@ be missing if <code>end</code> is missing also.
 <code id="pl_date_range_:_closed">closed</code>
 </td>
 <td>
-One of <code>“both”</code> (default), <code>“left”</code>,
-<code>“none”</code> or <code>“right”</code>.
+Define which sides of the range are closed (inclusive). One of the
+followings: <code>“both”</code> (default), <code>“left”</code>,
+<code>“right”</code>, <code>“none”</code>.
 </td>
 </tr>
 <tr>
@@ -65,8 +80,10 @@ One of <code>“both”</code> (default), <code>“left”</code>,
 <code id="pl_date_range_:_time_unit">time_unit</code>
 </td>
 <td>
-String (<code>“ns”</code>, <code>“us”</code>, <code>“ms”</code>) or
-integer.
+Time unit of the resulting the Datetime data type. One of
+<code>“ns”</code>, <code>“us”</code>, <code>“ms”</code> or
+<code>NULL</code> Only takes effect if the output column is of type
+Datetime (Deprecated usage).
 </td>
 </tr>
 <tr>
@@ -74,90 +91,120 @@ integer.
 <code id="pl_date_range_:_time_zone">time_zone</code>
 </td>
 <td>
-String describing a timezone. If <code>NULL</code> (default),
-<code style="white-space: pre;">“GMT</code> is used.
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_date_range_:_explode">explode</code>
-</td>
-<td>
-If <code>TRUE</code> (default), all created ranges will be "unlisted"
-into a column. Otherwise, output will be a list of ranges.
+Time zone of the resulting Datetime data type. Only takes effect if the
+output column is of type Datetime (Deprecated usage).
 </td>
 </tr>
 </table>
 
-## Details
-
-If param <code>time_zone</code> is not defined the Series will have no
-time zone.
-
-Note that R POSIXt without defined timezones (tzone/tz), so-called naive
-datetimes, are counter intuitive in R. It is recommended to always set
-the timezone of start and end. If not output will vary between local
-machine timezone, R and polars.
-
-In R/r-polars it is perfectly fine to mix timezones of params
-<code>time_zone</code>, <code>start</code> and <code>end</code>.
-
-Compared to the Python implementation, <code>pl$date_range()</code>
-doesn’t have the argument <code>eager</code> and always returns an Expr.
-Use <code style="white-space: pre;">$to_series()</code> to return a
-Series.
-
 ## Value
 
-A datetime
+An Expr of data type Date or Datetime
+
+## Interval
+
+<code>interval</code> is created according to the following string
+language:
+
+<ul>
+<li>
+
+1ns (1 nanosecond)
+
+</li>
+<li>
+
+1us (1 microsecond)
+
+</li>
+<li>
+
+1ms (1 millisecond)
+
+</li>
+<li>
+
+1s (1 second)
+
+</li>
+<li>
+
+1m (1 minute)
+
+</li>
+<li>
+
+1h (1 hour)
+
+</li>
+<li>
+
+1d (1 calendar day)
+
+</li>
+<li>
+
+1w (1 calendar week)
+
+</li>
+<li>
+
+1mo (1 calendar month)
+
+</li>
+<li>
+
+1q (1 calendar quarter)
+
+</li>
+<li>
+
+1y (1 calendar year)
+
+</li>
+</ul>
+
+Or combine them: <code>“3d12h4m25s”</code> \# 3 days, 12 hours, 4
+minutes, and 25 seconds
+
+By "calendar day", we mean the corresponding time on the next day (which
+may not be 24 hours, due to daylight savings). Similarly for "calendar
+week", "calendar month", "calendar quarter", and "calendar year".
 
 ## Examples
 
 ``` r
 library(polars)
 
-# All in GMT, straight forward, no mental confusion
-s_gmt = pl$date_range(
-  as.POSIXct("2022-01-01", tz = "GMT"),
-  as.POSIXct("2022-01-02", tz = "GMT"),
-  interval = "6h", time_unit = "ms", time_zone = "GMT"
-)
-s_gmt
+# Using Polars duration string to specify the interval:
+pl$date_range(as.Date("2022-01-01"), as.Date("2022-03-01"), "1mo") |>
+  as_polars_series("date")
 ```
 
-    #> polars Expr: Series.date_range([Series]).explode()
+    #> polars Series: shape: (3,)
+    #> Series: 'date' [date]
+    #> [
+    #>  2022-01-01
+    #>  2022-02-01
+    #>  2022-03-01
+    #> ]
 
 ``` r
-s_gmt$to_r()
+# Using `difftime` object to specify the interval:
+pl$date_range(
+  as.Date("1985-01-01"),
+  as.Date("1985-01-10"),
+  as.difftime(2, units = "days")
+) |>
+  as_polars_series("date")
 ```
 
-    #> [1] "2022-01-01 00:00:00 GMT" "2022-01-01 06:00:00 GMT"
-    #> [3] "2022-01-01 12:00:00 GMT" "2022-01-01 18:00:00 GMT"
-    #> [5] "2022-01-02 00:00:00 GMT"
-
-``` r
-# polars uses "GMT" if time_zone = NULL
-s_null = pl$date_range(
-  as.POSIXct("2022-01-01", tz = "GMT"),
-  as.POSIXct("2022-01-02", tz = "GMT"),
-  interval = "6h", time_unit = "ms", time_zone = NULL
-)
-# back to R POSIXct. R prints non tzone tagged POSIXct in local timezone
-s_null$to_r()
-```
-
-    #> [1] "2022-01-01 00:00:00 GMT" "2022-01-01 06:00:00 GMT"
-    #> [3] "2022-01-01 12:00:00 GMT" "2022-01-01 18:00:00 GMT"
-    #> [5] "2022-01-02 00:00:00 GMT"
-
-``` r
-# use of ISOdate
-t1 = ISOdate(2022, 1, 1, 0) # preset GMT
-t2 = ISOdate(2022, 1, 2, 0) # preset GMT
-pl$date_range(t1, t2, interval = "4h", time_unit = "ms", time_zone = "GMT")$to_r()
-```
-
-    #> [1] "2022-01-01 00:00:00 GMT" "2022-01-01 04:00:00 GMT"
-    #> [3] "2022-01-01 08:00:00 GMT" "2022-01-01 12:00:00 GMT"
-    #> [5] "2022-01-01 16:00:00 GMT" "2022-01-01 20:00:00 GMT"
-    #> [7] "2022-01-02 00:00:00 GMT"
+    #> polars Series: shape: (5,)
+    #> Series: 'date' [date]
+    #> [
+    #>  1985-01-01
+    #>  1985-01-03
+    #>  1985-01-05
+    #>  1985-01-07
+    #>  1985-01-09
+    #> ]

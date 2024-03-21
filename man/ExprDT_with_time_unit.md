@@ -2,7 +2,7 @@
 
 # with_time_unit
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L608)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L605)
 
 ## Description
 

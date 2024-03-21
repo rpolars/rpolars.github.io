@@ -2,7 +2,7 @@
 
 # microseconds
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L850)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L847)
 
 ## Description
 
@@ -37,7 +37,7 @@ df$select(
     #> ┌─────────────────────────────┬───────────────┐
     #> │ date                        ┆ diff_microsec │
     #> │ ---                         ┆ ---           │
-    #> │ datetime[μs, GMT]           ┆ i64           │
+    #> │ datetime[ms, GMT]           ┆ i64           │
     #> ╞═════════════════════════════╪═══════════════╡
     #> │ 2020-01-01 00:00:00 GMT     ┆ null          │
     #> │ 2020-01-01 00:00:00.001 GMT ┆ 1000          │

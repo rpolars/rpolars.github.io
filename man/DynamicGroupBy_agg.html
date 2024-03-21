@@ -936,6 +936,27 @@
   
   
     <li class="md-nav__item">
+      <a href="pl_datetime_range.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    datetime_range
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="pl_datetime.html" class="md-nav__link">
         
   
@@ -14843,7 +14864,7 @@ Exprs to aggregate over. Those can also be passed wrapped in a list, e.g
 #&gt; ┌─────────────────────────┬───────────┬─────┐
 #&gt; │ time                    ┆ vals      ┆ sum │
 #&gt; │ ---                     ┆ ---       ┆ --- │
-#&gt; │ datetime[μs, UTC]       ┆ list[i32] ┆ i32 │
+#&gt; │ datetime[ms, UTC]       ┆ list[i32] ┆ i32 │
 #&gt; ╞═════════════════════════╪═══════════╪═════╡
 #&gt; │ 2021-12-16 00:00:00 UTC ┆ [0, 1]    ┆ 1   │
 #&gt; │ 2021-12-16 01:00:00 UTC ┆ [2, 3]    ┆ 5   │
@@ -14860,7 +14881,7 @@ Exprs to aggregate over. Those can also be passed wrapped in a list, e.g
 #&gt; ┌─────────────────────────┬─────────────────────────┬─────────────────────────┬───────────┐
 #&gt; │ _lower_boundary         ┆ _upper_boundary         ┆ time                    ┆ vals      │
 #&gt; │ ---                     ┆ ---                     ┆ ---                     ┆ ---       │
-#&gt; │ datetime[μs, UTC]       ┆ datetime[μs, UTC]       ┆ datetime[μs, UTC]       ┆ list[i32] │
+#&gt; │ datetime[ms, UTC]       ┆ datetime[ms, UTC]       ┆ datetime[ms, UTC]       ┆ list[i32] │
 #&gt; ╞═════════════════════════╪═════════════════════════╪═════════════════════════╪═══════════╡
 #&gt; │ 2021-12-16 00:00:00 UTC ┆ 2021-12-16 01:00:00 UTC ┆ 2021-12-16 00:00:00 UTC ┆ [0, 1]    │
 #&gt; │ 2021-12-16 01:00:00 UTC ┆ 2021-12-16 02:00:00 UTC ┆ 2021-12-16 01:00:00 UTC ┆ [2, 3]    │
@@ -14881,7 +14902,7 @@ Exprs to aggregate over. Those can also be passed wrapped in a list, e.g
 #&gt; ┌─────────────────────────┬───────────┐
 #&gt; │ time                    ┆ vals      │
 #&gt; │ ---                     ┆ ---       │
-#&gt; │ datetime[μs, UTC]       ┆ list[i32] │
+#&gt; │ datetime[ms, UTC]       ┆ list[i32] │
 #&gt; ╞═════════════════════════╪═══════════╡
 #&gt; │ 2021-12-15 23:00:00 UTC ┆ [0]       │
 #&gt; │ 2021-12-16 00:00:00 UTC ┆ [1, 2]    │
@@ -14899,7 +14920,7 @@ Exprs to aggregate over. Those can also be passed wrapped in a list, e.g
 #&gt; ┌─────────────────────────┬───────────┐
 #&gt; │ time                    ┆ vals      │
 #&gt; │ ---                     ┆ ---       │
-#&gt; │ datetime[μs, UTC]       ┆ list[i32] │
+#&gt; │ datetime[ms, UTC]       ┆ list[i32] │
 #&gt; ╞═════════════════════════╪═══════════╡
 #&gt; │ 2021-12-15 23:00:00 UTC ┆ [0]       │
 #&gt; │ 2021-12-16 00:00:00 UTC ┆ [0, 1, 2] │
@@ -14916,7 +14937,7 @@ Exprs to aggregate over. Those can also be passed wrapped in a list, e.g
 #&gt; ┌─────────────────────────┬─────┬────────┐
 #&gt; │ time                    ┆ n   ┆ groups │
 #&gt; │ ---                     ┆ --- ┆ ---    │
-#&gt; │ datetime[μs, UTC]       ┆ i32 ┆ str    │
+#&gt; │ datetime[ms, UTC]       ┆ i32 ┆ str    │
 #&gt; ╞═════════════════════════╪═════╪════════╡
 #&gt; │ 2021-12-16 00:00:00 UTC ┆ 0   ┆ a      │
 #&gt; │ 2021-12-16 00:30:00 UTC ┆ 1   ┆ a      │
@@ -14939,7 +14960,7 @@ Exprs to aggregate over. Those can also be passed wrapped in a list, e.g
 #&gt; ┌────────┬─────────────────────────┬─────────────────────────┬─────────────────────────┬───────────┐
 #&gt; │ groups ┆ _lower_boundary         ┆ _upper_boundary         ┆ time                    ┆ n         │
 #&gt; │ ---    ┆ ---                     ┆ ---                     ┆ ---                     ┆ ---       │
-#&gt; │ str    ┆ datetime[μs, UTC]       ┆ datetime[μs, UTC]       ┆ datetime[μs, UTC]       ┆ list[i32] │
+#&gt; │ str    ┆ datetime[ms, UTC]       ┆ datetime[ms, UTC]       ┆ datetime[ms, UTC]       ┆ list[i32] │
 #&gt; ╞════════╪═════════════════════════╪═════════════════════════╪═════════════════════════╪═══════════╡
 #&gt; │ a      ┆ 2021-12-15 23:00:00 UTC ┆ 2021-12-16 00:00:00 UTC ┆ 2021-12-15 23:00:00 UTC ┆ [0]       │
 #&gt; │ a      ┆ 2021-12-16 00:00:00 UTC ┆ 2021-12-16 01:00:00 UTC ┆ 2021-12-16 00:00:00 UTC ┆ [0, 1, 2] │

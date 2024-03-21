@@ -2,7 +2,7 @@
 
 # Seconds
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L812)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L809)
 
 ## Description
 
@@ -37,7 +37,7 @@ df$select(
     #> ┌─────────────────────────┬──────────┐
     #> │ date                    ┆ diff_sec │
     #> │ ---                     ┆ ---      │
-    #> │ datetime[μs, GMT]       ┆ i64      │
+    #> │ datetime[ms, GMT]       ┆ i64      │
     #> ╞═════════════════════════╪══════════╡
     #> │ 2020-01-01 00:00:00 GMT ┆ null     │
     #> │ 2020-01-01 00:01:00 GMT ┆ 60       │

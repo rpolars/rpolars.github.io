@@ -47,6 +47,7 @@ pl$show_all_public_functions()
     #>        [ date_range ; function ]
     #>        [ datetime ; function ]
     #>        [ Datetime ; function ]
+    #>        [ datetime_range ; function ]
     #>        [ disable_string_cache ; function ]
     #> 
     #>        dtypes ( list ):

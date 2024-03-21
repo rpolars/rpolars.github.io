@@ -2,7 +2,7 @@
 
 # Epoch
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L539)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L536)
 
 ## Description
 
@@ -40,7 +40,7 @@ Expr of epoch as UInt32
 ``` r
 library(polars)
 
-pl$date_range(as.Date("2022-1-1"))$dt$epoch("ns")$to_series()
+as_polars_series(as.Date("2022-1-1"))$dt$epoch("ns")
 ```
 
     #> polars Series: shape: (1,)
@@ -50,7 +50,7 @@ pl$date_range(as.Date("2022-1-1"))$dt$epoch("ns")$to_series()
     #> ]
 
 ``` r
-pl$date_range(as.Date("2022-1-1"))$dt$epoch("ms")$to_series()
+as_polars_series(as.Date("2022-1-1"))$dt$epoch("ms")
 ```
 
     #> polars Series: shape: (1,)
@@ -60,7 +60,7 @@ pl$date_range(as.Date("2022-1-1"))$dt$epoch("ms")$to_series()
     #> ]
 
 ``` r
-pl$date_range(as.Date("2022-1-1"))$dt$epoch("s")$to_series()
+as_polars_series(as.Date("2022-1-1"))$dt$epoch("s")
 ```
 
     #> polars Series: shape: (1,)
@@ -70,7 +70,7 @@ pl$date_range(as.Date("2022-1-1"))$dt$epoch("s")$to_series()
     #> ]
 
 ``` r
-pl$date_range(as.Date("2022-1-1"))$dt$epoch("d")$to_series()
+as_polars_series(as.Date("2022-1-1"))$dt$epoch("d")
 ```
 
     #> polars Series: shape: (1,)

@@ -63,6 +63,7 @@ nav:
         - DataFrame: man/pl_DataFrame.md
         - date_range: man/pl_date_range.md
         - date: man/pl_date.md
+        - datetime_range: man/pl_datetime_range.md
         - datetime: man/pl_datetime.md
         - disable_string_cache: man/pl_disable_string_cache.md
         - dtypes: man/pl_dtypes.md

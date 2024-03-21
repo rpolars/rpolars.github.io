@@ -2,7 +2,7 @@
 
 # Convert to given time zone for an expression of type Datetime.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L664)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L661)
 
 ## Description
 
@@ -54,7 +54,7 @@ df$select(
     #> ┌─────────────────────────┬─────────────────────────────┐
     #> │ date                    ┆ London                      │
     #> │ ---                     ┆ ---                         │
-    #> │ datetime[μs, UTC]       ┆ datetime[μs, Europe/London] │
+    #> │ datetime[ms, UTC]       ┆ datetime[ms, Europe/London] │
     #> ╞═════════════════════════╪═════════════════════════════╡
     #> │ 2020-03-01 00:00:00 UTC ┆ 2020-03-01 00:00:00 GMT     │
     #> │ 2020-04-01 00:00:00 UTC ┆ 2020-04-01 01:00:00 BST     │

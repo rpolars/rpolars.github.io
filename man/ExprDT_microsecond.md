@@ -1,13 +1,12 @@
 
 
-# Microsecond
+# Extract microseconds from underlying Datetime representation.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L491)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L493)
 
 ## Description
 
-Extract microseconds from underlying Datetime representation. Applies to
-Datetime columns.
+Applies to Datetime columns.
 
 ## Usage
 
@@ -16,41 +15,36 @@ Datetime columns.
 
 ## Value
 
-Expr of microsecond as Int64
+Expr of data type Int32
 
 ## Examples
 
 ``` r
 library(polars)
 
-pl$DataFrame(
-  date = pl$date_range(
-    as.numeric(as.POSIXct("2001-1-1")) * 1E6 + 456789, # manually convert to us
-    as.numeric(as.POSIXct("2001-1-1 00:00:6")) * 1E6,
-    interval = "2s654321us",
-    time_unit = "us" # instruct polars input is us, and store as us
+df = pl$DataFrame(
+  datetime = as.POSIXct(
+    c(
+      "1978-01-01 01:01:01",
+      "2024-10-13 05:30:14.500",
+      "2065-01-01 10:20:30.06"
+    ),
+    "UTC"
   )
-)$with_columns(
-  pl$col("date")$cast(pl$Int64)$alias("datetime int64"),
-  pl$col("date")$dt$microsecond()$alias("microsecond")
+)
+
+df$with_columns(
+  microsecond = pl$col("datetime")$dt$microsecond()
 )
 ```
 
-    #> shape: (2_089, 3)
-    #> ┌──────────────────────────────┬────────────────────┬─────────────┐
-    #> │ date                         ┆ datetime int64     ┆ microsecond │
-    #> │ ---                          ┆ ---                ┆ ---         │
-    #> │ datetime[μs]                 ┆ i64                ┆ i32         │
-    #> ╞══════════════════════════════╪════════════════════╪═════════════╡
-    #> │ +32971-04-28 00:07:36.789    ┆ 978307200456789000 ┆ 789000      │
-    #> │ +32971-04-28 00:07:39.443321 ┆ 978307200459443321 ┆ 443321      │
-    #> │ +32971-04-28 00:07:42.097642 ┆ 978307200462097642 ┆ 97642       │
-    #> │ +32971-04-28 00:07:44.751963 ┆ 978307200464751963 ┆ 751963      │
-    #> │ +32971-04-28 00:07:47.406284 ┆ 978307200467406284 ┆ 406284      │
-    #> │ …                            ┆ …                  ┆ …           │
-    #> │ +32971-04-28 01:39:48.393964 ┆ 978307205988393964 ┆ 393964      │
-    #> │ +32971-04-28 01:39:51.048285 ┆ 978307205991048285 ┆ 48285       │
-    #> │ +32971-04-28 01:39:53.702606 ┆ 978307205993702606 ┆ 702606      │
-    #> │ +32971-04-28 01:39:56.356927 ┆ 978307205996356927 ┆ 356927      │
-    #> │ +32971-04-28 01:39:59.011248 ┆ 978307205999011248 ┆ 11248       │
-    #> └──────────────────────────────┴────────────────────┴─────────────┘
+    #> shape: (3, 2)
+    #> ┌─────────────────────────────┬─────────────┐
+    #> │ datetime                    ┆ microsecond │
+    #> │ ---                         ┆ ---         │
+    #> │ datetime[ms, UTC]           ┆ i32         │
+    #> ╞═════════════════════════════╪═════════════╡
+    #> │ 1978-01-01 01:01:01 UTC     ┆ 0           │
+    #> │ 2024-10-13 05:30:14.500 UTC ┆ 500000      │
+    #> │ 2065-01-01 10:20:30.060 UTC ┆ 60000       │
+    #> └─────────────────────────────┴─────────────┘
