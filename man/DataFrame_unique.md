@@ -2,7 +2,7 @@
 
 # Drop duplicated rows
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L532)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L533)
 
 ## Description
 
@@ -10,11 +10,7 @@ Drop duplicated rows
 
 ## Usage
 
-<pre><code class='language-R'>DataFrame_unique(
-  subset = NULL,
-  keep = c("first", "last", "none"),
-  maintain_order = FALSE
-)
+<pre><code class='language-R'>DataFrame_unique(subset = NULL, ..., keep = "any", maintain_order = FALSE)
 </code></pre>
 
 ## Arguments
@@ -31,6 +27,14 @@ duplicates. If <code>NULL</code> (default), use all columns.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="DataFrame_unique_:_...">…</code>
+</td>
+<td>
+Not used.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
 <code id="DataFrame_unique_:_keep">keep</code>
 </td>
 <td>
@@ -40,17 +44,23 @@ Which of the duplicate rows to keep:
 <ul>
 <li>
 
-"first": Keep first unique row.
+<code>“any”</code> (default): Does not give any guarantee of which row
+is kept. This allows more optimizations.
 
 </li>
 <li>
 
-"last": Keep last unique row.
+<code>“first”</code>: Keep first unique row.
 
 </li>
 <li>
 
-"none": Don’t keep duplicate rows.
+<code>“last”</code>: Keep last unique row.
+
+</li>
+<li>
+
+<code>“none”</code>: Don’t keep duplicate rows.
 
 </li>
 </ul>
@@ -94,7 +104,7 @@ df$unique()$height
 
 ``` r
 # subset to define unique, keep only last or first
-df$unique(subset = "x", keep = c("last"))
+df$unique(subset = "x", keep = "last")
 ```
 
     #> shape: (3, 2)
@@ -104,12 +114,12 @@ df$unique(subset = "x", keep = c("last"))
     #> │ i32 ┆ i32 │
     #> ╞═════╪═════╡
     #> │ 3   ┆ 1   │
-    #> │ 1   ┆ 1   │
     #> │ 2   ┆ 2   │
+    #> │ 1   ┆ 1   │
     #> └─────┴─────┘
 
 ``` r
-df$unique(subset = "x", keep = c("first"))
+df$unique(subset = "x", keep = "first")
 ```
 
     #> shape: (3, 2)
@@ -118,9 +128,9 @@ df$unique(subset = "x", keep = c("first"))
     #> │ --- ┆ --- │
     #> │ i32 ┆ i32 │
     #> ╞═════╪═════╡
-    #> │ 1   ┆ 1   │
     #> │ 2   ┆ 2   │
     #> │ 3   ┆ 3   │
+    #> │ 1   ┆ 1   │
     #> └─────┴─────┘
 
 ``` r

@@ -2,7 +2,7 @@
 
 # Explode columns containing a list of values
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1767)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1768)
 
 ## Description
 

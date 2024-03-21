@@ -14798,15 +14798,11 @@
 
 
 <h1 id="drop-duplicated-rows">Drop duplicated rows</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L532"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L533"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Drop duplicated rows</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>&lt;DataFrame&gt;$unique(
-  subset = NULL,
-  keep = c("first", "last", "none"),
-  maintain_order = FALSE
-)
+<pre><code class='language-R'>&lt;DataFrame&gt;$unique(subset = NULL, ..., keep = "any", maintain_order = FALSE)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
@@ -14822,6 +14818,14 @@ duplicates. If <code>NULL</code> (default), use all columns.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="DataFrame_unique_:_...">…</code>
+</td>
+<td>
+Not used.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
 <code id="DataFrame_unique_:_keep">keep</code>
 </td>
 <td>
@@ -14831,17 +14835,23 @@ Which of the duplicate rows to keep:
 <ul>
 <li>
 
-"first": Keep first unique row.
+<code>“any”</code> (default): Does not give any guarantee of which row
+is kept. This allows more optimizations.
 
 </li>
 <li>
 
-"last": Keep last unique row.
+<code>“first”</code>: Keep first unique row.
 
 </li>
 <li>
 
-"none": Don’t keep duplicate rows.
+<code>“last”</code>: Keep last unique row.
+
+</li>
+<li>
+
+<code>“none”</code>: Don’t keep duplicate rows.
 
 </li>
 </ul>
@@ -14877,7 +14887,7 @@ possibility to run on the streaming engine.
 <div class="highlight"><pre><span></span><code>#&gt; [1] 5
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># subset to define unique, keep only last or first</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">subset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">keep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;last&quot;</span><span class="p">))</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">subset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">keep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;last&quot;</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; shape: (3, 2)
 #&gt; ┌─────┬─────┐
@@ -14886,11 +14896,11 @@ possibility to run on the streaming engine.
 #&gt; │ i32 ┆ i32 │
 #&gt; ╞═════╪═════╡
 #&gt; │ 3   ┆ 1   │
-#&gt; │ 1   ┆ 1   │
 #&gt; │ 2   ┆ 2   │
+#&gt; │ 1   ┆ 1   │
 #&gt; └─────┴─────┘
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">subset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">keep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;first&quot;</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">subset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">keep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;first&quot;</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; shape: (3, 2)
 #&gt; ┌─────┬─────┐
@@ -14898,9 +14908,9 @@ possibility to run on the streaming engine.
 #&gt; │ --- ┆ --- │
 #&gt; │ i32 ┆ i32 │
 #&gt; ╞═════╪═════╡
-#&gt; │ 1   ┆ 1   │
 #&gt; │ 2   ┆ 2   │
 #&gt; │ 3   ┆ 3   │
+#&gt; │ 1   ┆ 1   │
 #&gt; └─────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># only keep unique rows</span>

@@ -14802,11 +14802,7 @@
 <h2 id="description">Description</h2>
 <p>Drop duplicated rows</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>&lt;LazyFrame&gt;$unique(
-  subset = NULL,
-  keep = c("first", "last", "none"),
-  maintain_order = FALSE
-)
+<pre><code class='language-R'>&lt;LazyFrame&gt;$unique(subset = NULL, ..., keep = "any", maintain_order = FALSE)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
@@ -14822,6 +14818,14 @@ duplicates. If <code>NULL</code> (default), use all columns.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="LazyFrame_unique_:_...">…</code>
+</td>
+<td>
+Not used.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
 <code id="LazyFrame_unique_:_keep">keep</code>
 </td>
 <td>
@@ -14831,17 +14835,23 @@ Which of the duplicate rows to keep:
 <ul>
 <li>
 
-"first": Keep first unique row.
+<code>“any”</code> (default): Does not give any guarantee of which row
+is kept. This allows more optimizations.
 
 </li>
 <li>
 
-"last": Keep last unique row.
+<code>“first”</code>: Keep first unique row.
 
 </li>
 <li>
 
-"none": Don’t keep duplicate rows.
+<code>“last”</code>: Keep last unique row.
+
+</li>
+<li>
+
+<code>“none”</code>: Don’t keep duplicate rows.
 
 </li>
 </ul>
@@ -14874,7 +14884,7 @@ possibility to run on the streaming engine.
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">()</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span><span class="o">$</span><span class="n">height</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] 66
+<div class="highlight"><pre><span></span><code>#&gt; [1] 62
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unique</span><span class="p">(</span><span class="n">subset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">collect</span><span class="p">()</span><span class="o">$</span><span class="n">height</span>
 </code></pre></div>

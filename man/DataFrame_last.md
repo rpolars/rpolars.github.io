@@ -2,7 +2,7 @@
 
 # Get the last row of the DataFrame.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1180)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1181)
 
 ## Description
 

@@ -10,11 +10,7 @@ Drop duplicated rows
 
 ## Usage
 
-<pre><code class='language-R'>LazyFrame_unique(
-  subset = NULL,
-  keep = c("first", "last", "none"),
-  maintain_order = FALSE
-)
+<pre><code class='language-R'>LazyFrame_unique(subset = NULL, ..., keep = "any", maintain_order = FALSE)
 </code></pre>
 
 ## Arguments
@@ -31,6 +27,14 @@ duplicates. If <code>NULL</code> (default), use all columns.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="LazyFrame_unique_:_...">…</code>
+</td>
+<td>
+Not used.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
 <code id="LazyFrame_unique_:_keep">keep</code>
 </td>
 <td>
@@ -40,17 +44,23 @@ Which of the duplicate rows to keep:
 <ul>
 <li>
 
-"first": Keep first unique row.
+<code>“any”</code> (default): Does not give any guarantee of which row
+is kept. This allows more optimizations.
 
 </li>
 <li>
 
-"last": Keep last unique row.
+<code>“first”</code>: Keep first unique row.
 
 </li>
 <li>
 
-"none": Don’t keep duplicate rows.
+<code>“last”</code>: Keep last unique row.
+
+</li>
+<li>
+
+<code>“none”</code>: Don’t keep duplicate rows.
 
 </li>
 </ul>
@@ -90,7 +100,7 @@ df$collect()$height
 df$unique()$collect()$height
 ```
 
-    #> [1] 66
+    #> [1] 62
 
 ``` r
 df$unique(subset = "x")$collect()$height
