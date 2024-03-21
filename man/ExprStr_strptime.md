@@ -2,7 +2,7 @@
 
 # Convert a String column into a Date/Datetime/Time column.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L84)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L85)
 
 ## Description
 
@@ -11,8 +11,9 @@ Similar to the <code>strptime()</code> function.
 ## Usage
 
 <pre><code class='language-R'>ExprStr_strptime(
-  datatype,
+  dtype,
   format = NULL,
+  ...,
   strict = TRUE,
   exact = TRUE,
   cache = TRUE,
@@ -25,10 +26,11 @@ Similar to the <code>strptime()</code> function.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_strptime_:_datatype">datatype</code>
+<code id="ExprStr_strptime_:_dtype">dtype</code>
 </td>
 <td>
-The data type to convert into. Can be either Date, Datetime, or Time.
+The data type to convert into. Can be either <code>pl$Date</code>,
+<code>pl$Datetime()</code>, or <code>pl$Time</code>.
 </td>
 </tr>
 <tr>
@@ -45,6 +47,14 @@ format is inferred from the data. Notice that time zone
 ignore timezones. Numeric time zones like
 <code style="white-space: pre;">%z</code> or
 <code style="white-space: pre;">%:z</code> are supported.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="ExprStr_strptime_:_...">…</code>
+</td>
+<td>
+Not used.
 </td>
 </tr>
 <tr>
@@ -229,7 +239,7 @@ s = pl$Series(
 s$str$strptime(
   pl$Datetime("ns"),
   format = "%Y-%m-%d %H:%M:%S %z",
-  strict = FALSE,
+  strict = FALSE
 )
 ```
 

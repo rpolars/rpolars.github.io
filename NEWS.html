@@ -16298,6 +16298,9 @@
 <li><code>&lt;Series&gt;$to_r_list()</code> is renamed <code>&lt;Series&gt;$to_list()</code> (<a href="https://github.com/pola-rs/r-polars/issues/938">#938</a>).</li>
 <li>Removed <code>&lt;Series&gt;$to_r_vector()</code> which was an old alias for
   <code>&lt;Series&gt;$to_vector()</code> (<a href="https://github.com/pola-rs/r-polars/issues/938">#938</a>).</li>
+<li>In <code>$str$strptime()</code>, <code>$str$to_date()</code>, <code>$str$to_datetime()</code>, and
+  <code>$str$to_time()</code>, all arguments (except the first one) must be named (<a href="https://github.com/pola-rs/r-polars/issues/939">#939</a>).</li>
+<li>In <code>$str$strptime()</code>, the argument <code>datatype</code> is renamed <code>dtype</code> (<a href="https://github.com/pola-rs/r-polars/issues/939">#939</a>).</li>
 <li><code>$unique()</code> for <code>DataFrame</code> and <code>LazyFrame</code> have several changes (<a href="https://github.com/pola-rs/r-polars/issues/953">#953</a>):<ul>
 <li>New default value <code>"any"</code> for argument <code>keep</code>.</li>
 <li>Arguments <code>keep</code> and <code>maintain_order</code> must be named.</li>
@@ -16310,7 +16313,7 @@
   Expr of class datetime, date, and time via columns and literals (<a href="https://github.com/pola-rs/r-polars/issues/918">#918</a>).</li>
 <li>New function <code>pl$arg_where()</code> to get the indices that match a condition (<a href="https://github.com/pola-rs/r-polars/issues/922">#922</a>).</li>
 <li>New function <code>is_polars_dtype()</code> (<a href="https://github.com/pola-rs/r-polars/issues/927">#927</a>).</li>
-<li>New method <code>&lt;LazyFrame&gt;to_dot()</code> to print the query plan of a LazyFrame with
+<li>New method <code>&lt;LazyFrame&gt;$to_dot()</code> to print the query plan of a LazyFrame with
   graphviz dot syntax (<a href="https://github.com/pola-rs/r-polars/issues/928">#928</a>).</li>
 <li>Argument <code>ambiguous</code> can now take the value <code>"null"</code> to convert ambigous
   datetimes to null values (<a href="https://github.com/pola-rs/r-polars/issues/937">#937</a>).</li>

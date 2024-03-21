@@ -14836,11 +14836,11 @@
 
 
 <h1 id="convert-a-string-column-into-a-date-column">Convert a String column into a Date column</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L132"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L138"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Convert a String column into a Date column</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>&lt;Expr&gt;$str$to_date(format = NULL, strict = TRUE, exact = TRUE, cache = TRUE)
+<pre><code class='language-R'>&lt;Expr&gt;$str$to_date(format = NULL, ..., strict = TRUE, exact = TRUE, cache = TRUE)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
@@ -14859,6 +14859,14 @@ format is inferred from the data. Notice that time zone
 ignore timezones. Numeric time zones like
 <code style="white-space: pre;">%z</code> or
 <code style="white-space: pre;">%:z</code> are supported.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="ExprStr_to_date_:_...">…</code>
+</td>
+<td>
+Not used.
 </td>
 </tr>
 <tr>
@@ -14921,6 +14929,30 @@ inferred from the data.</p>
 #&gt; [
 #&gt;  2020-01-01
 #&gt;  2020-02-01
+#&gt;  2020-03-01
+#&gt; ]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># by default, this errors if some values cannot be converted</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;2020/01/01&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2020 02 01&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2020-03-01&quot;</span><span class="p">))</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nf">try</span><span class="p">(</span><span class="n">s</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">to_date</span><span class="p">())</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; Error : Execution halted with the following contexts
+#&gt;    0: In R: in $select()
+#&gt;    0: During function call [.main()]
+#&gt;    1: Encountered the following error in Rust-Polars:
+#&gt;          conversion from `str` to `date` failed in column &#39;&#39; for 1 out of 3 values: [&quot;2020 02 01&quot;]
+#&gt; 
+#&gt;       You might want to try:
+#&gt;       - setting `strict=False` to set values that cannot be converted to `null`
+#&gt;       - using `str.strptime`, `str.to_date`, or `str.to_datetime` and providing a format string
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">s</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">to_date</span><span class="p">(</span><span class="n">strict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (3,)
+#&gt; Series: &#39;&#39; [date]
+#&gt; [
+#&gt;  2020-01-01
+#&gt;  null
 #&gt;  2020-03-01
 #&gt; ]
 </code></pre></div>

@@ -2,7 +2,7 @@
 
 # Convert a String column into a Datetime column
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L177)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L181)
 
 ## Description
 
@@ -12,6 +12,7 @@ Convert a String column into a Datetime column
 
 <pre><code class='language-R'>ExprStr_to_datetime(
   format = NULL,
+  ...,
   time_unit = NULL,
   time_zone = NULL,
   strict = TRUE,
@@ -38,6 +39,14 @@ format is inferred from the data. Notice that time zone
 ignore timezones. Numeric time zones like
 <code style="white-space: pre;">%z</code> or
 <code style="white-space: pre;">%:z</code> are supported.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="ExprStr_to_datetime_:_...">…</code>
+</td>
+<td>
+Not used.
 </td>
 </tr>
 <tr>

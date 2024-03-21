@@ -14836,13 +14836,14 @@
 
 
 <h1 id="convert-a-string-column-into-a-datedatetimetime-column">Convert a String column into a Date/Datetime/Time column.</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L84"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L85"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Similar to the <code>strptime()</code> function.</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Expr&gt;$str$strptime(
-  datatype,
+  dtype,
   format = NULL,
+  ...,
   strict = TRUE,
   exact = TRUE,
   cache = TRUE,
@@ -14854,10 +14855,11 @@
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_strptime_:_datatype">datatype</code>
+<code id="ExprStr_strptime_:_dtype">dtype</code>
 </td>
 <td>
-The data type to convert into. Can be either Date, Datetime, or Time.
+The data type to convert into. Can be either <code>pl$Date</code>,
+<code>pl$Datetime()</code>, or <code>pl$Time</code>.
 </td>
 </tr>
 <tr>
@@ -14874,6 +14876,14 @@ format is inferred from the data. Notice that time zone
 ignore timezones. Numeric time zones like
 <code style="white-space: pre;">%z</code> or
 <code style="white-space: pre;">%:z</code> are supported.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="ExprStr_strptime_:_...">…</code>
+</td>
+<td>
+Not used.
 </td>
 </tr>
 <tr>
@@ -15043,7 +15053,7 @@ found then the default is <code>“us”</code> (microsecond).</p>
 <a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="n">s</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">strptime</span><span class="p">(</span>
 <a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">Datetime</span><span class="p">(</span><span class="s">&quot;ns&quot;</span><span class="p">),</span>
 <a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">  </span><span class="n">format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;%Y-%m-%d %H:%M:%S %z&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">  </span><span class="n">strict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">  </span><span class="n">strict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span>
 <a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (3,)

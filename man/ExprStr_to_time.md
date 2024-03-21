@@ -2,7 +2,7 @@
 
 # Convert a String column into a Time column
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L152)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L157)
 
 ## Description
 
@@ -10,7 +10,7 @@ Convert a String column into a Time column
 
 ## Usage
 
-<pre><code class='language-R'>ExprStr_to_time(format = NULL, strict = TRUE, cache = TRUE)
+<pre><code class='language-R'>ExprStr_to_time(format = NULL, ..., strict = TRUE, cache = TRUE)
 </code></pre>
 
 ## Arguments
@@ -30,6 +30,14 @@ format is inferred from the data. Notice that time zone
 ignore timezones. Numeric time zones like
 <code style="white-space: pre;">%z</code> or
 <code style="white-space: pre;">%:z</code> are supported.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="ExprStr_to_time_:_...">…</code>
+</td>
+<td>
+Not used.
 </td>
 </tr>
 <tr>
