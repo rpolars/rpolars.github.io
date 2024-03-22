@@ -21,7 +21,7 @@ polars api.
 ## Format
 
 An object of class <code>pl_polars_env</code> (inherits from
-<code>environment</code>) of length 100.
+<code>environment</code>) of length 101.
 
 ## Details
 
@@ -132,6 +132,7 @@ pl$show_all_public_functions()
     #>        [ max ; function ]
     #>        [ max_horizontal ; function ]
     #>        [ mean ; function ]
+    #>        [ mean_horizontal ; function ]
     #>        [ median ; function ]
     #>        [ mem_address ; function ]
     #>        [ min ; function ]

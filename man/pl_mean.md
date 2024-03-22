@@ -39,6 +39,11 @@ Expr
 <code>\<Expr\>$mean()</code>
 
 </li>
+<li>
+
+<code>pl$mean_horizontal()</code>
+
+</li>
 </ul>
 
 ## Examples

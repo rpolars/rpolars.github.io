@@ -102,6 +102,7 @@ pl$show_all_public_functions()
     #>        [ max ; function ]
     #>        [ max_horizontal ; function ]
     #>        [ mean ; function ]
+    #>        [ mean_horizontal ; function ]
     #>        [ median ; function ]
     #>        [ mem_address ; function ]
     #>        [ min ; function ]

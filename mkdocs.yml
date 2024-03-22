@@ -83,6 +83,7 @@ nav:
         - lit: man/pl_lit.md
         - max_horizontal: man/pl_max_horizontal.md
         - max: man/pl_max.md
+        - mean_horizontal: man/pl_mean_horizontal.md
         - mean: man/pl_mean.md
         - median: man/pl_median.md
         - mem_address: man/pl_mem_address.md

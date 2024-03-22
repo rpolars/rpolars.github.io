@@ -61,6 +61,8 @@
   graphviz dot syntax ([#928](https://github.com/pola-rs/r-polars/issues/928)).
 - Argument `ambiguous` can now take the value `"null"` to convert ambigous
   datetimes to null values ([#937](https://github.com/pola-rs/r-polars/issues/937)).
+- New function `pl$mean_horizontal()` ([#959](https://github.com/pola-rs/r-polars/issues/959)).
+
 ### Bug fixes
 
 - The `join_nulls` and `validate` arguments of `<DataFrame>$join()` now work

@@ -2,7 +2,7 @@
 
 # Create a Time expression
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L1197)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L1217)
 
 ## Description
 
