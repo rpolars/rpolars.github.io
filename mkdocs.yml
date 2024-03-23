@@ -51,6 +51,7 @@ nav:
         - all: man/pl_all.md
         - any_horizontal: man/pl_any_horizontal.md
         - approx_n_unique: man/pl_approx_n_unique.md
+        - arg_sort_by: man/pl_arg_sort_by.md
         - arg_where: man/pl_arg_where.md
         - coalesce: man/pl_coalesce.md
         - col: man/pl_col.md

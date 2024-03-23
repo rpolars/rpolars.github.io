@@ -2,7 +2,7 @@
 
 # Index of a sort
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1490)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1492)
 
 ## Description
 
@@ -38,6 +38,11 @@ If <code>TRUE</code>, place nulls values last.
 ## Value
 
 Expr
+
+## See Also
+
+pl$arg_sort_by() to find the row indices that would sort multiple
+columns.
 
 ## Examples
 
