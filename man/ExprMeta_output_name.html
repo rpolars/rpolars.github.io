@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.10ba22f1.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#get-the-output-column-names" class="md-skip">
+        <a href="#get-the-column-name-that-this-expression-would-produce" class="md-skip">
           Skip to content
         </a>
       
@@ -12958,6 +12958,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -14788,6 +14797,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -14823,26 +14841,70 @@
   
 
 
-<h1 id="get-the-output-column-names">Get the output column names</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__meta.R#L98"><strong>Source code</strong></a></p>
+<h1 id="get-the-column-name-that-this-expression-would-produce">Get the column name that this expression would produce</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__meta.R#L115"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>Get the column name that this expression would produce. It might not
-always be possible to determine the output name as it might depend on
-the schema of the context. In that case this will raise an error. Use
-<code>$meta$root_names()</code> to get the name of input column.</p>
+<p>It may not always be possible to determine the output name as that can
+depend on the schema of the context; in that case this will raise an
+error if <code>raise_if_undetermined</code> is <code>TRUE</code> (the
+default), or return <code>NA</code> otherwise.</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>&lt;Expr&gt;$meta$output_name()
+<pre><code class='language-R'>&lt;Expr&gt;$meta$output_name(..., raise_if_undetermined = TRUE)
 </code></pre>
+
+<h2 id="arguments">Arguments</h2>
+<table>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="ExprMeta_output_name_:_...">…</code>
+</td>
+<td>
+Ignored.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="ExprMeta_output_name_:_raise_if_undetermined">raise_if_undetermined</code>
+</td>
+<td>
+If <code>TRUE</code> (default), raise an error if the output name cannot
+be determined. Otherwise, return <code>NA</code>.
+</td>
+</tr>
+</table>
 
 <h2 id="value">Value</h2>
 <p>A character vector</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;alice&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;eve&quot;</span><span class="p">))</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;bob&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">)</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">e</span><span class="o">$</span><span class="n">meta</span><span class="o">$</span><span class="nf">output_name</span><span class="p">()</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; [1] &quot;bob&quot;
+<div class="highlight"><pre><span></span><code>#&gt; [1] &quot;foo&quot;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">e_filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">filter</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">13</span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">e_filter</span><span class="o">$</span><span class="n">meta</span><span class="o">$</span><span class="nf">output_name</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; [1] &quot;foo&quot;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">e_sum_over</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">sum</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">over</span><span class="p">(</span><span class="s">&quot;groups&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">e_sum_over</span><span class="o">$</span><span class="n">meta</span><span class="o">$</span><span class="nf">output_name</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; [1] &quot;foo&quot;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">e_sum_slice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">sum</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">slice</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">len</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">))</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">e_sum_slice</span><span class="o">$</span><span class="n">meta</span><span class="o">$</span><span class="nf">output_name</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; [1] &quot;foo&quot;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">len</span><span class="p">()</span><span class="o">$</span><span class="n">meta</span><span class="o">$</span><span class="nf">output_name</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; [1] &quot;len&quot;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;*&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">meta</span><span class="o">$</span><span class="nf">output_name</span><span class="p">(</span><span class="n">raise_if_undetermined</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; [1] NA
 </code></pre></div>
 
 

@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.10ba22f1.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -15079,7 +15079,7 @@ to achieve the best performance and avoid using
 <a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="p">})</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   2.438   0.000   2.714
+#&gt;   2.229   0.005   2.353
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Comparing this to the standard polars syntax:</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nf">system.time</span><span class="p">({</span>
@@ -15089,7 +15089,7 @@ to achieve the best performance and avoid using
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">})</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   0.002   0.000   0.010
+#&gt;   0.003   0.000   0.004
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Running in parallel --------------------------------</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
@@ -15107,7 +15107,7 @@ to achieve the best performance and avoid using
 <a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="p">})</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   0.036   0.000   1.239
+#&gt;   0.031   0.007   1.245
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># first run in parallel: there is some overhead to start up extra R processes</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># drop any previous processes, just to show start-up overhead here</span>
@@ -15128,7 +15128,7 @@ to achieve the best performance and avoid using
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">})</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   0.014   0.007   1.143
+#&gt;   0.019   0.001   1.196
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># second run in parallel: this reuses R processes in &quot;polars global_rpool&quot;.</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nf">polars_options</span><span class="p">()</span><span class="o">$</span><span class="n">rpool_cap</span>
@@ -15145,7 +15145,7 @@ to achieve the best performance and avoid using
 <a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="p">})</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   0.014   0.004   0.351
+#&gt;   0.014   0.003   0.335
 </code></pre></div>
 
 
