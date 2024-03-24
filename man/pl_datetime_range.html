@@ -12,7 +12,7 @@
         <link rel="prev" href="pl_date.html">
       
       
-        <link rel="next" href="pl_datetime.html">
+        <link rel="next" href="pl_datetime_ranges.html">
       
       
       <link rel="icon" href="../polars-logo.png">
@@ -938,6 +938,27 @@
   
   
     <li class="md-nav__item">
+      <a href="pl_date_ranges.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    date_ranges
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="pl_date.html" class="md-nav__link">
         
   
@@ -1050,6 +1071,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -1062,6 +1092,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_datetime_ranges.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    datetime_ranges
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -14852,6 +14903,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -14879,7 +14939,7 @@
 
 
 <h1 id="generate-a-datetime-range">Generate a datetime range</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/functions__eager.R#L295"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/functions__eager.R#L357"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Generate a datetime range</p>
 <h2 id="usage">Usage</h2>
@@ -15030,6 +15090,9 @@ minutes, and 25 seconds</p>
 <p>By "calendar day", we mean the corresponding time on the next day (which
 may not be 24 hours, due to daylight savings). Similarly for "calendar
 week", "calendar month", "calendar quarter", and "calendar year".</p>
+<h2 id="see-also">See Also</h2>
+<p><code>pl$datetime_ranges()</code> to create a simple Series of data type
+list(Datetime) based on column values.</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>

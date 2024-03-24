@@ -12,7 +12,7 @@
         <link rel="prev" href="pl_DataFrame.html">
       
       
-        <link rel="next" href="pl_date.html">
+        <link rel="next" href="pl_date_ranges.html">
       
       
       <link rel="icon" href="../polars-logo.png">
@@ -1008,6 +1008,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -1020,6 +1029,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_date_ranges.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    date_ranges
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1058,6 +1088,27 @@
   
   <span class="md-ellipsis">
     datetime_range
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_datetime_ranges.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    datetime_ranges
   </span>
   
 
@@ -14852,6 +14903,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -14879,7 +14939,7 @@
 
 
 <h1 id="generate-a-date-range">Generate a date range</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/functions__eager.R#L224"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/functions__eager.R#L229"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>If both <code>start</code> and <code>end</code> are passed as the Date
 types (not Datetime), and the <code>interval</code> granularity is no
@@ -14954,8 +15014,8 @@ followings: <code>“both”</code> (default), <code>“left”</code>,
 <td>
 Time unit of the resulting the Datetime data type. One of
 <code>“ns”</code>, <code>“us”</code>, <code>“ms”</code> or
-<code>NULL</code> Only takes effect if the output column is of type
-Datetime (Deprecated usage).
+<code>NULL</code>. Only takes effect if the output column is of type
+Datetime (deprecated usage).
 </td>
 </tr>
 <tr>
@@ -14964,7 +15024,7 @@ Datetime (Deprecated usage).
 </td>
 <td>
 Time zone of the resulting Datetime data type. Only takes effect if the
-output column is of type Datetime (Deprecated usage).
+output column is of type Datetime (deprecated usage).
 </td>
 </tr>
 </table>
@@ -15037,6 +15097,9 @@ minutes, and 25 seconds</p>
 <p>By "calendar day", we mean the corresponding time on the next day (which
 may not be 24 hours, due to daylight savings). Similarly for "calendar
 week", "calendar month", "calendar quarter", and "calendar year".</p>
+<h2 id="see-also">See Also</h2>
+<p><code>pl$date_ranges()</code> to create a simple Series of data type
+list(Date) based on column values.</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>

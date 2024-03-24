@@ -46,9 +46,11 @@ pl$show_all_public_functions()
     #>        [ date ; function ]
     #>        [ Date ; RPolarsDataType ]
     #>        [ date_range ; function ]
+    #>        [ date_ranges ; function ]
     #>        [ datetime ; function ]
     #>        [ Datetime ; function ]
     #>        [ datetime_range ; function ]
+    #>        [ datetime_ranges ; function ]
     #>        [ disable_string_cache ; function ]
     #> 
     #>        dtypes ( list ):

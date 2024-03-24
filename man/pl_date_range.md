@@ -2,7 +2,7 @@
 
 # Generate a date range
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__eager.R#L224)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__eager.R#L229)
 
 ## Description
 
@@ -82,8 +82,8 @@ followings: <code>“both”</code> (default), <code>“left”</code>,
 <td>
 Time unit of the resulting the Datetime data type. One of
 <code>“ns”</code>, <code>“us”</code>, <code>“ms”</code> or
-<code>NULL</code> Only takes effect if the output column is of type
-Datetime (Deprecated usage).
+<code>NULL</code>. Only takes effect if the output column is of type
+Datetime (deprecated usage).
 </td>
 </tr>
 <tr>
@@ -92,7 +92,7 @@ Datetime (Deprecated usage).
 </td>
 <td>
 Time zone of the resulting Datetime data type. Only takes effect if the
-output column is of type Datetime (Deprecated usage).
+output column is of type Datetime (deprecated usage).
 </td>
 </tr>
 </table>
@@ -170,6 +170,11 @@ minutes, and 25 seconds
 By "calendar day", we mean the corresponding time on the next day (which
 may not be 24 hours, due to daylight savings). Similarly for "calendar
 week", "calendar month", "calendar quarter", and "calendar year".
+
+## See Also
+
+<code>pl$date_ranges()</code> to create a simple Series of data type
+list(Date) based on column values.
 
 ## Examples
 

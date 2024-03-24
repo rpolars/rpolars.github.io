@@ -2,7 +2,7 @@
 
 # Generate a datetime range
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__eager.R#L295)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__eager.R#L357)
 
 ## Description
 
@@ -163,6 +163,11 @@ minutes, and 25 seconds
 By "calendar day", we mean the corresponding time on the next day (which
 may not be 24 hours, due to daylight savings). Similarly for "calendar
 week", "calendar month", "calendar quarter", and "calendar year".
+
+## See Also
+
+<code>pl$datetime_ranges()</code> to create a simple Series of data type
+list(Datetime) based on column values.
 
 ## Examples
 

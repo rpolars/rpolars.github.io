@@ -936,6 +936,27 @@
   
   
     <li class="md-nav__item">
+      <a href="pl_date_ranges.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    date_ranges
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="pl_date.html" class="md-nav__link">
         
   
@@ -962,6 +983,27 @@
   
   <span class="md-ellipsis">
     datetime_range
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_datetime_ranges.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    datetime_ranges
   </span>
   
 
@@ -15101,8 +15143,8 @@ TRUE)</code>.
 #&gt; │ ---                 ┆ ---   ┆ --- │
 #&gt; │ str                 ┆ u64   ┆ u64 │
 #&gt; ╞═════════════════════╪═══════╪═════╡
-#&gt; │ optimization        ┆ 0     ┆ 32  │
-#&gt; │ projection(literal) ┆ 32    ┆ 96  │
+#&gt; │ optimization        ┆ 0     ┆ 33  │
+#&gt; │ projection(literal) ┆ 33    ┆ 95  │
 #&gt; └─────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Use $profile() to compare two queries</span>
@@ -15133,9 +15175,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ --- │
 #&gt; │ str                ┆ u64   ┆ u64 │
 #&gt; ╞════════════════════╪═══════╪═════╡
-#&gt; │ optimization       ┆ 0     ┆ 20  │
-#&gt; │ sort(Sepal.Length) ┆ 20    ┆ 501 │
-#&gt; │ group_by(Species)  ┆ 505   ┆ 842 │
+#&gt; │ optimization       ┆ 0     ┆ 14  │
+#&gt; │ sort(Sepal.Length) ┆ 14    ┆ 221 │
+#&gt; │ group_by(Species)  ┆ 223   ┆ 427 │
 #&gt; └────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)</span>
@@ -15173,9 +15215,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ ---   │
 #&gt; │ str                ┆ u64   ┆ u64   │
 #&gt; ╞════════════════════╪═══════╪═══════╡
-#&gt; │ optimization       ┆ 0     ┆ 11    │
-#&gt; │ sort(Sepal.Length) ┆ 11    ┆ 442   │
-#&gt; │ group_by(Species)  ┆ 446   ┆ 63225 │
+#&gt; │ optimization       ┆ 0     ┆ 8     │
+#&gt; │ sort(Sepal.Length) ┆ 8     ┆ 244   │
+#&gt; │ group_by(Species)  ┆ 247   ┆ 47830 │
 #&gt; └────────────────────┴───────┴───────┘
 </code></pre></div>
 

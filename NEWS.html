@@ -929,6 +929,27 @@
   
   
     <li class="md-nav__item">
+      <a href="man/pl_date_ranges.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    date_ranges
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="man/pl_date.html" class="md-nav__link">
         
   
@@ -955,6 +976,27 @@
   
   <span class="md-ellipsis">
     datetime_range
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="man/pl_datetime_ranges.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    datetime_ranges
   </span>
   
 
@@ -16339,7 +16381,7 @@
 <li>Several functions have been rewritten to match the behavior of Python Polars.<ul>
 <li>In <code>pl$Series()</code>, the first argument <code>x</code> is renamed to <code>values</code> (<a href="https://github.com/pola-rs/r-polars/issues/933">#933</a>).</li>
 <li><code>pl$implode(...)</code> is rewritten to be a syntactic sugar for <code>pl$col(...)$implode()</code> (<a href="https://github.com/pola-rs/r-polars/issues/923">#923</a>).</li>
-<li>Unify names of input/output function arguments (935).<ul>
+<li>Unify names of input/output function arguments (<a href="https://github.com/pola-rs/r-polars/issues/935">#935</a>).<ul>
 <li>All arguments except the first argument must be named arguments.</li>
 <li>In <code>pl$read_*</code> and <code>pl$scan_*</code> functions, the first argument is now <code>source</code>.</li>
 <li>In <code>&lt;DataFrame&gt;$write_*</code> functions, the first argument is now <code>file</code>.</li>
@@ -16395,6 +16437,7 @@
 <li>New function <code>pl$mean_horizontal()</code> (<a href="https://github.com/pola-rs/r-polars/issues/959">#959</a>).</li>
 <li>New argument <code>raise_if_undetermined</code> of <code>&lt;Expr&gt;$meta$output_name()</code> (<a href="https://github.com/pola-rs/r-polars/issues/961">#961</a>).</li>
 <li>New function <code>pl$arg_sort_by()</code> (<a href="https://github.com/pola-rs/r-polars/issues/929">#929</a>).</li>
+<li>New functions <code>pl$date_ranges()</code> and <code>pl$datetime_ranges()</code> (<a href="https://github.com/pola-rs/r-polars/issues/962">#962</a>).</li>
 </ul>
 <h3 id="bug-fixes">Bug fixes</h3>
 <ul>

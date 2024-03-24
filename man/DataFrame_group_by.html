@@ -936,6 +936,27 @@
   
   
     <li class="md-nav__item">
+      <a href="pl_date_ranges.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    date_ranges
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="pl_date.html" class="md-nav__link">
         
   
@@ -962,6 +983,27 @@
   
   <span class="md-ellipsis">
     datetime_range
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pl_datetime_ranges.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    datetime_ranges
   </span>
   
 
@@ -14964,9 +15006,9 @@ of the <code>maintain_order</code> argument.</p>
 #&gt; │ --- ┆ --- │
 #&gt; │ str ┆ f64 │
 #&gt; ╞═════╪═════╡
-#&gt; │ b   ┆ 5.0 │
 #&gt; │ c   ┆ 3.0 │
 #&gt; │ a   ┆ 2.0 │
+#&gt; │ b   ┆ 5.0 │
 #&gt; └─────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Set `maintain_order = TRUE` to ensure the order of the groups is consistent with the input.</span>
@@ -14992,10 +15034,10 @@ of the <code>maintain_order</code> argument.</p>
 #&gt; │ --- ┆ --- ┆ --- │
 #&gt; │ str ┆ f64 ┆ f64 │
 #&gt; ╞═════╪═════╪═════╡
-#&gt; │ b   ┆ 2.0 ┆ 4.0 │
-#&gt; │ b   ┆ 3.0 ┆ 2.0 │
-#&gt; │ c   ┆ 3.0 ┆ 1.0 │
 #&gt; │ a   ┆ 1.0 ┆ 5.0 │
+#&gt; │ b   ┆ 2.0 ┆ 4.0 │
+#&gt; │ c   ┆ 3.0 ┆ 1.0 │
+#&gt; │ b   ┆ 3.0 ┆ 2.0 │
 #&gt; └─────┴─────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Or pass some arguments to group by multiple columns in the same way.</span>
