@@ -15,8 +15,6 @@ automatically by the engine.
 ## Usage
 
 <pre><code class='language-R'>pl_thread_pool_size()
-
-pl_threadpool_size()
 </code></pre>
 
 ## Details

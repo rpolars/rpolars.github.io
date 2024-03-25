@@ -145,8 +145,7 @@ ls(.pr$env$RPolarsLazyFrame)
     #> [49] "to_dot"                  "unique"                 
     #> [51] "unnest"                  "var"                    
     #> [53] "width"                   "with_columns"           
-    #> [55] "with_context"            "with_row_count"         
-    #> [57] "with_row_index"
+    #> [55] "with_context"            "with_row_index"
 
 ``` r
 # see all private methods (not intended for regular use)
@@ -224,7 +223,7 @@ Ldf_best$describe_plan()
 
     #> FILTER [(col("Species")) == (String(setosa))] FROM
     #> 
-    #>   Csv SCAN /tmp/RtmpI1WG6e/file7cbb77e3d6fc
+    #>   Csv SCAN /tmp/RtmpQa5OdW/file7b8973ce7836
     #>   PROJECT */5 COLUMNS
 
 ``` r
@@ -241,7 +240,7 @@ Ldf_best$describe_optimized_plan()
 ```
 
     #> 
-    #>   Csv SCAN /tmp/RtmpI1WG6e/file7cbb77e3d6fc
+    #>   Csv SCAN /tmp/RtmpQa5OdW/file7b8973ce7836
     #>   PROJECT */5 COLUMNS
     #>   SELECTION: [(col("Species")) == (String(setosa))]
 

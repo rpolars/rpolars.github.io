@@ -15014,8 +15014,7 @@ withr::with_envvar(
 #&gt; [49] &quot;to_dot&quot;                  &quot;unique&quot;                 
 #&gt; [51] &quot;unnest&quot;                  &quot;var&quot;                    
 #&gt; [53] &quot;width&quot;                   &quot;with_columns&quot;           
-#&gt; [55] &quot;with_context&quot;            &quot;with_row_count&quot;         
-#&gt; [57] &quot;with_row_index&quot;
+#&gt; [55] &quot;with_context&quot;            &quot;with_row_index&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># see all private methods (not intended for regular use)</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nf">ls</span><span class="p">(</span><span class="n">.pr</span><span class="o">$</span><span class="n">LazyFrame</span><span class="p">)</span>
@@ -15087,7 +15086,7 @@ withr::with_envvar(
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; FILTER [(col(&quot;Species&quot;)) == (String(setosa))] FROM
 #&gt; 
-#&gt;   Csv SCAN /tmp/RtmpI1WG6e/file7cbb77e3d6fc
+#&gt;   Csv SCAN /tmp/RtmpQa5OdW/file7b8973ce7836
 #&gt;   PROJECT */5 COLUMNS
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># NOTE For Ldf_okay, the full time to load csv alrady paid when creating Rdf and Pdf</span>
@@ -15100,7 +15099,7 @@ withr::with_envvar(
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Ldf_best</span><span class="o">$</span><span class="nf">describe_optimized_plan</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; 
-#&gt;   Csv SCAN /tmp/RtmpI1WG6e/file7cbb77e3d6fc
+#&gt;   Csv SCAN /tmp/RtmpQa5OdW/file7b8973ce7836
 #&gt;   PROJECT */5 COLUMNS
 #&gt;   SELECTION: [(col(&quot;Species&quot;)) == (String(setosa))]
 </code></pre></div>

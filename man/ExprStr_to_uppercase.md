@@ -2,7 +2,7 @@
 
 # Convert a string to uppercase
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L258)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L257)
 
 ## Description
 

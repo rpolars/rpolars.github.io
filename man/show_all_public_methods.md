@@ -286,7 +286,6 @@ pl$show_all_public_methods()
     #>           [ var ; function ]
     #>           [ width ; property function ]
     #>           [ with_columns ; function ]
-    #>           [ with_row_count ; function ]
     #>           [ with_row_index ; function ]
     #>           [ write_csv ; function ]
     #>           [ write_json ; function ]
@@ -547,7 +546,6 @@ pl$show_all_public_methods()
     #>           [ width ; property function ]
     #>           [ with_columns ; function ]
     #>           [ with_context ; function ]
-    #>           [ with_row_count ; function ]
     #>           [ with_row_index ; function ]
     #> 
     #> 
