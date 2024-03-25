@@ -16438,12 +16438,15 @@
 <li>New argument <code>raise_if_undetermined</code> of <code>&lt;Expr&gt;$meta$output_name()</code> (<a href="https://github.com/pola-rs/r-polars/issues/961">#961</a>).</li>
 <li>New function <code>pl$arg_sort_by()</code> (<a href="https://github.com/pola-rs/r-polars/issues/929">#929</a>).</li>
 <li>New functions <code>pl$date_ranges()</code> and <code>pl$datetime_ranges()</code> (<a href="https://github.com/pola-rs/r-polars/issues/962">#962</a>).</li>
+<li>Export the <code>Duration</code> datatype (<a href="https://github.com/pola-rs/r-polars/issues/955">#955</a>).</li>
 </ul>
 <h3 id="bug-fixes">Bug fixes</h3>
 <ul>
 <li>The <code>join_nulls</code> and <code>validate</code> arguments of <code>&lt;DataFrame&gt;$join()</code> now work
   correctly (<a href="https://github.com/pola-rs/r-polars/issues/945">#945</a>).</li>
-<li>Export the <code>Duration</code> datatype (<a href="https://github.com/pola-rs/r-polars/issues/955">#955</a>).</li>
+<li>We said in the changelog of 0.14.0 that all <code>row_count_*</code> args in I/O functions
+  were renamed <code>row_index_*</code>, but this change was not made for CSV and IPC
+  functions. This renaming is now made (<a href="https://github.com/pola-rs/r-polars/issues/964">#964</a>).</li>
 </ul>
 <h2 id="polars-r-package-0151">Polars R Package 0.15.1</h2>
 <h3 id="new-features_1">New features</h3>

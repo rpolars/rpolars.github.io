@@ -14906,8 +14906,8 @@
   low_memory = FALSE,
   rechunk = TRUE,
   skip_rows_after_header = 0,
-  row_count_name = NULL,
-  row_count_offset = 0,
+  row_index_name = NULL,
+  row_index_offset = 0,
   try_parse_dates = FALSE,
   eol_char = "\n",
   raise_if_empty = TRUE,
@@ -15126,19 +15126,19 @@ Parse the first row as headers, and then skip this number of rows.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_row_count_name">row_count_name</code>
+<code id="pl_read_csv_:_row_index_name">row_index_name</code>
 </td>
 <td>
-If not <code>NULL</code>, this will insert a row count column with the
+If not <code>NULL</code>, this will insert a row index column with the
 given name into the DataFrame.
 </td>
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_row_count_offset">row_count_offset</code>
+<code id="pl_read_csv_:_row_index_offset">row_index_offset</code>
 </td>
 <td>
-Offset to start the row_count column (only used if the name is set).
+Offset to start the row index column (only used if the name is set).
 </td>
 </tr>
 <tr>

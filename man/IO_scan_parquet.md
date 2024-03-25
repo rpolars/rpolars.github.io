@@ -84,7 +84,7 @@ DataFrame into contiguous memory chunks.
 <code id="scan_parquet_:_row_index_name">row_index_name</code>
 </td>
 <td>
-If not <code>NULL</code>, this will insert a row count column with the
+If not <code>NULL</code>, this will insert a row index column with the
 given name into the DataFrame.
 </td>
 </tr>
@@ -93,7 +93,7 @@ given name into the DataFrame.
 <code id="scan_parquet_:_row_index_offset">row_index_offset</code>
 </td>
 <td>
-Offset to start the row_index column (only used if the name is set).
+Offset to start the row index column (only used if the name is set).
 </td>
 </tr>
 <tr>

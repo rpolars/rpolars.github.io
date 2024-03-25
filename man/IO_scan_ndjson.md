@@ -91,7 +91,7 @@ Reallocate to contiguous memory when all chunks / files are parsed.
 <code id="pl_scan_ndjson_:_row_index_name">row_index_name</code>
 </td>
 <td>
-If not <code>NULL</code>, this will insert a row count column with the
+If not <code>NULL</code>, this will insert a row index column with the
 given name into the DataFrame.
 </td>
 </tr>
@@ -100,7 +100,7 @@ given name into the DataFrame.
 <code id="pl_scan_ndjson_:_row_index_offset">row_index_offset</code>
 </td>
 <td>
-Offset to start the row_count column (only used if the name is set).
+Offset to start the row index column (only used if the name is set).
 </td>
 </tr>
 <tr>
@@ -117,8 +117,9 @@ downloaded files in session for an easy reuse.
 <code id="pl_scan_ndjson_:_ignore_errors">ignore_errors</code>
 </td>
 <td>
-If <code>TRUE</code>, do not error if parsing fails because of schema
-mismatches.
+Keep reading the file even if some lines yield errors. You can also use
+<code>infer_schema_length = 0</code> to read all columns as UTF8 to
+check which values might cause an issue.
 </td>
 </tr>
 </table>

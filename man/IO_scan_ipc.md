@@ -14,8 +14,8 @@ Import data in Apache Arrow IPC format
   n_rows = NULL,
   cache = TRUE,
   rechunk = TRUE,
-  row_count_name = NULL,
-  row_count_offset = 0L,
+  row_index_name = NULL,
+  row_index_offset = 0L,
   memmap = TRUE
 )
 </code></pre>
@@ -67,19 +67,19 @@ Reallocate to contiguous memory when all chunks / files are parsed.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_scan_ipc_:_row_count_name">row_count_name</code>
+<code id="pl_scan_ipc_:_row_index_name">row_index_name</code>
 </td>
 <td>
-If not <code>NULL</code>, this will insert a row count column with the
+If not <code>NULL</code>, this will insert a row index column with the
 given name into the DataFrame.
 </td>
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_scan_ipc_:_row_count_offset">row_count_offset</code>
+<code id="pl_scan_ipc_:_row_index_offset">row_index_offset</code>
 </td>
 <td>
-Offset to start the row_count column (only used if the name is set).
+Offset to start the row index column (only used if the name is set).
 </td>
 </tr>
 <tr>
