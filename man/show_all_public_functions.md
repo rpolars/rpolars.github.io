@@ -92,6 +92,8 @@ pl$show_all_public_functions()
     #>        [ get_global_rpool_cap ; function ]
     #>        [ head ; function ]
     #>        [ implode ; function ]
+    #>        [ int_range ; function ]
+    #>        [ int_ranges ; function ]
     #>        [ Int16 ; RPolarsDataType ]
     #>        [ Int32 ; RPolarsDataType ]
     #>        [ Int64 ; RPolarsDataType ]

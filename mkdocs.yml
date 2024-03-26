@@ -79,6 +79,8 @@ nav:
         - from_epoch: man/pl_from_epoch.md
         - head: man/pl_head.md
         - implode: man/pl_implode.md
+        - int_range: man/pl_int_range.md
+        - int_ranges: man/pl_int_ranges.md
         - is_schema: man/pl_is_schema.md
         - last: man/pl_last.md
         - LazyFrame: man/pl_LazyFrame.md

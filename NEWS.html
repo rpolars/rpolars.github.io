@@ -1265,6 +1265,48 @@
   
   
     <li class="md-nav__item">
+      <a href="man/pl_int_range.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    int_range
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="man/pl_int_ranges.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    int_ranges
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="man/pl_is_schema.html" class="md-nav__link">
         
   
@@ -16378,7 +16420,9 @@
 </ul>
 <h3 id="other-breaking-changes">Other breaking changes</h3>
 <ul>
-<li>Several functions have been rewritten to match the behavior of Python Polars.<ul>
+<li>
+<p>Several functions have been rewritten to match the behavior of Python Polars.</p>
+<ul>
 <li>In <code>pl$Series()</code> arguments are changed.<ul>
 <li>The argument <code>x</code> is renamed <code>values</code> (<a href="https://github.com/pola-rs/r-polars/issues/933">#933</a>).</li>
 <li>The argument <code>values</code> has a new default value <code>NULL</code> (<a href="https://github.com/pola-rs/r-polars/issues/966">#966</a>).</li>
@@ -16399,46 +16443,52 @@
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span>
 </code></pre></div>
 <p>This warning can also be silenced by replacing <code>pl$Series(&lt;values&gt;, &lt;name&gt;)</code>
-by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.
-  - <code>pl$implode(...)</code> is rewritten to be a syntactic sugar for <code>pl$col(...)$implode()</code> (<a href="https://github.com/pola-rs/r-polars/issues/923">#923</a>).
-  - Unify names of input/output function arguments (<a href="https://github.com/pola-rs/r-polars/issues/935">#935</a>).
-    - All arguments except the first argument must be named arguments.
-    - In <code>pl$read_*</code> and <code>pl$scan_*</code> functions, the first argument is now <code>source</code>.
-    - In <code>&lt;DataFrame&gt;$write_*</code> functions, the first argument is now <code>file</code>.
-    - In <code>&lt;LazyFrame&gt;$sink_*</code> functions, the first argument is now <code>path</code>.
-  - In <code>$dt$convert_time_zone()</code> and <code>$dt$replace_time_zone()</code>, the <code>tz</code> argument
-    is renamed to <code>time_zone</code> (<a href="https://github.com/pola-rs/r-polars/issues/944">#944</a>).
-  - In <code>$dt$replace_time_zone()</code>, all arguments except <code>time_zone</code> must be named
-    arguments (<a href="https://github.com/pola-rs/r-polars/issues/944">#944</a>).
-  - <code>pl$date_range()</code> is completely rewritten (<a href="https://github.com/pola-rs/r-polars/issues/950">#950</a>).
-    - The argument <code>end</code> must be specified.
-    - The default value of <code>interval</code> is changed to <code>"1d"</code>.
-    - The unused argument (not working in recent versions) <code>explode</code> is removed.
-    - The arguments <code>closed</code>, <code>time_unit</code>, and <code>time_zone</code> must be named arguments.
-    - No longer accepts numeric values to <code>start</code> and <code>end</code>.
-    - The usage of <code>pl$date_range()</code> to create a range of <code>Datetime</code> data type is deprecated.
-<code>pl$date_range()</code> will always create a range of <code>Date</code> data type in the future.
-Please use <code>pl$datetime_range()</code> if you want to create a range of <code>Datetime</code> instead.
-- The argument <code>columns</code> in <code>$drop()</code> is removed. <code>$drop()</code> now accepts several
-  character scalars, such as <code>$drop("a", "b", "c")</code> (<a href="https://github.com/pola-rs/r-polars/issues/912">#912</a>).
-- In <code>pl$col()</code>, the <code>name</code> argument is removed, and the <code>...</code> argument no longer
-  accepts a list of characters and <code>RPolarsSeries</code> class objects (<a href="https://github.com/pola-rs/r-polars/issues/923">#923</a>).
-- Removed <code>$argsort()</code> which was an old alias for <code>$arg_sort()</code> (<a href="https://github.com/pola-rs/r-polars/issues/930">#930</a>).
-- Removed <code>pl$expr_to_r()</code> which was an alias for <code>$to_r()</code> (<a href="https://github.com/pola-rs/r-polars/issues/938">#938</a>).
-- <code>&lt;Series&gt;$to_r_list()</code> is renamed <code>&lt;Series&gt;$to_list()</code> (<a href="https://github.com/pola-rs/r-polars/issues/938">#938</a>).
-- Removed <code>&lt;Series&gt;$to_r_vector()</code> which was an old alias for
-  <code>&lt;Series&gt;$to_vector()</code> (<a href="https://github.com/pola-rs/r-polars/issues/938">#938</a>).
-- In <code>$str$strptime()</code>, <code>$str$to_date()</code>, <code>$str$to_datetime()</code>, and
-  <code>$str$to_time()</code>, all arguments (except the first one) must be named (<a href="https://github.com/pola-rs/r-polars/issues/939">#939</a>).
-- In <code>$str$strptime()</code>, the argument <code>datatype</code> is renamed <code>dtype</code> (<a href="https://github.com/pola-rs/r-polars/issues/939">#939</a>).
-- <code>$unique()</code> for <code>DataFrame</code> and <code>LazyFrame</code> have several changes (<a href="https://github.com/pola-rs/r-polars/issues/953">#953</a>):
-  - New default value <code>"any"</code> for argument <code>keep</code>.
-  - Arguments <code>keep</code> and <code>maintain_order</code> must be named.
-- The following deprecated functions are now removed: <code>pl$threadpool_size()</code>,
-  <code>&lt;DataFrame&gt;$with_row_count()</code>, <code>&lt;LazyFrame&gt;$with_row_count()</code> (<a href="https://github.com/pola-rs/r-polars/issues/965">#965</a>).</p>
+by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.</p>
 </li>
 </ul>
 </li>
+</ul>
+<ul>
+<li><code>pl$implode(...)</code> is rewritten to be a syntactic sugar for <code>pl$col(...)$implode()</code> (<a href="https://github.com/pola-rs/r-polars/issues/923">#923</a>).</li>
+<li>Unify names of input/output function arguments (<a href="https://github.com/pola-rs/r-polars/issues/935">#935</a>).<ul>
+<li>All arguments except the first argument must be named arguments.</li>
+<li>In <code>pl$read_*</code> and <code>pl$scan_*</code> functions, the first argument is now <code>source</code>.</li>
+<li>In <code>&lt;DataFrame&gt;$write_*</code> functions, the first argument is now <code>file</code>.</li>
+<li>In <code>&lt;LazyFrame&gt;$sink_*</code> functions, the first argument is now <code>path</code>.</li>
+</ul>
+</li>
+<li>In <code>$dt$convert_time_zone()</code> and <code>$dt$replace_time_zone()</code>, the <code>tz</code> argument
+  is renamed to <code>time_zone</code> (<a href="https://github.com/pola-rs/r-polars/issues/944">#944</a>).</li>
+<li>In <code>$dt$replace_time_zone()</code>, all arguments except <code>time_zone</code> must be named
+  arguments (<a href="https://github.com/pola-rs/r-polars/issues/944">#944</a>).</li>
+<li><code>pl$date_range()</code> is completely rewritten (<a href="https://github.com/pola-rs/r-polars/issues/950">#950</a>).<ul>
+<li>The argument <code>end</code> must be specified.</li>
+<li>The default value of <code>interval</code> is changed to <code>"1d"</code>.</li>
+<li>The unused argument (not working in recent versions) <code>explode</code> is removed.</li>
+<li>The arguments <code>closed</code>, <code>time_unit</code>, and <code>time_zone</code> must be named arguments.</li>
+<li>No longer accepts numeric values to <code>start</code> and <code>end</code>.</li>
+<li>The usage of <code>pl$date_range()</code> to create a range of <code>Datetime</code> data type is deprecated.
+  <code>pl$date_range()</code> will always create a range of <code>Date</code> data type in the future.
+  Please use <code>pl$datetime_range()</code> if you want to create a range of <code>Datetime</code> instead.</li>
+</ul>
+</li>
+<li>The argument <code>columns</code> in <code>$drop()</code> is removed. <code>$drop()</code> now accepts several
+character scalars, such as <code>$drop("a", "b", "c")</code> (<a href="https://github.com/pola-rs/r-polars/issues/912">#912</a>).</li>
+<li>In <code>pl$col()</code>, the <code>name</code> argument is removed, and the <code>...</code> argument no longer
+accepts a list of characters and <code>RPolarsSeries</code> class objects (<a href="https://github.com/pola-rs/r-polars/issues/923">#923</a>).</li>
+<li>Removed <code>$argsort()</code> which was an old alias for <code>$arg_sort()</code> (<a href="https://github.com/pola-rs/r-polars/issues/930">#930</a>).</li>
+<li>Removed <code>pl$expr_to_r()</code> which was an alias for <code>$to_r()</code> (<a href="https://github.com/pola-rs/r-polars/issues/938">#938</a>).</li>
+<li><code>&lt;Series&gt;$to_r_list()</code> is renamed <code>&lt;Series&gt;$to_list()</code> (<a href="https://github.com/pola-rs/r-polars/issues/938">#938</a>).</li>
+<li>Removed <code>&lt;Series&gt;$to_r_vector()</code> which was an old alias for
+<code>&lt;Series&gt;$to_vector()</code> (<a href="https://github.com/pola-rs/r-polars/issues/938">#938</a>).</li>
+<li>In <code>$str$strptime()</code>, <code>$str$to_date()</code>, <code>$str$to_datetime()</code>, and
+<code>$str$to_time()</code>, all arguments (except the first one) must be named (<a href="https://github.com/pola-rs/r-polars/issues/939">#939</a>).</li>
+<li>In <code>$str$strptime()</code>, the argument <code>datatype</code> is renamed <code>dtype</code> (<a href="https://github.com/pola-rs/r-polars/issues/939">#939</a>).</li>
+<li><code>$unique()</code> for <code>DataFrame</code> and <code>LazyFrame</code> have several changes (<a href="https://github.com/pola-rs/r-polars/issues/953">#953</a>):</li>
+<li>New default value <code>"any"</code> for argument <code>keep</code>.</li>
+<li>Arguments <code>keep</code> and <code>maintain_order</code> must be named.</li>
+<li>The following deprecated functions are now removed: <code>pl$threadpool_size()</code>,
+<code>&lt;DataFrame&gt;$with_row_count()</code>, <code>&lt;LazyFrame&gt;$with_row_count()</code> (<a href="https://github.com/pola-rs/r-polars/issues/965">#965</a>).</li>
 </ul>
 </li>
 </ul>
@@ -16458,6 +16508,7 @@ Please use <code>pl$datetime_range()</code> if you want to create a range of <co
 <li>New function <code>pl$arg_sort_by()</code> (<a href="https://github.com/pola-rs/r-polars/issues/929">#929</a>).</li>
 <li>New functions <code>pl$date_ranges()</code> and <code>pl$datetime_ranges()</code> (<a href="https://github.com/pola-rs/r-polars/issues/962">#962</a>).</li>
 <li>Export the <code>Duration</code> datatype (<a href="https://github.com/pola-rs/r-polars/issues/955">#955</a>).</li>
+<li>New functions <code>pl$int_range()</code> and <code>pl$int_ranges()</code> (<a href="https://github.com/pola-rs/r-polars/issues/968">#968</a>).</li>
 </ul>
 <h3 id="bug-fixes">Bug fixes</h3>
 <ul>
