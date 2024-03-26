@@ -160,7 +160,7 @@ before conversion.
 
 <pre># Due to daylight savings, clocks were turned forward 1 hour on Sunday, March 8, 2020, 2:00:00 am
 # so this particular date-time doesn't exist
-non_existent_time = pl\$Series("2020-03-08 02:00:00")\$str\$strptime(pl\$Datetime(), "%F %T")
+non_existent_time = as_polars_series("2020-03-08 02:00:00")\$str\$strptime(pl\$Datetime(), "%F %T")
 
 withr::with_envvar(
   new = c(TZ = "America/New_York"),
@@ -190,7 +190,7 @@ withr::with_envvar(
 library(polars)
 
 # make a Series
-s = pl$Series(c(1:3, 1L))
+s = as_polars_series(c(1:3, 1L))
 
 # call an active binding
 s$shape
@@ -225,7 +225,7 @@ s$cos()
 
 ``` r
 # use Expr method in subnamespaces
-pl$Series(list(3:1, 1:2, NULL))$list$first()
+as_polars_series(list(3:1, 1:2, NULL))$list$first()
 ```
 
     #> polars Series: shape: (3,)
@@ -237,7 +237,7 @@ pl$Series(list(3:1, 1:2, NULL))$list$first()
     #> ]
 
 ``` r
-pl$Series(c(1, NA, 2))$str$concat("-")
+as_polars_series(c(1, NA, 2))$str$concat("-")
 ```
 
     #> polars Series: shape: (1,)

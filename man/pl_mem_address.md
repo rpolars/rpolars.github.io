@@ -39,7 +39,7 @@ String of mem address
 ``` r
 library(polars)
 
-pl$mem_address(pl$Series(1:3))
+pl$mem_address(pl$Series(values = 1:3))
 ```
 
-    #> [1] "0x7fc991094030"
+    #> [1] "0x7ff12e494030"

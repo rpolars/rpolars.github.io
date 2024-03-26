@@ -2,7 +2,7 @@
 
 # Count the occurrences of unique values
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L529)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L545)
 
 ## Description
 
@@ -44,7 +44,7 @@ DataFrame
 ``` r
 library(polars)
 
-pl$Series(iris$Species, name = "flower species")$value_counts()
+as_polars_series(iris$Species, name = "flower species")$value_counts()
 ```
 
     #> shape: (3, 2)

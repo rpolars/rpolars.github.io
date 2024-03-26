@@ -16379,51 +16379,68 @@
 <h3 id="other-breaking-changes">Other breaking changes</h3>
 <ul>
 <li>Several functions have been rewritten to match the behavior of Python Polars.<ul>
-<li>In <code>pl$Series()</code>, the first argument <code>x</code> is renamed to <code>values</code> (<a href="https://github.com/pola-rs/r-polars/issues/933">#933</a>).</li>
-<li><code>pl$implode(...)</code> is rewritten to be a syntactic sugar for <code>pl$col(...)$implode()</code> (<a href="https://github.com/pola-rs/r-polars/issues/923">#923</a>).</li>
-<li>Unify names of input/output function arguments (<a href="https://github.com/pola-rs/r-polars/issues/935">#935</a>).<ul>
-<li>All arguments except the first argument must be named arguments.</li>
-<li>In <code>pl$read_*</code> and <code>pl$scan_*</code> functions, the first argument is now <code>source</code>.</li>
-<li>In <code>&lt;DataFrame&gt;$write_*</code> functions, the first argument is now <code>file</code>.</li>
-<li>In <code>&lt;LazyFrame&gt;$sink_*</code> functions, the first argument is now <code>path</code>.</li>
+<li>In <code>pl$Series()</code> arguments are changed.<ul>
+<li>The argument <code>x</code> is renamed <code>values</code> (<a href="https://github.com/pola-rs/r-polars/issues/933">#933</a>).</li>
+<li>The argument <code>values</code> has a new default value <code>NULL</code> (<a href="https://github.com/pola-rs/r-polars/issues/966">#966</a>).</li>
+<li>
+<p>Using positional arguments in <code>pl$Series()</code> throws a warning, since the
+  argument positions will be changed in the future (<a href="https://github.com/pola-rs/r-polars/issues/966">#966</a>).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># polars 0.15.1 or earlier</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># The first argument is `x`, the second argument is `name`.</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># The code above will warn in 0.16.0</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># Use named arguments to silence the warning.</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># polars 0.17.0 or later (future version)</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># The first argument is `name`, the second argument is `values`.</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span>
+</code></pre></div>
+<p>This warning can also be silenced by replacing <code>pl$Series(&lt;values&gt;, &lt;name&gt;)</code>
+by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.
+  - <code>pl$implode(...)</code> is rewritten to be a syntactic sugar for <code>pl$col(...)$implode()</code> (<a href="https://github.com/pola-rs/r-polars/issues/923">#923</a>).
+  - Unify names of input/output function arguments (<a href="https://github.com/pola-rs/r-polars/issues/935">#935</a>).
+    - All arguments except the first argument must be named arguments.
+    - In <code>pl$read_*</code> and <code>pl$scan_*</code> functions, the first argument is now <code>source</code>.
+    - In <code>&lt;DataFrame&gt;$write_*</code> functions, the first argument is now <code>file</code>.
+    - In <code>&lt;LazyFrame&gt;$sink_*</code> functions, the first argument is now <code>path</code>.
+  - In <code>$dt$convert_time_zone()</code> and <code>$dt$replace_time_zone()</code>, the <code>tz</code> argument
+    is renamed to <code>time_zone</code> (<a href="https://github.com/pola-rs/r-polars/issues/944">#944</a>).
+  - In <code>$dt$replace_time_zone()</code>, all arguments except <code>time_zone</code> must be named
+    arguments (<a href="https://github.com/pola-rs/r-polars/issues/944">#944</a>).
+  - <code>pl$date_range()</code> is completely rewritten (<a href="https://github.com/pola-rs/r-polars/issues/950">#950</a>).
+    - The argument <code>end</code> must be specified.
+    - The default value of <code>interval</code> is changed to <code>"1d"</code>.
+    - The unused argument (not working in recent versions) <code>explode</code> is removed.
+    - The arguments <code>closed</code>, <code>time_unit</code>, and <code>time_zone</code> must be named arguments.
+    - No longer accepts numeric values to <code>start</code> and <code>end</code>.
+    - The usage of <code>pl$date_range()</code> to create a range of <code>Datetime</code> data type is deprecated.
+<code>pl$date_range()</code> will always create a range of <code>Date</code> data type in the future.
+Please use <code>pl$datetime_range()</code> if you want to create a range of <code>Datetime</code> instead.
+- The argument <code>columns</code> in <code>$drop()</code> is removed. <code>$drop()</code> now accepts several
+  character scalars, such as <code>$drop("a", "b", "c")</code> (<a href="https://github.com/pola-rs/r-polars/issues/912">#912</a>).
+- In <code>pl$col()</code>, the <code>name</code> argument is removed, and the <code>...</code> argument no longer
+  accepts a list of characters and <code>RPolarsSeries</code> class objects (<a href="https://github.com/pola-rs/r-polars/issues/923">#923</a>).
+- Removed <code>$argsort()</code> which was an old alias for <code>$arg_sort()</code> (<a href="https://github.com/pola-rs/r-polars/issues/930">#930</a>).
+- Removed <code>pl$expr_to_r()</code> which was an alias for <code>$to_r()</code> (<a href="https://github.com/pola-rs/r-polars/issues/938">#938</a>).
+- <code>&lt;Series&gt;$to_r_list()</code> is renamed <code>&lt;Series&gt;$to_list()</code> (<a href="https://github.com/pola-rs/r-polars/issues/938">#938</a>).
+- Removed <code>&lt;Series&gt;$to_r_vector()</code> which was an old alias for
+  <code>&lt;Series&gt;$to_vector()</code> (<a href="https://github.com/pola-rs/r-polars/issues/938">#938</a>).
+- In <code>$str$strptime()</code>, <code>$str$to_date()</code>, <code>$str$to_datetime()</code>, and
+  <code>$str$to_time()</code>, all arguments (except the first one) must be named (<a href="https://github.com/pola-rs/r-polars/issues/939">#939</a>).
+- In <code>$str$strptime()</code>, the argument <code>datatype</code> is renamed <code>dtype</code> (<a href="https://github.com/pola-rs/r-polars/issues/939">#939</a>).
+- <code>$unique()</code> for <code>DataFrame</code> and <code>LazyFrame</code> have several changes (<a href="https://github.com/pola-rs/r-polars/issues/953">#953</a>):
+  - New default value <code>"any"</code> for argument <code>keep</code>.
+  - Arguments <code>keep</code> and <code>maintain_order</code> must be named.
+- The following deprecated functions are now removed: <code>pl$threadpool_size()</code>,
+  <code>&lt;DataFrame&gt;$with_row_count()</code>, <code>&lt;LazyFrame&gt;$with_row_count()</code> (<a href="https://github.com/pola-rs/r-polars/issues/965">#965</a>).</p>
+</li>
 </ul>
 </li>
-<li>In <code>$dt$convert_time_zone()</code> and <code>$dt$replace_time_zone()</code>, the <code>tz</code> argument
-  is renamed to <code>time_zone</code> (<a href="https://github.com/pola-rs/r-polars/issues/944">#944</a>).</li>
-<li>In <code>$dt$replace_time_zone()</code>, all arguments except <code>time_zone</code> must be named
-  arguments (<a href="https://github.com/pola-rs/r-polars/issues/944">#944</a>).</li>
-<li><code>pl$date_range()</code> is completely rewritten (<a href="https://github.com/pola-rs/r-polars/issues/950">#950</a>).<ul>
-<li>The argument <code>end</code> must be specified.</li>
-<li>The default value of <code>interval</code> is changed to <code>"1d"</code>.</li>
-<li>The unused argument (not working in recent versions) <code>explode</code> is removed.</li>
-<li>The arguments <code>closed</code>, <code>time_unit</code>, and <code>time_zone</code> must be named arguments.</li>
-<li>No longer accepts numeric values to <code>start</code> and <code>end</code>.</li>
-<li>The usage of <code>pl$date_range()</code> to create a range of <code>Datetime</code> data type is deprecated.
-  <code>pl$date_range()</code> will always create a range of <code>Date</code> data type in the future.
-  Please use <code>pl$datetime_range()</code> if you want to create a range of <code>Datetime</code> instead.</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>The argument <code>columns</code> in <code>$drop()</code> is removed. <code>$drop()</code> now accepts several
-  character scalars, such as <code>$drop("a", "b", "c")</code> (<a href="https://github.com/pola-rs/r-polars/issues/912">#912</a>).</li>
-<li>In <code>pl$col()</code>, the <code>name</code> argument is removed, and the <code>...</code> argument no longer
-  accepts a list of characters and <code>RPolarsSeries</code> class objects (<a href="https://github.com/pola-rs/r-polars/issues/923">#923</a>).</li>
-<li>Removed <code>$argsort()</code> which was an old alias for <code>$arg_sort()</code> (<a href="https://github.com/pola-rs/r-polars/issues/930">#930</a>).</li>
-<li>Removed <code>pl$expr_to_r()</code> which was an alias for <code>$to_r()</code> (<a href="https://github.com/pola-rs/r-polars/issues/938">#938</a>).</li>
-<li><code>&lt;Series&gt;$to_r_list()</code> is renamed <code>&lt;Series&gt;$to_list()</code> (<a href="https://github.com/pola-rs/r-polars/issues/938">#938</a>).</li>
-<li>Removed <code>&lt;Series&gt;$to_r_vector()</code> which was an old alias for
-  <code>&lt;Series&gt;$to_vector()</code> (<a href="https://github.com/pola-rs/r-polars/issues/938">#938</a>).</li>
-<li>In <code>$str$strptime()</code>, <code>$str$to_date()</code>, <code>$str$to_datetime()</code>, and
-  <code>$str$to_time()</code>, all arguments (except the first one) must be named (<a href="https://github.com/pola-rs/r-polars/issues/939">#939</a>).</li>
-<li>In <code>$str$strptime()</code>, the argument <code>datatype</code> is renamed <code>dtype</code> (<a href="https://github.com/pola-rs/r-polars/issues/939">#939</a>).</li>
-<li><code>$unique()</code> for <code>DataFrame</code> and <code>LazyFrame</code> have several changes (<a href="https://github.com/pola-rs/r-polars/issues/953">#953</a>):<ul>
-<li>New default value <code>"any"</code> for argument <code>keep</code>.</li>
-<li>Arguments <code>keep</code> and <code>maintain_order</code> must be named.</li>
-</ul>
-</li>
-<li>The following deprecated functions are now removed: <code>pl$threadpool_size()</code>,
-  <code>&lt;DataFrame&gt;$with_row_count()</code>, <code>&lt;LazyFrame&gt;$with_row_count()</code> (<a href="https://github.com/pola-rs/r-polars/issues/965">#965</a>).</li>
 </ul>
 <h3 id="new-features">New features</h3>
 <ul>
@@ -16518,25 +16535,7 @@
   and is displayed based on the system's time zone. Previous versions of <code>polars</code>
   only considered the internal value and interpreted it as UTC time, so the
   time displayed as <code>POSIXct</code> and in Polars was different.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># polars 0.14.1</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">TZ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Europe/Paris&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">datetime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.POSIXct</span><span class="p">(</span><span class="s">&quot;1900-01-01&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">datetime</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">#&gt; [1] &quot;1900-01-01 PMT&quot;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">polars</span><span class="o">::</span><span class="nf">as_polars_series</span><span class="p">(</span><span class="n">datetime</span><span class="p">)</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">s</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1">#&gt; polars Series: shape: (1,)</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1">#&gt; Series: &#39;&#39; [datetime[ms]]</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1">#&gt; [</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1">#&gt;  1899-12-31 23:50:39</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1">#&gt; ]</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="nf">as.vector</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1">#&gt; [1] &quot;1900-01-01 PMT&quot;</span>
-</code></pre></div>
-<p>Now the internal value is updated to match the displayed value.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># polars 0.15.0</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># polars 0.14.1</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">TZ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Europe/Paris&quot;</span><span class="p">)</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">datetime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.POSIXct</span><span class="p">(</span><span class="s">&quot;1900-01-01&quot;</span><span class="p">)</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">datetime</span>
@@ -16547,33 +16546,51 @@
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1">#&gt; polars Series: shape: (1,)</span>
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1">#&gt; Series: &#39;&#39; [datetime[ms]]</span>
 <a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1">#&gt; [</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="c1">#&gt;  1900-01-01 00:00:00</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="c1">#&gt;  1899-12-31 23:50:39</span>
 <a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1">#&gt; ]</span>
 <a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="nf">as.vector</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="c1">#&gt; [1] &quot;1900-01-01 PMT&quot;</span>
 </code></pre></div>
+<p>Now the internal value is updated to match the displayed value.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># polars 0.15.0</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">TZ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Europe/Paris&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">datetime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.POSIXct</span><span class="p">(</span><span class="s">&quot;1900-01-01&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">datetime</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1">#&gt; [1] &quot;1900-01-01 PMT&quot;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">polars</span><span class="o">::</span><span class="nf">as_polars_series</span><span class="p">(</span><span class="n">datetime</span><span class="p">)</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">s</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1">#&gt; polars Series: shape: (1,)</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1">#&gt; Series: &#39;&#39; [datetime[ms]]</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1">#&gt; [</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="c1">#&gt;  1900-01-01 00:00:00</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="c1">#&gt; ]</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="nf">as.vector</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="c1">#&gt; [1] &quot;1900-01-01 PMT&quot;</span>
+</code></pre></div>
 <p>This update may cause errors when converting from Polars to <code>POSIXct</code> for non-existent
 or ambiguous times. It is recommended to explicitly add a time zone before converting
 from Polars to R.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">TZ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;America/New_York&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">ambiguous_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.POSIXct</span><span class="p">(</span><span class="s">&quot;2020-11-01 01:00:00&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">ambiguous_time</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1">#&gt; [1] &quot;2020-11-01 01:00:00 EDT&quot;</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">pls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">polars</span><span class="o">::</span><span class="nf">as_polars_series</span><span class="p">(</span><span class="n">ambiguous_time</span><span class="p">)</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">pls</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1">#&gt; polars Series: shape: (1,)</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1">#&gt; Series: &#39;&#39; [datetime[ms]]</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1">#&gt; [</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1">#&gt;  2020-11-01 01:00:00</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="c1">#&gt; ]</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="c1">## This will be error!</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="c1"># pls |&gt; as.vector()</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="n">pls</span><span class="o">$</span><span class="n">dt</span><span class="o">$</span><span class="nf">replace_time_zone</span><span class="p">(</span><span class="s">&quot;UTC&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nf">as.vector</span><span class="p">()</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="c1">#&gt; [1] &quot;2020-11-01 01:00:00 UTC&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">TZ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;America/New_York&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">ambiguous_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.POSIXct</span><span class="p">(</span><span class="s">&quot;2020-11-01 01:00:00&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">ambiguous_time</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1">#&gt; [1] &quot;2020-11-01 01:00:00 EDT&quot;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">pls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">polars</span><span class="o">::</span><span class="nf">as_polars_series</span><span class="p">(</span><span class="n">ambiguous_time</span><span class="p">)</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">pls</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1">#&gt; polars Series: shape: (1,)</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1">#&gt; Series: &#39;&#39; [datetime[ms]]</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1">#&gt; [</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1">#&gt;  2020-11-01 01:00:00</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="c1">#&gt; ]</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c1">## This will be error!</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="c1"># pls |&gt; as.vector()</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="n">pls</span><span class="o">$</span><span class="n">dt</span><span class="o">$</span><span class="nf">replace_time_zone</span><span class="p">(</span><span class="s">&quot;UTC&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nf">as.vector</span><span class="p">()</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="c1">#&gt; [1] &quot;2020-11-01 01:00:00 UTC&quot;</span>
 </code></pre></div>
 </li>
 </ul>
@@ -17113,8 +17130,8 @@ a large amount of documentation improvements.</p>
 <li>
 <p><code>{polars}</code> can now be installed with "R source package with Rust library binary",
   by a mechanism copied from <a href="https://CRAN.R-project.org/package=prqlr">the prqlr package</a>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">NOT_CRAN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">)</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;polars&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">repos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://rpolars.r-universe.dev&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">NOT_CRAN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;polars&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">repos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://rpolars.r-universe.dev&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>The URL and SHA256 hash of the available binaries are recorded in <code>tools/lib-sums.tsv</code>.
 (<a href="https://github.com/pola-rs/r-polars/issues/435">#435</a>, <a href="https://github.com/pola-rs/r-polars/issues/448">#448</a>, <a href="https://github.com/pola-rs/r-polars/issues/450">#450</a>, <a href="https://github.com/pola-rs/r-polars/issues/451">#451</a>)</p>

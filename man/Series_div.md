@@ -2,7 +2,7 @@
 
 # Divide Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L355)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L371)
 
 ## Description
 
@@ -46,7 +46,7 @@ Arithmetic operators
 ``` r
 library(polars)
 
-pl$Series(1:3)$div(11:13)
+as_polars_series(1:3)$div(11:13)
 ```
 
     #> polars Series: shape: (3,)
@@ -58,7 +58,7 @@ pl$Series(1:3)$div(11:13)
     #> ]
 
 ``` r
-pl$Series(1:3)$div(pl$Series(11:13))
+as_polars_series(1:3)$div(as_polars_series(11:13))
 ```
 
     #> polars Series: shape: (3,)
@@ -70,7 +70,7 @@ pl$Series(1:3)$div(pl$Series(11:13))
     #> ]
 
 ``` r
-pl$Series(1:3)$div(1L)
+as_polars_series(1:3)$div(1L)
 ```
 
     #> polars Series: shape: (3,)

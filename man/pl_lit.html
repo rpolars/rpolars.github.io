@@ -14954,7 +14954,7 @@ A vector of any length
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># vector to literal explicitly via Series and back again</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># R vector to expression and back again</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">)))</span><span class="o">$</span><span class="nf">to_list</span><span class="p">()[[</span><span class="m">1L</span><span class="p">]]</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="nf">as_polars_series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">)))</span><span class="o">$</span><span class="nf">to_list</span><span class="p">()[[</span><span class="m">1L</span><span class="p">]]</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [1] 1 2 3 4
 </code></pre></div>

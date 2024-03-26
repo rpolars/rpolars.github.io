@@ -197,7 +197,7 @@ tryCatch(
     #> >
 
 ``` r
-pl$Series(5) + 10
+as_polars_series(5) + 10
 ```
 
     #> polars Series: shape: (1,)
@@ -207,7 +207,7 @@ pl$Series(5) + 10
     #> ]
 
 ``` r
-+pl$Series(5)
++as_polars_series(5)
 ```
 
     #> polars Series: shape: (1,)
@@ -217,7 +217,7 @@ pl$Series(5) + 10
     #> ]
 
 ``` r
--pl$Series(5)
+-as_polars_series(5)
 ```
 
     #> polars Series: shape: (1,)

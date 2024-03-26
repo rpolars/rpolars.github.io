@@ -2,7 +2,7 @@
 
 # Sort a Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L843)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L859)
 
 ## Description
 
@@ -55,7 +55,7 @@ Series
 ``` r
 library(polars)
 
-pl$Series(c(1.5, NA, 1, NaN, Inf, -Inf))$sort()
+as_polars_series(c(1.5, NA, 1, NaN, Inf, -Inf))$sort()
 ```
 
     #> polars Series: shape: (6,)
@@ -70,7 +70,7 @@ pl$Series(c(1.5, NA, 1, NaN, Inf, -Inf))$sort()
     #> ]
 
 ``` r
-pl$Series(c(1.5, NA, 1, NaN, Inf, -Inf))$sort(nulls_last = TRUE)
+as_polars_series(c(1.5, NA, 1, NaN, Inf, -Inf))$sort(nulls_last = TRUE)
 ```
 
     #> polars Series: shape: (6,)

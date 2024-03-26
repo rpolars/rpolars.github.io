@@ -2,7 +2,7 @@
 
 # Are two Series equal?
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L893)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L909)
 
 ## Description
 
@@ -53,40 +53,40 @@ A logical value
 ``` r
 library(polars)
 
-pl$Series(1:4)$equals(pl$Series(1:4))
+as_polars_series(1:4)$equals(as_polars_series(1:4))
 ```
 
     #> [1] TRUE
 
 ``` r
 # names are different
-pl$Series(1:4, "bob")$equals(pl$Series(1:4))
+as_polars_series(1:4, "bob")$equals(as_polars_series(1:4))
 ```
 
     #> [1] FALSE
 
 ``` r
 # nulls are different by default
-pl$Series(c(1:4, NA))$equals(pl$Series(c(1:4, NA)))
+as_polars_series(c(1:4, NA))$equals(as_polars_series(c(1:4, NA)))
 ```
 
     #> [1] FALSE
 
 ``` r
-pl$Series(c(1:4, NA))$equals(pl$Series(c(1:4, NA)), null_equal = TRUE)
+as_polars_series(c(1:4, NA))$equals(as_polars_series(c(1:4, NA)), null_equal = TRUE)
 ```
 
     #> [1] TRUE
 
 ``` r
 # datatypes are ignored by default
-pl$Series(1:4)$cast(pl$Int16)$equals(pl$Series(1:4))
+as_polars_series(1:4)$cast(pl$Int16)$equals(as_polars_series(1:4))
 ```
 
     #> [1] FALSE
 
 ``` r
-pl$Series(1:4)$cast(pl$Int16)$equals(pl$Series(1:4), strict = TRUE)
+as_polars_series(1:4)$cast(pl$Int16)$equals(as_polars_series(1:4), strict = TRUE)
 ```
 
     #> [1] FALSE

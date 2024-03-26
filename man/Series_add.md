@@ -2,7 +2,7 @@
 
 # Add Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L321)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L337)
 
 ## Description
 
@@ -46,7 +46,7 @@ Arithmetic operators
 ``` r
 library(polars)
 
-pl$Series(1:3)$add(pl$Series(11:13))
+as_polars_series(1:3)$add(as_polars_series(11:13))
 ```
 
     #> polars Series: shape: (3,)
@@ -58,7 +58,7 @@ pl$Series(1:3)$add(pl$Series(11:13))
     #> ]
 
 ``` r
-pl$Series(1:3)$add(11:13)
+as_polars_series(1:3)$add(11:13)
 ```
 
     #> polars Series: shape: (3,)
@@ -70,7 +70,7 @@ pl$Series(1:3)$add(11:13)
     #> ]
 
 ``` r
-pl$Series(1:3)$add(1L)
+as_polars_series(1:3)$add(1L)
 ```
 
     #> polars Series: shape: (3,)
@@ -82,7 +82,7 @@ pl$Series(1:3)$add(1L)
     #> ]
 
 ``` r
-pl$Series("a")$add("-z")
+as_polars_series("a")$add("-z")
 ```
 
     #> polars Series: shape: (1,)

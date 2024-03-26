@@ -2,7 +2,7 @@
 
 # Duplicate and concatenate a series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L939)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L955)
 
 ## Description
 
@@ -45,7 +45,7 @@ Series
 ``` r
 library(polars)
 
-pl$Series(1:2, "bob")$rep(3)
+as_polars_series(1:2, "bob")$rep(3)
 ```
 
     #> polars Series: shape: (6,)

@@ -2,7 +2,7 @@
 
 # Reduce Boolean Series with ALL
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L652)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L668)
 
 ## Description
 
@@ -22,7 +22,7 @@ A logical value
 ``` r
 library(polars)
 
-pl$Series(c(TRUE, TRUE, NA))$all()
+as_polars_series(c(TRUE, TRUE, NA))$all()
 ```
 
     #> [1] FALSE

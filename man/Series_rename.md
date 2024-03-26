@@ -2,7 +2,7 @@
 
 # Rename a series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L907)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L923)
 
 ## Description
 
@@ -45,7 +45,7 @@ Series
 ``` r
 library(polars)
 
-pl$Series(1:4, "bob")$rename("alice")
+as_polars_series(1:4, "bob")$rename("alice")
 ```
 
     #> polars Series: shape: (4,)

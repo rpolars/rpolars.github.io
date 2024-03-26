@@ -75,7 +75,7 @@ library(polars)
 raw_list = pl$raw_list(raw(1), raw(3), charToRaw("alice"), NULL)
 
 # pass it to Series or lit
-pl$Series(raw_list)
+pl$Series(values = raw_list)
 ```
 
     #> polars Series: shape: (4,)
@@ -95,7 +95,7 @@ pl$lit(raw_list)
 
 ``` r
 # convert polars bianry Series to rpolars_raw_list
-pl$Series(raw_list)$to_r()
+pl$Series(values = raw_list)$to_r()
 ```
 
     #> [[1]]
@@ -116,7 +116,7 @@ pl$Series(raw_list)$to_r()
 ``` r
 # NB: a plain list of raws yield a polars Series of DateType [list[Binary]]
 # which is not the same
-pl$Series(list(raw(1), raw(2)))
+pl$Series(values = list(raw(1), raw(2)))
 ```
 
     #> polars Series: shape: (2,)

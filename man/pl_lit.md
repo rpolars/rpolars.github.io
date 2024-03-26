@@ -48,7 +48,7 @@ pl$col("some_column") / pl$lit(42) + 2
 ``` r
 # vector to literal explicitly via Series and back again
 # R vector to expression and back again
-pl$select(pl$lit(pl$Series(1:4)))$to_list()[[1L]]
+pl$select(pl$lit(as_polars_series(1:4)))$to_list()[[1L]]
 ```
 
     #> [1] 1 2 3 4

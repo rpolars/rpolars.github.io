@@ -2,7 +2,7 @@
 
 # Check if the Series is numeric
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L957)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L973)
 
 ## Description
 
@@ -23,13 +23,13 @@ A logical value
 ``` r
 library(polars)
 
-pl$Series(1:4)$is_numeric()
+as_polars_series(1:4)$is_numeric()
 ```
 
     #> [1] TRUE
 
 ``` r
-pl$Series(c("a", "b", "c"))$is_numeric()
+as_polars_series(c("a", "b", "c"))$is_numeric()
 ```
 
     #> [1] FALSE

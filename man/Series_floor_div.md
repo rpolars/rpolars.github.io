@@ -2,7 +2,7 @@
 
 # Floor Divide Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L370)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L386)
 
 ## Description
 
@@ -47,7 +47,7 @@ Arithmetic operators
 ``` r
 library(polars)
 
-pl$Series(1:3)$floor_div(11:13)
+as_polars_series(1:3)$floor_div(11:13)
 ```
 
     #> polars Series: shape: (3,)
@@ -59,7 +59,7 @@ pl$Series(1:3)$floor_div(11:13)
     #> ]
 
 ``` r
-pl$Series(1:3)$floor_div(pl$Series(11:13))
+as_polars_series(1:3)$floor_div(as_polars_series(11:13))
 ```
 
     #> polars Series: shape: (3,)
@@ -71,7 +71,7 @@ pl$Series(1:3)$floor_div(pl$Series(11:13))
     #> ]
 
 ``` r
-pl$Series(1:3)$floor_div(1L)
+as_polars_series(1:3)$floor_div(1L)
 ```
 
     #> polars Series: shape: (3,)

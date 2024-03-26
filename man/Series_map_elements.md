@@ -2,7 +2,7 @@
 
 # Apply every value with an R fun
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L551)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L567)
 
 ## Description
 
@@ -66,7 +66,7 @@ Series
 ``` r
 library(polars)
 
-s = pl$Series(letters[1:5], "ltrs")
+s = as_polars_series(letters[1:5], "ltrs")
 f = \(x) paste(x, ":", as.integer(charToRaw(x)))
 s$map_elements(f, pl$String)
 ```
@@ -83,7 +83,7 @@ s$map_elements(f, pl$String)
 
 ``` r
 # same as
-pl$Series(sapply(s$to_r(), f), s$name)
+as_polars_series(sapply(s$to_r(), f), s$name)
 ```
 
     #> polars Series: shape: (5,)

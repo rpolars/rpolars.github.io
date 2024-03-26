@@ -2,7 +2,7 @@
 
 # Compute the sum of a Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L720)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L736)
 
 ## Description
 
@@ -27,19 +27,19 @@ A numeric value
 ``` r
 library(polars)
 
-pl$Series(c(1:2, NA, 3, 5))$sum() # a NA is dropped always
+as_polars_series(c(1:2, NA, 3, 5))$sum() # a NA is dropped always
 ```
 
     #> [1] 11
 
 ``` r
-pl$Series(c(1:2, NA, 3, NaN, 4, Inf))$sum() # NaN poisons the result
+as_polars_series(c(1:2, NA, 3, NaN, 4, Inf))$sum() # NaN poisons the result
 ```
 
     #> [1] NaN
 
 ``` r
-pl$Series(c(1:2, 3, Inf, 4, -Inf, 5))$sum() # Inf-Inf is NaN
+as_polars_series(c(1:2, 3, Inf, 4, -Inf, 5))$sum() # Inf-Inf is NaN
 ```
 
     #> [1] NaN

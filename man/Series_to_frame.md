@@ -2,7 +2,7 @@
 
 # Convert Series to DataFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L865)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L881)
 
 ## Description
 
@@ -23,7 +23,7 @@ DataFrame
 library(polars)
 
 # default will be a DataFrame with empty name
-pl$Series(1:4)$to_frame()
+as_polars_series(1:4)$to_frame()
 ```
 
     #> shape: (4, 1)
@@ -39,7 +39,7 @@ pl$Series(1:4)$to_frame()
     #> └─────┘
 
 ``` r
-pl$Series(1:4, "bob")$to_frame()
+as_polars_series(1:4, "bob")$to_frame()
 ```
 
     #> shape: (4, 1)

@@ -2,7 +2,7 @@
 
 # Find the max of a Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L753)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L769)
 
 ## Description
 
@@ -27,19 +27,19 @@ A numeric value
 ``` r
 library(polars)
 
-pl$Series(c(1:2, NA, 3, 5))$max() # a NA is dropped always
+as_polars_series(c(1:2, NA, 3, 5))$max() # a NA is dropped always
 ```
 
     #> [1] 5
 
 ``` r
-pl$Series(c(1:2, NA, 3, NaN, 4, Inf))$max() # NaN carries / poisons
+as_polars_series(c(1:2, NA, 3, NaN, 4, Inf))$max() # NaN carries / poisons
 ```
 
     #> [1] Inf
 
 ``` r
-pl$Series(c(1:2, 3, Inf, 4, -Inf, 5))$max() # Inf-Inf is NaN
+as_polars_series(c(1:2, 3, Inf, 4, -Inf, 5))$max() # Inf-Inf is NaN
 ```
 
     #> [1] Inf

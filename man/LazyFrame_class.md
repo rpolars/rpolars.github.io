@@ -85,7 +85,7 @@ before conversion.
 
 <pre># Due to daylight savings, clocks were turned forward 1 hour on Sunday, March 8, 2020, 2:00:00 am
 # so this particular date-time doesn't exist
-non_existent_time = pl\$Series("2020-03-08 02:00:00")\$str\$strptime(pl\$Datetime(), "%F %T")
+non_existent_time = as_polars_series("2020-03-08 02:00:00")\$str\$strptime(pl\$Datetime(), "%F %T")
 
 withr::with_envvar(
   new = c(TZ = "America/New_York"),
@@ -223,7 +223,7 @@ Ldf_best$describe_plan()
 
     #> FILTER [(col("Species")) == (String(setosa))] FROM
     #> 
-    #>   Csv SCAN /tmp/RtmpQa5OdW/file7b8973ce7836
+    #>   Csv SCAN /tmp/RtmpjHLxG0/file7b6114e6d8a
     #>   PROJECT */5 COLUMNS
 
 ``` r
@@ -240,7 +240,7 @@ Ldf_best$describe_optimized_plan()
 ```
 
     #> 
-    #>   Csv SCAN /tmp/RtmpQa5OdW/file7b8973ce7836
+    #>   Csv SCAN /tmp/RtmpjHLxG0/file7b6114e6d8a
     #>   PROJECT */5 COLUMNS
     #>   SELECTION: [(col("Species")) == (String(setosa))]
 

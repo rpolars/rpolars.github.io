@@ -2,7 +2,7 @@
 
 # Check if the Series is sorted
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L796)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L812)
 
 ## Description
 
@@ -40,7 +40,7 @@ could be used for faster operations later on.
 ``` r
 library(polars)
 
-pl$Series(1:4)$sort()$is_sorted()
+as_polars_series(1:4)$sort()$is_sorted()
 ```
 
     #> [1] TRUE

@@ -47,7 +47,7 @@ formatted to a string of this length.
 ``` r
 library(polars)
 
-s = pl$Series(c("foo", "barbaz"))
+s = as_polars_series(c("foo", "barbaz"))
 as.character(s)
 ```
 

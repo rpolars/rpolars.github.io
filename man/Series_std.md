@@ -2,7 +2,7 @@
 
 # Compute the standard deviation of a Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L784)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L800)
 
 ## Description
 
@@ -36,7 +36,7 @@ A numeric value
 ``` r
 library(polars)
 
-pl$Series(1:10)$std()
+as_polars_series(1:10)$std()
 ```
 
     #> [1] 3.02765

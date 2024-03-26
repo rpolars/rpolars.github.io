@@ -2,7 +2,7 @@
 
 # Convert a Series to literal
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L973)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L989)
 
 ## Description
 
@@ -22,7 +22,7 @@ Expr
 ``` r
 library(polars)
 
-pl$Series(list(1:1, 1:2, 1:3, 1:4))$
+as_polars_series(list(1:1, 1:2, 1:3, 1:4))$
   print()$
   to_lit()$
   list$len()$

@@ -35,7 +35,7 @@ Series
 ``` r
 library(polars)
 
-pl$Series(1:3, name = "alice")$alias("bob")
+as_polars_series(1:3, name = "alice")$alias("bob")
 ```
 
     #> polars Series: shape: (3,)

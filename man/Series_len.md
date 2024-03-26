@@ -22,7 +22,7 @@ A numeric value
 ``` r
 library(polars)
 
-pl$Series(1:10)$len()
+as_polars_series(1:10)$len()
 ```
 
     #> [1] 10

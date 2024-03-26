@@ -2,7 +2,7 @@
 
 # Append two Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L614)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L630)
 
 ## Description
 
@@ -55,9 +55,9 @@ library(polars)
 
 
 # default immutable behavior, s_imut and s_imut_copy stay the same
-s_imut = pl$Series(1:3)
+s_imut = as_polars_series(1:3)
 s_imut_copy = s_imut
-s_new = s_imut$append(pl$Series(1:3))
+s_new = s_imut$append(as_polars_series(1:3))
 s_new
 ```
 
@@ -102,9 +102,9 @@ s_imut_copy
 withr::with_options(
   list(polars.strictly_immutable = FALSE),
   {
-    s_mut = pl$Series(1:3)
+    s_mut = as_polars_series(1:3)
     s_mut_copy = s_mut
-    s_new = s_mut$append(pl$Series(1:3), immutable = FALSE)
+    s_new = s_mut$append(as_polars_series(1:3), immutable = FALSE)
     print(s_new)
 
     # the original Series also changed since it's mutable

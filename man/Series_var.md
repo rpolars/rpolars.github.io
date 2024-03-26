@@ -2,7 +2,7 @@
 
 # Compute the variance of a Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L774)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L790)
 
 ## Description
 
@@ -36,7 +36,7 @@ A numeric value
 ``` r
 library(polars)
 
-pl$Series(1:10)$var()
+as_polars_series(1:10)$var()
 ```
 
     #> [1] 9.166667

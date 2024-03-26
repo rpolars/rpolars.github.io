@@ -2,7 +2,7 @@
 
 # Subtract Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L340)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L356)
 
 ## Description
 
@@ -46,7 +46,7 @@ Arithmetic operators
 ``` r
 library(polars)
 
-pl$Series(1:3)$sub(11:13)
+as_polars_series(1:3)$sub(11:13)
 ```
 
     #> polars Series: shape: (3,)
@@ -58,7 +58,7 @@ pl$Series(1:3)$sub(11:13)
     #> ]
 
 ``` r
-pl$Series(1:3)$sub(pl$Series(11:13))
+as_polars_series(1:3)$sub(as_polars_series(11:13))
 ```
 
     #> polars Series: shape: (3,)
@@ -70,7 +70,7 @@ pl$Series(1:3)$sub(pl$Series(11:13))
     #> ]
 
 ``` r
-pl$Series(1:3)$sub(1L)
+as_polars_series(1:3)$sub(1L)
 ```
 
     #> polars Series: shape: (3,)
@@ -82,7 +82,7 @@ pl$Series(1:3)$sub(1L)
     #> ]
 
 ``` r
-1L - pl$Series(1:3)
+1L - as_polars_series(1:3)
 ```
 
     #> polars Series: shape: (3,)
@@ -94,7 +94,7 @@ pl$Series(1:3)$sub(1L)
     #> ]
 
 ``` r
-pl$Series(1:3) - 1L
+as_polars_series(1:3) - 1L
 ```
 
     #> polars Series: shape: (3,)

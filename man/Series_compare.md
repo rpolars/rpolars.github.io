@@ -2,7 +2,7 @@
 
 # Compare Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L436)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L452)
 
 ## Description
 
@@ -80,7 +80,7 @@ Series
 library(polars)
 
 # We can either use `compare()`...
-pl$Series(1:5)$compare(pl$Series(c(1:3, NA_integer_, 10L)), op = "equal")
+as_polars_series(1:5)$compare(as_polars_series(c(1:3, NA_integer_, 10L)), op = "equal")
 ```
 
     #> polars Series: shape: (5,)
@@ -95,7 +95,7 @@ pl$Series(1:5)$compare(pl$Series(c(1:3, NA_integer_, 10L)), op = "equal")
 
 ``` r
 # ... or the more classic way
-pl$Series(1:5) == pl$Series(c(1:3, NA_integer_, 10L))
+as_polars_series(1:5) == as_polars_series(c(1:3, NA_integer_, 10L))
 ```
 
     #> polars Series: shape: (5,)

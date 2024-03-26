@@ -22,7 +22,7 @@ A numeric value
 ``` r
 library(polars)
 
-pl$Series(c(5, 1))$arg_min()
+as_polars_series(c(5, 1))$arg_min()
 ```
 
     #> [1] 1

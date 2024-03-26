@@ -98,7 +98,7 @@ Expr of Date type
 ``` r
 library(polars)
 
-s = pl$Series(c("2020/01/01", "2020/02/01", "2020/03/01"))
+s = as_polars_series(c("2020/01/01", "2020/02/01", "2020/03/01"))
 
 s$str$to_date()
 ```
@@ -113,7 +113,7 @@ s$str$to_date()
 
 ``` r
 # by default, this errors if some values cannot be converted
-s = pl$Series(c("2020/01/01", "2020 02 01", "2020-03-01"))
+s = as_polars_series(c("2020/01/01", "2020 02 01", "2020-03-01"))
 try(s$str$to_date())
 ```
 

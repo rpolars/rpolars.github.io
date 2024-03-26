@@ -2,7 +2,7 @@
 
 # Set a sorted flag on a Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L816)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L832)
 
 ## Description
 
@@ -51,7 +51,7 @@ A Series with a flag
 ``` r
 library(polars)
 
-s = pl$Series(1:4)$set_sorted()
+s = as_polars_series(1:4)$set_sorted()
 s$flags
 ```
 

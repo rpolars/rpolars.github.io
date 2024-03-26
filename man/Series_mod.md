@@ -2,7 +2,7 @@
 
 # Modulo Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L400)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L416)
 
 ## Description
 
@@ -46,7 +46,7 @@ Arithmetic operators
 ``` r
 library(polars)
 
-pl$Series(1:4)$mod(2L)
+as_polars_series(1:4)$mod(2L)
 ```
 
     #> polars Series: shape: (4,)
@@ -59,7 +59,7 @@ pl$Series(1:4)$mod(2L)
     #> ]
 
 ``` r
-pl$Series(1:3)$mod(pl$Series(11:13))
+as_polars_series(1:3)$mod(as_polars_series(11:13))
 ```
 
     #> polars Series: shape: (3,)
@@ -71,7 +71,7 @@ pl$Series(1:3)$mod(pl$Series(11:13))
     #> ]
 
 ``` r
-pl$Series(1:3)$mod(1L)
+as_polars_series(1:3)$mod(1L)
 ```
 
     #> polars Series: shape: (3,)

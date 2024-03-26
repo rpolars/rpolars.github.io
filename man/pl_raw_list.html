@@ -14982,7 +14982,7 @@ the S3 class is <code>c(“rpolars_raw_list”,“list”)</code>.</p>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">raw_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">raw_list</span><span class="p">(</span><span class="nf">raw</span><span class="p">(</span><span class="m">1</span><span class="p">),</span><span class="w"> </span><span class="nf">raw</span><span class="p">(</span><span class="m">3</span><span class="p">),</span><span class="w"> </span><span class="nf">charToRaw</span><span class="p">(</span><span class="s">&quot;alice&quot;</span><span class="p">),</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># pass it to Series or lit</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="n">raw_list</span><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">raw_list</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (4,)
 #&gt; Series: &#39;&#39; [binary]
@@ -14998,7 +14998,7 @@ the S3 class is <code>c(“rpolars_raw_list”,“list”)</code>.</p>
 <div class="highlight"><pre><span></span><code>#&gt; polars Expr: Series
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># convert polars bianry Series to rpolars_raw_list</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="n">raw_list</span><span class="p">)</span><span class="o">$</span><span class="nf">to_r</span><span class="p">()</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">raw_list</span><span class="p">)</span><span class="o">$</span><span class="nf">to_r</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [[1]]
 #&gt; [1] 00
@@ -15017,7 +15017,7 @@ the S3 class is <code>c(“rpolars_raw_list”,“list”)</code>.</p>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># NB: a plain list of raws yield a polars Series of DateType [list[Binary]]</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># which is not the same</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="nf">raw</span><span class="p">(</span><span class="m">1</span><span class="p">),</span><span class="w"> </span><span class="nf">raw</span><span class="p">(</span><span class="m">2</span><span class="p">)))</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="nf">raw</span><span class="p">(</span><span class="m">1</span><span class="p">),</span><span class="w"> </span><span class="nf">raw</span><span class="p">(</span><span class="m">2</span><span class="p">)))</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (2,)
 #&gt; Series: &#39;&#39; [list[binary]]

@@ -48,7 +48,7 @@ a combined Series
 ``` r
 library(polars)
 
-s = c(pl$Series(1:5), 3:1, NA_integer_)
+s = c(as_polars_series(1:5), 3:1, NA_integer_)
 s$chunk_lengths() # the series contain three unmerged chunks
 ```
 
