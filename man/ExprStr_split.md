@@ -2,7 +2,7 @@
 
 # Split the string by a substring
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L689)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L687)
 
 ## Description
 
@@ -21,8 +21,7 @@ Split the string by a substring
 <code id="ExprStr_split_:_by">by</code>
 </td>
 <td>
-String or Expr of a string, a valid regex pattern that will be used to
-split the string.
+Substring to split by. Can be an Expr.
 </td>
 </tr>
 <tr>
