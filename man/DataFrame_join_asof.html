@@ -3431,6 +3431,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#polars-duration-string-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polars duration string language
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -14711,6 +14720,27 @@
   
   
     <li class="md-nav__item">
+      <a href="polars_duration_string.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    polars_duration_string
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="polars_envvars.html" class="md-nav__link">
         
   
@@ -14936,6 +14966,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#polars-duration-string-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polars duration string language
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -15091,24 +15130,10 @@ Suffix to add to duplicated column names.
 
 Numeric tolerance. By setting this the join will only be done if the
 near keys are within this distance. If an asof join is done on columns
-of dtype "Date", "Datetime", "Duration" or "Time" you can use the
-following values:
-
-<pre>- 1ns   (1 nanosecond)
-- 1us   (1 microsecond)
-- 1ms   (1 millisecond)
-- 1s    (1 second)
-- 1m    (1 minute)
-- 1h    (1 hour)
-- 1d    (1 day)
-- 1w    (1 week)
-- 1mo   (1 calendar month) // currently not available, as interval is not fixed
-- 1y    (1 calendar year)  // currently not available, as interval is not fixed
-- 1i    (1 index count)
-</pre>
-
-Or combine them: "3d12h4m25s" \# 3 days, 12 hours, 4 minutes, and 25
-seconds
+of dtype "Date", "Datetime", "Duration" or "Time", use the Polars
+duration string language. About the language, see the
+<code style="white-space: pre;">Polars duration string language</code>
+section for details.
 
 There may be a circumstance where R types are not sufficient to express
 a numeric tolerance. In that case, you can use the expression syntax
@@ -15140,6 +15165,73 @@ up to the join in parallel.
 key.</p>
 <h2 id="value">Value</h2>
 <p>New joined DataFrame</p>
+<h2 id="polars-duration-string-language">Polars duration string language</h2>
+<p>Polars duration string language is a simple representation of durations.
+It is used in many Polars functions that accept durations.</p>
+<p>It has the following format:</p>
+<ul>
+<li>
+
+1ns (1 nanosecond)
+
+</li>
+<li>
+
+1us (1 microsecond)
+
+</li>
+<li>
+
+1ms (1 millisecond)
+
+</li>
+<li>
+
+1s (1 second)
+
+</li>
+<li>
+
+1m (1 minute)
+
+</li>
+<li>
+
+1h (1 hour)
+
+</li>
+<li>
+
+1d (1 calendar day)
+
+</li>
+<li>
+
+1w (1 calendar week)
+
+</li>
+<li>
+
+1mo (1 calendar month)
+
+</li>
+<li>
+
+1q (1 calendar quarter)
+
+</li>
+<li>
+
+1y (1 calendar year)
+
+</li>
+</ul>
+
+<p>Or combine them: <code>“3d12h4m25s”</code> # 3 days, 12 hours, 4
+minutes, and 25 seconds</p>
+<p>By "calendar day", we mean the corresponding time on the next day (which
+may not be 24 hours, due to daylight savings). Similarly for "calendar
+week", "calendar month", "calendar quarter", and "calendar year".</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>

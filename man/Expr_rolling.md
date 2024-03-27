@@ -2,7 +2,7 @@
 
 # Create rolling groups based on a time or numeric column
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L3356)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L3339)
 
 ## Description
 
@@ -97,7 +97,9 @@ Ignored.
 <code id="Expr_rolling_:_period">period</code>
 </td>
 <td>
-Length of the window, must be non-negative.
+A character representing the length of the window, must be non-negative.
+See the <code style="white-space: pre;">Polars duration string
+language</code> section for details.
 </td>
 </tr>
 <tr>
@@ -105,7 +107,10 @@ Length of the window, must be non-negative.
 <code id="Expr_rolling_:_offset">offset</code>
 </td>
 <td>
-Offset of the window. Default is <code>-period</code>.
+A character representing the offset of the window, or <code>NULL</code>
+(default). If <code>NULL</code>, <code>-period</code> is used. See the
+<code style="white-space: pre;">Polars duration string language</code>
+section for details.
 </td>
 </tr>
 <tr>
@@ -133,8 +138,32 @@ actually is unsorted, it will lead to incorrect output.
 
 ## Details
 
-The period and offset arguments are created either from a timedelta, or
-by using the following string language:
+In case of a rolling operation on an integer column, the windows are
+defined by:
+
+<ul>
+<li>
+
+"1i" \# length 1
+
+</li>
+<li>
+
+"10i" \# length 10
+
+</li>
+</ul>
+
+## Value
+
+Expr
+
+## Polars duration string language
+
+Polars duration string language is a simple representation of durations.
+It is used in many Polars functions that accept durations.
+
+It has the following format:
 
 <ul>
 <li>
@@ -192,39 +221,14 @@ by using the following string language:
 1y (1 calendar year)
 
 </li>
-<li>
-
-1i (1 index count)
-
-</li>
 </ul>
 
-Or combine them: "3d12h4m25s" \# 3 days, 12 hours, 4 minutes, and 25
-seconds
+Or combine them: <code>“3d12h4m25s”</code> \# 3 days, 12 hours, 4
+minutes, and 25 seconds
 
 By "calendar day", we mean the corresponding time on the next day (which
 may not be 24 hours, due to daylight savings). Similarly for "calendar
 week", "calendar month", "calendar quarter", and "calendar year".
-
-In case of a rolling operation on an integer column, the windows are
-defined by:
-
-<ul>
-<li>
-
-"1i" \# length 1
-
-</li>
-<li>
-
-"10i" \# length 10
-
-</li>
-</ul>
-
-## Value
-
-Expr
 
 ## Examples
 

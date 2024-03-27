@@ -102,7 +102,9 @@ Interval of the window.
 <code id="DataFrame_group_by_dynamic_:_period">period</code>
 </td>
 <td>
-Length of the window, must be non-negative.
+A character representing the length of the window, must be non-negative.
+See the <code style="white-space: pre;">Polars duration string
+language</code> section for details.
 </td>
 </tr>
 <tr>
@@ -110,7 +112,10 @@ Length of the window, must be non-negative.
 <code id="DataFrame_group_by_dynamic_:_offset">offset</code>
 </td>
 <td>
-Offset of the window. Default is <code>-period</code>.
+A character representing the offset of the window, or <code>NULL</code>
+(default). If <code>NULL</code>, <code>-period</code> is used. See the
+<code style="white-space: pre;">Polars duration string language</code>
+section for details.
 </td>
 </tr>
 <tr>
@@ -215,79 +220,6 @@ actually is unsorted, it will lead to incorrect output.
 </table>
 
 ## Details
-
-The period and offset arguments are created either from a timedelta, or
-by using the following string language:
-
-<ul>
-<li>
-
-1ns (1 nanosecond)
-
-</li>
-<li>
-
-1us (1 microsecond)
-
-</li>
-<li>
-
-1ms (1 millisecond)
-
-</li>
-<li>
-
-1s (1 second)
-
-</li>
-<li>
-
-1m (1 minute)
-
-</li>
-<li>
-
-1h (1 hour)
-
-</li>
-<li>
-
-1d (1 calendar day)
-
-</li>
-<li>
-
-1w (1 calendar week)
-
-</li>
-<li>
-
-1mo (1 calendar month)
-
-</li>
-<li>
-
-1q (1 calendar quarter)
-
-</li>
-<li>
-
-1y (1 calendar year)
-
-</li>
-<li>
-
-1i (1 index count)
-
-</li>
-</ul>
-
-Or combine them: "3d12h4m25s" \# 3 days, 12 hours, 4 minutes, and 25
-seconds
-
-By "calendar day", we mean the corresponding time on the next day (which
-may not be 24 hours, due to daylight savings). Similarly for "calendar
-week", "calendar month", "calendar quarter", and "calendar year".
 
 In case of a rolling operation on an integer column, the windows are
 defined by:

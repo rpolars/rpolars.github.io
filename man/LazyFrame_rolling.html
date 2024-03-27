@@ -14711,6 +14711,27 @@
   
   
     <li class="md-nav__item">
+      <a href="polars_duration_string.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    polars_duration_string
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="polars_envvars.html" class="md-nav__link">
         
   
@@ -14963,7 +14984,7 @@
 
 
 <h1 id="create-rolling-groups-based-on-a-datetime-or-integer-column">Create rolling groups based on a date/time or integer column</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1833"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1816"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>If you have a time series <code style="white-space: pre;">&lt;t_0, t_1, …,
 t_n&gt;</code>, then by default the windows created will be:</p>
@@ -15054,7 +15075,9 @@ Ignored.
 <code id="LazyFrame_rolling_:_period">period</code>
 </td>
 <td>
-Length of the window, must be non-negative.
+A character representing the length of the window, must be non-negative.
+See the <code style="white-space: pre;">Polars duration string
+language</code> section for details.
 </td>
 </tr>
 <tr>
@@ -15062,7 +15085,10 @@ Length of the window, must be non-negative.
 <code id="LazyFrame_rolling_:_offset">offset</code>
 </td>
 <td>
-Offset of the window. Default is <code>-period</code>.
+A character representing the offset of the window, or <code>NULL</code>
+(default). If <code>NULL</code>, <code>-period</code> is used. See the
+<code style="white-space: pre;">Polars duration string language</code>
+section for details.
 </td>
 </tr>
 <tr>
@@ -15097,76 +15123,6 @@ actually is unsorted, it will lead to incorrect output.
 </table>
 
 <h2 id="details">Details</h2>
-<p>The period and offset arguments are created either from a timedelta, or
-by using the following string language:</p>
-<ul>
-<li>
-
-1ns (1 nanosecond)
-
-</li>
-<li>
-
-1us (1 microsecond)
-
-</li>
-<li>
-
-1ms (1 millisecond)
-
-</li>
-<li>
-
-1s (1 second)
-
-</li>
-<li>
-
-1m (1 minute)
-
-</li>
-<li>
-
-1h (1 hour)
-
-</li>
-<li>
-
-1d (1 calendar day)
-
-</li>
-<li>
-
-1w (1 calendar week)
-
-</li>
-<li>
-
-1mo (1 calendar month)
-
-</li>
-<li>
-
-1q (1 calendar quarter)
-
-</li>
-<li>
-
-1y (1 calendar year)
-
-</li>
-<li>
-
-1i (1 index count)
-
-</li>
-</ul>
-
-<p>Or combine them: "3d12h4m25s" # 3 days, 12 hours, 4 minutes, and 25
-seconds</p>
-<p>By "calendar day", we mean the corresponding time on the next day (which
-may not be 24 hours, due to daylight savings). Similarly for "calendar
-week", "calendar month", "calendar quarter", and "calendar year".</p>
 <p>In case of a rolling operation on an integer column, the windows are
 defined by:</p>
 <ul>

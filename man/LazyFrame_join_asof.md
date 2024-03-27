@@ -2,7 +2,7 @@
 
 # Perform joins on nearest keys
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1380)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1363)
 
 ## Description
 
@@ -135,24 +135,10 @@ Suffix to add to duplicated column names.
 
 Numeric tolerance. By setting this the join will only be done if the
 near keys are within this distance. If an asof join is done on columns
-of dtype "Date", "Datetime", "Duration" or "Time" you can use the
-following values:
-
-<pre>- 1ns   (1 nanosecond)
-- 1us   (1 microsecond)
-- 1ms   (1 millisecond)
-- 1s    (1 second)
-- 1m    (1 minute)
-- 1h    (1 hour)
-- 1d    (1 day)
-- 1w    (1 week)
-- 1mo   (1 calendar month) // currently not available, as interval is not fixed
-- 1y    (1 calendar year)  // currently not available, as interval is not fixed
-- 1i    (1 index count)
-</pre>
-
-Or combine them: "3d12h4m25s" \# 3 days, 12 hours, 4 minutes, and 25
-seconds
+of dtype "Date", "Datetime", "Duration" or "Time", use the Polars
+duration string language. About the language, see the
+<code style="white-space: pre;">Polars duration string language</code>
+section for details.
 
 There may be a circumstance where R types are not sufficient to express
 a numeric tolerance. In that case, you can use the expression syntax
@@ -184,9 +170,77 @@ up to the join in parallel.
 Both tables (DataFrames or LazyFrames) must be sorted by the asof_join
 key.
 
-## Value
+## Polars duration string language
 
-A LazyFrame
+Polars duration string language is a simple representation of durations.
+It is used in many Polars functions that accept durations.
+
+It has the following format:
+
+<ul>
+<li>
+
+1ns (1 nanosecond)
+
+</li>
+<li>
+
+1us (1 microsecond)
+
+</li>
+<li>
+
+1ms (1 millisecond)
+
+</li>
+<li>
+
+1s (1 second)
+
+</li>
+<li>
+
+1m (1 minute)
+
+</li>
+<li>
+
+1h (1 hour)
+
+</li>
+<li>
+
+1d (1 calendar day)
+
+</li>
+<li>
+
+1w (1 calendar week)
+
+</li>
+<li>
+
+1mo (1 calendar month)
+
+</li>
+<li>
+
+1q (1 calendar quarter)
+
+</li>
+<li>
+
+1y (1 calendar year)
+
+</li>
+</ul>
+
+Or combine them: <code>“3d12h4m25s”</code> \# 3 days, 12 hours, 4
+minutes, and 25 seconds
+
+By "calendar day", we mean the corresponding time on the next day (which
+may not be 24 hours, due to daylight savings). Similarly for "calendar
+week", "calendar month", "calendar quarter", and "calendar year".
 
 ## Examples
 

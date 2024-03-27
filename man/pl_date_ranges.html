@@ -1020,9 +1020,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#interval" class="md-nav__link">
+  <a href="#polars-duration-string-language" class="md-nav__link">
     <span class="md-ellipsis">
-      Interval
+      Polars duration string language
     </span>
   </a>
   
@@ -14720,6 +14720,27 @@
   
   
     <li class="md-nav__item">
+      <a href="polars_duration_string.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    polars_duration_string
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="polars_envvars.html" class="md-nav__link">
         
   
@@ -14936,9 +14957,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#interval" class="md-nav__link">
+  <a href="#polars-duration-string-language" class="md-nav__link">
     <span class="md-ellipsis">
-      Interval
+      Polars duration string language
     </span>
   </a>
   
@@ -14981,7 +15002,7 @@
 
 
 <h1 id="generate-a-list-containing-a-date-range">Generate a list containing a date range</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/functions__eager.R#L306"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/functions__eager.R#L286"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>If both <code>start</code> and <code>end</code> are passed as the Date
 types (not Datetime), and the <code>interval</code> granularity is no
@@ -15027,7 +15048,8 @@ or a Datetime expression. See examples for details.
 </td>
 <td>
 Interval of the range periods, specified as a difftime object or using
-the Polars duration string language. See the <code>Interval</code>
+the Polars duration string language. See the
+<code style="white-space: pre;">Polars duration string language</code>
 section for details.
 </td>
 </tr>
@@ -15073,9 +15095,10 @@ output column is of type Datetime (deprecated usage).
 
 <h2 id="value">Value</h2>
 <p>An Expr of data type List(Date) or List(Datetime)</p>
-<h2 id="interval">Interval</h2>
-<p><code>interval</code> is created according to the following string
-language:</p>
+<h2 id="polars-duration-string-language">Polars duration string language</h2>
+<p>Polars duration string language is a simple representation of durations.
+It is used in many Polars functions that accept durations.</p>
+<p>It has the following format:</p>
 <ul>
 <li>
 

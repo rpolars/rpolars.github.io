@@ -2,7 +2,7 @@
 
 # Generate a list containing a date range
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__eager.R#L306)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__eager.R#L286)
 
 ## Description
 
@@ -53,7 +53,8 @@ or a Datetime expression. See examples for details.
 </td>
 <td>
 Interval of the range periods, specified as a difftime object or using
-the Polars duration string language. See the <code>Interval</code>
+the Polars duration string language. See the
+<code style="white-space: pre;">Polars duration string language</code>
 section for details.
 </td>
 </tr>
@@ -101,10 +102,12 @@ output column is of type Datetime (deprecated usage).
 
 An Expr of data type List(Date) or List(Datetime)
 
-## Interval
+## Polars duration string language
 
-<code>interval</code> is created according to the following string
-language:
+Polars duration string language is a simple representation of durations.
+It is used in many Polars functions that accept durations.
+
+It has the following format:
 
 <ul>
 <li>

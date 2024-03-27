@@ -10105,6 +10105,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#polars-duration-string-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polars duration string language
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -14713,6 +14722,27 @@
   
   
     <li class="md-nav__item">
+      <a href="polars_duration_string.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    polars_duration_string
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="polars_envvars.html" class="md-nav__link">
         
   
@@ -14938,6 +14968,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#polars-duration-string-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polars duration string language
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -14965,7 +15004,7 @@
 
 
 <h1 id="create-rolling-groups-based-on-a-time-or-numeric-column">Create rolling groups based on a time or numeric column</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L3356"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L3339"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>If you have a time series <code style="white-space: pre;">&lt;t_0, t_1, …,
 t_n&gt;</code>, then by default the windows created will be:</p>
@@ -15054,7 +15093,9 @@ Ignored.
 <code id="Expr_rolling_:_period">period</code>
 </td>
 <td>
-Length of the window, must be non-negative.
+A character representing the length of the window, must be non-negative.
+See the <code style="white-space: pre;">Polars duration string
+language</code> section for details.
 </td>
 </tr>
 <tr>
@@ -15062,7 +15103,10 @@ Length of the window, must be non-negative.
 <code id="Expr_rolling_:_offset">offset</code>
 </td>
 <td>
-Offset of the window. Default is <code>-period</code>.
+A character representing the offset of the window, or <code>NULL</code>
+(default). If <code>NULL</code>, <code>-period</code> is used. See the
+<code style="white-space: pre;">Polars duration string language</code>
+section for details.
 </td>
 </tr>
 <tr>
@@ -15089,8 +15133,27 @@ actually is unsorted, it will lead to incorrect output.
 </table>
 
 <h2 id="details">Details</h2>
-<p>The period and offset arguments are created either from a timedelta, or
-by using the following string language:</p>
+<p>In case of a rolling operation on an integer column, the windows are
+defined by:</p>
+<ul>
+<li>
+
+"1i" \# length 1
+
+</li>
+<li>
+
+"10i" \# length 10
+
+</li>
+</ul>
+
+<h2 id="value">Value</h2>
+<p>Expr</p>
+<h2 id="polars-duration-string-language">Polars duration string language</h2>
+<p>Polars duration string language is a simple representation of durations.
+It is used in many Polars functions that accept durations.</p>
+<p>It has the following format:</p>
 <ul>
 <li>
 
@@ -15147,35 +15210,13 @@ by using the following string language:</p>
 1y (1 calendar year)
 
 </li>
-<li>
-
-1i (1 index count)
-
-</li>
 </ul>
 
-<p>Or combine them: "3d12h4m25s" # 3 days, 12 hours, 4 minutes, and 25
-seconds</p>
+<p>Or combine them: <code>“3d12h4m25s”</code> # 3 days, 12 hours, 4
+minutes, and 25 seconds</p>
 <p>By "calendar day", we mean the corresponding time on the next day (which
 may not be 24 hours, due to daylight savings). Similarly for "calendar
 week", "calendar month", "calendar quarter", and "calendar year".</p>
-<p>In case of a rolling operation on an integer column, the windows are
-defined by:</p>
-<ul>
-<li>
-
-"1i" \# length 1
-
-</li>
-<li>
-
-"10i" \# length 10
-
-</li>
-</ul>
-
-<h2 id="value">Value</h2>
-<p>Expr</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
