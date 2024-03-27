@@ -2,7 +2,7 @@
 
 # Sort a Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L859)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L856)
 
 ## Description
 

@@ -2,7 +2,7 @@
 
 # Compute the sum of a Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L736)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L733)
 
 ## Description
 

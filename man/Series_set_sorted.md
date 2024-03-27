@@ -2,7 +2,7 @@
 
 # Set a sorted flag on a Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L832)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L829)
 
 ## Description
 
