@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#encode" class="md-skip">
+        <a href="#encode-a-value-using-the-provided-encoding" class="md-skip">
           Skip to content
         </a>
       
@@ -12060,6 +12060,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -14931,6 +14940,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -14949,10 +14967,10 @@
   
 
 
-<h1 id="encode">encode</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__binary.R#L51"><strong>Source code</strong></a></p>
+<h1 id="encode-a-value-using-the-provided-encoding">Encode a value using the provided encoding</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__binary.R#L56"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>Encode a value using the provided encoding.</p>
+<p>Encode a value using the provided encoding</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;Expr&gt;$bin$encode(encoding)
 </code></pre>
@@ -14964,13 +14982,37 @@
 <code id="ExprBin_encode_:_encoding">encoding</code>
 </td>
 <td>
-binary choice either ‘hex’ or ‘base64’
+A character, <code>“hex”</code> or <code>“base64”</code>. The encoding
+to use.
 </td>
 </tr>
 </table>
 
 <h2 id="value">Value</h2>
-<p>binary array with values encoded using provided encoding</p>
+<p>Expr of data type String.</p>
+<h2 id="examples">Examples</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;black&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;yellow&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;blue&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as_polars_series</span><span class="p">(</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;000000&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ffff00&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;0000ff&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="p">)</span><span class="o">$</span><span class="nf">cast</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="n">Binary</span><span class="p">)</span><span class="o">$</span><span class="n">bin</span><span class="o">$</span><span class="nf">decode</span><span class="p">(</span><span class="s">&quot;hex&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">)</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span><span class="n">encoded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;code&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">bin</span><span class="o">$</span><span class="nf">encode</span><span class="p">(</span><span class="s">&quot;hex&quot;</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; shape: (3, 3)
+#&gt; ┌────────┬─────────────────┬─────────┐
+#&gt; │ name   ┆ code            ┆ encoded │
+#&gt; │ ---    ┆ ---             ┆ ---     │
+#&gt; │ str    ┆ binary          ┆ str     │
+#&gt; ╞════════╪═════════════════╪═════════╡
+#&gt; │ black  ┆ b&quot;\x00\x00\x00&quot; ┆ 000000  │
+#&gt; │ yellow ┆ b&quot;\xff\xff\x00&quot; ┆ ffff00  │
+#&gt; │ blue   ┆ b&quot;\x00\x00\xff&quot; ┆ 0000ff  │
+#&gt; └────────┴─────────────────┴─────────┘
+</code></pre></div>
 
 
 

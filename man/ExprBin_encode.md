@@ -1,12 +1,12 @@
 
 
-# encode
+# Encode a value using the provided encoding
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__binary.R#L51)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__binary.R#L56)
 
 ## Description
 
-Encode a value using the provided encoding.
+Encode a value using the provided encoding
 
 ## Usage
 
@@ -21,11 +21,38 @@ Encode a value using the provided encoding.
 <code id="ExprBin_encode_:_encoding">encoding</code>
 </td>
 <td>
-binary choice either ‘hex’ or ‘base64’
+A character, <code>“hex”</code> or <code>“base64”</code>. The encoding
+to use.
 </td>
 </tr>
 </table>
 
 ## Value
 
-binary array with values encoded using provided encoding
+Expr of data type String.
+
+## Examples
+
+``` r
+library(polars)
+
+df = pl$DataFrame(
+  name = c("black", "yellow", "blue"),
+  code = as_polars_series(
+    c("000000", "ffff00", "0000ff")
+  )$cast(pl$Binary)$bin$decode("hex")
+)
+
+df$with_columns(encoded = pl$col("code")$bin$encode("hex"))
+```
+
+    #> shape: (3, 3)
+    #> ┌────────┬─────────────────┬─────────┐
+    #> │ name   ┆ code            ┆ encoded │
+    #> │ ---    ┆ ---             ┆ ---     │
+    #> │ str    ┆ binary          ┆ str     │
+    #> ╞════════╪═════════════════╪═════════╡
+    #> │ black  ┆ b"\x00\x00\x00" ┆ 000000  │
+    #> │ yellow ┆ b"\xff\xff\x00" ┆ ffff00  │
+    #> │ blue   ┆ b"\x00\x00\xff" ┆ 0000ff  │
+    #> └────────┴─────────────────┴─────────┘

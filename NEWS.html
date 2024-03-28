@@ -16482,6 +16482,7 @@ by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.</p>
   is renamed to <code>time_zone</code> (<a href="https://github.com/pola-rs/r-polars/issues/944">#944</a>).</li>
 <li>In <code>$dt$replace_time_zone()</code>, all arguments except <code>time_zone</code> must be named
   arguments (<a href="https://github.com/pola-rs/r-polars/issues/944">#944</a>).</li>
+<li>In <code>$bin$decode()</code>, the <code>strict</code> argument must be a named argument (<a href="https://github.com/pola-rs/r-polars/issues/980">#980</a>).</li>
 <li><code>pl$date_range()</code> is completely rewritten (<a href="https://github.com/pola-rs/r-polars/issues/950">#950</a>).<ul>
 <li>The argument <code>end</code> must be specified.</li>
 <li>The default value of <code>interval</code> is changed to <code>"1d"</code>.</li>
