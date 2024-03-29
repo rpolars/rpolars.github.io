@@ -639,6 +639,7 @@ nav:
             - ends_with: man/ExprStr_ends_with.md
             - explode: man/ExprStr_explode.md
             - extract_all: man/ExprStr_extract_all.md
+            - extract_groups: man/ExprStr_extract_groups.md
             - extract: man/ExprStr_extract.md
             - json_decode: man/ExprStr_json_decode.md
             - json_path_match: man/ExprStr_json_path_match.md

@@ -93,6 +93,7 @@
 - New functions `pl$date_ranges()` and `pl$datetime_ranges()` ([#962](https://github.com/pola-rs/r-polars/issues/962)).
 - Export the `Duration` datatype ([#955](https://github.com/pola-rs/r-polars/issues/955)).
 - New functions `pl$int_range()` and `pl$int_ranges()` ([#968](https://github.com/pola-rs/r-polars/issues/968)).
+- New string method `$str$extract_groups()` ([#979](https://github.com/pola-rs/r-polars/issues/979)).
 
 ### Bug fixes
 
