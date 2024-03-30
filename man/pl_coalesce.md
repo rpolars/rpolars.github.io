@@ -64,9 +64,10 @@ library(polars)
 
 df = pl$DataFrame(
   a = NA_real_,
-  b = c(1:2, NA_real_, NA_real_),
-  c = c(1:3, NA_real_)
+  b = c(1L, 4L, NA_real_, NA_real_),
+  c = c(2:4, NA_real_)
 )
+
 # use coalesce to get first non Null value for each row, otherwise insert 99.9
 df$with_columns(
   pl$coalesce("a", "b", "c", 99.9)$alias("d")
@@ -79,8 +80,8 @@ df$with_columns(
     #> │ ---  ┆ ---  ┆ ---  ┆ ---  │
     #> │ f64  ┆ f64  ┆ f64  ┆ f64  │
     #> ╞══════╪══════╪══════╪══════╡
-    #> │ null ┆ 1.0  ┆ 1.0  ┆ 1.0  │
-    #> │ null ┆ 2.0  ┆ 2.0  ┆ 2.0  │
-    #> │ null ┆ null ┆ 3.0  ┆ 3.0  │
+    #> │ null ┆ 1.0  ┆ 2.0  ┆ 1.0  │
+    #> │ null ┆ 4.0  ┆ 3.0  ┆ 4.0  │
+    #> │ null ┆ null ┆ 4.0  ┆ 4.0  │
     #> │ null ┆ null ┆ null ┆ 99.9 │
     #> └──────┴──────┴──────┴──────┘

@@ -2,7 +2,7 @@
 
 # Compute the mean rowwise
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L966)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L965)
 
 ## Description
 

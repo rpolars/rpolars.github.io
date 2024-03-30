@@ -2,7 +2,7 @@
 
 # Use the aho-corasick algorithm to find matches
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L889)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L897)
 
 ## Description
 
@@ -10,7 +10,7 @@ This function determines if any of the patterns find a match.
 
 ## Usage
 
-<pre><code class='language-R'>ExprStr_contains_any(patterns, ascii_case_insensitive = FALSE)
+<pre><code class='language-R'>ExprStr_contains_any(patterns, ..., ascii_case_insensitive = FALSE)
 </code></pre>
 
 ## Arguments
@@ -21,7 +21,17 @@ This function determines if any of the patterns find a match.
 <code id="ExprStr_contains_any_:_patterns">patterns</code>
 </td>
 <td>
-String patterns to search. Can be an Expr.
+Character vector or something can be coerced to strings Expr of a valid
+regex pattern, compatible with the
+<a href="https://docs.rs/regex/latest/regex/">regex crate</a>.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="ExprStr_contains_any_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>
@@ -38,7 +48,17 @@ letters (a-z and A-Z) only.
 
 ## Value
 
-Expr
+Expr of Boolean data type
+
+## See Also
+
+<ul>
+<li>
+
+<code>\<Expr\>$str$contains()</code>
+
+</li>
+</ul>
 
 ## Examples
 

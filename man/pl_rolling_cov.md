@@ -2,7 +2,7 @@
 
 # Rolling covariance
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L735)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L734)
 
 ## Description
 

@@ -2,7 +2,7 @@
 
 # Check if string contains a substring that matches a pattern
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L462)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L469)
 
 ## Description
 
@@ -73,14 +73,20 @@ Expr of Boolean data type
 <ul>
 <li>
 
-<code>\<Expr\>$str$start_with()</code>: Check if string values start
-with a substring.
+<code>$str$start_with()</code>: Check if string values start with a
+substring.
 
 </li>
 <li>
 
-<code>\<Expr\>$str$ends_with()</code>: Check if string values end with a
+<code>$str$ends_with()</code>: Check if string values end with a
 substring.
+
+</li>
+<li>
+
+<code>$str$find()</code>: Return the index position of the first
+substring matching a pattern.
 
 </li>
 </ul>

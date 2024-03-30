@@ -2,7 +2,7 @@
 
 # Cumulative minimum
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1327)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1265)
 
 ## Description
 

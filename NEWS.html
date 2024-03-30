@@ -13584,6 +13584,27 @@
   
   
     <li class="md-nav__item">
+      <a href="man/ExprStr_find.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    find
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="man/ExprStr_json_decode.html" class="md-nav__link">
         
   
@@ -16535,6 +16556,7 @@ by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.</p>
 <li>Removed <code>&lt;Series&gt;$to_r_vector()</code> which was an old alias for
   <code>&lt;Series&gt;$to_vector()</code> (<a href="https://github.com/pola-rs/r-polars/issues/938">#938</a>).</li>
 <li>In <code>$str$contains()</code>, the arguments <code>literal</code> and <code>strict</code> should be named arguments (<a href="https://github.com/pola-rs/r-polars/issues/982">#982</a>).</li>
+<li>In <code>$str$contains_any()</code>, the <code>ascii_case_insensitive</code> argument must be named (<a href="https://github.com/pola-rs/r-polars/issues/986">#986</a>).</li>
 <li>In <code>$str$strptime()</code>, <code>$str$to_date()</code>, <code>$str$to_datetime()</code>, and
   <code>$str$to_time()</code>, all arguments (except the first one) must be named (<a href="https://github.com/pola-rs/r-polars/issues/939">#939</a>).</li>
 <li>In <code>$str$strptime()</code>, the argument <code>datatype</code> is renamed <code>dtype</code> (<a href="https://github.com/pola-rs/r-polars/issues/939">#939</a>).</li>
@@ -16564,6 +16586,7 @@ by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.</p>
 <li>Export the <code>Duration</code> datatype (<a href="https://github.com/pola-rs/r-polars/issues/955">#955</a>).</li>
 <li>New functions <code>pl$int_range()</code> and <code>pl$int_ranges()</code> (<a href="https://github.com/pola-rs/r-polars/issues/968">#968</a>).</li>
 <li>New string method <code>$str$extract_groups()</code> (<a href="https://github.com/pola-rs/r-polars/issues/979">#979</a>).</li>
+<li>New string method <code>$str$find()</code> (<a href="https://github.com/pola-rs/r-polars/issues/985">#985</a>).</li>
 </ul>
 <h3 id="bug-fixes">Bug fixes</h3>
 <ul>

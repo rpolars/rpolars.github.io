@@ -2,7 +2,7 @@
 
 # Rolling standard deviation
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2419)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2398)
 
 ## Description
 

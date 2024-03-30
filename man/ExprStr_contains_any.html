@@ -13467,6 +13467,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -13664,6 +13673,27 @@
   
   <span class="md-ellipsis">
     extract
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ExprStr_find.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    find
   </span>
   
 
@@ -14962,6 +14992,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -14989,11 +15028,11 @@
 
 
 <h1 id="use-the-aho-corasick-algorithm-to-find-matches">Use the aho-corasick algorithm to find matches</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L889"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L897"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>This function determines if any of the patterns find a match.</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>&lt;Expr&gt;$str$contains_any(patterns, ascii_case_insensitive = FALSE)
+<pre><code class='language-R'>&lt;Expr&gt;$str$contains_any(patterns, ..., ascii_case_insensitive = FALSE)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
@@ -15003,7 +15042,17 @@
 <code id="ExprStr_contains_any_:_patterns">patterns</code>
 </td>
 <td>
-String patterns to search. Can be an Expr.
+Character vector or something can be coerced to strings Expr of a valid
+regex pattern, compatible with the
+<a href="https://docs.rs/regex/latest/regex/">regex crate</a>.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="ExprStr_contains_any_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>
@@ -15019,7 +15068,16 @@ letters (a-z and A-Z) only.
 </table>
 
 <h2 id="value">Value</h2>
-<p>Expr</p>
+<p>Expr of Boolean data type</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li>
+
+<code>\<Expr\>$str$contains()</code>
+
+</li>
+</ul>
+
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>

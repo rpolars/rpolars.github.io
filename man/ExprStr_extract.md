@@ -2,7 +2,7 @@
 
 # Extract the target capture group from provided patterns
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L630)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L637)
 
 ## Description
 

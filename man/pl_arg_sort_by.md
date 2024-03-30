@@ -2,7 +2,7 @@
 
 # Return the row indices that would sort the columns
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L1263)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L1262)
 
 ## Description
 
