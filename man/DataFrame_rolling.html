@@ -3788,6 +3788,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#polars-duration-string-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polars duration string language
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -14978,6 +14996,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#polars-duration-string-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polars duration string language
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -15005,7 +15041,7 @@
 
 
 <h1 id="create-rolling-groups-based-on-a-datetime-or-integer-column">Create rolling groups based on a date/time or integer column</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L2013"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L2019"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>If you have a time series <code style="white-space: pre;">&lt;t_0, t_1, …,
 t_n&gt;</code>, then by default the windows created will be:</p>
@@ -15059,10 +15095,11 @@ t_n&gt;</code>, then by default the windows created will be:</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>&lt;DataFrame&gt;$rolling(
   index_column,
+  ...,
   period,
   offset = NULL,
   closed = "right",
-  by = NULL,
+  group_by = NULL,
   check_sorted = TRUE
 )
 </code></pre>
@@ -15080,6 +15117,14 @@ Date/Datetime. This column must be sorted in ascending order (or, if
 within each group). In case of a rolling group by on indices, dtype
 needs to be either Int32 or Int64. Note that Int32 gets temporarily cast
 to Int64, so if performance matters use an Int64 column.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="DataFrame_rolling_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>
@@ -15115,7 +15160,7 @@ can be either <code>“left”</code>, <code>“right”</code>,
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_rolling_:_by">by</code>
+<code id="DataFrame_rolling_:_group_by">group_by</code>
 </td>
 <td>
 Also group by this column/these columns.
@@ -15152,36 +15197,116 @@ defined by:</p>
 
 <h2 id="value">Value</h2>
 <p>A RollingGroupBy object</p>
+<h2 id="polars-duration-string-language">Polars duration string language</h2>
+<p>Polars duration string language is a simple representation of durations.
+It is used in many Polars functions that accept durations.</p>
+<p>It has the following format:</p>
+<ul>
+<li>
+
+1ns (1 nanosecond)
+
+</li>
+<li>
+
+1us (1 microsecond)
+
+</li>
+<li>
+
+1ms (1 millisecond)
+
+</li>
+<li>
+
+1s (1 second)
+
+</li>
+<li>
+
+1m (1 minute)
+
+</li>
+<li>
+
+1h (1 hour)
+
+</li>
+<li>
+
+1d (1 calendar day)
+
+</li>
+<li>
+
+1w (1 calendar week)
+
+</li>
+<li>
+
+1mo (1 calendar month)
+
+</li>
+<li>
+
+1q (1 calendar quarter)
+
+</li>
+<li>
+
+1y (1 calendar year)
+
+</li>
+</ul>
+
+<p>Or combine them: <code>“3d12h4m25s”</code> # 3 days, 12 hours, 4
+minutes, and 25 seconds</p>
+<p>By "calendar day", we mean the corresponding time on the next day (which
+may not be 24 hours, due to daylight savings). Similarly for "calendar
+week", "calendar month", "calendar quarter", and "calendar year".</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li>
+
+<code>\<DataFrame\>$group_by_dynamic()</code>
+
+</li>
+</ul>
+
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;2020-01-01&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2020-01-01&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2020-01-01&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2020-01-02&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2020-01-03&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2020-01-08&quot;</span><span class="p">),</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">)</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;dt&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">strptime</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="n">Date</span><span class="p">,</span><span class="w"> </span><span class="n">format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span><span class="o">$</span><span class="nf">set_sorted</span><span class="p">()</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">)</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">df</span><span class="o">$</span><span class="nf">rolling</span><span class="p">(</span><span class="n">index_column</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;dt&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">period</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2d&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">agg</span><span class="p">(</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">),</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">sum</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;sum_a&quot;</span><span class="p">),</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">min</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;min_a&quot;</span><span class="p">),</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">max</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;max_a&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="s">&quot;2020-01-01 13:45:48&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="s">&quot;2020-01-01 16:42:13&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="s">&quot;2020-01-01 16:45:09&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="s">&quot;2020-01-02 18:12:48&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="s">&quot;2020-01-03 19:45:32&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="s">&quot;2020-01-08 23:16:43&quot;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">)</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">))</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;dt&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">strptime</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">Datetime</span><span class="p">())</span><span class="o">$</span><span class="nf">set_sorted</span><span class="p">()</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">)</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="n">df</span><span class="o">$</span><span class="nf">rolling</span><span class="p">(</span><span class="n">index_column</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;dt&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">period</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2d&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">agg</span><span class="p">(</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="n">sum_a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">sum</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="n">min_a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">min</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">  </span><span class="n">max_a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">max</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (6, 5)
-#&gt; ┌────────────┬───────────────────┬───────┬───────┬───────┐
-#&gt; │ dt         ┆ a                 ┆ sum_a ┆ min_a ┆ max_a │
-#&gt; │ ---        ┆ ---               ┆ ---   ┆ ---   ┆ ---   │
-#&gt; │ date       ┆ list[f64]         ┆ f64   ┆ f64   ┆ f64   │
-#&gt; ╞════════════╪═══════════════════╪═══════╪═══════╪═══════╡
-#&gt; │ 2020-01-01 ┆ [3.0, 7.0, 5.0]   ┆ 15.0  ┆ 3.0   ┆ 7.0   │
-#&gt; │ 2020-01-01 ┆ [3.0, 7.0, 5.0]   ┆ 15.0  ┆ 3.0   ┆ 7.0   │
-#&gt; │ 2020-01-01 ┆ [3.0, 7.0, 5.0]   ┆ 15.0  ┆ 3.0   ┆ 7.0   │
-#&gt; │ 2020-01-02 ┆ [3.0, 7.0, … 9.0] ┆ 24.0  ┆ 3.0   ┆ 9.0   │
-#&gt; │ 2020-01-03 ┆ [9.0, 2.0]        ┆ 11.0  ┆ 2.0   ┆ 9.0   │
-#&gt; │ 2020-01-08 ┆ [1.0]             ┆ 1.0   ┆ 1.0   ┆ 1.0   │
-#&gt; └────────────┴───────────────────┴───────┴───────┴───────┘
+<div class="highlight"><pre><span></span><code>#&gt; shape: (6, 4)
+#&gt; ┌─────────────────────┬───────┬───────┬───────┐
+#&gt; │ dt                  ┆ sum_a ┆ min_a ┆ max_a │
+#&gt; │ ---                 ┆ ---   ┆ ---   ┆ ---   │
+#&gt; │ datetime[μs]        ┆ f64   ┆ f64   ┆ f64   │
+#&gt; ╞═════════════════════╪═══════╪═══════╪═══════╡
+#&gt; │ 2020-01-01 13:45:48 ┆ 3.0   ┆ 3.0   ┆ 3.0   │
+#&gt; │ 2020-01-01 16:42:13 ┆ 10.0  ┆ 3.0   ┆ 7.0   │
+#&gt; │ 2020-01-01 16:45:09 ┆ 15.0  ┆ 3.0   ┆ 7.0   │
+#&gt; │ 2020-01-02 18:12:48 ┆ 24.0  ┆ 3.0   ┆ 9.0   │
+#&gt; │ 2020-01-03 19:45:32 ┆ 11.0  ┆ 2.0   ┆ 9.0   │
+#&gt; │ 2020-01-08 23:16:43 ┆ 1.0   ┆ 1.0   ┆ 1.0   │
+#&gt; └─────────────────────┴───────┴───────┴───────┘
 </code></pre></div>
 
 

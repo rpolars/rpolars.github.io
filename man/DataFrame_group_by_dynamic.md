@@ -2,7 +2,7 @@
 
 # Group based on a date/time or integer column
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L2086)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L2100)
 
 ## Description
 
@@ -61,13 +61,14 @@ whereas if you pass a non-default offset, then the windows will be:
 
 <pre><code class='language-R'>DataFrame_group_by_dynamic(
   index_column,
+  ...,
   every,
   period = NULL,
   offset = NULL,
   include_boundaries = FALSE,
   closed = "left",
   label = "left",
-  by = NULL,
+  group_by = NULL,
   start_by = "window",
   check_sorted = TRUE
 )
@@ -87,6 +88,14 @@ Date/Datetime. This column must be sorted in ascending order (or, if
 within each group). In case of a rolling group by on indices, dtype
 needs to be either Int32 or Int64. Note that Int32 gets temporarily cast
 to Int64, so if performance matters use an Int64 column.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="DataFrame_group_by_dynamic_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>
@@ -169,7 +178,7 @@ boundaries, choose this option for maximum performance.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_group_by_dynamic_:_by">by</code>
+<code id="DataFrame_group_by_dynamic_:_group_by">group_by</code>
 </td>
 <td>
 Also group by this column/these columns.
@@ -241,13 +250,23 @@ defined by:
 
 A GroupBy object
 
+## See Also
+
+<ul>
+<li>
+
+<code>\<DataFrame\>$rolling()</code>
+
+</li>
+</ul>
+
 ## Examples
 
 ``` r
 library(polars)
 
 df = pl$DataFrame(
-  time = pl$date_range(
+  time = pl$datetime_range(
     start = strptime("2021-12-16 00:00:00", format = "%Y-%m-%d %H:%M:%S", tz = "UTC"),
     end = strptime("2021-12-16 03:00:00", format = "%Y-%m-%d %H:%M:%S", tz = "UTC"),
     interval = "30m"
@@ -365,7 +384,7 @@ df$group_by_dynamic(
   "time",
   every = "1h",
   closed = "both",
-  by = "groups",
+  group_by = "groups",
   include_boundaries = TRUE
 )$agg(pl$col("n"))
 ```

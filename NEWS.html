@@ -16501,6 +16501,10 @@ by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.</p>
 </li>
 <li>In <code>$dt$convert_time_zone()</code> and <code>$dt$replace_time_zone()</code>, the <code>tz</code> argument
   is renamed to <code>time_zone</code> (<a href="https://github.com/pola-rs/r-polars/issues/944">#944</a>).</li>
+<li>In <code>&lt;DataFrame&gt;$rolling()</code>, <code>&lt;LazyFrame&gt;$rolling()</code>, <code>&lt;DataFrame&gt;$group_by_dynamic()</code>
+  and <code>&lt;LazyFrame&gt;$group_by_dynamic()</code>, the <code>by</code> argument is renamed to <code>group_by</code> (<a href="https://github.com/pola-rs/r-polars/issues/983">#983</a>).</li>
+<li>In <code>&lt;DataFrame&gt;$rolling()</code> and <code>&lt;DataFrame&gt;$group_by_dynamic()</code>, all arguments
+  except <code>index_column</code> must be named arguments (<a href="https://github.com/pola-rs/r-polars/issues/983">#983</a>).</li>
 <li>In <code>$dt$replace_time_zone()</code>, all arguments except <code>time_zone</code> must be named
   arguments (<a href="https://github.com/pola-rs/r-polars/issues/944">#944</a>).</li>
 <li>In <code>$bin$decode()</code>, the <code>strict</code> argument must be a named argument (<a href="https://github.com/pola-rs/r-polars/issues/980">#980</a>).</li>

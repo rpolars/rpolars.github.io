@@ -2,7 +2,7 @@
 
 # Create rolling groups based on a date/time or integer column
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1816)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1821)
 
 ## Description
 
@@ -65,7 +65,7 @@ whereas if you pass a non-default offset, then the windows will be:
   period,
   offset = NULL,
   closed = "right",
-  by = NULL,
+  group_by = NULL,
   check_sorted = TRUE
 )
 </code></pre>
@@ -127,7 +127,7 @@ can be either <code>“left”</code>, <code>“right”</code>,
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_rolling_:_by">by</code>
+<code id="LazyFrame_rolling_:_group_by">group_by</code>
 </td>
 <td>
 Also group by this column/these columns.
@@ -168,54 +168,123 @@ defined by:
 
 A LazyGroupBy object
 
+## Polars duration string language
+
+Polars duration string language is a simple representation of durations.
+It is used in many Polars functions that accept durations.
+
+It has the following format:
+
+<ul>
+<li>
+
+1ns (1 nanosecond)
+
+</li>
+<li>
+
+1us (1 microsecond)
+
+</li>
+<li>
+
+1ms (1 millisecond)
+
+</li>
+<li>
+
+1s (1 second)
+
+</li>
+<li>
+
+1m (1 minute)
+
+</li>
+<li>
+
+1h (1 hour)
+
+</li>
+<li>
+
+1d (1 calendar day)
+
+</li>
+<li>
+
+1w (1 calendar week)
+
+</li>
+<li>
+
+1mo (1 calendar month)
+
+</li>
+<li>
+
+1q (1 calendar quarter)
+
+</li>
+<li>
+
+1y (1 calendar year)
+
+</li>
+</ul>
+
+Or combine them: <code>“3d12h4m25s”</code> \# 3 days, 12 hours, 4
+minutes, and 25 seconds
+
+By "calendar day", we mean the corresponding time on the next day (which
+may not be 24 hours, due to daylight savings). Similarly for "calendar
+week", "calendar month", "calendar quarter", and "calendar year".
+
+## See Also
+
+<ul>
+<li>
+
+<code>\<LazyFrame\>$group_by_dynamic()</code>
+
+</li>
+</ul>
+
 ## Examples
 
 ``` r
 library(polars)
 
-df = pl$LazyFrame(
-  dt = c("2020-01-01", "2020-01-01", "2020-01-01", "2020-01-02", "2020-01-03", "2020-01-08"),
-  a = c(3, 7, 5, 9, 2, 1)
-)$with_columns(
-  pl$col("dt")$str$strptime(pl$Date, format = NULL)$set_sorted()
+dates = c(
+  "2020-01-01 13:45:48",
+  "2020-01-01 16:42:13",
+  "2020-01-01 16:45:09",
+  "2020-01-02 18:12:48",
+  "2020-01-03 19:45:32",
+  "2020-01-08 23:16:43"
 )
 
-df$collect()
-```
+df = pl$LazyFrame(dt = dates, a = c(3, 7, 5, 9, 2, 1))$with_columns(
+  pl$col("dt")$str$strptime(pl$Datetime())$set_sorted()
+)
 
-    #> shape: (6, 2)
-    #> ┌────────────┬─────┐
-    #> │ dt         ┆ a   │
-    #> │ ---        ┆ --- │
-    #> │ date       ┆ f64 │
-    #> ╞════════════╪═════╡
-    #> │ 2020-01-01 ┆ 3.0 │
-    #> │ 2020-01-01 ┆ 7.0 │
-    #> │ 2020-01-01 ┆ 5.0 │
-    #> │ 2020-01-02 ┆ 9.0 │
-    #> │ 2020-01-03 ┆ 2.0 │
-    #> │ 2020-01-08 ┆ 1.0 │
-    #> └────────────┴─────┘
-
-``` r
 df$rolling(index_column = "dt", period = "2d")$agg(
-  pl$col("a"),
-  pl$sum("a")$alias("sum_a"),
-  pl$min("a")$alias("min_a"),
-  pl$max("a")$alias("max_a")
+  sum_a = pl$sum("a"),
+  min_a = pl$min("a"),
+  max_a = pl$max("a")
 )$collect()
 ```
 
-    #> shape: (6, 5)
-    #> ┌────────────┬───────────────────┬───────┬───────┬───────┐
-    #> │ dt         ┆ a                 ┆ sum_a ┆ min_a ┆ max_a │
-    #> │ ---        ┆ ---               ┆ ---   ┆ ---   ┆ ---   │
-    #> │ date       ┆ list[f64]         ┆ f64   ┆ f64   ┆ f64   │
-    #> ╞════════════╪═══════════════════╪═══════╪═══════╪═══════╡
-    #> │ 2020-01-01 ┆ [3.0, 7.0, 5.0]   ┆ 15.0  ┆ 3.0   ┆ 7.0   │
-    #> │ 2020-01-01 ┆ [3.0, 7.0, 5.0]   ┆ 15.0  ┆ 3.0   ┆ 7.0   │
-    #> │ 2020-01-01 ┆ [3.0, 7.0, 5.0]   ┆ 15.0  ┆ 3.0   ┆ 7.0   │
-    #> │ 2020-01-02 ┆ [3.0, 7.0, … 9.0] ┆ 24.0  ┆ 3.0   ┆ 9.0   │
-    #> │ 2020-01-03 ┆ [9.0, 2.0]        ┆ 11.0  ┆ 2.0   ┆ 9.0   │
-    #> │ 2020-01-08 ┆ [1.0]             ┆ 1.0   ┆ 1.0   ┆ 1.0   │
-    #> └────────────┴───────────────────┴───────┴───────┴───────┘
+    #> shape: (6, 4)
+    #> ┌─────────────────────┬───────┬───────┬───────┐
+    #> │ dt                  ┆ sum_a ┆ min_a ┆ max_a │
+    #> │ ---                 ┆ ---   ┆ ---   ┆ ---   │
+    #> │ datetime[μs]        ┆ f64   ┆ f64   ┆ f64   │
+    #> ╞═════════════════════╪═══════╪═══════╪═══════╡
+    #> │ 2020-01-01 13:45:48 ┆ 3.0   ┆ 3.0   ┆ 3.0   │
+    #> │ 2020-01-01 16:42:13 ┆ 10.0  ┆ 3.0   ┆ 7.0   │
+    #> │ 2020-01-01 16:45:09 ┆ 15.0  ┆ 3.0   ┆ 7.0   │
+    #> │ 2020-01-02 18:12:48 ┆ 24.0  ┆ 3.0   ┆ 9.0   │
+    #> │ 2020-01-03 19:45:32 ┆ 11.0  ┆ 2.0   ┆ 9.0   │
+    #> │ 2020-01-08 23:16:43 ┆ 1.0   ┆ 1.0   ┆ 1.0   │
+    #> └─────────────────────┴───────┴───────┴───────┘

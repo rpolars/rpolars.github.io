@@ -2,7 +2,7 @@
 
 # Group based on a date/time or integer column
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1916)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1928)
 
 ## Description
 
@@ -68,7 +68,7 @@ whereas if you pass a non-default offset, then the windows will be:
   include_boundaries = FALSE,
   closed = "left",
   label = "left",
-  by = NULL,
+  group_by = NULL,
   start_by = "window",
   check_sorted = TRUE
 )
@@ -178,7 +178,7 @@ boundaries, choose this option for maximum performance.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_group_by_dynamic_:_by">by</code>
+<code id="LazyFrame_group_by_dynamic_:_group_by">group_by</code>
 </td>
 <td>
 Also group by this column/these columns.
@@ -249,6 +249,16 @@ defined by:
 ## Value
 
 A LazyGroupBy object
+
+## See Also
+
+<ul>
+<li>
+
+<code>\<LazyFrame\>$rolling()</code>
+
+</li>
+</ul>
 
 ## Examples
 
@@ -392,7 +402,7 @@ lf$group_by_dynamic(
   "time",
   every = "1h",
   closed = "both",
-  by = "groups",
+  group_by = "groups",
   include_boundaries = TRUE
 )$agg(pl$col("n"))$collect()
 ```
