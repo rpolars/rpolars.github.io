@@ -2,7 +2,7 @@
 
 # Split the string by a substring
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L708)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L699)
 
 ## Description
 

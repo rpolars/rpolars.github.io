@@ -15010,11 +15010,11 @@
 
 
 <h1 id="count-all-successive-non-overlapping-regex-matches">Count all successive non-overlapping regex matches</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L684"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L675"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Count all successive non-overlapping regex matches</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>&lt;Expr&gt;$str$count_matches(pattern, literal = FALSE)
+<pre><code class='language-R'>&lt;Expr&gt;$str$count_matches(pattern, ..., literal = FALSE)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
@@ -15024,7 +15024,17 @@
 <code id="ExprStr_count_matches_:_pattern">pattern</code>
 </td>
 <td>
-A valid regex pattern
+A character or something can be coerced to a string Expr of a valid
+regex pattern, compatible with the
+<a href="https://docs.rs/regex/latest/regex/">regex crate</a>.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="ExprStr_count_matches_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>
@@ -15032,48 +15042,36 @@ A valid regex pattern
 <code id="ExprStr_count_matches_:_literal">literal</code>
 </td>
 <td>
-Treat pattern as a literal string.
+Logical. If <code>TRUE</code> (default), treat <code>pattern</code> as a
+literal string, not as a regular expression.
 </td>
 </tr>
 </table>
 
 <h2 id="value">Value</h2>
-<p>UInt32 array. Contains null if original value is null or regex capture
-nothing.</p>
+<p>Expr of data type <code>UInt32</code>. Returns <code>null</code> if the
+original value is <code>null</code>.</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;123 bla 45 asd&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;xyz 678 910t&quot;</span><span class="p">))</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">count_matches</span><span class="p">(</span><span class="n">r</span><span class="s">&quot;{(\d)}&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;count digits&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;12 dbc 3xy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;cat\\w&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1zy3\\d\\d&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">))</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="n">count_digits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">count_matches</span><span class="p">(</span><span class="n">r</span><span class="s">&quot;(\d)&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="n">count_slash_d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">count_matches</span><span class="p">(</span><span class="n">r</span><span class="s">&quot;(\d)&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">literal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (2, 1)
-#&gt; ┌──────────────┐
-#&gt; │ count digits │
-#&gt; │ ---          │
-#&gt; │ u32          │
-#&gt; ╞══════════════╡
-#&gt; │ 5            │
-#&gt; │ 6            │
-#&gt; └──────────────┘
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># we can use Polars expressions as pattern so that it&#39;s not necessarily the</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># same for all rows</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">df2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;hi there&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">pat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;ell&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;e&quot;</span><span class="p">))</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">df2</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">count_matches</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;pat&quot;</span><span class="p">))</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;reg_count&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; shape: (2, 3)
-#&gt; ┌──────────┬─────┬───────────┐
-#&gt; │ foo      ┆ pat ┆ reg_count │
-#&gt; │ ---      ┆ --- ┆ ---       │
-#&gt; │ str      ┆ str ┆ u32       │
-#&gt; ╞══════════╪═════╪═══════════╡
-#&gt; │ hello    ┆ ell ┆ 1         │
-#&gt; │ hi there ┆ e   ┆ 2         │
-#&gt; └──────────┴─────┴───────────┘
+<div class="highlight"><pre><span></span><code>#&gt; shape: (4, 3)
+#&gt; ┌────────────┬──────────────┬───────────────┐
+#&gt; │ foo        ┆ count_digits ┆ count_slash_d │
+#&gt; │ ---        ┆ ---          ┆ ---           │
+#&gt; │ str        ┆ u32          ┆ u32           │
+#&gt; ╞════════════╪══════════════╪═══════════════╡
+#&gt; │ 12 dbc 3xy ┆ 3            ┆ 0             │
+#&gt; │ cat\w      ┆ 0            ┆ 0             │
+#&gt; │ 1zy3\d\d   ┆ 2            ┆ 2             │
+#&gt; │ null       ┆ null         ┆ null          │
+#&gt; └────────────┴──────────────┴───────────────┘
 </code></pre></div>
 
 
