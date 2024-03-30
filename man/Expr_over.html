@@ -15010,7 +15010,7 @@
 
 
 <h1 id="compute-expressions-over-the-given-groups">Compute expressions over the given groups</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1858"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1863"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>This expression is similar to performing a group by aggregation and
 joining the result back into the original DataFrame. The outcome is
@@ -15075,7 +15075,7 @@ group. This only makes sense if the input data is sorted.
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">),</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">),</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">)</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
@@ -15090,9 +15090,9 @@ group. This only makes sense if the input data is sorted.
 #&gt; ╞═════╪═════╪═════╪═══════╡
 #&gt; │ a   ┆ 1.0 ┆ 5.0 ┆ 5.0   │
 #&gt; │ a   ┆ 2.0 ┆ 4.0 ┆ 5.0   │
+#&gt; │ b   ┆ 3.0 ┆ 2.0 ┆ 3.0   │
+#&gt; │ b   ┆ 5.0 ┆ 1.0 ┆ 3.0   │
 #&gt; │ b   ┆ 3.0 ┆ 3.0 ┆ 3.0   │
-#&gt; │ b   ┆ 5.0 ┆ 2.0 ┆ 3.0   │
-#&gt; │ b   ┆ 3.0 ┆ 1.0 ┆ 3.0   │
 #&gt; └─────┴─────┴─────┴───────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Expression input is supported.</span>
@@ -15108,9 +15108,9 @@ group. This only makes sense if the input data is sorted.
 #&gt; ╞═════╪═════╪═════╪═══════╡
 #&gt; │ a   ┆ 1.0 ┆ 5.0 ┆ 5.0   │
 #&gt; │ a   ┆ 2.0 ┆ 4.0 ┆ 4.0   │
+#&gt; │ b   ┆ 3.0 ┆ 2.0 ┆ 4.0   │
+#&gt; │ b   ┆ 5.0 ┆ 1.0 ┆ 1.0   │
 #&gt; │ b   ┆ 3.0 ┆ 3.0 ┆ 4.0   │
-#&gt; │ b   ┆ 5.0 ┆ 2.0 ┆ 2.0   │
-#&gt; │ b   ┆ 3.0 ┆ 1.0 ┆ 4.0   │
 #&gt; └─────┴─────┴─────┴───────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Group by multiple columns by passing a character vector of column names</span>
@@ -15127,9 +15127,9 @@ group. This only makes sense if the input data is sorted.
 #&gt; ╞═════╪═════╪═════╪═══════╡
 #&gt; │ a   ┆ 1.0 ┆ 5.0 ┆ 5.0   │
 #&gt; │ a   ┆ 2.0 ┆ 4.0 ┆ 4.0   │
-#&gt; │ b   ┆ 3.0 ┆ 3.0 ┆ 1.0   │
-#&gt; │ b   ┆ 5.0 ┆ 2.0 ┆ 2.0   │
-#&gt; │ b   ┆ 3.0 ┆ 1.0 ┆ 1.0   │
+#&gt; │ b   ┆ 3.0 ┆ 2.0 ┆ 2.0   │
+#&gt; │ b   ┆ 5.0 ┆ 1.0 ┆ 1.0   │
+#&gt; │ b   ┆ 3.0 ┆ 3.0 ┆ 2.0   │
 #&gt; └─────┴─────┴─────┴───────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
@@ -15144,9 +15144,9 @@ group. This only makes sense if the input data is sorted.
 #&gt; ╞═════╪═════╪═════╪═══════╡
 #&gt; │ a   ┆ 1.0 ┆ 5.0 ┆ 5.0   │
 #&gt; │ a   ┆ 2.0 ┆ 4.0 ┆ 4.0   │
-#&gt; │ b   ┆ 3.0 ┆ 3.0 ┆ 1.0   │
-#&gt; │ b   ┆ 5.0 ┆ 2.0 ┆ 2.0   │
-#&gt; │ b   ┆ 3.0 ┆ 1.0 ┆ 1.0   │
+#&gt; │ b   ┆ 3.0 ┆ 2.0 ┆ 2.0   │
+#&gt; │ b   ┆ 5.0 ┆ 1.0 ┆ 1.0   │
+#&gt; │ b   ┆ 3.0 ┆ 3.0 ┆ 2.0   │
 #&gt; └─────┴─────┴─────┴───────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Or use positional arguments to group by multiple columns in the same way.</span>
@@ -15162,10 +15162,28 @@ group. This only makes sense if the input data is sorted.
 #&gt; ╞═════╪═════╪═════╪═══════╡
 #&gt; │ a   ┆ 1.0 ┆ 5.0 ┆ 5.0   │
 #&gt; │ a   ┆ 2.0 ┆ 4.0 ┆ 4.0   │
+#&gt; │ b   ┆ 3.0 ┆ 2.0 ┆ 1.0   │
+#&gt; │ b   ┆ 5.0 ┆ 1.0 ┆ 1.0   │
 #&gt; │ b   ┆ 3.0 ┆ 3.0 ┆ 1.0   │
-#&gt; │ b   ┆ 5.0 ┆ 2.0 ┆ 1.0   │
-#&gt; │ b   ┆ 3.0 ┆ 1.0 ┆ 1.0   │
 #&gt; └─────┴─────┴─────┴───────┘
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Alternative mapping strategy: join values in a list output</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="n">top_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">top_k</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="o">$</span><span class="nf">over</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mapping_strategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;join&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; shape: (5, 4)
+#&gt; ┌─────┬─────┬─────┬────────────┐
+#&gt; │ a   ┆ b   ┆ c   ┆ top_2      │
+#&gt; │ --- ┆ --- ┆ --- ┆ ---        │
+#&gt; │ str ┆ f64 ┆ f64 ┆ list[f64]  │
+#&gt; ╞═════╪═════╪═════╪════════════╡
+#&gt; │ a   ┆ 1.0 ┆ 5.0 ┆ [5.0, 4.0] │
+#&gt; │ a   ┆ 2.0 ┆ 4.0 ┆ [5.0, 4.0] │
+#&gt; │ b   ┆ 3.0 ┆ 2.0 ┆ [3.0, 2.0] │
+#&gt; │ b   ┆ 5.0 ┆ 1.0 ┆ [3.0, 2.0] │
+#&gt; │ b   ┆ 3.0 ┆ 3.0 ┆ [3.0, 2.0] │
+#&gt; └─────┴─────┴─────┴────────────┘
 </code></pre></div>
 
 

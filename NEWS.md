@@ -104,6 +104,7 @@
 - New functions `pl$int_range()` and `pl$int_ranges()` ([#968](https://github.com/pola-rs/r-polars/issues/968)).
 - New string method `$str$extract_groups()` ([#979](https://github.com/pola-rs/r-polars/issues/979)).
 - New string method `$str$find()` ([#985](https://github.com/pola-rs/r-polars/issues/985)).
+- Method `$over()` gains an argument `mapping_strategy` ([#984](https://github.com/pola-rs/r-polars/issues/984), [#988](https://github.com/pola-rs/r-polars/issues/988)).
 
 ### Bug fixes
 
