@@ -2382,6 +2382,27 @@
   
   
     <li class="md-nav__item">
+      <a href="man/Series_item.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    item
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="man/Series_len.html" class="md-nav__link">
         
   
@@ -3315,6 +3336,27 @@
   
   <span class="md-ellipsis">
     head
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="man/DataFrame_item.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    item
   </span>
   
 
@@ -16540,6 +16582,7 @@ by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.</p>
 <li>The usage of <code>pl$date_range()</code> to create a range of <code>Datetime</code> data type is deprecated.
   <code>pl$date_range()</code> will always create a range of <code>Date</code> data type in the future.
   Please use <code>pl$datetime_range()</code> if you want to create a range of <code>Datetime</code> instead.</li>
+<li><code>&lt;DataFrame&gt;$get_columns()</code> now returns an unnamed list instead of a named list (<a href="https://github.com/pola-rs/r-polars/issues/991">#991</a>).</li>
 </ul>
 </li>
 </ul>
@@ -16591,6 +16634,7 @@ by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.</p>
 <li>New string method <code>$str$find()</code> (<a href="https://github.com/pola-rs/r-polars/issues/985">#985</a>).</li>
 <li>New argument <code>n</code> in <code>$str$replace()</code> (<a href="https://github.com/pola-rs/r-polars/issues/987">#987</a>).</li>
 <li>Method <code>$over()</code> gains an argument <code>mapping_strategy</code> (<a href="https://github.com/pola-rs/r-polars/issues/984">#984</a>, <a href="https://github.com/pola-rs/r-polars/issues/988">#988</a>).</li>
+<li>New method <code>$item()</code> for <code>DataFrame</code> and <code>Series</code> (<a href="https://github.com/pola-rs/r-polars/issues/992">#992</a>).</li>
 </ul>
 <h3 id="bug-fixes">Bug fixes</h3>
 <ul>

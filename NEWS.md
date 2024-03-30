@@ -64,6 +64,7 @@
     - The usage of `pl$date_range()` to create a range of `Datetime` data type is deprecated.
       `pl$date_range()` will always create a range of `Date` data type in the future.
       Please use `pl$datetime_range()` if you want to create a range of `Datetime` instead.
+    - `<DataFrame>$get_columns()` now returns an unnamed list instead of a named list ([#991](https://github.com/pola-rs/r-polars/issues/991)).
 
 - The argument `columns` in `$drop()` is removed. `$drop()` now accepts several
   character scalars, such as `$drop("a", "b", "c")` ([#912](https://github.com/pola-rs/r-polars/issues/912)).
@@ -108,6 +109,7 @@
 - New string method `$str$find()` ([#985](https://github.com/pola-rs/r-polars/issues/985)).
 - New argument `n` in `$str$replace()` ([#987](https://github.com/pola-rs/r-polars/issues/987)).
 - Method `$over()` gains an argument `mapping_strategy` ([#984](https://github.com/pola-rs/r-polars/issues/984), [#988](https://github.com/pola-rs/r-polars/issues/988)).
+- New method `$item()` for `DataFrame` and `Series` ([#992](https://github.com/pola-rs/r-polars/issues/992)).
 
 ### Bug fixes
 

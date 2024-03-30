@@ -1,12 +1,12 @@
 
 
-# Get columns (as Series)
+# Get the DataFrame as a List of Series
 
 [**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20)
 
 ## Description
 
-Extract all DataFrame columns as a list of Polars series.
+Get the DataFrame as a List of Series
 
 ## Usage
 
@@ -15,53 +15,81 @@ Extract all DataFrame columns as a list of Polars series.
 
 ## Value
 
-A list of series
+A list of Series
+
+## See Also
+
+<ul>
+<li>
+
+<code>\<DataFrame\>$to_list()</code>: Similar to this method but returns
+a list of vectors instead of Series.
+
+</li>
+</ul>
 
 ## Examples
 
 ``` r
 library(polars)
 
-df = pl$DataFrame(iris[1:2, ])
+df = pl$DataFrame(foo = 1L:3L, bar = 4L:6L)
 df$get_columns()
 ```
 
-    #> $Sepal.Length
-    #> polars Series: shape: (2,)
-    #> Series: 'Sepal.Length' [f64]
+    #> [[1]]
+    #> polars Series: shape: (3,)
+    #> Series: 'foo' [i32]
     #> [
-    #>  5.1
-    #>  4.9
+    #>  1
+    #>  2
+    #>  3
     #> ]
     #> 
-    #> $Sepal.Width
-    #> polars Series: shape: (2,)
-    #> Series: 'Sepal.Width' [f64]
+    #> [[2]]
+    #> polars Series: shape: (3,)
+    #> Series: 'bar' [i32]
     #> [
-    #>  3.5
-    #>  3.0
+    #>  4
+    #>  5
+    #>  6
+    #> ]
+
+``` r
+df = pl$DataFrame(
+  a = 1:4,
+  b = c(0.5, 4, 10, 13),
+  c = c(TRUE, TRUE, FALSE, TRUE)
+)
+df$get_columns()
+```
+
+    #> [[1]]
+    #> polars Series: shape: (4,)
+    #> Series: 'a' [i32]
+    #> [
+    #>  1
+    #>  2
+    #>  3
+    #>  4
     #> ]
     #> 
-    #> $Petal.Length
-    #> polars Series: shape: (2,)
-    #> Series: 'Petal.Length' [f64]
+    #> [[2]]
+    #> polars Series: shape: (4,)
+    #> Series: 'b' [f64]
     #> [
-    #>  1.4
-    #>  1.4
+    #>  0.5
+    #>  4.0
+    #>  10.0
+    #>  13.0
     #> ]
     #> 
-    #> $Petal.Width
-    #> polars Series: shape: (2,)
-    #> Series: 'Petal.Width' [f64]
+    #> [[3]]
+    #> polars Series: shape: (4,)
+    #> Series: 'c' [bool]
     #> [
-    #>  0.2
-    #>  0.2
-    #> ]
-    #> 
-    #> $Species
-    #> polars Series: shape: (2,)
-    #> Series: 'Species' [cat]
-    #> [
-    #>  "setosa"
-    #>  "setosa"
+    #>  true
+    #>  true
+    #>  false
+    #>  true
     #> ]

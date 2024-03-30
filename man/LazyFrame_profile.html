@@ -2389,6 +2389,27 @@
   
   
     <li class="md-nav__item">
+      <a href="Series_item.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    item
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Series_len.html" class="md-nav__link">
         
   
@@ -3322,6 +3343,27 @@
   
   <span class="md-ellipsis">
     head
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="DataFrame_item.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    item
   </span>
   
 
@@ -15248,8 +15290,8 @@ TRUE)</code>.
 #&gt; │ ---                 ┆ ---   ┆ --- │
 #&gt; │ str                 ┆ u64   ┆ u64 │
 #&gt; ╞═════════════════════╪═══════╪═════╡
-#&gt; │ optimization        ┆ 0     ┆ 24  │
-#&gt; │ projection(literal) ┆ 24    ┆ 94  │
+#&gt; │ optimization        ┆ 0     ┆ 27  │
+#&gt; │ projection(literal) ┆ 27    ┆ 76  │
 #&gt; └─────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Use $profile() to compare two queries</span>
@@ -15280,9 +15322,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ ---  │
 #&gt; │ str                ┆ u64   ┆ u64  │
 #&gt; ╞════════════════════╪═══════╪══════╡
-#&gt; │ optimization       ┆ 0     ┆ 21   │
-#&gt; │ sort(Sepal.Length) ┆ 21    ┆ 762  │
-#&gt; │ group_by(Species)  ┆ 766   ┆ 1222 │
+#&gt; │ optimization       ┆ 0     ┆ 53   │
+#&gt; │ sort(Sepal.Length) ┆ 53    ┆ 718  │
+#&gt; │ group_by(Species)  ┆ 721   ┆ 1189 │
 #&gt; └────────────────────┴───────┴──────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)</span>
@@ -15320,9 +15362,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ ---   │
 #&gt; │ str                ┆ u64   ┆ u64   │
 #&gt; ╞════════════════════╪═══════╪═══════╡
-#&gt; │ optimization       ┆ 0     ┆ 8     │
-#&gt; │ sort(Sepal.Length) ┆ 8     ┆ 768   │
-#&gt; │ group_by(Species)  ┆ 770   ┆ 73480 │
+#&gt; │ optimization       ┆ 0     ┆ 11    │
+#&gt; │ sort(Sepal.Length) ┆ 11    ┆ 183   │
+#&gt; │ group_by(Species)  ┆ 186   ┆ 62712 │
 #&gt; └────────────────────┴───────┴───────┘
 </code></pre></div>
 

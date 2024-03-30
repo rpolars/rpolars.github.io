@@ -2,7 +2,7 @@
 
 # Return Polars DataFrame as a list of vectors
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L975)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L982)
 
 ## Description
 
@@ -122,6 +122,17 @@ withr::with_envvar(
 )
 #&gt; [1] "2020-03-08 02:00:00 UTC"
 </pre>
+
+## See Also
+
+<ul>
+<li>
+
+<code>\<DataFrame\>$get_columns()</code>: Similar to this method but
+returns a list of Series instead of vectors.
+
+</li>
+</ul>
 
 ## Examples
 

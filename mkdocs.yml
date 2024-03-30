@@ -131,6 +131,7 @@ nav:
         - floor_div: man/Series_floor_div.md
         - is_numeric: man/Series_is_numeric.md
         - is_sorted: man/Series_is_sorted.md
+        - item: man/Series_item.md
         - len: man/Series_len.md
         - map_elements: man/Series_map_elements.md
         - max: man/Series_max.md
@@ -175,6 +176,7 @@ nav:
         - group_by_dynamic: man/DataFrame_group_by_dynamic.md
         - group_by: man/DataFrame_group_by.md
         - head: man/DataFrame_head.md
+        - item: man/DataFrame_item.md
         - join_asof: man/DataFrame_join_asof.md
         - join: man/DataFrame_join.md
         - last: man/DataFrame_last.md

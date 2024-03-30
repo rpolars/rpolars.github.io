@@ -2389,6 +2389,27 @@
   
   
     <li class="md-nav__item">
+      <a href="Series_item.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    item
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Series_len.html" class="md-nav__link">
         
   
@@ -3340,6 +3361,27 @@
   
   
     <li class="md-nav__item">
+      <a href="DataFrame_item.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    item
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="DataFrame_join_asof.html" class="md-nav__link">
         
   
@@ -4022,6 +4064,15 @@
   <a href="#conversion-to-r-data-types-considerations" class="md-nav__link">
     <span class="md-ellipsis">
       Conversion to R data types considerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
     </span>
   </a>
   
@@ -15017,6 +15068,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -15044,7 +15104,7 @@
 
 
 <h1 id="return-polars-dataframe-as-a-list-of-vectors">Return Polars DataFrame as a list of vectors</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L975"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L982"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Return Polars DataFrame as a list of vectors</p>
 <h2 id="usage">Usage</h2>
@@ -15153,6 +15213,16 @@ withr::with_envvar(
 )
 #&gt; [1] "2020-03-08 02:00:00 UTC"
 </pre>
+
+<h2 id="see-also">See Also</h2>
+<ul>
+<li>
+
+<code>\<DataFrame\>$get_columns()</code>: Similar to this method but
+returns a list of Series instead of vectors.
+
+</li>
+</ul>
 
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>

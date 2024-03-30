@@ -382,6 +382,7 @@ pl$show_all_public_methods("RPolarsSeries")
     #>           [ is_numeric ; function ]
     #>           [ is_sorted ; function ]
     #>           [ is_unique ; function ]
+    #>           [ item ; function ]
     #>           [ kurtosis ; function ]
     #>           [ last ; function ]
     #>           [ len ; function ]

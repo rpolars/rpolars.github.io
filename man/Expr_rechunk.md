@@ -34,8 +34,8 @@ series_list = pl$DataFrame(list(a = 1:3, b = 4:6))$select(
 lapply(series_list, \(x) x$chunk_lengths())
 ```
 
-    #> $a_chunked
+    #> [[1]]
     #> [1] 3 3
     #> 
-    #> $a_rechunked
+    #> [[2]]
     #> [1] 6
