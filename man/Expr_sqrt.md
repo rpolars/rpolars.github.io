@@ -2,7 +2,7 @@
 
 # Compute the square root of the elements
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1096)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1097)
 
 ## Description
 

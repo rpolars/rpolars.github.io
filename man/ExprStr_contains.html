@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#check-if-string-contains-a-regex" class="md-skip">
+        <a href="#check-if-string-contains-a-substring-that-matches-a-pattern" class="md-skip">
           Skip to content
         </a>
       
@@ -13497,6 +13497,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -14980,6 +14989,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -15006,12 +15024,12 @@
   
 
 
-<h1 id="check-if-string-contains-a-regex">Check if string contains a regex</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L450"><strong>Source code</strong></a></p>
+<h1 id="check-if-string-contains-a-substring-that-matches-a-pattern">Check if string contains a substring that matches a pattern</h1>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L462"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>Check if string contains a substring that matches a regex.</p>
+<p>Check if string contains a substring that matches a pattern</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>&lt;Expr&gt;$str$contains(pattern, literal = FALSE, strict = TRUE)
+<pre><code class='language-R'>&lt;Expr&gt;$str$contains(pattern, ..., literal = FALSE, strict = TRUE)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
@@ -15021,7 +15039,17 @@
 <code id="ExprStr_contains_:_pattern">pattern</code>
 </td>
 <td>
-String or Expr of a string, a valid regex pattern.
+A character or something can be coerced to a string Expr of a valid
+regex pattern, compatible with the
+<a href="https://docs.rs/regex/latest/regex/">regex crate</a>.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="ExprStr_contains_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>
@@ -15029,7 +15057,8 @@ String or Expr of a string, a valid regex pattern.
 <code id="ExprStr_contains_:_literal">literal</code>
 </td>
 <td>
-Treat pattern as a literal string.
+Logical. If <code>TRUE</code> (default), treat <code>pattern</code> as a
+literal string, not as a regular expression.
 </td>
 </tr>
 <tr>
@@ -15037,30 +15066,67 @@ Treat pattern as a literal string.
 <code id="ExprStr_contains_:_strict">strict</code>
 </td>
 <td>
-Raise an error if the underlying pattern is not a valid regex
-expression, otherwise replace the invalid regex with a null value.
+Logical. If <code>TRUE</code> (default), raise an error if the
+underlying pattern is not a valid regex, otherwise mask out with a null
+value.
 </td>
 </tr>
 </table>
 
 <h2 id="details">Details</h2>
-<p>See also <code style="white-space: pre;">$str$starts_with()</code> and
-<code style="white-space: pre;">$str$ends_with()</code>.</p>
+<p>To modify regular expression behaviour (such as case-sensitivity) with
+flags, use the inline <code>(?iLmsuxU)</code> syntax. See the regex
+crate’s section on
+<a href="https://docs.rs/regex/latest/regex/#grouping-and-flags">grouping
+and flags</a> for additional information about the use of inline
+expression modifiers.</p>
 <h2 id="value">Value</h2>
-<p>Expr returning a Boolean</p>
+<p>Expr of Boolean data type</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li>
+
+<code>\<Expr\>$str$start_with()</code>: Check if string values start
+with a substring.
+
+</li>
+<li>
+
+<code>\<Expr\>$str$ends_with()</code>: Check if string values end with a
+substring.
+
+</li>
+</ul>
+
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Crab&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;cat and dog&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;rab$bit&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">))</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">),</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">contains</span><span class="p">(</span><span class="s">&quot;cat|bit&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;regex&quot;</span><span class="p">),</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">contains</span><span class="p">(</span><span class="s">&quot;rab$&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">literal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="o">$</span><span class="nf">alias</span><span class="p">(</span><span class="s">&quot;literal&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># The inline `(?i)` syntax example</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;AAA&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;aAa&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;aaa&quot;</span><span class="p">))</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="n">default_match</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;s&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">contains</span><span class="p">(</span><span class="s">&quot;AA&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="n">insensitive_match</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;s&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">contains</span><span class="p">(</span><span class="s">&quot;(?i)AA&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; shape: (3, 3)
+#&gt; ┌─────┬───────────────┬───────────────────┐
+#&gt; │ s   ┆ default_match ┆ insensitive_match │
+#&gt; │ --- ┆ ---           ┆ ---               │
+#&gt; │ str ┆ bool          ┆ bool              │
+#&gt; ╞═════╪═══════════════╪═══════════════════╡
+#&gt; │ AAA ┆ true          ┆ true              │
+#&gt; │ aAa ┆ false         ┆ true              │
+#&gt; │ aaa ┆ false         ┆ true              │
+#&gt; └─────┴───────────────┴───────────────────┘
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">txt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Crab&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;cat and dog&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;rab$bit&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">))</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">df</span><span class="o">$</span><span class="nf">with_columns</span><span class="p">(</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="n">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;txt&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">contains</span><span class="p">(</span><span class="s">&quot;cat|bit&quot;</span><span class="p">),</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="n">literal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;txt&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">str</span><span class="o">$</span><span class="nf">contains</span><span class="p">(</span><span class="s">&quot;rab$&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">literal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; shape: (4, 3)
 #&gt; ┌─────────────┬───────┬─────────┐
-#&gt; │ a           ┆ regex ┆ literal │
+#&gt; │ txt         ┆ regex ┆ literal │
 #&gt; │ ---         ┆ ---   ┆ ---     │
 #&gt; │ str         ┆ bool  ┆ bool    │
 #&gt; ╞═════════════╪═══════╪═════════╡

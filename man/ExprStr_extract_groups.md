@@ -2,7 +2,7 @@
 
 # Extract all capture groups for the given regex pattern
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L952)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L965)
 
 ## Description
 
@@ -21,7 +21,9 @@ Extract all capture groups for the given regex pattern
 <code id="ExprStr_extract_groups_:_pattern">pattern</code>
 </td>
 <td>
-String or Expr of a string, a valid regex pattern.
+A character of a valid regular expression pattern containing at least
+one capture group, compatible with the
+<a href="https://docs.rs/regex/latest/regex/">regex crate</a>.
 </td>
 </tr>
 </table>

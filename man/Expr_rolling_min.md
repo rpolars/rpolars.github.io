@@ -2,7 +2,7 @@
 
 # Rolling minimum
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2312)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2313)
 
 ## Description
 

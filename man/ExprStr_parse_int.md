@@ -2,7 +2,7 @@
 
 # Parse integers with base radix from strings
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L837)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L851)
 
 ## Description
 

@@ -2,7 +2,7 @@
 
 # Check if string ends with a regex
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L468)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L482)
 
 ## Description
 
@@ -33,7 +33,7 @@ See also <code style="white-space: pre;">$str$starts_with()</code> and
 
 ## Value
 
-Expr returning a Boolean
+Expr of Boolean data type
 
 ## Examples
 

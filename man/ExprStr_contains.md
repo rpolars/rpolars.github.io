@@ -1,16 +1,16 @@
 
 
-# Check if string contains a regex
+# Check if string contains a substring that matches a pattern
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L450)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L462)
 
 ## Description
 
-Check if string contains a substring that matches a regex.
+Check if string contains a substring that matches a pattern
 
 ## Usage
 
-<pre><code class='language-R'>ExprStr_contains(pattern, literal = FALSE, strict = TRUE)
+<pre><code class='language-R'>ExprStr_contains(pattern, ..., literal = FALSE, strict = TRUE)
 </code></pre>
 
 ## Arguments
@@ -21,7 +21,17 @@ Check if string contains a substring that matches a regex.
 <code id="ExprStr_contains_:_pattern">pattern</code>
 </td>
 <td>
-String or Expr of a string, a valid regex pattern.
+A character or something can be coerced to a string Expr of a valid
+regex pattern, compatible with the
+<a href="https://docs.rs/regex/latest/regex/">regex crate</a>.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="ExprStr_contains_:_...">…</code>
+</td>
+<td>
+Ignored.
 </td>
 </tr>
 <tr>
@@ -29,7 +39,8 @@ String or Expr of a string, a valid regex pattern.
 <code id="ExprStr_contains_:_literal">literal</code>
 </td>
 <td>
-Treat pattern as a literal string.
+Logical. If <code>TRUE</code> (default), treat <code>pattern</code> as a
+literal string, not as a regular expression.
 </td>
 </tr>
 <tr>
@@ -37,37 +48,77 @@ Treat pattern as a literal string.
 <code id="ExprStr_contains_:_strict">strict</code>
 </td>
 <td>
-Raise an error if the underlying pattern is not a valid regex
-expression, otherwise replace the invalid regex with a null value.
+Logical. If <code>TRUE</code> (default), raise an error if the
+underlying pattern is not a valid regex, otherwise mask out with a null
+value.
 </td>
 </tr>
 </table>
 
 ## Details
 
-See also <code style="white-space: pre;">$str$starts_with()</code> and
-<code style="white-space: pre;">$str$ends_with()</code>.
+To modify regular expression behaviour (such as case-sensitivity) with
+flags, use the inline <code>(?iLmsuxU)</code> syntax. See the regex
+crate’s section on
+<a href="https://docs.rs/regex/latest/regex/#grouping-and-flags">grouping
+and flags</a> for additional information about the use of inline
+expression modifiers.
 
 ## Value
 
-Expr returning a Boolean
+Expr of Boolean data type
+
+## See Also
+
+<ul>
+<li>
+
+<code>\<Expr\>$str$start_with()</code>: Check if string values start
+with a substring.
+
+</li>
+<li>
+
+<code>\<Expr\>$str$ends_with()</code>: Check if string values end with a
+substring.
+
+</li>
+</ul>
 
 ## Examples
 
 ``` r
 library(polars)
 
-df = pl$DataFrame(a = c("Crab", "cat and dog", "rab$bit", NA))
-df$select(
-  pl$col("a"),
-  pl$col("a")$str$contains("cat|bit")$alias("regex"),
-  pl$col("a")$str$contains("rab$", literal = TRUE)$alias("literal")
+# The inline `(?i)` syntax example
+pl$DataFrame(s = c("AAA", "aAa", "aaa"))$with_columns(
+  default_match = pl$col("s")$str$contains("AA"),
+  insensitive_match = pl$col("s")$str$contains("(?i)AA")
+)
+```
+
+    #> shape: (3, 3)
+    #> ┌─────┬───────────────┬───────────────────┐
+    #> │ s   ┆ default_match ┆ insensitive_match │
+    #> │ --- ┆ ---           ┆ ---               │
+    #> │ str ┆ bool          ┆ bool              │
+    #> ╞═════╪═══════════════╪═══════════════════╡
+    #> │ AAA ┆ true          ┆ true              │
+    #> │ aAa ┆ false         ┆ true              │
+    #> │ aaa ┆ false         ┆ true              │
+    #> └─────┴───────────────┴───────────────────┘
+
+``` r
+df = pl$DataFrame(txt = c("Crab", "cat and dog", "rab$bit", NA))
+df$with_columns(
+  regex = pl$col("txt")$str$contains("cat|bit"),
+  literal = pl$col("txt")$str$contains("rab$", literal = TRUE)
 )
 ```
 
     #> shape: (4, 3)
     #> ┌─────────────┬───────┬─────────┐
-    #> │ a           ┆ regex ┆ literal │
+    #> │ txt         ┆ regex ┆ literal │
     #> │ ---         ┆ ---   ┆ ---     │
     #> │ str         ┆ bool  ┆ bool    │
     #> ╞═════════════╪═══════╪═════════╡

@@ -2,7 +2,7 @@
 
 # Use the aho-corasick algorithm to find matches
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L875)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L889)
 
 ## Description
 
