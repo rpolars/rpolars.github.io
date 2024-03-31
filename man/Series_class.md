@@ -402,6 +402,7 @@ pl$show_all_public_methods("RPolarsSeries")
     #>           [ mod ; function ]
     #>           [ mode ; function ]
     #>           [ mul ; function ]
+    #>           [ n_chunks ; function ]
     #>           [ n_unique ; function ]
     #>           [ name ; property function ]
     #>           [ nan_max ; function ]

@@ -670,6 +670,7 @@ pl$show_all_public_methods()
     #>           [ mod ; function ]
     #>           [ mode ; function ]
     #>           [ mul ; function ]
+    #>           [ n_chunks ; function ]
     #>           [ n_unique ; function ]
     #>           [ name ; property function ]
     #>           [ nan_max ; function ]

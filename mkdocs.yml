@@ -140,6 +140,7 @@ nav:
         - min: man/Series_min.md
         - mod: man/Series_mod.md
         - mul: man/Series_mul.md
+        - n_chunks: man/Series_n_chunks.md
         - n_unique: man/Series_n_unique.md
         - pow: man/Series_pow.md
         - print: man/Series_print.md
