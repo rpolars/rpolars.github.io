@@ -139,7 +139,18 @@ struct
 </h4>
 
 <code style="white-space: pre;">$struct</code> stores all struct related
-methods.
+methods and active bindings.
+
+Active bindings specific to Series:
+
+<ul>
+<li>
+
+<code style="white-space: pre;">$struct$fields</code>: Returns a
+character vector of the fields in the struct.
+
+</li>
+</ul>
 
 ## Conversion to R data types considerations
 
@@ -281,6 +292,13 @@ s$dt$day()
     #>  23
     #>  24
     #> ]
+
+``` r
+# Other active bindings in subnamespaces
+as_polars_series(data.frame(a = 1:2, b = 3:4))$struct$fields
+```
+
+    #> [1] "a" "b"
 
 ``` r
 # show all available methods for Series

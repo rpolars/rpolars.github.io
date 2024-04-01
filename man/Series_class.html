@@ -15207,7 +15207,17 @@ struct
 </h4>
 
 <p><code style="white-space: pre;">$struct</code> stores all struct related
-methods.</p>
+methods and active bindings.</p>
+<p>Active bindings specific to Series:</p>
+<ul>
+<li>
+
+<code style="white-space: pre;">$struct$fields</code>: Returns a
+character vector of the fields in the struct.
+
+</li>
+</ul>
+
 <h2 id="conversion-to-r-data-types-considerations">Conversion to R data types considerations</h2>
 <p>When converting Polars objects, such as DataFrames to R objects, for
 example via the <code>as.data.frame()</code> generic function, each type
@@ -15332,8 +15342,13 @@ withr::with_envvar(
 #&gt;  24
 #&gt; ]
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># show all available methods for Series</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">pl</span><span class="o">$</span><span class="nf">show_all_public_methods</span><span class="p">(</span><span class="s">&quot;RPolarsSeries&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Other active bindings in subnamespaces</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nf">as_polars_series</span><span class="p">(</span><span class="nf">data.frame</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="o">:</span><span class="m">4</span><span class="p">))</span><span class="o">$</span><span class="n">struct</span><span class="o">$</span><span class="n">fields</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; [1] &quot;a&quot; &quot;b&quot;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># show all available methods for Series</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">pl</span><span class="o">$</span><span class="nf">show_all_public_methods</span><span class="p">(</span><span class="s">&quot;RPolarsSeries&quot;</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; 
 #&gt; 

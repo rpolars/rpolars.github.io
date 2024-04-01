@@ -2,7 +2,7 @@
 
 # Check if the Series is numeric
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L985)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L1027)
 
 ## Description
 

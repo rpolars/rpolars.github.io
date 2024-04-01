@@ -2,7 +2,7 @@
 
 # Create new Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L267)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L309)
 
 ## Description
 

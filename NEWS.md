@@ -110,6 +110,7 @@
 - New argument `n` in `$str$replace()` ([#987](https://github.com/pola-rs/r-polars/issues/987)).
 - Method `$over()` gains an argument `mapping_strategy` ([#984](https://github.com/pola-rs/r-polars/issues/984), [#988](https://github.com/pola-rs/r-polars/issues/988)).
 - New method `$item()` for `DataFrame` and `Series` ([#992](https://github.com/pola-rs/r-polars/issues/992)).
+- New active binding `<Series>$struct$fields` ([#1002](https://github.com/pola-rs/r-polars/issues/1002)).
 
 ### Bug fixes
 

@@ -2,7 +2,7 @@
 
 # Subtract Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L353)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L395)
 
 ## Description
 
