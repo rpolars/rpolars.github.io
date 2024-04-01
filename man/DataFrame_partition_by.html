@@ -3896,6 +3896,27 @@
   
   
     <li class="md-nav__item">
+      <a href="DataFrame_select_seq.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    select_seq
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="DataFrame_select.html" class="md-nav__link">
         
   
@@ -4216,6 +4237,27 @@
   
   <span class="md-ellipsis">
     var
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="DataFrame_with_columns_seq.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    with_columns_seq
   </span>
   
 
@@ -4971,6 +5013,27 @@
   
   
     <li class="md-nav__item">
+      <a href="LazyFrame_select_seq.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    select_seq
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="LazyFrame_select.html" class="md-nav__link">
         
   
@@ -5228,6 +5291,27 @@
   
   <span class="md-ellipsis">
     var
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LazyFrame_with_columns_seq.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    with_columns_seq
   </span>
   
 
@@ -15089,7 +15173,7 @@
 
 
 <h1 id="split-a-dataframe-into-multiple-dataframes">Split a DataFrame into multiple DataFrames</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L2186"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L2239"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Similar to <code>$group_by()</code>. Group by the given columns and
 return the groups as separate DataFrames. It is useful to use this in
@@ -15400,6 +15484,42 @@ details.
 <a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">  </span><span class="nf">invisible</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; 
+#&gt; The key value of `a` is a and the key value of `b` is 1
+#&gt; shape: (9, 2)
+#&gt; ┌────────────┬──────────┐
+#&gt; │ statistic  ┆ c        │
+#&gt; │ ---        ┆ ---      │
+#&gt; │ str        ┆ f64      │
+#&gt; ╞════════════╪══════════╡
+#&gt; │ count      ┆ 2.0      │
+#&gt; │ null_count ┆ 0.0      │
+#&gt; │ mean       ┆ 4.0      │
+#&gt; │ std        ┆ 1.414214 │
+#&gt; │ min        ┆ 3.0      │
+#&gt; │ 25%        ┆ 3.0      │
+#&gt; │ 50%        ┆ 5.0      │
+#&gt; │ 75%        ┆ 5.0      │
+#&gt; │ max        ┆ 5.0      │
+#&gt; └────────────┴──────────┘
+#&gt; 
+#&gt; The key value of `a` is c and the key value of `b` is 3
+#&gt; shape: (9, 2)
+#&gt; ┌────────────┬──────┐
+#&gt; │ statistic  ┆ c    │
+#&gt; │ ---        ┆ ---  │
+#&gt; │ str        ┆ f64  │
+#&gt; ╞════════════╪══════╡
+#&gt; │ count      ┆ 1.0  │
+#&gt; │ null_count ┆ 0.0  │
+#&gt; │ mean       ┆ 1.0  │
+#&gt; │ std        ┆ null │
+#&gt; │ min        ┆ 1.0  │
+#&gt; │ 25%        ┆ 1.0  │
+#&gt; │ 50%        ┆ 1.0  │
+#&gt; │ 75%        ┆ 1.0  │
+#&gt; │ max        ┆ 1.0  │
+#&gt; └────────────┴──────┘
+#&gt; 
 #&gt; The key value of `a` is b and the key value of `b` is 2
 #&gt; shape: (9, 2)
 #&gt; ┌────────────┬──────┐
@@ -15435,42 +15555,6 @@ details.
 #&gt; │ 75%        ┆ 2.0  │
 #&gt; │ max        ┆ 2.0  │
 #&gt; └────────────┴──────┘
-#&gt; 
-#&gt; The key value of `a` is c and the key value of `b` is 3
-#&gt; shape: (9, 2)
-#&gt; ┌────────────┬──────┐
-#&gt; │ statistic  ┆ c    │
-#&gt; │ ---        ┆ ---  │
-#&gt; │ str        ┆ f64  │
-#&gt; ╞════════════╪══════╡
-#&gt; │ count      ┆ 1.0  │
-#&gt; │ null_count ┆ 0.0  │
-#&gt; │ mean       ┆ 1.0  │
-#&gt; │ std        ┆ null │
-#&gt; │ min        ┆ 1.0  │
-#&gt; │ 25%        ┆ 1.0  │
-#&gt; │ 50%        ┆ 1.0  │
-#&gt; │ 75%        ┆ 1.0  │
-#&gt; │ max        ┆ 1.0  │
-#&gt; └────────────┴──────┘
-#&gt; 
-#&gt; The key value of `a` is a and the key value of `b` is 1
-#&gt; shape: (9, 2)
-#&gt; ┌────────────┬──────────┐
-#&gt; │ statistic  ┆ c        │
-#&gt; │ ---        ┆ ---      │
-#&gt; │ str        ┆ f64      │
-#&gt; ╞════════════╪══════════╡
-#&gt; │ count      ┆ 2.0      │
-#&gt; │ null_count ┆ 0.0      │
-#&gt; │ mean       ┆ 4.0      │
-#&gt; │ std        ┆ 1.414214 │
-#&gt; │ min        ┆ 3.0      │
-#&gt; │ 25%        ┆ 3.0      │
-#&gt; │ 50%        ┆ 5.0      │
-#&gt; │ 75%        ┆ 5.0      │
-#&gt; │ max        ┆ 5.0      │
-#&gt; └────────────┴──────────┘
 </code></pre></div>
 
 

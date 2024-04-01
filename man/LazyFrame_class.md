@@ -136,16 +136,17 @@ ls(.pr$env$RPolarsLazyFrame)
     #> [31] "quantile"                "rename"                 
     #> [33] "reverse"                 "rolling"                
     #> [35] "schema"                  "select"                 
-    #> [37] "set_optimization_toggle" "shift"                  
-    #> [39] "shift_and_fill"          "sink_csv"               
-    #> [41] "sink_ipc"                "sink_ndjson"            
-    #> [43] "sink_parquet"            "slice"                  
-    #> [45] "sort"                    "std"                    
-    #> [47] "sum"                     "tail"                   
-    #> [49] "to_dot"                  "unique"                 
-    #> [51] "unnest"                  "var"                    
-    #> [53] "width"                   "with_columns"           
-    #> [55] "with_context"            "with_row_index"
+    #> [37] "select_seq"              "set_optimization_toggle"
+    #> [39] "shift"                   "shift_and_fill"         
+    #> [41] "sink_csv"                "sink_ipc"               
+    #> [43] "sink_ndjson"             "sink_parquet"           
+    #> [45] "slice"                   "sort"                   
+    #> [47] "std"                     "sum"                    
+    #> [49] "tail"                    "to_dot"                 
+    #> [51] "unique"                  "unnest"                 
+    #> [53] "var"                     "width"                  
+    #> [55] "with_columns"            "with_columns_seq"       
+    #> [57] "with_context"            "with_row_index"
 
 ``` r
 # see all private methods (not intended for regular use)
@@ -168,7 +169,7 @@ ls(.pr$LazyFrame)
     #> [27] "profile"                 "quantile"               
     #> [29] "rename"                  "reverse"                
     #> [31] "rolling"                 "schema"                 
-    #> [33] "select"                  "select_str_as_lit"      
+    #> [33] "select"                  "select_seq"             
     #> [35] "set_optimization_toggle" "shift"                  
     #> [37] "shift_and_fill"          "sink_csv"               
     #> [39] "sink_ipc"                "sink_json"              
@@ -177,8 +178,8 @@ ls(.pr$LazyFrame)
     #> [45] "sum"                     "tail"                   
     #> [47] "to_dot"                  "unique"                 
     #> [49] "unnest"                  "var"                    
-    #> [51] "with_columns"            "with_context"           
-    #> [53] "with_row_index"
+    #> [51] "with_columns"            "with_columns_seq"       
+    #> [53] "with_context"            "with_row_index"
 
 ``` r
 # Practical example ##
@@ -223,7 +224,7 @@ Ldf_best$describe_plan()
 
     #> FILTER [(col("Species")) == (String(setosa))] FROM
     #> 
-    #>   Csv SCAN /tmp/RtmpVxvUPm/file7b074c8ddfaf
+    #>   Csv SCAN /tmp/RtmpChWMLm/file7b4e1ea65d75
     #>   PROJECT */5 COLUMNS
 
 ``` r
@@ -240,7 +241,7 @@ Ldf_best$describe_optimized_plan()
 ```
 
     #> 
-    #>   Csv SCAN /tmp/RtmpVxvUPm/file7b074c8ddfaf
+    #>   Csv SCAN /tmp/RtmpChWMLm/file7b4e1ea65d75
     #>   PROJECT */5 COLUMNS
     #>   SELECTION: [(col("Species")) == (String(setosa))]
 

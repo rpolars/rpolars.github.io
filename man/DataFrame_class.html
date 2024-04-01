@@ -3887,6 +3887,27 @@
   
   
     <li class="md-nav__item">
+      <a href="DataFrame_select_seq.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    select_seq
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="DataFrame_select.html" class="md-nav__link">
         
   
@@ -4207,6 +4228,27 @@
   
   <span class="md-ellipsis">
     var
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="DataFrame_with_columns_seq.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    with_columns_seq
   </span>
   
 
@@ -4962,6 +5004,27 @@
   
   
     <li class="md-nav__item">
+      <a href="LazyFrame_select_seq.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    select_seq
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="LazyFrame_select.html" class="md-nav__link">
         
   
@@ -5219,6 +5282,27 @@
   
   <span class="md-ellipsis">
     var
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LazyFrame_with_columns_seq.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    with_columns_seq
   </span>
   
 
@@ -15226,13 +15310,13 @@ withr::with_envvar(
 #&gt; [33] &quot;melt&quot;             &quot;min&quot;              &quot;n_chunks&quot;         &quot;null_count&quot;      
 #&gt; [37] &quot;partition_by&quot;     &quot;pivot&quot;            &quot;print&quot;            &quot;quantile&quot;        
 #&gt; [41] &quot;rechunk&quot;          &quot;rename&quot;           &quot;reverse&quot;          &quot;rolling&quot;         
-#&gt; [45] &quot;sample&quot;           &quot;schema&quot;           &quot;select&quot;           &quot;shape&quot;           
-#&gt; [49] &quot;shift&quot;            &quot;shift_and_fill&quot;   &quot;slice&quot;            &quot;sort&quot;            
-#&gt; [53] &quot;std&quot;              &quot;sum&quot;              &quot;tail&quot;             &quot;to_data_frame&quot;   
-#&gt; [57] &quot;to_list&quot;          &quot;to_series&quot;        &quot;to_struct&quot;        &quot;transpose&quot;       
-#&gt; [61] &quot;unique&quot;           &quot;unnest&quot;           &quot;var&quot;              &quot;width&quot;           
-#&gt; [65] &quot;with_columns&quot;     &quot;with_row_index&quot;   &quot;write_csv&quot;        &quot;write_json&quot;      
-#&gt; [69] &quot;write_ndjson&quot;     &quot;write_parquet&quot;
+#&gt; [45] &quot;sample&quot;           &quot;schema&quot;           &quot;select&quot;           &quot;select_seq&quot;      
+#&gt; [49] &quot;shape&quot;            &quot;shift&quot;            &quot;shift_and_fill&quot;   &quot;slice&quot;           
+#&gt; [53] &quot;sort&quot;             &quot;std&quot;              &quot;sum&quot;              &quot;tail&quot;            
+#&gt; [57] &quot;to_data_frame&quot;    &quot;to_list&quot;          &quot;to_series&quot;        &quot;to_struct&quot;       
+#&gt; [61] &quot;transpose&quot;        &quot;unique&quot;           &quot;unnest&quot;           &quot;var&quot;             
+#&gt; [65] &quot;width&quot;            &quot;with_columns&quot;     &quot;with_columns_seq&quot; &quot;with_row_index&quot;  
+#&gt; [69] &quot;write_csv&quot;        &quot;write_json&quot;       &quot;write_ndjson&quot;     &quot;write_parquet&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># see all private methods (not intended for regular use)</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nf">ls</span><span class="p">(</span><span class="n">.pr</span><span class="o">$</span><span class="n">DataFrame</span><span class="p">)</span>
@@ -15250,15 +15334,16 @@ withr::with_envvar(
 #&gt; [21] &quot;print&quot;                     &quot;rechunk&quot;                  
 #&gt; [23] &quot;sample_frac&quot;               &quot;sample_n&quot;                 
 #&gt; [25] &quot;schema&quot;                    &quot;select&quot;                   
-#&gt; [27] &quot;select_at_idx&quot;             &quot;set_column_from_robj&quot;     
-#&gt; [29] &quot;set_column_from_series&quot;    &quot;set_column_names_mut&quot;     
-#&gt; [31] &quot;shape&quot;                     &quot;to_list&quot;                  
-#&gt; [33] &quot;to_list_tag_structs&quot;       &quot;to_list_unwind&quot;           
-#&gt; [35] &quot;to_struct&quot;                 &quot;transpose&quot;                
-#&gt; [37] &quot;unnest&quot;                    &quot;with_columns&quot;             
-#&gt; [39] &quot;with_row_index&quot;            &quot;write_csv&quot;                
-#&gt; [41] &quot;write_json&quot;                &quot;write_ndjson&quot;             
-#&gt; [43] &quot;write_parquet&quot;
+#&gt; [27] &quot;select_at_idx&quot;             &quot;select_seq&quot;               
+#&gt; [29] &quot;set_column_from_robj&quot;      &quot;set_column_from_series&quot;   
+#&gt; [31] &quot;set_column_names_mut&quot;      &quot;shape&quot;                    
+#&gt; [33] &quot;to_list&quot;                   &quot;to_list_tag_structs&quot;      
+#&gt; [35] &quot;to_list_unwind&quot;            &quot;to_struct&quot;                
+#&gt; [37] &quot;transpose&quot;                 &quot;unnest&quot;                   
+#&gt; [39] &quot;with_columns&quot;              &quot;with_columns_seq&quot;         
+#&gt; [41] &quot;with_row_index&quot;            &quot;write_csv&quot;                
+#&gt; [43] &quot;write_json&quot;                &quot;write_ndjson&quot;             
+#&gt; [45] &quot;write_parquet&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># make an object</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as_polars_df</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>

@@ -2,7 +2,7 @@
 
 # Explode columns containing a list of values
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1681)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1721)
 
 ## Description
 

@@ -3800,6 +3800,27 @@
   
   
     <li class="md-nav__item">
+      <a href="DataFrame_select_seq.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    select_seq
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="DataFrame_select.html" class="md-nav__link">
         
   
@@ -4120,6 +4141,27 @@
   
   <span class="md-ellipsis">
     var
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="DataFrame_with_columns_seq.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    with_columns_seq
   </span>
   
 
@@ -4962,6 +5004,27 @@
   
   
     <li class="md-nav__item">
+      <a href="LazyFrame_select_seq.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    select_seq
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="LazyFrame_select.html" class="md-nav__link">
         
   
@@ -5219,6 +5282,27 @@
   
   <span class="md-ellipsis">
     var
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LazyFrame_with_columns_seq.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    with_columns_seq
   </span>
   
 
@@ -15071,7 +15155,7 @@
 
 
 <h1 id="group-a-lazyframe">Group a LazyFrame</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1159"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1199"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>This doesn’t modify the data but only stores information about the group
 structure. This structure can then be used by several functions
@@ -15126,9 +15210,9 @@ The default value can be changed with
 #&gt; │ --- ┆ --- │
 #&gt; │ str ┆ f64 │
 #&gt; ╞═════╪═════╡
-#&gt; │ a   ┆ 2.0 │
 #&gt; │ c   ┆ 3.0 │
 #&gt; │ b   ┆ 5.0 │
+#&gt; │ a   ┆ 2.0 │
 #&gt; └─────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Set `maintain_order = TRUE` to ensure the order of the groups is consistent with the input.</span>
@@ -15154,8 +15238,8 @@ The default value can be changed with
 #&gt; │ --- ┆ --- ┆ --- │
 #&gt; │ str ┆ f64 ┆ f64 │
 #&gt; ╞═════╪═════╪═════╡
-#&gt; │ b   ┆ 3.0 ┆ 2.0 │
 #&gt; │ a   ┆ 1.0 ┆ 5.0 │
+#&gt; │ b   ┆ 3.0 ┆ 2.0 │
 #&gt; │ b   ┆ 2.0 ┆ 4.0 │
 #&gt; │ c   ┆ 3.0 ┆ 1.0 │
 #&gt; └─────┴─────┴─────┘
@@ -15172,9 +15256,9 @@ The default value can be changed with
 #&gt; │ --- ┆ --- ┆ --- │
 #&gt; │ str ┆ f64 ┆ f64 │
 #&gt; ╞═════╪═════╪═════╡
-#&gt; │ b   ┆ 1.0 ┆ 3.0 │
-#&gt; │ c   ┆ 1.0 ┆ 1.0 │
 #&gt; │ a   ┆ 0.0 ┆ 4.0 │
+#&gt; │ c   ┆ 1.0 ┆ 1.0 │
+#&gt; │ b   ┆ 1.0 ┆ 3.0 │
 #&gt; └─────┴─────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># The columns will be renamed to the argument names.</span>
@@ -15189,8 +15273,8 @@ The default value can be changed with
 #&gt; │ str ┆ f64 ┆ f64 │
 #&gt; ╞═════╪═════╪═════╡
 #&gt; │ a   ┆ 0.0 ┆ 4.0 │
-#&gt; │ c   ┆ 1.0 ┆ 1.0 │
 #&gt; │ b   ┆ 1.0 ┆ 3.0 │
+#&gt; │ c   ┆ 1.0 ┆ 1.0 │
 #&gt; └─────┴─────┴─────┘
 </code></pre></div>
 

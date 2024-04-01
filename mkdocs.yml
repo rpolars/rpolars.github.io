@@ -197,6 +197,7 @@ nav:
         - reverse: man/DataFrame_reverse.md
         - rolling: man/DataFrame_rolling.md
         - sample: man/DataFrame_sample.md
+        - select_seq: man/DataFrame_select_seq.md
         - select: man/DataFrame_select.md
         - shift_and_fill: man/DataFrame_shift_and_fill.md
         - shift: man/DataFrame_shift.md
@@ -213,6 +214,7 @@ nav:
         - unique: man/DataFrame_unique.md
         - unnest: man/DataFrame_unnest.md
         - var: man/DataFrame_var.md
+        - with_columns_seq: man/DataFrame_with_columns_seq.md
         - with_columns: man/DataFrame_with_columns.md
         - with_row_index: man/DataFrame_with_row_index.md
       LazyFrame:
@@ -247,6 +249,7 @@ nav:
         - rename: man/LazyFrame_rename.md
         - reverse: man/LazyFrame_reverse.md
         - rolling: man/LazyFrame_rolling.md
+        - select_seq: man/LazyFrame_select_seq.md
         - select: man/LazyFrame_select.md
         - set_optimization_toggle: man/LazyFrame_set_optimization_toggle.md
         - shift_and_fill: man/LazyFrame_shift_and_fill.md
@@ -260,6 +263,7 @@ nav:
         - unique: man/LazyFrame_unique.md
         - unnest: man/LazyFrame_unnest.md
         - var: man/LazyFrame_var.md
+        - with_columns_seq: man/LazyFrame_with_columns_seq.md
         - with_columns: man/LazyFrame_with_columns.md
         - with_context: man/LazyFrame_with_context.md
         - with_row_index: man/LazyFrame_with_row_index.md
