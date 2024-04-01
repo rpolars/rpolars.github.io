@@ -118,35 +118,36 @@ library(polars)
 ls(.pr$env$RPolarsLazyFrame)
 ```
 
-    #>  [1] "clone"                   "collect"                
-    #>  [3] "collect_in_background"   "columns"                
-    #>  [5] "describe_optimized_plan" "describe_plan"          
-    #>  [7] "drop"                    "drop_nulls"             
-    #>  [9] "dtypes"                  "explode"                
-    #> [11] "fetch"                   "fill_nan"               
-    #> [13] "fill_null"               "filter"                 
-    #> [15] "first"                   "get_optimization_toggle"
-    #> [17] "group_by"                "group_by_dynamic"       
-    #> [19] "head"                    "join"                   
-    #> [21] "join_asof"               "last"                   
-    #> [23] "limit"                   "max"                    
-    #> [25] "mean"                    "median"                 
-    #> [27] "melt"                    "min"                    
-    #> [29] "print"                   "profile"                
-    #> [31] "quantile"                "rename"                 
-    #> [33] "reverse"                 "rolling"                
-    #> [35] "schema"                  "select"                 
-    #> [37] "select_seq"              "set_optimization_toggle"
-    #> [39] "shift"                   "shift_and_fill"         
-    #> [41] "sink_csv"                "sink_ipc"               
-    #> [43] "sink_ndjson"             "sink_parquet"           
-    #> [45] "slice"                   "sort"                   
-    #> [47] "std"                     "sum"                    
-    #> [49] "tail"                    "to_dot"                 
-    #> [51] "unique"                  "unnest"                 
-    #> [53] "var"                     "width"                  
-    #> [55] "with_columns"            "with_columns_seq"       
-    #> [57] "with_context"            "with_row_index"
+    #>  [1] "clear"                   "clone"                  
+    #>  [3] "collect"                 "collect_in_background"  
+    #>  [5] "columns"                 "describe_optimized_plan"
+    #>  [7] "describe_plan"           "drop"                   
+    #>  [9] "drop_nulls"              "dtypes"                 
+    #> [11] "explode"                 "fetch"                  
+    #> [13] "fill_nan"                "fill_null"              
+    #> [15] "filter"                  "first"                  
+    #> [17] "get_optimization_toggle" "group_by"               
+    #> [19] "group_by_dynamic"        "head"                   
+    #> [21] "join"                    "join_asof"              
+    #> [23] "last"                    "limit"                  
+    #> [25] "max"                     "mean"                   
+    #> [27] "median"                  "melt"                   
+    #> [29] "min"                     "print"                  
+    #> [31] "profile"                 "quantile"               
+    #> [33] "rename"                  "reverse"                
+    #> [35] "rolling"                 "schema"                 
+    #> [37] "select"                  "select_seq"             
+    #> [39] "set_optimization_toggle" "shift"                  
+    #> [41] "shift_and_fill"          "sink_csv"               
+    #> [43] "sink_ipc"                "sink_ndjson"            
+    #> [45] "sink_parquet"            "slice"                  
+    #> [47] "sort"                    "std"                    
+    #> [49] "sum"                     "tail"                   
+    #> [51] "to_dot"                  "unique"                 
+    #> [53] "unnest"                  "var"                    
+    #> [55] "width"                   "with_columns"           
+    #> [57] "with_columns_seq"        "with_context"           
+    #> [59] "with_row_index"
 
 ``` r
 # see all private methods (not intended for regular use)
@@ -224,7 +225,7 @@ Ldf_best$describe_plan()
 
     #> FILTER [(col("Species")) == (String(setosa))] FROM
     #> 
-    #>   Csv SCAN /tmp/RtmpChWMLm/file7b4e1ea65d75
+    #>   Csv SCAN /tmp/RtmpAFMTmh/file7ae12c1dff28
     #>   PROJECT */5 COLUMNS
 
 ``` r
@@ -241,7 +242,7 @@ Ldf_best$describe_optimized_plan()
 ```
 
     #> 
-    #>   Csv SCAN /tmp/RtmpChWMLm/file7b4e1ea65d75
+    #>   Csv SCAN /tmp/RtmpAFMTmh/file7ae12c1dff28
     #>   PROJECT */5 COLUMNS
     #>   SELECTION: [(col("Species")) == (String(setosa))]
 

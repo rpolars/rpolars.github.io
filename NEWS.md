@@ -113,6 +113,7 @@
 - New active binding `<Series>$struct$fields` ([#1002](https://github.com/pola-rs/r-polars/issues/1002)).
 - New methods `$select_seq()` and `$with_columns_seq()` for `DataFrame` and
   `LazyFrame` ([#1003](https://github.com/pola-rs/r-polars/issues/1003)).
+- New method `$clear()` for `DataFrame`, `LazyFrame`, and `Series` ([#1004](https://github.com/pola-rs/r-polars/issues/1004)).
 
 ### Bug fixes
 

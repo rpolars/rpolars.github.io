@@ -336,6 +336,7 @@ pl$show_all_public_methods("RPolarsSeries")
     #>           [ cat ; property function ]
     #>           [ ceil ; function ]
     #>           [ chunk_lengths ; function ]
+    #>           [ clear ; function ]
     #>           [ clip ; function ]
     #>           [ clip_max ; function ]
     #>           [ clip_min ; function ]

@@ -12,7 +12,7 @@
         <link rel="prev" href="DataFrame_with_row_index.html">
       
       
-        <link rel="next" href="LazyFrame_clone.html">
+        <link rel="next" href="LazyFrame_clear.html">
       
       
       <link rel="icon" href="../polars-logo.png">
@@ -2242,6 +2242,27 @@
   
   
     <li class="md-nav__item">
+      <a href="Series_clear.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    clear
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Series_clone.html" class="md-nav__link">
         
   
@@ -2965,6 +2986,27 @@
   
   <span class="md-ellipsis">
     class
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="DataFrame_clear.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    clear
   </span>
   
 
@@ -4353,6 +4395,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LazyFrame_clear.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    clear
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -15239,35 +15302,36 @@ withr::with_envvar(
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># see all exported methods</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nf">ls</span><span class="p">(</span><span class="n">.pr</span><span class="o">$</span><span class="n">env</span><span class="o">$</span><span class="n">RPolarsLazyFrame</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt;  [1] &quot;clone&quot;                   &quot;collect&quot;                
-#&gt;  [3] &quot;collect_in_background&quot;   &quot;columns&quot;                
-#&gt;  [5] &quot;describe_optimized_plan&quot; &quot;describe_plan&quot;          
-#&gt;  [7] &quot;drop&quot;                    &quot;drop_nulls&quot;             
-#&gt;  [9] &quot;dtypes&quot;                  &quot;explode&quot;                
-#&gt; [11] &quot;fetch&quot;                   &quot;fill_nan&quot;               
-#&gt; [13] &quot;fill_null&quot;               &quot;filter&quot;                 
-#&gt; [15] &quot;first&quot;                   &quot;get_optimization_toggle&quot;
-#&gt; [17] &quot;group_by&quot;                &quot;group_by_dynamic&quot;       
-#&gt; [19] &quot;head&quot;                    &quot;join&quot;                   
-#&gt; [21] &quot;join_asof&quot;               &quot;last&quot;                   
-#&gt; [23] &quot;limit&quot;                   &quot;max&quot;                    
-#&gt; [25] &quot;mean&quot;                    &quot;median&quot;                 
-#&gt; [27] &quot;melt&quot;                    &quot;min&quot;                    
-#&gt; [29] &quot;print&quot;                   &quot;profile&quot;                
-#&gt; [31] &quot;quantile&quot;                &quot;rename&quot;                 
-#&gt; [33] &quot;reverse&quot;                 &quot;rolling&quot;                
-#&gt; [35] &quot;schema&quot;                  &quot;select&quot;                 
-#&gt; [37] &quot;select_seq&quot;              &quot;set_optimization_toggle&quot;
-#&gt; [39] &quot;shift&quot;                   &quot;shift_and_fill&quot;         
-#&gt; [41] &quot;sink_csv&quot;                &quot;sink_ipc&quot;               
-#&gt; [43] &quot;sink_ndjson&quot;             &quot;sink_parquet&quot;           
-#&gt; [45] &quot;slice&quot;                   &quot;sort&quot;                   
-#&gt; [47] &quot;std&quot;                     &quot;sum&quot;                    
-#&gt; [49] &quot;tail&quot;                    &quot;to_dot&quot;                 
-#&gt; [51] &quot;unique&quot;                  &quot;unnest&quot;                 
-#&gt; [53] &quot;var&quot;                     &quot;width&quot;                  
-#&gt; [55] &quot;with_columns&quot;            &quot;with_columns_seq&quot;       
-#&gt; [57] &quot;with_context&quot;            &quot;with_row_index&quot;
+<div class="highlight"><pre><span></span><code>#&gt;  [1] &quot;clear&quot;                   &quot;clone&quot;                  
+#&gt;  [3] &quot;collect&quot;                 &quot;collect_in_background&quot;  
+#&gt;  [5] &quot;columns&quot;                 &quot;describe_optimized_plan&quot;
+#&gt;  [7] &quot;describe_plan&quot;           &quot;drop&quot;                   
+#&gt;  [9] &quot;drop_nulls&quot;              &quot;dtypes&quot;                 
+#&gt; [11] &quot;explode&quot;                 &quot;fetch&quot;                  
+#&gt; [13] &quot;fill_nan&quot;                &quot;fill_null&quot;              
+#&gt; [15] &quot;filter&quot;                  &quot;first&quot;                  
+#&gt; [17] &quot;get_optimization_toggle&quot; &quot;group_by&quot;               
+#&gt; [19] &quot;group_by_dynamic&quot;        &quot;head&quot;                   
+#&gt; [21] &quot;join&quot;                    &quot;join_asof&quot;              
+#&gt; [23] &quot;last&quot;                    &quot;limit&quot;                  
+#&gt; [25] &quot;max&quot;                     &quot;mean&quot;                   
+#&gt; [27] &quot;median&quot;                  &quot;melt&quot;                   
+#&gt; [29] &quot;min&quot;                     &quot;print&quot;                  
+#&gt; [31] &quot;profile&quot;                 &quot;quantile&quot;               
+#&gt; [33] &quot;rename&quot;                  &quot;reverse&quot;                
+#&gt; [35] &quot;rolling&quot;                 &quot;schema&quot;                 
+#&gt; [37] &quot;select&quot;                  &quot;select_seq&quot;             
+#&gt; [39] &quot;set_optimization_toggle&quot; &quot;shift&quot;                  
+#&gt; [41] &quot;shift_and_fill&quot;          &quot;sink_csv&quot;               
+#&gt; [43] &quot;sink_ipc&quot;                &quot;sink_ndjson&quot;            
+#&gt; [45] &quot;sink_parquet&quot;            &quot;slice&quot;                  
+#&gt; [47] &quot;sort&quot;                    &quot;std&quot;                    
+#&gt; [49] &quot;sum&quot;                     &quot;tail&quot;                   
+#&gt; [51] &quot;to_dot&quot;                  &quot;unique&quot;                 
+#&gt; [53] &quot;unnest&quot;                  &quot;var&quot;                    
+#&gt; [55] &quot;width&quot;                   &quot;with_columns&quot;           
+#&gt; [57] &quot;with_columns_seq&quot;        &quot;with_context&quot;           
+#&gt; [59] &quot;with_row_index&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># see all private methods (not intended for regular use)</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nf">ls</span><span class="p">(</span><span class="n">.pr</span><span class="o">$</span><span class="n">LazyFrame</span><span class="p">)</span>
@@ -15339,7 +15403,7 @@ withr::with_envvar(
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; FILTER [(col(&quot;Species&quot;)) == (String(setosa))] FROM
 #&gt; 
-#&gt;   Csv SCAN /tmp/RtmpChWMLm/file7b4e1ea65d75
+#&gt;   Csv SCAN /tmp/RtmpAFMTmh/file7ae12c1dff28
 #&gt;   PROJECT */5 COLUMNS
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># NOTE For Ldf_okay, the full time to load csv alrady paid when creating Rdf and Pdf</span>
@@ -15352,7 +15416,7 @@ withr::with_envvar(
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Ldf_best</span><span class="o">$</span><span class="nf">describe_optimized_plan</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; 
-#&gt;   Csv SCAN /tmp/RtmpChWMLm/file7b4e1ea65d75
+#&gt;   Csv SCAN /tmp/RtmpAFMTmh/file7ae12c1dff28
 #&gt;   PROJECT */5 COLUMNS
 #&gt;   SELECTION: [(col(&quot;Species&quot;)) == (String(setosa))]
 </code></pre></div>

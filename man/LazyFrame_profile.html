@@ -2242,6 +2242,27 @@
   
   
     <li class="md-nav__item">
+      <a href="Series_clear.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    clear
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Series_clone.html" class="md-nav__link">
         
   
@@ -2965,6 +2986,27 @@
   
   <span class="md-ellipsis">
     class
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="DataFrame_clear.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    clear
   </span>
   
 
@@ -4273,6 +4315,27 @@
   
   <span class="md-ellipsis">
     class
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LazyFrame_clear.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    clear
   </span>
   
 
@@ -15395,8 +15458,8 @@ TRUE)</code>.
 #&gt; │ ---                 ┆ ---   ┆ --- │
 #&gt; │ str                 ┆ u64   ┆ u64 │
 #&gt; ╞═════════════════════╪═══════╪═════╡
-#&gt; │ optimization        ┆ 0     ┆ 36  │
-#&gt; │ projection(literal) ┆ 36    ┆ 88  │
+#&gt; │ optimization        ┆ 0     ┆ 268 │
+#&gt; │ projection(literal) ┆ 268   ┆ 337 │
 #&gt; └─────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Use $profile() to compare two queries</span>
@@ -15422,15 +15485,15 @@ TRUE)</code>.
 #&gt; 
 #&gt; $profile
 #&gt; shape: (3, 3)
-#&gt; ┌────────────────────┬───────┬──────┐
-#&gt; │ node               ┆ start ┆ end  │
-#&gt; │ ---                ┆ ---   ┆ ---  │
-#&gt; │ str                ┆ u64   ┆ u64  │
-#&gt; ╞════════════════════╪═══════╪══════╡
-#&gt; │ optimization       ┆ 0     ┆ 18   │
-#&gt; │ sort(Sepal.Length) ┆ 18    ┆ 1451 │
-#&gt; │ group_by(Species)  ┆ 1455  ┆ 1982 │
-#&gt; └────────────────────┴───────┴──────┘
+#&gt; ┌────────────────────┬───────┬─────┐
+#&gt; │ node               ┆ start ┆ end │
+#&gt; │ ---                ┆ ---   ┆ --- │
+#&gt; │ str                ┆ u64   ┆ u64 │
+#&gt; ╞════════════════════╪═══════╪═════╡
+#&gt; │ optimization       ┆ 0     ┆ 14  │
+#&gt; │ sort(Sepal.Length) ┆ 14    ┆ 264 │
+#&gt; │ group_by(Species)  ┆ 274   ┆ 526 │
+#&gt; └────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
@@ -15467,9 +15530,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ ---   │
 #&gt; │ str                ┆ u64   ┆ u64   │
 #&gt; ╞════════════════════╪═══════╪═══════╡
-#&gt; │ optimization       ┆ 0     ┆ 9     │
-#&gt; │ sort(Sepal.Length) ┆ 9     ┆ 487   │
-#&gt; │ group_by(Species)  ┆ 490   ┆ 60103 │
+#&gt; │ optimization       ┆ 0     ┆ 8     │
+#&gt; │ sort(Sepal.Length) ┆ 8     ┆ 190   │
+#&gt; │ group_by(Species)  ┆ 193   ┆ 38430 │
 #&gt; └────────────────────┴───────┴───────┘
 </code></pre></div>
 

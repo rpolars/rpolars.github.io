@@ -222,6 +222,7 @@ pl$show_all_public_methods()
     #> 
     #> 
     #>        RPolarsDataFrame ( environment ):
+    #>           [ clear ; function ]
     #>           [ clone ; function ]
     #>           [ columns ; setter property function ]
     #>           [ describe ; function ]
@@ -494,6 +495,7 @@ pl$show_all_public_methods()
     #> 
     #> 
     #>        RPolarsLazyFrame ( environment ):
+    #>           [ clear ; function ]
     #>           [ clone ; function ]
     #>           [ collect ; function ]
     #>           [ collect_in_background ; function ]
@@ -590,6 +592,7 @@ pl$show_all_public_methods()
     #>           [ cat ; property function ]
     #>           [ ceil ; function ]
     #>           [ chunk_lengths ; function ]
+    #>           [ clear ; function ]
     #>           [ clip ; function ]
     #>           [ clip_max ; function ]
     #>           [ clip_min ; function ]

@@ -124,6 +124,7 @@ nav:
         - arg_min: man/Series_arg_min.md
         - chunk_lengths: man/Series_chunk_lengths.md
         - class: man/Series_class.md
+        - clear: man/Series_clear.md
         - clone: man/Series_clone.md
         - compare: man/Series_compare.md
         - div: man/Series_div.md
@@ -158,6 +159,7 @@ nav:
         - var: man/Series_var.md
       DataFrame:
         - class: man/DataFrame_class.md
+        - clear: man/DataFrame_clear.md
         - clone: man/DataFrame_clone.md
         - describe: man/DataFrame_describe.md
         - drop_in_place: man/DataFrame_drop_in_place.md
@@ -219,6 +221,7 @@ nav:
         - with_row_index: man/DataFrame_with_row_index.md
       LazyFrame:
         - class: man/LazyFrame_class.md
+        - clear: man/LazyFrame_clear.md
         - clone: man/LazyFrame_clone.md
         - collect_in_background: man/LazyFrame_collect_in_background.md
         - collect: man/LazyFrame_collect.md
