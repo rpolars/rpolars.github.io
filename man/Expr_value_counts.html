@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.16">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
     
     
       
@@ -15262,16 +15262,16 @@ contention.
 #&gt; │ ---               │
 #&gt; │ struct[2]         │
 #&gt; ╞═══════════════════╡
-#&gt; │ {&quot;setosa&quot;,50}     │
 #&gt; │ {&quot;virginica&quot;,50}  │
+#&gt; │ {&quot;setosa&quot;,50}     │
 #&gt; │ {&quot;versicolor&quot;,50} │
 #&gt; └───────────────────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">unnest</span><span class="p">()</span><span class="o">$</span><span class="nf">to_data_frame</span><span class="p">()</span><span class="w"> </span><span class="c1"># recommended to unnest structs before converting to R</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;      Species count
-#&gt; 1     setosa    50
-#&gt; 2  virginica    50
+#&gt; 1  virginica    50
+#&gt; 2     setosa    50
 #&gt; 3 versicolor    50
 </code></pre></div>
 
@@ -15329,7 +15329,7 @@ contention.
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.bd41221c.min.js"></script>
+      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
       
     
   </body>

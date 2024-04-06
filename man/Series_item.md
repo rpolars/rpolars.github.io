@@ -2,7 +2,7 @@
 
 # Return the element at the given index
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L1072)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L1073)
 
 ## Description
 

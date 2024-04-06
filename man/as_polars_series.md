@@ -2,12 +2,12 @@
 
 # To polars Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/as_polars.R#L324)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/as_polars.R#L325)
 
 ## Description
 
 <code>as_polars_series()</code> is a generic function that converts an R
-object to a polars Series. It is basically a wrapper for pl$Series().
+object to a polars Series.
 
 ## Usage
 
@@ -67,7 +67,7 @@ as_polars_series(x, name = NULL, ...)
 <code id="as_polars_series_:_x">x</code>
 </td>
 <td>
-Object to convert into a polars Series
+Object to convert into a polars Series.
 </td>
 </tr>
 <tr>
@@ -75,9 +75,9 @@ Object to convert into a polars Series
 <code id="as_polars_series_:_name">name</code>
 </td>
 <td>
-A string to use as the name of the Series. If <code>NULL</code>
-(default), the name of <code>x</code> is used or an unnamed Series is
-created.
+A character to use as the name of the Series. If <code>NULL</code>
+(default), the name of <code>x</code> is used or an empty character
+<code>““</code> will be used if <code>x</code> has no name.
 </td>
 </tr>
 <tr>

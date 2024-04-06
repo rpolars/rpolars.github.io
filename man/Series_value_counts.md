@@ -2,7 +2,7 @@
 
 # Count the occurrences of unique values
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L586)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L587)
 
 ## Description
 

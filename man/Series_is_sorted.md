@@ -2,7 +2,7 @@
 
 # Check if the Series is sorted
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L868)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L869)
 
 ## Description
 

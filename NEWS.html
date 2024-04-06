@@ -14,7 +14,7 @@
       
       
       <link rel="icon" href="polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.16">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
     
     
       
@@ -16783,6 +16783,8 @@ by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.</p>
 </ul>
 <h3 id="new-features">New features</h3>
 <ul>
+<li><code>pl$Series()</code> now calls <code>as_polars_series()</code> internally, so it can convert
+  more classes to Series properly (<a href="https://github.com/pola-rs/r-polars/issues/1015">#1015</a>).</li>
 <li>New functions <code>pl$datetime()</code>, <code>pl$date()</code>, and <code>pl$time()</code> to easily create
   Expr of class datetime, date, and time via columns and literals (<a href="https://github.com/pola-rs/r-polars/issues/918">#918</a>).</li>
 <li>New function <code>pl$arg_where()</code> to get the indices that match a condition (<a href="https://github.com/pola-rs/r-polars/issues/922">#922</a>).</li>
@@ -17741,7 +17743,7 @@ features. Unrelated breaking changes and new features are put in separate sectio
     <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.bd41221c.min.js"></script>
+      <script src="assets/javascripts/bundle.1e8ae164.min.js"></script>
       
     
   </body>

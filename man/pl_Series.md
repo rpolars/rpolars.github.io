@@ -2,13 +2,13 @@
 
 # Create new Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L311)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L312)
 
 ## Description
 
-This function is a simple way to convert basic types of vectors provided
-by base R to the Series class object. For converting more types
-properly, use the generic function <code>as_polars_series()</code>.
+This function is a simple way to convert R vectors to the Series class
+object. Internally, this function is a simple wrapper of
+<code>as_polars_series()</code>.
 
 ## Usage
 
@@ -34,8 +34,8 @@ nan_to_null)</code> and <code>…</code> will be ignored.
 <code id="pl_Series_:_values">values</code>
 </td>
 <td>
-Vector of base R types, or <code>NULL</code> (default). If
-<code>NULL</code>, empty Series is created.
+Object to convert into a polars Series. Passed to the <code>x</code>
+argument in as_polars_series().
 </td>
 </tr>
 <tr>
@@ -43,8 +43,9 @@ Vector of base R types, or <code>NULL</code> (default). If
 <code id="pl_Series_:_name">name</code>
 </td>
 <td>
-Name of the Series. If <code>NULL</code> (default), an empty string is
-used.
+A character to use as the name of the Series, or <code>NULL</code>
+(default). Passed to the <code>name</code> argument in
+as_polars_series().
 </td>
 </tr>
 <tr>

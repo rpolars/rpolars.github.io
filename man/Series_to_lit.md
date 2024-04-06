@@ -2,7 +2,7 @@
 
 # Convert a Series to literal
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L1045)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L1046)
 
 ## Description
 

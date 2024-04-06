@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.16">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
     
     
       
@@ -15547,42 +15547,6 @@ details.
 <a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">  </span><span class="nf">invisible</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; 
-#&gt; The key value of `a` is b and the key value of `b` is 3
-#&gt; shape: (9, 2)
-#&gt; ┌────────────┬──────┐
-#&gt; │ statistic  ┆ c    │
-#&gt; │ ---        ┆ ---  │
-#&gt; │ str        ┆ f64  │
-#&gt; ╞════════════╪══════╡
-#&gt; │ count      ┆ 1.0  │
-#&gt; │ null_count ┆ 0.0  │
-#&gt; │ mean       ┆ 2.0  │
-#&gt; │ std        ┆ null │
-#&gt; │ min        ┆ 2.0  │
-#&gt; │ 25%        ┆ 2.0  │
-#&gt; │ 50%        ┆ 2.0  │
-#&gt; │ 75%        ┆ 2.0  │
-#&gt; │ max        ┆ 2.0  │
-#&gt; └────────────┴──────┘
-#&gt; 
-#&gt; The key value of `a` is c and the key value of `b` is 3
-#&gt; shape: (9, 2)
-#&gt; ┌────────────┬──────┐
-#&gt; │ statistic  ┆ c    │
-#&gt; │ ---        ┆ ---  │
-#&gt; │ str        ┆ f64  │
-#&gt; ╞════════════╪══════╡
-#&gt; │ count      ┆ 1.0  │
-#&gt; │ null_count ┆ 0.0  │
-#&gt; │ mean       ┆ 1.0  │
-#&gt; │ std        ┆ null │
-#&gt; │ min        ┆ 1.0  │
-#&gt; │ 25%        ┆ 1.0  │
-#&gt; │ 50%        ┆ 1.0  │
-#&gt; │ 75%        ┆ 1.0  │
-#&gt; │ max        ┆ 1.0  │
-#&gt; └────────────┴──────┘
-#&gt; 
 #&gt; The key value of `a` is b and the key value of `b` is 2
 #&gt; shape: (9, 2)
 #&gt; ┌────────────┬──────┐
@@ -15599,6 +15563,24 @@ details.
 #&gt; │ 50%        ┆ 4.0  │
 #&gt; │ 75%        ┆ 4.0  │
 #&gt; │ max        ┆ 4.0  │
+#&gt; └────────────┴──────┘
+#&gt; 
+#&gt; The key value of `a` is b and the key value of `b` is 3
+#&gt; shape: (9, 2)
+#&gt; ┌────────────┬──────┐
+#&gt; │ statistic  ┆ c    │
+#&gt; │ ---        ┆ ---  │
+#&gt; │ str        ┆ f64  │
+#&gt; ╞════════════╪══════╡
+#&gt; │ count      ┆ 1.0  │
+#&gt; │ null_count ┆ 0.0  │
+#&gt; │ mean       ┆ 2.0  │
+#&gt; │ std        ┆ null │
+#&gt; │ min        ┆ 2.0  │
+#&gt; │ 25%        ┆ 2.0  │
+#&gt; │ 50%        ┆ 2.0  │
+#&gt; │ 75%        ┆ 2.0  │
+#&gt; │ max        ┆ 2.0  │
 #&gt; └────────────┴──────┘
 #&gt; 
 #&gt; The key value of `a` is a and the key value of `b` is 1
@@ -15618,6 +15600,24 @@ details.
 #&gt; │ 75%        ┆ 5.0      │
 #&gt; │ max        ┆ 5.0      │
 #&gt; └────────────┴──────────┘
+#&gt; 
+#&gt; The key value of `a` is c and the key value of `b` is 3
+#&gt; shape: (9, 2)
+#&gt; ┌────────────┬──────┐
+#&gt; │ statistic  ┆ c    │
+#&gt; │ ---        ┆ ---  │
+#&gt; │ str        ┆ f64  │
+#&gt; ╞════════════╪══════╡
+#&gt; │ count      ┆ 1.0  │
+#&gt; │ null_count ┆ 0.0  │
+#&gt; │ mean       ┆ 1.0  │
+#&gt; │ std        ┆ null │
+#&gt; │ min        ┆ 1.0  │
+#&gt; │ 25%        ┆ 1.0  │
+#&gt; │ 50%        ┆ 1.0  │
+#&gt; │ 75%        ┆ 1.0  │
+#&gt; │ max        ┆ 1.0  │
+#&gt; └────────────┴──────┘
 </code></pre></div>
 
 
@@ -15674,7 +15674,7 @@ details.
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.bd41221c.min.js"></script>
+      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
       
     
   </body>

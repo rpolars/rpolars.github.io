@@ -2,7 +2,7 @@
 
 # Compute the median of a Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L814)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L815)
 
 ## Description
 

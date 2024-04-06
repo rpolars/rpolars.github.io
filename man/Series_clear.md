@@ -2,7 +2,7 @@
 
 # Create an empty or n-row null-filled copy of the Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L1103)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L1104)
 
 ## Description
 
