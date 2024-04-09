@@ -541,6 +541,7 @@ nav:
             - sort: man/ExprArr_sort.md
             - std: man/ExprArr_std.md
             - sum: man/ExprArr_sum.md
+            - to_list: man/ExprArr_to_list.md
             - to_struct: man/ExprArr_to_struct.md
             - unique: man/ExprArr_unique.md
             - var: man/ExprArr_var.md

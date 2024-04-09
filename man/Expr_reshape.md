@@ -1,16 +1,16 @@
 
 
-# Reshape
+# Reshape this Expr to a flat Series or a Series of Lists
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2818)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L2828)
 
 ## Description
 
-Reshape an Expr to a flat Series or a Series of Lists.
+Reshape this Expr to a flat Series or a Series of Lists
 
 ## Usage
 
-<pre><code class='language-R'>Expr_reshape(dims)
+<pre><code class='language-R'>Expr_reshape(dimensions)
 </code></pre>
 
 ## Arguments
@@ -18,49 +18,91 @@ Reshape an Expr to a flat Series or a Series of Lists.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_reshape_:_dims">dims</code>
+<code id="Expr_reshape_:_dimensions">dimensions</code>
 </td>
 <td>
-Numeric vec of the dimension sizes. If a -1 is used in any of the
-dimensions, that dimension is inferred.
+A integer vector of length of the dimension size. If <code>-1</code> is
+used in any of the dimensions, that dimension is inferred. Currently,
+more than two dimensions not supported.
 </td>
 </tr>
 </table>
 
 ## Value
 
-Expr
+Expr. If a single dimension is given, results in an expression of the
+original data type. If a multiple dimensions are given, results in an
+expression of data type List with shape equal to the dimensions.
 
 ## Examples
 
 ``` r
 library(polars)
 
-pl$select(pl$lit(1:12)$reshape(c(3, 4)))
+df = pl$DataFrame(foo = 1:9)
+
+df$select(pl$col("foo")$reshape(9))
 ```
 
-    #> shape: (3, 1)
-    #> ┌───────────────┐
-    #> │               │
-    #> │ ---           │
-    #> │ list[i32]     │
-    #> ╞═══════════════╡
-    #> │ [1, 2, … 4]   │
-    #> │ [5, 6, … 8]   │
-    #> │ [9, 10, … 12] │
-    #> └───────────────┘
+    #> shape: (9, 1)
+    #> ┌─────┐
+    #> │ foo │
+    #> │ --- │
+    #> │ i32 │
+    #> ╞═════╡
+    #> │ 1   │
+    #> │ 2   │
+    #> │ 3   │
+    #> │ 4   │
+    #> │ 5   │
+    #> │ 6   │
+    #> │ 7   │
+    #> │ 8   │
+    #> │ 9   │
+    #> └─────┘
 
 ``` r
-pl$select(pl$lit(1:12)$reshape(c(3, -1)))
+df$select(pl$col("foo")$reshape(c(3, 3)))
 ```
 
     #> shape: (3, 1)
-    #> ┌───────────────┐
-    #> │               │
-    #> │ ---           │
-    #> │ list[i32]     │
-    #> ╞═══════════════╡
-    #> │ [1, 2, … 4]   │
-    #> │ [5, 6, … 8]   │
-    #> │ [9, 10, … 12] │
-    #> └───────────────┘
+    #> ┌───────────┐
+    #> │ foo       │
+    #> │ ---       │
+    #> │ list[i32] │
+    #> ╞═══════════╡
+    #> │ [1, 2, 3] │
+    #> │ [4, 5, 6] │
+    #> │ [7, 8, 9] │
+    #> └───────────┘
+
+``` r
+# Use `-1` to infer the other dimension
+df$select(pl$col("foo")$reshape(c(-1, 3)))
+```
+
+    #> shape: (3, 1)
+    #> ┌───────────┐
+    #> │ foo       │
+    #> │ ---       │
+    #> │ list[i32] │
+    #> ╞═══════════╡
+    #> │ [1, 2, 3] │
+    #> │ [4, 5, 6] │
+    #> │ [7, 8, 9] │
+    #> └───────────┘
+
+``` r
+df$select(pl$col("foo")$reshape(c(3, -1)))
+```
+
+    #> shape: (3, 1)
+    #> ┌───────────┐
+    #> │ foo       │
+    #> │ ---       │
+    #> │ list[i32] │
+    #> ╞═══════════╡
+    #> │ [1, 2, 3] │
+    #> │ [4, 5, 6] │
+    #> │ [7, 8, 9] │
+    #> └───────────┘

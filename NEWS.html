@@ -11309,6 +11309,27 @@
   
   
     <li class="md-nav__item">
+      <a href="man/ExprArr_to_list.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    to_list
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="man/ExprArr_to_struct.html" class="md-nav__link">
         
   
@@ -16734,6 +16755,7 @@ by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.</p>
 </li>
 <li>In <code>$dt$convert_time_zone()</code> and <code>$dt$replace_time_zone()</code>, the <code>tz</code> argument
   is renamed to <code>time_zone</code> (<a href="https://github.com/pola-rs/r-polars/issues/944">#944</a>).</li>
+<li>In <code>$reshape()</code>, the <code>dims</code> argument is renamed to <code>dimensions</code> (<a href="https://github.com/pola-rs/r-polars/issues/1019">#1019</a>).</li>
 <li>In <code>&lt;DataFrame&gt;$rolling()</code>, <code>&lt;LazyFrame&gt;$rolling()</code>, <code>&lt;DataFrame&gt;$group_by_dynamic()</code>
   and <code>&lt;LazyFrame&gt;$group_by_dynamic()</code>, the <code>by</code> argument is renamed to <code>group_by</code> (<a href="https://github.com/pola-rs/r-polars/issues/983">#983</a>).</li>
 <li>In <code>&lt;DataFrame&gt;$rolling()</code> and <code>&lt;DataFrame&gt;$group_by_dynamic()</code>, all arguments
@@ -16802,6 +16824,7 @@ by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.</p>
 <li>New functions <code>pl$int_range()</code> and <code>pl$int_ranges()</code> (<a href="https://github.com/pola-rs/r-polars/issues/968">#968</a>).</li>
 <li>New string method <code>$str$extract_groups()</code> (<a href="https://github.com/pola-rs/r-polars/issues/979">#979</a>).</li>
 <li>New string method <code>$str$find()</code> (<a href="https://github.com/pola-rs/r-polars/issues/985">#985</a>).</li>
+<li>New array method <code>$arr$to_list()</code> (<a href="https://github.com/pola-rs/r-polars/issues/1018">#1018</a>).</li>
 <li>New argument <code>n</code> in <code>$str$replace()</code> (<a href="https://github.com/pola-rs/r-polars/issues/987">#987</a>).</li>
 <li>Method <code>$over()</code> gains an argument <code>mapping_strategy</code> (<a href="https://github.com/pola-rs/r-polars/issues/984">#984</a>, <a href="https://github.com/pola-rs/r-polars/issues/988">#988</a>).</li>
 <li>New method <code>$item()</code> for <code>DataFrame</code> and <code>Series</code> (<a href="https://github.com/pola-rs/r-polars/issues/992">#992</a>).</li>
