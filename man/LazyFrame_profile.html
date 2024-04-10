@@ -15480,7 +15480,7 @@ TRUE)</code>.
 #&gt; │ str                 ┆ u64   ┆ u64 │
 #&gt; ╞═════════════════════╪═══════╪═════╡
 #&gt; │ optimization        ┆ 0     ┆ 29  │
-#&gt; │ projection(literal) ┆ 29    ┆ 79  │
+#&gt; │ projection(literal) ┆ 29    ┆ 81  │
 #&gt; └─────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Use $profile() to compare two queries</span>
@@ -15506,15 +15506,15 @@ TRUE)</code>.
 #&gt; 
 #&gt; $profile
 #&gt; shape: (3, 3)
-#&gt; ┌────────────────────┬───────┬─────┐
-#&gt; │ node               ┆ start ┆ end │
-#&gt; │ ---                ┆ ---   ┆ --- │
-#&gt; │ str                ┆ u64   ┆ u64 │
-#&gt; ╞════════════════════╪═══════╪═════╡
-#&gt; │ optimization       ┆ 0     ┆ 17  │
-#&gt; │ sort(Sepal.Length) ┆ 17    ┆ 399 │
-#&gt; │ group_by(Species)  ┆ 403   ┆ 700 │
-#&gt; └────────────────────┴───────┴─────┘
+#&gt; ┌────────────────────┬───────┬──────┐
+#&gt; │ node               ┆ start ┆ end  │
+#&gt; │ ---                ┆ ---   ┆ ---  │
+#&gt; │ str                ┆ u64   ┆ u64  │
+#&gt; ╞════════════════════╪═══════╪══════╡
+#&gt; │ optimization       ┆ 0     ┆ 15   │
+#&gt; │ sort(Sepal.Length) ┆ 15    ┆ 525  │
+#&gt; │ group_by(Species)  ┆ 528   ┆ 1006 │
+#&gt; └────────────────────┴───────┴──────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
@@ -15551,9 +15551,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ ---   │
 #&gt; │ str                ┆ u64   ┆ u64   │
 #&gt; ╞════════════════════╪═══════╪═══════╡
-#&gt; │ optimization       ┆ 0     ┆ 10    │
-#&gt; │ sort(Sepal.Length) ┆ 10    ┆ 6786  │
-#&gt; │ group_by(Species)  ┆ 6789  ┆ 65716 │
+#&gt; │ optimization       ┆ 0     ┆ 15    │
+#&gt; │ sort(Sepal.Length) ┆ 15    ┆ 586   │
+#&gt; │ group_by(Species)  ┆ 589   ┆ 63383 │
 #&gt; └────────────────────┴───────┴───────┘
 </code></pre></div>
 

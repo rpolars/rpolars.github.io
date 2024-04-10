@@ -16715,6 +16715,34 @@
 <h3 id="other-breaking-changes">Other breaking changes</h3>
 <ul>
 <li>
+<p>R objects inside an R list are now converted to Polars data types via
+  <code>as_polars_series()</code> (<a href="https://github.com/pola-rs/r-polars/issues/1021">#1021</a>). For example, up to polars 0.15.1,
+  data.frames inside a list were converted to a nested List type:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">nested_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="nf">data.frame</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">))))</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">#&gt; shape: (1, 1)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">#&gt; ┌─────────────────┐</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1">#&gt; │ nested_data     │</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">#&gt; │ ---             │</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1">#&gt; │ list[list[f64]] │</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1">#&gt; ╞═════════════════╡</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1">#&gt; │ [[1.0]]         │</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1">#&gt; └─────────────────┘</span>
+</code></pre></div>
+<p>From 0.16.0, data.frames inside a list are converted to the polars Struct type:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">pl</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">nested_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">lit</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="nf">data.frame</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">))))</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">#&gt; shape: (1, 1)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">#&gt; ┌─────────────────┐</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">#&gt; │ nested_data     │</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1">#&gt; │ ---             │</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1">#&gt; │ list[struct[1]] │</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1">#&gt; ╞═════════════════╡</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1">#&gt; │ [{1.0}]         │</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1">#&gt; └─────────────────┘</span>
+</code></pre></div>
+</li>
+</ul>
+<ul>
+<li>
 <p>Several functions have been rewritten to match the behavior of Python Polars.</p>
 <ul>
 <li>
@@ -16725,18 +16753,18 @@
 <li>
 <p>Using positional arguments in <code>pl$Series()</code> throws a warning, since the
   argument positions will be changed in the future (<a href="https://github.com/pola-rs/r-polars/issues/966">#966</a>).</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># polars 0.15.1 or earlier</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># The first argument is `x`, the second argument is `name`.</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># The code above will warn in 0.16.0</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># Use named arguments to silence the warning.</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># polars 0.17.0 or later (future version)</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># The first argument is `name`, the second argument is `values`.</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># polars 0.15.1 or earlier</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># The first argument is `x`, the second argument is `name`.</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># The code above will warn in 0.16.0</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># Use named arguments to silence the warning.</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1"># polars 0.17.0 or later (future version)</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1"># The first argument is `name`, the second argument is `values`.</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span>
 </code></pre></div>
 <p>This warning can also be silenced by replacing <code>pl$Series(&lt;values&gt;, &lt;name&gt;)</code>
 by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.</p>
@@ -16914,62 +16942,62 @@ by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.</p>
   and is displayed based on the system's time zone. Previous versions of <code>polars</code>
   only considered the internal value and interpreted it as UTC time, so the
   time displayed as <code>POSIXct</code> and in Polars was different.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># polars 0.14.1</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">TZ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Europe/Paris&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">datetime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.POSIXct</span><span class="p">(</span><span class="s">&quot;1900-01-01&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">datetime</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1">#&gt; [1] &quot;1900-01-01 PMT&quot;</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">polars</span><span class="o">::</span><span class="nf">as_polars_series</span><span class="p">(</span><span class="n">datetime</span><span class="p">)</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">s</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1">#&gt; polars Series: shape: (1,)</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1">#&gt; Series: &#39;&#39; [datetime[ms]]</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1">#&gt; [</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="c1">#&gt;  1899-12-31 23:50:39</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1">#&gt; ]</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="nf">as.vector</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="c1">#&gt; [1] &quot;1900-01-01 PMT&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># polars 0.14.1</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">TZ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Europe/Paris&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">datetime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.POSIXct</span><span class="p">(</span><span class="s">&quot;1900-01-01&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">datetime</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1">#&gt; [1] &quot;1900-01-01 PMT&quot;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">polars</span><span class="o">::</span><span class="nf">as_polars_series</span><span class="p">(</span><span class="n">datetime</span><span class="p">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">s</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1">#&gt; polars Series: shape: (1,)</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1">#&gt; Series: &#39;&#39; [datetime[ms]]</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1">#&gt; [</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="c1">#&gt;  1899-12-31 23:50:39</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c1">#&gt; ]</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="nf">as.vector</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="c1">#&gt; [1] &quot;1900-01-01 PMT&quot;</span>
 </code></pre></div>
 <p>Now the internal value is updated to match the displayed value.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># polars 0.15.0</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">TZ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Europe/Paris&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">datetime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.POSIXct</span><span class="p">(</span><span class="s">&quot;1900-01-01&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">datetime</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1">#&gt; [1] &quot;1900-01-01 PMT&quot;</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">polars</span><span class="o">::</span><span class="nf">as_polars_series</span><span class="p">(</span><span class="n">datetime</span><span class="p">)</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">s</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1">#&gt; polars Series: shape: (1,)</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1">#&gt; Series: &#39;&#39; [datetime[ms]]</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1">#&gt; [</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="c1">#&gt;  1900-01-01 00:00:00</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="c1">#&gt; ]</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="nf">as.vector</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="c1">#&gt; [1] &quot;1900-01-01 PMT&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># polars 0.15.0</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">TZ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Europe/Paris&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">datetime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.POSIXct</span><span class="p">(</span><span class="s">&quot;1900-01-01&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">datetime</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1">#&gt; [1] &quot;1900-01-01 PMT&quot;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">polars</span><span class="o">::</span><span class="nf">as_polars_series</span><span class="p">(</span><span class="n">datetime</span><span class="p">)</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="n">s</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c1">#&gt; polars Series: shape: (1,)</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1">#&gt; Series: &#39;&#39; [datetime[ms]]</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c1">#&gt; [</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="c1">#&gt;  1900-01-01 00:00:00</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="c1">#&gt; ]</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="nf">as.vector</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="c1">#&gt; [1] &quot;1900-01-01 PMT&quot;</span>
 </code></pre></div>
 <p>This update may cause errors when converting from Polars to <code>POSIXct</code> for non-existent
 or ambiguous times. It is recommended to explicitly add a time zone before converting
 from Polars to R.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">TZ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;America/New_York&quot;</span><span class="p">)</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">ambiguous_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.POSIXct</span><span class="p">(</span><span class="s">&quot;2020-11-01 01:00:00&quot;</span><span class="p">)</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">ambiguous_time</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1">#&gt; [1] &quot;2020-11-01 01:00:00 EDT&quot;</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">pls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">polars</span><span class="o">::</span><span class="nf">as_polars_series</span><span class="p">(</span><span class="n">ambiguous_time</span><span class="p">)</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">pls</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1">#&gt; polars Series: shape: (1,)</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1">#&gt; Series: &#39;&#39; [datetime[ms]]</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1">#&gt; [</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1">#&gt;  2020-11-01 01:00:00</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="c1">#&gt; ]</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c1">## This will be error!</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="c1"># pls |&gt; as.vector()</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="n">pls</span><span class="o">$</span><span class="n">dt</span><span class="o">$</span><span class="nf">replace_time_zone</span><span class="p">(</span><span class="s">&quot;UTC&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nf">as.vector</span><span class="p">()</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="c1">#&gt; [1] &quot;2020-11-01 01:00:00 UTC&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">TZ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;America/New_York&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">ambiguous_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.POSIXct</span><span class="p">(</span><span class="s">&quot;2020-11-01 01:00:00&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">ambiguous_time</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1">#&gt; [1] &quot;2020-11-01 01:00:00 EDT&quot;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">pls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">polars</span><span class="o">::</span><span class="nf">as_polars_series</span><span class="p">(</span><span class="n">ambiguous_time</span><span class="p">)</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">pls</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c1">#&gt; polars Series: shape: (1,)</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1">#&gt; Series: &#39;&#39; [datetime[ms]]</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1">#&gt; [</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1">#&gt;  2020-11-01 01:00:00</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="c1">#&gt; ]</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="c1">## This will be error!</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="c1"># pls |&gt; as.vector()</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="n">pls</span><span class="o">$</span><span class="n">dt</span><span class="o">$</span><span class="nf">replace_time_zone</span><span class="p">(</span><span class="s">&quot;UTC&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nf">as.vector</span><span class="p">()</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="c1">#&gt; [1] &quot;2020-11-01 01:00:00 UTC&quot;</span>
 </code></pre></div>
 </li>
 </ul>
@@ -17509,8 +17537,8 @@ a large amount of documentation improvements.</p>
 <li>
 <p><code>{polars}</code> can now be installed with "R source package with Rust library binary",
   by a mechanism copied from <a href="https://CRAN.R-project.org/package=prqlr">the prqlr package</a>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">NOT_CRAN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">)</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;polars&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">repos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://rpolars.r-universe.dev&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">NOT_CRAN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;polars&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">repos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://rpolars.r-universe.dev&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>The URL and SHA256 hash of the available binaries are recorded in <code>tools/lib-sums.tsv</code>.
 (<a href="https://github.com/pola-rs/r-polars/issues/435">#435</a>, <a href="https://github.com/pola-rs/r-polars/issues/448">#448</a>, <a href="https://github.com/pola-rs/r-polars/issues/450">#450</a>, <a href="https://github.com/pola-rs/r-polars/issues/451">#451</a>)</p>

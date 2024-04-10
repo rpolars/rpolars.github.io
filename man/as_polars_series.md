@@ -57,6 +57,9 @@ as_polars_series(x, name = NULL, ...)
 
 # S3 method for class 'clock_zoned_time'
 as_polars_series(x, name = NULL, ...)
+
+# S3 method for class 'list'
+as_polars_series(x, name = NULL, ...)
 </code></pre>
 
 ## Arguments

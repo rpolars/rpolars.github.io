@@ -170,10 +170,10 @@ pl$DataFrame(iris)$group_by("Species")$agg(e_sum, e_head)
     #> │           ┆ f64       ┆ f64       ┆ f64       ┆   ┆ list[f64] ┆ list[f64] ┆ list[f64] ┆ list[f64 │
     #> │           ┆           ┆           ┆           ┆   ┆           ┆           ┆           ┆ ]        │
     #> ╞═══════════╪═══════════╪═══════════╪═══════════╪═══╪═══════════╪═══════════╪═══════════╪══════════╡
-    #> │ virginica ┆ 329.4     ┆ 148.7     ┆ 277.6     ┆ … ┆ [6.3,     ┆ [3.3,     ┆ [6.0,     ┆ [2.5,    │
-    #> │           ┆           ┆           ┆           ┆   ┆ 5.8]      ┆ 2.7]      ┆ 5.1]      ┆ 1.9]     │
     #> │ versicolo ┆ 296.8     ┆ 138.5     ┆ 213.0     ┆ … ┆ [7.0,     ┆ [3.2,     ┆ [4.7,     ┆ [1.4,    │
     #> │ r         ┆           ┆           ┆           ┆   ┆ 6.4]      ┆ 3.2]      ┆ 4.5]      ┆ 1.5]     │
+    #> │ virginica ┆ 329.4     ┆ 148.7     ┆ 277.6     ┆ … ┆ [6.3,     ┆ [3.3,     ┆ [6.0,     ┆ [2.5,    │
+    #> │           ┆           ┆           ┆           ┆   ┆ 5.8]      ┆ 2.7]      ┆ 5.1]      ┆ 1.9]     │
     #> │ setosa    ┆ 250.3     ┆ 171.4     ┆ 73.1      ┆ … ┆ [5.1,     ┆ [3.5,     ┆ [1.4,     ┆ [0.2,    │
     #> │           ┆           ┆           ┆           ┆   ┆ 4.9]      ┆ 3.0]      ┆ 1.4]      ┆ 0.2]     │
     #> └───────────┴───────────┴───────────┴───────────┴───┴───────────┴───────────┴───────────┴──────────┘
@@ -239,7 +239,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   2.201   0.014   2.329
+    #>   2.401   0.008   2.846
 
 ``` r
 # Comparing this to the standard polars syntax:
@@ -251,7 +251,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.004   0.000   0.005
+    #>   0.001   0.003   0.004
 
 ``` r
 # Running in parallel --------------------------------
@@ -271,7 +271,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.030   0.003   1.243
+    #>   0.032   0.000   1.258
 
 ``` r
 # first run in parallel: there is some overhead to start up extra R processes
@@ -296,7 +296,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.010   0.004   1.055
+    #>   0.013   0.006   1.278
 
 ``` r
 # second run in parallel: this reuses R processes in "polars global_rpool".
@@ -317,4 +317,4 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.017   0.001   0.336
+    #>   0.015   0.000   0.344

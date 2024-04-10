@@ -220,7 +220,7 @@ pl$LazyFrame()$select(pl$lit(2) + 2)$profile()
     #> │ str                 ┆ u64   ┆ u64 │
     #> ╞═════════════════════╪═══════╪═════╡
     #> │ optimization        ┆ 0     ┆ 29  │
-    #> │ projection(literal) ┆ 29    ┆ 79  │
+    #> │ projection(literal) ┆ 29    ┆ 81  │
     #> └─────────────────────┴───────┴─────┘
 
 ``` r
@@ -248,15 +248,15 @@ pl$LazyFrame(iris)$
     #> 
     #> $profile
     #> shape: (3, 3)
-    #> ┌────────────────────┬───────┬─────┐
-    #> │ node               ┆ start ┆ end │
-    #> │ ---                ┆ ---   ┆ --- │
-    #> │ str                ┆ u64   ┆ u64 │
-    #> ╞════════════════════╪═══════╪═════╡
-    #> │ optimization       ┆ 0     ┆ 17  │
-    #> │ sort(Sepal.Length) ┆ 17    ┆ 399 │
-    #> │ group_by(Species)  ┆ 403   ┆ 700 │
-    #> └────────────────────┴───────┴─────┘
+    #> ┌────────────────────┬───────┬──────┐
+    #> │ node               ┆ start ┆ end  │
+    #> │ ---                ┆ ---   ┆ ---  │
+    #> │ str                ┆ u64   ┆ u64  │
+    #> ╞════════════════════╪═══════╪══════╡
+    #> │ optimization       ┆ 0     ┆ 15   │
+    #> │ sort(Sepal.Length) ┆ 15    ┆ 525  │
+    #> │ group_by(Species)  ┆ 528   ┆ 1006 │
+    #> └────────────────────┴───────┴──────┘
 
 ``` r
 # -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)
@@ -295,7 +295,7 @@ pl$LazyFrame(iris)$
     #> │ ---                ┆ ---   ┆ ---   │
     #> │ str                ┆ u64   ┆ u64   │
     #> ╞════════════════════╪═══════╪═══════╡
-    #> │ optimization       ┆ 0     ┆ 10    │
-    #> │ sort(Sepal.Length) ┆ 10    ┆ 6786  │
-    #> │ group_by(Species)  ┆ 6789  ┆ 65716 │
+    #> │ optimization       ┆ 0     ┆ 15    │
+    #> │ sort(Sepal.Length) ┆ 15    ┆ 586   │
+    #> │ group_by(Species)  ┆ 589   ┆ 63383 │
     #> └────────────────────┴───────┴───────┘
