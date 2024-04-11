@@ -15239,9 +15239,12 @@
 
 
 <h1 id="create-struct-datatype">Create Struct DataType</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L227"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L253"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>Struct DataType Constructor</p>
+<p>One can create a <code>Struct</code> data type with
+<code>pl$Struct()</code>. There are also multiple ways to create columns
+of data type <code>Struct</code> in a <code>DataFrame</code> or a
+<code>Series</code>, see the examples.</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>DataType_Struct(...)
 </code></pre>
@@ -15290,169 +15293,82 @@ RPolarsDataType objects
 #&gt;     ],
 #&gt; )
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Find any DataType via pl$dtypes</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nf">print</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="n">dtypes</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>#&gt; $Boolean
-#&gt; DataType: Boolean
-#&gt; 
-#&gt; $UInt8
-#&gt; DataType: UInt8
-#&gt; 
-#&gt; $UInt16
-#&gt; DataType: UInt16
-#&gt; 
-#&gt; $UInt32
-#&gt; DataType: UInt32
-#&gt; 
-#&gt; $UInt64
-#&gt; DataType: UInt64
-#&gt; 
-#&gt; $Int8
-#&gt; DataType: Int8
-#&gt; 
-#&gt; $Int16
-#&gt; DataType: Int16
-#&gt; 
-#&gt; $Int32
-#&gt; DataType: Int32
-#&gt; 
-#&gt; $Int64
-#&gt; DataType: Int64
-#&gt; 
-#&gt; $Float32
-#&gt; DataType: Float32
-#&gt; 
-#&gt; $Float64
-#&gt; DataType: Float64
-#&gt; 
-#&gt; $String
-#&gt; DataType: String
-#&gt; 
-#&gt; $Binary
-#&gt; DataType: Binary
-#&gt; 
-#&gt; $Date
-#&gt; DataType: Date
-#&gt; 
-#&gt; $Time
-#&gt; DataType: Time
-#&gt; 
-#&gt; $Null
-#&gt; DataType: Null
-#&gt; 
-#&gt; $Unknown
-#&gt; DataType: Unknown
-#&gt; 
-#&gt; $Utf8
-#&gt; DataType: String
-#&gt; 
-#&gt; $Array
-#&gt; function(datatype = &quot;unknown&quot;, width) {
-#&gt;   if (is.character(datatype) &amp;&amp; length(datatype) == 1) {
-#&gt;     datatype = .pr$DataType$new(datatype)
-#&gt;   }
-#&gt;   if (!inherits(datatype, &quot;RPolarsDataType&quot;)) {
-#&gt;     stop(paste(
-#&gt;       &quot;input for generating a array DataType must be another DataType&quot;,
-#&gt;       &quot;or an interpretable name thereof.&quot;
-#&gt;     ))
-#&gt;   }
-#&gt;   .pr$DataType$new_array(datatype, width) |&gt;
-#&gt;     unwrap(&quot;in pl$Array():&quot;)
-#&gt; }
-#&gt; &lt;bytecode: 0x561641b121e0&gt;
-#&gt; &lt;environment: namespace:polars&gt;
-#&gt; 
-#&gt; $Categorical
-#&gt; function(ordering = &quot;physical&quot;) {
-#&gt;   .pr$DataType$new_categorical(ordering) |&gt; unwrap()
-#&gt; }
-#&gt; &lt;bytecode: 0x561641b23f28&gt;
-#&gt; &lt;environment: namespace:polars&gt;
-#&gt; 
-#&gt; $Datetime
-#&gt; function(time_unit = &quot;us&quot;, time_zone = NULL) {
-#&gt;   if (!is.null(time_zone) &amp;&amp; !isTRUE(time_zone %in% c(base::OlsonNames(), &quot;*&quot;))) {
-#&gt;     sprintf(
-#&gt;       &quot;The time zone &#39;%s&#39; is not supported in polars. See `base::OlsonNames()` for supported time zones.&quot;,
-#&gt;       time_zone
-#&gt;     ) |&gt;
-#&gt;       Err_plain() |&gt;
-#&gt;       unwrap(&quot;in $Datetime():&quot;)
-#&gt;   }
-#&gt;   unwrap(.pr$DataType$new_datetime(time_unit, time_zone))
-#&gt; }
-#&gt; &lt;bytecode: 0x561641b24cc8&gt;
-#&gt; &lt;environment: namespace:polars&gt;
-#&gt; 
-#&gt; $Duration
-#&gt; function(time_unit = &quot;us&quot;) {
-#&gt;   unwrap(.pr$DataType$new_duration(time_unit))
-#&gt; }
-#&gt; &lt;bytecode: 0x561641b36b30&gt;
-#&gt; &lt;environment: namespace:polars&gt;
-#&gt; 
-#&gt; $List
-#&gt; function(datatype = &quot;unknown&quot;) {
-#&gt;   if (is.character(datatype) &amp;&amp; length(datatype) == 1) {
-#&gt;     datatype = .pr$DataType$new(datatype)
-#&gt;   }
-#&gt;   if (!inherits(datatype, &quot;RPolarsDataType&quot;)) {
-#&gt;     stop(paste(
-#&gt;       &quot;input for generating a list DataType must be another DataType&quot;,
-#&gt;       &quot;or an interpretable name thereof.&quot;
-#&gt;     ))
-#&gt;   }
-#&gt;   .pr$DataType$new_list(datatype)
-#&gt; }
-#&gt; &lt;bytecode: 0x561641b37908&gt;
-#&gt; &lt;environment: namespace:polars&gt;
-#&gt; 
-#&gt; $Struct
-#&gt; function(...) {
-#&gt;   result({
-#&gt;     largs = list2(...)
-#&gt;     if (length(largs) &gt;= 1 &amp;&amp; is.list(largs[[1]])) {
-#&gt;       largs = largs[[1]]
-#&gt;       element_name = &quot;list element&quot;
-#&gt;     } else {
-#&gt;       element_name = &quot;positional argument&quot;
-#&gt;     }
-#&gt;     mapply(
-#&gt;       names(largs) %||% character(length(largs)),
-#&gt;       largs,
-#&gt;       seq_along(largs),
-#&gt;       FUN = \(name, arg, i) {
-#&gt;         if (inherits(arg, &quot;RPolarsDataType&quot;)) {
-#&gt;           return(pl$Field(name, arg))
-#&gt;         }
-#&gt;         if (inherits(arg, &quot;RPolarsRField&quot;)) {
-#&gt;           return(arg)
-#&gt;         }
-#&gt;         stop(sprintf(
-#&gt;           &quot;%s [%s] {name:&#39;%s&#39;, value:%s} must either be a Field (pl$Field) or a named DataType&quot;,
-#&gt;           element_name, i, name, arg
-#&gt;         ))
-#&gt;       }, SIMPLIFY = FALSE
-#&gt;     )
-#&gt;   }) |&gt;
-#&gt;     and_then(DataType$new_struct) |&gt;
-#&gt;     unwrap(&quot;in pl$Struct:&quot;)
-#&gt; }
-#&gt; &lt;bytecode: 0x561641b41eb0&gt;
-#&gt; &lt;environment: namespace:polars&gt;
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># check if an element is any kind of Struct()</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">Struct</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="n">UInt64</span><span class="p">)</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">same_outer_dt</span><span class="p">(</span><span class="n">test</span><span class="p">,</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">Struct</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># check if an element is any kind of Struct()</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">Struct</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="n">UInt64</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">same_outer_dt</span><span class="p">(</span><span class="n">test</span><span class="p">,</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">Struct</span><span class="p">())</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [1] TRUE
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># `test` is a type of Struct, but it doesn&#39;t mean it is equal to an empty Struct</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">test</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">Struct</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># `test` is a type of Struct, but it doesn&#39;t mean it is equal to an empty Struct</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">test</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">Struct</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [1] FALSE
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># The way to create a `Series` of type `Struct` is a bit convoluted as it involves</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># `data.frame()`, `list()`, and `I()`:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nf">as_polars_series</span><span class="p">(</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">I</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;y&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;z&quot;</span><span class="p">)))</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (2,)
+#&gt; Series: &#39;&#39; [struct[2]]
+#&gt; [
+#&gt;  {1,[&quot;x&quot;, &quot;y&quot;]}
+#&gt;  {2,[&quot;z&quot;]}
+#&gt; ]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># A slightly simpler way would be via `tibble::tibble()` or</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># `data.table::data.table()`:</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nf">if </span><span class="p">(</span><span class="nf">requireNamespace</span><span class="p">(</span><span class="s">&quot;tibble&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">quietly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nf">as_polars_series</span><span class="p">(</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="n">tibble</span><span class="o">::</span><span class="nf">tibble</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;y&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;z&quot;</span><span class="p">))</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="p">)</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (2,)
+#&gt; Series: &#39;&#39; [struct[2]]
+#&gt; [
+#&gt;  {1,[&quot;x&quot;, &quot;y&quot;]}
+#&gt;  {2,[&quot;z&quot;]}
+#&gt; ]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Finally, one can use the method `$to_struct()` to convert existing columns</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># or `Series` to a `Struct`:</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pl</span><span class="o">$</span><span class="nf">DataFrame</span><span class="p">(</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;y&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;z&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">)</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">to_struct</span><span class="p">())</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="n">out</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; shape: (2, 1)
+#&gt; ┌────────────────┐
+#&gt; │ a              │
+#&gt; │ ---            │
+#&gt; │ struct[2]      │
+#&gt; ╞════════════════╡
+#&gt; │ {1,[&quot;x&quot;, &quot;y&quot;]} │
+#&gt; │ {2,[&quot;z&quot;]}      │
+#&gt; └────────────────┘
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">out</span><span class="o">$</span><span class="n">schema</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; $a
+#&gt; DataType: Struct(
+#&gt;     [
+#&gt;         Field {
+#&gt;             name: &quot;a&quot;,
+#&gt;             dtype: Int32,
+#&gt;         },
+#&gt;         Field {
+#&gt;             name: &quot;b&quot;,
+#&gt;             dtype: List(
+#&gt;                 String,
+#&gt;             ),
+#&gt;         },
+#&gt;     ],
+#&gt; )
 </code></pre></div>
 
 

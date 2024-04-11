@@ -2,11 +2,14 @@
 
 # Create Struct DataType
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L227)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L253)
 
 ## Description
 
-Struct DataType Constructor
+One can create a <code>Struct</code> data type with
+<code>pl$Struct()</code>. There are also multiple ways to create columns
+of data type <code>Struct</code> in a <code>DataFrame</code> or a
+<code>Series</code>, see the examples.
 
 ## Usage
 
@@ -66,161 +69,6 @@ pl$Struct(foo = pl$Int32, bar = pl$Float64)
     #> )
 
 ``` r
-# Find any DataType via pl$dtypes
-print(pl$dtypes)
-```
-
-    #> $Boolean
-    #> DataType: Boolean
-    #> 
-    #> $UInt8
-    #> DataType: UInt8
-    #> 
-    #> $UInt16
-    #> DataType: UInt16
-    #> 
-    #> $UInt32
-    #> DataType: UInt32
-    #> 
-    #> $UInt64
-    #> DataType: UInt64
-    #> 
-    #> $Int8
-    #> DataType: Int8
-    #> 
-    #> $Int16
-    #> DataType: Int16
-    #> 
-    #> $Int32
-    #> DataType: Int32
-    #> 
-    #> $Int64
-    #> DataType: Int64
-    #> 
-    #> $Float32
-    #> DataType: Float32
-    #> 
-    #> $Float64
-    #> DataType: Float64
-    #> 
-    #> $String
-    #> DataType: String
-    #> 
-    #> $Binary
-    #> DataType: Binary
-    #> 
-    #> $Date
-    #> DataType: Date
-    #> 
-    #> $Time
-    #> DataType: Time
-    #> 
-    #> $Null
-    #> DataType: Null
-    #> 
-    #> $Unknown
-    #> DataType: Unknown
-    #> 
-    #> $Utf8
-    #> DataType: String
-    #> 
-    #> $Array
-    #> function(datatype = "unknown", width) {
-    #>   if (is.character(datatype) && length(datatype) == 1) {
-    #>     datatype = .pr$DataType$new(datatype)
-    #>   }
-    #>   if (!inherits(datatype, "RPolarsDataType")) {
-    #>     stop(paste(
-    #>       "input for generating a array DataType must be another DataType",
-    #>       "or an interpretable name thereof."
-    #>     ))
-    #>   }
-    #>   .pr$DataType$new_array(datatype, width) |>
-    #>     unwrap("in pl$Array():")
-    #> }
-    #> <bytecode: 0x561641b121e0>
-    #> <environment: namespace:polars>
-    #> 
-    #> $Categorical
-    #> function(ordering = "physical") {
-    #>   .pr$DataType$new_categorical(ordering) |> unwrap()
-    #> }
-    #> <bytecode: 0x561641b23f28>
-    #> <environment: namespace:polars>
-    #> 
-    #> $Datetime
-    #> function(time_unit = "us", time_zone = NULL) {
-    #>   if (!is.null(time_zone) && !isTRUE(time_zone %in% c(base::OlsonNames(), "*"))) {
-    #>     sprintf(
-    #>       "The time zone '%s' is not supported in polars. See `base::OlsonNames()` for supported time zones.",
-    #>       time_zone
-    #>     ) |>
-    #>       Err_plain() |>
-    #>       unwrap("in $Datetime():")
-    #>   }
-    #>   unwrap(.pr$DataType$new_datetime(time_unit, time_zone))
-    #> }
-    #> <bytecode: 0x561641b24cc8>
-    #> <environment: namespace:polars>
-    #> 
-    #> $Duration
-    #> function(time_unit = "us") {
-    #>   unwrap(.pr$DataType$new_duration(time_unit))
-    #> }
-    #> <bytecode: 0x561641b36b30>
-    #> <environment: namespace:polars>
-    #> 
-    #> $List
-    #> function(datatype = "unknown") {
-    #>   if (is.character(datatype) && length(datatype) == 1) {
-    #>     datatype = .pr$DataType$new(datatype)
-    #>   }
-    #>   if (!inherits(datatype, "RPolarsDataType")) {
-    #>     stop(paste(
-    #>       "input for generating a list DataType must be another DataType",
-    #>       "or an interpretable name thereof."
-    #>     ))
-    #>   }
-    #>   .pr$DataType$new_list(datatype)
-    #> }
-    #> <bytecode: 0x561641b37908>
-    #> <environment: namespace:polars>
-    #> 
-    #> $Struct
-    #> function(...) {
-    #>   result({
-    #>     largs = list2(...)
-    #>     if (length(largs) >= 1 && is.list(largs[[1]])) {
-    #>       largs = largs[[1]]
-    #>       element_name = "list element"
-    #>     } else {
-    #>       element_name = "positional argument"
-    #>     }
-    #>     mapply(
-    #>       names(largs) %||% character(length(largs)),
-    #>       largs,
-    #>       seq_along(largs),
-    #>       FUN = \(name, arg, i) {
-    #>         if (inherits(arg, "RPolarsDataType")) {
-    #>           return(pl$Field(name, arg))
-    #>         }
-    #>         if (inherits(arg, "RPolarsRField")) {
-    #>           return(arg)
-    #>         }
-    #>         stop(sprintf(
-    #>           "%s [%s] {name:'%s', value:%s} must either be a Field (pl$Field) or a named DataType",
-    #>           element_name, i, name, arg
-    #>         ))
-    #>       }, SIMPLIFY = FALSE
-    #>     )
-    #>   }) |>
-    #>     and_then(DataType$new_struct) |>
-    #>     unwrap("in pl$Struct:")
-    #> }
-    #> <bytecode: 0x561641b41eb0>
-    #> <environment: namespace:polars>
-
-``` r
 # check if an element is any kind of Struct()
 test = pl$Struct(pl$UInt64)
 pl$same_outer_dt(test, pl$Struct())
@@ -234,3 +82,77 @@ test == pl$Struct()
 ```
 
     #> [1] FALSE
+
+``` r
+# The way to create a `Series` of type `Struct` is a bit convoluted as it involves
+# `data.frame()`, `list()`, and `I()`:
+as_polars_series(
+  data.frame(a = 1:2, b = I(list(c("x", "y"), "z")))
+)
+```
+
+    #> polars Series: shape: (2,)
+    #> Series: '' [struct[2]]
+    #> [
+    #>  {1,["x", "y"]}
+    #>  {2,["z"]}
+    #> ]
+
+``` r
+# A slightly simpler way would be via `tibble::tibble()` or
+# `data.table::data.table()`:
+if (requireNamespace("tibble", quietly = TRUE)) {
+  as_polars_series(
+    tibble::tibble(a = 1:2, b = list(c("x", "y"), "z"))
+  )
+}
+```
+
+    #> polars Series: shape: (2,)
+    #> Series: '' [struct[2]]
+    #> [
+    #>  {1,["x", "y"]}
+    #>  {2,["z"]}
+    #> ]
+
+``` r
+# Finally, one can use the method `$to_struct()` to convert existing columns
+# or `Series` to a `Struct`:
+x = pl$DataFrame(
+  a = 1:2,
+  b = list(c("x", "y"), "z")
+)
+
+out = x$select(pl$col("a", "b")$to_struct())
+out
+```
+
+    #> shape: (2, 1)
+    #> ┌────────────────┐
+    #> │ a              │
+    #> │ ---            │
+    #> │ struct[2]      │
+    #> ╞════════════════╡
+    #> │ {1,["x", "y"]} │
+    #> │ {2,["z"]}      │
+    #> └────────────────┘
+
+``` r
+out$schema
+```
+
+    #> $a
+    #> DataType: Struct(
+    #>     [
+    #>         Field {
+    #>             name: "a",
+    #>             dtype: Int32,
+    #>         },
+    #>         Field {
+    #>             name: "b",
+    #>             dtype: List(
+    #>                 String,
+    #>             ),
+    #>         },
+    #>     ],
+    #> )
