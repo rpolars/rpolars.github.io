@@ -15239,7 +15239,7 @@
 
 
 <h1 id="to-polars-series">To polars Series</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/as_polars.R#L325"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/as_polars.R#L328"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p><code>as_polars_series()</code> is a generic function that converts an R
 object to a polars Series.</p>
@@ -15369,7 +15369,7 @@ in contiguous memory.
 #&gt;  {4}
 #&gt; ]
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nf">as_polars_series</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nf">as_polars_series</span><span class="p">(</span><span class="nf">as_polars_series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">))</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (4,)
 #&gt; Series: &#39;foo&#39; [i32]
@@ -15389,6 +15389,15 @@ in contiguous memory.
 #&gt;  2
 #&gt;  3
 #&gt;  4
+#&gt; ]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Nested type support</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nf">as_polars_series</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="nf">data.frame</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">I</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">)))))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#&gt; polars Series: shape: (1,)
+#&gt; Series: &#39;&#39; [list[struct[1]]]
+#&gt; [
+#&gt;  [{[1, 2, … 4]}]
 #&gt; ]
 </code></pre></div>
 

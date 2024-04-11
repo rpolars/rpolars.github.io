@@ -2,7 +2,7 @@
 
 # To polars Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/as_polars.R#L325)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/as_polars.R#L328)
 
 ## Description
 
@@ -147,7 +147,7 @@ as_polars_series(data.frame(a = 1:4))
     #> ]
 
 ``` r
-as_polars_series(pl$Series(1:4, name = "foo"))
+as_polars_series(as_polars_series(1:4, name = "foo"))
 ```
 
     #> polars Series: shape: (4,)
@@ -170,4 +170,15 @@ as_polars_series(pl$lit(1:4))
     #>  2
     #>  3
     #>  4
+    #> ]
+
+``` r
+# Nested type support
+as_polars_series(list(data.frame(a = I(list(1:4)))))
+```
+
+    #> polars Series: shape: (1,)
+    #> Series: '' [list[struct[1]]]
+    #> [
+    #>  [{[1, 2, … 4]}]
     #> ]

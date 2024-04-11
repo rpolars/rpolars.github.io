@@ -16716,7 +16716,7 @@
 <ul>
 <li>
 <p>R objects inside an R list are now converted to Polars data types via
-  <code>as_polars_series()</code> (<a href="https://github.com/pola-rs/r-polars/issues/1021">#1021</a>, <a href="https://github.com/pola-rs/r-polars/issues/1022">#1022</a>). For example, up to polars 0.15.1,
+  <code>as_polars_series()</code> (<a href="https://github.com/pola-rs/r-polars/issues/1021">#1021</a>, <a href="https://github.com/pola-rs/r-polars/issues/1022">#1022</a>, <a href="https://github.com/pola-rs/r-polars/issues/1023">#1023</a>). For example, up to polars 0.15.1,
   a list containing a data.frame with a column of <code>{clock}</code> naive-time class
   was converted to a nested List type of Float64:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clock</span><span class="o">::</span><span class="nf">naive_time_parse</span><span class="p">(</span><span class="s">&quot;1990-01-01&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">precision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;day&quot;</span><span class="p">))</span>
