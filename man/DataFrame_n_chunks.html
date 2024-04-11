@@ -453,7 +453,7 @@
         
   
   <span class="md-ellipsis">
-    Polars User Guide
+    User Guide
   </span>
   
 
@@ -474,7 +474,28 @@
         
   
   <span class="md-ellipsis">
-    Optimize `polars` performance
+    Optimize polars performance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vignettes/differences-with-python.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Differences with Python
   </span>
   
 
@@ -15382,10 +15403,10 @@ FALSE</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nf">lapply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">tracemem</span><span class="p">)</span><span class="w"> </span><span class="c1"># trace chunks to verify no re-allocation</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [[1]]
-#&gt; [1] &quot;&lt;0x55924613df88&gt;&quot;
+#&gt; [1] &quot;&lt;0x5599eee94a78&gt;&quot;
 #&gt; 
 #&gt; [[2]]
-#&gt; [1] &quot;&lt;0x559242fe8420&gt;&quot;
+#&gt; [1] &quot;&lt;0x5599ebd3e420&gt;&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">z</span><span class="w"> </span><span class="c1"># looks like a plain vector</span>
@@ -15395,16 +15416,16 @@ FALSE</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nf">lapply</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="w"> </span><span class="n">tracemem</span><span class="p">)</span><span class="w"> </span><span class="c1"># mem allocation  in z are the same from x</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; [[1]]
-#&gt; [1] &quot;&lt;0x55924613df88&gt;&quot;
+#&gt; [1] &quot;&lt;0x5599eee94a78&gt;&quot;
 #&gt; 
 #&gt; [[2]]
-#&gt; [1] &quot;&lt;0x559242fe8420&gt;&quot;
+#&gt; [1] &quot;&lt;0x5599ebd3e420&gt;&quot;
 #&gt; 
 #&gt; [[3]]
-#&gt; [1] &quot;&lt;0x55924613df88&gt;&quot;
+#&gt; [1] &quot;&lt;0x5599eee94a78&gt;&quot;
 #&gt; 
 #&gt; [[4]]
-#&gt; [1] &quot;&lt;0x559242fe8420&gt;&quot;
+#&gt; [1] &quot;&lt;0x5599ebd3e420&gt;&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nf">str</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 </code></pre></div>

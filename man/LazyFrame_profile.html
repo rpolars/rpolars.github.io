@@ -453,7 +453,7 @@
         
   
   <span class="md-ellipsis">
-    Polars User Guide
+    User Guide
   </span>
   
 
@@ -474,7 +474,28 @@
         
   
   <span class="md-ellipsis">
-    Optimize `polars` performance
+    Optimize polars performance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vignettes/differences-with-python.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Differences with Python
   </span>
   
 
@@ -15479,8 +15500,8 @@ TRUE)</code>.
 #&gt; │ ---                 ┆ ---   ┆ --- │
 #&gt; │ str                 ┆ u64   ┆ u64 │
 #&gt; ╞═════════════════════╪═══════╪═════╡
-#&gt; │ optimization        ┆ 0     ┆ 470 │
-#&gt; │ projection(literal) ┆ 470   ┆ 775 │
+#&gt; │ optimization        ┆ 0     ┆ 27  │
+#&gt; │ projection(literal) ┆ 27    ┆ 118 │
 #&gt; └─────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Use $profile() to compare two queries</span>
@@ -15511,9 +15532,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ --- │
 #&gt; │ str                ┆ u64   ┆ u64 │
 #&gt; ╞════════════════════╪═══════╪═════╡
-#&gt; │ optimization       ┆ 0     ┆ 11  │
-#&gt; │ sort(Sepal.Length) ┆ 11    ┆ 174 │
-#&gt; │ group_by(Species)  ┆ 177   ┆ 352 │
+#&gt; │ optimization       ┆ 0     ┆ 13  │
+#&gt; │ sort(Sepal.Length) ┆ 13    ┆ 246 │
+#&gt; │ group_by(Species)  ┆ 249   ┆ 584 │
 #&gt; └────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)</span>
@@ -15551,9 +15572,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ ---   │
 #&gt; │ str                ┆ u64   ┆ u64   │
 #&gt; ╞════════════════════╪═══════╪═══════╡
-#&gt; │ optimization       ┆ 0     ┆ 6     │
-#&gt; │ sort(Sepal.Length) ┆ 6     ┆ 148   │
-#&gt; │ group_by(Species)  ┆ 151   ┆ 36350 │
+#&gt; │ optimization       ┆ 0     ┆ 9     │
+#&gt; │ sort(Sepal.Length) ┆ 9     ┆ 554   │
+#&gt; │ group_by(Species)  ┆ 557   ┆ 57391 │
 #&gt; └────────────────────┴───────┴───────┘
 </code></pre></div>
 
