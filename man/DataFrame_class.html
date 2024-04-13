@@ -6536,6 +6536,27 @@
   
   
     <li class="md-nav__item">
+      <a href="IO_write_ipc.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    write_ipc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="IO_write_json.html" class="md-nav__link">
         
   
@@ -15400,8 +15421,8 @@ withr::with_envvar(
 #&gt; [57] &quot;tail&quot;             &quot;to_data_frame&quot;    &quot;to_list&quot;          &quot;to_series&quot;       
 #&gt; [61] &quot;to_struct&quot;        &quot;transpose&quot;        &quot;unique&quot;           &quot;unnest&quot;          
 #&gt; [65] &quot;var&quot;              &quot;width&quot;            &quot;with_columns&quot;     &quot;with_columns_seq&quot;
-#&gt; [69] &quot;with_row_index&quot;   &quot;write_csv&quot;        &quot;write_json&quot;       &quot;write_ndjson&quot;    
-#&gt; [73] &quot;write_parquet&quot;
+#&gt; [69] &quot;with_row_index&quot;   &quot;write_csv&quot;        &quot;write_ipc&quot;        &quot;write_json&quot;      
+#&gt; [73] &quot;write_ndjson&quot;     &quot;write_parquet&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># see all private methods (not intended for regular use)</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nf">ls</span><span class="p">(</span><span class="n">.pr</span><span class="o">$</span><span class="n">DataFrame</span><span class="p">)</span>
@@ -15427,8 +15448,9 @@ withr::with_envvar(
 #&gt; [37] &quot;to_struct&quot;                 &quot;transpose&quot;                
 #&gt; [39] &quot;unnest&quot;                    &quot;with_columns&quot;             
 #&gt; [41] &quot;with_columns_seq&quot;          &quot;with_row_index&quot;           
-#&gt; [43] &quot;write_csv&quot;                 &quot;write_json&quot;               
-#&gt; [45] &quot;write_ndjson&quot;              &quot;write_parquet&quot;
+#&gt; [43] &quot;write_csv&quot;                 &quot;write_ipc&quot;                
+#&gt; [45] &quot;write_json&quot;                &quot;write_ndjson&quot;             
+#&gt; [47] &quot;write_parquet&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># make an object</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as_polars_df</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>

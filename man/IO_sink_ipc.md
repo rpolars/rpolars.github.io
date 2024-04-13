@@ -14,7 +14,7 @@ was collected into R.
 <pre><code class='language-R'>LazyFrame_sink_ipc(
   path,
   ...,
-  compression = "zstd",
+  compression = c("zstd", "lz4", "uncompressed"),
   maintain_order = TRUE,
   type_coercion = TRUE,
   predicate_pushdown = TRUE,
@@ -50,9 +50,11 @@ Ignored.
 <code id="LazyFrame_sink_ipc_:_compression">compression</code>
 </td>
 <td>
-<code>NULL</code> or string, the compression method. One of
-<code>NULL</code>, "lz4" or "zstd". Choose "zstd" for good compression
-performance. Choose "lz4" for fast compression/decompression.
+<code>NULL</code> or a character of the compression method,
+<code>“uncompressed”</code> or "lz4" or "zstd". <code>NULL</code> is
+equivalent to <code>“uncompressed”</code>. Choose "zstd" for good
+compression performance. Choose "lz4" for fast
+compression/decompression.
 </td>
 </tr>
 <tr>

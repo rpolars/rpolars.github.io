@@ -13,10 +13,10 @@ Import data in Apache Arrow IPC format
   ...,
   n_rows = NULL,
   cache = TRUE,
-  rechunk = TRUE,
+  rechunk = FALSE,
   row_index_name = NULL,
   row_index_offset = 0L,
-  memmap = TRUE
+  memory_map = TRUE
 )
 </code></pre>
 
@@ -84,10 +84,12 @@ Offset to start the row index column (only used if the name is set).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_scan_ipc_:_memmap">memmap</code>
+<code id="pl_scan_ipc_:_memory_map">memory_map</code>
 </td>
 <td>
-bool, mapped memory
+A logical. If <code>TRUE</code>, try to memory map the file. This can
+greatly improve performance on repeated queries as the OS may cache
+pages. Only uncompressed Arrow IPC files can be memory mapped.
 </td>
 </tr>
 </table>

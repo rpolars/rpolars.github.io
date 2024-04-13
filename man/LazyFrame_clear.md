@@ -2,7 +2,7 @@
 
 # Create an empty or n-row null-filled copy of the LazyFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L2067)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L2068)
 
 ## Description
 

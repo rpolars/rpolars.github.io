@@ -6442,6 +6442,27 @@
   
   
     <li class="md-nav__item">
+      <a href="man/IO_write_ipc.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    write_ipc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="man/IO_write_json.html" class="md-nav__link">
         
   
@@ -16737,12 +16758,13 @@ a List type of Struct type containing a Datetime type.</p>
 <li>In <code>pl$Series()</code>, the argument <code>x</code> is renamed <code>values</code> (<a href="https://github.com/pola-rs/r-polars/issues/933">#933</a>).</li>
 <li>In <code>&lt;DataFrame&gt;$write_*</code> functions, the first argument is now <code>file</code> (<a href="https://github.com/pola-rs/r-polars/issues/935">#935</a>).</li>
 <li>In <code>&lt;LazyFrame&gt;$sink_*</code> functions, the first argument is now <code>path</code> (<a href="https://github.com/pola-rs/r-polars/issues/935">#935</a>).</li>
+<li>In <code>&lt;LazyFrame&gt;$sink_ipc()</code>, the argument <code>memmap</code> is renamed to <code>memory_map</code> (<a href="https://github.com/pola-rs/r-polars/issues/1032">#1032</a>).</li>
 <li>In <code>&lt;DataFrame&gt;$rolling()</code>, <code>&lt;LazyFrame&gt;$rolling()</code>, <code>&lt;DataFrame&gt;$group_by_dynamic()</code>
   and <code>&lt;LazyFrame&gt;$group_by_dynamic()</code>, the <code>by</code> argument is renamed to
   <code>group_by</code> (<a href="https://github.com/pola-rs/r-polars/issues/983">#983</a>).</li>
 <li>In <code>$dt$convert_time_zone()</code> and <code>$dt$replace_time_zone()</code>, the <code>tz</code>
   argument is renamed to <code>time_zone</code> (<a href="https://github.com/pola-rs/r-polars/issues/944">#944</a>).</li>
-<li>In <code>$str$strptime()</code>, the argument <code>datatype</code> is renamed <code>dtype</code> (<a href="https://github.com/pola-rs/r-polars/issues/939">#939</a>).</li>
+<li>In <code>$str$strptime()</code>, the argument <code>datatype</code> is renamed to <code>dtype</code> (<a href="https://github.com/pola-rs/r-polars/issues/939">#939</a>).</li>
 </ul>
 </li>
 <li>
@@ -16863,6 +16885,7 @@ by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.</p>
 <li><code>$arr$to_list()</code> (<a href="https://github.com/pola-rs/r-polars/issues/1018">#1018</a>).</li>
 <li><code>$str$extract_groups()</code> (<a href="https://github.com/pola-rs/r-polars/issues/979">#979</a>).</li>
 <li><code>$str$find()</code> (<a href="https://github.com/pola-rs/r-polars/issues/985">#985</a>).</li>
+<li><code>&lt;DataFrame&gt;$write_ipc()</code> (<a href="https://github.com/pola-rs/r-polars/issues/1032">#1032</a>).</li>
 </ul>
 </li>
 </ul>

@@ -146,6 +146,10 @@ will be ~1MB.
 </tr>
 </table>
 
+## Value
+
+This doesn’t return anything.
+
 ## Examples
 
 ``` r

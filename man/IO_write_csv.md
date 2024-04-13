@@ -182,7 +182,7 @@ separator).
 
 ## Value
 
-This doesn’t return anything but creates a CSV file.
+This doesn’t return anything.
 
 ## Examples
 

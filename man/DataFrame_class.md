@@ -182,8 +182,8 @@ ls(.pr$env$RPolarsDataFrame)
     #> [57] "tail"             "to_data_frame"    "to_list"          "to_series"       
     #> [61] "to_struct"        "transpose"        "unique"           "unnest"          
     #> [65] "var"              "width"            "with_columns"     "with_columns_seq"
-    #> [69] "with_row_index"   "write_csv"        "write_json"       "write_ndjson"    
-    #> [73] "write_parquet"
+    #> [69] "with_row_index"   "write_csv"        "write_ipc"        "write_json"      
+    #> [73] "write_ndjson"     "write_parquet"
 
 ``` r
 # see all private methods (not intended for regular use)
@@ -211,8 +211,9 @@ ls(.pr$DataFrame)
     #> [37] "to_struct"                 "transpose"                
     #> [39] "unnest"                    "with_columns"             
     #> [41] "with_columns_seq"          "with_row_index"           
-    #> [43] "write_csv"                 "write_json"               
-    #> [45] "write_ndjson"              "write_parquet"
+    #> [43] "write_csv"                 "write_ipc"                
+    #> [45] "write_json"                "write_ndjson"             
+    #> [47] "write_parquet"
 
 ``` r
 # make an object

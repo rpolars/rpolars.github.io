@@ -2,7 +2,7 @@
 
 # Create an empty or n-row null-filled copy of the DataFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L2380)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L2419)
 
 ## Description
 

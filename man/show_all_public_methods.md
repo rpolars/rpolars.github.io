@@ -291,6 +291,7 @@ pl$show_all_public_methods()
     #>           [ with_columns_seq ; function ]
     #>           [ with_row_index ; function ]
     #>           [ write_csv ; function ]
+    #>           [ write_ipc ; function ]
     #>           [ write_json ; function ]
     #>           [ write_ndjson ; function ]
     #>           [ write_parquet ; function ]
