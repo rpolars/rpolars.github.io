@@ -474,7 +474,6 @@ nav:
             - rank: man/Expr_rank.md
             - rechunk: man/Expr_rechunk.md
             - reinterpret: man/Expr_reinterpret.md
-            - rep_extend: man/Expr_rep_extend.md
             - rep: man/Expr_rep.md
             - repeat_by: man/Expr_repeat_by.md
             - replace: man/Expr_replace.md

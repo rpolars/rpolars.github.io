@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#create-new-dataframe" class="md-skip">
+        <a href="#create-a-new-polars-dataframe" class="md-skip">
           Skip to content
         </a>
       
@@ -993,6 +993,15 @@
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
     </span>
   </a>
   
@@ -9971,27 +9980,6 @@
   
   
     <li class="md-nav__item">
-      <a href="Expr_rep_extend.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    rep_extend
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="Expr_rep.html" class="md-nav__link">
         
   
@@ -15233,6 +15221,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -15259,10 +15256,10 @@
   
 
 
-<h1 id="create-new-dataframe">Create new DataFrame</h1>
+<h1 id="create-a-new-polars-dataframe">Create a new polars DataFrame</h1>
 <p><a href="https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L267"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
-<p>Create new DataFrame</p>
+<p>Create a new polars DataFrame</p>
 <h2 id="usage">Usage</h2>
 <pre><code class='language-R'>pl$DataFrame(..., make_names_unique = TRUE, schema = NULL)
 </code></pre>
@@ -15280,17 +15277,19 @@ One of the following:
 <ul>
 <li>
 
-a data.frame or something that inherits data.frame or DataFrame
-
-</li>
-<li>
-
 a list of mixed vectors and Series of equal length
 
 </li>
 <li>
 
 mixed vectors and/or Series of equal length
+
+</li>
+<li>
+
+a positional argument of a data.frame or a DataFrame (not recommended
+use). In this case, the object will be passed to
+<code>as_polars_df()</code>.
 
 </li>
 </ul>
@@ -15320,6 +15319,15 @@ DataType. See Examples.
 
 <h2 id="value">Value</h2>
 <p>DataFrame</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li>
+
+<code>as_polars_df()</code>
+
+</li>
+</ul>
+
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>

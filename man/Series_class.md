@@ -441,7 +441,6 @@ pl$show_all_public_methods("RPolarsSeries")
     #>           [ reinterpret ; function ]
     #>           [ rename ; function ]
     #>           [ rep ; function ]
-    #>           [ rep_extend ; function ]
     #>           [ repeat_by ; function ]
     #>           [ replace ; function ]
     #>           [ reshape ; function ]

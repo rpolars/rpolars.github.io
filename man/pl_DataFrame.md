@@ -1,12 +1,12 @@
 
 
-# Create new DataFrame
+# Create a new polars DataFrame
 
 [**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L267)
 
 ## Description
 
-Create new DataFrame
+Create a new polars DataFrame
 
 ## Usage
 
@@ -27,17 +27,19 @@ One of the following:
 <ul>
 <li>
 
-a data.frame or something that inherits data.frame or DataFrame
-
-</li>
-<li>
-
 a list of mixed vectors and Series of equal length
 
 </li>
 <li>
 
 mixed vectors and/or Series of equal length
+
+</li>
+<li>
+
+a positional argument of a data.frame or a DataFrame (not recommended
+use). In this case, the object will be passed to
+<code>as_polars_df()</code>.
 
 </li>
 </ul>
@@ -68,6 +70,16 @@ DataType. See Examples.
 ## Value
 
 DataFrame
+
+## See Also
+
+<ul>
+<li>
+
+<code>as_polars_df()</code>
+
+</li>
+</ul>
 
 ## Examples
 
