@@ -305,6 +305,7 @@ nav:
         - ungroup: man/DynamicGroupBy_ungroup.md
       Input/Output:
         - read_csv: man/IO_read_csv.md
+        - read_ipc: man/IO_read_ipc.md
         - read_ndjson: man/IO_read_ndjson.md
         - read_parquet: man/IO_read_parquet.md
         - scan_csv: man/IO_scan_csv.md

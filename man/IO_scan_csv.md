@@ -314,7 +314,7 @@ downloaded files in session for an easy reuse.
 
 ## Value
 
-scan_csv returns a LazyFrame. read_csv returns a DataFrame.
+LazyFrame
 
 ## Examples
 

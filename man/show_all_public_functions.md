@@ -126,6 +126,7 @@ pl$show_all_public_functions()
     #>        [ PTime ; function ]
     #>        [ raw_list ; function ]
     #>        [ read_csv ; function ]
+    #>        [ read_ipc ; function ]
     #>        [ read_ndjson ; function ]
     #>        [ read_parquet ; function ]
     #>        [ reduce ; function ]

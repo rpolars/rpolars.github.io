@@ -12,14 +12,14 @@ Scan a parquet file
   source,
   ...,
   n_rows = NULL,
-  cache = TRUE,
-  parallel = c("Auto", "None", "Columns", "RowGroups"),
-  rechunk = TRUE,
   row_index_name = NULL,
   row_index_offset = 0L,
+  parallel = c("auto", "columns", "row_groups", "none"),
+  hive_partitioning = TRUE,
+  rechunk = FALSE,
   low_memory = FALSE,
   use_statistics = TRUE,
-  hive_partitioning = TRUE
+  cache = TRUE
 )
 </code></pre>
 
@@ -28,7 +28,7 @@ Scan a parquet file
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="scan_parquet_:_source">source</code>
+<code id="pl_scan_parquet_:_source">source</code>
 </td>
 <td>
 Path to a file. You can use globbing with <code>\*</code> to scan/read
@@ -37,7 +37,7 @@ multiple files in the same directory (see examples).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="scan_parquet_:_...">…</code>
+<code id="pl_scan_parquet_:_...">…</code>
 </td>
 <td>
 Ignored.
@@ -45,7 +45,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="scan_parquet_:_n_rows">n_rows</code>
+<code id="pl_scan_parquet_:_n_rows">n_rows</code>
 </td>
 <td>
 Maximum number of rows to read.
@@ -53,35 +53,7 @@ Maximum number of rows to read.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="scan_parquet_:_cache">cache</code>
-</td>
-<td>
-Cache the result after reading.
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="scan_parquet_:_parallel">parallel</code>
-</td>
-<td>
-This determines the direction of parallelism. <code>“auto”</code> will
-try to determine the optimal direction. Can be <code>“auto”</code>,
-<code>“none”</code>, <code>“columns”</code>, or
-<code>“rowgroups”</code>,
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="scan_parquet_:_rechunk">rechunk</code>
-</td>
-<td>
-In case of reading multiple files via a glob pattern, rechunk the final
-DataFrame into contiguous memory chunks.
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="scan_parquet_:_row_index_name">row_index_name</code>
+<code id="pl_scan_parquet_:_row_index_name">row_index_name</code>
 </td>
 <td>
 If not <code>NULL</code>, this will insert a row index column with the
@@ -90,7 +62,7 @@ given name into the DataFrame.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="scan_parquet_:_row_index_offset">row_index_offset</code>
+<code id="pl_scan_parquet_:_row_index_offset">row_index_offset</code>
 </td>
 <td>
 Offset to start the row index column (only used if the name is set).
@@ -98,7 +70,36 @@ Offset to start the row index column (only used if the name is set).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="scan_parquet_:_low_memory">low_memory</code>
+<code id="pl_scan_parquet_:_parallel">parallel</code>
+</td>
+<td>
+This determines the direction of parallelism. <code>“auto”</code> will
+try to determine the optimal direction. Can be <code>“auto”</code>,
+<code>“columns”</code>, <code>“row_groups”</code>, or
+<code>“none”</code>.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_scan_parquet_:_hive_partitioning">hive_partitioning</code>
+</td>
+<td>
+Infer statistics and schema from hive partitioned URL and use them to
+prune reads.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_scan_parquet_:_rechunk">rechunk</code>
+</td>
+<td>
+In case of reading multiple files via a glob pattern, rechunk the final
+DataFrame into contiguous memory chunks.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_scan_parquet_:_low_memory">low_memory</code>
 </td>
 <td>
 Reduce memory usage (will yield a lower performance).
@@ -106,7 +107,7 @@ Reduce memory usage (will yield a lower performance).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="scan_parquet_:_use_statistics">use_statistics</code>
+<code id="pl_scan_parquet_:_use_statistics">use_statistics</code>
 </td>
 <td>
 Use statistics in the parquet file to determine if pages can be skipped
@@ -115,11 +116,10 @@ from reading.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="scan_parquet_:_hive_partitioning">hive_partitioning</code>
+<code id="pl_scan_parquet_:_cache">cache</code>
 </td>
 <td>
-Infer statistics and schema from hive partitioned URL and use them to
-prune reads.
+Cache the result after reading.
 </td>
 </tr>
 </table>

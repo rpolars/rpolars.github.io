@@ -12,14 +12,14 @@ Read a parquet file
   source,
   ...,
   n_rows = NULL,
-  cache = TRUE,
-  parallel = c("Auto", "None", "Columns", "RowGroups"),
-  rechunk = TRUE,
   row_index_name = NULL,
   row_index_offset = 0L,
+  parallel = c("auto", "columns", "row_groups", "none"),
+  hive_partitioning = TRUE,
+  rechunk = TRUE,
   low_memory = FALSE,
   use_statistics = TRUE,
-  hive_partitioning = TRUE
+  cache = TRUE
 )
 </code></pre>
 
@@ -53,34 +53,6 @@ Maximum number of rows to read.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_parquet_:_cache">cache</code>
-</td>
-<td>
-Cache the result after reading.
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_parquet_:_parallel">parallel</code>
-</td>
-<td>
-This determines the direction of parallelism. <code>“auto”</code> will
-try to determine the optimal direction. Can be <code>“auto”</code>,
-<code>“none”</code>, <code>“columns”</code>, or
-<code>“rowgroups”</code>,
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_parquet_:_rechunk">rechunk</code>
-</td>
-<td>
-In case of reading multiple files via a glob pattern, rechunk the final
-DataFrame into contiguous memory chunks.
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
 <code id="pl_read_parquet_:_row_index_name">row_index_name</code>
 </td>
 <td>
@@ -94,6 +66,35 @@ given name into the DataFrame.
 </td>
 <td>
 Offset to start the row index column (only used if the name is set).
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_read_parquet_:_parallel">parallel</code>
+</td>
+<td>
+This determines the direction of parallelism. <code>“auto”</code> will
+try to determine the optimal direction. Can be <code>“auto”</code>,
+<code>“columns”</code>, <code>“row_groups”</code>, or
+<code>“none”</code>.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_read_parquet_:_hive_partitioning">hive_partitioning</code>
+</td>
+<td>
+Infer statistics and schema from hive partitioned URL and use them to
+prune reads.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_read_parquet_:_rechunk">rechunk</code>
+</td>
+<td>
+In case of reading multiple files via a glob pattern, rechunk the final
+DataFrame into contiguous memory chunks.
 </td>
 </tr>
 <tr>
@@ -115,11 +116,10 @@ from reading.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_parquet_:_hive_partitioning">hive_partitioning</code>
+<code id="pl_read_parquet_:_cache">cache</code>
 </td>
 <td>
-Infer statistics and schema from hive partitioned URL and use them to
-prune reads.
+Cache the result after reading.
 </td>
 </tr>
 </table>
@@ -127,3 +127,52 @@ prune reads.
 ## Value
 
 DataFrame
+
+## Examples
+
+``` r
+library(polars)
+
+
+temp_dir = tempfile()
+# Write a hive-style partitioned parquet dataset
+arrow::write_dataset(
+  mtcars,
+  temp_dir,
+  partitioning = c("cyl", "gear"),
+  format = "parquet",
+  hive_style = TRUE
+)
+list.files(temp_dir, recursive = TRUE)
+```
+
+    #> [1] "cyl=4/gear=3/part-0.parquet" "cyl=4/gear=4/part-0.parquet"
+    #> [3] "cyl=4/gear=5/part-0.parquet" "cyl=6/gear=3/part-0.parquet"
+    #> [5] "cyl=6/gear=4/part-0.parquet" "cyl=6/gear=5/part-0.parquet"
+    #> [7] "cyl=8/gear=3/part-0.parquet" "cyl=8/gear=5/part-0.parquet"
+
+``` r
+# Read the dataset
+pl$read_parquet(
+  file.path(temp_dir, "**/*.parquet")
+)
+```
+
+    #> shape: (32, 11)
+    #> ┌──────┬───────┬───────┬──────┬───┬─────┬──────┬─────┬──────┐
+    #> │ mpg  ┆ disp  ┆ hp    ┆ drat ┆ … ┆ am  ┆ carb ┆ cyl ┆ gear │
+    #> │ ---  ┆ ---   ┆ ---   ┆ ---  ┆   ┆ --- ┆ ---  ┆ --- ┆ ---  │
+    #> │ f64  ┆ f64   ┆ f64   ┆ f64  ┆   ┆ f64 ┆ f64  ┆ i64 ┆ i64  │
+    #> ╞══════╪═══════╪═══════╪══════╪═══╪═════╪══════╪═════╪══════╡
+    #> │ 21.5 ┆ 120.1 ┆ 97.0  ┆ 3.7  ┆ … ┆ 0.0 ┆ 1.0  ┆ 4   ┆ 3    │
+    #> │ 22.8 ┆ 108.0 ┆ 93.0  ┆ 3.85 ┆ … ┆ 1.0 ┆ 1.0  ┆ 4   ┆ 4    │
+    #> │ 24.4 ┆ 146.7 ┆ 62.0  ┆ 3.69 ┆ … ┆ 0.0 ┆ 2.0  ┆ 4   ┆ 4    │
+    #> │ 22.8 ┆ 140.8 ┆ 95.0  ┆ 3.92 ┆ … ┆ 0.0 ┆ 2.0  ┆ 4   ┆ 4    │
+    #> │ 32.4 ┆ 78.7  ┆ 66.0  ┆ 4.08 ┆ … ┆ 1.0 ┆ 1.0  ┆ 4   ┆ 4    │
+    #> │ …    ┆ …     ┆ …     ┆ …    ┆ … ┆ …   ┆ …    ┆ …   ┆ …    │
+    #> │ 15.2 ┆ 304.0 ┆ 150.0 ┆ 3.15 ┆ … ┆ 0.0 ┆ 2.0  ┆ 8   ┆ 3    │
+    #> │ 13.3 ┆ 350.0 ┆ 245.0 ┆ 3.73 ┆ … ┆ 0.0 ┆ 4.0  ┆ 8   ┆ 3    │
+    #> │ 19.2 ┆ 400.0 ┆ 175.0 ┆ 3.08 ┆ … ┆ 0.0 ┆ 2.0  ┆ 8   ┆ 3    │
+    #> │ 15.8 ┆ 351.0 ┆ 264.0 ┆ 4.22 ┆ … ┆ 1.0 ┆ 4.0  ┆ 8   ┆ 5    │
+    #> │ 15.0 ┆ 301.0 ┆ 335.0 ┆ 3.54 ┆ … ┆ 1.0 ┆ 8.0  ┆ 8   ┆ 5    │
+    #> └──────┴───────┴───────┴──────┴───┴─────┴──────┴─────┴──────┘
