@@ -2,7 +2,7 @@
 
 # Flag an Expr as "sorted"
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L3156)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L3165)
 
 ## Description
 
@@ -12,12 +12,20 @@ have to ensure of that yourself.
 
 ## Usage
 
-<pre><code class='language-R'>Expr_set_sorted(descending = FALSE)
+<pre><code class='language-R'>Expr_set_sorted(..., descending = FALSE)
 </code></pre>
 
 ## Arguments
 
 <table>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="Expr_set_sorted_:_...">…</code>
+</td>
+<td>
+Ignored.
+</td>
+</tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
 <code id="Expr_set_sorted_:_descending">descending</code>

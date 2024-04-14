@@ -2,7 +2,7 @@
 
 # Get the index of the minimal value in an array
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__array.R#L222)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__array.R#L219)
 
 ## Description
 

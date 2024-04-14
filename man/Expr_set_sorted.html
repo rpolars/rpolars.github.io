@@ -15262,17 +15262,25 @@
 
 
 <h1 id="flag-an-expr-as-sorted">Flag an Expr as "sorted"</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L3156"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L3165"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>This enables downstream code to use fast paths for sorted arrays.
 WARNING: this doesn’t check whether the data is actually sorted, you
 have to ensure of that yourself.</p>
 <h2 id="usage">Usage</h2>
-<pre><code class='language-R'>&lt;Expr&gt;$set_sorted(descending = FALSE)
+<pre><code class='language-R'>&lt;Expr&gt;$set_sorted(..., descending = FALSE)
 </code></pre>
 
 <h2 id="arguments">Arguments</h2>
 <table>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="Expr_set_sorted_:_...">…</code>
+</td>
+<td>
+Ignored.
+</td>
+</tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
 <code id="Expr_set_sorted_:_descending">descending</code>

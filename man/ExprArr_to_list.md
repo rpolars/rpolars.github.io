@@ -2,7 +2,7 @@
 
 # Convert an Array column into a List column with the same inner data type
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__array.R#L294)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__array.R#L291)
 
 ## Description
 

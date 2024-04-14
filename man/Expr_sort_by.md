@@ -2,7 +2,7 @@
 
 # Sort Expr by order of others
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1513)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1514)
 
 ## Description
 
@@ -11,7 +11,14 @@ columns. If used in a groupby context, the groups are sorted.
 
 ## Usage
 
-<pre><code class='language-R'>Expr_sort_by(by, descending = FALSE)
+<pre><code class='language-R'>Expr_sort_by(
+  by,
+  ...,
+  descending = FALSE,
+  nulls_last = FALSE,
+  multithreaded = TRUE,
+  maintain_order = FALSE
+)
 </code></pre>
 
 ## Arguments
@@ -28,11 +35,44 @@ column names).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="Expr_sort_by_:_...">…</code>
+</td>
+<td>
+Ignored.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
 <code id="Expr_sort_by_:_descending">descending</code>
 </td>
 <td>
-Sort in descending order. When sorting by multiple columns, can be
-specified per column by passing a vector of booleans.
+A logical. If <code>TRUE</code>, sort in descending order.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="Expr_sort_by_:_nulls_last">nulls_last</code>
+</td>
+<td>
+A logical. If <code>TRUE</code>, place <code>null</code> values last
+insead of first.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="Expr_sort_by_:_multithreaded">multithreaded</code>
+</td>
+<td>
+A logical. If <code>TRUE</code>, sort using multiple threads.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="Expr_sort_by_:_maintain_order">maintain_order</code>
+</td>
+<td>
+A logical to indicate whether the order should be maintained if elements
+are equal.
 </td>
 </tr>
 </table>

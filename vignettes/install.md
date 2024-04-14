@@ -118,7 +118,7 @@ The features enabled in the compiled Rust library are shown by the
 library(polars)
 polars_info()
 #> Polars R package version : 0.15.1.9000
-#> Rust Polars crate version: 0.38.3
+#> Rust Polars crate version: 0.39.0
 #> 
 #> Thread pool size: 4 
 #> 
@@ -156,7 +156,7 @@ features.
     -   `nightly` for nightly toolchain features and SIMD.
 
 Note that nightly features requires the Rust nightly toolchain
-nightly-2024-02-23.
+nightly-2024-03-28.
 
 #### Profile
 

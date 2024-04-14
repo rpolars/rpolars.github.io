@@ -2,7 +2,7 @@
 
 # Return the row indices that would sort the columns
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L1262)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L1264)
 
 ## Description
 
@@ -10,7 +10,13 @@ Return the row indices that would sort the columns
 
 ## Usage
 
-<pre><code class='language-R'>pl_arg_sort_by(..., descending = FALSE)
+<pre><code class='language-R'>pl_arg_sort_by(
+  ...,
+  descending = FALSE,
+  nulls_last = FALSE,
+  multithreaded = TRUE,
+  maintain_order = FALSE
+)
 </code></pre>
 
 ## Arguments
@@ -30,8 +36,34 @@ Expr(s). Strings are parsed as column names.
 <code id="pl_arg_sort_by_:_descending">descending</code>
 </td>
 <td>
-Sort in descending order. When sorting by multiple columns, can be
-specified per column by passing a vector of booleans.
+A logical. If <code>TRUE</code>, sort in descending order.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_arg_sort_by_:_nulls_last">nulls_last</code>
+</td>
+<td>
+A logical. If <code>TRUE</code>, place <code>null</code> values last
+insead of first.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_arg_sort_by_:_multithreaded">multithreaded</code>
+</td>
+<td>
+A logical. If <code>TRUE</code>, sort using multiple threads.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="pl_arg_sort_by_:_maintain_order">maintain_order</code>
+</td>
+<td>
+Whether the order should be maintained if elements are equal. If
+<code>TRUE</code>, streaming is not possible and performance might be
+worse since this requires a stable search.
 </td>
 </tr>
 </table>

@@ -1,12 +1,12 @@
 
 
-# Sort a LazyFrame
+# Sort the LazyFrame by the given columns
 
 [**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1324)
 
 ## Description
 
-Sort by one or more Expressions.
+Sort the LazyFrame by the given columns
 
 ## Usage
 
@@ -15,7 +15,8 @@ Sort by one or more Expressions.
   ...,
   descending = FALSE,
   nulls_last = FALSE,
-  maintain_order = FALSE
+  maintain_order = FALSE,
+  multithreaded = TRUE
 )
 </code></pre>
 
@@ -54,8 +55,8 @@ number of Expr(s) specified in <code>by</code> and <code>…</code>.
 <code id="LazyFrame_sort_:_nulls_last">nulls_last</code>
 </td>
 <td>
-Logical. Place <code>NULL</code>s at the end? Default is
-<code>FALSE</code>.
+A logical. If <code>TRUE</code>, place <code>null</code> values last
+insead of first.
 </td>
 </tr>
 <tr>
@@ -66,6 +67,14 @@ Logical. Place <code>NULL</code>s at the end? Default is
 Whether the order should be maintained if elements are equal. If
 <code>TRUE</code>, streaming is not possible and performance might be
 worse since this requires a stable search.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="LazyFrame_sort_:_multithreaded">multithreaded</code>
+</td>
+<td>
+A logical. If <code>TRUE</code>, sort using multiple threads.
 </td>
 </tr>
 </table>
@@ -190,8 +199,8 @@ df$sort(c("cyl", "mpg"), descending = TRUE)$collect()
     #> │ 15.8 ┆ 8.0 ┆ 351.0 ┆ 264.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 5.0  ┆ 4.0  │
     #> │ …    ┆ …   ┆ …     ┆ …     ┆ … ┆ …   ┆ …   ┆ …    ┆ …    │
     #> │ 24.4 ┆ 4.0 ┆ 146.7 ┆ 62.0  ┆ … ┆ 1.0 ┆ 0.0 ┆ 4.0  ┆ 2.0  │
-    #> │ 22.8 ┆ 4.0 ┆ 108.0 ┆ 93.0  ┆ … ┆ 1.0 ┆ 1.0 ┆ 4.0  ┆ 1.0  │
     #> │ 22.8 ┆ 4.0 ┆ 140.8 ┆ 95.0  ┆ … ┆ 1.0 ┆ 0.0 ┆ 4.0  ┆ 2.0  │
+    #> │ 22.8 ┆ 4.0 ┆ 108.0 ┆ 93.0  ┆ … ┆ 1.0 ┆ 1.0 ┆ 4.0  ┆ 1.0  │
     #> │ 21.5 ┆ 4.0 ┆ 120.1 ┆ 97.0  ┆ … ┆ 1.0 ┆ 0.0 ┆ 3.0  ┆ 1.0  │
     #> │ 21.4 ┆ 4.0 ┆ 121.0 ┆ 109.0 ┆ … ┆ 1.0 ┆ 1.0 ┆ 4.0  ┆ 2.0  │
     #> └──────┴─────┴───────┴───────┴───┴─────┴─────┴──────┴──────┘

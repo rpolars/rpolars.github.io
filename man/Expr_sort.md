@@ -2,7 +2,7 @@
 
 # Sort an Expr
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1387)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1385)
 
 ## Description
 
@@ -10,7 +10,7 @@ Sort this column. If used in a groupby context, the groups are sorted.
 
 ## Usage
 
-<pre><code class='language-R'>Expr_sort(descending = FALSE, nulls_last = FALSE)
+<pre><code class='language-R'>Expr_sort(..., descending = FALSE, nulls_last = FALSE)
 </code></pre>
 
 ## Arguments
@@ -18,11 +18,18 @@ Sort this column. If used in a groupby context, the groups are sorted.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="Expr_sort_:_...">…</code>
+</td>
+<td>
+Ignored.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
 <code id="Expr_sort_:_descending">descending</code>
 </td>
 <td>
-Sort in descending order. When sorting by multiple columns, can be
-specified per column by passing a vector of booleans.
+A logical. If <code>TRUE</code>, sort in descending order.
 </td>
 </tr>
 <tr>
@@ -30,7 +37,8 @@ specified per column by passing a vector of booleans.
 <code id="Expr_sort_:_nulls_last">nulls_last</code>
 </td>
 <td>
-If <code>TRUE</code>, place nulls values last.
+A logical. If <code>TRUE</code>, place <code>null</code> values last
+insead of first.
 </td>
 </tr>
 </table>

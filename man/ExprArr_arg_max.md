@@ -2,7 +2,7 @@
 
 # Get the index of the maximal value in an array
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__array.R#L236)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__array.R#L233)
 
 ## Description
 

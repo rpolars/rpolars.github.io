@@ -2,7 +2,7 @@
 
 # Get standard deviation
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1659)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1667)
 
 ## Description
 

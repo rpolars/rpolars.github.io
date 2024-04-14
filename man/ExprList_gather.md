@@ -2,7 +2,7 @@
 
 # Get several values by index in a list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L164)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L167)
 
 ## Description
 
@@ -34,7 +34,8 @@ it will return a <code>null</code>. Strings are parsed as column names.
 <code id="ExprList_gather_:_null_on_oob">null_on_oob</code>
 </td>
 <td>
-Return a <code>null</code> value if index is out of bounds.
+If <code>TRUE</code>, return <code>null</code> if an index is out of
+bounds. Otherwise, raise an error.
 </td>
 </tr>
 </table>

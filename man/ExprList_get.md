@@ -11,7 +11,7 @@ values by index, use <code>$list$gather()</code>.
 
 ## Usage
 
-<pre><code class='language-R'>ExprList_get(index)
+<pre><code class='language-R'>ExprList_get(index, ..., null_on_oob = TRUE)
 </code></pre>
 
 ## Arguments
@@ -25,8 +25,24 @@ values by index, use <code>$list$gather()</code>.
 An Expr or something coercible to an Expr, that must return a single
 index. Values are 0-indexed (so index 0 would return the first item of
 every sublist) and negative values start from the end (index
-<code>-1</code> returns the last item). If the index is out of bounds,
-it will return a <code>null</code>. Strings are parsed as column names.
+<code>-1</code> returns the last item).
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="ExprList_get_:_...">…</code>
+</td>
+<td>
+Ignored.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="ExprList_get_:_null_on_oob">null_on_oob</code>
+</td>
+<td>
+If <code>TRUE</code>, return <code>null</code> if an index is out of
+bounds. Otherwise, raise an error.
 </td>
 </tr>
 </table>
@@ -58,8 +74,8 @@ df$with_columns(
     #> │ ---              ┆ ---  ┆ ---        ┆ ---   ┆ ---         ┆ ---     │
     #> │ list[f64]        ┆ f64  ┆ f64        ┆ f64   ┆ f64         ┆ f64     │
     #> ╞══════════════════╪══════╪════════════╪═══════╪═════════════╪═════════╡
-    #> │ [2.0, 2.0, null] ┆ 1.0  ┆ 2.0        ┆ 2.0   ┆ null        ┆ null    │
-    #> │ [1.0, 2.0, 3.0]  ┆ 2.0  ┆ 3.0        ┆ 1.0   ┆ 3.0         ┆ null    │
+    #> │ [2.0, 2.0, null] ┆ 1.0  ┆ null       ┆ 2.0   ┆ null        ┆ null    │
+    #> │ [1.0, 2.0, 3.0]  ┆ 2.0  ┆ null       ┆ 1.0   ┆ 3.0         ┆ null    │
     #> │ [null]           ┆ null ┆ null       ┆ null  ┆ null        ┆ null    │
     #> │ []               ┆ 3.0  ┆ null       ┆ null  ┆ null        ┆ null    │
     #> └──────────────────┴──────┴────────────┴───────┴─────────────┴─────────┘

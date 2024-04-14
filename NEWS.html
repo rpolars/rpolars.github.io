@@ -16765,6 +16765,7 @@ a List type of Struct type containing a Datetime type.</p>
 <li>In <code>$dt$convert_time_zone()</code> and <code>$dt$replace_time_zone()</code>, the <code>tz</code>
   argument is renamed to <code>time_zone</code> (<a href="https://github.com/pola-rs/r-polars/issues/944">#944</a>).</li>
 <li>In <code>$str$strptime()</code>, the argument <code>datatype</code> is renamed to <code>dtype</code> (<a href="https://github.com/pola-rs/r-polars/issues/939">#939</a>).</li>
+<li>In <code>$str$parse_int()</code>, argument <code>radix</code> is renamed to <code>base</code> (<a href="https://github.com/pola-rs/r-polars/issues/1034">#1034</a>).</li>
 </ul>
 </li>
 <li>
@@ -16789,6 +16790,8 @@ a List type of Struct type containing a Datetime type.</p>
   <code>$str$to_time()</code>, all arguments (except the first one) must be named (<a href="https://github.com/pola-rs/r-polars/issues/939">#939</a>).</li>
 <li>In <code>pl$date_range()</code>, the arguments <code>closed</code>, <code>time_unit</code>, and <code>time_zone</code>
   must be named (<a href="https://github.com/pola-rs/r-polars/issues/950">#950</a>).</li>
+<li>In <code>$set_sorted()</code> and <code>$sort_by()</code>, argument <code>descending</code> must be named
+  (<a href="https://github.com/pola-rs/r-polars/issues/1034">#1034</a>).</li>
 <li>
 <p>In <code>pl$Series()</code>, using positional arguments throws a warning, since the
   argument positions will be changed in the future (<a href="https://github.com/pola-rs/r-polars/issues/966">#966</a>).</p>
@@ -16855,6 +16858,7 @@ by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.</p>
   early stage of this package and does not exist in other language APIs (<a href="https://github.com/pola-rs/r-polars/issues/1028">#1028</a>).</li>
 <li>The following deprecated functions are now removed: <code>pl$threadpool_size()</code>,
   <code>&lt;DataFrame&gt;$with_row_count()</code>, <code>&lt;LazyFrame&gt;$with_row_count()</code> (<a href="https://github.com/pola-rs/r-polars/issues/965">#965</a>).</li>
+<li>In <code>$group_by_dynamic()</code>, the first datapoint is always preserved (<a href="https://github.com/pola-rs/r-polars/issues/1034">#1034</a>).</li>
 </ul>
 <h3 id="new-features">New features</h3>
 <ul>
@@ -16900,6 +16904,9 @@ by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.</p>
   when a datetime doesn't exist.</li>
 <li><code>mapping_strategy</code> in <code>$over()</code> (<a href="https://github.com/pola-rs/r-polars/issues/984">#984</a>, <a href="https://github.com/pola-rs/r-polars/issues/988">#988</a>).</li>
 <li><code>raise_if_undetermined</code> in <code>$meta$output_name()</code> (<a href="https://github.com/pola-rs/r-polars/issues/961">#961</a>).</li>
+<li><code>null_on_oob</code> in <code>$arr$get()</code> and <code>$list$get()</code> to determine what happens
+  when the index is out of bounds (<a href="https://github.com/pola-rs/r-polars/issues/1034">#1034</a>).</li>
+<li><code>nulls_last</code>, <code>multithreaded</code>, and <code>maintain_order</code> in <code>$sort_by()</code> (<a href="https://github.com/pola-rs/r-polars/issues/1034">#1034</a>).</li>
 </ul>
 </li>
 </ul>
@@ -16911,7 +16918,7 @@ by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.</p>
   more classes to Series properly (<a href="https://github.com/pola-rs/r-polars/issues/1015">#1015</a>).</li>
 <li>Export the <code>Duration</code> datatype (<a href="https://github.com/pola-rs/r-polars/issues/955">#955</a>).</li>
 <li>New active binding <code>&lt;Series&gt;$struct$fields</code> (<a href="https://github.com/pola-rs/r-polars/issues/1002">#1002</a>).</li>
-<li>rust-polars is updated to 0.38.3 (<a href="https://github.com/pola-rs/r-polars/issues/937">#937</a>).</li>
+<li>rust-polars is updated to 0.39.0 (<a href="https://github.com/pola-rs/r-polars/issues/937">#937</a>, <a href="https://github.com/pola-rs/r-polars/issues/1034">#1034</a>).</li>
 </ul>
 </li>
 </ul>

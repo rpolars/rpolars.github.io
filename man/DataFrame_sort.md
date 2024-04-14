@@ -6,7 +6,7 @@
 
 ## Description
 
-Sort by one or more Expressions.
+Sort a DataFrame
 
 ## Usage
 
@@ -54,8 +54,8 @@ number of Expr(s) specified in <code>by</code> and <code>…</code>.
 <code id="DataFrame_sort_:_nulls_last">nulls_last</code>
 </td>
 <td>
-Logical. Place <code>NULL</code>s at the end? Default is
-<code>FALSE</code>.
+A logical. If <code>TRUE</code>, place <code>null</code> values last
+insead of first.
 </td>
 </tr>
 <tr>
@@ -190,8 +190,8 @@ df$sort(c("cyl", "mpg"), descending = TRUE)
     #> │ 15.8 ┆ 8.0 ┆ 351.0 ┆ 264.0 ┆ … ┆ 0.0 ┆ 1.0 ┆ 5.0  ┆ 4.0  │
     #> │ …    ┆ …   ┆ …     ┆ …     ┆ … ┆ …   ┆ …   ┆ …    ┆ …    │
     #> │ 24.4 ┆ 4.0 ┆ 146.7 ┆ 62.0  ┆ … ┆ 1.0 ┆ 0.0 ┆ 4.0  ┆ 2.0  │
-    #> │ 22.8 ┆ 4.0 ┆ 108.0 ┆ 93.0  ┆ … ┆ 1.0 ┆ 1.0 ┆ 4.0  ┆ 1.0  │
     #> │ 22.8 ┆ 4.0 ┆ 140.8 ┆ 95.0  ┆ … ┆ 1.0 ┆ 0.0 ┆ 4.0  ┆ 2.0  │
+    #> │ 22.8 ┆ 4.0 ┆ 108.0 ┆ 93.0  ┆ … ┆ 1.0 ┆ 1.0 ┆ 4.0  ┆ 1.0  │
     #> │ 21.5 ┆ 4.0 ┆ 120.1 ┆ 97.0  ┆ … ┆ 1.0 ┆ 0.0 ┆ 3.0  ┆ 1.0  │
     #> │ 21.4 ┆ 4.0 ┆ 121.0 ┆ 109.0 ┆ … ┆ 1.0 ┆ 1.0 ┆ 4.0  ┆ 2.0  │
     #> └──────┴─────┴───────┴───────┴───┴─────┴─────┴──────┴──────┘

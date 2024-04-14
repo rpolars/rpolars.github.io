@@ -2,7 +2,7 @@
 
 # Get the index of the maximal value in list
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L276)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L285)
 
 ## Description
 

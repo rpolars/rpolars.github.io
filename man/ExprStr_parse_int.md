@@ -2,7 +2,7 @@
 
 # Parse integers with base radix from strings
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L885)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L886)
 
 ## Description
 
@@ -10,7 +10,7 @@ Parse integers with base 2 by default.
 
 ## Usage
 
-<pre><code class='language-R'>ExprStr_parse_int(radix = 2, strict = TRUE)
+<pre><code class='language-R'>ExprStr_parse_int(base = 2, strict = TRUE)
 </code></pre>
 
 ## Arguments
@@ -18,7 +18,7 @@ Parse integers with base 2 by default.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_parse_int_:_radix">radix</code>
+<code id="ExprStr_parse_int_:_base">base</code>
 </td>
 <td>
 Positive integer which is the base of the string we are parsing. Default

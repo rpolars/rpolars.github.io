@@ -2,7 +2,7 @@
 
 # Generate a range of integers for each row of the input columns
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L1333)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L1340)
 
 ## Description
 

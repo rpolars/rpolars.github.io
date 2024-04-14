@@ -2,7 +2,7 @@
 
 # Are two Series equal?
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L966)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L972)
 
 ## Description
 
