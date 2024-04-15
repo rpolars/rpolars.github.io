@@ -2,7 +2,7 @@
 
 # Convert a Series of type <code>List</code> to <code>Struct</code>
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/d562252dbb77de7e06ca3e6150d74a2c709763bc/R/expr__list.R#L450)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__list.R#L450)
 
 ## Description
 

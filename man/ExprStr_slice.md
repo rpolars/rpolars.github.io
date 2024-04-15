@@ -2,7 +2,7 @@
 
 # Create subslices of the string values of a String Series
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/d562252dbb77de7e06ca3e6150d74a2c709763bc/R/expr__string.R#L851)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L851)
 
 ## Description
 

@@ -2,7 +2,7 @@
 
 # Join a RThreadHandle
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/d562252dbb77de7e06ca3e6150d74a2c709763bc/R/rbackground.R#L83)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/rbackground.R#L83)
 
 ## Description
 

@@ -2,7 +2,7 @@
 
 # Get the value by index in an array
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/d562252dbb77de7e06ca3e6150d74a2c709763bc/R/expr__array.R#L156)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__array.R#L156)
 
 ## Description
 

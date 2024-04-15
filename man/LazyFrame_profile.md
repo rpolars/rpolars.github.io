@@ -2,7 +2,7 @@
 
 # Collect and profile a lazy query.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/d562252dbb77de7e06ca3e6150d74a2c709763bc/R/lazyframe__lazy.R#L1643)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1643)
 
 ## Description
 
@@ -219,8 +219,8 @@ pl$LazyFrame()$select(pl$lit(2) + 2)$profile()
     #> │ ---                 ┆ ---   ┆ --- │
     #> │ str                 ┆ u64   ┆ u64 │
     #> ╞═════════════════════╪═══════╪═════╡
-    #> │ optimization        ┆ 0     ┆ 34  │
-    #> │ projection(literal) ┆ 34    ┆ 96  │
+    #> │ optimization        ┆ 0     ┆ 32  │
+    #> │ projection(literal) ┆ 32    ┆ 89  │
     #> └─────────────────────┴───────┴─────┘
 
 ``` r
@@ -248,15 +248,15 @@ pl$LazyFrame(iris)$
     #> 
     #> $profile
     #> shape: (3, 3)
-    #> ┌────────────────────┬───────┬──────┐
-    #> │ node               ┆ start ┆ end  │
-    #> │ ---                ┆ ---   ┆ ---  │
-    #> │ str                ┆ u64   ┆ u64  │
-    #> ╞════════════════════╪═══════╪══════╡
-    #> │ optimization       ┆ 0     ┆ 18   │
-    #> │ sort(Sepal.Length) ┆ 18    ┆ 572  │
-    #> │ group_by(Species)  ┆ 574   ┆ 1022 │
-    #> └────────────────────┴───────┴──────┘
+    #> ┌────────────────────┬───────┬─────┐
+    #> │ node               ┆ start ┆ end │
+    #> │ ---                ┆ ---   ┆ --- │
+    #> │ str                ┆ u64   ┆ u64 │
+    #> ╞════════════════════╪═══════╪═════╡
+    #> │ optimization       ┆ 0     ┆ 12  │
+    #> │ sort(Sepal.Length) ┆ 12    ┆ 567 │
+    #> │ group_by(Species)  ┆ 570   ┆ 923 │
+    #> └────────────────────┴───────┴─────┘
 
 ``` r
 # -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)
@@ -290,12 +290,12 @@ pl$LazyFrame(iris)$
     #> 
     #> $profile
     #> shape: (3, 3)
-    #> ┌────────────────────┬───────┬────────┐
-    #> │ node               ┆ start ┆ end    │
-    #> │ ---                ┆ ---   ┆ ---    │
-    #> │ str                ┆ u64   ┆ u64    │
-    #> ╞════════════════════╪═══════╪════════╡
-    #> │ optimization       ┆ 0     ┆ 12     │
-    #> │ sort(Sepal.Length) ┆ 12    ┆ 1138   │
-    #> │ group_by(Species)  ┆ 1142  ┆ 128937 │
-    #> └────────────────────┴───────┴────────┘
+    #> ┌────────────────────┬───────┬───────┐
+    #> │ node               ┆ start ┆ end   │
+    #> │ ---                ┆ ---   ┆ ---   │
+    #> │ str                ┆ u64   ┆ u64   │
+    #> ╞════════════════════╪═══════╪═══════╡
+    #> │ optimization       ┆ 0     ┆ 6     │
+    #> │ sort(Sepal.Length) ┆ 6     ┆ 223   │
+    #> │ group_by(Species)  ┆ 226   ┆ 36178 │
+    #> └────────────────────┴───────┴───────┘

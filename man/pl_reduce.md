@@ -2,7 +2,7 @@
 
 # Accumulate over multiple columns horizontally with an R function
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/d562252dbb77de7e06ca3e6150d74a2c709763bc/R/functions__lazy.R#L823)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L823)
 
 ## Description
 

@@ -2,7 +2,7 @@
 
 # Extract microseconds from underlying Datetime representation.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/d562252dbb77de7e06ca3e6150d74a2c709763bc/R/expr__datetime.R#L493)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L493)
 
 ## Description
 

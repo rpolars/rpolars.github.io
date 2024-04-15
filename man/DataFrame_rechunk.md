@@ -2,7 +2,7 @@
 
 # Rechunk a DataFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/d562252dbb77de7e06ca3e6150d74a2c709763bc/R/dataframe__frame.R#L1234)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L1234)
 
 ## Description
 
@@ -124,10 +124,10 @@ lapply(x, tracemem) # trace chunks to verify no re-allocation
 ```
 
     #> [[1]]
-    #> [1] "<0x562f7f0cd8e8>"
+    #> [1] "<0x556304e89cd8>"
     #> 
     #> [[2]]
-    #> [1] "<0x562f7bf0cb18>"
+    #> [1] "<0x556301cc5098>"
 
 ``` r
 z = c(x, x)
@@ -141,16 +141,16 @@ lapply(z, tracemem) # mem allocation  in z are the same from x
 ```
 
     #> [[1]]
-    #> [1] "<0x562f7f0cd8e8>"
+    #> [1] "<0x556304e89cd8>"
     #> 
     #> [[2]]
-    #> [1] "<0x562f7bf0cb18>"
+    #> [1] "<0x556301cc5098>"
     #> 
     #> [[3]]
-    #> [1] "<0x562f7f0cd8e8>"
+    #> [1] "<0x556304e89cd8>"
     #> 
     #> [[4]]
-    #> [1] "<0x562f7bf0cb18>"
+    #> [1] "<0x556301cc5098>"
 
 ``` r
 str(z)
