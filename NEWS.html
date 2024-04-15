@@ -17063,6 +17063,7 @@
 <h2 id="polars-r-package-development-version">Polars R Package (development version)</h2>
 <h3 id="breaking-changes">Breaking changes</h3>
 <ul>
+<li>Rust polars is updated to 0.39.0 (<a href="https://github.com/pola-rs/r-polars/issues/937">#937</a>, <a href="https://github.com/pola-rs/r-polars/issues/1034">#1034</a>).</li>
 <li>
 <p>R objects inside an R list are now converted to Polars data types via
   <code>as_polars_series()</code> (<a href="https://github.com/pola-rs/r-polars/issues/1021">#1021</a>, <a href="https://github.com/pola-rs/r-polars/issues/1022">#1022</a>, <a href="https://github.com/pola-rs/r-polars/issues/1023">#1023</a>). For example, up to polars 0.15.1,
@@ -17111,50 +17112,50 @@ a List type of Struct type containing a Datetime type.</p>
 <ul>
 <li>In <code>$reshape()</code>, the <code>dims</code> argument is renamed to <code>dimensions</code> (<a href="https://github.com/pola-rs/r-polars/issues/1019">#1019</a>).</li>
 <li>In <code>pl$read_*</code> and <code>pl$scan_*</code> functions, the first argument is now
-  <code>source</code> (<a href="https://github.com/pola-rs/r-polars/issues/935">#935</a>).</li>
+   <code>source</code> (<a href="https://github.com/pola-rs/r-polars/issues/935">#935</a>).</li>
 <li>In <code>pl$Series()</code>, the argument <code>x</code> is renamed <code>values</code> (<a href="https://github.com/pola-rs/r-polars/issues/933">#933</a>).</li>
 <li>In <code>&lt;DataFrame&gt;$write_*</code> functions, the first argument is now <code>file</code> (<a href="https://github.com/pola-rs/r-polars/issues/935">#935</a>).</li>
 <li>In <code>&lt;LazyFrame&gt;$sink_*</code> functions, the first argument is now <code>path</code> (<a href="https://github.com/pola-rs/r-polars/issues/935">#935</a>).</li>
 <li>In <code>&lt;LazyFrame&gt;$sink_ipc()</code>, the argument <code>memmap</code> is renamed to <code>memory_map</code> (<a href="https://github.com/pola-rs/r-polars/issues/1032">#1032</a>).</li>
 <li>In <code>&lt;DataFrame&gt;$rolling()</code>, <code>&lt;LazyFrame&gt;$rolling()</code>, <code>&lt;DataFrame&gt;$group_by_dynamic()</code>
-  and <code>&lt;LazyFrame&gt;$group_by_dynamic()</code>, the <code>by</code> argument is renamed to
-  <code>group_by</code> (<a href="https://github.com/pola-rs/r-polars/issues/983">#983</a>).</li>
+   and <code>&lt;LazyFrame&gt;$group_by_dynamic()</code>, the <code>by</code> argument is renamed to
+   <code>group_by</code> (<a href="https://github.com/pola-rs/r-polars/issues/983">#983</a>).</li>
 <li>In <code>$dt$convert_time_zone()</code> and <code>$dt$replace_time_zone()</code>, the <code>tz</code>
-  argument is renamed to <code>time_zone</code> (<a href="https://github.com/pola-rs/r-polars/issues/944">#944</a>).</li>
+   argument is renamed to <code>time_zone</code> (<a href="https://github.com/pola-rs/r-polars/issues/944">#944</a>).</li>
 <li>In <code>$str$strptime()</code>, the argument <code>datatype</code> is renamed to <code>dtype</code> (<a href="https://github.com/pola-rs/r-polars/issues/939">#939</a>).</li>
 <li>In <code>$str$to_integer()</code> (renamed from <code>$str$parse_int()</code>), argument <code>radix</code> is
-  renamed to <code>base</code> (<a href="https://github.com/pola-rs/r-polars/issues/1038">#1038</a>).</li>
+   renamed to <code>base</code> (<a href="https://github.com/pola-rs/r-polars/issues/1038">#1038</a>).</li>
 </ul>
 </li>
 <li>
 <p>Change in the way arguments are passed:</p>
 <ul>
 <li>In all input/output functions, all arguments except the first argument
-  must be named arguments (<a href="https://github.com/pola-rs/r-polars/issues/935">#935</a>).</li>
+   must be named arguments (<a href="https://github.com/pola-rs/r-polars/issues/935">#935</a>).</li>
 <li>In <code>&lt;DataFrame&gt;$rolling()</code> and <code>&lt;DataFrame&gt;$group_by_dynamic()</code>, all
-  arguments except <code>index_column</code> must be named arguments (<a href="https://github.com/pola-rs/r-polars/issues/983">#983</a>).</li>
+   arguments except <code>index_column</code> must be named arguments (<a href="https://github.com/pola-rs/r-polars/issues/983">#983</a>).</li>
 <li>In <code>$unique()</code> for <code>DataFrame</code> and <code>LazyFrame</code>, arguments <code>keep</code> and
-  <code>maintain_order</code> must be named (<a href="https://github.com/pola-rs/r-polars/issues/953">#953</a>).</li>
+   <code>maintain_order</code> must be named (<a href="https://github.com/pola-rs/r-polars/issues/953">#953</a>).</li>
 <li>In <code>$bin$decode()</code>, the <code>strict</code> argument must be a named argument (<a href="https://github.com/pola-rs/r-polars/issues/980">#980</a>).</li>
 <li>In <code>$dt$replace_time_zone()</code>, all arguments except <code>time_zone</code> must be named
-  arguments (<a href="https://github.com/pola-rs/r-polars/issues/944">#944</a>).</li>
+   arguments (<a href="https://github.com/pola-rs/r-polars/issues/944">#944</a>).</li>
 <li>In <code>$str$contains()</code>, the arguments <code>literal</code> and <code>strict</code> must be named
-  (<a href="https://github.com/pola-rs/r-polars/issues/982">#982</a>).</li>
+   (<a href="https://github.com/pola-rs/r-polars/issues/982">#982</a>).</li>
 <li>In <code>$str$contains_any()</code>, the <code>ascii_case_insensitive</code> argument must be
-  named (<a href="https://github.com/pola-rs/r-polars/issues/986">#986</a>).</li>
+   named (<a href="https://github.com/pola-rs/r-polars/issues/986">#986</a>).</li>
 <li>In <code>$str$count_matches()</code>, <code>$str$replace()</code> and <code>$str$replace_all()</code>,
-  the <code>literal</code> argument must be named (<a href="https://github.com/pola-rs/r-polars/issues/987">#987</a>).</li>
+   the <code>literal</code> argument must be named (<a href="https://github.com/pola-rs/r-polars/issues/987">#987</a>).</li>
 <li>In <code>$str$strptime()</code>, <code>$str$to_date()</code>, <code>$str$to_datetime()</code>, and
-  <code>$str$to_time()</code>, all arguments (except the first one) must be named (<a href="https://github.com/pola-rs/r-polars/issues/939">#939</a>).</li>
+   <code>$str$to_time()</code>, all arguments (except the first one) must be named (<a href="https://github.com/pola-rs/r-polars/issues/939">#939</a>).</li>
 <li>In <code>$str$to_integer()</code> (renamed from <code>$str$parse_int()</code>), all arguments
-  must be named (<a href="https://github.com/pola-rs/r-polars/issues/1038">#1038</a>).</li>
+   must be named (<a href="https://github.com/pola-rs/r-polars/issues/1038">#1038</a>).</li>
 <li>In <code>pl$date_range()</code>, the arguments <code>closed</code>, <code>time_unit</code>, and <code>time_zone</code>
-  must be named (<a href="https://github.com/pola-rs/r-polars/issues/950">#950</a>).</li>
+   must be named (<a href="https://github.com/pola-rs/r-polars/issues/950">#950</a>).</li>
 <li>In <code>$set_sorted()</code> and <code>$sort_by()</code>, argument <code>descending</code> must be named
-  (<a href="https://github.com/pola-rs/r-polars/issues/1034">#1034</a>).</li>
+   (<a href="https://github.com/pola-rs/r-polars/issues/1034">#1034</a>).</li>
 <li>
 <p>In <code>pl$Series()</code>, using positional arguments throws a warning, since the
-  argument positions will be changed in the future (<a href="https://github.com/pola-rs/r-polars/issues/966">#966</a>).</p>
+   argument positions will be changed in the future (<a href="https://github.com/pola-rs/r-polars/issues/966">#966</a>).</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># polars 0.15.1 or earlier</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># The first argument is `x`, the second argument is `name`.</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">)</span>
@@ -17169,7 +17170,7 @@ a List type of Struct type containing a Datetime type.</p>
 <a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="n">pl</span><span class="o">$</span><span class="nf">Series</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span>
 </code></pre></div>
 <p>This warning can also be silenced by replacing <code>pl$Series(&lt;values&gt;, &lt;name&gt;)</code>
-by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.</p>
+ by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.</p>
 </li>
 </ul>
 </li>
@@ -17177,34 +17178,34 @@ by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.</p>
 <p>Arguments removed:</p>
 <ul>
 <li>The argument <code>columns</code> in <code>$drop()</code> is removed. <code>$drop()</code> now accepts
-  several character scalars, such as <code>$drop("a", "b", "c")</code> (<a href="https://github.com/pola-rs/r-polars/issues/912">#912</a>).</li>
+   several character scalars, such as <code>$drop("a", "b", "c")</code> (<a href="https://github.com/pola-rs/r-polars/issues/912">#912</a>).</li>
 <li>In <code>pl$col()</code>, the <code>name</code> argument is removed, and the <code>...</code> argument no
-  longer accepts a list of characters and <code>RPolarsSeries</code> class objects (<a href="https://github.com/pola-rs/r-polars/issues/923">#923</a>).</li>
+   longer accepts a list of characters and <code>RPolarsSeries</code> class objects (<a href="https://github.com/pola-rs/r-polars/issues/923">#923</a>).</li>
 <li>In <code>pl$date_range()</code>, the unused argument (not working in recent versions)
-  <code>explode</code> is removed. (<a href="https://github.com/pola-rs/r-polars/issues/950">#950</a>).</li>
+   <code>explode</code> is removed. (<a href="https://github.com/pola-rs/r-polars/issues/950">#950</a>).</li>
 </ul>
 </li>
 <li>
 <p>Change in arguments default and accepted values:</p>
 <ul>
 <li>In <code>pl$Series()</code>, the argument <code>values</code> has a new default value <code>NULL</code>
-  (<a href="https://github.com/pola-rs/r-polars/issues/966">#966</a>).</li>
+   (<a href="https://github.com/pola-rs/r-polars/issues/966">#966</a>).</li>
 <li>In <code>$unique()</code> for <code>DataFrame</code> and <code>LazyFrame</code>, argument <code>keep</code> has a new
-  default value <code>"any"</code> (<a href="https://github.com/pola-rs/r-polars/issues/953">#953</a>).</li>
+   default value <code>"any"</code> (<a href="https://github.com/pola-rs/r-polars/issues/953">#953</a>).</li>
 <li>In rolling aggregation functions (such as <code>$rolling_mean()</code>), the default
-  value of argument <code>closed</code> now is <code>NULL</code>. Using <code>closed</code> with a fixed
-  <code>window_size</code> now throws an error (<a href="https://github.com/pola-rs/r-polars/issues/937">#937</a>).</li>
+   value of argument <code>closed</code> now is <code>NULL</code>. Using <code>closed</code> with a fixed
+   <code>window_size</code> now throws an error (<a href="https://github.com/pola-rs/r-polars/issues/937">#937</a>).</li>
 <li>In <code>pl$date_range()</code>, the argument <code>end</code> must be specified and the default
-  value of <code>interval</code> is changed to <code>"1d"</code>. The arguments <code>start</code> and <code>end</code>
-  no longer accept numeric values (<a href="https://github.com/pola-rs/r-polars/issues/950">#950</a>).</li>
+   value of <code>interval</code> is changed to <code>"1d"</code>. The arguments <code>start</code> and <code>end</code>
+   no longer accept numeric values (<a href="https://github.com/pola-rs/r-polars/issues/950">#950</a>).</li>
 <li>In <code>pl$scan_parquet()</code>, the default value of the argument <code>rechunk</code> is
-  changed from <code>TRUE</code> to <code>FALSE</code> (<a href="https://github.com/pola-rs/r-polars/issues/1033">#1033</a>).</li>
+   changed from <code>TRUE</code> to <code>FALSE</code> (<a href="https://github.com/pola-rs/r-polars/issues/1033">#1033</a>).</li>
 <li>In <code>pl$scan_parquet()</code> and <code>pl$read_parquet()</code>, the argument <code>parallel</code>
-  only accepts <code>"auto"</code>, <code>"columns"</code>, <code>"row_groups"</code>, and <code>"none"</code>.
-  Previously, it also accepted upper-case notation of <code>"auto"</code>, <code>"columns"</code>,
-  <code>"none"</code>, and <code>"RowGroups"</code> instead of <code>"row_groups"</code> (<a href="https://github.com/pola-rs/r-polars/issues/1033">#1033</a>).</li>
+   only accepts <code>"auto"</code>, <code>"columns"</code>, <code>"row_groups"</code>, and <code>"none"</code>.
+   Previously, it also accepted upper-case notation of <code>"auto"</code>, <code>"columns"</code>,
+   <code>"none"</code>, and <code>"RowGroups"</code> instead of <code>"row_groups"</code> (<a href="https://github.com/pola-rs/r-polars/issues/1033">#1033</a>).</li>
 <li>In <code>$str$to_integer()</code> (renamed from <code>$str$parse_int()</code>), the default
-  value of <code>base</code> is changed from <code>2</code> to <code>10</code> (<a href="https://github.com/pola-rs/r-polars/issues/1038">#1038</a>).</li>
+   value of <code>base</code> is changed from <code>2</code> to <code>10</code> (<a href="https://github.com/pola-rs/r-polars/issues/1038">#1038</a>).</li>
 </ul>
 </li>
 </ol>
@@ -17241,8 +17242,8 @@ by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.</p>
 <li><code>pl$datetime_range()</code>, <code>pl$date_ranges()</code> and <code>pl$datetime_ranges()</code> (<a href="https://github.com/pola-rs/r-polars/issues/950">#950</a>, <a href="https://github.com/pola-rs/r-polars/issues/962">#962</a>).</li>
 <li><code>pl$int_range()</code> and <code>pl$int_ranges()</code> (<a href="https://github.com/pola-rs/r-polars/issues/968">#968</a>)</li>
 <li><code>pl$mean_horizontal()</code> (<a href="https://github.com/pola-rs/r-polars/issues/959">#959</a>)</li>
-<li><code>is_polars_dtype()</code> (<a href="https://github.com/pola-rs/r-polars/issues/927">#927</a>).</li>
 <li><code>pl$read_ipc()</code> (<a href="https://github.com/pola-rs/r-polars/issues/1033">#1033</a>).</li>
+<li><code>is_polars_dtype()</code> (<a href="https://github.com/pola-rs/r-polars/issues/927">#927</a>).</li>
 </ul>
 </li>
 </ul>
@@ -17290,7 +17291,6 @@ by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.</p>
   more classes to Series properly (<a href="https://github.com/pola-rs/r-polars/issues/1015">#1015</a>).</li>
 <li>Export the <code>Duration</code> datatype (<a href="https://github.com/pola-rs/r-polars/issues/955">#955</a>).</li>
 <li>New active binding <code>&lt;Series&gt;$struct$fields</code> (<a href="https://github.com/pola-rs/r-polars/issues/1002">#1002</a>).</li>
-<li>rust-polars is updated to 0.39.0 (<a href="https://github.com/pola-rs/r-polars/issues/937">#937</a>, <a href="https://github.com/pola-rs/r-polars/issues/1034">#1034</a>).</li>
 <li>All <code>$write_*()</code> and <code>$sink_*()</code> functions now invisibly return the input
   data (<a href="https://github.com/pola-rs/r-polars/issues/1039">#1039</a>).</li>
 </ul>
