@@ -2,7 +2,7 @@
 
 # Plot the query plan
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L2024)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L2033)
 
 ## Description
 

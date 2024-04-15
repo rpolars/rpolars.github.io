@@ -182,7 +182,7 @@ separator).
 
 ## Value
 
-This doesn’t return anything.
+Invisibly returns the input DataFrame.
 
 ## Examples
 

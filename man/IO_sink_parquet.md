@@ -229,6 +229,10 @@ specified in this function call.
 </tr>
 </table>
 
+## Value
+
+Invisibly returns the input LazyFrame
+
 ## Examples
 
 ``` r

@@ -50,7 +50,7 @@ Write to row-oriented JSON. This is slower, but more common.
 
 ## Value
 
-This doesn’t return anything.
+Invisibly returns the input DataFrame.
 
 ## Examples
 

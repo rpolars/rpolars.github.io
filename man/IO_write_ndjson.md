@@ -26,7 +26,7 @@ File path to which the result should be written.
 
 ## Value
 
-This doesn’t return anything.
+Invisibly returns the input DataFrame.
 
 ## Examples
 

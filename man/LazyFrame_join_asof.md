@@ -2,7 +2,7 @@
 
 # Perform joins on nearest keys
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1406)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1415)
 
 ## Description
 

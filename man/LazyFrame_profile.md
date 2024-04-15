@@ -2,7 +2,7 @@
 
 # Collect and profile a lazy query.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1634)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1643)
 
 ## Description
 
@@ -219,8 +219,8 @@ pl$LazyFrame()$select(pl$lit(2) + 2)$profile()
     #> │ ---                 ┆ ---   ┆ --- │
     #> │ str                 ┆ u64   ┆ u64 │
     #> ╞═════════════════════╪═══════╪═════╡
-    #> │ optimization        ┆ 0     ┆ 32  │
-    #> │ projection(literal) ┆ 32    ┆ 94  │
+    #> │ optimization        ┆ 0     ┆ 33  │
+    #> │ projection(literal) ┆ 33    ┆ 98  │
     #> └─────────────────────┴───────┴─────┘
 
 ``` r
@@ -248,15 +248,15 @@ pl$LazyFrame(iris)$
     #> 
     #> $profile
     #> shape: (3, 3)
-    #> ┌────────────────────┬───────┬─────┐
-    #> │ node               ┆ start ┆ end │
-    #> │ ---                ┆ ---   ┆ --- │
-    #> │ str                ┆ u64   ┆ u64 │
-    #> ╞════════════════════╪═══════╪═════╡
-    #> │ optimization       ┆ 0     ┆ 16  │
-    #> │ sort(Sepal.Length) ┆ 16    ┆ 231 │
-    #> │ group_by(Species)  ┆ 233   ┆ 479 │
-    #> └────────────────────┴───────┴─────┘
+    #> ┌────────────────────┬───────┬──────┐
+    #> │ node               ┆ start ┆ end  │
+    #> │ ---                ┆ ---   ┆ ---  │
+    #> │ str                ┆ u64   ┆ u64  │
+    #> ╞════════════════════╪═══════╪══════╡
+    #> │ optimization       ┆ 0     ┆ 15   │
+    #> │ sort(Sepal.Length) ┆ 15    ┆ 574  │
+    #> │ group_by(Species)  ┆ 576   ┆ 1102 │
+    #> └────────────────────┴───────┴──────┘
 
 ``` r
 # -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)
@@ -296,6 +296,6 @@ pl$LazyFrame(iris)$
     #> │ str                ┆ u64   ┆ u64   │
     #> ╞════════════════════╪═══════╪═══════╡
     #> │ optimization       ┆ 0     ┆ 8     │
-    #> │ sort(Sepal.Length) ┆ 8     ┆ 436   │
-    #> │ group_by(Species)  ┆ 439   ┆ 60127 │
+    #> │ sort(Sepal.Length) ┆ 8     ┆ 374   │
+    #> │ group_by(Species)  ┆ 376   ┆ 42107 │
     #> └────────────────────┴───────┴───────┘

@@ -62,7 +62,7 @@ changed at any point without it being considered a breaking change.
 
 ## Value
 
-This doesn’t return anything.
+Invisibly returns the input DataFrame.
 
 ## Examples
 
