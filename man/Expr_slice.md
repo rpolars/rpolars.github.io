@@ -2,7 +2,7 @@
 
 # Get a slice of an Expr
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1172)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/d562252dbb77de7e06ca3e6150d74a2c709763bc/R/expr__expr.R#L1172)
 
 ## Description
 

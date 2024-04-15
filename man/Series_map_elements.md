@@ -2,7 +2,7 @@
 
 # Apply every value with an R fun
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/series__series.R#L609)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/d562252dbb77de7e06ca3e6150d74a2c709763bc/R/series__series.R#L609)
 
 ## Description
 
