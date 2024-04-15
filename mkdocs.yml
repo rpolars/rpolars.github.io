@@ -693,6 +693,22 @@ nav:
         - DataType_Categorical: man/DataType_Categorical.md
         - DataType_Datetime: man/DataType_Datetime.md
         - DataType_Duration: man/DataType_Duration.md
+        - DataType_is_array: man/DataType_is_array.md
+        - DataType_is_binary: man/DataType_is_binary.md
+        - DataType_is_bool: man/DataType_is_bool.md
+        - DataType_is_float: man/DataType_is_float.md
+        - DataType_is_integer: man/DataType_is_integer.md
+        - DataType_is_list: man/DataType_is_list.md
+        - DataType_is_logical: man/DataType_is_logical.md
+        - DataType_is_nested: man/DataType_is_nested.md
+        - DataType_is_null: man/DataType_is_null.md
+        - DataType_is_numeric: man/DataType_is_numeric.md
+        - DataType_is_ord: man/DataType_is_ord.md
+        - DataType_is_primitive: man/DataType_is_primitive.md
+        - DataType_is_signed_integer: man/DataType_is_signed_integer.md
+        - DataType_is_struct: man/DataType_is_struct.md
+        - DataType_is_temporal: man/DataType_is_temporal.md
+        - DataType_is_unsigned_integer: man/DataType_is_unsigned_integer.md
         - DataType_List: man/DataType_List.md
         - DataType_Struct: man/DataType_Struct.md
         - global_rpool_cap: man/global_rpool_cap.md
