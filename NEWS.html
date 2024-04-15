@@ -14004,27 +14004,6 @@
   
   
     <li class="md-nav__item">
-      <a href="man/ExprStr_parse_int.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    parse_int
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="man/ExprStr_replace_all.html" class="md-nav__link">
         
   
@@ -14324,6 +14303,27 @@
   
   <span class="md-ellipsis">
     to_datetime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="man/ExprStr_to_integer.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    to_integer
   </span>
   
 
@@ -17122,7 +17122,8 @@ a List type of Struct type containing a Datetime type.</p>
 <li>In <code>$dt$convert_time_zone()</code> and <code>$dt$replace_time_zone()</code>, the <code>tz</code>
   argument is renamed to <code>time_zone</code> (<a href="https://github.com/pola-rs/r-polars/issues/944">#944</a>).</li>
 <li>In <code>$str$strptime()</code>, the argument <code>datatype</code> is renamed to <code>dtype</code> (<a href="https://github.com/pola-rs/r-polars/issues/939">#939</a>).</li>
-<li>In <code>$str$parse_int()</code>, argument <code>radix</code> is renamed to <code>base</code> (<a href="https://github.com/pola-rs/r-polars/issues/1034">#1034</a>).</li>
+<li>In <code>$str$to_integer()</code> (renamed from <code>$str$parse_int()</code>), argument <code>radix</code> is
+  renamed to <code>base</code> (<a href="https://github.com/pola-rs/r-polars/issues/1038">#1038</a>).</li>
 </ul>
 </li>
 <li>
@@ -17145,6 +17146,8 @@ a List type of Struct type containing a Datetime type.</p>
   the <code>literal</code> argument must be named (<a href="https://github.com/pola-rs/r-polars/issues/987">#987</a>).</li>
 <li>In <code>$str$strptime()</code>, <code>$str$to_date()</code>, <code>$str$to_datetime()</code>, and
   <code>$str$to_time()</code>, all arguments (except the first one) must be named (<a href="https://github.com/pola-rs/r-polars/issues/939">#939</a>).</li>
+<li>In <code>$str$to_integer()</code> (renamed from <code>$str$parse_int()</code>), all arguments
+  must be named (<a href="https://github.com/pola-rs/r-polars/issues/1038">#1038</a>).</li>
 <li>In <code>pl$date_range()</code>, the arguments <code>closed</code>, <code>time_unit</code>, and <code>time_zone</code>
   must be named (<a href="https://github.com/pola-rs/r-polars/issues/950">#950</a>).</li>
 <li>In <code>$set_sorted()</code> and <code>$sort_by()</code>, argument <code>descending</code> must be named
@@ -17200,6 +17203,8 @@ by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.</p>
   only accepts <code>"auto"</code>, <code>"columns"</code>, <code>"row_groups"</code>, and <code>"none"</code>.
   Previously, it also accepted upper-case notation of <code>"auto"</code>, <code>"columns"</code>,
   <code>"none"</code>, and <code>"RowGroups"</code> instead of <code>"row_groups"</code> (<a href="https://github.com/pola-rs/r-polars/issues/1033">#1033</a>).</li>
+<li>In <code>$str$to_integer()</code> (renamed from <code>$str$parse_int()</code>), the default
+  value of <code>base</code> is changed from <code>2</code> to <code>10</code> (<a href="https://github.com/pola-rs/r-polars/issues/1038">#1038</a>).</li>
 </ul>
 </li>
 </ol>
@@ -17222,6 +17227,7 @@ by <code>as_polars_series(&lt;values&gt;, &lt;name&gt;)</code>.</p>
 <li>The following deprecated functions are now removed: <code>pl$threadpool_size()</code>,
   <code>&lt;DataFrame&gt;$with_row_count()</code>, <code>&lt;LazyFrame&gt;$with_row_count()</code> (<a href="https://github.com/pola-rs/r-polars/issues/965">#965</a>).</li>
 <li>In <code>$group_by_dynamic()</code>, the first datapoint is always preserved (<a href="https://github.com/pola-rs/r-polars/issues/1034">#1034</a>).</li>
+<li><code>$str$parse_int()</code> is renamed to <code>$str$to_integer()</code> (<a href="https://github.com/pola-rs/r-polars/issues/1038">#1038</a>).</li>
 </ul>
 <h3 id="new-features">New features</h3>
 <ul>

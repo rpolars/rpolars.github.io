@@ -14091,27 +14091,6 @@
   
   
     <li class="md-nav__item">
-      <a href="ExprStr_parse_int.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    parse_int
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="ExprStr_replace_all.html" class="md-nav__link">
         
   
@@ -14411,6 +14390,27 @@
   
   <span class="md-ellipsis">
     to_datetime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ExprStr_to_integer.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    to_integer
   </span>
   
 
@@ -15623,12 +15623,12 @@ are ties.</p>
 #&gt; │ --- │
 #&gt; │ i32 │
 #&gt; ╞═════╡
+#&gt; │ 5   │
 #&gt; │ 1   │
-#&gt; │ 2   │
 #&gt; │ 6   │
 #&gt; │ 4   │
-#&gt; │ 5   │
 #&gt; │ 3   │
+#&gt; │ 2   │
 #&gt; └─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;b&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">mode</span><span class="p">())</span>
@@ -15639,8 +15639,8 @@ are ties.</p>
 #&gt; │ --- │
 #&gt; │ i32 │
 #&gt; ╞═════╡
-#&gt; │ 1   │
 #&gt; │ 3   │
+#&gt; │ 1   │
 #&gt; └─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">mode</span><span class="p">())</span>
@@ -15651,9 +15651,9 @@ are ties.</p>
 #&gt; │ --- │
 #&gt; │ i32 │
 #&gt; ╞═════╡
-#&gt; │ 1   │
 #&gt; │ 2   │
 #&gt; │ 3   │
+#&gt; │ 1   │
 #&gt; └─────┘
 </code></pre></div>
 

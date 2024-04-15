@@ -661,7 +661,6 @@ nav:
             - len_chars: man/ExprStr_len_chars.md
             - pad_end: man/ExprStr_pad_end.md
             - pad_start: man/ExprStr_pad_start.md
-            - parse_int: man/ExprStr_parse_int.md
             - replace_all: man/ExprStr_replace_all.md
             - replace_many: man/ExprStr_replace_many.md
             - replace: man/ExprStr_replace.md
@@ -677,6 +676,7 @@ nav:
             - strptime: man/ExprStr_strptime.md
             - to_date: man/ExprStr_to_date.md
             - to_datetime: man/ExprStr_to_datetime.md
+            - to_integer: man/ExprStr_to_integer.md
             - to_lowercase: man/ExprStr_to_lowercase.md
             - to_time: man/ExprStr_to_time.md
             - to_titlecase: man/ExprStr_to_titlecase.md

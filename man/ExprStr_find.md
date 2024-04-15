@@ -2,7 +2,7 @@
 
 # Return the index position of the first substring matching a pattern
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L1025)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L1027)
 
 ## Description
 
