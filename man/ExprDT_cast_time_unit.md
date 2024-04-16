@@ -2,7 +2,7 @@
 
 # cast_time_unit
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/741f9cd2614b3302a4d033bcae447425e1b91191/R/expr__datetime.R#L635)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__datetime.R#L635)
 
 ## Description
 

@@ -2,7 +2,7 @@
 
 # Aggregate over a RollingGroupBy
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/741f9cd2614b3302a4d033bcae447425e1b91191/R/group_by_rolling.R#L90)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/group_by_rolling.R#L90)
 
 ## Description
 

@@ -2,7 +2,7 @@
 
 # Group a DataFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/741f9cd2614b3302a4d033bcae447425e1b91191/R/dataframe__frame.R#L981)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L981)
 
 ## Description
 
@@ -82,9 +82,9 @@ df$group_by("a")$agg(pl$col("b")$sum())
     #> │ --- ┆ --- │
     #> │ str ┆ f64 │
     #> ╞═════╪═════╡
+    #> │ a   ┆ 2.0 │
     #> │ b   ┆ 5.0 │
     #> │ c   ┆ 3.0 │
-    #> │ a   ┆ 2.0 │
     #> └─────┴─────┘
 
 ``` r
@@ -114,10 +114,10 @@ df$group_by(c("a", "b"))$agg(pl$max("c"))
     #> │ --- ┆ --- ┆ --- │
     #> │ str ┆ f64 ┆ f64 │
     #> ╞═════╪═════╪═════╡
-    #> │ b   ┆ 3.0 ┆ 2.0 │
-    #> │ c   ┆ 3.0 ┆ 1.0 │
-    #> │ b   ┆ 2.0 ┆ 4.0 │
     #> │ a   ┆ 1.0 ┆ 5.0 │
+    #> │ b   ┆ 2.0 ┆ 4.0 │
+    #> │ c   ┆ 3.0 ┆ 1.0 │
+    #> │ b   ┆ 3.0 ┆ 2.0 │
     #> └─────┴─────┴─────┘
 
 ``` r
@@ -134,8 +134,8 @@ df$group_by("a", pl$col("b") %/% 2)$agg(
     #> │ --- ┆ --- ┆ --- │
     #> │ str ┆ f64 ┆ f64 │
     #> ╞═════╪═════╪═════╡
-    #> │ b   ┆ 1.0 ┆ 3.0 │
     #> │ a   ┆ 0.0 ┆ 4.0 │
+    #> │ b   ┆ 1.0 ┆ 3.0 │
     #> │ c   ┆ 1.0 ┆ 1.0 │
     #> └─────┴─────┴─────┘
 

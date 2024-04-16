@@ -2,7 +2,7 @@
 
 # Plot the query plan
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/741f9cd2614b3302a4d033bcae447425e1b91191/R/lazyframe__lazy.R#L2033)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L2033)
 
 ## Description
 
@@ -149,17 +149,17 @@ query$to_dot() |> cat()
     #> π 3/3;
     #> σ - [(0, 2)]"
     #> 
-    #> "AGG [col(\"b\").sum(), col(\"c\").sum()]
-    #> BY
-    #> [col(\"a\")] [(0, 1)] [(0, 1)]"[label="AGG [col(\"b\").sum(), col(\"c\").sum()]
-    #> BY
-    #> [col(\"a\")] [(0, 1)]"]
+    #> "SORT BY [col(\"a\")] [(0, 0)]"[label="SORT BY [col(\"a\")]"]
     #> "TABLE
     #> π 3/3;
     #> σ - [(0, 2)]"[label="TABLE
     #> π 3/3;
     #> σ -"]
-    #> "SORT BY [col(\"a\")] [(0, 0)]"[label="SORT BY [col(\"a\")]"]
+    #> "AGG [col(\"b\").sum(), col(\"c\").sum()]
+    #> BY
+    #> [col(\"a\")] [(0, 1)] [(0, 1)]"[label="AGG [col(\"b\").sum(), col(\"c\").sum()]
+    #> BY
+    #> [col(\"a\")] [(0, 1)]"]
     #> 
     #> }
 

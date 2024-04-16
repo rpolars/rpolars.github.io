@@ -2,7 +2,7 @@
 
 # Test if the object is a polars LazyFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/741f9cd2614b3302a4d033bcae447425e1b91191/R/is_polars.R#L25)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/is_polars.R#L25)
 
 ## Description
 

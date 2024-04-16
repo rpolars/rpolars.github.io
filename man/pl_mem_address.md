@@ -2,7 +2,7 @@
 
 # Get Memory Address
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/741f9cd2614b3302a4d033bcae447425e1b91191/R/after-wrappers.R#L318)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L318)
 
 ## Description
 
@@ -42,4 +42,4 @@ library(polars)
 pl$mem_address(pl$Series(values = 1:3))
 ```
 
-    #> [1] "0x7f721a294040"
+    #> [1] "0x7fb8c1694040"
