@@ -214,14 +214,14 @@ pl$LazyFrame()$select(pl$lit(2) + 2)$profile()
     #> 
     #> $profile
     #> shape: (2, 3)
-    #> ┌─────────────────────┬───────┬─────┐
-    #> │ node                ┆ start ┆ end │
-    #> │ ---                 ┆ ---   ┆ --- │
-    #> │ str                 ┆ u64   ┆ u64 │
-    #> ╞═════════════════════╪═══════╪═════╡
-    #> │ optimization        ┆ 0     ┆ 32  │
-    #> │ projection(literal) ┆ 32    ┆ 89  │
-    #> └─────────────────────┴───────┴─────┘
+    #> ┌─────────────────┬───────┬─────┐
+    #> │ node            ┆ start ┆ end │
+    #> │ ---             ┆ ---   ┆ --- │
+    #> │ str             ┆ u64   ┆ u64 │
+    #> ╞═════════════════╪═══════╪═════╡
+    #> │ optimization    ┆ 0     ┆ 13  │
+    #> │ select(literal) ┆ 13    ┆ 80  │
+    #> └─────────────────┴───────┴─────┘
 
 ``` r
 # Use $profile() to compare two queries
@@ -248,15 +248,15 @@ pl$LazyFrame(iris)$
     #> 
     #> $profile
     #> shape: (3, 3)
-    #> ┌────────────────────┬───────┬─────┐
-    #> │ node               ┆ start ┆ end │
-    #> │ ---                ┆ ---   ┆ --- │
-    #> │ str                ┆ u64   ┆ u64 │
-    #> ╞════════════════════╪═══════╪═════╡
-    #> │ optimization       ┆ 0     ┆ 12  │
-    #> │ sort(Sepal.Length) ┆ 12    ┆ 567 │
-    #> │ group_by(Species)  ┆ 570   ┆ 923 │
-    #> └────────────────────┴───────┴─────┘
+    #> ┌────────────────────┬───────┬──────┐
+    #> │ node               ┆ start ┆ end  │
+    #> │ ---                ┆ ---   ┆ ---  │
+    #> │ str                ┆ u64   ┆ u64  │
+    #> ╞════════════════════╪═══════╪══════╡
+    #> │ optimization       ┆ 0     ┆ 14   │
+    #> │ sort(Sepal.Length) ┆ 14    ┆ 762  │
+    #> │ group_by(Species)  ┆ 766   ┆ 1242 │
+    #> └────────────────────┴───────┴──────┘
 
 ``` r
 # -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)
@@ -295,7 +295,7 @@ pl$LazyFrame(iris)$
     #> │ ---                ┆ ---   ┆ ---   │
     #> │ str                ┆ u64   ┆ u64   │
     #> ╞════════════════════╪═══════╪═══════╡
-    #> │ optimization       ┆ 0     ┆ 6     │
-    #> │ sort(Sepal.Length) ┆ 6     ┆ 223   │
-    #> │ group_by(Species)  ┆ 226   ┆ 36178 │
+    #> │ optimization       ┆ 0     ┆ 8     │
+    #> │ sort(Sepal.Length) ┆ 8     ┆ 650   │
+    #> │ group_by(Species)  ┆ 653   ┆ 73075 │
     #> └────────────────────┴───────┴───────┘

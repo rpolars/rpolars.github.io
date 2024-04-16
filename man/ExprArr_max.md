@@ -27,7 +27,6 @@ Expr
 ``` r
 library(polars)
 
-
 df = pl$DataFrame(
   values = list(c(1, 2), c(3, 4), c(5, 6)),
   schema = list(values = pl$Array(pl$Float64, 2))

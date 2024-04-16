@@ -2,7 +2,7 @@
 
 # Sort values in an array
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__array.R#L107)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__array.R#L103)
 
 ## Description
 
