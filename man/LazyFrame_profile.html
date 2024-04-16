@@ -15653,7 +15653,7 @@
 
 
 <h1 id="collect-and-profile-a-lazy-query">Collect and profile a lazy query.</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1643"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/741f9cd2614b3302a4d033bcae447425e1b91191/R/lazyframe__lazy.R#L1643"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>This will run the query and return a list containing the materialized
 DataFrame and a DataFrame that contains profiling information of each
@@ -15857,8 +15857,8 @@ TRUE)</code>.
 #&gt; │ ---             ┆ ---   ┆ --- │
 #&gt; │ str             ┆ u64   ┆ u64 │
 #&gt; ╞═════════════════╪═══════╪═════╡
-#&gt; │ optimization    ┆ 0     ┆ 13  │
-#&gt; │ select(literal) ┆ 13    ┆ 80  │
+#&gt; │ optimization    ┆ 0     ┆ 12  │
+#&gt; │ select(literal) ┆ 12    ┆ 75  │
 #&gt; └─────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Use $profile() to compare two queries</span>
@@ -15884,15 +15884,15 @@ TRUE)</code>.
 #&gt; 
 #&gt; $profile
 #&gt; shape: (3, 3)
-#&gt; ┌────────────────────┬───────┬──────┐
-#&gt; │ node               ┆ start ┆ end  │
-#&gt; │ ---                ┆ ---   ┆ ---  │
-#&gt; │ str                ┆ u64   ┆ u64  │
-#&gt; ╞════════════════════╪═══════╪══════╡
-#&gt; │ optimization       ┆ 0     ┆ 14   │
-#&gt; │ sort(Sepal.Length) ┆ 14    ┆ 762  │
-#&gt; │ group_by(Species)  ┆ 766   ┆ 1242 │
-#&gt; └────────────────────┴───────┴──────┘
+#&gt; ┌────────────────────┬───────┬─────┐
+#&gt; │ node               ┆ start ┆ end │
+#&gt; │ ---                ┆ ---   ┆ --- │
+#&gt; │ str                ┆ u64   ┆ u64 │
+#&gt; ╞════════════════════╪═══════╪═════╡
+#&gt; │ optimization       ┆ 0     ┆ 11  │
+#&gt; │ sort(Sepal.Length) ┆ 11    ┆ 256 │
+#&gt; │ group_by(Species)  ┆ 274   ┆ 572 │
+#&gt; └────────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
@@ -15929,9 +15929,9 @@ TRUE)</code>.
 #&gt; │ ---                ┆ ---   ┆ ---   │
 #&gt; │ str                ┆ u64   ┆ u64   │
 #&gt; ╞════════════════════╪═══════╪═══════╡
-#&gt; │ optimization       ┆ 0     ┆ 8     │
-#&gt; │ sort(Sepal.Length) ┆ 8     ┆ 650   │
-#&gt; │ group_by(Species)  ┆ 653   ┆ 73075 │
+#&gt; │ optimization       ┆ 0     ┆ 13    │
+#&gt; │ sort(Sepal.Length) ┆ 13    ┆ 180   │
+#&gt; │ group_by(Species)  ┆ 183   ┆ 68777 │
 #&gt; └────────────────────┴───────┴───────┘
 </code></pre></div>
 

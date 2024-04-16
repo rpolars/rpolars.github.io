@@ -15466,19 +15466,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#polars-development-version" class="md-nav__link">
+  <a href="#polars-0161" class="md-nav__link">
     <span class="md-ellipsis">
-      polars (development version)
+      polars 0.16.1
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="polars (development version)">
+    <nav class="md-nav" aria-label="polars 0.16.1">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#bug-fixes" class="md-nav__link">
     <span class="md-ellipsis">
       Bug fixes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other improvements
     </span>
   </a>
   
@@ -15560,7 +15569,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#other-improvements" class="md-nav__link">
+  <a href="#other-improvements_1" class="md-nav__link">
     <span class="md-ellipsis">
       Other improvements
     </span>
@@ -15713,7 +15722,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#other-improvements_1" class="md-nav__link">
+  <a href="#other-improvements_2" class="md-nav__link">
     <span class="md-ellipsis">
       Other improvements
     </span>
@@ -16295,19 +16304,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#polars-development-version" class="md-nav__link">
+  <a href="#polars-0161" class="md-nav__link">
     <span class="md-ellipsis">
-      polars (development version)
+      polars 0.16.1
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="polars (development version)">
+    <nav class="md-nav" aria-label="polars 0.16.1">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#bug-fixes" class="md-nav__link">
     <span class="md-ellipsis">
       Bug fixes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other improvements
     </span>
   </a>
   
@@ -16389,7 +16407,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#other-improvements" class="md-nav__link">
+  <a href="#other-improvements_1" class="md-nav__link">
     <span class="md-ellipsis">
       Other improvements
     </span>
@@ -16542,7 +16560,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#other-improvements_1" class="md-nav__link">
+  <a href="#other-improvements_2" class="md-nav__link">
     <span class="md-ellipsis">
       Other improvements
     </span>
@@ -17108,10 +17126,16 @@
 
 
 <h1 id="news">NEWS</h1>
-<h2 id="polars-development-version">polars (development version)</h2>
+<h2 id="polars-0161">polars 0.16.1</h2>
+<p>This is a small hot-fix release to update dependent Rust polars to 0.39.1 (<a href="https://github.com/pola-rs/r-polars/issues/1042">#1042</a>).</p>
+<p>Also, there are some updates.</p>
 <h3 id="bug-fixes">Bug fixes</h3>
 <ul>
 <li><code>$len()</code> now correctly includes <code>null</code> values in the count (<a href="https://github.com/pola-rs/r-polars/issues/1044">#1044</a>).</li>
+</ul>
+<h3 id="other-improvements">Other improvements</h3>
+<ul>
+<li><code>$arr$max()</code> and <code>$arr$min()</code> work without the <code>nightly</code> feature (<a href="https://github.com/pola-rs/r-polars/issues/1042">#1042</a>).</li>
 </ul>
 <h2 id="polars-r-package-0160">Polars R Package 0.16.0</h2>
 <h3 id="breaking-changes">Breaking changes</h3>
@@ -17381,7 +17405,7 @@ a List type of Struct type containing a Datetime type.</p>
 <ul>
 <li>The default value of the <code>format</code> of <code>$str$strptime()</code> is now correctly set (<a href="https://github.com/pola-rs/r-polars/issues/892">#892</a>).</li>
 </ul>
-<h3 id="other-improvements">Other improvements</h3>
+<h3 id="other-improvements_1">Other improvements</h3>
 <ul>
 <li>Performance of <code>as_polars_df(&lt;nanoarrow_array_stream&gt;)</code> is improved (<a href="https://github.com/pola-rs/r-polars/issues/896">#896</a>).</li>
 </ul>
@@ -17616,7 +17640,7 @@ from Polars to R.</p>
   columns. An <code>array</code> column is similar to a <code>list</code> column, but is stricter as
   each sub-array must have the same number of elements (<a href="https://github.com/pola-rs/r-polars/issues/790">#790</a>).</li>
 </ul>
-<h3 id="other-improvements_1">Other improvements</h3>
+<h3 id="other-improvements_2">Other improvements</h3>
 <ul>
 <li>The <code>sql</code> feature is included in the default feature (<a href="https://github.com/pola-rs/r-polars/issues/800">#800</a>).
   This means that functionality related to the <code>RPolarsSQLContext</code> class

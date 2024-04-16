@@ -15601,7 +15601,7 @@
 
 
 <h1 id="mode">Mode</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L20"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/741f9cd2614b3302a4d033bcae447425e1b91191/R/after-wrappers.R#L20"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Compute the most occurring value(s). Can return multiple values if there
 are ties.</p>
@@ -15623,12 +15623,12 @@ are ties.</p>
 #&gt; │ --- │
 #&gt; │ i32 │
 #&gt; ╞═════╡
-#&gt; │ 1   │
 #&gt; │ 2   │
-#&gt; │ 3   │
-#&gt; │ 4   │
+#&gt; │ 1   │
 #&gt; │ 5   │
+#&gt; │ 3   │
 #&gt; │ 6   │
+#&gt; │ 4   │
 #&gt; └─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;b&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">mode</span><span class="p">())</span>
@@ -15639,8 +15639,8 @@ are ties.</p>
 #&gt; │ --- │
 #&gt; │ i32 │
 #&gt; ╞═════╡
-#&gt; │ 3   │
 #&gt; │ 1   │
+#&gt; │ 3   │
 #&gt; └─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df</span><span class="o">$</span><span class="nf">select</span><span class="p">(</span><span class="n">pl</span><span class="o">$</span><span class="nf">col</span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">)</span><span class="o">$</span><span class="nf">mode</span><span class="p">())</span>
@@ -15651,9 +15651,9 @@ are ties.</p>
 #&gt; │ --- │
 #&gt; │ i32 │
 #&gt; ╞═════╡
-#&gt; │ 2   │
 #&gt; │ 3   │
 #&gt; │ 1   │
+#&gt; │ 2   │
 #&gt; └─────┘
 </code></pre></div>
 

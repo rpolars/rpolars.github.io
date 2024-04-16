@@ -2,7 +2,7 @@
 
 # Return indices that match a condition
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/functions__lazy.R#L1233)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/741f9cd2614b3302a4d033bcae447425e1b91191/R/functions__lazy.R#L1233)
 
 ## Description
 

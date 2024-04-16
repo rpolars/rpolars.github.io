@@ -2,7 +2,7 @@
 
 # Get the number of threads in the Polars thread pool.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/polars_info.R#L109)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/741f9cd2614b3302a4d033bcae447425e1b91191/R/polars_info.R#L109)
 
 ## Description
 

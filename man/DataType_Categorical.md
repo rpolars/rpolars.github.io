@@ -2,7 +2,7 @@
 
 # Create Categorical DataType
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L361)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/741f9cd2614b3302a4d033bcae447425e1b91191/R/datatype.R#L361)
 
 ## Description
 
