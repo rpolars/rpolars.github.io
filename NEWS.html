@@ -17151,6 +17151,8 @@
 <h3 id="bug-fixes">Bug fixes</h3>
 <ul>
 <li><code>$len()</code> now correctly includes <code>null</code> values in the count (<a href="https://github.com/pola-rs/r-polars/issues/1044">#1044</a>).</li>
+<li>In some read/scan functions, downloading files could fail if the URL was too
+  long. This is now fixed (<a href="https://github.com/pola-rs/r-polars/issues/1049">#1049</a>, <a href="https://github.com/DyfanJones">@DyfanJones</a>).</li>
 </ul>
 <h3 id="other-improvements">Other improvements</h3>
 <ul>
