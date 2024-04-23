@@ -397,6 +397,7 @@ nav:
             - cum_prod: man/Expr_cum_prod.md
             - cum_sum: man/Expr_cum_sum.md
             - cumulative_eval: man/Expr_cumulative_eval.md
+            - cut: man/Expr_cut.md
             - diff: man/Expr_diff.md
             - div: man/Expr_div.md
             - dot: man/Expr_dot.md
@@ -472,6 +473,7 @@ nav:
             - peak_min: man/Expr_peak_min.md
             - pow: man/Expr_pow.md
             - product: man/Expr_product.md
+            - qcut: man/Expr_qcut.md
             - quantile: man/Expr_quantile.md
             - rank: man/Expr_rank.md
             - rechunk: man/Expr_rechunk.md
