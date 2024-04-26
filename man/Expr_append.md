@@ -19,7 +19,7 @@ This is done by adding the chunks of <code>other</code> to this
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_append_:_other">other</code>
+<code id="other">other</code>
 </td>
 <td>
 Expr or something coercible to an Expr.
@@ -27,7 +27,7 @@ Expr or something coercible to an Expr.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_append_:_upcast">upcast</code>
+<code id="upcast">upcast</code>
 </td>
 <td>
 Cast both Expr to a common supertype if they have one.

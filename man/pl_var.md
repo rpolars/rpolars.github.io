@@ -18,7 +18,7 @@ This function is syntactic sugar for <code>pl$col(…)$var(ddof)</code>.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_var_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Characters indicating the column names, passed to <code>pl$col()</code>.
@@ -27,7 +27,7 @@ See <code>?pl_col</code> for details.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_var_:_ddof">ddof</code>
+<code id="ddof">ddof</code>
 </td>
 <td>
 An integer representing "Delta Degrees of Freedom": the divisor used in

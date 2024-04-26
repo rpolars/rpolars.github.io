@@ -18,7 +18,7 @@ This expression takes input and repeats it n times and append chunk.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_rep_:_n">n</code>
+<code id="n">n</code>
 </td>
 <td>
 The number of times to repeat, must be non-negative and finite.
@@ -26,7 +26,7 @@ The number of times to repeat, must be non-negative and finite.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_rep_:_rechunk">rechunk</code>
+<code id="rechunk">rechunk</code>
 </td>
 <td>
 If <code>TRUE</code> (default), memory layout will be rewritten.

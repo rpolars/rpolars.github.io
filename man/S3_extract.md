@@ -24,7 +24,7 @@ x[i]
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="+5B.RPolarsDataFrame_:_x">x</code>
+<code id="x">x</code>
 </td>
 <td>
 A DataFrame, LazyFrame, or Series
@@ -32,7 +32,7 @@ A DataFrame, LazyFrame, or Series
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="+5B.RPolarsDataFrame_:_i">i</code>
+<code id="i">i</code>
 </td>
 <td>
 Rows to select. Integer vector, logical vector, or an Expression.
@@ -40,7 +40,7 @@ Rows to select. Integer vector, logical vector, or an Expression.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="+5B.RPolarsDataFrame_:_j">j</code>
+<code id="j">j</code>
 </td>
 <td>
 Columns to select. Integer vector, logical vector, character vector, or
@@ -49,7 +49,7 @@ an Expression. For LazyFrames, only an Expression can be used.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="+5B.RPolarsDataFrame_:_drop">drop</code>
+<code id="drop">drop</code>
 </td>
 <td>
 Convert to a Polars Series if only one column is selected. For

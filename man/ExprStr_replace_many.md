@@ -18,7 +18,7 @@ This function replaces several matches at once.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_replace_many_:_patterns">patterns</code>
+<code id="patterns">patterns</code>
 </td>
 <td>
 String patterns to search. Can be an Expr.
@@ -26,7 +26,7 @@ String patterns to search. Can be an Expr.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_replace_many_:_replace_with">replace_with</code>
+<code id="replace_with">replace_with</code>
 </td>
 <td>
 A vector of strings used as replacements. If this is of length 1, then
@@ -36,7 +36,7 @@ the <code>patterns</code> argument.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_replace_many_:_ascii_case_insensitive">ascii_case_insensitive</code>
+<code id="ascii_case_insensitive">ascii_case_insensitive</code>
 </td>
 <td>
 Enable ASCII-aware case insensitive matching. When this option is

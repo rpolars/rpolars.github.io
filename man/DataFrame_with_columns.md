@@ -20,7 +20,7 @@ columns (unlike <code style="white-space: pre;">$select()</code>).
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_with_columns_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Any expressions or string column name, or same wrapped in a list. If

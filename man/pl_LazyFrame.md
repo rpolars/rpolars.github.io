@@ -21,7 +21,7 @@ for making examples and quick demonstrations.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_LazyFrame_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Anything that is accepted by <code>pl$DataFrame()</code>

@@ -19,7 +19,7 @@ window of length <code>window_size</code> will traverse the array.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_rolling_skew_:_window_size">window_size</code>
+<code id="window_size">window_size</code>
 </td>
 <td>
 
@@ -88,7 +88,7 @@ temporal size indicated by the following string language:
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_rolling_skew_:_bias">bias</code>
+<code id="bias">bias</code>
 </td>
 <td>
 If <code>FALSE</code>, the calculations are corrected for statistical

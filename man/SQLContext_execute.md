@@ -19,7 +19,7 @@ data.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="SQLContext_execute_:_query">query</code>
+<code id="query">query</code>
 </td>
 <td>
 A valid string SQL query.

@@ -18,7 +18,7 @@ Register a single frame as a table, using the given name.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="SQLContext_register_:_name">name</code>
+<code id="name">name</code>
 </td>
 <td>
 A string name to register the frame as.
@@ -26,7 +26,7 @@ A string name to register the frame as.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="SQLContext_register_:_frame">frame</code>
+<code id="frame">frame</code>
 </td>
 <td>
 A LazyFrame like object to register.

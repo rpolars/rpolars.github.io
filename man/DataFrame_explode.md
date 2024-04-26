@@ -18,7 +18,7 @@ Explode columns containing a list of values
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_explode_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Column(s) to be exploded as individual

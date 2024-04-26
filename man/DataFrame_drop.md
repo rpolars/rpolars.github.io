@@ -18,7 +18,7 @@ Drop columns of a DataFrame
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_drop_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Characters of column names to drop. Passed to <code>pl$col()</code>.

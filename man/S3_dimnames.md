@@ -20,7 +20,7 @@ dimnames(x)
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="dimnames.RPolarsDataFrame_:_x">x</code>
+<code id="x">x</code>
 </td>
 <td>
 A DataFrame or LazyFrame

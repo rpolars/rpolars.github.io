@@ -20,7 +20,7 @@ na.omit(object, subset = NULL, ...)
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="na.omit.RPolarsLazyFrame_:_object">object</code>
+<code id="object">object</code>
 </td>
 <td>
 A DataFrame or LazyFrame
@@ -28,7 +28,7 @@ A DataFrame or LazyFrame
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="na.omit.RPolarsLazyFrame_:_subset">subset</code>
+<code id="subset">subset</code>
 </td>
 <td>
 Character vector of column names to drop missing values from.
@@ -36,7 +36,7 @@ Character vector of column names to drop missing values from.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="na.omit.RPolarsLazyFrame_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Not used.

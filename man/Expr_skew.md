@@ -18,7 +18,7 @@ Compute the sample skewness of a data set.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_skew_:_bias">bias</code>
+<code id="bias">bias</code>
 </td>
 <td>
 If <code>FALSE</code>, then the calculations are corrected for

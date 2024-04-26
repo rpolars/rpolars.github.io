@@ -24,7 +24,7 @@ Bin continuous values into discrete categories
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_cut_:_breaks">breaks</code>
+<code id="breaks">breaks</code>
 </td>
 <td>
 Unique cut points.
@@ -32,7 +32,7 @@ Unique cut points.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_cut_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -40,7 +40,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_cut_:_labels">labels</code>
+<code id="labels">labels</code>
 </td>
 <td>
 Names of the categories. The number of labels must be equal to the
@@ -49,7 +49,7 @@ number of cut points plus one.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_cut_:_left_closed">left_closed</code>
+<code id="left_closed">left_closed</code>
 </td>
 <td>
 Set the intervals to be left-closed instead of right-closed.
@@ -57,7 +57,7 @@ Set the intervals to be left-closed instead of right-closed.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_cut_:_include_breaks">include_breaks</code>
+<code id="include_breaks">include_breaks</code>
 </td>
 <td>
 Include a column with the right endpoint of the bin each observation

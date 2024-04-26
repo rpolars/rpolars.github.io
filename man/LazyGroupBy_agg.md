@@ -18,7 +18,7 @@ aggregate a polar_lazy_group_by
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyGroupBy_agg_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 exprs to aggregate over. … args can also be passed wrapped in a list

@@ -21,7 +21,7 @@ Write to Arrow IPC file (a.k.a Feather file)
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_ipc_:_file">file</code>
+<code id="file">file</code>
 </td>
 <td>
 File path to which the result should be written.
@@ -29,7 +29,7 @@ File path to which the result should be written.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_ipc_:_compression">compression</code>
+<code id="compression">compression</code>
 </td>
 <td>
 <code>NULL</code> or a character of the compression method,
@@ -41,7 +41,7 @@ compression/decompression.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_ipc_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -49,7 +49,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_ipc_:_future">future</code>
+<code id="future">future</code>
 </td>
 <td>
 Setting this to <code>TRUE</code> will write Polars’ internal data

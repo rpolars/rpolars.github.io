@@ -18,7 +18,7 @@ Rename a series
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_rename_:_name">name</code>
+<code id="name">name</code>
 </td>
 <td>
 New name.
@@ -26,7 +26,7 @@ New name.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_rename_:_in_place">in_place</code>
+<code id="in_place">in_place</code>
 </td>
 <td>
 Rename in-place, which breaks immutability. If <code>TRUE</code>, you

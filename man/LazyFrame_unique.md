@@ -18,7 +18,7 @@ Drop duplicated rows
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_unique_:_subset">subset</code>
+<code id="subset">subset</code>
 </td>
 <td>
 A character vector with the names of the column(s) to use to identify
@@ -27,7 +27,7 @@ duplicates. If <code>NULL</code> (default), use all columns.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_unique_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Not used.
@@ -35,7 +35,7 @@ Not used.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_unique_:_keep">keep</code>
+<code id="keep">keep</code>
 </td>
 <td>
 
@@ -68,7 +68,7 @@ is kept. This allows more optimizations.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_unique_:_maintain_order">maintain_order</code>
+<code id="maintain_order">maintain_order</code>
 </td>
 <td>
 Keep the same order as the original data. Setting this to
@@ -100,7 +100,7 @@ df$collect()$height
 df$unique()$collect()$height
 ```
 
-    #> [1] 68
+    #> [1] 65
 
 ``` r
 df$unique(subset = "x")$collect()$height

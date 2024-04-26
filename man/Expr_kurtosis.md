@@ -18,7 +18,7 @@ Compute the kurtosis (Fisher or Pearson) of a dataset.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_kurtosis_:_fisher">fisher</code>
+<code id="fisher">fisher</code>
 </td>
 <td>
 If <code>TRUE</code> (default), Fisher’s definition is used (normal,
@@ -28,7 +28,7 @@ centered at 3).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_kurtosis_:_bias">bias</code>
+<code id="bias">bias</code>
 </td>
 <td>
 If <code>FALSE</code>, the calculations are corrected for statistical

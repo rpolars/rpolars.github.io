@@ -18,7 +18,7 @@ Rename the output of an expression.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_alias_:_name">name</code>
+<code id="name">name</code>
 </td>
 <td>
 New name of output

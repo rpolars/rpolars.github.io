@@ -19,7 +19,7 @@ The repeated elements are expanded into a <code>List</code>.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_repeat_by_:_by">by</code>
+<code id="by">by</code>
 </td>
 <td>
 Expr that determines how often the values will be repeated. The column

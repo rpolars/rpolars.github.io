@@ -19,7 +19,7 @@ specified value or strategy.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_fill_null_:_fill_value">fill_value</code>
+<code id="fill_value">fill_value</code>
 </td>
 <td>
 Value to fill nulls with.

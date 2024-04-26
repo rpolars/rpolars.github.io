@@ -25,7 +25,7 @@ Bin continuous values into discrete categories based on their quantiles
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_qcut_:_quantiles">quantiles</code>
+<code id="quantiles">quantiles</code>
 </td>
 <td>
 Either a vector of quantile probabilities between 0 and 1 or a positive
@@ -34,7 +34,7 @@ integer determining the number of bins with uniform probability.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_qcut_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -42,7 +42,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_qcut_:_labels">labels</code>
+<code id="labels">labels</code>
 </td>
 <td>
 Names of the categories. The number of labels must be equal to the
@@ -51,7 +51,7 @@ number of cut points plus one.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_qcut_:_left_closed">left_closed</code>
+<code id="left_closed">left_closed</code>
 </td>
 <td>
 Set the intervals to be left-closed instead of right-closed.
@@ -59,7 +59,7 @@ Set the intervals to be left-closed instead of right-closed.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_qcut_:_allow_duplicates">allow_duplicates</code>
+<code id="allow_duplicates">allow_duplicates</code>
 </td>
 <td>
 If set to <code>TRUE</code>, duplicates in the resulting quantiles are
@@ -69,7 +69,7 @@ probabilities, depending on the data.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_qcut_:_include_breaks">include_breaks</code>
+<code id="include_breaks">include_breaks</code>
 </td>
 <td>
 Include a column with the right endpoint of the bin each observation

@@ -18,7 +18,7 @@ Create subslices of the string values of a String Series
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_slice_:_offset">offset</code>
+<code id="offset">offset</code>
 </td>
 <td>
 Start index. Negative indexing is supported.
@@ -26,7 +26,7 @@ Start index. Negative indexing is supported.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_slice_:_length">length</code>
+<code id="length">length</code>
 </td>
 <td>
 Length of the slice. If <code>NULL</code> (default), the slice is taken

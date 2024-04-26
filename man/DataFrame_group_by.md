@@ -21,7 +21,7 @@ structure. This structure can then be used by several functions
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_group_by_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Column(s) to group by. Accepts expression input. Characters are parsed
@@ -30,7 +30,7 @@ as column names.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_group_by_:_maintain_order">maintain_order</code>
+<code id="maintain_order">maintain_order</code>
 </td>
 <td>
 Ensure that the order of the groups is consistent with the input data.
@@ -82,9 +82,9 @@ df$group_by("a")$agg(pl$col("b")$sum())
     #> │ --- ┆ --- │
     #> │ str ┆ f64 │
     #> ╞═════╪═════╡
-    #> │ a   ┆ 2.0 │
     #> │ b   ┆ 5.0 │
     #> │ c   ┆ 3.0 │
+    #> │ a   ┆ 2.0 │
     #> └─────┴─────┘
 
 ``` r
@@ -115,9 +115,9 @@ df$group_by(c("a", "b"))$agg(pl$max("c"))
     #> │ str ┆ f64 ┆ f64 │
     #> ╞═════╪═════╪═════╡
     #> │ b   ┆ 3.0 ┆ 2.0 │
+    #> │ a   ┆ 1.0 ┆ 5.0 │
     #> │ c   ┆ 3.0 ┆ 1.0 │
     #> │ b   ┆ 2.0 ┆ 4.0 │
-    #> │ a   ┆ 1.0 ┆ 5.0 │
     #> └─────┴─────┴─────┘
 
 ``` r
@@ -135,8 +135,8 @@ df$group_by("a", pl$col("b") %/% 2)$agg(
     #> │ str ┆ f64 ┆ f64 │
     #> ╞═════╪═════╪═════╡
     #> │ b   ┆ 1.0 ┆ 3.0 │
-    #> │ a   ┆ 0.0 ┆ 4.0 │
     #> │ c   ┆ 1.0 ┆ 1.0 │
+    #> │ a   ┆ 0.0 ┆ 4.0 │
     #> └─────┴─────┴─────┘
 
 ``` r
@@ -152,7 +152,7 @@ df$group_by(d = "a", e = pl$col("b") %/% 2)$agg(
     #> │ --- ┆ --- ┆ --- │
     #> │ str ┆ f64 ┆ f64 │
     #> ╞═════╪═════╪═════╡
-    #> │ b   ┆ 1.0 ┆ 3.0 │
     #> │ c   ┆ 1.0 ┆ 1.0 │
+    #> │ b   ┆ 1.0 ┆ 3.0 │
     #> │ a   ┆ 0.0 ┆ 4.0 │
     #> └─────┴─────┴─────┘

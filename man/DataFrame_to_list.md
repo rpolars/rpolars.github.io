@@ -22,7 +22,7 @@ Return Polars DataFrame as a list of vectors
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_to_list_:_unnest_structs">unnest_structs</code>
+<code id="unnest_structs">unnest_structs</code>
 </td>
 <td>
 Logical. If <code>TRUE</code> (default), then
@@ -32,7 +32,7 @@ struct column.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_to_list_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Any args pased to <code>as.data.frame()</code>.
@@ -40,7 +40,7 @@ Any args pased to <code>as.data.frame()</code>.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_to_list_:_int64_conversion">int64_conversion</code>
+<code id="int64_conversion">int64_conversion</code>
 </td>
 <td>
 

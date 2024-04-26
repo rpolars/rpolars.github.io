@@ -34,7 +34,7 @@ node that is executed.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_profile_:_type_coercion">type_coercion</code>
+<code id="type_coercion">type_coercion</code>
 </td>
 <td>
 Logical. Coerce types such that operations succeed and run on minimal
@@ -43,7 +43,7 @@ required memory.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_profile_:_predicate_pushdown">predicate_pushdown</code>
+<code id="predicate_pushdown">predicate_pushdown</code>
 </td>
 <td>
 Logical. Applies filters as early as possible at scan level.
@@ -51,7 +51,7 @@ Logical. Applies filters as early as possible at scan level.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_profile_:_projection_pushdown">projection_pushdown</code>
+<code id="projection_pushdown">projection_pushdown</code>
 </td>
 <td>
 Logical. Select only the columns that are needed at the scan level.
@@ -59,7 +59,7 @@ Logical. Select only the columns that are needed at the scan level.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_profile_:_simplify_expression">simplify_expression</code>
+<code id="simplify_expression">simplify_expression</code>
 </td>
 <td>
 Logical. Various optimizations, such as constant folding and replacing
@@ -68,7 +68,7 @@ expensive operations with faster alternatives.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_profile_:_slice_pushdown">slice_pushdown</code>
+<code id="slice_pushdown">slice_pushdown</code>
 </td>
 <td>
 Logical. Only load the required slice from the scan level. Don’t
@@ -77,7 +77,7 @@ materialize sliced outputs (e.g. <code>join$head(10)</code>).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_profile_:_comm_subplan_elim">comm_subplan_elim</code>
+<code id="comm_subplan_elim">comm_subplan_elim</code>
 </td>
 <td>
 Logical. Will try to cache branching subplans that occur on self-joins
@@ -86,7 +86,7 @@ or unions.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_profile_:_comm_subexpr_elim">comm_subexpr_elim</code>
+<code id="comm_subexpr_elim">comm_subexpr_elim</code>
 </td>
 <td>
 Logical. Common subexpressions will be cached and reused.
@@ -94,7 +94,7 @@ Logical. Common subexpressions will be cached and reused.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_profile_:_streaming">streaming</code>
+<code id="streaming">streaming</code>
 </td>
 <td>
 Logical. Run parts of the query in a streaming fashion (this is in an
@@ -103,7 +103,7 @@ alpha state).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_profile_:_no_optimization">no_optimization</code>
+<code id="no_optimization">no_optimization</code>
 </td>
 <td>
 Logical. Sets the following parameters to <code>FALSE</code>:
@@ -114,7 +114,7 @@ Logical. Sets the following parameters to <code>FALSE</code>:
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_profile_:_inherit_optimization">inherit_optimization</code>
+<code id="inherit_optimization">inherit_optimization</code>
 </td>
 <td>
 Logical. Use existing optimization settings regardless the settings
@@ -123,7 +123,7 @@ specified in this function call.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_profile_:_collect_in_background">collect_in_background</code>
+<code id="collect_in_background">collect_in_background</code>
 </td>
 <td>
 Logical. Detach this query from R session. Computation will start in
@@ -133,7 +133,7 @@ DataFrame. Useful in interactive mode to not lock R session.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_profile_:_show_plot">show_plot</code>
+<code id="show_plot">show_plot</code>
 </td>
 <td>
 Show a Gantt chart of the profiling result
@@ -141,7 +141,7 @@ Show a Gantt chart of the profiling result
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_profile_:_truncate_nodes">truncate_nodes</code>
+<code id="truncate_nodes">truncate_nodes</code>
 </td>
 <td>
 Truncate the label lengths in the Gantt chart to this number of
@@ -219,8 +219,8 @@ pl$LazyFrame()$select(pl$lit(2) + 2)$profile()
     #> │ ---             ┆ ---   ┆ --- │
     #> │ str             ┆ u64   ┆ u64 │
     #> ╞═════════════════╪═══════╪═════╡
-    #> │ optimization    ┆ 0     ┆ 27  │
-    #> │ select(literal) ┆ 27    ┆ 74  │
+    #> │ optimization    ┆ 0     ┆ 22  │
+    #> │ select(literal) ┆ 22    ┆ 96  │
     #> └─────────────────┴───────┴─────┘
 
 ``` r
@@ -253,9 +253,9 @@ pl$LazyFrame(iris)$
     #> │ ---                ┆ ---   ┆ --- │
     #> │ str                ┆ u64   ┆ u64 │
     #> ╞════════════════════╪═══════╪═════╡
-    #> │ optimization       ┆ 0     ┆ 12  │
-    #> │ sort(Sepal.Length) ┆ 12    ┆ 255 │
-    #> │ group_by(Species)  ┆ 258   ┆ 504 │
+    #> │ optimization       ┆ 0     ┆ 15  │
+    #> │ sort(Sepal.Length) ┆ 15    ┆ 555 │
+    #> │ group_by(Species)  ┆ 559   ┆ 936 │
     #> └────────────────────┴───────┴─────┘
 
 ``` r
@@ -295,7 +295,7 @@ pl$LazyFrame(iris)$
     #> │ ---                ┆ ---   ┆ ---   │
     #> │ str                ┆ u64   ┆ u64   │
     #> ╞════════════════════╪═══════╪═══════╡
-    #> │ optimization       ┆ 0     ┆ 7     │
-    #> │ sort(Sepal.Length) ┆ 7     ┆ 536   │
-    #> │ group_by(Species)  ┆ 539   ┆ 59778 │
+    #> │ optimization       ┆ 0     ┆ 9     │
+    #> │ sort(Sepal.Length) ┆ 9     ┆ 512   │
+    #> │ group_by(Species)  ┆ 515   ┆ 46945 │
     #> └────────────────────┴───────┴───────┘

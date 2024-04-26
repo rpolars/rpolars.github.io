@@ -20,7 +20,7 @@ Series/Column except the raw values.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_Field_:_name">name</code>
+<code id="name">name</code>
 </td>
 <td>
 Field name
@@ -28,7 +28,7 @@ Field name
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_Field_:_datatype">datatype</code>
+<code id="datatype">datatype</code>
 </td>
 <td>
 DataType

@@ -23,7 +23,7 @@ polars_code_completion_deactivate()
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="polars_code_completion_activate_:_mode">mode</code>
+<code id="mode">mode</code>
 </td>
 <td>
 One of <code>“auto”</code>, <code>“rstudio”</code>, or
@@ -39,7 +39,7 @@ not behave well with
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="polars_code_completion_activate_:_verbose">verbose</code>
+<code id="verbose">verbose</code>
 </td>
 <td>
 Print message of what mode is started.

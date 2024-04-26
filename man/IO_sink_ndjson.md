@@ -30,7 +30,7 @@ was collected into R.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_ndjson_:_path">path</code>
+<code id="path">path</code>
 </td>
 <td>
 A character. File path to which the file should be written.
@@ -38,7 +38,7 @@ A character. File path to which the file should be written.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_ndjson_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -46,7 +46,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_ndjson_:_maintain_order">maintain_order</code>
+<code id="maintain_order">maintain_order</code>
 </td>
 <td>
 Maintain the order in which data is processed. Setting this to
@@ -55,7 +55,7 @@ Maintain the order in which data is processed. Setting this to
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_ndjson_:_type_coercion">type_coercion</code>
+<code id="type_coercion">type_coercion</code>
 </td>
 <td>
 Logical. Coerce types such that operations succeed and run on minimal
@@ -64,7 +64,7 @@ required memory.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_ndjson_:_predicate_pushdown">predicate_pushdown</code>
+<code id="predicate_pushdown">predicate_pushdown</code>
 </td>
 <td>
 Logical. Applies filters as early as possible at scan level.
@@ -72,7 +72,7 @@ Logical. Applies filters as early as possible at scan level.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_ndjson_:_projection_pushdown">projection_pushdown</code>
+<code id="projection_pushdown">projection_pushdown</code>
 </td>
 <td>
 Logical. Select only the columns that are needed at the scan level.
@@ -80,7 +80,7 @@ Logical. Select only the columns that are needed at the scan level.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_ndjson_:_simplify_expression">simplify_expression</code>
+<code id="simplify_expression">simplify_expression</code>
 </td>
 <td>
 Logical. Various optimizations, such as constant folding and replacing
@@ -89,7 +89,7 @@ expensive operations with faster alternatives.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_ndjson_:_slice_pushdown">slice_pushdown</code>
+<code id="slice_pushdown">slice_pushdown</code>
 </td>
 <td>
 Logical. Only load the required slice from the scan level. Don’t
@@ -98,7 +98,7 @@ materialize sliced outputs (e.g. <code>join$head(10)</code>).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_ndjson_:_no_optimization">no_optimization</code>
+<code id="no_optimization">no_optimization</code>
 </td>
 <td>
 Logical. Sets the following parameters to <code>FALSE</code>:
@@ -109,7 +109,7 @@ Logical. Sets the following parameters to <code>FALSE</code>:
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_ndjson_:_inherit_optimization">inherit_optimization</code>
+<code id="inherit_optimization">inherit_optimization</code>
 </td>
 <td>
 Logical. Use existing optimization settings regardless the settings

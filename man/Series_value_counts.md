@@ -18,7 +18,7 @@ Count the occurrences of unique values
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_value_counts_:_sort">sort</code>
+<code id="sort">sort</code>
 </td>
 <td>
 Ensure the output is sorted from most values to least.
@@ -26,7 +26,7 @@ Ensure the output is sorted from most values to least.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_value_counts_:_parallel">parallel</code>
+<code id="parallel">parallel</code>
 </td>
 <td>
 Better to turn this off in the aggregation context, as it can lead to

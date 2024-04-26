@@ -18,7 +18,7 @@ Create a new polars DataFrame
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_DataFrame_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 
@@ -49,7 +49,7 @@ Series or given a placeholder name.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_DataFrame_:_make_names_unique">make_names_unique</code>
+<code id="make_names_unique">make_names_unique</code>
 </td>
 <td>
 If <code>TRUE</code> (default), any duplicated names will be prefixed a
@@ -58,7 +58,7 @@ running number.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_DataFrame_:_schema">schema</code>
+<code id="schema">schema</code>
 </td>
 <td>
 A named list that will be used to convert a variable to a specific

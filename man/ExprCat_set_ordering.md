@@ -18,7 +18,7 @@ Determine how this categorical series should be sorted.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprCat_set_ordering_:_ordering">ordering</code>
+<code id="ordering">ordering</code>
 </td>
 <td>
 

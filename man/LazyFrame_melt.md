@@ -25,7 +25,7 @@ Unpivot a Frame from wide to long format
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_melt_:_id_vars">id_vars</code>
+<code id="id_vars">id_vars</code>
 </td>
 <td>
 Columns to use as identifier variables.
@@ -33,7 +33,7 @@ Columns to use as identifier variables.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_melt_:_value_vars">value_vars</code>
+<code id="value_vars">value_vars</code>
 </td>
 <td>
 Values to use as identifier variables. If <code>value_vars</code> is
@@ -42,7 +42,7 @@ empty all columns that are not in <code>id_vars</code> will be used.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_melt_:_variable_name">variable_name</code>
+<code id="variable_name">variable_name</code>
 </td>
 <td>
 Name to give to the new column containing the names of the melted
@@ -51,7 +51,7 @@ columns. Defaults to "variable".
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_melt_:_value_name">value_name</code>
+<code id="value_name">value_name</code>
 </td>
 <td>
 Name to give to the new column containing the values of the melted
@@ -60,7 +60,7 @@ columns. Defaults to "value"
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_melt_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Not used.
@@ -68,7 +68,7 @@ Not used.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_melt_:_streamable">streamable</code>
+<code id="streamable">streamable</code>
 </td>
 <td>
 Allow this node to run in the streaming engine. If this runs in

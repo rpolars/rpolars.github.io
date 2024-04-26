@@ -24,7 +24,7 @@ a vector.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_map_elements_:_fun">fun</code>
+<code id="fun">fun</code>
 </td>
 <td>
 r function, should take a single value as input and return one.
@@ -32,7 +32,7 @@ r function, should take a single value as input and return one.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_map_elements_:_datatype">datatype</code>
+<code id="datatype">datatype</code>
 </td>
 <td>
 DataType of return value. Default NULL means same as input.
@@ -40,7 +40,7 @@ DataType of return value. Default NULL means same as input.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_map_elements_:_strict_return_type">strict_return_type</code>
+<code id="strict_return_type">strict_return_type</code>
 </td>
 <td>
 bool, default TRUE: fail on wrong return type, FALSE: convert to polars
@@ -49,7 +49,7 @@ Null
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_map_elements_:_allow_fail_eval">allow_fail_eval</code>
+<code id="allow_fail_eval">allow_fail_eval</code>
 </td>
 <td>
 bool, default FALSE: raise R fun error, TRUE: convert to polars Null

@@ -21,7 +21,7 @@ interval is mapped to the end of its bucket.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprDT_combine_:_tm">tm</code>
+<code id="tm">tm</code>
 </td>
 <td>
 Expr or numeric or PTime, the number of epoch since or before(if
@@ -31,7 +31,7 @@ something into an Expr.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprDT_combine_:_tu">tu</code>
+<code id="tu">tu</code>
 </td>
 <td>
 time unit of epochs, default is "us", if tm is a PTime, then tz passed

@@ -18,7 +18,7 @@ Count all unique values and create a struct mapping value to count.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_value_counts_:_sort">sort</code>
+<code id="sort">sort</code>
 </td>
 <td>
 Ensure the output is sorted from most values to least.
@@ -26,7 +26,7 @@ Ensure the output is sorted from most values to least.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_value_counts_:_parallel">parallel</code>
+<code id="parallel">parallel</code>
 </td>
 <td>
 Better to turn this off in the aggregation context, as it can lead to
@@ -55,8 +55,8 @@ df
     #> │ struct[2]         │
     #> ╞═══════════════════╡
     #> │ {"virginica",50}  │
-    #> │ {"versicolor",50} │
     #> │ {"setosa",50}     │
+    #> │ {"versicolor",50} │
     #> └───────────────────┘
 
 ``` r
@@ -65,5 +65,5 @@ df$unnest()$to_data_frame() # recommended to unnest structs before converting to
 
     #>      Species count
     #> 1  virginica    50
-    #> 2 versicolor    50
-    #> 3     setosa    50
+    #> 2     setosa    50
+    #> 3 versicolor    50

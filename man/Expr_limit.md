@@ -19,7 +19,7 @@ This is an alias for
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_limit_:_n">n</code>
+<code id="n">n</code>
 </td>
 <td>
 Number of elements to take.

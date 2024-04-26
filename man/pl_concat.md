@@ -23,7 +23,7 @@ Concat polars objects
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_concat_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Either individual unpacked args or args wrapped in list(). Args can be
@@ -37,7 +37,7 @@ eager to avoid implicit collect).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_concat_:_how">how</code>
+<code id="how">how</code>
 </td>
 <td>
 Bind direction. Can be "vertical" (like <code>rbind()</code>),
@@ -52,7 +52,7 @@ to <code>f64</code> beforehand.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_concat_:_rechunk">rechunk</code>
+<code id="rechunk">rechunk</code>
 </td>
 <td>
 Perform a rechunk at last.
@@ -60,7 +60,7 @@ Perform a rechunk at last.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_concat_:_parallel">parallel</code>
+<code id="parallel">parallel</code>
 </td>
 <td>
 Only used for LazyFrames. If <code>TRUE</code> (default), lazy

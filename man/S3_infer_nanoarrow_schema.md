@@ -17,7 +17,7 @@ infer_nanoarrow_schema(x, ...)
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="infer_nanoarrow_schema.RPolarsDataFrame_:_x">x</code>
+<code id="x">x</code>
 </td>
 <td>
 A Polars DataFrame
@@ -25,7 +25,7 @@ A Polars DataFrame
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="infer_nanoarrow_schema.RPolarsDataFrame_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored

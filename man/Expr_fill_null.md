@@ -18,7 +18,7 @@ Fill null values with a value or strategy
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_fill_null_:_value">value</code>
+<code id="value">value</code>
 </td>
 <td>
 Expr or something coercible in an Expr
@@ -26,7 +26,7 @@ Expr or something coercible in an Expr
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_fill_null_:_strategy">strategy</code>
+<code id="strategy">strategy</code>
 </td>
 <td>
 Possible choice are <code>NULL</code> (default, requires a non-null
@@ -37,7 +37,7 @@ Possible choice are <code>NULL</code> (default, requires a non-null
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_fill_null_:_limit">limit</code>
+<code id="limit">limit</code>
 </td>
 <td>
 Number of consecutive null values to fill when using the

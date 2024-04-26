@@ -35,7 +35,7 @@ was collected into R.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_parquet_:_path">path</code>
+<code id="path">path</code>
 </td>
 <td>
 A character. File path to which the file should be written.
@@ -43,7 +43,7 @@ A character. File path to which the file should be written.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_parquet_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -51,7 +51,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_parquet_:_compression">compression</code>
+<code id="compression">compression</code>
 </td>
 <td>
 
@@ -99,7 +99,7 @@ older parquet readers.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_parquet_:_compression_level">compression_level</code>
+<code id="compression_level">compression_level</code>
 </td>
 <td>
 
@@ -128,7 +128,7 @@ means smaller files on disk:
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_parquet_:_statistics">statistics</code>
+<code id="statistics">statistics</code>
 </td>
 <td>
 Logical. Whether compute and write column statistics. This requires
@@ -137,7 +137,7 @@ extra compute.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_parquet_:_row_group_size">row_group_size</code>
+<code id="row_group_size">row_group_size</code>
 </td>
 <td>
 <code>NULL</code> or Integer. Size of the row groups in number of rows.
@@ -148,7 +148,7 @@ speeds.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_parquet_:_data_pagesize_limit">data_pagesize_limit</code>
+<code id="data_pagesize_limit">data_pagesize_limit</code>
 </td>
 <td>
 <code>NULL</code> or Integer. If <code>NULL</code> (default), the limit
@@ -157,7 +157,7 @@ will be ~1MB.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_parquet_:_maintain_order">maintain_order</code>
+<code id="maintain_order">maintain_order</code>
 </td>
 <td>
 Maintain the order in which data is processed. Setting this to
@@ -166,7 +166,7 @@ Maintain the order in which data is processed. Setting this to
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_parquet_:_type_coercion">type_coercion</code>
+<code id="type_coercion">type_coercion</code>
 </td>
 <td>
 Logical. Coerce types such that operations succeed and run on minimal
@@ -175,7 +175,7 @@ required memory.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_parquet_:_predicate_pushdown">predicate_pushdown</code>
+<code id="predicate_pushdown">predicate_pushdown</code>
 </td>
 <td>
 Logical. Applies filters as early as possible at scan level.
@@ -183,7 +183,7 @@ Logical. Applies filters as early as possible at scan level.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_parquet_:_projection_pushdown">projection_pushdown</code>
+<code id="projection_pushdown">projection_pushdown</code>
 </td>
 <td>
 Logical. Select only the columns that are needed at the scan level.
@@ -191,7 +191,7 @@ Logical. Select only the columns that are needed at the scan level.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_parquet_:_simplify_expression">simplify_expression</code>
+<code id="simplify_expression">simplify_expression</code>
 </td>
 <td>
 Logical. Various optimizations, such as constant folding and replacing
@@ -200,7 +200,7 @@ expensive operations with faster alternatives.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_parquet_:_slice_pushdown">slice_pushdown</code>
+<code id="slice_pushdown">slice_pushdown</code>
 </td>
 <td>
 Logical. Only load the required slice from the scan level. Don’t
@@ -209,7 +209,7 @@ materialize sliced outputs (e.g. <code>join$head(10)</code>).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_parquet_:_no_optimization">no_optimization</code>
+<code id="no_optimization">no_optimization</code>
 </td>
 <td>
 Logical. Sets the following parameters to <code>FALSE</code>:
@@ -220,7 +220,7 @@ Logical. Sets the following parameters to <code>FALSE</code>:
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_parquet_:_inherit_optimization">inherit_optimization</code>
+<code id="inherit_optimization">inherit_optimization</code>
 </td>
 <td>
 Logical. Use existing optimization settings regardless the settings

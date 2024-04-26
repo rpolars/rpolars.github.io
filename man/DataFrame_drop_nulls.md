@@ -19,7 +19,7 @@ R).
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_drop_nulls_:_subset">subset</code>
+<code id="subset">subset</code>
 </td>
 <td>
 A character vector with the names of the column(s) for which nulls are

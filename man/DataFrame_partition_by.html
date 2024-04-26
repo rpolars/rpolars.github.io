@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.19">
     
     
       
@@ -14879,6 +14879,27 @@
   
   
     <li class="md-nav__item">
+      <a href="DataType_Enum.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataType_Enum
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="DataType_is_array.html" class="md-nav__link">
         
   
@@ -15696,7 +15717,7 @@ combination with functions like <code>lapply()</code> or
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_partition_by_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Characters of column names to group by. Passed to <code>pl$col()</code>.
@@ -15704,7 +15725,7 @@ Characters of column names to group by. Passed to <code>pl$col()</code>.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_partition_by_:_maintain_order">maintain_order</code>
+<code id="maintain_order">maintain_order</code>
 </td>
 <td>
 If <code>TRUE</code>, ensure that the order of the groups is consistent
@@ -15714,7 +15735,7 @@ operation.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_partition_by_:_include_key">include_key</code>
+<code id="include_key">include_key</code>
 </td>
 <td>
 If <code>TRUE</code>, include the columns used to partition the
@@ -15723,7 +15744,7 @@ DataFrame in the output.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_partition_by_:_as_nested_list">as_nested_list</code>
+<code id="as_nested_list">as_nested_list</code>
 </td>
 <td>
 This affects the format of the output. If <code>FALSE</code> (default),
@@ -15988,7 +16009,7 @@ details.
 <a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">  </span><span class="nf">invisible</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; 
-#&gt; The key value of `a` is b and the key value of `b` is 3
+#&gt; The key value of `a` is c and the key value of `b` is 3
 #&gt; shape: (9, 2)
 #&gt; ┌────────────┬──────┐
 #&gt; │ statistic  ┆ c    │
@@ -15997,13 +16018,13 @@ details.
 #&gt; ╞════════════╪══════╡
 #&gt; │ count      ┆ 1.0  │
 #&gt; │ null_count ┆ 0.0  │
-#&gt; │ mean       ┆ 2.0  │
+#&gt; │ mean       ┆ 1.0  │
 #&gt; │ std        ┆ null │
-#&gt; │ min        ┆ 2.0  │
-#&gt; │ 25%        ┆ 2.0  │
-#&gt; │ 50%        ┆ 2.0  │
-#&gt; │ 75%        ┆ 2.0  │
-#&gt; │ max        ┆ 2.0  │
+#&gt; │ min        ┆ 1.0  │
+#&gt; │ 25%        ┆ 1.0  │
+#&gt; │ 50%        ┆ 1.0  │
+#&gt; │ 75%        ┆ 1.0  │
+#&gt; │ max        ┆ 1.0  │
 #&gt; └────────────┴──────┘
 #&gt; 
 #&gt; The key value of `a` is a and the key value of `b` is 1
@@ -16024,7 +16045,7 @@ details.
 #&gt; │ max        ┆ 5.0      │
 #&gt; └────────────┴──────────┘
 #&gt; 
-#&gt; The key value of `a` is c and the key value of `b` is 3
+#&gt; The key value of `a` is b and the key value of `b` is 3
 #&gt; shape: (9, 2)
 #&gt; ┌────────────┬──────┐
 #&gt; │ statistic  ┆ c    │
@@ -16033,13 +16054,13 @@ details.
 #&gt; ╞════════════╪══════╡
 #&gt; │ count      ┆ 1.0  │
 #&gt; │ null_count ┆ 0.0  │
-#&gt; │ mean       ┆ 1.0  │
+#&gt; │ mean       ┆ 2.0  │
 #&gt; │ std        ┆ null │
-#&gt; │ min        ┆ 1.0  │
-#&gt; │ 25%        ┆ 1.0  │
-#&gt; │ 50%        ┆ 1.0  │
-#&gt; │ 75%        ┆ 1.0  │
-#&gt; │ max        ┆ 1.0  │
+#&gt; │ min        ┆ 2.0  │
+#&gt; │ 25%        ┆ 2.0  │
+#&gt; │ 50%        ┆ 2.0  │
+#&gt; │ 75%        ┆ 2.0  │
+#&gt; │ max        ┆ 2.0  │
 #&gt; └────────────┴──────┘
 #&gt; 
 #&gt; The key value of `a` is b and the key value of `b` is 2
@@ -16115,7 +16136,7 @@ details.
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      <script src="../assets/javascripts/bundle.dd8806f2.min.js"></script>
       
     
   </body>

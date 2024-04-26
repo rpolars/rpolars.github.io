@@ -18,7 +18,7 @@ Calculates the rolling covariance between two columns
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_rolling_cov_:_a">a</code>
+<code id="a">a</code>
 </td>
 <td>
 One column name or Expr or anything convertible Into<Expr> via
@@ -27,7 +27,7 @@ One column name or Expr or anything convertible Into<Expr> via
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_rolling_cov_:_b">b</code>
+<code id="b">b</code>
 </td>
 <td>
 Another column name or Expr or anything convertible Into<Expr> via
@@ -36,7 +36,7 @@ Another column name or Expr or anything convertible Into<Expr> via
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_rolling_cov_:_window_size">window_size</code>
+<code id="window_size">window_size</code>
 </td>
 <td>
 int The length of the window
@@ -44,7 +44,7 @@ int The length of the window
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_rolling_cov_:_min_periods">min_periods</code>
+<code id="min_periods">min_periods</code>
 </td>
 <td>
 NULL or int The number of values in the window that should be non-null
@@ -53,7 +53,7 @@ before computing a result. If NULL, it will be set equal to window size.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_rolling_cov_:_ddof">ddof</code>
+<code id="ddof">ddof</code>
 </td>
 <td>
 integer Delta Degrees of Freedom: the divisor used in the calculation is

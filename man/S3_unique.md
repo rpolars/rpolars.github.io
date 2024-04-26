@@ -20,7 +20,7 @@ unique(x, incomparables = FALSE, subset = NULL, keep = "first", ...)
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="unique.RPolarsDataFrame_:_x">x</code>
+<code id="x">x</code>
 </td>
 <td>
 A DataFrame or LazyFrame
@@ -28,7 +28,7 @@ A DataFrame or LazyFrame
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="unique.RPolarsDataFrame_:_incomparables">incomparables</code>
+<code id="incomparables">incomparables</code>
 </td>
 <td>
 Not used.
@@ -36,7 +36,7 @@ Not used.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="unique.RPolarsDataFrame_:_subset">subset</code>
+<code id="subset">subset</code>
 </td>
 <td>
 Character vector of column names to drop duplicated values from.
@@ -44,7 +44,7 @@ Character vector of column names to drop duplicated values from.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="unique.RPolarsDataFrame_:_keep">keep</code>
+<code id="keep">keep</code>
 </td>
 <td>
 Either <code>“first”</code>, <code>“last”</code>, or
@@ -53,7 +53,7 @@ Either <code>“first”</code>, <code>“last”</code>, or
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="unique.RPolarsDataFrame_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Not used.
@@ -80,9 +80,9 @@ unique(df)
     #> │ --- ┆ --- ┆ --- │
     #> │ f64 ┆ f64 ┆ f64 │
     #> ╞═════╪═════╪═════╡
-    #> │ 2.0 ┆ 2.0 ┆ 1.0 │
     #> │ 3.0 ┆ 3.0 ┆ 2.0 │
-    #> │ 5.0 ┆ 5.0 ┆ 4.0 │
     #> │ 4.0 ┆ 4.0 ┆ 3.0 │
     #> │ 1.0 ┆ 1.0 ┆ 1.0 │
+    #> │ 2.0 ┆ 2.0 ┆ 1.0 │
+    #> │ 5.0 ┆ 5.0 ┆ 4.0 │
     #> └─────┴─────┴─────┘

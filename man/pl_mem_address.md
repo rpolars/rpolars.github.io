@@ -18,7 +18,7 @@ Get underlying mem address a rust object (via ExtPtr). Expert use only.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_mem_address_:_robj">robj</code>
+<code id="robj">robj</code>
 </td>
 <td>
 an R object
@@ -42,4 +42,4 @@ library(polars)
 pl$mem_address(pl$Series(values = 1:3))
 ```
 
-    #> [1] "0x7fd90b894040"
+    #> [1] "0x7fe85309a040"

@@ -18,7 +18,7 @@ Get the time passed since the Unix EPOCH in the give time unit.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprDT_epoch_:_tu">tu</code>
+<code id="tu">tu</code>
 </td>
 <td>
 string option either ‘ns’, ‘us’, ‘ms’, ‘s’ or ‘d’

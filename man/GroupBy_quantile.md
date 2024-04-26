@@ -18,7 +18,7 @@ Aggregate the columns in the DataFrame to their quantile value.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="GroupBy_quantile_:_quantile">quantile</code>
+<code id="quantile">quantile</code>
 </td>
 <td>
 numeric Quantile between 0.0 and 1.0.
@@ -26,7 +26,7 @@ numeric Quantile between 0.0 and 1.0.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="GroupBy_quantile_:_interpolation">interpolation</code>
+<code id="interpolation">interpolation</code>
 </td>
 <td>
 string Interpolation method: "nearest", "higher", "lower", "midpoint",

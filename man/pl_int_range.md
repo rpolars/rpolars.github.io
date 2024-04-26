@@ -18,7 +18,7 @@ Generate a range of integers
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_int_range_:_start">start</code>
+<code id="start">start</code>
 </td>
 <td>
 Start of the range (inclusive). Defaults to 0.
@@ -26,7 +26,7 @@ Start of the range (inclusive). Defaults to 0.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_int_range_:_end">end</code>
+<code id="end">end</code>
 </td>
 <td>
 End of the range (exclusive). If <code>NULL</code> (default), the value
@@ -35,7 +35,7 @@ of <code>start</code> is used and <code>start</code> is set to 0.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_int_range_:_step">step</code>
+<code id="step">step</code>
 </td>
 <td>
 Step size of the range.
@@ -43,7 +43,7 @@ Step size of the range.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_int_range_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Not used.
@@ -51,7 +51,7 @@ Not used.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_int_range_:_dtype">dtype</code>
+<code id="dtype">dtype</code>
 </td>
 <td>
 Data type of the range.

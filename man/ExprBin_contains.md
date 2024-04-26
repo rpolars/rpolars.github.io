@@ -18,7 +18,7 @@ R Check if binaries in Series contain a binary substring.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprBin_contains_:_lit">lit</code>
+<code id="lit">lit</code>
 </td>
 <td>
 The binary substring to look for

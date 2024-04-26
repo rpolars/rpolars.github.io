@@ -24,7 +24,7 @@ Sort a Series
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_sort_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -32,7 +32,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_sort_:_descending">descending</code>
+<code id="descending">descending</code>
 </td>
 <td>
 A logical. If <code>TRUE</code>, sort in descending order.
@@ -40,7 +40,7 @@ A logical. If <code>TRUE</code>, sort in descending order.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_sort_:_nulls_last">nulls_last</code>
+<code id="nulls_last">nulls_last</code>
 </td>
 <td>
 A logical. If <code>TRUE</code>, place <code>null</code> values last
@@ -49,7 +49,7 @@ insead of first.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_sort_:_multithreaded">multithreaded</code>
+<code id="multithreaded">multithreaded</code>
 </td>
 <td>
 A logical. If <code>TRUE</code>, sort using multiple threads.
@@ -57,7 +57,7 @@ A logical. If <code>TRUE</code>, sort using multiple threads.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_sort_:_in_place">in_place</code>
+<code id="in_place">in_place</code>
 </td>
 <td>
 If <code>TRUE</code>, this will set the flag mutably and return

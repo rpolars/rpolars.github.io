@@ -33,7 +33,7 @@ for example with <code>how = “inner”</code>).
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_join_:_other">other</code>
+<code id="other">other</code>
 </td>
 <td>
 LazyFrame to join with.
@@ -41,7 +41,7 @@ LazyFrame to join with.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_join_:_on">on</code>
+<code id="on">on</code>
 </td>
 <td>
 Either a vector of column names or a list of expressions and/or strings.
@@ -51,7 +51,7 @@ to match on are different between the two DataFrames.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_join_:_how">how</code>
+<code id="how">how</code>
 </td>
 <td>
 One of the following methods: "inner", "left", "outer", "semi", "anti",
@@ -60,7 +60,7 @@ One of the following methods: "inner", "left", "outer", "semi", "anti",
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_join_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -68,8 +68,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_join_:_left_on">left_on</code>,
-<code id="LazyFrame_join_:_right_on">right_on</code>
+<code id="left_on">left_on</code>, <code id="right_on">right_on</code>
 </td>
 <td>
 Same as <code>on</code> but only for the left or the right DataFrame.
@@ -78,7 +77,7 @@ They must have the same length.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_join_:_suffix">suffix</code>
+<code id="suffix">suffix</code>
 </td>
 <td>
 Suffix to add to duplicated column names.
@@ -86,7 +85,7 @@ Suffix to add to duplicated column names.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_join_:_validate">validate</code>
+<code id="validate">validate</code>
 </td>
 <td>
 
@@ -123,7 +122,7 @@ is only supported when joining by single columns.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_join_:_join_nulls">join_nulls</code>
+<code id="join_nulls">join_nulls</code>
 </td>
 <td>
 Join on null values. By default null values will never produce matches.
@@ -131,7 +130,7 @@ Join on null values. By default null values will never produce matches.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_join_:_allow_parallel">allow_parallel</code>
+<code id="allow_parallel">allow_parallel</code>
 </td>
 <td>
 Allow the physical plan to optionally evaluate the computation of both
@@ -140,7 +139,7 @@ DataFrames up to the join in parallel.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_join_:_force_parallel">force_parallel</code>
+<code id="force_parallel">force_parallel</code>
 </td>
 <td>
 Force the physical plan to evaluate the computation of both DataFrames

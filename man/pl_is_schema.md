@@ -18,7 +18,7 @@ check if schema
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_is_schema_:_x">x</code>
+<code id="x">x</code>
 </td>
 <td>
 object to test if schema

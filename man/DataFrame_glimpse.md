@@ -18,7 +18,7 @@ Glimpse values in a DataFrame
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_glimpse_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 not used
@@ -26,7 +26,7 @@ not used
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_glimpse_:_return_as_string">return_as_string</code>
+<code id="return_as_string">return_as_string</code>
 </td>
 <td>
 Logical (default <code>FALSE</code>). If <code>TRUE</code>, return the

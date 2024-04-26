@@ -19,7 +19,7 @@ string value.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_concat_:_delimiter">delimiter</code>
+<code id="delimiter">delimiter</code>
 </td>
 <td>
 The delimiter to insert between consecutive string values.
@@ -27,7 +27,7 @@ The delimiter to insert between consecutive string values.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_concat_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -35,7 +35,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_concat_:_ignore_nulls">ignore_nulls</code>
+<code id="ignore_nulls">ignore_nulls</code>
 </td>
 <td>
 Ignore null values (default). If <code>FALSE</code>, null values will be

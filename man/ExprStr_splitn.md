@@ -21,7 +21,7 @@ the remainder of the string.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_splitn_:_by">by</code>
+<code id="by">by</code>
 </td>
 <td>
 Substring to split by.
@@ -29,7 +29,7 @@ Substring to split by.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_splitn_:_n">n</code>
+<code id="n">n</code>
 </td>
 <td>
 Number of splits to make.

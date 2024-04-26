@@ -18,7 +18,7 @@ Replace all values above a maximum value by this maximum value.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_clip_max_:_max">max</code>
+<code id="max">max</code>
 </td>
 <td>
 Maximum value, Expr returning a numeric.

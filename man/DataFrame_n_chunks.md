@@ -19,7 +19,7 @@ DataFrame.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_n_chunks_:_strategy">strategy</code>
+<code id="strategy">strategy</code>
 </td>
 <td>
 Either <code>“all”</code> or <code>“first”</code>. <code>“first”</code>
@@ -138,10 +138,10 @@ lapply(x, tracemem) # trace chunks to verify no re-allocation
 ```
 
     #> [[1]]
-    #> [1] "<0x565092370418>"
+    #> [1] "<0x55b0bab5ad18>"
     #> 
     #> [[2]]
-    #> [1] "<0x56508f16b420>"
+    #> [1] "<0x55b0b6ba16d8>"
 
 ``` r
 z = c(x, x)
@@ -155,16 +155,16 @@ lapply(z, tracemem) # mem allocation  in z are the same from x
 ```
 
     #> [[1]]
-    #> [1] "<0x565092370418>"
+    #> [1] "<0x55b0bab5ad18>"
     #> 
     #> [[2]]
-    #> [1] "<0x56508f16b420>"
+    #> [1] "<0x55b0b6ba16d8>"
     #> 
     #> [[3]]
-    #> [1] "<0x565092370418>"
+    #> [1] "<0x55b0bab5ad18>"
     #> 
     #> [[4]]
-    #> [1] "<0x56508f16b420>"
+    #> [1] "<0x55b0b6ba16d8>"
 
 ``` r
 str(z)

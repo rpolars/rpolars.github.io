@@ -18,7 +18,7 @@ get n rows of head of group
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyGroupBy_head_:_n">n</code>
+<code id="n">n</code>
 </td>
 <td>
 integer number of rows to get

@@ -20,7 +20,7 @@ array.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_extract_all_:_pattern">pattern</code>
+<code id="pattern">pattern</code>
 </td>
 <td>
 A valid regex pattern

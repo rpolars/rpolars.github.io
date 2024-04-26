@@ -27,7 +27,7 @@ Pivot data from long to wide
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_pivot_:_values">values</code>
+<code id="values">values</code>
 </td>
 <td>
 Column values to aggregate. Can be multiple columns if the
@@ -36,7 +36,7 @@ Column values to aggregate. Can be multiple columns if the
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_pivot_:_index">index</code>
+<code id="index">index</code>
 </td>
 <td>
 One or multiple keys to group by.
@@ -44,7 +44,7 @@ One or multiple keys to group by.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_pivot_:_columns">columns</code>
+<code id="columns">columns</code>
 </td>
 <td>
 Name of the column(s) whose values will be used as the header of the
@@ -53,7 +53,7 @@ output DataFrame.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_pivot_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Not used.
@@ -61,7 +61,7 @@ Not used.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_pivot_:_aggregate_function">aggregate_function</code>
+<code id="aggregate_function">aggregate_function</code>
 </td>
 <td>
 
@@ -84,7 +84,7 @@ an Expr e.g. <code>pl$element()$sum()</code>
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_pivot_:_maintain_order">maintain_order</code>
+<code id="maintain_order">maintain_order</code>
 </td>
 <td>
 Sort the grouped keys so that the output order is predictable.
@@ -92,7 +92,7 @@ Sort the grouped keys so that the output order is predictable.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_pivot_:_sort_columns">sort_columns</code>
+<code id="sort_columns">sort_columns</code>
 </td>
 <td>
 Sort the transposed columns by name. Default is by order of discovery.
@@ -100,7 +100,7 @@ Sort the transposed columns by name. Default is by order of discovery.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_pivot_:_separator">separator</code>
+<code id="separator">separator</code>
 </td>
 <td>
 Used as separator/delimiter in generated column names.

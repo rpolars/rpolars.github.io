@@ -19,7 +19,7 @@ be used to regrid data to a new grid - see examples below.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_interpolate_:_method">method</code>
+<code id="method">method</code>
 </td>
 <td>
 String, either <code>“linear”</code> (default) or

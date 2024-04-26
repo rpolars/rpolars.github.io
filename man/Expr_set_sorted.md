@@ -20,7 +20,7 @@ have to ensure of that yourself.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_set_sorted_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -28,7 +28,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_set_sorted_:_descending">descending</code>
+<code id="descending">descending</code>
 </td>
 <td>
 Sort the columns in descending order.

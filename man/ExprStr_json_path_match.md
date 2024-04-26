@@ -19,7 +19,7 @@ expression
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_json_path_match_:_json_path">json_path</code>
+<code id="json_path">json_path</code>
 </td>
 <td>
 A valid JSON path query string.

@@ -18,7 +18,7 @@ Reshape this Expr to a flat Series or a Series of Lists
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_reshape_:_dimensions">dimensions</code>
+<code id="dimensions">dimensions</code>
 </td>
 <td>
 A integer vector of length of the dimension size. If <code>-1</code> is

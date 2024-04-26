@@ -18,7 +18,7 @@ Drop a single column in-place and return the dropped column.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_drop_in_place_:_name">name</code>
+<code id="name">name</code>
 </td>
 <td>
 string Name of the column to drop.

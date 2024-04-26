@@ -18,7 +18,7 @@ Set a sorted flag on a Series
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_set_sorted_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -26,7 +26,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_set_sorted_:_descending">descending</code>
+<code id="descending">descending</code>
 </td>
 <td>
 Sort the columns in descending order.
@@ -34,7 +34,7 @@ Sort the columns in descending order.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_set_sorted_:_in_place">in_place</code>
+<code id="in_place">in_place</code>
 </td>
 <td>
 If <code>TRUE</code>, this will set the flag mutably and return

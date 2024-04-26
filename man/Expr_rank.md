@@ -22,7 +22,7 @@ Assign ranks to data, dealing with ties appropriately.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_rank_:_method">method</code>
+<code id="method">method</code>
 </td>
 <td>
 
@@ -74,7 +74,7 @@ dependent on the order that the values occur in the Series.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_rank_:_descending">descending</code>
+<code id="descending">descending</code>
 </td>
 <td>
 Rank in descending order.
@@ -82,7 +82,7 @@ Rank in descending order.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_rank_:_seed">seed</code>
+<code id="seed">seed</code>
 </td>
 <td>
 string parsed or number converted into uint64. Used if method="random".

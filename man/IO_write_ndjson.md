@@ -16,7 +16,7 @@ Write to NDJSON file
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_ndjson_:_file">file</code>
+<code id="file">file</code>
 </td>
 <td>
 File path to which the result should be written.

@@ -18,7 +18,7 @@ Unregister tables by name.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="SQLContext_unregister_:_names">names</code>
+<code id="names">names</code>
 </td>
 <td>
 A character vector of table names to unregister.

@@ -18,7 +18,7 @@ Get the first <code>n</code> values of a list
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprList_head_:_n">n</code>
+<code id="n">n</code>
 </td>
 <td>
 Number of values to return for each sublist. Can be an Expr. Strings are

@@ -18,7 +18,7 @@ Convert a String column into a Time column
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_to_time_:_format">format</code>
+<code id="format">format</code>
 </td>
 <td>
 Format to use for conversion. Refer to
@@ -34,7 +34,7 @@ ignore timezones. Numeric time zones like
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_to_time_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Not used.
@@ -42,7 +42,7 @@ Not used.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_to_time_:_strict">strict</code>
+<code id="strict">strict</code>
 </td>
 <td>
 If <code>TRUE</code> (default), raise an error if a single string cannot
@@ -51,7 +51,7 @@ be parsed. If <code>FALSE</code>, produce a polars <code>null</code>.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_to_time_:_cache">cache</code>
+<code id="cache">cache</code>
 </td>
 <td>
 Use a cache of unique, converted dates to apply the datetime conversion.

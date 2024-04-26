@@ -18,7 +18,7 @@ Calculates the correlation between two columns
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_corr_:_a">a</code>
+<code id="a">a</code>
 </td>
 <td>
 One column name or Expr or anything convertible Into<Expr> via
@@ -27,7 +27,7 @@ One column name or Expr or anything convertible Into<Expr> via
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_corr_:_b">b</code>
+<code id="b">b</code>
 </td>
 <td>
 Another column name or Expr or anything convertible Into<Expr> via
@@ -36,7 +36,7 @@ Another column name or Expr or anything convertible Into<Expr> via
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_corr_:_method">method</code>
+<code id="method">method</code>
 </td>
 <td>
 str One of ‘pearson’ or ‘spearman’
@@ -44,7 +44,7 @@ str One of ‘pearson’ or ‘spearman’
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_corr_:_ddof">ddof</code>
+<code id="ddof">ddof</code>
 </td>
 <td>
 integer Delta Degrees of Freedom: the divisor used in the calculation is
@@ -54,7 +54,7 @@ N - ddof, where N represents the number of elements. By default ddof is
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_corr_:_propagate_nans">propagate_nans</code>
+<code id="propagate_nans">propagate_nans</code>
 </td>
 <td>
 bool Used only when calculating the spearman rank correlation. If

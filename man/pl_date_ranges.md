@@ -31,7 +31,7 @@ use <code>pl$datetime_ranges()</code> if you want Datetime instead.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_date_ranges_:_start">start</code>
+<code id="start">start</code>
 </td>
 <td>
 Lower bound of the date range. Something that can be coerced to a Date
@@ -40,7 +40,7 @@ or a Datetime expression. See examples for details.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_date_ranges_:_end">end</code>
+<code id="end">end</code>
 </td>
 <td>
 Upper bound of the date range. Something that can be coerced to a Date
@@ -49,7 +49,7 @@ or a Datetime expression. See examples for details.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_date_ranges_:_interval">interval</code>
+<code id="interval">interval</code>
 </td>
 <td>
 Interval of the range periods, specified as a difftime object or using
@@ -60,7 +60,7 @@ section for details.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_date_ranges_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -68,7 +68,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_date_ranges_:_closed">closed</code>
+<code id="closed">closed</code>
 </td>
 <td>
 Define which sides of the range are closed (inclusive). One of the
@@ -78,7 +78,7 @@ followings: <code>“both”</code> (default), <code>“left”</code>,
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_date_ranges_:_time_unit">time_unit</code>
+<code id="time_unit">time_unit</code>
 </td>
 <td>
 Time unit of the resulting the Datetime data type. One of
@@ -89,7 +89,7 @@ Datetime (deprecated usage).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_date_ranges_:_time_zone">time_zone</code>
+<code id="time_zone">time_zone</code>
 </td>
 <td>
 Time zone of the resulting Datetime data type. Only takes effect if the

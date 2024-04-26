@@ -26,7 +26,7 @@ combination with functions like <code>lapply()</code> or
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_partition_by_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Characters of column names to group by. Passed to <code>pl$col()</code>.
@@ -34,7 +34,7 @@ Characters of column names to group by. Passed to <code>pl$col()</code>.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_partition_by_:_maintain_order">maintain_order</code>
+<code id="maintain_order">maintain_order</code>
 </td>
 <td>
 If <code>TRUE</code>, ensure that the order of the groups is consistent
@@ -44,7 +44,7 @@ operation.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_partition_by_:_include_key">include_key</code>
+<code id="include_key">include_key</code>
 </td>
 <td>
 If <code>TRUE</code>, include the columns used to partition the
@@ -53,7 +53,7 @@ DataFrame in the output.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_partition_by_:_as_nested_list">as_nested_list</code>
+<code id="as_nested_list">as_nested_list</code>
 </td>
 <td>
 This affects the format of the output. If <code>FALSE</code> (default),
@@ -336,7 +336,7 @@ df$partition_by("a", "b", maintain_order = FALSE, as_nested_list = TRUE) |>
 ```
 
     #> 
-    #> The key value of `a` is b and the key value of `b` is 3
+    #> The key value of `a` is c and the key value of `b` is 3
     #> shape: (9, 2)
     #> ┌────────────┬──────┐
     #> │ statistic  ┆ c    │
@@ -345,13 +345,13 @@ df$partition_by("a", "b", maintain_order = FALSE, as_nested_list = TRUE) |>
     #> ╞════════════╪══════╡
     #> │ count      ┆ 1.0  │
     #> │ null_count ┆ 0.0  │
-    #> │ mean       ┆ 2.0  │
+    #> │ mean       ┆ 1.0  │
     #> │ std        ┆ null │
-    #> │ min        ┆ 2.0  │
-    #> │ 25%        ┆ 2.0  │
-    #> │ 50%        ┆ 2.0  │
-    #> │ 75%        ┆ 2.0  │
-    #> │ max        ┆ 2.0  │
+    #> │ min        ┆ 1.0  │
+    #> │ 25%        ┆ 1.0  │
+    #> │ 50%        ┆ 1.0  │
+    #> │ 75%        ┆ 1.0  │
+    #> │ max        ┆ 1.0  │
     #> └────────────┴──────┘
     #> 
     #> The key value of `a` is a and the key value of `b` is 1
@@ -372,7 +372,7 @@ df$partition_by("a", "b", maintain_order = FALSE, as_nested_list = TRUE) |>
     #> │ max        ┆ 5.0      │
     #> └────────────┴──────────┘
     #> 
-    #> The key value of `a` is c and the key value of `b` is 3
+    #> The key value of `a` is b and the key value of `b` is 3
     #> shape: (9, 2)
     #> ┌────────────┬──────┐
     #> │ statistic  ┆ c    │
@@ -381,13 +381,13 @@ df$partition_by("a", "b", maintain_order = FALSE, as_nested_list = TRUE) |>
     #> ╞════════════╪══════╡
     #> │ count      ┆ 1.0  │
     #> │ null_count ┆ 0.0  │
-    #> │ mean       ┆ 1.0  │
+    #> │ mean       ┆ 2.0  │
     #> │ std        ┆ null │
-    #> │ min        ┆ 1.0  │
-    #> │ 25%        ┆ 1.0  │
-    #> │ 50%        ┆ 1.0  │
-    #> │ 75%        ┆ 1.0  │
-    #> │ max        ┆ 1.0  │
+    #> │ min        ┆ 2.0  │
+    #> │ 25%        ┆ 2.0  │
+    #> │ 50%        ┆ 2.0  │
+    #> │ 75%        ┆ 2.0  │
+    #> │ max        ┆ 2.0  │
     #> └────────────┴──────┘
     #> 
     #> The key value of `a` is b and the key value of `b` is 2

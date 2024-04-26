@@ -18,7 +18,7 @@ Encode a value using the provided encoding
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_encode_:_encoding">encoding</code>
+<code id="encoding">encoding</code>
 </td>
 <td>
 Either ‘hex’ or ‘base64’.

@@ -20,7 +20,7 @@ data. See examples.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_slice_:_offset">offset</code>
+<code id="offset">offset</code>
 </td>
 <td>
 Numeric or expression, zero-indexed. Indicates where to start the slice.
@@ -29,7 +29,7 @@ A negative value is one-indexed and starts from the end.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_slice_:_length">length</code>
+<code id="length">length</code>
 </td>
 <td>
 Maximum number of elements contained in the slice. Default is full data.

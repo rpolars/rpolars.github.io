@@ -18,7 +18,7 @@ Method equivalent of addition operator <code>expr + other</code>.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_eq_:_other">other</code>
+<code id="other">other</code>
 </td>
 <td>
 numeric or string value; accepts expression input.

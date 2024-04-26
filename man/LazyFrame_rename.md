@@ -18,7 +18,7 @@ Rename columns of a DataFrame
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_rename_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 

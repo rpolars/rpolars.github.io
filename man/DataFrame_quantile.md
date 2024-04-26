@@ -20,7 +20,7 @@ quantiles.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_quantile_:_quantile">quantile</code>
+<code id="quantile">quantile</code>
 </td>
 <td>
 Numeric of length 1 between 0 and 1.
@@ -28,7 +28,7 @@ Numeric of length 1 between 0 and 1.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_quantile_:_interpolation">interpolation</code>
+<code id="interpolation">interpolation</code>
 </td>
 <td>
 One of <code>“nearest”</code>, <code>“higher”</code>,

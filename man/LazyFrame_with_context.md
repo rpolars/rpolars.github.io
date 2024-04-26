@@ -19,7 +19,7 @@ LazyFrames that are not part of this one.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_with_context_:_other">other</code>
+<code id="other">other</code>
 </td>
 <td>
 Data/LazyFrame to have access to. This can be a list of DataFrames and

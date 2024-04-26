@@ -18,7 +18,7 @@ Combine two boolean expressions with XOR.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_xor_:_other">other</code>
+<code id="other">other</code>
 </td>
 <td>
 numeric or string value; accepts expression input.

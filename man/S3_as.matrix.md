@@ -20,7 +20,7 @@ as.matrix(x, ...)
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as.matrix.RPolarsDataFrame_:_x">x</code>
+<code id="x">x</code>
 </td>
 <td>
 An object to convert to a matrix.
@@ -28,7 +28,7 @@ An object to convert to a matrix.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as.matrix.RPolarsDataFrame_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Additional arguments passed to methods.

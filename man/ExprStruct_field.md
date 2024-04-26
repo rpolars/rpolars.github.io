@@ -18,7 +18,7 @@ Retrieve a <code>Struct</code> field as a new Series. By default base 2.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStruct_field_:_name">name</code>
+<code id="name">name</code>
 </td>
 <td>
 string, the Name of the struct field to retrieve.

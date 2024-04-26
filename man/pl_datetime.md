@@ -30,7 +30,7 @@ Create a Datetime expression
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_datetime_:_year">year</code>
+<code id="year">year</code>
 </td>
 <td>
 An Expr or something coercible to an Expr, that must return an integer.
@@ -39,7 +39,7 @@ Strings are parsed as column names. Floats are cast to integers.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_datetime_:_month">month</code>
+<code id="month">month</code>
 </td>
 <td>
 An Expr or something coercible to an Expr, that must return an integer
@@ -49,7 +49,7 @@ integers.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_datetime_:_day">day</code>
+<code id="day">day</code>
 </td>
 <td>
 An Expr or something coercible to an Expr, that must return an integer
@@ -59,7 +59,7 @@ integers.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_datetime_:_hour">hour</code>
+<code id="hour">hour</code>
 </td>
 <td>
 An Expr or something coercible to an Expr, that must return an integer
@@ -69,7 +69,7 @@ integers.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_datetime_:_minute">minute</code>
+<code id="minute">minute</code>
 </td>
 <td>
 An Expr or something coercible to an Expr, that must return an integer
@@ -79,7 +79,7 @@ integers.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_datetime_:_second">second</code>
+<code id="second">second</code>
 </td>
 <td>
 An Expr or something coercible to an Expr, that must return an integer
@@ -89,7 +89,7 @@ integers.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_datetime_:_microsecond">microsecond</code>
+<code id="microsecond">microsecond</code>
 </td>
 <td>
 An Expr or something coercible to an Expr, that must return an integer
@@ -99,7 +99,7 @@ cast to integers.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_datetime_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Not used.
@@ -107,7 +107,7 @@ Not used.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_datetime_:_time_unit">time_unit</code>
+<code id="time_unit">time_unit</code>
 </td>
 <td>
 Unit of time. One of <code>“ms”</code>, <code>“us”</code> (default) or
@@ -116,7 +116,7 @@ Unit of time. One of <code>“ms”</code>, <code>“us”</code> (default) or
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_datetime_:_time_zone">time_zone</code>
+<code id="time_zone">time_zone</code>
 </td>
 <td>
 Time zone string, as defined in <code>OlsonNames()</code>. Setting
@@ -126,7 +126,7 @@ useful to select all Datetime columns containing a timezone.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_datetime_:_ambiguous">ambiguous</code>
+<code id="ambiguous">ambiguous</code>
 </td>
 <td>
 

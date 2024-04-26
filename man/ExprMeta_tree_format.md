@@ -18,7 +18,7 @@ Format an expression as a tree
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprMeta_tree_format_:_return_as_string">return_as_string</code>
+<code id="return_as_string">return_as_string</code>
 </td>
 <td>
 Return the tree as a character vector? If <code>FALSE</code> (default),

@@ -19,7 +19,7 @@ do rowwise operations with an initial value.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_reduce_:_lambda">lambda</code>
+<code id="lambda">lambda</code>
 </td>
 <td>
 R function which takes two polars Series as input and return one.
@@ -27,7 +27,7 @@ R function which takes two polars Series as input and return one.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_reduce_:_exprs">exprs</code>
+<code id="exprs">exprs</code>
 </td>
 <td>
 Expressions to aggregate over. May also be a wildcard expression.

@@ -18,7 +18,7 @@ Method equivalent of power operator <code>series ^ other</code>.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_pow_:_exponent">exponent</code>
+<code id="exponent">exponent</code>
 </td>
 <td>
 Series like object of numeric. Converted to Series by

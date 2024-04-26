@@ -19,7 +19,7 @@ dimensions (1, 1).
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_item_:_row">row</code>
+<code id="row">row</code>
 </td>
 <td>
 Optional row index (0-indexed).
@@ -27,7 +27,7 @@ Optional row index (0-indexed).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_item_:_column">column</code>
+<code id="column">column</code>
 </td>
 <td>
 Optional column index (0-indexed) or name.

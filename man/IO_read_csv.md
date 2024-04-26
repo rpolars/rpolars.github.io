@@ -41,7 +41,7 @@ New DataFrame from CSV
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_source">source</code>
+<code id="source">source</code>
 </td>
 <td>
 Path to a file or URL. It is possible to provide multiple paths provided
@@ -51,7 +51,7 @@ several URLs.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -59,7 +59,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_has_header">has_header</code>
+<code id="has_header">has_header</code>
 </td>
 <td>
 Indicate if the first row of dataset is a header or not.If
@@ -70,7 +70,7 @@ every column in the dataset starting at 1.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_separator">separator</code>
+<code id="separator">separator</code>
 </td>
 <td>
 Single byte character to use as separator in the file.
@@ -78,7 +78,7 @@ Single byte character to use as separator in the file.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_comment_prefix">comment_prefix</code>
+<code id="comment_prefix">comment_prefix</code>
 </td>
 <td>
 A string, which can be up to 5 symbols in length, used to indicate the
@@ -89,7 +89,7 @@ start of a comment line. For instance, it can be set to
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_quote_char">quote_char</code>
+<code id="quote_char">quote_char</code>
 </td>
 <td>
 Single byte character used for quoting. Set to <code>NULL</code> to turn
@@ -98,7 +98,7 @@ off special handling and escaping of quotes.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_skip_rows">skip_rows</code>
+<code id="skip_rows">skip_rows</code>
 </td>
 <td>
 Start reading after a particular number of rows. The header will be
@@ -107,7 +107,7 @@ parsed at this offset.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_dtypes">dtypes</code>
+<code id="dtypes">dtypes</code>
 </td>
 <td>
 
@@ -155,7 +155,7 @@ is used while reading to overwrite dtypes. Supported types so far are:
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_null_values">null_values</code>
+<code id="null_values">null_values</code>
 </td>
 <td>
 
@@ -178,7 +178,7 @@ a named list with column names and null values.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_ignore_errors">ignore_errors</code>
+<code id="ignore_errors">ignore_errors</code>
 </td>
 <td>
 Keep reading the file even if some lines yield errors. You can also use
@@ -188,7 +188,7 @@ check which values might cause an issue.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_cache">cache</code>
+<code id="cache">cache</code>
 </td>
 <td>
 Cache the result after reading.
@@ -196,7 +196,7 @@ Cache the result after reading.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_infer_schema_length">infer_schema_length</code>
+<code id="infer_schema_length">infer_schema_length</code>
 </td>
 <td>
 Maximum number of rows to read to infer the column types. If set to 0,
@@ -206,7 +206,7 @@ scan will be done (slow).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_n_rows">n_rows</code>
+<code id="n_rows">n_rows</code>
 </td>
 <td>
 Maximum number of rows to read.
@@ -214,7 +214,7 @@ Maximum number of rows to read.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_encoding">encoding</code>
+<code id="encoding">encoding</code>
 </td>
 <td>
 Either <code>“utf8”</code> or <code>“utf8-lossy”</code>. Lossy means
@@ -223,7 +223,7 @@ that invalid UTF8 values are replaced with "?" characters.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_low_memory">low_memory</code>
+<code id="low_memory">low_memory</code>
 </td>
 <td>
 Reduce memory usage (will yield a lower performance).
@@ -231,7 +231,7 @@ Reduce memory usage (will yield a lower performance).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_rechunk">rechunk</code>
+<code id="rechunk">rechunk</code>
 </td>
 <td>
 Reallocate to contiguous memory when all chunks / files are parsed.
@@ -239,7 +239,7 @@ Reallocate to contiguous memory when all chunks / files are parsed.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_skip_rows_after_header">skip_rows_after_header</code>
+<code id="skip_rows_after_header">skip_rows_after_header</code>
 </td>
 <td>
 Parse the first row as headers, and then skip this number of rows.
@@ -247,7 +247,7 @@ Parse the first row as headers, and then skip this number of rows.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_row_index_name">row_index_name</code>
+<code id="row_index_name">row_index_name</code>
 </td>
 <td>
 If not <code>NULL</code>, this will insert a row index column with the
@@ -256,7 +256,7 @@ given name into the DataFrame.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_row_index_offset">row_index_offset</code>
+<code id="row_index_offset">row_index_offset</code>
 </td>
 <td>
 Offset to start the row index column (only used if the name is set).
@@ -264,7 +264,7 @@ Offset to start the row index column (only used if the name is set).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_try_parse_dates">try_parse_dates</code>
+<code id="try_parse_dates">try_parse_dates</code>
 </td>
 <td>
 Try to automatically parse dates. Most ISO8601-like formats can be
@@ -274,7 +274,7 @@ column remains of data type <code>pl$String</code>.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_eol_char">eol_char</code>
+<code id="eol_char">eol_char</code>
 </td>
 <td>
 Single byte end of line character (default:
@@ -286,7 +286,7 @@ go with the default <code style="white-space: pre;"></code>. The extra
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_raise_if_empty">raise_if_empty</code>
+<code id="raise_if_empty">raise_if_empty</code>
 </td>
 <td>
 If <code>FALSE</code>, parsing an empty file returns an empty DataFrame
@@ -295,7 +295,7 @@ or LazyFrame.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_truncate_ragged_lines">truncate_ragged_lines</code>
+<code id="truncate_ragged_lines">truncate_ragged_lines</code>
 </td>
 <td>
 Truncate lines that are longer than the schema.
@@ -303,7 +303,7 @@ Truncate lines that are longer than the schema.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_csv_:_reuse_downloaded">reuse_downloaded</code>
+<code id="reuse_downloaded">reuse_downloaded</code>
 </td>
 <td>
 If <code>TRUE</code>(default) and a URL was provided, cache the

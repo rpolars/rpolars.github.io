@@ -18,7 +18,7 @@ Sort values in a list
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprList_sort_:_descending">descending</code>
+<code id="descending">descending</code>
 </td>
 <td>
 Sort values in descending order

@@ -17,7 +17,7 @@ c(x, ...)
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="c.RPolarsSeries_:_x">x</code>
+<code id="x">x</code>
 </td>
 <td>
 A Polars Series
@@ -25,7 +25,7 @@ A Polars Series
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="c.RPolarsSeries_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Series(s) or any object that can be converted to a Series.

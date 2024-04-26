@@ -18,7 +18,7 @@ Encode a value using the provided encoding
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprBin_encode_:_encoding">encoding</code>
+<code id="encoding">encoding</code>
 </td>
 <td>
 A character, <code>“hex”</code> or <code>“base64”</code>. The encoding

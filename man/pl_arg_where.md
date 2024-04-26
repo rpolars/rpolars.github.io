@@ -18,7 +18,7 @@ Return indices that match a condition
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_arg_where_:_condition">condition</code>
+<code id="condition">condition</code>
 </td>
 <td>
 An Expr that gives a boolean.

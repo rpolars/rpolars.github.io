@@ -18,7 +18,7 @@ Round underlying floating point data by <code>decimals</code> digits.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_round_:_decimals">decimals</code>
+<code id="decimals">decimals</code>
 </td>
 <td>
 Number of decimals to round by.

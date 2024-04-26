@@ -16,7 +16,7 @@ Write to JSON file
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_json_:_file">file</code>
+<code id="file">file</code>
 </td>
 <td>
 File path to which the result should be written.
@@ -24,7 +24,7 @@ File path to which the result should be written.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_json_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -32,7 +32,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_json_:_pretty">pretty</code>
+<code id="pretty">pretty</code>
 </td>
 <td>
 Pretty serialize JSON.
@@ -40,7 +40,7 @@ Pretty serialize JSON.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_json_:_row_oriented">row_oriented</code>
+<code id="row_oriented">row_oriented</code>
 </td>
 <td>
 Write to row-oriented JSON. This is slower, but more common.

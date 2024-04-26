@@ -18,7 +18,7 @@ Compute the variance of a Series
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_var_:_ddof">ddof</code>
+<code id="ddof">ddof</code>
 </td>
 <td>
 Delta Degrees of Freedom: the divisor used in the calculation is N -

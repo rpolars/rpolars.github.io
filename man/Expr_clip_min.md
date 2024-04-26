@@ -18,7 +18,7 @@ Replace all values below a minimum value by this minimum value.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_clip_min_:_min">min</code>
+<code id="min">min</code>
 </td>
 <td>
 Minimum value, Expr returning a numeric.

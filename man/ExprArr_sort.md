@@ -18,7 +18,7 @@ Sort values in an array
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprArr_sort_:_descending">descending</code>
+<code id="descending">descending</code>
 </td>
 <td>
 A logical. If <code>TRUE</code>, sort in descending order.
@@ -26,7 +26,7 @@ A logical. If <code>TRUE</code>, sort in descending order.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprArr_sort_:_nulls_last">nulls_last</code>
+<code id="nulls_last">nulls_last</code>
 </td>
 <td>
 A logical. If <code>TRUE</code>, place <code>null</code> values last

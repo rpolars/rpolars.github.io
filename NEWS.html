@@ -14,7 +14,7 @@
       
       
       <link rel="icon" href="polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.19">
     
     
       
@@ -14776,6 +14776,27 @@
   
   
     <li class="md-nav__item">
+      <a href="man/DataType_Enum.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataType_Enum
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="man/DataType_is_array.html" class="md-nav__link">
         
   
@@ -17238,6 +17259,10 @@
 <h3 id="new-features">New features</h3>
 <ul>
 <li><code>$cut()</code> and <code>$qcut()</code> to bin continuous values into discrete categories (<a href="https://github.com/pola-rs/r-polars/issues/1057">#1057</a>).</li>
+<li><code>pl$scan_parquet()</code> and <code>pl$read_parquet()</code> gain an argument <code>storage_options</code>
+  to scan/read data via cloud storage providers (GCP, AWS, Azure). Note that this
+  support is experimental (<a href="https://github.com/pola-rs/r-polars/issues/1056">#1056</a>, <a href="https://github.com/andyquinterom">@andyquinterom</a>).</li>
+<li>Add support for the <code>Enum</code> datatype via <code>pl$Enum()</code> (<a href="https://github.com/pola-rs/r-polars/issues/1061">#1061</a>).</li>
 </ul>
 <h3 id="bug-fixes">Bug fixes</h3>
 <ul>
@@ -18426,7 +18451,7 @@ features. Unrelated breaking changes and new features are put in separate sectio
     <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.3220b9d7.min.js"></script>
+      <script src="assets/javascripts/bundle.dd8806f2.min.js"></script>
       
     
   </body>

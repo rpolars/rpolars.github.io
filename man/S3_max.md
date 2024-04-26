@@ -23,7 +23,7 @@ max(x, ...)
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="max.RPolarsDataFrame_:_x">x</code>
+<code id="x">x</code>
 </td>
 <td>
 A DataFrame, LazyFrame, or Series
@@ -31,7 +31,7 @@ A DataFrame, LazyFrame, or Series
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="max.RPolarsDataFrame_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Not used.

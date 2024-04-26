@@ -25,7 +25,7 @@ as.list(x, ...)
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_raw_list_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Elements
@@ -33,7 +33,7 @@ Elements
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_raw_list_:_x">x</code>
+<code id="x">x</code>
 </td>
 <td>
 A <code>rpolars_raw_list</code> object created with
@@ -42,7 +42,7 @@ A <code>rpolars_raw_list</code> object created with
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_raw_list_:_index">index</code>
+<code id="index">index</code>
 </td>
 <td>
 Elements to select

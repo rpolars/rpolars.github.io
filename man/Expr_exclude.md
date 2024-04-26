@@ -18,7 +18,7 @@ Exclude certain columns from selection
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_exclude_:_columns">columns</code>
+<code id="columns">columns</code>
 </td>
 <td>
 

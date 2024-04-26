@@ -18,7 +18,7 @@ Extract a DataFrame column as a Polars series.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_get_column_:_name">name</code>
+<code id="name">name</code>
 </td>
 <td>
 Name of the column to extract.

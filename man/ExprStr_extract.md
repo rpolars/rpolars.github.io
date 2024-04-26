@@ -18,7 +18,7 @@ Extract the target capture group from provided patterns
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_extract_:_pattern">pattern</code>
+<code id="pattern">pattern</code>
 </td>
 <td>
 A valid regex pattern. Can be an Expr or something coercible to an Expr.
@@ -27,7 +27,7 @@ Strings are parsed as column names.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_extract_:_group_index">group_index</code>
+<code id="group_index">group_index</code>
 </td>
 <td>
 Index of the targeted capture group. Group 0 means the whole pattern,

@@ -18,7 +18,7 @@ Run any polars expression on the list values
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprList_eval_:_expr">expr</code>
+<code id="expr">expr</code>
 </td>
 <td>
 Expression to run. Note that you can select an element with
@@ -28,7 +28,7 @@ Examples.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprList_eval_:_parallel">parallel</code>
+<code id="parallel">parallel</code>
 </td>
 <td>
 Run all expression parallel. Don’t activate this blindly. Parallelism is

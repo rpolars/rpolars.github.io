@@ -22,7 +22,7 @@ Transpose a DataFrame over the diagonal.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_transpose_:_include_header">include_header</code>
+<code id="include_header">include_header</code>
 </td>
 <td>
 If <code>TRUE</code>, the column names will be added as first column.
@@ -30,7 +30,7 @@ If <code>TRUE</code>, the column names will be added as first column.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_transpose_:_header_name">header_name</code>
+<code id="header_name">header_name</code>
 </td>
 <td>
 If <code>include_header</code> is <code>TRUE</code>, this determines the
@@ -39,7 +39,7 @@ name of the column that will be inserted.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_transpose_:_column_names">column_names</code>
+<code id="column_names">column_names</code>
 </td>
 <td>
 Character vector indicating the new column names. If <code>NULL</code>

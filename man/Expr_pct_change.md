@@ -21,7 +21,7 @@ default.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_pct_change_:_n">n</code>
+<code id="n">n</code>
 </td>
 <td>
 Periods to shift for computing percent change.

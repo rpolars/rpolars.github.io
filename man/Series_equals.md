@@ -18,7 +18,7 @@ This checks whether two Series are equal in values and in their name.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_equals_:_other">other</code>
+<code id="other">other</code>
 </td>
 <td>
 Series to compare with.
@@ -26,7 +26,7 @@ Series to compare with.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_equals_:_null_equal">null_equal</code>
+<code id="null_equal">null_equal</code>
 </td>
 <td>
 If <code>TRUE</code>, consider that null values are equal. Overridden by
@@ -35,7 +35,7 @@ If <code>TRUE</code>, consider that null values are equal. Overridden by
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_equals_:_strict">strict</code>
+<code id="strict">strict</code>
 </td>
 <td>
 If <code>TRUE</code>, do not allow similar DataType comparison.

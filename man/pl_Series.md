@@ -20,7 +20,7 @@ object. Internally, this function is a simple wrapper of
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_Series_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Treated as <code>values</code>, <code>name</code>, and
@@ -31,7 +31,7 @@ nan_to_null)</code> and <code>…</code> will be ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_Series_:_values">values</code>
+<code id="values">values</code>
 </td>
 <td>
 Object to convert into a polars Series. Passed to the <code>x</code>
@@ -40,7 +40,7 @@ argument in as_polars_series().
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_Series_:_name">name</code>
+<code id="name">name</code>
 </td>
 <td>
 A character to use as the name of the Series, or <code>NULL</code>
@@ -50,7 +50,7 @@ as_polars_series().
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_Series_:_dtype">dtype</code>
+<code id="dtype">dtype</code>
 </td>
 <td>
 One of polars data type or <code>NULL</code>. If not <code>NULL</code>,
@@ -60,7 +60,7 @@ specific data type internally.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_Series_:_nan_to_null">nan_to_null</code>
+<code id="nan_to_null">nan_to_null</code>
 </td>
 <td>
 If <code>TRUE</code>, <code>NaN</code> values contained in the Series

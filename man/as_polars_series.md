@@ -67,7 +67,7 @@ as_polars_series(x, name = NULL, ...)
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_series_:_x">x</code>
+<code id="x">x</code>
 </td>
 <td>
 Object to convert into a polars Series.
@@ -75,7 +75,7 @@ Object to convert into a polars Series.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_series_:_name">name</code>
+<code id="name">name</code>
 </td>
 <td>
 A character to use as the name of the Series. If <code>NULL</code>
@@ -85,7 +85,7 @@ A character to use as the name of the Series. If <code>NULL</code>
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_series_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Additional arguments passed to methods.
@@ -93,7 +93,7 @@ Additional arguments passed to methods.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_series_:_rechunk">rechunk</code>
+<code id="rechunk">rechunk</code>
 </td>
 <td>
 A logical flag (default <code>TRUE</code>). Make sure that all data is

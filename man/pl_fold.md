@@ -20,7 +20,7 @@ operations without this initial value.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_fold_:_acc">acc</code>
+<code id="acc">acc</code>
 </td>
 <td>
 an Expr or Into<Expr> of the initial accumulator.
@@ -28,7 +28,7 @@ an Expr or Into<Expr> of the initial accumulator.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_fold_:_lambda">lambda</code>
+<code id="lambda">lambda</code>
 </td>
 <td>
 R function which takes two polars Series as input and return one.
@@ -36,7 +36,7 @@ R function which takes two polars Series as input and return one.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_fold_:_exprs">exprs</code>
+<code id="exprs">exprs</code>
 </td>
 <td>
 Expressions to aggregate over. May also be a wildcard expression.

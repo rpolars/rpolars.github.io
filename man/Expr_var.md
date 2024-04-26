@@ -18,7 +18,7 @@ Get variance
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_var_:_ddof">ddof</code>
+<code id="ddof">ddof</code>
 </td>
 <td>
 An integer representing "Delta Degrees of Freedom": the divisor used in

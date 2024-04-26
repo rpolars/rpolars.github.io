@@ -18,7 +18,7 @@ Get an array with the cumulative product computed at every element.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_cum_prod_:_reverse">reverse</code>
+<code id="reverse">reverse</code>
 </td>
 <td>
 If <code>TRUE</code>, start with the total product of elements and

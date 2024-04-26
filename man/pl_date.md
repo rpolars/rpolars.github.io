@@ -18,7 +18,7 @@ Create a Date expression
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_date_:_year">year</code>
+<code id="year">year</code>
 </td>
 <td>
 An Expr or something coercible to an Expr, that must return an integer.
@@ -27,7 +27,7 @@ Strings are parsed as column names. Floats are cast to integers.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_date_:_month">month</code>
+<code id="month">month</code>
 </td>
 <td>
 An Expr or something coercible to an Expr, that must return an integer
@@ -37,7 +37,7 @@ integers.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_date_:_day">day</code>
+<code id="day">day</code>
 </td>
 <td>
 An Expr or something coercible to an Expr, that must return an integer

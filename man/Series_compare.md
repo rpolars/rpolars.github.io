@@ -36,7 +36,7 @@ s1 &gt;= s2
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_compare_:_other">other</code>
+<code id="other">other</code>
 </td>
 <td>
 A Series or something a Series can be created from
@@ -44,7 +44,7 @@ A Series or something a Series can be created from
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_compare_:_op">op</code>
+<code id="op">op</code>
 </td>
 <td>
 The chosen operator, must be one of <code>“equal”</code>,
@@ -54,7 +54,7 @@ The chosen operator, must be one of <code>“equal”</code>,
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_compare_:_s1">s1</code>
+<code id="s1">s1</code>
 </td>
 <td>
 lhs Series
@@ -62,7 +62,7 @@ lhs Series
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_compare_:_s2">s2</code>
+<code id="s2">s2</code>
 </td>
 <td>
 rhs Series or any into Series

@@ -18,7 +18,7 @@ Collect columns into a struct column
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_struct_:_exprs">exprs</code>
+<code id="exprs">exprs</code>
 </td>
 <td>
 Columns/Expressions to collect into a Struct.
@@ -26,7 +26,7 @@ Columns/Expressions to collect into a Struct.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_struct_:_schema">schema</code>
+<code id="schema">schema</code>
 </td>
 <td>
 Optional schema named list that explicitly defines the struct field

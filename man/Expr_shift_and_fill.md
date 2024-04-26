@@ -18,7 +18,7 @@ Shift the values by a given period and fill the resulting null values.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_shift_and_fill_:_periods">periods</code>
+<code id="periods">periods</code>
 </td>
 <td>
 Number of periods to shift, may be negative.
@@ -26,7 +26,7 @@ Number of periods to shift, may be negative.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_shift_and_fill_:_fill_value">fill_value</code>
+<code id="fill_value">fill_value</code>
 </td>
 <td>
 Fill null values with the result of this expression.

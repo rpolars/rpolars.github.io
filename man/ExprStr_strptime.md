@@ -26,7 +26,7 @@ Similar to the <code>strptime()</code> function.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_strptime_:_dtype">dtype</code>
+<code id="dtype">dtype</code>
 </td>
 <td>
 The data type to convert into. Can be either <code>pl$Date</code>,
@@ -35,7 +35,7 @@ The data type to convert into. Can be either <code>pl$Date</code>,
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_strptime_:_format">format</code>
+<code id="format">format</code>
 </td>
 <td>
 Format to use for conversion. Refer to
@@ -51,7 +51,7 @@ ignore timezones. Numeric time zones like
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_strptime_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Not used.
@@ -59,7 +59,7 @@ Not used.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_strptime_:_strict">strict</code>
+<code id="strict">strict</code>
 </td>
 <td>
 If <code>TRUE</code> (default), raise an error if a single string cannot
@@ -68,7 +68,7 @@ be parsed. If <code>FALSE</code>, produce a polars <code>null</code>.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_strptime_:_exact">exact</code>
+<code id="exact">exact</code>
 </td>
 <td>
 If <code>TRUE</code> (default), require an exact format match. If
@@ -80,7 +80,7 @@ your data beforehand will almost certainly be more performant.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_strptime_:_cache">cache</code>
+<code id="cache">cache</code>
 </td>
 <td>
 Use a cache of unique, converted dates to apply the datetime conversion.
@@ -88,7 +88,7 @@ Use a cache of unique, converted dates to apply the datetime conversion.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_strptime_:_ambiguous">ambiguous</code>
+<code id="ambiguous">ambiguous</code>
 </td>
 <td>
 

@@ -21,7 +21,7 @@ mind that Polars is 0-indexed so "0" is the first column.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_to_series_:_idx">idx</code>
+<code id="idx">idx</code>
 </td>
 <td>
 Index of the column to return as Series. Defaults to 0, which is the

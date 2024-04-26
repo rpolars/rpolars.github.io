@@ -20,7 +20,7 @@ LazyFrame.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_clear_:_n">n</code>
+<code id="n">n</code>
 </td>
 <td>
 Number of (null-filled) rows to return in the cleared frame.

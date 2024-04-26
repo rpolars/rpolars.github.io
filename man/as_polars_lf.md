@@ -29,7 +29,7 @@ as_polars_lf(x, ...)
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_lf_:_x">x</code>
+<code id="x">x</code>
 </td>
 <td>
 Object to convert to a polars DataFrame.
@@ -37,7 +37,7 @@ Object to convert to a polars DataFrame.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_lf_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Additional arguments passed to methods.

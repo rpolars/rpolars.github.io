@@ -18,7 +18,7 @@ Remove trailing characters.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_strip_chars_end_:_matches">matches</code>
+<code id="matches">matches</code>
 </td>
 <td>
 The set of characters to be removed. All combinations of this set of

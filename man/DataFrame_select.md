@@ -19,7 +19,7 @@ unmentioned columns (like <code>.()</code> in <code>data.table</code>).
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_select_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Columns to keep. Those can be expressions (e.g

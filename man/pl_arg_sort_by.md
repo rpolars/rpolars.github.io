@@ -24,7 +24,7 @@ Return the row indices that would sort the columns
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_arg_sort_by_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Column(s) to arg sort by. Can be Expr(s) or something coercible to
@@ -33,7 +33,7 @@ Expr(s). Strings are parsed as column names.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_arg_sort_by_:_descending">descending</code>
+<code id="descending">descending</code>
 </td>
 <td>
 A logical. If <code>TRUE</code>, sort in descending order.
@@ -41,7 +41,7 @@ A logical. If <code>TRUE</code>, sort in descending order.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_arg_sort_by_:_nulls_last">nulls_last</code>
+<code id="nulls_last">nulls_last</code>
 </td>
 <td>
 A logical. If <code>TRUE</code>, place <code>null</code> values last
@@ -50,7 +50,7 @@ insead of first.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_arg_sort_by_:_multithreaded">multithreaded</code>
+<code id="multithreaded">multithreaded</code>
 </td>
 <td>
 A logical. If <code>TRUE</code>, sort using multiple threads.
@@ -58,7 +58,7 @@ A logical. If <code>TRUE</code>, sort using multiple threads.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_arg_sort_by_:_maintain_order">maintain_order</code>
+<code id="maintain_order">maintain_order</code>
 </td>
 <td>
 Whether the order should be maintained if elements are equal. If

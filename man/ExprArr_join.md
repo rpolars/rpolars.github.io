@@ -19,7 +19,7 @@ This only works on columns of type <code>list\[str\]</code>.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprArr_join_:_separator">separator</code>
+<code id="separator">separator</code>
 </td>
 <td>
 String to separate the items with. Can be an Expr. Strings are
@@ -28,7 +28,7 @@ String to separate the items with. Can be an Expr. Strings are
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprArr_join_:_ignore_nulls">ignore_nulls</code>
+<code id="ignore_nulls">ignore_nulls</code>
 </td>
 <td>
 If <code>FALSE</code> (default), null values are propagated: if the row

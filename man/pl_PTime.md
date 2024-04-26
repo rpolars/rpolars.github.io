@@ -18,7 +18,7 @@ Store Time in R
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_PTime_:_x">x</code>
+<code id="x">x</code>
 </td>
 <td>
 an integer or double vector of n epochs since midnight OR a char vector
@@ -27,7 +27,7 @@ of char times passed to as.POSIXct converted to seconds.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_PTime_:_tu">tu</code>
+<code id="tu">tu</code>
 </td>
 <td>
 timeunit either "s","ms","us","ns"
@@ -35,7 +35,7 @@ timeunit either "s","ms","us","ns"
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_PTime_:_format">format</code>
+<code id="format">format</code>
 </td>
 <td>
 a format string passed to as.POSIXct format via …
@@ -86,37 +86,37 @@ pl$PTime(runif(5) * 3600 * 24 * 1E0, tu = "s")
 ```
 
     #> PTime [ double ]: number of epochs [ s ] since midnight
-    #> [1] "19:17:19 val: 69439" "06:50:03 val: 24603" "10:20:44 val: 37244"
-    #> [4] "04:28:15 val: 16095" "08:15:10 val: 29710"
+    #> [1] "14:30:40 val: 52240" "06:55:53 val: 24953" "10:04:45 val: 36285"
+    #> [4] "03:22:58 val: 12178" "01:33:29 val: 5609"
 
 ``` r
 pl$PTime(runif(5) * 3600 * 24 * 1E3, tu = "ms")
 ```
 
     #> PTime [ double ]: number of epochs [ ms ] since midnight
-    #> [1] "17:26:12:848ms val: 62772848" "04:54:34:906ms val: 17674906"
-    #> [3] "02:40:59:512ms val: 9659512"  "04:12:32:940ms val: 15152940"
-    #> [5] "10:50:39:141ms val: 39039141"
+    #> [1] "15:12:07:062ms val: 54727062" "19:16:00:591ms val: 69360591"
+    #> [3] "08:11:04:598ms val: 29464598" "01:40:14:766ms val: 6014766" 
+    #> [5] "13:36:50:054ms val: 49010054"
 
 ``` r
 pl$PTime(runif(5) * 3600 * 24 * 1E6, tu = "us")
 ```
 
     #> PTime [ double ]: number of epochs [ us ] since midnight
-    #> [1] "15:10:42:925_078us val: 54642925078" "16:43:17:044_017us val: 60197044017"
-    #> [3] "20:28:38:637_704us val: 73718637704" "18:34:02:780_169us val: 66842780169"
-    #> [5] "20:55:06:505_937us val: 75306505937"
+    #> [1] "15:44:54:622_459us val: 56694622459" "04:12:32:834_768us val: 15152834768"
+    #> [3] "13:51:55:525_433us val: 49915525433" "03:10:22:576_224us val: 11422576224"
+    #> [5] "08:37:44:976_321us val: 31064976321"
 
 ``` r
 pl$PTime(runif(5) * 3600 * 24 * 1E9, tu = "ns")
 ```
 
     #> PTime [ double ]: number of epochs [ ns ] since midnight
-    #> [1] "10:54:03:754_430_115ns val: 39243754430115"
-    #> [2] "19:00:21:502_263_844ns val: 68421502263844"
-    #> [3] "19:09:55:093_077_421ns val: 68995093077421"
-    #> [4] "23:41:34:776_604_324ns val: 85294776604324"
-    #> [5] "07:50:26:773_108_541ns val: 28226773108541"
+    #> [1] "06:16:44:715_511_947ns val: 22604715511947"
+    #> [2] "16:09:40:331_560_224ns val: 58180331560224"
+    #> [3] "10:13:07:726_472_318ns val: 36787726472318"
+    #> [4] "12:21:51:935_772_746ns val: 44511935772746"
+    #> [5] "04:41:20:547_405_034ns val: 16880547405034"
 
 ``` r
 pl$PTime("23:59:59")
@@ -132,11 +132,11 @@ as_polars_series(pl$PTime(runif(5) * 3600 * 24 * 1E0, tu = "s"))
     #> polars Series: shape: (5,)
     #> Series: '' [time]
     #> [
-    #>  06:50:23
-    #>  20:22:12
-    #>  20:30:43
-    #>  15:55:55
-    #>  14:15:48
+    #>  14:00:45
+    #>  09:06:41
+    #>  05:46:55
+    #>  20:06:49
+    #>  03:15:41
     #> ]
 
 ``` r

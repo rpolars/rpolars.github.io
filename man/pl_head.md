@@ -18,7 +18,7 @@ This function is syntactic sugar for <code>pl$col(…)$head(n)</code>.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_head_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Characters indicating the column names, passed to <code>pl$col()</code>.
@@ -27,7 +27,7 @@ See <code>?pl_col</code> for details.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_head_:_n">n</code>
+<code id="n">n</code>
 </td>
 <td>
 Number of rows to return.

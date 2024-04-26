@@ -21,7 +21,7 @@ component.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprDT_second_:_fractional">fractional</code>
+<code id="fractional">fractional</code>
 </td>
 <td>
 A logical. Whether to include the fractional component of the second.

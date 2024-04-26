@@ -27,7 +27,7 @@ Exponentially-weighted moving variance
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_ewm_var_:_com">com</code>
+<code id="com">com</code>
 </td>
 <td>
 Specify decay in terms of center of mass, *γ*, with <code class="reqn">
@@ -36,7 +36,7 @@ Specify decay in terms of center of mass, *γ*, with <code class="reqn">
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_ewm_var_:_span">span</code>
+<code id="span">span</code>
 </td>
 <td>
 Specify decay in terms of span, *θ*, with $= ; ; $
@@ -44,7 +44,7 @@ Specify decay in terms of span, *θ*, with $= ; ; $
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_ewm_var_:_half_life">half_life</code>
+<code id="half_life">half_life</code>
 </td>
 <td>
 Specify decay in terms of half-life,
@@ -54,7 +54,7 @@ Specify decay in terms of half-life,
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_ewm_var_:_alpha">alpha</code>
+<code id="alpha">alpha</code>
 </td>
 <td>
 Specify smoothing factor alpha directly, 0 \< *α* ≤ 1.
@@ -62,7 +62,7 @@ Specify smoothing factor alpha directly, 0 \< *α* ≤ 1.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_ewm_var_:_adjust">adjust</code>
+<code id="adjust">adjust</code>
 </td>
 <td>
 
@@ -87,7 +87,7 @@ by <code class="reqn"> y_0 = x_0 \\ y_t = (1 - )y\_{t - 1} + x_t </code>
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_ewm_var_:_bias">bias</code>
+<code id="bias">bias</code>
 </td>
 <td>
 If <code>FALSE</code>, the calculations are corrected for statistical
@@ -96,7 +96,7 @@ bias.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_ewm_var_:_min_periods">min_periods</code>
+<code id="min_periods">min_periods</code>
 </td>
 <td>
 Minimum number of observations in window required to have a value
@@ -105,7 +105,7 @@ Minimum number of observations in window required to have a value
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_ewm_var_:_ignore_nulls">ignore_nulls</code>
+<code id="ignore_nulls">ignore_nulls</code>
 </td>
 <td>
 

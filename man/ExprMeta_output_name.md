@@ -21,7 +21,7 @@ default), or return <code>NA</code> otherwise.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprMeta_output_name_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -29,7 +29,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprMeta_output_name_:_raise_if_undetermined">raise_if_undetermined</code>
+<code id="raise_if_undetermined">raise_if_undetermined</code>
 </td>
 <td>
 If <code>TRUE</code> (default), raise an error if the output name cannot

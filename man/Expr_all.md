@@ -20,7 +20,7 @@ which is a function to select all columns.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_all_:_drop_nulls">drop_nulls</code>
+<code id="drop_nulls">drop_nulls</code>
 </td>
 <td>
 Logical. Default TRUE, as name says.

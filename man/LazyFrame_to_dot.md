@@ -30,7 +30,7 @@ such as <code>DiagrammeR::grViz()</code>.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_to_dot_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Not used..
@@ -38,7 +38,7 @@ Not used..
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_to_dot_:_optimized">optimized</code>
+<code id="optimized">optimized</code>
 </td>
 <td>
 Optimize the query plan.
@@ -46,7 +46,7 @@ Optimize the query plan.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_to_dot_:_type_coercion">type_coercion</code>
+<code id="type_coercion">type_coercion</code>
 </td>
 <td>
 Logical. Coerce types such that operations succeed and run on minimal
@@ -55,7 +55,7 @@ required memory.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_to_dot_:_predicate_pushdown">predicate_pushdown</code>
+<code id="predicate_pushdown">predicate_pushdown</code>
 </td>
 <td>
 Logical. Applies filters as early as possible at scan level.
@@ -63,7 +63,7 @@ Logical. Applies filters as early as possible at scan level.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_to_dot_:_projection_pushdown">projection_pushdown</code>
+<code id="projection_pushdown">projection_pushdown</code>
 </td>
 <td>
 Logical. Select only the columns that are needed at the scan level.
@@ -71,7 +71,7 @@ Logical. Select only the columns that are needed at the scan level.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_to_dot_:_simplify_expression">simplify_expression</code>
+<code id="simplify_expression">simplify_expression</code>
 </td>
 <td>
 Logical. Various optimizations, such as constant folding and replacing
@@ -80,7 +80,7 @@ expensive operations with faster alternatives.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_to_dot_:_slice_pushdown">slice_pushdown</code>
+<code id="slice_pushdown">slice_pushdown</code>
 </td>
 <td>
 Logical. Only load the required slice from the scan level. Don’t
@@ -89,7 +89,7 @@ materialize sliced outputs (e.g. <code>join$head(10)</code>).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_to_dot_:_comm_subplan_elim">comm_subplan_elim</code>
+<code id="comm_subplan_elim">comm_subplan_elim</code>
 </td>
 <td>
 Logical. Will try to cache branching subplans that occur on self-joins
@@ -98,7 +98,7 @@ or unions.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_to_dot_:_comm_subexpr_elim">comm_subexpr_elim</code>
+<code id="comm_subexpr_elim">comm_subexpr_elim</code>
 </td>
 <td>
 Logical. Common subexpressions will be cached and reused.
@@ -106,7 +106,7 @@ Logical. Common subexpressions will be cached and reused.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_to_dot_:_streaming">streaming</code>
+<code id="streaming">streaming</code>
 </td>
 <td>
 Logical. Run parts of the query in a streaming fashion (this is in an
@@ -149,17 +149,17 @@ query$to_dot() |> cat()
     #> π 3/3;
     #> σ - [(0, 2)]"
     #> 
-    #> "AGG [col(\"b\").sum(), col(\"c\").sum()]
-    #> BY
-    #> [col(\"a\")] [(0, 1)] [(0, 1)]"[label="AGG [col(\"b\").sum(), col(\"c\").sum()]
-    #> BY
-    #> [col(\"a\")] [(0, 1)]"]
-    #> "SORT BY [col(\"a\")] [(0, 0)]"[label="SORT BY [col(\"a\")]"]
     #> "TABLE
     #> π 3/3;
     #> σ - [(0, 2)]"[label="TABLE
     #> π 3/3;
     #> σ -"]
+    #> "SORT BY [col(\"a\")] [(0, 0)]"[label="SORT BY [col(\"a\")]"]
+    #> "AGG [col(\"b\").sum(), col(\"c\").sum()]
+    #> BY
+    #> [col(\"a\")] [(0, 1)] [(0, 1)]"[label="AGG [col(\"b\").sum(), col(\"c\").sum()]
+    #> BY
+    #> [col(\"a\")] [(0, 1)]"]
     #> 
     #> }
 

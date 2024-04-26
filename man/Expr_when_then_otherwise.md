@@ -33,7 +33,7 @@ ChainedThen_otherwise(statement)
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_when_then_otherwise_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Expr or something coercible to an Expr that returns a boolian each row.
@@ -41,7 +41,7 @@ Expr or something coercible to an Expr that returns a boolian each row.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_when_then_otherwise_:_statement">statement</code>
+<code id="statement">statement</code>
 </td>
 <td>
 Expr or something coercible to an Expr value to insert in

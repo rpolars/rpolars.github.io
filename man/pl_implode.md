@@ -18,7 +18,7 @@ This function is syntactic sugar for <code>pl$col(…)$implode()</code>.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_implode_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Characters indicating the column names, passed to <code>pl$col()</code>.

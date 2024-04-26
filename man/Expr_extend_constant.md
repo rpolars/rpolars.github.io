@@ -18,7 +18,7 @@ Extend the Series with given number of values.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_extend_constant_:_value">value</code>
+<code id="value">value</code>
 </td>
 <td>
 The value to extend the Series with. This value may be <code>NULL</code>
@@ -27,7 +27,7 @@ to fill with nulls.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_extend_constant_:_n">n</code>
+<code id="n">n</code>
 </td>
 <td>
 The number of values to extend.

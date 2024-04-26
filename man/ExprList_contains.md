@@ -18,7 +18,7 @@ Check if list contains a given value
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprList_contains_:_item">item</code>
+<code id="item">item</code>
 </td>
 <td>
 Expr or something coercible to an Expr. Strings are <em>not</em> parsed

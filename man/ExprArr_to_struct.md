@@ -18,7 +18,7 @@ Convert array to struct
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprArr_to_struct_:_fields">fields</code>
+<code id="fields">fields</code>
 </td>
 <td>
 If the name and number of the desired fields is known in advance, a list

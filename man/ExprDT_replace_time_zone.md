@@ -26,7 +26,7 @@ the corresponding global timepoint.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprDT_replace_time_zone_:_time_zone">time_zone</code>
+<code id="time_zone">time_zone</code>
 </td>
 <td>
 <code>NULL</code> or string time zone from
@@ -35,7 +35,7 @@ the corresponding global timepoint.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprDT_replace_time_zone_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -43,7 +43,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprDT_replace_time_zone_:_ambiguous">ambiguous</code>
+<code id="ambiguous">ambiguous</code>
 </td>
 <td>
 
@@ -75,7 +75,7 @@ Determine how to deal with ambiguous datetimes:
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprDT_replace_time_zone_:_non_existent">non_existent</code>
+<code id="non_existent">non_existent</code>
 </td>
 <td>
 

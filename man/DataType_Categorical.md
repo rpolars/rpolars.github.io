@@ -2,7 +2,7 @@
 
 # Create Categorical DataType
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L361)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L362)
 
 ## Description
 
@@ -18,7 +18,7 @@ Create Categorical DataType
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataType_Categorical_:_ordering">ordering</code>
+<code id="ordering">ordering</code>
 </td>
 <td>
 Either <code>“physical”</code> (default) or <code>“lexical”</code>.

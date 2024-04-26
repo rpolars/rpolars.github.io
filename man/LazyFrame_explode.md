@@ -19,7 +19,7 @@ additional row.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_explode_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Column(s) to be exploded as individual

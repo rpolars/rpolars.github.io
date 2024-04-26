@@ -20,7 +20,7 @@ in the argument <code>percentiles</code>.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_describe_:_percentiles">percentiles</code>
+<code id="percentiles">percentiles</code>
 </td>
 <td>
 One or more percentiles to include in the summary statistics. All values
@@ -29,7 +29,7 @@ must be in the range <code style="white-space: pre;">\[0; 1\]</code>.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_describe_:_interpolation">interpolation</code>
+<code id="interpolation">interpolation</code>
 </td>
 <td>
 Interpolation method for computing quantiles. One of

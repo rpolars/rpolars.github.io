@@ -19,7 +19,7 @@ Aggregate a DataFrame over a time or integer window created with
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DynamicGroupBy_agg_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Exprs to aggregate over. Those can also be passed wrapped in a list, e.g

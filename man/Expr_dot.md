@@ -18,7 +18,7 @@ Compute the dot/inner product between two Expressions.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_dot_:_other">other</code>
+<code id="other">other</code>
 </td>
 <td>
 numeric or string value; accepts expression input.

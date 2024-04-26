@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../polars-logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.19">
     
     
       
@@ -14881,6 +14881,27 @@
   
   
     <li class="md-nav__item">
+      <a href="DataType_Enum.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataType_Enum
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="DataType_is_array.html" class="md-nav__link">
         
   
@@ -15697,7 +15718,7 @@ information on specificities related to the context.</p>
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_map_elements_:_f">f</code>
+<code id="f">f</code>
 </td>
 <td>
 Function to map
@@ -15705,7 +15726,7 @@ Function to map
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_map_elements_:_return_type">return_type</code>
+<code id="return_type">return_type</code>
 </td>
 <td>
 DataType of the output Series. If <code>NULL</code>, the dtype will be
@@ -15714,7 +15735,7 @@ DataType of the output Series. If <code>NULL</code>, the dtype will be
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_map_elements_:_strict_return_type">strict_return_type</code>
+<code id="strict_return_type">strict_return_type</code>
 </td>
 <td>
 If <code>TRUE</code> (default), error if not correct datatype returned
@@ -15724,7 +15745,7 @@ null value.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_map_elements_:_allow_fail_eval">allow_fail_eval</code>
+<code id="allow_fail_eval">allow_fail_eval</code>
 </td>
 <td>
 If <code>FALSE</code> (default), raise an error if the function fails.
@@ -15734,7 +15755,7 @@ value.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_map_elements_:_in_background">in_background</code>
+<code id="in_background">in_background</code>
 </td>
 <td>
 Whether to run the function in a background R process, default is
@@ -15898,7 +15919,7 @@ to achieve the best performance and avoid using
 <a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="p">})</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   2.367   0.000   2.534
+#&gt;   2.269   0.004   2.356
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Comparing this to the standard polars syntax:</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nf">system.time</span><span class="p">({</span>
@@ -15908,7 +15929,7 @@ to achieve the best performance and avoid using
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">})</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   0.000   0.004   0.004
+#&gt;   0.001   0.003   0.004
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Running in parallel --------------------------------</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
@@ -15926,7 +15947,7 @@ to achieve the best performance and avoid using
 <a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="p">})</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   0.033   0.000   1.234
+#&gt;   0.028   0.000   1.232
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># first run in parallel: there is some overhead to start up extra R processes</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># drop any previous processes, just to show start-up overhead here</span>
@@ -15947,7 +15968,7 @@ to achieve the best performance and avoid using
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">})</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   0.014   0.001   0.991
+#&gt;   0.003   0.013   0.981
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># second run in parallel: this reuses R processes in &quot;polars global_rpool&quot;.</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nf">polars_options</span><span class="p">()</span><span class="o">$</span><span class="n">rpool_cap</span>
@@ -15964,7 +15985,7 @@ to achieve the best performance and avoid using
 <a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="p">})</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt;    user  system elapsed 
-#&gt;   0.015   0.000   0.337
+#&gt;   0.014   0.000   0.329
 </code></pre></div>
 
 
@@ -16021,7 +16042,7 @@ to achieve the best performance and avoid using
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      <script src="../assets/javascripts/bundle.dd8806f2.min.js"></script>
       
     
   </body>

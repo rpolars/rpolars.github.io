@@ -18,7 +18,7 @@ Add a suffix to all fields name of a struct
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprName_suffix_fields_:_suffix">suffix</code>
+<code id="suffix">suffix</code>
 </td>
 <td>
 Suffix to add to the field name.

@@ -20,7 +20,7 @@ DataFrame level, use <code>DataFrame$filter()</code> (or
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_filter_:_predicate">predicate</code>
+<code id="predicate">predicate</code>
 </td>
 <td>
 An Expr or something coercible to an Expr. Must return a boolean.
@@ -68,6 +68,6 @@ df$group_by("group_col")$agg(
     #> │ ---       ┆ ---       ┆ ---       │
     #> │ str       ┆ list[f64] ┆ list[f64] │
     #> ╞═══════════╪═══════════╪═══════════╡
-    #> │ g1        ┆ [1.0]     ┆ [2.0]     │
     #> │ g2        ┆ []        ┆ [3.0]     │
+    #> │ g1        ┆ [1.0]     ┆ [2.0]     │
     #> └───────────┴───────────┴───────────┘

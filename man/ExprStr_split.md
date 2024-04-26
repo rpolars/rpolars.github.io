@@ -18,7 +18,7 @@ Split the string by a substring
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_split_:_by">by</code>
+<code id="by">by</code>
 </td>
 <td>
 Substring to split by. Can be an Expr.
@@ -26,7 +26,7 @@ Substring to split by. Can be an Expr.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_split_:_inclusive">inclusive</code>
+<code id="inclusive">inclusive</code>
 </td>
 <td>
 If <code>TRUE</code>, include the split character/string in the results.

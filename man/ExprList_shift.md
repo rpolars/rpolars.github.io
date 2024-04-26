@@ -18,7 +18,7 @@ Shift list values by <code>n</code> indices
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprList_shift_:_periods">periods</code>
+<code id="periods">periods</code>
 </td>
 <td>
 Number of places to shift (may be negative). Can be an Expr. Strings are

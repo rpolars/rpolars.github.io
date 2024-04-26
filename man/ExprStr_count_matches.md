@@ -18,7 +18,7 @@ Count all successive non-overlapping regex matches
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_count_matches_:_pattern">pattern</code>
+<code id="pattern">pattern</code>
 </td>
 <td>
 A character or something can be coerced to a string Expr of a valid
@@ -28,7 +28,7 @@ regex pattern, compatible with the
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_count_matches_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -36,7 +36,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_count_matches_:_literal">literal</code>
+<code id="literal">literal</code>
 </td>
 <td>
 Logical. If <code>TRUE</code> (default), treat <code>pattern</code> as a

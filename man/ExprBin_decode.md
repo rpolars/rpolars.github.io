@@ -18,7 +18,7 @@ Decode values using the provided encoding
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprBin_decode_:_encoding">encoding</code>
+<code id="encoding">encoding</code>
 </td>
 <td>
 A character, <code>“hex”</code> or <code>“base64”</code>. The encoding
@@ -27,7 +27,7 @@ to use.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprBin_decode_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -35,7 +35,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprBin_decode_:_strict">strict</code>
+<code id="strict">strict</code>
 </td>
 <td>
 Raise an error if the underlying value cannot be decoded, otherwise mask

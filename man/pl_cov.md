@@ -18,7 +18,7 @@ Calculates the covariance between two columns / expressions.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_cov_:_a">a</code>
+<code id="a">a</code>
 </td>
 <td>
 One column name or Expr or anything convertible Into<Expr> via
@@ -27,7 +27,7 @@ One column name or Expr or anything convertible Into<Expr> via
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_cov_:_b">b</code>
+<code id="b">b</code>
 </td>
 <td>
 Another column name or Expr or anything convertible Into<Expr> via
@@ -36,7 +36,7 @@ Another column name or Expr or anything convertible Into<Expr> via
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_cov_:_ddof">ddof</code>
+<code id="ddof">ddof</code>
 </td>
 <td>
 integer Delta Degrees of Freedom: the divisor used in the calculation is

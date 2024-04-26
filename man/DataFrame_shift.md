@@ -22,7 +22,7 @@ DataFrame doesn’t change.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_shift_:_periods">periods</code>
+<code id="periods">periods</code>
 </td>
 <td>
 Number of periods to shift (can be negative).

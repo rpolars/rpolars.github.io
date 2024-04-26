@@ -22,7 +22,7 @@ LazyFrame doesn’t change.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_shift_and_fill_:_fill_value">fill_value</code>
+<code id="fill_value">fill_value</code>
 </td>
 <td>
 Fill new <code>NULL</code> values with this value. Must of length 1. A
@@ -31,7 +31,7 @@ logical value will be converted to numeric.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_shift_and_fill_:_periods">periods</code>
+<code id="periods">periods</code>
 </td>
 <td>
 Number of periods to shift (can be negative).

@@ -18,7 +18,7 @@ Check if any boolean value in a Boolean column is <code>TRUE</code>.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_any_:_drop_nulls">drop_nulls</code>
+<code id="drop_nulls">drop_nulls</code>
 </td>
 <td>
 Logical. Default TRUE, as name says.

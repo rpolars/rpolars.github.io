@@ -27,7 +27,7 @@ Convert a String column into a Datetime column
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_to_datetime_:_format">format</code>
+<code id="format">format</code>
 </td>
 <td>
 Format to use for conversion. Refer to
@@ -43,7 +43,7 @@ ignore timezones. Numeric time zones like
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_to_datetime_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Not used.
@@ -51,7 +51,7 @@ Not used.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_to_datetime_:_time_unit">time_unit</code>
+<code id="time_unit">time_unit</code>
 </td>
 <td>
 Unit of time for the resulting Datetime column. If <code>NULL</code>
@@ -63,7 +63,7 @@ fractional second component is found, the default is <code>“us”</code>
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_to_datetime_:_time_zone">time_zone</code>
+<code id="time_zone">time_zone</code>
 </td>
 <td>
 for the resulting Datetime column.
@@ -71,7 +71,7 @@ for the resulting Datetime column.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_to_datetime_:_strict">strict</code>
+<code id="strict">strict</code>
 </td>
 <td>
 If <code>TRUE</code> (default), raise an error if a single string cannot
@@ -80,7 +80,7 @@ be parsed. If <code>FALSE</code>, produce a polars <code>null</code>.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_to_datetime_:_exact">exact</code>
+<code id="exact">exact</code>
 </td>
 <td>
 If <code>TRUE</code> (default), require an exact format match. If
@@ -92,7 +92,7 @@ certainly be more performant.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_to_datetime_:_cache">cache</code>
+<code id="cache">cache</code>
 </td>
 <td>
 Use a cache of unique, converted dates to apply the datetime conversion.
@@ -100,7 +100,7 @@ Use a cache of unique, converted dates to apply the datetime conversion.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_to_datetime_:_ambiguous">ambiguous</code>
+<code id="ambiguous">ambiguous</code>
 </td>
 <td>
 

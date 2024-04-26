@@ -31,7 +31,7 @@ Write to comma-separated values (CSV) file
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_csv_:_file">file</code>
+<code id="file">file</code>
 </td>
 <td>
 File path to which the result should be written.
@@ -39,7 +39,7 @@ File path to which the result should be written.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_csv_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -47,7 +47,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_csv_:_include_bom">include_bom</code>
+<code id="include_bom">include_bom</code>
 </td>
 <td>
 Whether to include UTF-8 BOM (byte order mark) in the CSV output.
@@ -55,7 +55,7 @@ Whether to include UTF-8 BOM (byte order mark) in the CSV output.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_csv_:_include_header">include_header</code>
+<code id="include_header">include_header</code>
 </td>
 <td>
 Whether to include header in the CSV output.
@@ -63,7 +63,7 @@ Whether to include header in the CSV output.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_csv_:_separator">separator</code>
+<code id="separator">separator</code>
 </td>
 <td>
 Separate CSV fields with this symbol.
@@ -71,7 +71,7 @@ Separate CSV fields with this symbol.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_csv_:_line_terminator">line_terminator</code>
+<code id="line_terminator">line_terminator</code>
 </td>
 <td>
 String used to end each row.
@@ -79,7 +79,7 @@ String used to end each row.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_csv_:_quote">quote</code>
+<code id="quote">quote</code>
 </td>
 <td>
 Byte to use as quoting character.
@@ -87,7 +87,7 @@ Byte to use as quoting character.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_csv_:_batch_size">batch_size</code>
+<code id="batch_size">batch_size</code>
 </td>
 <td>
 Number of rows that will be processed per thread.
@@ -95,7 +95,7 @@ Number of rows that will be processed per thread.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_csv_:_datetime_format">datetime_format</code>
+<code id="datetime_format">datetime_format</code>
 </td>
 <td>
 A format string, with the specifiers defined by the chrono Rust crate.
@@ -106,7 +106,7 @@ inferred from the maximum timeunit found in the frame’s Datetime cols
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_csv_:_date_format">date_format</code>
+<code id="date_format">date_format</code>
 </td>
 <td>
 A format string, with the specifiers defined by the chrono Rust crate.
@@ -114,7 +114,7 @@ A format string, with the specifiers defined by the chrono Rust crate.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_csv_:_time_format">time_format</code>
+<code id="time_format">time_format</code>
 </td>
 <td>
 A format string, with the specifiers defined by the chrono Rust crate.
@@ -122,7 +122,7 @@ A format string, with the specifiers defined by the chrono Rust crate.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_csv_:_float_precision">float_precision</code>
+<code id="float_precision">float_precision</code>
 </td>
 <td>
 Number of decimal places to write, applied to both Float32 and Float64
@@ -131,7 +131,7 @@ datatypes.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_csv_:_null_values">null_values</code>
+<code id="null_values">null_values</code>
 </td>
 <td>
 A string representing null values (defaulting to the empty string).
@@ -139,7 +139,7 @@ A string representing null values (defaulting to the empty string).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_csv_:_quote_style">quote_style</code>
+<code id="quote_style">quote_style</code>
 </td>
 <td>
 

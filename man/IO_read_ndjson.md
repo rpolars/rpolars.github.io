@@ -27,7 +27,7 @@ Read a file from path into a polars DataFrame.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_ndjson_:_source">source</code>
+<code id="source">source</code>
 </td>
 <td>
 Path to a file or URL. It is possible to provide multiple paths provided
@@ -37,7 +37,7 @@ provide several URLs.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_ndjson_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -45,7 +45,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_ndjson_:_infer_schema_length">infer_schema_length</code>
+<code id="infer_schema_length">infer_schema_length</code>
 </td>
 <td>
 Maximum number of rows to read to infer the column types. If set to 0,
@@ -55,7 +55,7 @@ scan will be done (slow).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_ndjson_:_batch_size">batch_size</code>
+<code id="batch_size">batch_size</code>
 </td>
 <td>
 Number of rows that will be processed per thread.
@@ -63,7 +63,7 @@ Number of rows that will be processed per thread.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_ndjson_:_n_rows">n_rows</code>
+<code id="n_rows">n_rows</code>
 </td>
 <td>
 Maximum number of rows to read.
@@ -71,7 +71,7 @@ Maximum number of rows to read.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_ndjson_:_low_memory">low_memory</code>
+<code id="low_memory">low_memory</code>
 </td>
 <td>
 Reduce memory usage (will yield a lower performance).
@@ -79,7 +79,7 @@ Reduce memory usage (will yield a lower performance).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_ndjson_:_rechunk">rechunk</code>
+<code id="rechunk">rechunk</code>
 </td>
 <td>
 Reallocate to contiguous memory when all chunks / files are parsed.
@@ -87,7 +87,7 @@ Reallocate to contiguous memory when all chunks / files are parsed.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_ndjson_:_row_index_name">row_index_name</code>
+<code id="row_index_name">row_index_name</code>
 </td>
 <td>
 If not <code>NULL</code>, this will insert a row index column with the
@@ -96,7 +96,7 @@ given name into the DataFrame.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_ndjson_:_row_index_offset">row_index_offset</code>
+<code id="row_index_offset">row_index_offset</code>
 </td>
 <td>
 Offset to start the row index column (only used if the name is set).
@@ -104,7 +104,7 @@ Offset to start the row index column (only used if the name is set).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_ndjson_:_ignore_errors">ignore_errors</code>
+<code id="ignore_errors">ignore_errors</code>
 </td>
 <td>
 Keep reading the file even if some lines yield errors. You can also use

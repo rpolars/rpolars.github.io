@@ -20,7 +20,7 @@ string is not modified.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_zfill_:_alignment">alignment</code>
+<code id="alignment">alignment</code>
 </td>
 <td>
 Fill the value up to this length. This can be an Expr or something

@@ -18,7 +18,7 @@ Append two Series
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_append_:_other">other</code>
+<code id="other">other</code>
 </td>
 <td>
 Series to append.
@@ -26,7 +26,7 @@ Series to append.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_append_:_immutable">immutable</code>
+<code id="immutable">immutable</code>
 </td>
 <td>
 Should the <code>other</code> Series be immutable? Default is

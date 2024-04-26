@@ -18,7 +18,7 @@ Cast between DataType
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_cast_:_dtype">dtype</code>
+<code id="dtype">dtype</code>
 </td>
 <td>
 DataType to cast to.
@@ -26,7 +26,7 @@ DataType to cast to.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_cast_:_strict">strict</code>
+<code id="strict">strict</code>
 </td>
 <td>
 If <code>TRUE</code> (default), an error will be thrown if cast failed

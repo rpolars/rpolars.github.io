@@ -18,7 +18,7 @@ This function tests if the object is a polars LazyFrame.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="is_polars_lf_:_x">x</code>
+<code id="x">x</code>
 </td>
 <td>
 An object

@@ -18,7 +18,7 @@ Add a new column at index 0 that counts the rows
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_with_row_index_:_name">name</code>
+<code id="name">name</code>
 </td>
 <td>
 string name of the created column
@@ -26,7 +26,7 @@ string name of the created column
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_with_row_index_:_offset">offset</code>
+<code id="offset">offset</code>
 </td>
 <td>
 positive integer offset for the start of the counter

@@ -25,7 +25,7 @@ Read into a DataFrame from Arrow IPC (Feather v2) file
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_ipc_:_source">source</code>
+<code id="source">source</code>
 </td>
 <td>
 Path to a file. You can use globbing with <code>\*</code> to scan/read
@@ -34,7 +34,7 @@ multiple files in the same directory (see examples).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_ipc_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -42,7 +42,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_ipc_:_n_rows">n_rows</code>
+<code id="n_rows">n_rows</code>
 </td>
 <td>
 Maximum number of rows to read.
@@ -50,7 +50,7 @@ Maximum number of rows to read.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_ipc_:_memory_map">memory_map</code>
+<code id="memory_map">memory_map</code>
 </td>
 <td>
 A logical. If <code>TRUE</code>, try to memory map the file. This can
@@ -60,7 +60,7 @@ pages. Only uncompressed Arrow IPC files can be memory mapped.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_ipc_:_row_index_name">row_index_name</code>
+<code id="row_index_name">row_index_name</code>
 </td>
 <td>
 If not <code>NULL</code>, this will insert a row index column with the
@@ -69,7 +69,7 @@ given name into the DataFrame.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_ipc_:_row_index_offset">row_index_offset</code>
+<code id="row_index_offset">row_index_offset</code>
 </td>
 <td>
 Offset to start the row index column (only used if the name is set).
@@ -77,7 +77,7 @@ Offset to start the row index column (only used if the name is set).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_ipc_:_rechunk">rechunk</code>
+<code id="rechunk">rechunk</code>
 </td>
 <td>
 In case of reading multiple files via a glob pattern, rechunk the final
@@ -86,7 +86,7 @@ DataFrame into contiguous memory chunks.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_read_ipc_:_cache">cache</code>
+<code id="cache">cache</code>
 </td>
 <td>
 Cache the result after reading.

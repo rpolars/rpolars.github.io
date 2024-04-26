@@ -18,7 +18,7 @@ Convert a String column into an Int64 column with base radix
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_to_integer_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -26,7 +26,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_to_integer_:_base">base</code>
+<code id="base">base</code>
 </td>
 <td>
 A positive integer or expression which is the base of the string we are
@@ -36,7 +36,7 @@ parsing. Characters are parsed as column names. Default:
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_to_integer_:_strict">strict</code>
+<code id="strict">strict</code>
 </td>
 <td>
 A logical. If <code>TRUE</code> (default), parsing errors or integer

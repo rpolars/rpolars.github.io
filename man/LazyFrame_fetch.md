@@ -33,7 +33,7 @@ query works as expected.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_fetch_:_n_rows">n_rows</code>
+<code id="n_rows">n_rows</code>
 </td>
 <td>
 Integer. Maximum number of rows to fetch.
@@ -41,7 +41,7 @@ Integer. Maximum number of rows to fetch.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_fetch_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -49,7 +49,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_fetch_:_type_coercion">type_coercion</code>
+<code id="type_coercion">type_coercion</code>
 </td>
 <td>
 Logical. Coerce types such that operations succeed and run on minimal
@@ -58,7 +58,7 @@ required memory.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_fetch_:_predicate_pushdown">predicate_pushdown</code>
+<code id="predicate_pushdown">predicate_pushdown</code>
 </td>
 <td>
 Logical. Applies filters as early as possible at scan level.
@@ -66,7 +66,7 @@ Logical. Applies filters as early as possible at scan level.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_fetch_:_projection_pushdown">projection_pushdown</code>
+<code id="projection_pushdown">projection_pushdown</code>
 </td>
 <td>
 Logical. Select only the columns that are needed at the scan level.
@@ -74,7 +74,7 @@ Logical. Select only the columns that are needed at the scan level.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_fetch_:_simplify_expression">simplify_expression</code>
+<code id="simplify_expression">simplify_expression</code>
 </td>
 <td>
 Logical. Various optimizations, such as constant folding and replacing
@@ -83,7 +83,7 @@ expensive operations with faster alternatives.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_fetch_:_slice_pushdown">slice_pushdown</code>
+<code id="slice_pushdown">slice_pushdown</code>
 </td>
 <td>
 Logical. Only load the required slice from the scan level. Don’t
@@ -92,7 +92,7 @@ materialize sliced outputs (e.g. <code>join$head(10)</code>).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_fetch_:_comm_subplan_elim">comm_subplan_elim</code>
+<code id="comm_subplan_elim">comm_subplan_elim</code>
 </td>
 <td>
 Logical. Will try to cache branching subplans that occur on self-joins
@@ -101,7 +101,7 @@ or unions.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_fetch_:_comm_subexpr_elim">comm_subexpr_elim</code>
+<code id="comm_subexpr_elim">comm_subexpr_elim</code>
 </td>
 <td>
 Logical. Common subexpressions will be cached and reused.
@@ -109,7 +109,7 @@ Logical. Common subexpressions will be cached and reused.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_fetch_:_streaming">streaming</code>
+<code id="streaming">streaming</code>
 </td>
 <td>
 Logical. Run parts of the query in a streaming fashion (this is in an
@@ -118,7 +118,7 @@ alpha state).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_fetch_:_no_optimization">no_optimization</code>
+<code id="no_optimization">no_optimization</code>
 </td>
 <td>
 Logical. Sets the following parameters to <code>FALSE</code>:
@@ -129,7 +129,7 @@ Logical. Sets the following parameters to <code>FALSE</code>:
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_fetch_:_inherit_optimization">inherit_optimization</code>
+<code id="inherit_optimization">inherit_optimization</code>
 </td>
 <td>
 Logical. Use existing optimization settings regardless the settings

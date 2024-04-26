@@ -24,7 +24,7 @@ Write to parquet file
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_parquet_:_file">file</code>
+<code id="file">file</code>
 </td>
 <td>
 File path to which the result should be written.
@@ -32,7 +32,7 @@ File path to which the result should be written.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_parquet_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -40,7 +40,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_parquet_:_compression">compression</code>
+<code id="compression">compression</code>
 </td>
 <td>
 
@@ -88,7 +88,7 @@ older parquet readers.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_parquet_:_compression_level">compression_level</code>
+<code id="compression_level">compression_level</code>
 </td>
 <td>
 
@@ -117,7 +117,7 @@ means smaller files on disk:
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_parquet_:_statistics">statistics</code>
+<code id="statistics">statistics</code>
 </td>
 <td>
 Logical. Whether compute and write column statistics. This requires
@@ -126,7 +126,7 @@ extra compute.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_parquet_:_row_group_size">row_group_size</code>
+<code id="row_group_size">row_group_size</code>
 </td>
 <td>
 <code>NULL</code> or Integer. Size of the row groups in number of rows.
@@ -137,7 +137,7 @@ speeds.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_write_parquet_:_data_pagesize_limit">data_pagesize_limit</code>
+<code id="data_pagesize_limit">data_pagesize_limit</code>
 </td>
 <td>
 <code>NULL</code> or Integer. If <code>NULL</code> (default), the limit

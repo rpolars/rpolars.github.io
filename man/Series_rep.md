@@ -18,7 +18,7 @@ Note that this function doesn’t exist in Python Polars.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_rep_:_n">n</code>
+<code id="n">n</code>
 </td>
 <td>
 Number of times to repeat
@@ -26,7 +26,7 @@ Number of times to repeat
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_rep_:_rechunk">rechunk</code>
+<code id="rechunk">rechunk</code>
 </td>
 <td>
 If <code>TRUE</code> (default), reallocate object in memory which can

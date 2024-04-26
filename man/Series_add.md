@@ -18,7 +18,7 @@ Method equivalent of addition operator <code>series + other</code>.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_add_:_other">other</code>
+<code id="other">other</code>
 </td>
 <td>
 Series like object of numeric or string values. Converted to Series by

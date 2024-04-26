@@ -19,7 +19,7 @@ This results in a struct of <code>n+1</code> fields. If it cannot make
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_split_exact_:_by">by</code>
+<code id="by">by</code>
 </td>
 <td>
 Substring to split by.
@@ -27,7 +27,7 @@ Substring to split by.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_split_exact_:_n">n</code>
+<code id="n">n</code>
 </td>
 <td>
 Number of splits to make.
@@ -35,7 +35,7 @@ Number of splits to make.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_split_exact_:_inclusive">inclusive</code>
+<code id="inclusive">inclusive</code>
 </td>
 <td>
 If <code>TRUE</code>, include the split character/string in the results.

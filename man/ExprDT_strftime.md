@@ -20,7 +20,7 @@ Format Date/Datetime with a formatting rule. See
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprDT_strftime_:_format">format</code>
+<code id="format">format</code>
 </td>
 <td>
 string format very much like in R passed to chrono

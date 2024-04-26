@@ -21,7 +21,7 @@ its bucket.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprDT_round_:_every">every</code>
+<code id="every">every</code>
 </td>
 <td>
 string encoding duration see details.
@@ -29,7 +29,7 @@ string encoding duration see details.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprDT_round_:_offset">offset</code>
+<code id="offset">offset</code>
 </td>
 <td>
 optional string encoding duration see details.

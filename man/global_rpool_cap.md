@@ -18,7 +18,7 @@ pl_set_global_rpool_cap(n)
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="global_rpool_cap_:_n">n</code>
+<code id="n">n</code>
 </td>
 <td>
 Integer, the capacity limit R sessions to process R code.

@@ -20,7 +20,7 @@ values if <code>length</code> is larger than the number of values.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprList_slice_:_offset">offset</code>
+<code id="offset">offset</code>
 </td>
 <td>
 Start index. Negative indexing is supported. Can be an Expr. Strings are
@@ -29,7 +29,7 @@ parsed as column names.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprList_slice_:_length">length</code>
+<code id="length">length</code>
 </td>
 <td>
 Length of the slice. If <code>NULL</code> (default), the slice is taken

@@ -24,7 +24,7 @@ an empty DataFrame and return the first Series to R.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_to_r_:_df">df</code>
+<code id="df">df</code>
 </td>
 <td>
 If <code>NULL</code> (default), it evaluates the Expr in an empty
@@ -34,7 +34,7 @@ evaluated in.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_to_r_:_i">i</code>
+<code id="i">i</code>
 </td>
 <td>
 Numeric column to extract. Default is zero (which gives the first
@@ -43,7 +43,7 @@ column).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_to_r_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Any args pased to <code>as.data.frame()</code>.
@@ -51,7 +51,7 @@ Any args pased to <code>as.data.frame()</code>.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_to_r_:_int64_conversion">int64_conversion</code>
+<code id="int64_conversion">int64_conversion</code>
 </td>
 <td>
 

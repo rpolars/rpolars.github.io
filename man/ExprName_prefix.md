@@ -18,7 +18,7 @@ Add a prefix to a column name
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprName_prefix_:_prefix">prefix</code>
+<code id="prefix">prefix</code>
 </td>
 <td>
 Prefix to be added to column name(s)

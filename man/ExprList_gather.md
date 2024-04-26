@@ -19,7 +19,7 @@ value by index, use <code>$list$get()</code>.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprList_gather_:_index">index</code>
+<code id="index">index</code>
 </td>
 <td>
 An Expr or something coercible to an Expr, that can return several
@@ -31,7 +31,7 @@ it will return a <code>null</code>. Strings are parsed as column names.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprList_gather_:_null_on_oob">null_on_oob</code>
+<code id="null_on_oob">null_on_oob</code>
 </td>
 <td>
 If <code>TRUE</code>, return <code>null</code> if an index is out of

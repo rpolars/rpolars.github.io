@@ -20,7 +20,7 @@ to <code>dplyr::filter()</code>.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_filter_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Polars expressions which will evaluate to a boolean.

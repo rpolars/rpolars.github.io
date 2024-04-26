@@ -18,7 +18,7 @@ Compute the logarithm of elements
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_log_:_base">base</code>
+<code id="base">base</code>
 </td>
 <td>
 Numeric base value for logarithm, default is <code>exp(1)</code>.

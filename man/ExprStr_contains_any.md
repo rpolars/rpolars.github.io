@@ -18,7 +18,7 @@ This function determines if any of the patterns find a match.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_contains_any_:_patterns">patterns</code>
+<code id="patterns">patterns</code>
 </td>
 <td>
 Character vector or something can be coerced to strings Expr of a valid
@@ -28,7 +28,7 @@ regex pattern, compatible with the
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_contains_any_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -36,7 +36,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_contains_any_:_ascii_case_insensitive">ascii_case_insensitive</code>
+<code id="ascii_case_insensitive">ascii_case_insensitive</code>
 </td>
 <td>
 Enable ASCII-aware case insensitive matching. When this option is

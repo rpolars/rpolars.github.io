@@ -18,7 +18,7 @@ Unnest the Struct columns of a DataFrame
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_unnest_:_names">names</code>
+<code id="names">names</code>
 </td>
 <td>
 Names of the struct columns to unnest. If <code>NULL</code> (default),

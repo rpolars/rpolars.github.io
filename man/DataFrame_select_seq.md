@@ -23,7 +23,7 @@ this when the work per expression is cheap. Otherwise,
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_select_seq_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Columns to keep. Those can be expressions (e.g

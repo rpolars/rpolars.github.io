@@ -18,7 +18,7 @@ Change name of Series
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_alias_:_name">name</code>
+<code id="name">name</code>
 </td>
 <td>
 New name.

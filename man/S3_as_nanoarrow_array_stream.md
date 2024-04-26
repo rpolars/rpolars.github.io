@@ -17,7 +17,7 @@ as_nanoarrow_array_stream(x, ..., schema = NULL)
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_nanoarrow_array_stream.RPolarsDataFrame_:_x">x</code>
+<code id="x">x</code>
 </td>
 <td>
 A Polars DataFrame
@@ -25,7 +25,7 @@ A Polars DataFrame
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_nanoarrow_array_stream.RPolarsDataFrame_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored
@@ -33,7 +33,7 @@ Ignored
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_nanoarrow_array_stream.RPolarsDataFrame_:_schema">schema</code>
+<code id="schema">schema</code>
 </td>
 <td>
 must stay at default value NULL

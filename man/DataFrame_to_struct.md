@@ -18,7 +18,7 @@ Convert DataFrame to a Series of type "struct"
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_to_struct_:_name">name</code>
+<code id="name">name</code>
 </td>
 <td>
 Name given to the new Series

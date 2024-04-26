@@ -22,7 +22,7 @@ etc.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprList_diff_:_n">n</code>
+<code id="n">n</code>
 </td>
 <td>
 Number of slots to shift. If negative, then it starts from the end.
@@ -30,7 +30,7 @@ Number of slots to shift. If negative, then it starts from the end.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprList_diff_:_null_behavior">null_behavior</code>
+<code id="null_behavior">null_behavior</code>
 </td>
 <td>
 How to handle <code>null</code> values. Either <code>“ignore”</code>

@@ -18,7 +18,7 @@ Method equivalent of division operator <code>series / other</code>.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_div_:_other">other</code>
+<code id="other">other</code>
 </td>
 <td>
 Series like object of numeric. Converted to Series by

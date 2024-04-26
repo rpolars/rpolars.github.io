@@ -18,7 +18,7 @@ Add a suffix to a column name
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprName_suffix_:_suffix">suffix</code>
+<code id="suffix">suffix</code>
 </td>
 <td>
 Suffix to be added to column name(s)

@@ -18,7 +18,7 @@ Check if string values starts with a substring.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_starts_with_:_sub">sub</code>
+<code id="sub">sub</code>
 </td>
 <td>
 Prefix substring or Expr.

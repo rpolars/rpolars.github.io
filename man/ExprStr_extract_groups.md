@@ -18,7 +18,7 @@ Extract all capture groups for the given regex pattern
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_extract_groups_:_pattern">pattern</code>
+<code id="pattern">pattern</code>
 </td>
 <td>
 A character of a valid regular expression pattern containing at least

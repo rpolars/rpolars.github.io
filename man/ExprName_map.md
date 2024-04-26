@@ -19,7 +19,7 @@ name.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprName_map_:_fun">fun</code>
+<code id="fun">fun</code>
 </td>
 <td>
 an R function which takes a string as input and return a string

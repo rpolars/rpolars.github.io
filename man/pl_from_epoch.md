@@ -48,7 +48,7 @@ return a different dtype:
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_from_epoch_:_column">column</code>
+<code id="column">column</code>
 </td>
 <td>
 An Expr from which integers will be parsed. If this is a float column,
@@ -59,7 +59,7 @@ as column names, but other literal values must be passed to
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_from_epoch_:_time_unit">time_unit</code>
+<code id="time_unit">time_unit</code>
 </td>
 <td>
 One of <code>“ns”</code>, <code>“us”</code>, <code>“ms”</code>,

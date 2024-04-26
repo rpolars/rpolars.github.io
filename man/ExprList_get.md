@@ -19,7 +19,7 @@ values by index, use <code>$list$gather()</code>.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprList_get_:_index">index</code>
+<code id="index">index</code>
 </td>
 <td>
 An Expr or something coercible to an Expr, that must return a single
@@ -30,7 +30,7 @@ every sublist) and negative values start from the end (index
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprList_get_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -38,7 +38,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprList_get_:_null_on_oob">null_on_oob</code>
+<code id="null_on_oob">null_on_oob</code>
 </td>
 <td>
 If <code>TRUE</code>, return <code>null</code> if an index is out of

@@ -18,7 +18,7 @@ Gather values by index
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_gather_:_indices">indices</code>
+<code id="indices">indices</code>
 </td>
 <td>
 R vector or Series, or Expr that leads to a Series of dtype Int64.

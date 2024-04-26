@@ -18,7 +18,7 @@ This function only temporarily enables the global string cache.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_with_string_cache_:_expr">expr</code>
+<code id="expr">expr</code>
 </td>
 <td>
 An Expr to evaluate while the string cache is enabled.

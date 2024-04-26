@@ -18,7 +18,7 @@ Method equivalent of subtraction operator <code>expr - other</code>.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_sub_:_other">other</code>
+<code id="other">other</code>
 </td>
 <td>
 Numeric literal or expression value.

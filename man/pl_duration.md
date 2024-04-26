@@ -29,7 +29,7 @@ Create polars Duration from distinct time components
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_duration_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Not used.
@@ -37,7 +37,7 @@ Not used.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_duration_:_weeks">weeks</code>
+<code id="weeks">weeks</code>
 </td>
 <td>
 Number of weeks to add. Expr or something coercible to an Expr. Strings
@@ -47,7 +47,7 @@ are parsed as column names. <em>Same thing for argument
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_duration_:_days">days</code>
+<code id="days">days</code>
 </td>
 <td>
 Number of days to add.
@@ -55,7 +55,7 @@ Number of days to add.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_duration_:_hours">hours</code>
+<code id="hours">hours</code>
 </td>
 <td>
 Number of hours to add.
@@ -63,7 +63,7 @@ Number of hours to add.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_duration_:_minutes">minutes</code>
+<code id="minutes">minutes</code>
 </td>
 <td>
 Number of minutes to add.
@@ -71,7 +71,7 @@ Number of minutes to add.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_duration_:_seconds">seconds</code>
+<code id="seconds">seconds</code>
 </td>
 <td>
 Number of seconds to add.
@@ -79,7 +79,7 @@ Number of seconds to add.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_duration_:_milliseconds">milliseconds</code>
+<code id="milliseconds">milliseconds</code>
 </td>
 <td>
 Number of milliseconds to add.
@@ -87,7 +87,7 @@ Number of milliseconds to add.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_duration_:_microseconds">microseconds</code>
+<code id="microseconds">microseconds</code>
 </td>
 <td>
 Number of microseconds to add.
@@ -95,7 +95,7 @@ Number of microseconds to add.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_duration_:_nanoseconds">nanoseconds</code>
+<code id="nanoseconds">nanoseconds</code>
 </td>
 <td>
 Number of nanoseconds to add.
@@ -103,7 +103,7 @@ Number of nanoseconds to add.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_duration_:_time_unit">time_unit</code>
+<code id="time_unit">time_unit</code>
 </td>
 <td>
 Time unit of the resulting expression.

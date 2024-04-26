@@ -19,7 +19,7 @@ Clip (limit) the values in an array to a <code>min</code> and
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_clip_:_min">min</code>
+<code id="min">min</code>
 </td>
 <td>
 Minimum value, Expr returning a numeric.
@@ -27,7 +27,7 @@ Minimum value, Expr returning a numeric.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_clip_:_max">max</code>
+<code id="max">max</code>
 </td>
 <td>
 Maximum value, Expr returning a numeric.

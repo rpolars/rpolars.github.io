@@ -18,7 +18,7 @@ Calculate the n-th discrete difference.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_diff_:_n">n</code>
+<code id="n">n</code>
 </td>
 <td>
 Number of slots to shift.
@@ -26,7 +26,7 @@ Number of slots to shift.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_diff_:_null_behavior">null_behavior</code>
+<code id="null_behavior">null_behavior</code>
 </td>
 <td>
 String, either <code>“ignore”</code> (default), else

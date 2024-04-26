@@ -19,7 +19,7 @@ element.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_cum_count_:_reverse">reverse</code>
+<code id="reverse">reverse</code>
 </td>
 <td>
 If <code>TRUE</code>, reverse the count.

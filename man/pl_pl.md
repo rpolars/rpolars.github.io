@@ -21,7 +21,7 @@ polars api.
 ## Format
 
 An object of class <code>pl_polars_env</code> (inherits from
-<code>environment</code>) of length 106.
+<code>environment</code>) of length 107.
 
 ## Details
 
@@ -91,6 +91,7 @@ pl$show_all_public_functions()
     #>           [ Date ; RPolarsDataType ]
     #>           [ Datetime ; function ]
     #>           [ Duration ; function ]
+    #>           [ Enum ; function ]
     #>           [ Float32 ; RPolarsDataType ]
     #>           [ Float64 ; RPolarsDataType ]
     #>           [ Int16 ; RPolarsDataType ]
@@ -113,6 +114,7 @@ pl$show_all_public_functions()
     #>        [ Duration ; function ]
     #>        [ element ; function ]
     #>        [ enable_string_cache ; function ]
+    #>        [ Enum ; function ]
     #>        [ Field ; function ]
     #>        [ first ; function ]
     #>        [ Float32 ; RPolarsDataType ]
@@ -491,6 +493,7 @@ pl$show_all_public_methods()
     #>           [ new_categorical ; function ]
     #>           [ new_datetime ; function ]
     #>           [ new_duration ; function ]
+    #>           [ new_enum ; function ]
     #>           [ new_list ; function ]
     #>           [ new_object ; function ]
     #>           [ new_struct ; function ]

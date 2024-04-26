@@ -17,7 +17,7 @@ as.character(x, ..., str_length = NULL)
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as.character.RPolarsSeries_:_x">x</code>
+<code id="x">x</code>
 </td>
 <td>
 A Polars Series
@@ -25,7 +25,7 @@ A Polars Series
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as.character.RPolarsSeries_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Not used.
@@ -33,7 +33,7 @@ Not used.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as.character.RPolarsSeries_:_str_length">str_length</code>
+<code id="str_length">str_length</code>
 </td>
 <td>
 An integer. If specified, utf8 or categorical type Series will be

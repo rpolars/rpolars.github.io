@@ -20,7 +20,7 @@ DataFrame_limit(n = 5L)
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_head_:_n">n</code>
+<code id="n">n</code>
 </td>
 <td>
 Number of rows to return. If a negative value is passed, return all rows

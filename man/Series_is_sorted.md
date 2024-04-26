@@ -18,7 +18,7 @@ Check if the Series is sorted
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_is_sorted_:_descending">descending</code>
+<code id="descending">descending</code>
 </td>
 <td>
 Check if the Series is sorted in descending order.

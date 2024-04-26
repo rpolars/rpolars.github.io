@@ -25,7 +25,7 @@ information on specificities related to the context.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_map_elements_:_f">f</code>
+<code id="f">f</code>
 </td>
 <td>
 Function to map
@@ -33,7 +33,7 @@ Function to map
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_map_elements_:_return_type">return_type</code>
+<code id="return_type">return_type</code>
 </td>
 <td>
 DataType of the output Series. If <code>NULL</code>, the dtype will be
@@ -42,7 +42,7 @@ DataType of the output Series. If <code>NULL</code>, the dtype will be
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_map_elements_:_strict_return_type">strict_return_type</code>
+<code id="strict_return_type">strict_return_type</code>
 </td>
 <td>
 If <code>TRUE</code> (default), error if not correct datatype returned
@@ -52,7 +52,7 @@ null value.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_map_elements_:_allow_fail_eval">allow_fail_eval</code>
+<code id="allow_fail_eval">allow_fail_eval</code>
 </td>
 <td>
 If <code>FALSE</code> (default), raise an error if the function fails.
@@ -62,7 +62,7 @@ value.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_map_elements_:_in_background">in_background</code>
+<code id="in_background">in_background</code>
 </td>
 <td>
 Whether to run the function in a background R process, default is
@@ -239,7 +239,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   2.367   0.000   2.534
+    #>   2.269   0.004   2.356
 
 ``` r
 # Comparing this to the standard polars syntax:
@@ -251,7 +251,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.000   0.004   0.004
+    #>   0.001   0.003   0.004
 
 ``` r
 # Running in parallel --------------------------------
@@ -271,7 +271,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.033   0.000   1.234
+    #>   0.028   0.000   1.232
 
 ``` r
 # first run in parallel: there is some overhead to start up extra R processes
@@ -296,7 +296,7 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.014   0.001   0.991
+    #>   0.003   0.013   0.981
 
 ``` r
 # second run in parallel: this reuses R processes in "polars global_rpool".
@@ -317,4 +317,4 @@ system.time({
 ```
 
     #>    user  system elapsed 
-    #>   0.015   0.000   0.337
+    #>   0.014   0.000   0.329

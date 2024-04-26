@@ -18,7 +18,7 @@ Shift the values by a given period.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_shift_:_periods">periods</code>
+<code id="periods">periods</code>
 </td>
 <td>
 integer Number of periods to shift (may be negative).

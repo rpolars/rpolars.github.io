@@ -19,7 +19,7 @@ exponent</code>.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_pow_:_exponent">exponent</code>
+<code id="exponent">exponent</code>
 </td>
 <td>
 Numeric literal or expression value.

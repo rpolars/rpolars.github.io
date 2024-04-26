@@ -18,7 +18,7 @@ Compute the sum rowwise
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_sum_horizontal_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Columns to concatenate into a single string column. Accepts expressions.

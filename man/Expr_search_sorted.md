@@ -18,7 +18,7 @@ Find indices where elements should be inserted to maintain order.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_search_sorted_:_element">element</code>
+<code id="element">element</code>
 </td>
 <td>
 Element to insert. Can be an Expr or something coercible to an Expr.

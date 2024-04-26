@@ -18,7 +18,7 @@ Get a slice of the LazyFrame.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_slice_:_offset">offset</code>
+<code id="offset">offset</code>
 </td>
 <td>
 Start index, can be a negative value. This is 0-indexed, so <code>offset
@@ -27,7 +27,7 @@ Start index, can be a negative value. This is 0-indexed, so <code>offset
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_slice_:_length">length</code>
+<code id="length">length</code>
 </td>
 <td>
 Length of the slice. If <code>NULL</code> (default), all rows starting

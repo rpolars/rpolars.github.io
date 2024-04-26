@@ -77,7 +77,7 @@ as_polars_df(x, ...)
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_df_:_x">x</code>
+<code id="x">x</code>
 </td>
 <td>
 Object to convert to a polars DataFrame.
@@ -85,7 +85,7 @@ Object to convert to a polars DataFrame.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_df_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Additional arguments passed to methods.
@@ -93,7 +93,7 @@ Additional arguments passed to methods.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_df_:_rownames">rownames</code>
+<code id="rownames">rownames</code>
 </td>
 <td>
 
@@ -116,7 +116,7 @@ A string: The name of a new column, which will contain the row names. If
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_df_:_make_names_unique">make_names_unique</code>
+<code id="make_names_unique">make_names_unique</code>
 </td>
 <td>
 A logical flag to replace duplicated column names with unique names. If
@@ -126,7 +126,7 @@ thrown.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_df_:_schema">schema</code>
+<code id="schema">schema</code>
 </td>
 <td>
 named list of DataTypes, or character vector of column names. Should
@@ -138,7 +138,7 @@ renamed/recast. If <code>NULL</code> (default), convert columns as is.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_df_:_schema_overrides">schema_overrides</code>
+<code id="schema_overrides">schema_overrides</code>
 </td>
 <td>
 named list of DataTypes. Cast some columns to the DataType.
@@ -146,7 +146,7 @@ named list of DataTypes. Cast some columns to the DataType.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_df_:_n_rows">n_rows</code>
+<code id="n_rows">n_rows</code>
 </td>
 <td>
 Number of rows to fetch. Defaults to <code>Inf</code>, meaning all rows.
@@ -154,7 +154,7 @@ Number of rows to fetch. Defaults to <code>Inf</code>, meaning all rows.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_df_:_type_coercion">type_coercion</code>
+<code id="type_coercion">type_coercion</code>
 </td>
 <td>
 Logical. Coerce types such that operations succeed and run on minimal
@@ -163,7 +163,7 @@ required memory.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_df_:_predicate_pushdown">predicate_pushdown</code>
+<code id="predicate_pushdown">predicate_pushdown</code>
 </td>
 <td>
 Logical. Applies filters as early as possible at scan level.
@@ -171,7 +171,7 @@ Logical. Applies filters as early as possible at scan level.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_df_:_projection_pushdown">projection_pushdown</code>
+<code id="projection_pushdown">projection_pushdown</code>
 </td>
 <td>
 Logical. Select only the columns that are needed at the scan level.
@@ -179,7 +179,7 @@ Logical. Select only the columns that are needed at the scan level.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_df_:_simplify_expression">simplify_expression</code>
+<code id="simplify_expression">simplify_expression</code>
 </td>
 <td>
 Logical. Various optimizations, such as constant folding and replacing
@@ -188,7 +188,7 @@ expensive operations with faster alternatives.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_df_:_slice_pushdown">slice_pushdown</code>
+<code id="slice_pushdown">slice_pushdown</code>
 </td>
 <td>
 Logical. Only load the required slice from the scan level. Don’t
@@ -197,7 +197,7 @@ materialize sliced outputs (e.g. <code>join$head(10)</code>).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_df_:_comm_subplan_elim">comm_subplan_elim</code>
+<code id="comm_subplan_elim">comm_subplan_elim</code>
 </td>
 <td>
 Logical. Will try to cache branching subplans that occur on self-joins
@@ -206,7 +206,7 @@ or unions.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_df_:_comm_subexpr_elim">comm_subexpr_elim</code>
+<code id="comm_subexpr_elim">comm_subexpr_elim</code>
 </td>
 <td>
 Logical. Common subexpressions will be cached and reused.
@@ -214,7 +214,7 @@ Logical. Common subexpressions will be cached and reused.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_df_:_streaming">streaming</code>
+<code id="streaming">streaming</code>
 </td>
 <td>
 Logical. Run parts of the query in a streaming fashion (this is in an
@@ -223,7 +223,7 @@ alpha state).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_df_:_no_optimization">no_optimization</code>
+<code id="no_optimization">no_optimization</code>
 </td>
 <td>
 Logical. Sets the following parameters to <code>FALSE</code>:
@@ -234,7 +234,7 @@ Logical. Sets the following parameters to <code>FALSE</code>:
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_df_:_inherit_optimization">inherit_optimization</code>
+<code id="inherit_optimization">inherit_optimization</code>
 </td>
 <td>
 Logical. Use existing optimization settings regardless the settings
@@ -243,7 +243,7 @@ specified in this function call.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_df_:_collect_in_background">collect_in_background</code>
+<code id="collect_in_background">collect_in_background</code>
 </td>
 <td>
 Logical. Detach this query from R session. Computation will start in
@@ -253,7 +253,7 @@ DataFrame. Useful in interactive mode to not lock R session.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as_polars_df_:_rechunk">rechunk</code>
+<code id="rechunk">rechunk</code>
 </td>
 <td>
 A logical flag (default <code>TRUE</code>). Make sure that all data of

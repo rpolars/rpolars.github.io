@@ -19,7 +19,7 @@ The corresponding global timepoint will stay unchanged +/- precision.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprDT_cast_time_unit_:_tu">tu</code>
+<code id="tu">tu</code>
 </td>
 <td>
 string option either ‘ns’, ‘us’, or ‘ms’

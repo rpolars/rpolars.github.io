@@ -16,7 +16,7 @@ methods are listed by their Class
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="show_all_public_methods_:_class_names">class_names</code>
+<code id="class_names">class_names</code>
 </td>
 <td>
 character vector of polars class names to show, Default NULL is all.
@@ -325,6 +325,7 @@ pl$show_all_public_methods()
     #>           [ new_categorical ; function ]
     #>           [ new_datetime ; function ]
     #>           [ new_duration ; function ]
+    #>           [ new_enum ; function ]
     #>           [ new_list ; function ]
     #>           [ new_object ; function ]
     #>           [ new_struct ; function ]

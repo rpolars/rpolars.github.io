@@ -18,7 +18,7 @@ Check if two DataFrames are equal.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_equals_:_other">other</code>
+<code id="other">other</code>
 </td>
 <td>
 DataFrame to compare with.

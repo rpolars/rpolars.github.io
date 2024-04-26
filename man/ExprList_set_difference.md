@@ -21,7 +21,7 @@ are in only one of the two lists, use
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprList_set_difference_:_other">other</code>
+<code id="other">other</code>
 </td>
 <td>
 Other list variable. Can be an Expr or something coercible to an Expr.

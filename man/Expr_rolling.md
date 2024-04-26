@@ -74,7 +74,7 @@ whereas if you pass a non-default offset, then the windows will be:
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_rolling_:_index_column">index_column</code>
+<code id="index_column">index_column</code>
 </td>
 <td>
 Column used to group based on the time window. Often of type
@@ -86,7 +86,7 @@ an Int64 column.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_rolling_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -94,7 +94,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_rolling_:_period">period</code>
+<code id="period">period</code>
 </td>
 <td>
 A character representing the length of the window, must be non-negative.
@@ -104,7 +104,7 @@ language</code> section for details.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_rolling_:_offset">offset</code>
+<code id="offset">offset</code>
 </td>
 <td>
 A character representing the offset of the window, or <code>NULL</code>
@@ -115,7 +115,7 @@ section for details.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_rolling_:_closed">closed</code>
+<code id="closed">closed</code>
 </td>
 <td>
 Define which sides of the temporal interval are closed (inclusive). This
@@ -125,7 +125,7 @@ can be either <code>“left”</code>, <code>“right”</code>,
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_rolling_:_check_sorted">check_sorted</code>
+<code id="check_sorted">check_sorted</code>
 </td>
 <td>
 Check whether data is actually sorted. Checking it is expensive so if

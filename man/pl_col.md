@@ -18,7 +18,7 @@ Create an expression representing column(s) in a dataframe
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_col_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 

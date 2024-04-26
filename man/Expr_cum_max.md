@@ -18,7 +18,7 @@ Get an array with the cumulative max computed at every element.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_cum_max_:_reverse">reverse</code>
+<code id="reverse">reverse</code>
 </td>
 <td>
 If <code>TRUE</code>, start from the last value.

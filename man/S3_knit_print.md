@@ -17,7 +17,7 @@ knit_print(x, ...)
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="knit_print.RPolarsDataFrame_:_x">x</code>
+<code id="x">x</code>
 </td>
 <td>
 a polars DataFrame to knit_print
@@ -25,7 +25,7 @@ a polars DataFrame to knit_print
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="knit_print.RPolarsDataFrame_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 additional arguments, not used

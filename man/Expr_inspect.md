@@ -20,7 +20,7 @@ formed.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_inspect_:_fmt">fmt</code>
+<code id="fmt">fmt</code>
 </td>
 <td>
 format string, should contain one set of <code>{}</code> where object

@@ -19,7 +19,7 @@ the counterpart <code>$meta$neq()</code>.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprMeta_eq_:_other">other</code>
+<code id="other">other</code>
 </td>
 <td>
 Expr to compare with

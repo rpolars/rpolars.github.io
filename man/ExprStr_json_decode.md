@@ -18,7 +18,7 @@ Parse string values as JSON.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_json_decode_:_dtype">dtype</code>
+<code id="dtype">dtype</code>
 </td>
 <td>
 The dtype to cast the extracted value to. If <code>NULL</code>, the
@@ -27,7 +27,7 @@ dtype will be inferred from the JSON value.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_json_decode_:_infer_schema_length">infer_schema_length</code>
+<code id="infer_schema_length">infer_schema_length</code>
 </td>
 <td>
 How many rows to parse to determine the schema. If <code>NULL</code>,

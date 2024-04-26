@@ -2,7 +2,7 @@
 
 # Create Struct DataType
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L253)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L254)
 
 ## Description
 
@@ -21,7 +21,7 @@ of data type <code>Struct</code> in a <code>DataFrame</code> or a
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataType_Struct_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 RPolarsDataType objects

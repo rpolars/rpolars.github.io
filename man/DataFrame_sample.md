@@ -24,7 +24,7 @@ Take a sample of rows from a DataFrame
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_sample_:_n">n</code>
+<code id="n">n</code>
 </td>
 <td>
 Number of rows to return. Cannot be used with <code>fraction</code>.
@@ -32,7 +32,7 @@ Number of rows to return. Cannot be used with <code>fraction</code>.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_sample_:_fraction">fraction</code>
+<code id="fraction">fraction</code>
 </td>
 <td>
 Fraction of rows to return (between 0 and 1). Cannot be used with
@@ -41,7 +41,7 @@ Fraction of rows to return (between 0 and 1). Cannot be used with
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_sample_:_with_replacement">with_replacement</code>
+<code id="with_replacement">with_replacement</code>
 </td>
 <td>
 Allow values to be sampled more than once.
@@ -49,7 +49,7 @@ Allow values to be sampled more than once.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_sample_:_shuffle">shuffle</code>
+<code id="shuffle">shuffle</code>
 </td>
 <td>
 If <code>TRUE</code>, the order of the sampled rows will be shuffled. If
@@ -59,7 +59,7 @@ neither stable nor fully random.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_sample_:_seed">seed</code>
+<code id="seed">seed</code>
 </td>
 <td>
 Seed for the random number generator. If set to <code>NULL</code>
@@ -87,17 +87,17 @@ df$sample(n = 20)
     #> │ ---          ┆ ---         ┆ ---          ┆ ---         ┆ ---        │
     #> │ f64          ┆ f64         ┆ f64          ┆ f64         ┆ cat        │
     #> ╞══════════════╪═════════════╪══════════════╪═════════════╪════════════╡
-    #> │ 6.8          ┆ 3.0         ┆ 5.5          ┆ 2.1         ┆ virginica  │
-    #> │ 5.1          ┆ 3.7         ┆ 1.5          ┆ 0.4         ┆ setosa     │
-    #> │ 6.6          ┆ 3.0         ┆ 4.4          ┆ 1.4         ┆ versicolor │
-    #> │ 6.1          ┆ 3.0         ┆ 4.9          ┆ 1.8         ┆ virginica  │
-    #> │ 6.4          ┆ 3.2         ┆ 5.3          ┆ 2.3         ┆ virginica  │
+    #> │ 5.0          ┆ 3.4         ┆ 1.5          ┆ 0.2         ┆ setosa     │
+    #> │ 4.4          ┆ 3.2         ┆ 1.3          ┆ 0.2         ┆ setosa     │
+    #> │ 4.8          ┆ 3.4         ┆ 1.9          ┆ 0.2         ┆ setosa     │
+    #> │ 5.1          ┆ 2.5         ┆ 3.0          ┆ 1.1         ┆ versicolor │
+    #> │ 7.7          ┆ 2.8         ┆ 6.7          ┆ 2.0         ┆ virginica  │
     #> │ …            ┆ …           ┆ …            ┆ …           ┆ …          │
-    #> │ 6.5          ┆ 3.2         ┆ 5.1          ┆ 2.0         ┆ virginica  │
-    #> │ 6.3          ┆ 2.9         ┆ 5.6          ┆ 1.8         ┆ virginica  │
-    #> │ 5.9          ┆ 3.0         ┆ 5.1          ┆ 1.8         ┆ virginica  │
-    #> │ 6.3          ┆ 3.3         ┆ 4.7          ┆ 1.6         ┆ versicolor │
-    #> │ 6.3          ┆ 3.4         ┆ 5.6          ┆ 2.4         ┆ virginica  │
+    #> │ 6.4          ┆ 2.8         ┆ 5.6          ┆ 2.2         ┆ virginica  │
+    #> │ 6.8          ┆ 3.0         ┆ 5.5          ┆ 2.1         ┆ virginica  │
+    #> │ 6.0          ┆ 2.2         ┆ 4.0          ┆ 1.0         ┆ versicolor │
+    #> │ 5.5          ┆ 2.4         ┆ 3.7          ┆ 1.0         ┆ versicolor │
+    #> │ 6.6          ┆ 3.0         ┆ 4.4          ┆ 1.4         ┆ versicolor │
     #> └──────────────┴─────────────┴──────────────┴─────────────┴────────────┘
 
 ``` r
@@ -110,15 +110,15 @@ df$sample(frac = 0.1)
     #> │ ---          ┆ ---         ┆ ---          ┆ ---         ┆ ---        │
     #> │ f64          ┆ f64         ┆ f64          ┆ f64         ┆ cat        │
     #> ╞══════════════╪═════════════╪══════════════╪═════════════╪════════════╡
-    #> │ 6.7          ┆ 3.3         ┆ 5.7          ┆ 2.1         ┆ virginica  │
-    #> │ 6.3          ┆ 2.3         ┆ 4.4          ┆ 1.3         ┆ versicolor │
-    #> │ 7.7          ┆ 3.8         ┆ 6.7          ┆ 2.2         ┆ virginica  │
-    #> │ 5.2          ┆ 3.5         ┆ 1.5          ┆ 0.2         ┆ setosa     │
-    #> │ 5.8          ┆ 2.7         ┆ 5.1          ┆ 1.9         ┆ virginica  │
+    #> │ 5.6          ┆ 2.5         ┆ 3.9          ┆ 1.1         ┆ versicolor │
+    #> │ 5.1          ┆ 3.3         ┆ 1.7          ┆ 0.5         ┆ setosa     │
+    #> │ 4.6          ┆ 3.2         ┆ 1.4          ┆ 0.2         ┆ setosa     │
+    #> │ 6.8          ┆ 3.0         ┆ 5.5          ┆ 2.1         ┆ virginica  │
+    #> │ 5.9          ┆ 3.0         ┆ 5.1          ┆ 1.8         ┆ virginica  │
     #> │ …            ┆ …           ┆ …            ┆ …           ┆ …          │
-    #> │ 6.5          ┆ 3.0         ┆ 5.5          ┆ 1.8         ┆ virginica  │
-    #> │ 6.4          ┆ 3.2         ┆ 4.5          ┆ 1.5         ┆ versicolor │
+    #> │ 6.3          ┆ 2.5         ┆ 5.0          ┆ 1.9         ┆ virginica  │
+    #> │ 6.8          ┆ 2.8         ┆ 4.8          ┆ 1.4         ┆ versicolor │
     #> │ 6.3          ┆ 3.4         ┆ 5.6          ┆ 2.4         ┆ virginica  │
-    #> │ 5.6          ┆ 3.0         ┆ 4.5          ┆ 1.5         ┆ versicolor │
-    #> │ 4.8          ┆ 3.4         ┆ 1.9          ┆ 0.2         ┆ setosa     │
+    #> │ 6.0          ┆ 3.0         ┆ 4.8          ┆ 1.8         ┆ virginica  │
+    #> │ 4.3          ┆ 3.0         ┆ 1.1          ┆ 0.1         ┆ setosa     │
     #> └──────────────┴─────────────┴──────────────┴─────────────┴────────────┘

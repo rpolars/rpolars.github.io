@@ -18,7 +18,7 @@ Check if an expression is between the given lower and upper bounds
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_is_between_:_lower_bound">lower_bound</code>
+<code id="lower_bound">lower_bound</code>
 </td>
 <td>
 Lower bound, can be an Expr. Strings are parsed as column names.
@@ -26,7 +26,7 @@ Lower bound, can be an Expr. Strings are parsed as column names.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_is_between_:_upper_bound">upper_bound</code>
+<code id="upper_bound">upper_bound</code>
 </td>
 <td>
 Upper bound, can be an Expr. Strings are parsed as column names.
@@ -34,7 +34,7 @@ Upper bound, can be an Expr. Strings are parsed as column names.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_is_between_:_closed">closed</code>
+<code id="closed">closed</code>
 </td>
 <td>
 Define which sides of the interval are closed (inclusive). This can be

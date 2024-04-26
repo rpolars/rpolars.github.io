@@ -2,7 +2,7 @@
 
 # Data type representing a time duration
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L204)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L205)
 
 ## Description
 
@@ -18,7 +18,7 @@ Data type representing a time duration
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataType_Duration_:_time_unit">time_unit</code>
+<code id="time_unit">time_unit</code>
 </td>
 <td>
 Unit of time. One of <code>“ms”</code>, <code>“us”</code> (default) or

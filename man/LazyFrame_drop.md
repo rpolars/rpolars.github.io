@@ -18,7 +18,7 @@ Drop columns of a LazyFrame
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_drop_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Characters of column names to drop. Passed to <code>pl$col()</code>.

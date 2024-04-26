@@ -18,7 +18,7 @@ Gather every nth element in a list
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprList_gather_every_:_n">n</code>
+<code id="n">n</code>
 </td>
 <td>
 Positive integer.
@@ -26,7 +26,7 @@ Positive integer.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprList_gather_every_:_offset">offset</code>
+<code id="offset">offset</code>
 </td>
 <td>
 Starting index.

@@ -18,7 +18,7 @@ Get unique values
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_unique_:_maintain_order">maintain_order</code>
+<code id="maintain_order">maintain_order</code>
 </td>
 <td>
 If <code>TRUE</code>, the unique values are returned in order of

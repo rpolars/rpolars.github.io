@@ -19,7 +19,7 @@ Return the <code>k</code> largest elements. This has time complexity:
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_top_k_:_k">k</code>
+<code id="k">k</code>
 </td>
 <td>
 Number of top values to get

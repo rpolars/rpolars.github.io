@@ -2,7 +2,7 @@
 
 # Create Array DataType
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L299)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L300)
 
 ## Description
 
@@ -21,7 +21,7 @@ different lengths. Array methods can be accessed via the
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataType_Array_:_datatype">datatype</code>
+<code id="datatype">datatype</code>
 </td>
 <td>
 An inner DataType. The default is <code>“Unknown”</code> and is only a
@@ -31,7 +31,7 @@ example.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataType_Array_:_width">width</code>
+<code id="width">width</code>
 </td>
 <td>
 The length of the arrays.

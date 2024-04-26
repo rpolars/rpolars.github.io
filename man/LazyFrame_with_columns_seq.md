@@ -25,7 +25,7 @@ preferred.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_with_columns_seq_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Any expressions or string column name, or same wrapped in a list. If

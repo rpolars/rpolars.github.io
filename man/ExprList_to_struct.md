@@ -22,7 +22,7 @@ Convert a Series of type <code>List</code> to <code>Struct</code>
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprList_to_struct_:_n_field_strategy">n_field_strategy</code>
+<code id="n_field_strategy">n_field_strategy</code>
 </td>
 <td>
 Strategy to determine the number of fields of the struct. If
@@ -34,7 +34,7 @@ a list.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprList_to_struct_:_fields">fields</code>
+<code id="fields">fields</code>
 </td>
 <td>
 If the name and number of the desired fields is known in advance, a list
@@ -47,7 +47,7 @@ double and outputs a string value can be used. If <code>NULL</code>
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprList_to_struct_:_upper_bound">upper_bound</code>
+<code id="upper_bound">upper_bound</code>
 </td>
 <td>
 A <code>LazyFrame</code> needs to know the schema at all time. The

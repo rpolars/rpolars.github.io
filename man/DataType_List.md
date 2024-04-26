@@ -2,7 +2,7 @@
 
 # Create List DataType
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L325)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L326)
 
 ## Description
 
@@ -18,7 +18,7 @@ Create List DataType
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataType_List_:_datatype">datatype</code>
+<code id="datatype">datatype</code>
 </td>
 <td>
 an inner DataType, default is "Unknown" (placeholder for when inner

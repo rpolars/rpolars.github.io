@@ -24,7 +24,7 @@ Sort a DataFrame
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_sort_:_by">by</code>
+<code id="by">by</code>
 </td>
 <td>
 Column(s) to sort by. Can be character vector of column names, a list of
@@ -33,7 +33,7 @@ Expr(s) or a list with a mix of Expr(s) and column names.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_sort_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 More columns to sort by as above but provided one Expr per argument.
@@ -41,7 +41,7 @@ More columns to sort by as above but provided one Expr per argument.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_sort_:_descending">descending</code>
+<code id="descending">descending</code>
 </td>
 <td>
 Logical. Sort in descending order (default is <code>FALSE</code>). This
@@ -51,7 +51,7 @@ number of Expr(s) specified in <code>by</code> and <code>…</code>.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_sort_:_nulls_last">nulls_last</code>
+<code id="nulls_last">nulls_last</code>
 </td>
 <td>
 A logical. If <code>TRUE</code>, place <code>null</code> values last
@@ -60,7 +60,7 @@ insead of first.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_sort_:_maintain_order">maintain_order</code>
+<code id="maintain_order">maintain_order</code>
 </td>
 <td>
 Whether the order should be maintained if elements are equal. If

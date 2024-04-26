@@ -18,7 +18,7 @@ This function is syntactic sugar for <code>pl$col(…)$mean()</code>.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_mean_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Characters indicating the column names, passed to <code>pl$col()</code>.

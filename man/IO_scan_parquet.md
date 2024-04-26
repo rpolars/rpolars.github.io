@@ -18,6 +18,7 @@ Scan a parquet file
   hive_partitioning = TRUE,
   rechunk = FALSE,
   low_memory = FALSE,
+  storage_options = NULL,
   use_statistics = TRUE,
   cache = TRUE
 )
@@ -28,7 +29,7 @@ Scan a parquet file
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_scan_parquet_:_source">source</code>
+<code id="source">source</code>
 </td>
 <td>
 Path to a file. You can use globbing with <code>\*</code> to scan/read
@@ -37,7 +38,7 @@ multiple files in the same directory (see examples).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_scan_parquet_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -45,7 +46,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_scan_parquet_:_n_rows">n_rows</code>
+<code id="n_rows">n_rows</code>
 </td>
 <td>
 Maximum number of rows to read.
@@ -53,7 +54,7 @@ Maximum number of rows to read.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_scan_parquet_:_row_index_name">row_index_name</code>
+<code id="row_index_name">row_index_name</code>
 </td>
 <td>
 If not <code>NULL</code>, this will insert a row index column with the
@@ -62,7 +63,7 @@ given name into the DataFrame.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_scan_parquet_:_row_index_offset">row_index_offset</code>
+<code id="row_index_offset">row_index_offset</code>
 </td>
 <td>
 Offset to start the row index column (only used if the name is set).
@@ -70,7 +71,7 @@ Offset to start the row index column (only used if the name is set).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_scan_parquet_:_parallel">parallel</code>
+<code id="parallel">parallel</code>
 </td>
 <td>
 This determines the direction of parallelism. <code>“auto”</code> will
@@ -81,7 +82,7 @@ try to determine the optimal direction. Can be <code>“auto”</code>,
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_scan_parquet_:_hive_partitioning">hive_partitioning</code>
+<code id="hive_partitioning">hive_partitioning</code>
 </td>
 <td>
 Infer statistics and schema from hive partitioned URL and use them to
@@ -90,7 +91,7 @@ prune reads.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_scan_parquet_:_rechunk">rechunk</code>
+<code id="rechunk">rechunk</code>
 </td>
 <td>
 In case of reading multiple files via a glob pattern, rechunk the final
@@ -99,7 +100,7 @@ DataFrame into contiguous memory chunks.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_scan_parquet_:_low_memory">low_memory</code>
+<code id="low_memory">low_memory</code>
 </td>
 <td>
 Reduce memory usage (will yield a lower performance).
@@ -107,7 +108,17 @@ Reduce memory usage (will yield a lower performance).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_scan_parquet_:_use_statistics">use_statistics</code>
+<code id="storage_options">storage_options</code>
+</td>
+<td>
+Experimental. List of options necessary to scan parquet files from
+different cloud storage providers (GCP, AWS, Azure). See the ‘Details’
+section.
+</td>
+</tr>
+<tr>
+<td style="white-space: nowrap; font-family: monospace; vertical-align: top">
+<code id="use_statistics">use_statistics</code>
 </td>
 <td>
 Use statistics in the parquet file to determine if pages can be skipped
@@ -116,13 +127,54 @@ from reading.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_scan_parquet_:_cache">cache</code>
+<code id="cache">cache</code>
 </td>
 <td>
 Cache the result after reading.
 </td>
 </tr>
 </table>
+
+## Details
+
+<h4>
+Connecting to cloud providers
+</h4>
+
+Polars supports scanning parquet files from different cloud providers.
+The cloud providers currently supported are AWS, GCP, and Azure. The
+supported keys to pass to the <code>storage_options</code> argument can
+be found here:
+
+<ul>
+<li>
+
+<a href="https://docs.rs/object_store/latest/object_store/aws/enum.AmazonS3ConfigKey.html">aws</a>
+
+</li>
+<li>
+
+<a href="https://docs.rs/object_store/latest/object_store/gcp/enum.GoogleConfigKey.html">gcp</a>
+
+</li>
+<li>
+
+<a href="https://docs.rs/object_store/latest/object_store/azure/enum.AzureConfigKey.html">azure</a>
+
+</li>
+</ul>
+<h5>
+Implementation details
+</h5>
+<ul>
+<li>
+
+Currently it is impossible to scan public parquet files from GCP without
+a valid service account. Be sure to always include a service account in
+the <code>storage_options</code> argument.
+
+</li>
+</ul>
 
 ## Value
 

@@ -695,6 +695,7 @@ nav:
         - DataType_Categorical: man/DataType_Categorical.md
         - DataType_Datetime: man/DataType_Datetime.md
         - DataType_Duration: man/DataType_Duration.md
+        - DataType_Enum: man/DataType_Enum.md
         - DataType_is_array: man/DataType_is_array.md
         - DataType_is_binary: man/DataType_is_binary.md
         - DataType_is_bool: man/DataType_is_bool.md

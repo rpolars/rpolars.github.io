@@ -21,7 +21,7 @@ similar to how window functions work in
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_over_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Column(s) to group by. Accepts expression input. Characters are parsed
@@ -30,7 +30,7 @@ as column names.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_over_:_mapping_strategy">mapping_strategy</code>
+<code id="mapping_strategy">mapping_strategy</code>
 </td>
 <td>
 

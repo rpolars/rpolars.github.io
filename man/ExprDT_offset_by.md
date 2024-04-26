@@ -21,7 +21,7 @@ is allowed in the <code>by</code> string, as the first character.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprDT_offset_by_:_by">by</code>
+<code id="by">by</code>
 </td>
 <td>
 optional string encoding duration see details.

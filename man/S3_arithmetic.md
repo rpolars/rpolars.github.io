@@ -56,8 +56,7 @@ x %/% y
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="S3_arithmetic_:_x">x</code>,
-<code id="S3_arithmetic_:_y">y</code>
+<code id="x">x</code>, <code id="y">y</code>
 </td>
 <td>
 numeric type of RPolars objects or objects that can be coerced such.

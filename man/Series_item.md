@@ -18,7 +18,7 @@ Return the element at the given index
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_item_:_index">index</code>
+<code id="index">index</code>
 </td>
 <td>
 Index of the item to return.

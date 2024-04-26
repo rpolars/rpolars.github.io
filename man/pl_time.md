@@ -18,7 +18,7 @@ Create a Time expression
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_time_:_hour">hour</code>
+<code id="hour">hour</code>
 </td>
 <td>
 An Expr or something coercible to an Expr, that must return an integer
@@ -28,7 +28,7 @@ integers.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_time_:_minute">minute</code>
+<code id="minute">minute</code>
 </td>
 <td>
 An Expr or something coercible to an Expr, that must return an integer
@@ -38,7 +38,7 @@ integers.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_time_:_second">second</code>
+<code id="second">second</code>
 </td>
 <td>
 An Expr or something coercible to an Expr, that must return an integer
@@ -48,7 +48,7 @@ integers.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_time_:_microsecond">microsecond</code>
+<code id="microsecond">microsecond</code>
 </td>
 <td>
 An Expr or something coercible to an Expr, that must return an integer

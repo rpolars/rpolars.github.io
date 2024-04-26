@@ -27,7 +27,7 @@ tail(x, n = 6L, ...)
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="head.RPolarsDataFrame_:_x">x</code>
+<code id="x">x</code>
 </td>
 <td>
 A polars object
@@ -35,7 +35,7 @@ A polars object
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="head.RPolarsDataFrame_:_n">n</code>
+<code id="n">n</code>
 </td>
 <td>
 An integer vector of length 1. Note that negative values are not
@@ -44,7 +44,7 @@ supported for if <code>x</code> is a LazyFrame.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="head.RPolarsDataFrame_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored

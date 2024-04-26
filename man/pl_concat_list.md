@@ -19,7 +19,7 @@ value.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_concat_list_:_exprs">exprs</code>
+<code id="exprs">exprs</code>
 </td>
 <td>
 list of Into<Expr>, strings interpreted as column names

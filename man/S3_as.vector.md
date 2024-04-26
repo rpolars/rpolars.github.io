@@ -17,7 +17,7 @@ as.vector(x, mode)
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as.vector.RPolarsSeries_:_x">x</code>
+<code id="x">x</code>
 </td>
 <td>
 A Polars Series
@@ -25,7 +25,7 @@ A Polars Series
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="as.vector.RPolarsSeries_:_mode">mode</code>
+<code id="mode">mode</code>
 </td>
 <td>
 Not used.

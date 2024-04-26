@@ -23,7 +23,7 @@ Map an expression with an R function
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_map_batches_:_f">f</code>
+<code id="f">f</code>
 </td>
 <td>
 a function to map with
@@ -31,7 +31,7 @@ a function to map with
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_map_batches_:_output_type">output_type</code>
+<code id="output_type">output_type</code>
 </td>
 <td>
 <code>NULL</code> or a type available in <code>names(pl$dtypes)</code>.
@@ -43,7 +43,7 @@ implications to the query.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_map_batches_:_agg_list">agg_list</code>
+<code id="agg_list">agg_list</code>
 </td>
 <td>
 Aggregate list. Map from vector to group in group_by context.
@@ -51,7 +51,7 @@ Aggregate list. Map from vector to group in group_by context.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_map_batches_:_in_background">in_background</code>
+<code id="in_background">in_background</code>
 </td>
 <td>
 Logical. Whether to execute the map in a background R process. Combined
@@ -137,7 +137,7 @@ pl$LazyFrame(a = 1, b = 2, c = 3, d = 4)$select(
 ```
 
     #>    user  system elapsed 
-    #>   0.026   0.004   0.430
+    #>   0.026   0.000   0.425
 
 ``` r
 # map in parallel 1: Overhead to start up extra R processes / sessions
@@ -158,7 +158,7 @@ pl$LazyFrame(a = 1, b = 2, c = 3, d = 4)$select(
 ```
 
     #>    user  system elapsed 
-    #>   0.012   0.000   0.929
+    #>   0.012   0.000   1.202
 
 ``` r
 # map in parallel 2: Reuse R processes in "polars global_rpool".
@@ -177,4 +177,4 @@ pl$LazyFrame(a = 1, b = 2, c = 3, d = 4)$select(
 ```
 
     #>    user  system elapsed 
-    #>   0.007   0.004   0.117
+    #>   0.007   0.003   0.116

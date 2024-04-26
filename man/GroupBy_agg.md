@@ -18,7 +18,7 @@ Aggregate a DataFrame over a groupby
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="GroupBy_agg_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 exprs to aggregate over. … args can also be passed wrapped in a list
@@ -51,6 +51,6 @@ pl$DataFrame(
     #> │ --- ┆ ---     ┆ ---          │
     #> │ str ┆ f64     ┆ f64          │
     #> ╞═════╪═════════╪══════════════╡
-    #> │ one ┆ 9.0     ┆ 4.5          │
     #> │ two ┆ 6.0     ┆ 2.0          │
+    #> │ one ┆ 9.0     ┆ 4.5          │
     #> └─────┴─────────┴──────────────┘

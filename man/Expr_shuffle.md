@@ -18,7 +18,7 @@ Shuffle values
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_shuffle_:_seed">seed</code>
+<code id="seed">seed</code>
 </td>
 <td>
 numeric value of 0 to 2^52 Seed for the random number generator. If

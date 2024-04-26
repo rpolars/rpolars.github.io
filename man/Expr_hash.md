@@ -18,7 +18,7 @@ The hash value is of type <code>UInt64</code>.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_hash_:_seed">seed</code>
+<code id="seed">seed</code>
 </td>
 <td>
 Random seed parameter. Defaults to 0. Doesn’t have any effect for now.
@@ -26,9 +26,8 @@ Random seed parameter. Defaults to 0. Doesn’t have any effect for now.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_hash_:_seed_1">seed_1</code>,
-<code id="Expr_hash_:_seed_2">seed_2</code>,
-<code id="Expr_hash_:_seed_3">seed_3</code>
+<code id="seed_1">seed_1</code>, <code id="seed_2">seed_2</code>,
+<code id="seed_3">seed_3</code>
 </td>
 <td>
 Random seed parameter. Defaults to arg seed. The column will be coerced

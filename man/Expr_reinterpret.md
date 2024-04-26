@@ -20,7 +20,7 @@ safely use the cast operation.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_reinterpret_:_signed">signed</code>
+<code id="signed">signed</code>
 </td>
 <td>
 If <code>TRUE</code> (default), reinterpret into Int64. Otherwise, it

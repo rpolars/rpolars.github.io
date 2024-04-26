@@ -24,7 +24,7 @@ Take a sample
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_sample_:_frac">frac</code>
+<code id="frac">frac</code>
 </td>
 <td>
 Fraction of items to return (can be higher than 1). Cannot be used with
@@ -33,7 +33,7 @@ Fraction of items to return (can be higher than 1). Cannot be used with
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_sample_:_with_replacement">with_replacement</code>
+<code id="with_replacement">with_replacement</code>
 </td>
 <td>
 If <code>TRUE</code> (default), allow values to be sampled more than
@@ -42,7 +42,7 @@ once.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_sample_:_shuffle">shuffle</code>
+<code id="shuffle">shuffle</code>
 </td>
 <td>
 Shuffle the order of sampled data points (implicitly <code>TRUE</code>
@@ -51,7 +51,7 @@ if <code>with_replacement = TRUE</code>).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_sample_:_seed">seed</code>
+<code id="seed">seed</code>
 </td>
 <td>
 numeric value of 0 to 2^52 Seed for the random number generator. If
@@ -61,7 +61,7 @@ picked.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_sample_:_n">n</code>
+<code id="n">n</code>
 </td>
 <td>
 Number of items to return. Cannot be used with <code>frac</code>.

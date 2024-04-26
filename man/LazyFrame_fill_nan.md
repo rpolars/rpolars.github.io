@@ -18,7 +18,7 @@ Fill <code>NaN</code> values by an Expression evaluation.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_fill_nan_:_fill_value">fill_value</code>
+<code id="fill_value">fill_value</code>
 </td>
 <td>
 Value to fill <code>NaN</code> with.

@@ -21,7 +21,7 @@ Return Polars DataFrame as R data.frame
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_to_data_frame_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Any args pased to <code>as.data.frame()</code>.
@@ -29,7 +29,7 @@ Any args pased to <code>as.data.frame()</code>.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataFrame_to_data_frame_:_int64_conversion">int64_conversion</code>
+<code id="int64_conversion">int64_conversion</code>
 </td>
 <td>
 

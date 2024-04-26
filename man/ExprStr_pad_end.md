@@ -19,7 +19,7 @@ Return the string left justified in a string of length
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_pad_end_:_width">width</code>
+<code id="width">width</code>
 </td>
 <td>
 Justify left to this length.
@@ -27,7 +27,7 @@ Justify left to this length.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_pad_end_:_fillchar">fillchar</code>
+<code id="fillchar">fillchar</code>
 </td>
 <td>
 Fill with this ASCII character.

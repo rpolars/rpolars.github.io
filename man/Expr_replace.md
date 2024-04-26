@@ -18,7 +18,7 @@ This allows one to recode values in a column.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_replace_:_old">old</code>
+<code id="old">old</code>
 </td>
 <td>
 
@@ -48,7 +48,7 @@ an Expr
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_replace_:_new">new</code>
+<code id="new">new</code>
 </td>
 <td>
 Either a vector of length 1, a vector of same length as <code>old</code>
@@ -57,7 +57,7 @@ or an Expr. If missing, <code>old</code> must be a named list.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_replace_:_default">default</code>
+<code id="default">default</code>
 </td>
 <td>
 The default replacement if the value is not in <code>old</code>. Can be
@@ -66,7 +66,7 @@ an Expr. If <code>NULL</code> (default), then the value doesn’t change.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_replace_:_return_dtype">return_dtype</code>
+<code id="return_dtype">return_dtype</code>
 </td>
 <td>
 The data type of the resulting expression. If set to <code>NULL</code>

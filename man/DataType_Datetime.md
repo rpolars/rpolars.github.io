@@ -2,7 +2,7 @@
 
 # Data type representing a calendar date and time of day.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L177)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/datatype.R#L178)
 
 ## Description
 
@@ -21,7 +21,7 @@ before the epoch.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataType_Datetime_:_time_unit">time_unit</code>
+<code id="time_unit">time_unit</code>
 </td>
 <td>
 Unit of time. One of <code>“ms”</code>, <code>“us”</code> (default) or
@@ -30,7 +30,7 @@ Unit of time. One of <code>“ms”</code>, <code>“us”</code> (default) or
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="DataType_Datetime_:_time_zone">time_zone</code>
+<code id="time_zone">time_zone</code>
 </td>
 <td>
 Time zone string, as defined in <code>OlsonNames()</code>. Setting

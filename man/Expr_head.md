@@ -18,7 +18,7 @@ Get the first n elements
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_head_:_n">n</code>
+<code id="n">n</code>
 </td>
 <td>
 Number of elements to take.

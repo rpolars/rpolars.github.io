@@ -18,7 +18,7 @@ Create a new SQLContext and register the given LazyFrames.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_SQLContext_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Name-value pairs of LazyFrame like objects to register.

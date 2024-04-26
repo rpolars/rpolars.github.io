@@ -18,7 +18,7 @@ Rename the fields of the struct. By default base 2.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStruct_rename_fields_:_names">names</code>
+<code id="names">names</code>
 </td>
 <td>
 char vec or list of strings given in the same order as the struct’s

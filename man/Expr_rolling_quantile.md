@@ -31,7 +31,7 @@ weights given by the <code>weight</code> vector.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_rolling_quantile_:_quantile">quantile</code>
+<code id="quantile">quantile</code>
 </td>
 <td>
 Quantile between 0 and 1.
@@ -39,7 +39,7 @@ Quantile between 0 and 1.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_rolling_quantile_:_interpolation">interpolation</code>
+<code id="interpolation">interpolation</code>
 </td>
 <td>
 String, one of <code>“nearest”</code>, <code>“higher”</code>,
@@ -48,7 +48,7 @@ String, one of <code>“nearest”</code>, <code>“higher”</code>,
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_rolling_quantile_:_window_size">window_size</code>
+<code id="window_size">window_size</code>
 </td>
 <td>
 
@@ -117,7 +117,7 @@ temporal size indicated by the following string language:
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_rolling_quantile_:_weights">weights</code>
+<code id="weights">weights</code>
 </td>
 <td>
 An optional slice with the same length as the window that will be
@@ -126,7 +126,7 @@ multiplied elementwise with the values in the window.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_rolling_quantile_:_min_periods">min_periods</code>
+<code id="min_periods">min_periods</code>
 </td>
 <td>
 The number of values in the window that should be non-null before
@@ -136,7 +136,7 @@ size.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_rolling_quantile_:_center">center</code>
+<code id="center">center</code>
 </td>
 <td>
 Set the labels at the center of the window
@@ -144,7 +144,7 @@ Set the labels at the center of the window
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_rolling_quantile_:_by">by</code>
+<code id="by">by</code>
 </td>
 <td>
 If the <code>window_size</code> is temporal for instance
@@ -155,7 +155,7 @@ Date or DateTime.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_rolling_quantile_:_closed">closed</code>
+<code id="closed">closed</code>
 </td>
 <td>
 Defines whether the temporal window interval is closed or not. Only
@@ -166,7 +166,7 @@ its possible values are <code>“left”</code>, <code>“right”</code>
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_rolling_quantile_:_warn_if_unsorted">warn_if_unsorted</code>
+<code id="warn_if_unsorted">warn_if_unsorted</code>
 </td>
 <td>
 Warn if data is not known to be sorted by <code>by</code> column (if

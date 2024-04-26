@@ -42,7 +42,7 @@ was collected into R.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_csv_:_path">path</code>
+<code id="path">path</code>
 </td>
 <td>
 A character. File path to which the file should be written.
@@ -50,7 +50,7 @@ A character. File path to which the file should be written.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_csv_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -58,7 +58,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_csv_:_include_bom">include_bom</code>
+<code id="include_bom">include_bom</code>
 </td>
 <td>
 Whether to include UTF-8 BOM (byte order mark) in the CSV output.
@@ -66,7 +66,7 @@ Whether to include UTF-8 BOM (byte order mark) in the CSV output.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_csv_:_include_header">include_header</code>
+<code id="include_header">include_header</code>
 </td>
 <td>
 Whether to include header in the CSV output.
@@ -74,7 +74,7 @@ Whether to include header in the CSV output.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_csv_:_separator">separator</code>
+<code id="separator">separator</code>
 </td>
 <td>
 Separate CSV fields with this symbol.
@@ -82,7 +82,7 @@ Separate CSV fields with this symbol.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_csv_:_line_terminator">line_terminator</code>
+<code id="line_terminator">line_terminator</code>
 </td>
 <td>
 String used to end each row.
@@ -90,7 +90,7 @@ String used to end each row.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_csv_:_quote">quote</code>
+<code id="quote">quote</code>
 </td>
 <td>
 Byte to use as quoting character.
@@ -98,7 +98,7 @@ Byte to use as quoting character.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_csv_:_batch_size">batch_size</code>
+<code id="batch_size">batch_size</code>
 </td>
 <td>
 Number of rows that will be processed per thread.
@@ -106,7 +106,7 @@ Number of rows that will be processed per thread.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_csv_:_datetime_format">datetime_format</code>
+<code id="datetime_format">datetime_format</code>
 </td>
 <td>
 A format string, with the specifiers defined by the chrono Rust crate.
@@ -117,7 +117,7 @@ inferred from the maximum timeunit found in the frame’s Datetime cols
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_csv_:_date_format">date_format</code>
+<code id="date_format">date_format</code>
 </td>
 <td>
 A format string, with the specifiers defined by the chrono Rust crate.
@@ -125,7 +125,7 @@ A format string, with the specifiers defined by the chrono Rust crate.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_csv_:_time_format">time_format</code>
+<code id="time_format">time_format</code>
 </td>
 <td>
 A format string, with the specifiers defined by the chrono Rust crate.
@@ -133,7 +133,7 @@ A format string, with the specifiers defined by the chrono Rust crate.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_csv_:_float_precision">float_precision</code>
+<code id="float_precision">float_precision</code>
 </td>
 <td>
 Number of decimal places to write, applied to both Float32 and Float64
@@ -142,7 +142,7 @@ datatypes.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_csv_:_null_values">null_values</code>
+<code id="null_values">null_values</code>
 </td>
 <td>
 A string representing null values (defaulting to the empty string).
@@ -150,7 +150,7 @@ A string representing null values (defaulting to the empty string).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_csv_:_quote_style">quote_style</code>
+<code id="quote_style">quote_style</code>
 </td>
 <td>
 
@@ -191,7 +191,7 @@ separator).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_csv_:_maintain_order">maintain_order</code>
+<code id="maintain_order">maintain_order</code>
 </td>
 <td>
 Maintain the order in which data is processed. Setting this to
@@ -200,7 +200,7 @@ Maintain the order in which data is processed. Setting this to
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_csv_:_type_coercion">type_coercion</code>
+<code id="type_coercion">type_coercion</code>
 </td>
 <td>
 Logical. Coerce types such that operations succeed and run on minimal
@@ -209,7 +209,7 @@ required memory.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_csv_:_predicate_pushdown">predicate_pushdown</code>
+<code id="predicate_pushdown">predicate_pushdown</code>
 </td>
 <td>
 Logical. Applies filters as early as possible at scan level.
@@ -217,7 +217,7 @@ Logical. Applies filters as early as possible at scan level.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_csv_:_projection_pushdown">projection_pushdown</code>
+<code id="projection_pushdown">projection_pushdown</code>
 </td>
 <td>
 Logical. Select only the columns that are needed at the scan level.
@@ -225,7 +225,7 @@ Logical. Select only the columns that are needed at the scan level.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_csv_:_simplify_expression">simplify_expression</code>
+<code id="simplify_expression">simplify_expression</code>
 </td>
 <td>
 Logical. Various optimizations, such as constant folding and replacing
@@ -234,7 +234,7 @@ expensive operations with faster alternatives.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_csv_:_slice_pushdown">slice_pushdown</code>
+<code id="slice_pushdown">slice_pushdown</code>
 </td>
 <td>
 Logical. Only load the required slice from the scan level. Don’t
@@ -243,7 +243,7 @@ materialize sliced outputs (e.g. <code>join$head(10)</code>).
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_csv_:_no_optimization">no_optimization</code>
+<code id="no_optimization">no_optimization</code>
 </td>
 <td>
 Logical. Sets the following parameters to <code>FALSE</code>:
@@ -254,7 +254,7 @@ Logical. Sets the following parameters to <code>FALSE</code>:
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_sink_csv_:_inherit_optimization">inherit_optimization</code>
+<code id="inherit_optimization">inherit_optimization</code>
 </td>
 <td>
 Logical. Use existing optimization settings regardless the settings

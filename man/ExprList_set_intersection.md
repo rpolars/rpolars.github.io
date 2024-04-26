@@ -18,7 +18,7 @@ Get the intersection of two list variables
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprList_set_intersection_:_other">other</code>
+<code id="other">other</code>
 </td>
 <td>
 Other list variable. Can be an Expr or something coercible to an Expr.

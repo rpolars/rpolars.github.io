@@ -22,7 +22,7 @@ at the scan level, whereas
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="LazyFrame_head_:_n">n</code>
+<code id="n">n</code>
 </td>
 <td>
 Number of rows to return.

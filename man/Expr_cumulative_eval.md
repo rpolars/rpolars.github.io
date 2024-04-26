@@ -19,7 +19,7 @@ slot every iteration.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_cumulative_eval_:_expr">expr</code>
+<code id="expr">expr</code>
 </td>
 <td>
 Expression to evaluate.
@@ -27,7 +27,7 @@ Expression to evaluate.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_cumulative_eval_:_min_periods">min_periods</code>
+<code id="min_periods">min_periods</code>
 </td>
 <td>
 Number of valid (non-null) values there should be in the window before
@@ -36,7 +36,7 @@ the expression is evaluated.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_cumulative_eval_:_parallel">parallel</code>
+<code id="parallel">parallel</code>
 </td>
 <td>
 Run in parallel. Don’t do this in a groupby or another operation that

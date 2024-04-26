@@ -19,7 +19,7 @@ Boolean columns by AND’ method.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_all_:_name">name</code>
+<code id="name">name</code>
 </td>
 <td>
 Character vector indicating on which columns the AND operation should be

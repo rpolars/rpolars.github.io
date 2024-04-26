@@ -19,7 +19,7 @@ log(pk))</code> where <code>pk</code> are discrete probabilities.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_entropy_:_base">base</code>
+<code id="base">base</code>
 </td>
 <td>
 Given exponential base, defaults to <code>exp(1)</code>.
@@ -27,7 +27,7 @@ Given exponential base, defaults to <code>exp(1)</code>.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Expr_entropy_:_normalize">normalize</code>
+<code id="normalize">normalize</code>
 </td>
 <td>
 Normalize <code>pk</code> if it doesn’t sum to 1.

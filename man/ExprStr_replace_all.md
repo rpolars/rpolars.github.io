@@ -18,7 +18,7 @@ Replace all matching regex/literal substrings with a new string value
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_replace_all_:_pattern">pattern</code>
+<code id="pattern">pattern</code>
 </td>
 <td>
 A character or something can be coerced to a string Expr of a valid
@@ -28,7 +28,7 @@ regex pattern, compatible with the
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_replace_all_:_value">value</code>
+<code id="value">value</code>
 </td>
 <td>
 A character or an Expr of string that will replace the matched
@@ -37,7 +37,7 @@ substring.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_replace_all_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Ignored.
@@ -45,7 +45,7 @@ Ignored.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_replace_all_:_literal">literal</code>
+<code id="literal">literal</code>
 </td>
 <td>
 Logical. If <code>TRUE</code> (default), treat <code>pattern</code> as a

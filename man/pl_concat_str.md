@@ -18,7 +18,7 @@ Horizontally concatenate columns into a single string column
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_concat_str_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Columns to concatenate into a single string column. Accepts expressions.
@@ -28,7 +28,7 @@ parsed as literals. Non-String columns are cast to String
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_concat_str_:_separator">separator</code>
+<code id="separator">separator</code>
 </td>
 <td>
 String that will be used to separate the values of each column.
@@ -36,7 +36,7 @@ String that will be used to separate the values of each column.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_concat_str_:_ignore_nulls">ignore_nulls</code>
+<code id="ignore_nulls">ignore_nulls</code>
 </td>
 <td>
 If <code>FALSE</code> (default), null values are propagated: if the row

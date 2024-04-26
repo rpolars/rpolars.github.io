@@ -26,7 +26,7 @@ Series_to_list(int64_conversion = polars_options()\$int64_conversion)
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="Series_to_r_:_int64_conversion">int64_conversion</code>
+<code id="int64_conversion">int64_conversion</code>
 </td>
 <td>
 

@@ -18,7 +18,7 @@ Test if the object a polars DataType
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="is_polars_dtype_:_x">x</code>
+<code id="x">x</code>
 </td>
 <td>
 An object
@@ -26,7 +26,7 @@ An object
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="is_polars_dtype_:_include_unknown">include_unknown</code>
+<code id="include_unknown">include_unknown</code>
 </td>
 <td>
 If <code>FALSE</code> (default), <code>pl$Unknown</code> is considered

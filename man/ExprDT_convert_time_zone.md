@@ -19,7 +19,7 @@ happen as if converting from UTC, regardless of your system’s time zone.
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprDT_convert_time_zone_:_time_zone">time_zone</code>
+<code id="time_zone">time_zone</code>
 </td>
 <td>
 String time zone from <code>base::OlsonNames()</code>

@@ -18,7 +18,7 @@ Add a prefix to all fields name of a struct
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprName_prefix_fields_:_prefix">prefix</code>
+<code id="prefix">prefix</code>
 </td>
 <td>
 Prefix to add to the field name.

@@ -18,7 +18,7 @@ Create a literal value
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="pl_lit_:_x">x</code>
+<code id="x">x</code>
 </td>
 <td>
 A vector of any length

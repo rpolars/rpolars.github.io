@@ -18,7 +18,7 @@ Decode a value using the provided encoding
 <table>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_decode_:_encoding">encoding</code>
+<code id="encoding">encoding</code>
 </td>
 <td>
 Either ‘hex’ or ‘base64’.
@@ -26,7 +26,7 @@ Either ‘hex’ or ‘base64’.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_decode_:_...">…</code>
+<code id="...">…</code>
 </td>
 <td>
 Not used currently.
@@ -34,7 +34,7 @@ Not used currently.
 </tr>
 <tr>
 <td style="white-space: nowrap; font-family: monospace; vertical-align: top">
-<code id="ExprStr_decode_:_strict">strict</code>
+<code id="strict">strict</code>
 </td>
 <td>
 If <code>TRUE</code> (default), raise an error if the underlying value
