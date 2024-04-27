@@ -2,7 +2,7 @@
 
 # Convert a String column into an Int64 column with base radix
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__string.R#L887)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/8dac37e8bf89bcd080a13d0ed20dd1dc2bee615f/R/expr__string.R#L887)
 
 ## Description
 

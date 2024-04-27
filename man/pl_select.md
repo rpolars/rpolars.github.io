@@ -2,7 +2,7 @@
 
 # Select from an empty DataFrame
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/after-wrappers.R#L305)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/8dac37e8bf89bcd080a13d0ed20dd1dc2bee615f/R/after-wrappers.R#L305)
 
 ## Description
 
