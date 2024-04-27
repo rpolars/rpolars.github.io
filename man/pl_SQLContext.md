@@ -28,7 +28,7 @@ Name-value pairs of LazyFrame like objects to register.
 
 ## Value
 
-RPolarsSQLContext
+An SQLContext
 
 ## Examples
 

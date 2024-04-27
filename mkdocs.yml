@@ -328,6 +328,7 @@ nav:
       SQLContext:
         - class: man/SQLContext_class.md
         - execute: man/SQLContext_execute.md
+        - register_globals: man/SQLContext_register_globals.md
         - register_many: man/SQLContext_register_many.md
         - register: man/SQLContext_register.md
         - tables: man/SQLContext_tables.md

@@ -2,7 +2,7 @@
 
 # Unregister tables by name
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/sql.R#L140)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/sql.R#L146)
 
 ## Description
 
@@ -28,7 +28,7 @@ A character vector of table names to unregister.
 
 ## Value
 
-Returns the SQLContext_class object invisibly.
+Returns the SQLContext object invisibly.
 
 ## Examples
 

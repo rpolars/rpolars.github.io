@@ -6753,6 +6753,27 @@
   
   
     <li class="md-nav__item">
+      <a href="SQLContext_register_globals.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    register_globals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="SQLContext_register_many.html" class="md-nav__link">
         
   
@@ -6841,6 +6862,15 @@
   <a href="#arguments" class="md-nav__link">
     <span class="md-ellipsis">
       Arguments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details
     </span>
   </a>
   
@@ -15644,6 +15674,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#value" class="md-nav__link">
     <span class="md-ellipsis">
       Value
@@ -15680,7 +15719,7 @@
 
 
 <h1 id="register-a-single-data-as-a-table">Register a single data as a table</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/sql.R#L84"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/sql.R#L88"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>Register a single frame as a table, using the given name.</p>
 <h2 id="usage">Usage</h2>
@@ -15707,8 +15746,11 @@ A LazyFrame like object to register.
 </tr>
 </table>
 
+<h2 id="details">Details</h2>
+<p>If a table with the same name is already registered, it will be
+overwritten.</p>
 <h2 id="value">Value</h2>
-<p>Returns the SQLContext_class object invisibly.</p>
+<p>Returns the SQLContext object invisibly.</p>
 <h2 id="examples">Examples</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">polars</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>

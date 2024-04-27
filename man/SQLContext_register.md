@@ -2,7 +2,7 @@
 
 # Register a single data as a table
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/sql.R#L84)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/sql.R#L88)
 
 ## Description
 
@@ -34,9 +34,14 @@ A LazyFrame like object to register.
 </tr>
 </table>
 
+## Details
+
+If a table with the same name is already registered, it will be
+overwritten.
+
 ## Value
 
-Returns the SQLContext_class object invisibly.
+Returns the SQLContext object invisibly.
 
 ## Examples
 

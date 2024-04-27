@@ -6856,6 +6856,27 @@
   
   
     <li class="md-nav__item">
+      <a href="SQLContext_register_globals.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    register_globals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="SQLContext_register_many.html" class="md-nav__link">
         
   
@@ -15920,8 +15941,8 @@ TRUE)</code>.
 #&gt; │ ---             ┆ ---   ┆ --- │
 #&gt; │ str             ┆ u64   ┆ u64 │
 #&gt; ╞═════════════════╪═══════╪═════╡
-#&gt; │ optimization    ┆ 0     ┆ 20  │
-#&gt; │ select(literal) ┆ 20    ┆ 87  │
+#&gt; │ optimization    ┆ 0     ┆ 21  │
+#&gt; │ select(literal) ┆ 21    ┆ 120 │
 #&gt; └─────────────────┴───────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Use $profile() to compare two queries</span>
@@ -15947,15 +15968,15 @@ TRUE)</code>.
 #&gt; 
 #&gt; $profile
 #&gt; shape: (3, 3)
-#&gt; ┌────────────────────┬───────┬──────┐
-#&gt; │ node               ┆ start ┆ end  │
-#&gt; │ ---                ┆ ---   ┆ ---  │
-#&gt; │ str                ┆ u64   ┆ u64  │
-#&gt; ╞════════════════════╪═══════╪══════╡
-#&gt; │ optimization       ┆ 0     ┆ 16   │
-#&gt; │ sort(Sepal.Length) ┆ 16    ┆ 616  │
-#&gt; │ group_by(Species)  ┆ 619   ┆ 1108 │
-#&gt; └────────────────────┴───────┴──────┘
+#&gt; ┌────────────────────┬───────┬───────┐
+#&gt; │ node               ┆ start ┆ end   │
+#&gt; │ ---                ┆ ---   ┆ ---   │
+#&gt; │ str                ┆ u64   ┆ u64   │
+#&gt; ╞════════════════════╪═══════╪═══════╡
+#&gt; │ optimization       ┆ 0     ┆ 18    │
+#&gt; │ sort(Sepal.Length) ┆ 18    ┆ 10362 │
+#&gt; │ group_by(Species)  ┆ 10366 ┆ 10698 │
+#&gt; └────────────────────┴───────┴───────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
@@ -15993,8 +16014,8 @@ TRUE)</code>.
 #&gt; │ str                ┆ u64   ┆ u64   │
 #&gt; ╞════════════════════╪═══════╪═══════╡
 #&gt; │ optimization       ┆ 0     ┆ 9     │
-#&gt; │ sort(Sepal.Length) ┆ 9     ┆ 622   │
-#&gt; │ group_by(Species)  ┆ 625   ┆ 58794 │
+#&gt; │ sort(Sepal.Length) ┆ 9     ┆ 149   │
+#&gt; │ group_by(Species)  ┆ 152   ┆ 84332 │
 #&gt; └────────────────────┴───────┴───────┘
 </code></pre></div>
 

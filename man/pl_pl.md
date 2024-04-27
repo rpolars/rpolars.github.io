@@ -945,6 +945,7 @@ pl$show_all_public_methods()
     #>        RPolarsSQLContext ( environment ):
     #>           [ execute ; function ]
     #>           [ register ; function ]
+    #>           [ register_globals ; function ]
     #>           [ register_many ; function ]
     #>           [ tables ; function ]
     #>           [ unregister ; function ]
