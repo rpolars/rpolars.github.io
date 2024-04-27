@@ -2,7 +2,7 @@
 
 # Get the column name that this expression would produce
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/8dac37e8bf89bcd080a13d0ed20dd1dc2bee615f/R/expr__meta.R#L115)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__meta.R#L115)
 
 ## Description
 

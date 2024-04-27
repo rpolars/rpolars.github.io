@@ -2,7 +2,7 @@
 
 # Drop duplicated rows
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/8dac37e8bf89bcd080a13d0ed20dd1dc2bee615f/R/dataframe__frame.R#L533)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/dataframe__frame.R#L533)
 
 ## Description
 
@@ -113,8 +113,8 @@ df$unique(subset = "x", keep = "last")
     #> │ --- ┆ --- │
     #> │ i32 ┆ i32 │
     #> ╞═════╪═════╡
-    #> │ 3   ┆ 1   │
     #> │ 2   ┆ 2   │
+    #> │ 3   ┆ 1   │
     #> │ 1   ┆ 1   │
     #> └─────┴─────┘
 
@@ -128,8 +128,8 @@ df$unique(subset = "x", keep = "first")
     #> │ --- ┆ --- │
     #> │ i32 ┆ i32 │
     #> ╞═════╪═════╡
-    #> │ 3   ┆ 3   │
     #> │ 2   ┆ 2   │
+    #> │ 3   ┆ 3   │
     #> │ 1   ┆ 1   │
     #> └─────┴─────┘
 

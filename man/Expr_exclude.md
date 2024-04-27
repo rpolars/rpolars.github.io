@@ -2,7 +2,7 @@
 
 # Exclude certain columns from selection
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/8dac37e8bf89bcd080a13d0ed20dd1dc2bee615f/R/expr__expr.R#L1072)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/expr__expr.R#L1072)
 
 ## Description
 
