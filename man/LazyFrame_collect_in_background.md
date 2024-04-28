@@ -2,7 +2,7 @@
 
 # Collect a query in background
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L559)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L558)
 
 ## Description
 

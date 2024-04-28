@@ -3989,6 +3989,27 @@
   
   
     <li class="md-nav__item">
+      <a href="DataFrame_sql.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sql
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="DataFrame_std.html" class="md-nav__link">
         
   
@@ -5219,6 +5240,27 @@
   
   <span class="md-ellipsis">
     sort
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LazyFrame_sql.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sql
   </span>
   
 
@@ -15701,7 +15743,7 @@
 
 
 <h1 id="group-a-lazyframe">Group a LazyFrame</h1>
-<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1209"><strong>Source code</strong></a></p>
+<p><a href="https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1208"><strong>Source code</strong></a></p>
 <h2 id="description">Description</h2>
 <p>This doesn’t modify the data but only stores information about the group
 structure. This structure can then be used by several functions
@@ -15756,8 +15798,8 @@ The default value can be changed with
 #&gt; │ --- ┆ --- │
 #&gt; │ str ┆ f64 │
 #&gt; ╞═════╪═════╡
-#&gt; │ b   ┆ 5.0 │
 #&gt; │ c   ┆ 3.0 │
+#&gt; │ b   ┆ 5.0 │
 #&gt; │ a   ┆ 2.0 │
 #&gt; └─────┴─────┘
 </code></pre></div>
@@ -15784,10 +15826,10 @@ The default value can be changed with
 #&gt; │ --- ┆ --- ┆ --- │
 #&gt; │ str ┆ f64 ┆ f64 │
 #&gt; ╞═════╪═════╪═════╡
-#&gt; │ a   ┆ 1.0 ┆ 5.0 │
-#&gt; │ b   ┆ 3.0 ┆ 2.0 │
 #&gt; │ b   ┆ 2.0 ┆ 4.0 │
 #&gt; │ c   ┆ 3.0 ┆ 1.0 │
+#&gt; │ a   ┆ 1.0 ┆ 5.0 │
+#&gt; │ b   ┆ 3.0 ┆ 2.0 │
 #&gt; └─────┴─────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Or pass some arguments to group by multiple columns in the same way.</span>
@@ -15802,9 +15844,9 @@ The default value can be changed with
 #&gt; │ --- ┆ --- ┆ --- │
 #&gt; │ str ┆ f64 ┆ f64 │
 #&gt; ╞═════╪═════╪═════╡
-#&gt; │ a   ┆ 0.0 ┆ 4.0 │
 #&gt; │ b   ┆ 1.0 ┆ 3.0 │
 #&gt; │ c   ┆ 1.0 ┆ 1.0 │
+#&gt; │ a   ┆ 0.0 ┆ 4.0 │
 #&gt; └─────┴─────┴─────┘
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># The columns will be renamed to the argument names.</span>

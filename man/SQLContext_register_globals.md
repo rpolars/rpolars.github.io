@@ -2,7 +2,7 @@
 
 # Register all polars DataFrames/LazyFrames found in the environment
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/sql.R#L193)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/sql.R#L194)
 
 ## Description
 

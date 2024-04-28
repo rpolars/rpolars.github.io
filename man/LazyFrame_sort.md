@@ -2,7 +2,7 @@
 
 # Sort the LazyFrame by the given columns
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1333)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1332)
 
 ## Description
 

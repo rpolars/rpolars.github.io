@@ -2,7 +2,7 @@
 
 # Collect and profile a lazy query.
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1643)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L1642)
 
 ## Description
 
@@ -219,8 +219,8 @@ pl$LazyFrame()$select(pl$lit(2) + 2)$profile()
     #> │ ---             ┆ ---   ┆ --- │
     #> │ str             ┆ u64   ┆ u64 │
     #> ╞═════════════════╪═══════╪═════╡
-    #> │ optimization    ┆ 0     ┆ 21  │
-    #> │ select(literal) ┆ 21    ┆ 120 │
+    #> │ optimization    ┆ 0     ┆ 24  │
+    #> │ select(literal) ┆ 24    ┆ 98  │
     #> └─────────────────┴───────┴─────┘
 
 ``` r
@@ -248,15 +248,15 @@ pl$LazyFrame(iris)$
     #> 
     #> $profile
     #> shape: (3, 3)
-    #> ┌────────────────────┬───────┬───────┐
-    #> │ node               ┆ start ┆ end   │
-    #> │ ---                ┆ ---   ┆ ---   │
-    #> │ str                ┆ u64   ┆ u64   │
-    #> ╞════════════════════╪═══════╪═══════╡
-    #> │ optimization       ┆ 0     ┆ 18    │
-    #> │ sort(Sepal.Length) ┆ 18    ┆ 10362 │
-    #> │ group_by(Species)  ┆ 10366 ┆ 10698 │
-    #> └────────────────────┴───────┴───────┘
+    #> ┌────────────────────┬───────┬─────┐
+    #> │ node               ┆ start ┆ end │
+    #> │ ---                ┆ ---   ┆ --- │
+    #> │ str                ┆ u64   ┆ u64 │
+    #> ╞════════════════════╪═══════╪═════╡
+    #> │ optimization       ┆ 0     ┆ 16  │
+    #> │ sort(Sepal.Length) ┆ 16    ┆ 591 │
+    #> │ group_by(Species)  ┆ 594   ┆ 985 │
+    #> └────────────────────┴───────┴─────┘
 
 ``` r
 # -2-  map each Species-group of each numeric column with an R function, takes ~7000us (slow!)
@@ -295,7 +295,7 @@ pl$LazyFrame(iris)$
     #> │ ---                ┆ ---   ┆ ---   │
     #> │ str                ┆ u64   ┆ u64   │
     #> ╞════════════════════╪═══════╪═══════╡
-    #> │ optimization       ┆ 0     ┆ 9     │
-    #> │ sort(Sepal.Length) ┆ 9     ┆ 149   │
-    #> │ group_by(Species)  ┆ 152   ┆ 84332 │
+    #> │ optimization       ┆ 0     ┆ 6     │
+    #> │ sort(Sepal.Length) ┆ 6     ┆ 543   │
+    #> │ group_by(Species)  ┆ 546   ┆ 54345 │
     #> └────────────────────┴───────┴───────┘

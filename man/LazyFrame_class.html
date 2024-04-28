@@ -3989,6 +3989,27 @@
   
   
     <li class="md-nav__item">
+      <a href="DataFrame_sql.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sql
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="DataFrame_std.html" class="md-nav__link">
         
   
@@ -5210,6 +5231,27 @@
   
   <span class="md-ellipsis">
     sort
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LazyFrame_sql.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sql
   </span>
   
 
@@ -15808,13 +15850,13 @@ withr::with_envvar(
 #&gt; [41] &quot;shift_and_fill&quot;          &quot;sink_csv&quot;               
 #&gt; [43] &quot;sink_ipc&quot;                &quot;sink_ndjson&quot;            
 #&gt; [45] &quot;sink_parquet&quot;            &quot;slice&quot;                  
-#&gt; [47] &quot;sort&quot;                    &quot;std&quot;                    
-#&gt; [49] &quot;sum&quot;                     &quot;tail&quot;                   
-#&gt; [51] &quot;to_dot&quot;                  &quot;unique&quot;                 
-#&gt; [53] &quot;unnest&quot;                  &quot;var&quot;                    
-#&gt; [55] &quot;width&quot;                   &quot;with_columns&quot;           
-#&gt; [57] &quot;with_columns_seq&quot;        &quot;with_context&quot;           
-#&gt; [59] &quot;with_row_index&quot;
+#&gt; [47] &quot;sort&quot;                    &quot;sql&quot;                    
+#&gt; [49] &quot;std&quot;                     &quot;sum&quot;                    
+#&gt; [51] &quot;tail&quot;                    &quot;to_dot&quot;                 
+#&gt; [53] &quot;unique&quot;                  &quot;unnest&quot;                 
+#&gt; [55] &quot;var&quot;                     &quot;width&quot;                  
+#&gt; [57] &quot;with_columns&quot;            &quot;with_columns_seq&quot;       
+#&gt; [59] &quot;with_context&quot;            &quot;with_row_index&quot;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># see all private methods (not intended for regular use)</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nf">ls</span><span class="p">(</span><span class="n">.pr</span><span class="o">$</span><span class="n">LazyFrame</span><span class="p">)</span>
@@ -15886,7 +15928,7 @@ withr::with_envvar(
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; FILTER [(col(&quot;Species&quot;)) == (String(setosa))] FROM
 #&gt; 
-#&gt;   Csv SCAN /tmp/RtmpCL296Q/file831817a06126
+#&gt;   Csv SCAN /tmp/RtmpmmjAB6/file84144d4d879c
 #&gt;   PROJECT */5 COLUMNS
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># NOTE For Ldf_okay, the full time to load csv alrady paid when creating Rdf and Pdf</span>
@@ -15899,7 +15941,7 @@ withr::with_envvar(
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Ldf_best</span><span class="o">$</span><span class="nf">describe_optimized_plan</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>#&gt; 
-#&gt;   Csv SCAN /tmp/RtmpCL296Q/file831817a06126
+#&gt;   Csv SCAN /tmp/RtmpmmjAB6/file84144d4d879c
 #&gt;   PROJECT */5 COLUMNS
 #&gt;   SELECTION: [(col(&quot;Species&quot;)) == (String(setosa))]
 </code></pre></div>

@@ -22,7 +22,7 @@ data.
 <code id="query">query</code>
 </td>
 <td>
-A valid string SQL query.
+A character of the SQL query to execute.
 </td>
 </tr>
 </table>

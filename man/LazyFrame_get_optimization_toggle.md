@@ -2,7 +2,7 @@
 
 # Get optimization settings
 
-[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L391)
+[**Source code**](https://github.com/pola-rs/r-polars/tree/main/R/lazyframe__lazy.R#L390)
 
 ## Description
 

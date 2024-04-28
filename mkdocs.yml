@@ -206,6 +206,7 @@ nav:
         - shift: man/DataFrame_shift.md
         - slice: man/DataFrame_slice.md
         - sort: man/DataFrame_sort.md
+        - sql: man/DataFrame_sql.md
         - std: man/DataFrame_std.md
         - sum: man/DataFrame_sum.md
         - tail: man/DataFrame_tail.md
@@ -260,6 +261,7 @@ nav:
         - shift: man/LazyFrame_shift.md
         - slice: man/LazyFrame_slice.md
         - sort: man/LazyFrame_sort.md
+        - sql: man/LazyFrame_sql.md
         - std: man/LazyFrame_std.md
         - sum: man/LazyFrame_sum.md
         - tail: man/LazyFrame_tail.md

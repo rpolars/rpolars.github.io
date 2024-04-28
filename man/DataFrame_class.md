@@ -178,12 +178,12 @@ ls(.pr$env$RPolarsDataFrame)
     #> [41] "quantile"         "rechunk"          "rename"           "reverse"         
     #> [45] "rolling"          "sample"           "schema"           "select"          
     #> [49] "select_seq"       "shape"            "shift"            "shift_and_fill"  
-    #> [53] "slice"            "sort"             "std"              "sum"             
-    #> [57] "tail"             "to_data_frame"    "to_list"          "to_series"       
-    #> [61] "to_struct"        "transpose"        "unique"           "unnest"          
-    #> [65] "var"              "width"            "with_columns"     "with_columns_seq"
-    #> [69] "with_row_index"   "write_csv"        "write_ipc"        "write_json"      
-    #> [73] "write_ndjson"     "write_parquet"
+    #> [53] "slice"            "sort"             "sql"              "std"             
+    #> [57] "sum"              "tail"             "to_data_frame"    "to_list"         
+    #> [61] "to_series"        "to_struct"        "transpose"        "unique"          
+    #> [65] "unnest"           "var"              "width"            "with_columns"    
+    #> [69] "with_columns_seq" "with_row_index"   "write_csv"        "write_ipc"       
+    #> [73] "write_json"       "write_ndjson"     "write_parquet"
 
 ``` r
 # see all private methods (not intended for regular use)

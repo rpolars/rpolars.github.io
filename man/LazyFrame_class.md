@@ -141,13 +141,13 @@ ls(.pr$env$RPolarsLazyFrame)
     #> [41] "shift_and_fill"          "sink_csv"               
     #> [43] "sink_ipc"                "sink_ndjson"            
     #> [45] "sink_parquet"            "slice"                  
-    #> [47] "sort"                    "std"                    
-    #> [49] "sum"                     "tail"                   
-    #> [51] "to_dot"                  "unique"                 
-    #> [53] "unnest"                  "var"                    
-    #> [55] "width"                   "with_columns"           
-    #> [57] "with_columns_seq"        "with_context"           
-    #> [59] "with_row_index"
+    #> [47] "sort"                    "sql"                    
+    #> [49] "std"                     "sum"                    
+    #> [51] "tail"                    "to_dot"                 
+    #> [53] "unique"                  "unnest"                 
+    #> [55] "var"                     "width"                  
+    #> [57] "with_columns"            "with_columns_seq"       
+    #> [59] "with_context"            "with_row_index"
 
 ``` r
 # see all private methods (not intended for regular use)
@@ -225,7 +225,7 @@ Ldf_best$describe_plan()
 
     #> FILTER [(col("Species")) == (String(setosa))] FROM
     #> 
-    #>   Csv SCAN /tmp/RtmpCL296Q/file831817a06126
+    #>   Csv SCAN /tmp/RtmpmmjAB6/file84144d4d879c
     #>   PROJECT */5 COLUMNS
 
 ``` r
@@ -242,7 +242,7 @@ Ldf_best$describe_optimized_plan()
 ```
 
     #> 
-    #>   Csv SCAN /tmp/RtmpCL296Q/file831817a06126
+    #>   Csv SCAN /tmp/RtmpmmjAB6/file84144d4d879c
     #>   PROJECT */5 COLUMNS
     #>   SELECTION: [(col("Species")) == (String(setosa))]
 
